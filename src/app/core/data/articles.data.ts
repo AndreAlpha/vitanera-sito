@@ -1180,7 +1180,206 @@ const deterioramento: Article = {
   ],
 };
 
+/* ========================================================================== */
+/* 8 — Fondamentali · lettura completa del quadro macro                       */
+/* ========================================================================== */
+
+const oroSopra4100: Article = {
+  slug: 'oro-sopra-4100-ma-i-rendimenti-lunghi-non-cedono',
+  category: 'fondamentali',
+  featured: true,
+  kicker: 'Dati macro · PCE, PIL e sussidi',
+  title: 'Oro sopra 4.100 dopo inflazione più morbida, ma i rendimenti lunghi non cedono',
+  dek:
+    'Il dettaglio mensile del PCE e un PIL del secondo trimestre a +1,5% descrivono un quadro più favorevole all’oro ' +
+    'di quanto sembrasse nel primo impatto. XAU/USD ha recuperato 4.100, però il trentennale resta in area 5,21% e ' +
+    'il mercato del lavoro non cede.',
+  publishedAt: '2026-07-30T16:12:00+02:00',
+  author: AUTHOR,
+  readingMinutes: 5,
+  tags: ['PCE', 'PIL', 'Sussidi', 'Fed', 'Treasury', 'Inflazione'],
+  instruments: ['XAU/USD', 'DXY', 'US10Y', 'US30Y', 'WTI', 'Brent'],
+  horizons: ['breve', 'medio'],
+  bias: {
+    asset: 'XAU/USD',
+    direction: 'neutrale-rialzista',
+    strength: 'media',
+    regime:
+      'Inflazione mensile in raffreddamento e crescita sotto le attese, con rendimenti lunghi ancora rigidi.',
+  },
+  certainty: 'media',
+  certaintyNote:
+    'I dati pubblicati sono confermati e il recupero di 4.100 è osservabile. La certezza è medio-alta sul sostegno ' +
+    'immediato all’oro, media sulla continuazione oltre 4.120.',
+  takeaways: [
+    'PCE generale mensile −0,1% e Core PCE mensile +0,1%, sotto il +0,2% atteso.',
+    'Inflazione annuale generale al 3,7% e Core al 3,3%, con spesa reale dei consumatori comunque in aumento dello 0,4%.',
+    'Il PIL del secondo trimestre cresce dell’1,5% annualizzato contro circa 2,1% atteso.',
+    'Il mercato del lavoro non cede: media a quattro settimane dei sussidi in calo a 202.750 e richieste continuative in diminuzione.',
+    'XAU/USD supera nuovamente 4.100 con un massimo intraday intorno a 4.120, ma il trentennale resta in area 5,21%.',
+  ],
+  invalidation: [
+    'Una perdita stabile di 4.100, accompagnata da DXY e Treasury in rialzo.',
+    'Una nuova escalation capace di spingere il petrolio fortemente più in alto, con il ritorno dominante delle aspettative di stretta Fed.',
+    'Un ritorno rapido sotto 4.100 dopo il breakout: segnalerebbe che il mercato non ha accettato il movimento.',
+  ],
+  blocks: [
+    {
+      kind: 'paragraph',
+      lead: true,
+      text:
+        'Il quadro pubblicato alle 14:30 è più favorevole all’oro di quanto apparisse nel primo impatto. Il dettaglio ' +
+        'mensile dell’inflazione e la crescita del secondo trimestre spostano il bilanciamento verso una Fed meno ' +
+        'aggressiva, ma il mercato obbligazionario non ha seguito fino in fondo.',
+    },
+    { kind: 'heading', text: 'Fatti confermati', anchor: 'fatti-confermati' },
+    {
+      kind: 'list',
+      title: 'Il dettaglio del PCE',
+      items: [
+        'PCE generale mensile: −0,1%.',
+        'Core PCE mensile: +0,1%, sotto il +0,2% atteso.',
+        'Inflazione annuale generale al 3,7% e Core al 3,3%.',
+        'La spesa reale dei consumatori è comunque aumentata dello 0,4%: non emerge ancora un brusco crollo della domanda.',
+      ],
+    },
+    {
+      kind: 'paragraph',
+      text:
+        'Il PIL statunitense del secondo trimestre è cresciuto soltanto dell’1,5% annualizzato, contro circa 2,1% ' +
+        'atteso. Inflazione più lenta e crescita più debole formano una combinazione tendenzialmente favorevole a una ' +
+        'Fed meno aggressiva.',
+    },
+    {
+      kind: 'paragraph',
+      text:
+        'Il mercato del lavoro, però, non sta cedendo. Le richieste iniziali di sussidi sono salite a 197.000, ma la ' +
+        'media a quattro settimane è scesa a 202.750 e le richieste continuative sono diminuite: il dato descrive ' +
+        'ancora un mercato del lavoro piuttosto solido.',
+    },
+    {
+      kind: 'stats',
+      title: 'Il quadro macro in sintesi',
+      caption:
+        'Valori rilevati al momento della redazione. Non sono quotazioni in tempo reale e non sono forniti a fini operativi.',
+      items: [
+        { label: 'PCE generale mensile', value: '−0,1%', tone: 'bull' },
+        { label: 'Core PCE mensile', value: '+0,1%', tone: 'bull', note: 'Atteso +0,2%' },
+        { label: 'Core PCE annuale', value: '3,3%', tone: 'warn', note: 'Obiettivo Fed 2%' },
+        { label: 'PIL T2', value: '+1,5%', tone: 'bull', note: 'Atteso ≈ 2,1%' },
+        { label: 'Spesa reale', value: '+0,4%', tone: 'warn', note: 'Domanda ancora presente' },
+        {
+          label: 'Sussidi iniziali',
+          value: '197.000',
+          tone: 'warn',
+          note: 'Media 4 settimane 202.750',
+        },
+      ],
+    },
+    {
+      kind: 'paragraph',
+      text: 'XAU/USD ha reagito superando nuovamente 4.100, con un massimo intraday riportato intorno a 4.120.',
+    },
+    { kind: 'heading', text: 'Il limite del movimento rialzista', anchor: 'limite-del-rialzo' },
+    {
+      kind: 'callout',
+      tone: 'bear',
+      title: 'I Treasury non hanno seguito pienamente il segnale dovish',
+      items: [
+        'Rendimento USA a 10 anni vicino al 4,67–4,69%.',
+        'Trentennale ancora nell’area 5,21%, poco sotto i massimi dal 2007.',
+      ],
+    },
+    {
+      kind: 'paragraph',
+      text:
+        'Il mercato ha quindi ridotto il rischio di un rialzo immediato della Fed, ma non sta ancora prezzando un vero ' +
+        'ciclo di allentamento.',
+    },
+    { kind: 'heading', text: 'Interpretazione per XAU/USD', anchor: 'interpretazione' },
+    { kind: 'paragraph', text: 'Bias fondamentale immediato: rialzista moderato.' },
+    {
+      kind: 'balance',
+      title: 'Perché il segnale migliora e perché non è pulito',
+      left: {
+        title: 'La novità rispetto al controllo precedente',
+        tone: 'bull',
+        items: [
+          'Inflazione mensile in raffreddamento.',
+          'Crescita economica sotto le attese.',
+          'Oro capace di recuperare 4.100.',
+        ],
+      },
+      right: {
+        title: 'Ciò che sporca il segnale',
+        tone: 'bear',
+        items: [
+          'Il mercato del lavoro rimane resistente.',
+          'I rendimenti lunghi restano molto elevati.',
+          'L’inflazione annuale Core al 3,3% è ancora lontana dal target Fed.',
+          'Il rischio energetico legato all’Iran resta inflazionistico.',
+        ],
+      },
+    },
+    { kind: 'heading', text: 'Impatto probabile', anchor: 'impatto-probabile' },
+    {
+      kind: 'scenarios',
+      caption: 'Lettura per singolo mercato. Descrizione di ipotesi, non indicazioni operative.',
+      items: [
+        {
+          label: 'Oro',
+          tone: 'gold',
+          text:
+            'Sostenuto finché resta sopra 4.100, con spazio per ritestare 4.116–4.120. Un consolidamento sopra questa ' +
+            'fascia aprirebbe la strada verso livelli superiori; un ritorno rapido sotto 4.100 segnalerebbe che il ' +
+            'mercato non ha accettato il breakout.',
+        },
+        {
+          label: 'Dollaro',
+          tone: 'bull',
+          text: 'Pressione moderatamente ribassista nel breve, ma non è ancora presente una fuga strutturale dall’USD.',
+        },
+        {
+          label: 'Treasury',
+          tone: 'bear',
+          text:
+            'Rendimenti brevi potenzialmente più sensibili al dato morbido; rendimenti lunghi ancora rigidi per ' +
+            'inflazione energetica, deficit e incertezza sulla Fed.',
+        },
+        {
+          label: 'Petrolio',
+          tone: 'warn',
+          text:
+            'Rimane il principale rischio contrario all’oro nel medio termine: un nuovo forte rialzo riaccenderebbe le ' +
+            'aspettative d’inflazione e potrebbe far risalire dollaro e rendimenti.',
+        },
+      ],
+    },
+    { kind: 'heading', text: 'Livello di certezza', anchor: 'livello-certezza' },
+    {
+      kind: 'paragraph',
+      text: 'Medio-alto sul sostegno immediato all’oro, medio sulla continuazione oltre 4.120.',
+    },
+    {
+      kind: 'callout',
+      tone: 'warn',
+      title: 'Cosa invaliderebbe la lettura rialzista',
+      text:
+        'Una perdita stabile di 4.100 accompagnata da DXY e Treasury in rialzo, oppure una nuova escalation capace di ' +
+        'spingere il petrolio fortemente più in alto e far tornare dominanti le aspettative di stretta Fed.',
+    },
+    {
+      kind: 'note',
+      text:
+        'I livelli citati descrivono la lettura del momento della redazione. Non sono indicazioni di acquisto o ' +
+        'vendita né obiettivi di prezzo affidabili: sono riferimenti utili solo a rendere verificabile il ragionamento ' +
+        'esposto.',
+    },
+  ],
+};
+
 export const ARTICLES: readonly Article[] = [
+  oroSopra4100,
   deterioramento,
   pce,
   petrolioTreasury,

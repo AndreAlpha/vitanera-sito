@@ -31,43 +31,44 @@ export interface OperationalSignal {
 }
 
 export const MARKET_SIGNAL: OperationalSignal = {
-  updatedAt: '2026-07-30T14:41:00+02:00',
+  updatedAt: '2026-07-30T16:12:00+02:00',
   validityMinutes: 60,
   asset: 'XAU/USD',
   direction: 'neutrale-rialzista',
-  strength: 'bassa',
-  headline: 'L’oro sale quasi da solo: le conferme cross-asset si stanno sfaldando',
+  strength: 'media',
+  headline: 'L’oro riprende 4.100 sul dato macro morbido, ma i rendimenti lunghi non cedono',
   stance:
-    'Il PCE più morbido delle attese migliora il quadro di fondo, ma nell’immediato solo il dollaro debole accompagna ' +
-    'l’oro: argento, platino, valute legate ai metalli e petrolio non confermano il movimento. Forza del segnale ' +
-    'bassa-media: è una divergenza, non un trend.',
+    'Il dettaglio mensile del PCE e un PIL a +1,5% rendono il quadro fondamentale moderatamente rialzista e XAU/USD ' +
+    'ha recuperato 4.100 con un massimo intorno a 4.120. La conferma cross-asset resta però parziale — argento, ' +
+    'platino e petrolio non accompagnano — e il rischio energetico legato all’Iran continua a lavorare in senso ' +
+    'inflazionistico.',
   favours: [
-    'Restare fuori finché la divergenza non si risolve.',
-    'Considerare valida l’impostazione rialzista solo con rottura e retest tenuto di 4.072, argento e platino che smettono di scendere e DXY ancora debole.',
+    'Un’impostazione rialzista solo finché l’oro resta sopra 4.100, con spazio per ritestare 4.116–4.120.',
+    'Attendere un consolidamento sopra 4.116–4.120 prima di considerare confermata la continuazione.',
   ],
   avoid: [
-    'Inseguire il rialzo adesso: aumenta il rischio di falso breakout o di ritorno verso il basso.',
-    'Impostazioni ribassiste: l’oro continua a tenere e il DXY non sta accelerando al rialzo.',
+    'Considerare accettato il breakout senza tenuta di 4.100: un ritorno rapido sotto quel livello lo smentirebbe.',
+    'Impostazioni ribassiste sull’oro finché inflazione mensile e crescita restano orientate verso una Fed meno aggressiva.',
   ],
   invalidation:
-    'Un DXY che accelera al rialzo oppure una discesa dell’oro coerente con il resto del comparto. Sotto 4.053 il ' +
-    'quadro fondamentale rialzista sarebbe seriamente indebolito.',
+    'Una perdita stabile di 4.100 accompagnata da DXY e Treasury in rialzo, oppure una nuova escalation capace di ' +
+    'spingere il petrolio fortemente più in alto e far tornare dominanti le aspettative di stretta Fed.',
   confirming: [
-    'Core PCE 3,3%, sotto le attese',
-    'DXY debole ≈ 100,65',
-    'Rame ≈ +2,3%',
-    'Rendimenti che non producono nuovi minimi dell’oro',
+    'Core PCE mensile +0,1%, atteso +0,2%',
+    'PCE generale mensile −0,1%',
+    'PIL T2 +1,5%, atteso ≈ 2,1%',
+    'XAU/USD sopra 4.100, massimo ≈ 4.120',
   ],
   contradicting: [
-    'Argento ≈ −1,9%',
-    'Platino ≈ −1,35%',
-    'AUD/USD ≈ −0,36%',
-    'WTI e Brent in correzione',
+    'US 30Y ≈ 5,21%',
+    'US 10Y ≈ 4,67 – 4,69%',
+    'Sussidi: media 4 settimane 202.750',
+    'Core PCE annuale ancora 3,3%',
   ],
   sources: [
+    'oro-sopra-4100-ma-i-rendimenti-lunghi-non-cedono',
     'deterioramento-della-conferma-cross-asset',
-    'pce-usa-piu-morbido-delle-attese',
-    'petrolio-riparte-e-treasury-lunghi-a-nuovi-massimi',
+    'hormuz-e-bab-el-mandeb-rischio-non-ancora-blocco',
   ],
 };
 
