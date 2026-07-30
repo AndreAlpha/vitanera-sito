@@ -20,12 +20,21 @@
   --text-muted: #928c81;
   --text-faint: #6d675e;
 
-  /* --- Accento oro ------------------------------------------------------ */
+  /* --- Oro: colore di marca, costante ovunque ---------------------------- */
   --gold: #e9b949;
   --gold-soft: #f6d68c;
   --gold-deep: #a9761f;
   --gold-dim: rgba(233, 185, 73, 0.14);
   --gold-line: rgba(233, 185, 73, 0.32);
+
+  /* --- Accento di sezione: sovrascritto da [data-accent] ------------------ */
+  --accent: #e9b949;
+  --accent-soft: #f6d68c;
+  --accent-deep: #a9761f;
+  --accent-dim: rgba(233, 185, 73, 0.14);
+  --accent-line: rgba(233, 185, 73, 0.32);
+  --accent-ink: #241a06;
+  --accent-rgb: 233, 185, 73;
 
   /* --- Semantica di mercato --------------------------------------------- */
   --bull: #4ad295;
@@ -64,6 +73,75 @@
 
   color-scheme: dark;
   accent-color: var(--gold);
+}
+
+/* ==========================================================================
+   Accenti di sezione
+   --------------------------------------------------------------------------
+   Ogni area del sito ha una propria tinta, costruita sempre sugli stessi
+   token: cambia solo la famiglia cromatica, non la forma né la tipografia.
+   Marca (logo) e avvertenze legali restano invece sempre oro e ambra, così da
+   essere riconoscibili ovunque.
+   ========================================================================== */
+
+[data-accent='fondamentali'] {
+  --accent: #e8913f;
+  --accent-soft: #f7c48f;
+  --accent-deep: #a2571a;
+  --accent-dim: rgba(232, 145, 63, 0.13);
+  --accent-line: rgba(232, 145, 63, 0.34);
+  --accent-ink: #2b1607;
+  --accent-rgb: 232, 145, 63;
+}
+
+[data-accent='correlazioni'] {
+  --accent: #57c9a5;
+  --accent-soft: #a8e7d4;
+  --accent-deep: #2b7a61;
+  --accent-dim: rgba(87, 201, 165, 0.12);
+  --accent-line: rgba(87, 201, 165, 0.32);
+  --accent-ink: #04241b;
+  --accent-rgb: 87, 201, 165;
+}
+
+[data-accent='geopolitica'] {
+  --accent: #e2705a;
+  --accent-soft: #f5ac9c;
+  --accent-deep: #983b29;
+  --accent-dim: rgba(226, 112, 90, 0.13);
+  --accent-line: rgba(226, 112, 90, 0.33);
+  --accent-ink: #2a0d07;
+  --accent-rgb: 226, 112, 90;
+}
+
+[data-accent='orizzonti'] {
+  --accent: #ab86d6;
+  --accent-soft: #d4bdf0;
+  --accent-deep: #6b4a99;
+  --accent-dim: rgba(171, 134, 214, 0.13);
+  --accent-line: rgba(171, 134, 214, 0.32);
+  --accent-ink: #1c0f2c;
+  --accent-rgb: 171, 134, 214;
+}
+
+[data-accent='strumenti'] {
+  --accent: #c8bda3;
+  --accent-soft: #e6ddc9;
+  --accent-deep: #7b7157;
+  --accent-dim: rgba(200, 189, 163, 0.11);
+  --accent-line: rgba(200, 189, 163, 0.3);
+  --accent-ink: #201d14;
+  --accent-rgb: 200, 189, 163;
+}
+
+[data-accent='legale'] {
+  --accent: #f0a93b;
+  --accent-soft: #f8cd8b;
+  --accent-deep: #a06a15;
+  --accent-dim: rgba(240, 169, 59, 0.12);
+  --accent-line: rgba(240, 169, 59, 0.32);
+  --accent-ink: #2a1a04;
+  --accent-rgb: 240, 169, 59;
 }
 
 /* ==========================================================================
@@ -153,7 +231,7 @@ hr {
 }
 
 :focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -270,9 +348,9 @@ hr {
 }
 
 .chip--gold {
-  border-color: var(--gold-line);
-  background: var(--gold-dim);
-  color: var(--gold-soft);
+  border-color: var(--accent-line);
+  background: var(--accent-dim);
+  color: var(--accent-soft);
 }
 
 .chip--bull {
@@ -334,8 +412,8 @@ hr {
 }
 
 .btn--gold {
-  background: linear-gradient(135deg, var(--gold-soft), var(--gold) 45%, var(--gold-deep));
-  color: #241a06;
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent) 45%, var(--accent-deep));
+  color: var(--accent-ink);
   box-shadow: var(--shadow-gold);
 }
 
@@ -346,8 +424,8 @@ hr {
 }
 
 .btn--ghost:hover {
-  border-color: var(--gold-line);
-  color: var(--gold-soft);
+  border-color: var(--accent-line);
+  color: var(--accent-soft);
 }
 
 .btn--sm {
@@ -371,7 +449,7 @@ hr {
 }
 
 .prose em {
-  color: var(--gold-soft);
+  color: var(--accent-soft);
   font-style: italic;
 }
 
@@ -379,7 +457,12 @@ hr {
 
 .rule-gold {
   height: 1px;
-  background: linear-gradient(90deg, var(--gold-line), rgba(255, 255, 255, 0.05) 45%, transparent);
+  background: linear-gradient(
+    90deg,
+    var(--accent-line),
+    rgba(255, 255, 255, 0.05) 45%,
+    transparent
+  );
 }
 
 /* --- Utility ------------------------------------------------------------ */

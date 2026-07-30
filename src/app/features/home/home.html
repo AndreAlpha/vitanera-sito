@@ -2,51 +2,42 @@
 <!-- Apertura                                                               -->
 <!-- ---------------------------------------------------------------------- -->
 <section class="hero anim-up">
-  <div class="hero__chips">
-    <span class="chip chip--gold"
-      ><app-icon name="spark" [size]="12" /> Osservatorio indipendente</span
-    >
-    <span class="chip chip--warn"
-      ><app-icon name="alert" [size]="12" /> Non è una testata giornalistica</span
-    >
-    <span class="chip chip--neutral">Ultimo aggiornamento: {{ lastUpdate() }}</span>
-  </div>
-
-  <h1 class="hero__title">
-    Macro, geopolitica<br />
-    e <span class="hero__gold">XAU/USD</span>
-  </h1>
-
+  <p class="hero__eyebrow">{{ site.name }} · Osservatorio indipendente</p>
+  <h1 class="hero__title">Macro, geopolitica e <span class="hero__accent">XAU/USD</span></h1>
   <p class="hero__text">
-    {{ site.tagline }}. Analisi su banche centrali, inflazione, rendimenti reali, energia e rischio
-    geopolitico, con scenari dichiarati su orizzonte breve, medio e lungo e con le condizioni che li
-    renderebbero non più validi.
+    Analisi su banche centrali, inflazione, rendimenti reali, energia e rischio geopolitico. Ogni
+    lettura dichiara l’orizzonte a cui si riferisce e le condizioni che la renderebbero non più
+    valida.
   </p>
-
-  <p class="hero__legal">
-    <app-icon name="shield" [size]="14" />
-    Contenuti a scopo informativo e didattico.
-    <strong>Nessun contenuto è consulenza finanziaria</strong>, raccomandazione di investimento o
-    sollecitazione al pubblico risparmio. Investire comporta il rischio di perdere il capitale.
-  </p>
-
   <div class="hero__actions">
-    <a class="btn btn--gold" routerLink="/analisi">
-      Leggi le analisi
-      <app-icon name="arrow-right" [size]="15" />
-    </a>
-    <a class="btn btn--ghost" routerLink="/metodologia">Come leggo i mercati</a>
+    <a class="btn btn--gold" routerLink="/analisi"
+      >Leggi le analisi <app-icon name="arrow-right" [size]="15"
+    /></a>
+    <a class="btn btn--ghost" routerLink="/metodologia">Metodologia</a>
     <a class="btn btn--ghost" routerLink="/avvertenze">Avvertenze e rischi</a>
   </div>
 </section>
 
 <!-- ---------------------------------------------------------------------- -->
-<!-- Riferimenti di mercato                                                 -->
+<!-- Indicatore operativo                                                   -->
 <!-- ---------------------------------------------------------------------- -->
-<section class="refs">
+<section class="block">
   <div class="sec-head">
     <div>
-      <p class="eyebrow">Riferimenti citati nelle analisi</p>
+      <p class="eyebrow">Sintesi delle ultime pubblicazioni</p>
+      <h2>Come si sta muovendo l’oro</h2>
+    </div>
+  </div>
+  <app-operational-signal />
+</section>
+
+<!-- ---------------------------------------------------------------------- -->
+<!-- Riferimenti di mercato                                                 -->
+<!-- ---------------------------------------------------------------------- -->
+<section class="block">
+  <div class="sec-head">
+    <div>
+      <p class="eyebrow">Valori citati nelle analisi</p>
       <h2>Quadro sintetico</h2>
     </div>
     <span class="chip chip--sm chip--warn">
@@ -55,18 +46,18 @@
     </span>
   </div>
 
-  <div class="refs__grid">
+  <div class="refs">
     @for (item of references; track item.symbol) {
-      <article class="card card--hover ref" [class]="'ref--' + item.tone">
+      <article class="card ref" [class]="'ref--' + item.tone">
         <div class="ref__row">
-          <div>
+          <div class="ref__main">
             <p class="ref__symbol">{{ item.symbol }}</p>
             <p class="ref__value tnum">{{ item.value }}</p>
             @if (item.change) {
               <span class="ref__change">{{ item.change }}</span>
             }
           </div>
-          <span class="ref__icon"><app-icon [name]="item.icon" [size]="19" /></span>
+          <span class="ref__icon"><app-icon [name]="item.icon" [size]="18" /></span>
         </div>
         <p class="ref__note">{{ item.note }}</p>
       </article>
@@ -75,70 +66,59 @@
 
   <div class="strip">
     @for (item of strip; track item.symbol) {
-      <div class="strip__item">
+      <span class="strip__item" [attr.title]="item.note">
         <span class="strip__symbol">{{ item.symbol }}</span>
         <span class="strip__value tnum" [class]="'tone-' + item.tone">{{ item.value }}</span>
         @if (item.change) {
           <span class="strip__change">{{ item.change }}</span>
         }
-      </div>
+      </span>
     }
   </div>
 
-  <p class="refs__legal">
-    <app-icon name="info" [size]="13" />
-    {{ dataNote }}
-  </p>
+  <p class="fineprint"><app-icon name="info" [size]="12" />{{ dataNote }}</p>
 </section>
 
 <!-- ---------------------------------------------------------------------- -->
-<!-- Ultima analisi + fattori                                               -->
+<!-- Pubblicazioni                                                          -->
 <!-- ---------------------------------------------------------------------- -->
-<section class="split">
-  <div class="split__main">
-    <div class="sec-head">
-      <div>
-        <p class="eyebrow">In evidenza</p>
-        <h2>Ultima analisi pubblicata</h2>
-      </div>
-      <a class="link" routerLink="/analisi">Archivio <app-icon name="arrow-right" [size]="13" /></a>
+<section class="block">
+  <div class="sec-head">
+    <div>
+      <p class="eyebrow">Pubblicazioni</p>
+      <h2>Ultime analisi</h2>
     </div>
+    <a class="link" routerLink="/analisi"
+      >Archivio completo <app-icon name="arrow-right" [size]="13"
+    /></a>
+  </div>
 
+  <div class="latest">
     @if (latest(); as article) {
       <app-article-card [article]="article" [feature]="true" />
     }
+
+    <ol class="feed">
+      @for (article of others(); track article.slug) {
+        <li>
+          <a [routerLink]="['/analisi', article.slug]">
+            <span class="feed__meta">
+              <span class="feed__cat">{{ categoryName(article.category) }}</span>
+              <app-timestamp [iso]="article.publishedAt" />
+            </span>
+            <span class="feed__title">{{ article.title }}</span>
+            <span class="feed__dek">{{ article.dek }}</span>
+          </a>
+        </li>
+      }
+    </ol>
   </div>
-
-  <aside class="split__side">
-    <div class="card card--pad drivers">
-      <p class="eyebrow">Fattori citati nelle analisi</p>
-      <h3 class="drivers__title">Cosa sta pesando sull’oro</h3>
-
-      <ul class="drivers__list">
-        @for (d of drivers; track d.label) {
-          <li class="driver" [class]="'driver--' + d.effect">
-            <div class="driver__row">
-              <span class="driver__label">{{ d.label }}</span>
-              <span class="driver__effect">{{ d.effect }}</span>
-            </div>
-            <div class="driver__bar"><i [style.width.%]="d.weight * 33.3"></i></div>
-            <p class="driver__note">{{ d.note }}</p>
-          </li>
-        }
-      </ul>
-
-      <p class="drivers__legal">
-        Schematizzazione qualitativa di quanto scritto negli articoli. Non è un modello
-        quantitativo, non ha valore predittivo e non costituisce un segnale operativo.
-      </p>
-    </div>
-  </aside>
 </section>
 
 <!-- ---------------------------------------------------------------------- -->
 <!-- Sezioni                                                                -->
 <!-- ---------------------------------------------------------------------- -->
-<section class="sections">
+<section class="block">
   <div class="sec-head">
     <div>
       <p class="eyebrow">Come è organizzato il sito</p>
@@ -146,100 +126,22 @@
     </div>
   </div>
 
-  <div class="sections__grid">
+  <div class="sections">
     @for (c of categories; track c.slug) {
       <a
         class="card card--hover section"
-        [routerLink]="['/', c.slug === 'previsioni' ? 'orizzonti' : c.slug]"
+        [routerLink]="routeFor(c.slug)"
+        [attr.data-accent]="accentFor(c.slug)"
       >
-        <span class="section__icon"><app-icon [name]="c.icon" [size]="20" /></span>
-        <h3>{{ c.name }}</h3>
-        <p class="section__tag">{{ c.tagline }}</p>
-        <p class="section__desc">{{ c.description }}</p>
-        <span class="section__cta">Apri <app-icon name="arrow-right" [size]="13" /></span>
+        <span class="section__icon"><app-icon [name]="c.icon" [size]="19" /></span>
+        <span class="section__body">
+          <span class="section__name">{{ c.name }}</span>
+          <span class="section__tag">{{ c.tagline }}</span>
+        </span>
+        <app-icon name="chevron-right" [size]="15" />
       </a>
     }
   </div>
-</section>
-
-<!-- ---------------------------------------------------------------------- -->
-<!-- Orizzonti                                                              -->
-<!-- ---------------------------------------------------------------------- -->
-<section class="horizons">
-  <div class="sec-head">
-    <div>
-      <p class="eyebrow">Scenari dichiarati, non previsioni</p>
-      <h2>Tre orizzonti temporali</h2>
-    </div>
-    <a class="link" routerLink="/orizzonti"
-      >Approfondisci <app-icon name="arrow-right" [size]="13"
-    /></a>
-  </div>
-
-  <div class="horizons__grid">
-    @for (h of horizons; track h.key) {
-      <article class="card card--pad horizon">
-        <span class="horizon__icon"><app-icon [name]="h.icon" [size]="18" /></span>
-        <p class="horizon__range">{{ h.range }}</p>
-        <h3>{{ h.title }}</h3>
-        <p class="horizon__text">{{ h.text }}</p>
-      </article>
-    }
-  </div>
-
-  <p class="horizons__legal">
-    <app-icon name="alert" [size]="13" />
-    Gli orizzonti descrivono il modo in cui vengono organizzate le riflessioni. Nessuno di essi
-    contiene previsioni affidabili né indicazioni di acquisto o vendita.
-  </p>
-</section>
-
-<!-- ---------------------------------------------------------------------- -->
-<!-- Archivio recente + distribuzione                                       -->
-<!-- ---------------------------------------------------------------------- -->
-@if (others().length) {
-  <section class="recent">
-    <div class="sec-head">
-      <div>
-        <p class="eyebrow">Pubblicazioni</p>
-        <h2>Altre analisi</h2>
-      </div>
-      <a class="link" routerLink="/analisi"
-        >Vedi tutte <app-icon name="arrow-right" [size]="13"
-      /></a>
-    </div>
-
-    <div class="recent__grid">
-      @for (article of others(); track article.slug) {
-        <app-article-card [article]="article" />
-      }
-    </div>
-  </section>
-}
-
-<section class="dist card card--pad">
-  <div class="dist__head">
-    <div>
-      <p class="eyebrow">Composizione dell’archivio</p>
-      <h3>Analisi per sezione</h3>
-    </div>
-    <span class="chip chip--sm chip--neutral">{{ content.articles().length }} contenuti</span>
-  </div>
-
-  <div class="dist__bars">
-    @for (d of distribution(); track d.name) {
-      <div class="dist__row">
-        <span class="dist__name"><app-icon [name]="d.icon" [size]="14" />{{ d.name }}</span>
-        <div class="dist__track"><i [style.width.%]="d.share"></i></div>
-        <span class="dist__count tnum">{{ d.count }}</span>
-      </div>
-    }
-  </div>
-
-  <p class="dist__legal">
-    Il sito non ha periodicità prestabilita: la frequenza di pubblicazione è del tutto discrezionale
-    e può interrompersi in qualsiasi momento.
-  </p>
 </section>
 
 <app-risk-notice variant="card" title="Avvertenza sempre valida" />

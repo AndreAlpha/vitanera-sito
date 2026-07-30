@@ -15,9 +15,10 @@
   pointer-events: none;
   overflow: hidden;
   background:
-    radial-gradient(120% 80% at 100% 0%, rgba(169, 118, 31, 0.16), transparent 55%),
-    radial-gradient(90% 60% at 0% 100%, rgba(120, 74, 20, 0.1), transparent 60%),
+    radial-gradient(120% 80% at 100% 0%, rgba(var(--accent-rgb), 0.11), transparent 55%),
+    radial-gradient(90% 60% at 0% 100%, rgba(var(--accent-rgb), 0.05), transparent 60%),
     linear-gradient(180deg, #0d0b09, #080807 45%, #0b0a09);
+  transition: background 0.6s var(--ease);
 }
 
 .app-decor__glow {
@@ -29,8 +30,8 @@
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(233, 185, 73, 0.16),
-    rgba(233, 185, 73, 0.04) 45%,
+    rgba(var(--accent-rgb), 0.16),
+    rgba(var(--accent-rgb), 0.04) 45%,
     transparent 70%
   );
   filter: blur(20px);
@@ -44,7 +45,7 @@
   width: 900px;
   height: 900px;
   border-radius: 50%;
-  background-image: radial-gradient(circle, rgba(233, 185, 73, 0.55) 1px, transparent 1.4px);
+  background-image: radial-gradient(circle, rgba(var(--accent-rgb), 0.55) 1px, transparent 1.4px);
   background-size: 13px 13px;
   -webkit-mask-image: radial-gradient(
     circle at 50% 50%,
@@ -125,6 +126,7 @@
   padding: 4px 8px 0;
 }
 
+/* Il segno di marca resta sempre oro, qualunque sia la sezione. */
 .brand__mark {
   display: grid;
   place-items: center;
@@ -211,12 +213,12 @@
 }
 
 .nav__item:hover .nav__icon {
-  color: var(--gold-soft);
-  border-color: var(--gold-line);
+  color: var(--accent-soft);
+  border-color: var(--accent-line);
 }
 
 .nav__item--active {
-  background: linear-gradient(90deg, rgba(233, 185, 73, 0.14), rgba(233, 185, 73, 0.02));
+  background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.14), rgba(var(--accent-rgb), 0.02));
   color: var(--text);
   font-weight: 600;
 }
@@ -229,13 +231,13 @@
   bottom: 9px;
   width: 2.5px;
   border-radius: 3px;
-  background: linear-gradient(180deg, var(--gold-soft), var(--gold-deep));
+  background: linear-gradient(180deg, var(--accent-soft), var(--accent-deep));
 }
 
 .nav__item--active .nav__icon {
-  background: linear-gradient(135deg, var(--gold-soft), var(--gold-deep));
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent-deep));
   border-color: transparent;
-  color: #241a06;
+  color: var(--accent-ink);
 }
 
 .side-note {
@@ -274,7 +276,7 @@
   margin-top: 9px;
   font-size: 11.5px;
   font-weight: 600;
-  color: var(--gold-soft);
+  color: var(--accent-soft);
 }
 
 .side-note a:hover {
@@ -320,7 +322,7 @@
 }
 
 .crumbs__trail a:hover {
-  color: var(--gold-soft);
+  color: var(--accent-soft);
 }
 
 .crumbs__home {
@@ -362,8 +364,8 @@
 }
 
 .search:focus-within {
-  border-color: var(--gold-line);
-  color: var(--gold-soft);
+  border-color: var(--accent-line);
+  color: var(--accent-soft);
 }
 
 .search input {
@@ -410,7 +412,7 @@
 }
 
 .search__row:hover {
-  background: rgba(233, 185, 73, 0.1);
+  background: rgba(var(--accent-rgb), 0.1);
 }
 
 .search__kicker {
@@ -468,8 +470,8 @@
 }
 
 .icon-btn:hover {
-  color: var(--gold-soft);
-  border-color: var(--gold-line);
+  color: var(--accent-soft);
+  border-color: var(--accent-line);
 }
 
 .menu-btn {

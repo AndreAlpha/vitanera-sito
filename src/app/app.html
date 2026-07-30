@@ -1,4 +1,4 @@
-<div class="app-decor" aria-hidden="true">
+<div class="app-decor" aria-hidden="true" [attr.data-accent]="accent()">
   <div class="app-decor__glow"></div>
   <div class="app-decor__globe"></div>
   <div class="app-decor__grid"></div>
@@ -6,7 +6,7 @@
 
 <app-disclaimer-bar />
 
-<div class="shell">
+<div class="shell" [attr.data-accent]="accent()">
   <!-- ------------------------------------------------------------------ -->
   <!-- Barra laterale                                                      -->
   <!-- ------------------------------------------------------------------ -->

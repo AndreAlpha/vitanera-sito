@@ -219,7 +219,7 @@ const fedFerma: Article = {
         'Uno scostamento anche modesto potrebbe produrre un movimento brusco, perché arriva il giorno successivo a ' +
         'una Fed divisa.',
     },
-    { kind: 'heading', text: 'Scenari macro', anchor: 'scenari-macro' },
+    { kind: 'heading', text: 'Scenari operativi macro', anchor: 'scenari-macro' },
     {
       kind: 'scenarios',
       caption:
@@ -267,7 +267,7 @@ const regimeOstile: Article = {
   dek:
     'Petrolio, dollaro e rendimenti Treasury si muovono insieme verso l’alto. L’oro però non cede in proporzione: ' +
     'la domanda di protezione geopolitica sta assorbendo, almeno per ora, la pressione monetaria.',
-  publishedAt: '2026-07-30T13:10:00+02:00',
+  publishedAt: '2026-07-30T11:10:00+02:00',
   author: AUTHOR,
   readingMinutes: 5,
   tags: ['Correlazioni', 'Treasury', 'Dollaro', 'Petrolio', 'Metalli'],
@@ -378,7 +378,7 @@ const regimeOstile: Article = {
         ],
       },
     },
-    { kind: 'heading', text: 'Implicazione della lettura', anchor: 'implicazione' },
+    { kind: 'heading', text: 'Implicazione operativa', anchor: 'implicazione' },
     {
       kind: 'paragraph',
       text: 'Non c’è al momento una conferma sufficiente per inseguire un movimento direzionale aggressivo.',
@@ -386,9 +386,9 @@ const regimeOstile: Article = {
     {
       kind: 'list',
       items: [
-        'Un’impostazione rialzista sull’oro diventerebbe più affidabile soltanto con rendimenti e dollaro in arretramento, oppure con una nuova escalation geopolitica capace di far prevalere nettamente la domanda di rifugio.',
-        'Il segnale ribassista si rafforzerebbe qualora XAU/USD iniziasse a scendere mentre DXY, decennale e petrolio continuano a salire: significherebbe che la protezione geopolitica non è più sufficiente.',
-        'Finché l’oro resiste, il quadro resta di debolezza sui rialzi da osservare con prudenza, non di trend ribassista già confermato.',
+        'I long sull’oro diventerebbero più affidabili soltanto con rendimenti e dollaro in arretramento, oppure con una nuova escalation geopolitica capace di far prevalere nettamente la domanda di rifugio.',
+        'Il segnale short si rafforzerebbe qualora XAU/USD iniziasse a scendere mentre DXY, decennale e petrolio continuano a salire: significherebbe che la protezione geopolitica non è più sufficiente.',
+        'Finché l’oro resiste, il quadro resta da vendita sui rialzi con prudenza, non da trend ribassista già confermato.',
       ],
     },
     {
@@ -396,7 +396,7 @@ const regimeOstile: Article = {
       tone: 'neutral',
       title: 'Sessione azionaria statunitense',
       text:
-        'Le borse USA non sono ancora nella fascia oraria di riferimento delle 15:30 italiane; i futures indicano un ' +
+        'Le borse USA non sono ancora nella fascia operativa richiesta delle 15:30 italiane; i futures indicano un ' +
         'tentativo di recupero, ma il Nasdaq arriva da una fase di correzione e volatilità elevata.',
     },
     {
@@ -420,7 +420,7 @@ const chokepoint: Article = {
   dek:
     'Sintesi del fronte geopolitico così come emerge dalle due analisi del 30 luglio: gli attacchi sono ripresi e il ' +
     'petrolio è risalito, ma finché i flussi transitano manca la conferma di un’interruzione strutturale dell’offerta.',
-  publishedAt: '2026-07-30T15:00:00+02:00',
+  publishedAt: '2026-07-30T12:00:00+02:00',
   author: AUTHOR,
   readingMinutes: 4,
   tags: ['Geopolitica', 'Hormuz', 'Bab el-Mandeb', 'Petrolio', 'Rischio'],
@@ -516,4 +516,330 @@ const chokepoint: Article = {
   ],
 };
 
-export const ARTICLES: readonly Article[] = [chokepoint, regimeOstile, fedFerma];
+/* ========================================================================== */
+/* 4 — Correlazioni · controllo cross-asset                                   */
+/* ========================================================================== */
+
+const crossAsset: Article = {
+  slug: 'xauusd-cambio-rilevante-nella-lettura-cross-asset',
+  category: 'correlazioni',
+  featured: true,
+  kicker: 'Correlazioni · Controllo cross-asset',
+  title: 'XAU/USD — cambio rilevante nella lettura cross-asset',
+  dek:
+    'L’oro ha smesso di seguire la pressione ribassista dei rendimenti: XAU/USD è tornato in area 4.062–4.087 dollari ' +
+    'mentre il Treasury decennale resta vicino al 4,70%. È una divergenza significativa rispetto al controllo precedente.',
+  publishedAt: '2026-07-30T12:45:00+02:00',
+  author: AUTHOR,
+  readingMinutes: 4,
+  tags: ['Correlazioni', 'Cross-asset', 'Dollaro', 'Treasury', 'Petrolio', 'Metalli'],
+  instruments: [
+    'XAU/USD',
+    'DXY',
+    'EUR/USD',
+    'US02Y',
+    'US10Y',
+    'WTI',
+    'Brent',
+    'XAG/USD',
+    'XPT/USD',
+  ],
+  horizons: ['breve'],
+  bias: {
+    asset: 'XAU/USD',
+    direction: 'neutrale-rialzista',
+    strength: 'media',
+    regime:
+      'Rottura temporanea della correlazione inversa con i rendimenti: l’oro assorbe tassi elevati.',
+  },
+  certainty: 'media',
+  certaintyNote:
+    'La divergenza è osservabile sui prezzi disponibili al momento del controllo, ma è per definizione intraday: ' +
+    'può rientrare rapidamente se il dollaro riprende a salire.',
+  takeaways: [
+    'Bias intraday neutro con inclinazione rialzista, forza del segnale media.',
+    'XAU/USD è tornato in area 4.062–4.087 dollari, stabile o positivo.',
+    'Il Treasury 10Y resta vicino al 4,70% e il 2Y intorno al 4,28%: rendimenti ancora elevati.',
+    'L’oro assorbe rendimenti elevati senza produrre nuovi minimi: divergenza significativa.',
+    'Argento e platino restano deboli: il comparto dei metalli preziosi non conferma pienamente il recupero.',
+  ],
+  invalidation: [
+    'Un nuovo massimo dei rendimenti accompagnato da DXY in accelerazione e dal ritorno dell’oro sotto i minimi recenti.',
+  ],
+  blocks: [
+    {
+      kind: 'paragraph',
+      lead: true,
+      text: 'Bias intraday: neutro con inclinazione rialzista. Forza del segnale: media.',
+    },
+    {
+      kind: 'paragraph',
+      text:
+        'Rispetto al controllo precedente, l’oro ha smesso di seguire la pressione ribassista dei rendimenti: XAU/USD ' +
+        'è tornato in area 4.062–4.087 dollari, stabile o positivo, mentre il Treasury 10Y resta vicino a 4,70% e il ' +
+        '2Y intorno a 4,28%. Questa è una divergenza significativa: l’oro sta assorbendo rendimenti elevati senza ' +
+        'produrre nuovi minimi.',
+    },
+    {
+      kind: 'stats',
+      title: 'Riferimenti del controllo',
+      caption:
+        'Valori rilevati al momento del controllo. Non sono quotazioni in tempo reale e non sono forniti a fini operativi.',
+      items: [
+        { label: 'XAU/USD', value: '4.062 – 4.087 $', tone: 'gold', note: 'Stabile o positivo' },
+        { label: 'US 10Y', value: '≈ 4,70%', tone: 'bear', note: 'Vicino ai massimi' },
+        { label: 'US 2Y', value: '≈ 4,28%', tone: 'bear' },
+        { label: 'DXY', value: '≈ 100,80', tone: 'neutral', note: 'Sostanzialmente fermo' },
+        { label: 'EUR/USD', value: 'quasi stabile', tone: 'neutral' },
+      ],
+    },
+    { kind: 'heading', text: 'Lettura cross-asset', anchor: 'lettura-cross-asset' },
+    {
+      kind: 'callout',
+      tone: 'bull',
+      title: 'Strumenti che confermano',
+      items: [
+        'DXY sostanzialmente fermo vicino a 100,80: manca un nuovo impulso rialzista del dollaro.',
+        'EUR/USD è quasi stabile, quindi il mercato valutario non conferma un rafforzamento aggressivo dell’USD.',
+        'WTI e Brent sono tornati sostenuti dal rischio geopolitico e dalle tensioni sulle rotte energetiche: aumenta la componente inflazionistica e di ricerca di protezione favorevole all’oro.',
+      ],
+    },
+    {
+      kind: 'callout',
+      tone: 'bear',
+      title: 'Strumenti che contraddicono',
+      items: [
+        'Rendimenti USA ancora elevati e in rialzo, soprattutto sulla parte lunga della curva.',
+        'Argento e platino restano deboli, quindi il comparto dei metalli preziosi non conferma pienamente il recupero di XAU/USD.',
+      ],
+    },
+    { kind: 'heading', text: 'Implicazione operativa', anchor: 'implicazione-operativa' },
+    {
+      kind: 'paragraph',
+      text:
+        'Non è più un contesto pulito da sell automatico sui pullback. La tenuta dell’oro nonostante il 10Y vicino ai ' +
+        'massimi segnala possibile domanda rifugio e una temporanea rottura della correlazione inversa con i rendimenti.',
+    },
+    {
+      kind: 'callout',
+      tone: 'gold',
+      title: 'Favorito',
+      items: [
+        'Long solo dopo breakout e retest confermato dei massimi intraday.',
+        'Evitare short finché XAU/USD continua a tenere mentre DXY resta piatto.',
+      ],
+    },
+    {
+      kind: 'note',
+      text:
+        'Lettura intraday, riferita al momento del controllo. Perde rapidamente validità al variare di dollaro e ' +
+        'rendimenti.',
+    },
+  ],
+};
+
+/* ========================================================================== */
+/* 5 — Fondamentali · controllo su energia e curva dei rendimenti             */
+/* ========================================================================== */
+
+const petrolioTreasury: Article = {
+  slug: 'petrolio-riparte-e-treasury-lunghi-a-nuovi-massimi',
+  category: 'fondamentali',
+  featured: true,
+  kicker: 'Controllo macro · Energia e curva',
+  title: 'Il petrolio riparte e i Treasury lunghi segnano nuovi massimi',
+  dek:
+    'Il mercato ha riaggiunto premio geopolitico dopo una nuova ondata di attacchi statunitensi in Iran, ma la novità ' +
+    'più rilevante per XAU/USD è obbligazionaria: il trentennale americano tocca il 5,24%, massimo da diciannove anni.',
+  publishedAt: '2026-07-30T13:15:00+02:00',
+  author: AUTHOR,
+  readingMinutes: 5,
+  tags: ['Fed', 'Petrolio', 'Treasury', 'Geopolitica', 'PCE', 'Dollaro'],
+  instruments: ['XAU/USD', 'Brent', 'WTI', 'US30Y', 'DXY'],
+  horizons: ['breve', 'medio'],
+  bias: {
+    asset: 'XAU/USD',
+    direction: 'neutrale-ribassista',
+    strength: 'media',
+    regime:
+      'Inflazione da energia e tassi alti più a lungo: la domanda rifugio frena la discesa ma non produce rialzo.',
+  },
+  certainty: 'media',
+  certaintyNote:
+    'Attacchi, livelli di greggio e trentennale e decisione della Fed sono fatti confermati. La direzione netta di ' +
+    'XAU/USD resta però condizionata al dato PCE, non ancora pubblicato al momento del controllo.',
+  takeaways: [
+    'Nuova ondata di attacchi statunitensi contro infrastrutture militari iraniane: il premio geopolitico è tornato sui prezzi.',
+    'Il Brent è risalito in area 92 dollari e il WTI è tornato sopra 85.',
+    'Il Treasury a 30 anni è salito fino a circa 5,24%: massimo da 19 anni.',
+    'La decisione Fed viene letta come “hawkish hold”: tassi fermi al 3,50–3,75% ma tre membri favorevoli a un rialzo.',
+    'L’oro resta sostenuto in area 4.060 dollari senza accelerare in proporzione all’escalation.',
+  ],
+  nextEvent: {
+    when: 'In giornata · PCE USA di giugno',
+    title: 'Core PCE atteso a +0,2% mensile e +3,3% annuale',
+    detail:
+      'Un dato superiore renderebbe più credibile un nuovo rialzo Fed; un dato inferiore potrebbe far scendere dollaro e rendimenti.',
+  },
+  invalidation: [
+    'Una rapida de-escalation del conflitto.',
+    'Una nuova discesa del Brent sotto 89–90 dollari.',
+    'Un PCE sensibilmente più debole delle attese.',
+  ],
+  blocks: [
+    {
+      kind: 'paragraph',
+      lead: true,
+      text:
+        'Rispetto all’ultimo controllo, il mercato ha riaggiunto premio geopolitico dopo una nuova ondata di attacchi ' +
+        'statunitensi contro infrastrutture militari iraniane.',
+    },
+    { kind: 'heading', text: 'Fatti confermati', anchor: 'fatti-confermati' },
+    {
+      kind: 'paragraph',
+      text:
+        'Il Brent è risalito in area 92 dollari al barile, dopo essere sceso sotto 90 nel controllo precedente; anche ' +
+        'il WTI è tornato sopra 85 dollari. Le tensioni restano concentrate sullo Stretto di Hormuz e sulle rotte ' +
+        'energetiche regionali.',
+    },
+    {
+      kind: 'paragraph',
+      text:
+        'La novità più importante per XAU/USD è però obbligazionaria: il rendimento del Treasury USA a 30 anni è salito ' +
+        'fino a circa 5,24%, massimo da 19 anni. Il mercato interpreta la decisione Fed come un “hawkish hold”: tassi ' +
+        'invariati al 3,50%–3,75%, ma tre membri favorevoli a un rialzo e nessuna guida rassicurante sui prossimi mesi.',
+    },
+    {
+      kind: 'paragraph',
+      text:
+        'L’oro rimane sostenuto nell’area 4.060 dollari, ma non sta accelerando proporzionalmente all’escalation ' +
+        'geopolitica. Il Dollar Index si mantiene intorno a 100,9, sostenuto sia dalla domanda rifugio sia dal rischio ' +
+        'che la Fed debba mantenere una linea restrittiva.',
+    },
+    {
+      kind: 'stats',
+      title: 'Riferimenti del controllo',
+      caption:
+        'Valori rilevati al momento della redazione. Non sono quotazioni in tempo reale e non sono forniti a fini operativi.',
+      items: [
+        { label: 'Brent', value: '≈ 92 $', tone: 'warn', note: 'Da sotto 90' },
+        { label: 'WTI', value: '> 85 $', tone: 'warn' },
+        { label: 'US 30Y', value: '≈ 5,24%', tone: 'bear', note: 'Massimo da 19 anni' },
+        { label: 'Tassi Fed', value: '3,50–3,75%', tone: 'neutral', note: 'Hawkish hold' },
+        { label: 'XAU/USD', value: '≈ 4.060 $', tone: 'gold', note: 'Sostenuto, senza accelerare' },
+        {
+          label: 'DXY',
+          value: '≈ 100,9',
+          tone: 'neutral',
+          note: 'Domanda rifugio e attese sui tassi',
+        },
+      ],
+    },
+    { kind: 'heading', text: 'Perché conta per XAU/USD', anchor: 'perche-conta' },
+    { kind: 'paragraph', text: 'Il cambiamento rispetto all’ultimo controllo è questo:' },
+    {
+      kind: 'list',
+      items: [
+        'Prima il petrolio stava correggendo e il rischio di blocco energetico sembrava ridimensionarsi.',
+        'Ora il greggio è tornato a salire e i rendimenti lunghi stanno raggiungendo nuovi massimi.',
+      ],
+    },
+    {
+      kind: 'paragraph',
+      text:
+        'Questo rafforza lo scenario di inflazione da energia e tassi alti più a lungo, che tende a frenare l’oro. La ' +
+        'domanda rifugio impedisce per ora una discesa netta, ma non è sufficiente a produrre un rialzo pulito.',
+    },
+    { kind: 'heading', text: 'Interpretazione', anchor: 'interpretazione' },
+    {
+      kind: 'paragraph',
+      text: 'Bias fondamentale immediato: neutrale con pressione ribassista crescente.',
+    },
+    {
+      kind: 'balance',
+      title: 'Conferme contrapposte',
+      left: {
+        title: 'Conferme rialziste per l’oro',
+        tone: 'bull',
+        items: [
+          'Escalation USA-Iran.',
+          'Instabilità delle rotte energetiche.',
+          'Contesto di rischio-off.',
+        ],
+      },
+      right: {
+        title: 'Conferme ribassiste',
+        tone: 'bear',
+        items: [
+          'Brent sopra 92 dollari.',
+          'Treasury trentennale a 5,24%.',
+          'Dollaro stabile o forte.',
+          'Fed percepita come più restrittiva.',
+        ],
+      },
+    },
+    {
+      kind: 'callout',
+      tone: 'warn',
+      title: 'Forza del segnale',
+      text: 'Medio-alta sul rischio di volatilità; media sulla direzione netta.',
+    },
+    { kind: 'heading', text: 'Impatto probabile', anchor: 'impatto-probabile' },
+    {
+      kind: 'scenarios',
+      caption: 'Lettura per singolo mercato. Descrizione di ipotesi, non indicazioni operative.',
+      items: [
+        {
+          label: 'Oro',
+          tone: 'gold',
+          text: 'Probabile fase volatile e laterale: la salita dei rendimenti limita i tentativi di breakout rialzista.',
+        },
+        {
+          label: 'Petrolio',
+          tone: 'bull',
+          text: 'Nuovamente rialzista finché proseguono gli attacchi o resta concreto il rischio sulle esportazioni del Golfo.',
+        },
+        {
+          label: 'Dollaro',
+          tone: 'neutral',
+          text: 'Moderatamente sostenuto, sia come rifugio sia dalle aspettative sui tassi.',
+        },
+        {
+          label: 'Treasury',
+          tone: 'bear',
+          text: 'Pressione rialzista sui rendimenti lunghi: resta il principale vento contrario per XAU/USD.',
+        },
+      ],
+    },
+    { kind: 'heading', text: 'Prossimo catalizzatore', anchor: 'prossimo-catalizzatore' },
+    {
+      kind: 'paragraph',
+      text:
+        'Il mercato attende il PCE USA di giugno. Le stime raccolte prima della pubblicazione indicano un Core PCE ' +
+        'intorno al +0,2% mensile e +3,3% annuale.',
+    },
+    {
+      kind: 'scenarios',
+      items: [
+        {
+          label: 'PCE superiore alle attese',
+          tone: 'bear',
+          text: 'Renderebbe più credibile un nuovo rialzo della Fed e sarebbe probabilmente negativo per l’oro.',
+        },
+        {
+          label: 'PCE inferiore alle attese',
+          tone: 'bull',
+          text: 'Potrebbe far scendere dollaro e rendimenti e liberare il movimento rialzista di XAU/USD.',
+        },
+      ],
+    },
+  ],
+};
+
+export const ARTICLES: readonly Article[] = [
+  petrolioTreasury,
+  crossAsset,
+  chokepoint,
+  regimeOstile,
+  fedFerma,
+];

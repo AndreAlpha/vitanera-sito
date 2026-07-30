@@ -18,7 +18,10 @@
             {{ c.name }}
           </a>
         }
-        <span class="hero__date">{{ published() }}</span>
+        <span class="hero__date">
+          <app-timestamp [iso]="a.publishedAt" [withIcon]="true" />
+          <span class="hero__abs">· {{ published() }}</span>
+        </span>
       </div>
 
       <p class="hero__kicker">{{ a.kicker }}</p>

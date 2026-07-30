@@ -46,9 +46,13 @@ import { Icon } from './icon';
       height: 52px;
       flex: none;
       border-radius: 17px;
-      border: 1px solid var(--gold-line);
-      background: linear-gradient(140deg, rgba(233, 185, 73, 0.18), rgba(233, 185, 73, 0.03));
-      color: var(--gold);
+      border: 1px solid var(--accent-line);
+      background: linear-gradient(
+        140deg,
+        rgba(var(--accent-rgb), 0.18),
+        rgba(var(--accent-rgb), 0.03)
+      );
+      color: var(--accent);
     }
 
     h1 {

@@ -207,7 +207,7 @@ import { PageHeader } from '../../shared/ui/page-header';
     }
 
     .isnot__note a {
-      color: var(--gold-soft);
+      color: var(--accent-soft);
       text-decoration: underline;
     }
 
@@ -236,7 +236,7 @@ import { PageHeader } from '../../shared/ui/page-header';
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.1em;
-      color: var(--gold-deep);
+      color: var(--accent-deep);
       margin-bottom: 9px;
     }
 
@@ -273,7 +273,7 @@ import { PageHeader } from '../../shared/ui/page-header';
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--gold-deep);
+      color: var(--accent-deep);
       margin-bottom: 10px;
     }
 
@@ -304,9 +304,9 @@ import { PageHeader } from '../../shared/ui/page-header';
       width: 40px;
       height: 40px;
       border-radius: 13px;
-      border: 1px solid var(--gold-line);
-      background: var(--gold-dim);
-      color: var(--gold);
+      border: 1px solid var(--accent-line);
+      background: var(--accent-dim);
+      color: var(--accent);
       margin-bottom: 14px;
     }
 
@@ -324,8 +324,12 @@ import { PageHeader } from '../../shared/ui/page-header';
     /* --- Invalidazione --------------------------------------------------------- */
 
     .invalid {
-      border-color: var(--gold-line);
-      background: linear-gradient(180deg, rgba(233, 185, 73, 0.07), rgba(233, 185, 73, 0.012));
+      border-color: var(--accent-line);
+      background: linear-gradient(
+        180deg,
+        rgba(var(--accent-rgb), 0.07),
+        rgba(var(--accent-rgb), 0.012)
+      );
     }
 
     .invalid__title {
@@ -334,7 +338,7 @@ import { PageHeader } from '../../shared/ui/page-header';
       gap: 10px;
       font-size: 14px;
       font-weight: 700;
-      color: var(--gold-soft);
+      color: var(--accent-soft);
       margin-bottom: 14px;
     }
 

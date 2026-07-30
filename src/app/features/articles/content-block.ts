@@ -201,7 +201,7 @@ import { Icon } from '../../shared/ui/icon';
       width: 4px;
       height: 20px;
       border-radius: 3px;
-      background: linear-gradient(180deg, var(--gold-soft), var(--gold-deep));
+      background: linear-gradient(180deg, var(--accent-soft), var(--accent-deep));
     }
 
     /* --- Elenchi ---------------------------------------------------------- */
@@ -215,7 +215,7 @@ import { Icon } from '../../shared/ui/icon';
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--gold-deep);
+      color: var(--accent-deep);
       margin-bottom: 11px;
     }
 
@@ -240,8 +240,8 @@ import { Icon } from '../../shared/ui/icon';
       margin-top: 9px;
       flex: none;
       border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 3px rgba(233, 185, 73, 0.14);
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.14);
     }
 
     .olist {
@@ -271,9 +271,9 @@ import { Icon } from '../../shared/ui/icon';
       width: 22px;
       height: 22px;
       border-radius: 8px;
-      background: rgba(233, 185, 73, 0.14);
-      border: 1px solid var(--gold-line);
-      color: var(--gold-soft);
+      background: rgba(var(--accent-rgb), 0.14);
+      border: 1px solid var(--accent-line);
+      color: var(--accent-soft);
       font-family: var(--ff-sans);
       font-size: 11px;
       font-weight: 700;
@@ -352,13 +352,13 @@ import { Icon } from '../../shared/ui/icon';
     }
 
     .callout--gold {
-      border-color: var(--gold-line);
-      border-left-color: var(--gold);
-      background: var(--gold-dim);
+      border-color: var(--accent-line);
+      border-left-color: var(--accent);
+      background: var(--accent-dim);
     }
 
     .callout--gold .callout__title {
-      color: var(--gold-soft);
+      color: var(--accent-soft);
     }
 
     .callout--neutral {
@@ -423,7 +423,7 @@ import { Icon } from '../../shared/ui/icon';
     }
 
     .stat--gold .stat__value {
-      color: var(--gold);
+      color: var(--accent);
     }
 
     .stat--bull .stat__value {
@@ -473,7 +473,7 @@ import { Icon } from '../../shared/ui/icon';
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--gold-deep);
+      color: var(--accent-deep);
       margin-bottom: 13px;
     }
 
@@ -531,11 +531,11 @@ import { Icon } from '../../shared/ui/icon';
     }
 
     .scen__card--gold {
-      border-top-color: var(--gold);
+      border-top-color: var(--accent);
     }
 
     .scen__card--gold .scen__label {
-      color: var(--gold-soft);
+      color: var(--accent-soft);
     }
 
     .scen__card--neutral .scen__label {
@@ -627,7 +627,7 @@ import { Icon } from '../../shared/ui/icon';
     }
 
     .bal__side--gold .bal__head {
-      color: var(--gold-soft);
+      color: var(--accent-soft);
     }
 
     .bal__side--neutral .bal__head {
@@ -661,15 +661,15 @@ import { Icon } from '../../shared/ui/icon';
       width: 9px;
       height: 9px;
       border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 4px rgba(233, 185, 73, 0.12);
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.12);
     }
 
     .tl__when {
       font-size: 10.5px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--gold-deep);
+      color: var(--accent-deep);
     }
 
     .tl__head {
@@ -689,7 +689,7 @@ import { Icon } from '../../shared/ui/icon';
     .quote {
       margin: 0 0 26px;
       padding: 4px 0 4px 22px;
-      border-left: 3px solid var(--gold-line);
+      border-left: 3px solid var(--accent-line);
     }
 
     .quote p {

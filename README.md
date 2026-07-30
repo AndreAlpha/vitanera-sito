@@ -25,14 +25,15 @@ src/app/
 │  ├─ data/articles.data.ts     archivio delle analisi
 │  ├─ data/glossary.data.ts     voci del glossario
 │  ├─ data/legal.data.ts        testi di avvertenze, note legali, privacy
-│  ├─ data/markets.data.ts      riferimenti numerici citati e fattori sintetizzati
+│  ├─ data/markets.data.ts      riferimenti numerici citati nelle analisi
+│  ├─ data/signal.data.ts       indicatore operativo mostrato in panoramica
 │  ├─ models/article.model.ts   modello dei contenuti e dei blocchi
-│  └─ services/                 contenuti, presa visione delle avvertenze
+│  └─ services/                 contenuti, orologio condiviso, presa visione
 ├─ shared/
 │  ├─ legal/                    barra permanente, modale, avvertenza riutilizzabile, footer
-│  └─ ui/                       icone, schede, badge di bias, intestazione pagina
+│  └─ ui/                       icone, schede, badge di bias, orari, intestazione pagina
 └─ features/
-   ├─ home/                     panoramica
+   ├─ home/                     panoramica e indicatore operativo
    ├─ articles/                 elenco, dettaglio, resa dei blocchi
    ├─ outlook/                  orizzonti breve · medio · lungo
    ├─ methodology/              metodologia e limiti dichiarati
@@ -53,6 +54,56 @@ blocchi `heading`.
 
 Campi che alimentano la resa grafica: `bias` (direzione e forza), `certainty`, `horizons`, `takeaways`
 (riquadro «In sintesi»), `invalidation` (riquadro di chiusura), `nextEvent`.
+
+La sezione si sceglie con `category`: `fondamentali`, `correlazioni`, `geopolitica`. L’ordine
+dell’archivio è calcolato da `publishedAt`, non dalla posizione nell’array.
+
+## Aggiornare l’indicatore operativo
+
+L’indicatore in panoramica vive in `src/app/core/data/signal.data.ts` e va aggiornato a mano dopo ogni
+pubblicazione. Sintetizza le ultime analisi di **tutte** le sezioni, non solo dell’ultima pubblicata.
+
+| Campo | Cosa contiene |
+| --- | --- |
+| `updatedAt` | Data e ora dell’aggiornamento. Fa fede per la scadenza. |
+| `validityMinutes` | Durata della validità, oggi `60`. |
+| `direction` / `strength` | Impostazione e forza del segnale. |
+| `headline` / `stance` | Titolo e sintesi discorsiva. |
+| `favours` / `avoid` | Le due colonne «Favorito» e «Da evitare». |
+| `confirming` / `contradicting` | Strumenti che confermano o contraddicono. |
+| `invalidation` | Condizione che fa decadere la lettura. |
+| `sources` | Slug delle analisi da cui deriva; diventano collegamenti. |
+
+Trascorsi i minuti di validità l’indicatore passa da solo allo stato **«In attesa di notizie»**: la
+barra si svuota, il pannello si attenua e la lettura precedente resta visibile solo come storico.
+Nessun intervento manuale è necessario per farlo scadere: basta non aggiornare `updatedAt`.
+
+## Orari di pubblicazione
+
+`ClockService` aggiorna un segnale ogni quindici secondi; `<app-timestamp>` lo usa per mostrare il
+tempo trascorso senza ricaricare la pagina. Entro **dodici ore** compare la forma relativa
+(`adesso`, `18m fa`, `2h 20m fa`), oltre quella soglia data e ora complete. Le pubblicazioni
+dell’ultima ora sono evidenziate nel colore della sezione. La soglia si cambia in
+`RELATIVE_LIMIT_HOURS`.
+
+## Stile per sezione
+
+Ogni area ha una propria tinta e un proprio impaginato, costruiti sugli stessi token di forma,
+spaziatura e tipografia.
+
+| Sezione | Tinta | Impaginato |
+| --- | --- | --- |
+| Panoramica | oro | blocchi ampi, indicatore in evidenza |
+| Fondamentali | rame | dossier numerato a righe piene |
+| Correlazioni | verde salvia | matrice cross-asset con griglia strumenti |
+| Geopolitica | terracotta | dispaccio cronologico con binario orario |
+| Orizzonti | prugna | tre pannelli per orizzonte temporale |
+| Metodologia e glossario | sabbia | schede e definizioni |
+| Pagine legali | ambra | documento con indice laterale |
+
+Le tinte sono definite in `src/styles.scss` nei blocchi `[data-accent='…']`; l’attributo viene
+applicato al guscio dal metodo `accent()` di `src/app/app.ts`. Il segno di marca resta sempre oro e le
+avvertenze legali sempre ambra, così da essere riconoscibili in qualunque sezione.
 
 ## Dove compaiono le avvertenze
 

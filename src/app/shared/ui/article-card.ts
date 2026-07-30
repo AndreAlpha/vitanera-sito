@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Article } from '../../core/models/article.model';
-import { ContentService, formatDate } from '../../core/services/content.service';
+import { ContentService } from '../../core/services/content.service';
 import { BiasBadge } from './bias-badge';
 import { Icon } from './icon';
+import { Timestamp } from './timestamp';
 
 /**
  * Scheda di anteprima di un'analisi.
@@ -12,7 +13,7 @@ import { Icon } from './icon';
 @Component({
   selector: 'app-article-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, Icon, BiasBadge],
+  imports: [RouterLink, Icon, BiasBadge, Timestamp],
   template: `
     <a
       class="card card--hover art"
@@ -24,7 +25,9 @@ import { Icon } from './icon';
           <app-icon [name]="categoryIcon()" [size]="12" />
           {{ categoryName() }}
         </span>
-        <span class="art__date">{{ date() }}</span>
+        <span class="art__date"
+          ><app-timestamp [iso]="article().publishedAt" [withIcon]="true"
+        /></span>
       </div>
 
       <p class="art__kicker">{{ article().kicker }}</p>
@@ -87,7 +90,7 @@ import { Icon } from './icon';
       position: absolute;
       inset: 0 0 auto;
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold-line), transparent);
+      background: linear-gradient(90deg, transparent, var(--accent-line), transparent);
       opacity: 0;
       transition: opacity 0.4s var(--ease);
     }
@@ -115,7 +118,7 @@ import { Icon } from './icon';
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--gold-deep);
+      color: var(--accent-deep);
       margin-bottom: 7px;
     }
 
@@ -131,7 +134,7 @@ import { Icon } from './icon';
     }
 
     .art:hover .art__title {
-      color: var(--gold-soft);
+      color: var(--accent-soft);
     }
 
     .art__dek {
@@ -172,7 +175,7 @@ import { Icon } from './icon';
 
     .art__points app-icon {
       margin-top: 2px;
-      color: var(--gold);
+      color: var(--accent);
     }
 
     .art__meta {
@@ -215,7 +218,7 @@ import { Icon } from './icon';
       margin-top: 12px;
       font-size: 12.5px;
       font-weight: 600;
-      color: var(--gold);
+      color: var(--accent);
       transition: gap 0.3s var(--ease);
     }
 
@@ -229,8 +232,6 @@ export class ArticleCard {
 
   readonly article = input.required<Article>();
   readonly feature = input<boolean>(false);
-
-  protected readonly date = computed(() => formatDate(this.article().publishedAt));
 
   protected readonly categoryName = computed(
     () => this.content.categoryBySlug(this.article().category)?.name ?? 'Analisi',

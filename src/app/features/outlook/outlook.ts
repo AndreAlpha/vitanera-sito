@@ -207,7 +207,7 @@ const HORIZONS: readonly HorizonBlock[] = [
     }
 
     .warn-strip strong {
-      color: var(--gold-soft);
+      color: var(--accent-soft);
     }
 
     .sec-head {
@@ -229,7 +229,7 @@ const HORIZONS: readonly HorizonBlock[] = [
       gap: 6px;
       font-size: 12.5px;
       font-weight: 600;
-      color: var(--gold);
+      color: var(--accent);
     }
 
     .current__grid {
@@ -273,7 +273,7 @@ const HORIZONS: readonly HorizonBlock[] = [
       margin-top: auto;
       font-size: 12px;
       font-weight: 600;
-      color: var(--gold);
+      color: var(--accent);
     }
 
     .current__legal {
@@ -306,9 +306,13 @@ const HORIZONS: readonly HorizonBlock[] = [
       height: 46px;
       flex: none;
       border-radius: 15px;
-      border: 1px solid var(--gold-line);
-      background: linear-gradient(140deg, rgba(233, 185, 73, 0.18), rgba(233, 185, 73, 0.03));
-      color: var(--gold);
+      border: 1px solid var(--accent-line);
+      background: linear-gradient(
+        140deg,
+        rgba(var(--accent-rgb), 0.18),
+        rgba(var(--accent-rgb), 0.03)
+      );
+      color: var(--accent);
     }
 
     .hz__head h2 {
@@ -327,7 +331,7 @@ const HORIZONS: readonly HorizonBlock[] = [
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--gold-deep);
+      color: var(--accent-deep);
       margin-bottom: 12px;
     }
 
@@ -352,7 +356,7 @@ const HORIZONS: readonly HorizonBlock[] = [
       margin-top: 8px;
       flex: none;
       border-radius: 50%;
-      background: var(--gold);
+      background: var(--accent);
     }
 
     .dot--soft {

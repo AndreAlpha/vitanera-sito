@@ -95,6 +95,37 @@ export class App {
 
   protected readonly pageTitle = computed(() => this.crumbs().at(-1)?.label ?? 'Panoramica');
 
+  /**
+   * Tinta della sezione corrente. Cambia solo la famiglia cromatica: forma,
+   * spaziature e tipografia restano identiche in tutto il sito.
+   */
+  protected readonly accent = computed(() => {
+    const segments = this.url().split('?')[0].split('#')[0].split('/').filter(Boolean);
+    const [first, second] = segments;
+
+    if (first === 'analisi' && second) {
+      const article = this.content.bySlug(second);
+      return article ? article.category : null;
+    }
+
+    switch (first) {
+      case 'fondamentali':
+      case 'correlazioni':
+      case 'geopolitica':
+      case 'orizzonti':
+        return first;
+      case 'metodologia':
+      case 'glossario':
+        return 'strumenti';
+      case 'avvertenze':
+      case 'note-legali':
+      case 'privacy':
+        return 'legale';
+      default:
+        return null;
+    }
+  });
+
   constructor() {
     // Chiude il menu mobile e la ricerca a ogni cambio pagina.
     effect(() => {

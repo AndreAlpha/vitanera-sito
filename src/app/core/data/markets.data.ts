@@ -5,117 +5,85 @@ import { MarketReference } from '../models/article.model';
  *
  * ATTENZIONE: non sono quotazioni in tempo reale, non provengono da un feed di
  * mercato e non devono essere utilizzati a fini operativi. Servono unicamente a
- * dare contesto immediato a ciò che si legge negli articoli.
+ * dare contesto immediato a ciò che si legge negli articoli e vanno aggiornati
+ * a mano insieme alle pubblicazioni.
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'XAU/USD',
     name: 'Oro spot',
-    value: '4.060 – 4.065',
-    change: 'da 4.116',
+    value: '≈ 4.060 $',
+    change: 'sostenuto',
     tone: 'gold',
     icon: 'coin',
-    note: 'Rientro dopo il massimo toccato subito dopo la decisione della Fed.',
+    note: 'Tiene l’area ma non accelera in proporzione all’escalation.',
   },
   {
-    symbol: 'FED FUNDS',
-    name: 'Tasso di riferimento',
-    value: '3,50 – 3,75%',
-    change: 'invariato',
-    tone: 'neutral',
-    icon: 'bank',
-    note: 'Decisione confermata con una votazione di 9 a 3.',
-  },
-  {
-    symbol: 'US 10Y',
-    name: 'Treasury decennale',
-    value: '≈ 4,64%',
-    change: '30Y a 5,24%',
+    symbol: 'US 30Y',
+    name: 'Treasury trentennale',
+    value: '≈ 5,24%',
+    change: 'massimo da 19 anni',
     tone: 'bear',
     icon: 'chart',
-    note: 'Il trentennale è indicato come massimo dal 2007.',
+    note: 'Principale vento contrario per un’attività priva di rendimento.',
   },
   {
     symbol: 'BRENT',
     name: 'Greggio Brent',
-    value: '≈ 91,80 $',
-    change: '+1,17%',
+    value: '≈ 92 $',
+    change: 'da sotto 90',
     tone: 'warn',
     icon: 'droplet',
-    note: 'In risalita con la ripresa degli attacchi USA-Iran.',
-  },
-];
-
-export interface DriverItem {
-  readonly label: string;
-  readonly effect: 'favorevole' | 'sfavorevole' | 'ambiguo';
-  readonly weight: 1 | 2 | 3;
-  readonly note: string;
-}
-
-/**
- * Sintesi qualitativa dei fattori citati nelle analisi pubblicate.
- * Non è un modello quantitativo, non ha valore predittivo e non deriva da
- * elaborazioni statistiche: è una schematizzazione di quanto scritto nei testi.
- */
-export const DRIVERS: readonly DriverItem[] = [
-  {
-    label: 'Rischio geopolitico',
-    effect: 'favorevole',
-    weight: 3,
-    note: 'Attacchi ripresi, rotte marittime sotto osservazione.',
+    note: 'Premio geopolitico tornato sui prezzi; WTI sopra 85.',
   },
   {
-    label: 'Assenza di rialzo immediato',
-    effect: 'favorevole',
-    weight: 2,
-    note: 'Tassi lasciati invariati nella riunione di riferimento.',
-  },
-  {
-    label: 'Rendimenti reali USA',
-    effect: 'sfavorevole',
-    weight: 3,
-    note: 'Curva in rialzo, trentennale ai massimi dal 2007.',
-  },
-  {
-    label: 'Dollaro',
-    effect: 'sfavorevole',
-    weight: 2,
-    note: 'In recupero dopo la reazione iniziale alla Fed.',
-  },
-  {
-    label: 'Dissenso interno al FOMC',
-    effect: 'sfavorevole',
-    weight: 2,
-    note: 'Tre membri favorevoli a un rialzo.',
-  },
-  {
-    label: 'Petrolio e inflazione',
-    effect: 'ambiguo',
-    weight: 3,
-    note: 'Sostiene la domanda di protezione ma alimenta attese restrittive.',
+    symbol: 'DXY',
+    name: 'Indice del dollaro',
+    value: '≈ 100,9',
+    change: 'sostenuto',
+    tone: 'neutral',
+    icon: 'dollar',
+    note: 'Domanda rifugio e attese di una Fed più restrittiva.',
   },
 ];
 
 /** Riferimenti secondari mostrati nella striscia sotto le schede. */
 export const MARKET_STRIP: readonly MarketReference[] = [
   {
-    symbol: 'US 2Y',
-    name: 'Treasury biennale',
-    value: '≈ 4,29%',
-    change: '',
+    symbol: 'Fed funds',
+    name: 'Tasso di riferimento',
+    value: '3,50 – 3,75%',
+    change: 'invariato',
+    tone: 'neutral',
+    icon: 'bank',
+    note: 'Confermato con una votazione di 9 a 3.',
+  },
+  {
+    symbol: 'US 10Y',
+    name: 'Treasury decennale',
+    value: '≈ 4,70%',
+    change: '2Y ≈ 4,28%',
     tone: 'bear',
     icon: 'chart',
-    note: 'Parte breve della curva.',
+    note: 'Rendimenti elevati lungo tutta la curva.',
   },
   {
     symbol: 'WTI',
     name: 'Greggio WTI',
-    value: '≈ 84,85 $',
-    change: '+0,46%',
+    value: '> 85 $',
+    change: 'in rialzo',
     tone: 'warn',
     icon: 'droplet',
-    note: 'Rialzo meno marcato rispetto al Brent.',
+    note: 'Tornato sopra la soglia con la nuova escalation.',
+  },
+  {
+    symbol: 'Core PCE atteso',
+    name: 'Stime pre-pubblicazione',
+    value: '+0,2% m/m',
+    change: '+3,3% a/a',
+    tone: 'neutral',
+    icon: 'percent',
+    note: 'Prossimo catalizzatore dichiarato.',
   },
   {
     symbol: 'Rialzo settembre',
@@ -127,12 +95,12 @@ export const MARKET_STRIP: readonly MarketReference[] = [
     note: 'Attribuita dal mercato dopo la decisione.',
   },
   {
-    symbol: 'XPT/USD',
-    name: 'Platino',
-    value: '≈ −0,4%',
+    symbol: 'Argento e platino',
+    name: 'Altri preziosi',
+    value: 'deboli',
     change: '',
     tone: 'bear',
     icon: 'coin',
-    note: 'Citato tra le conferme ribassiste.',
+    note: 'Il comparto non conferma il recupero dell’oro.',
   },
 ];

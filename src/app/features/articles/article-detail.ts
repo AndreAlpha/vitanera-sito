@@ -5,12 +5,13 @@ import { RiskNotice } from '../../shared/legal/risk-notice';
 import { ArticleCard } from '../../shared/ui/article-card';
 import { BiasBadge } from '../../shared/ui/bias-badge';
 import { Icon } from '../../shared/ui/icon';
+import { Timestamp } from '../../shared/ui/timestamp';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-article-detail',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, Icon, ContentBlock, RiskNotice, ArticleCard, BiasBadge],
+  imports: [RouterLink, Icon, ContentBlock, RiskNotice, ArticleCard, BiasBadge, Timestamp],
   templateUrl: './article-detail.html',
   styleUrl: './article-detail.scss',
   host: { '(window:scroll)': 'onScroll()' },

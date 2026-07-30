@@ -36,7 +36,9 @@ describe('pagine', () => {
   it('panoramica', async () => {
     const text = textOf(await render(Home));
     expect(text).toContain('XAU/USD');
-    expect(text).toContain('Nessun contenuto è consulenza finanziaria');
+    expect(text).toContain('Non è consulenza finanziaria');
+    // L'indicatore operativo è sempre presente, valido o scaduto che sia.
+    expect(text).toMatch(/Lettura valida|In attesa di notizie/);
   });
 
   it('elenco per categoria e archivio', async () => {

@@ -102,8 +102,8 @@ import { PageHeader } from '../../shared/ui/page-header';
     }
 
     .search:focus-within {
-      border-color: var(--gold-line);
-      color: var(--gold-soft);
+      border-color: var(--accent-line);
+      color: var(--accent-soft);
     }
 
     .search input {
@@ -130,8 +130,8 @@ import { PageHeader } from '../../shared/ui/page-header';
     }
 
     .letters .chip:hover {
-      border-color: var(--gold-line);
-      color: var(--gold-soft);
+      border-color: var(--accent-line);
+      color: var(--accent-soft);
     }
 
     .grid {
@@ -155,9 +155,9 @@ import { PageHeader } from '../../shared/ui/page-header';
       height: 30px;
       flex: none;
       border-radius: 10px;
-      border: 1px solid var(--gold-line);
-      background: var(--gold-dim);
-      color: var(--gold);
+      border: 1px solid var(--accent-line);
+      background: var(--accent-dim);
+      color: var(--accent);
       font-size: 13px;
       font-weight: 800;
     }
@@ -183,7 +183,7 @@ import { PageHeader } from '../../shared/ui/page-header';
     }
 
     .term__why strong {
-      color: var(--gold-deep);
+      color: var(--accent-deep);
     }
 
     .term__rel {

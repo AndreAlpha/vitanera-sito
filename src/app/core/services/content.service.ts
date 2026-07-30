@@ -43,6 +43,46 @@ export function formatDate(iso: string): string {
   return `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
 }
 
+/** Solo l'ora: "08:40". */
+export function formatTime(iso: string): string {
+  const d = new Date(iso);
+  return `${`${d.getHours()}`.padStart(2, '0')}:${`${d.getMinutes()}`.padStart(2, '0')}`;
+}
+
+/**
+ * Tempo trascorso in forma compatta ("adesso", "18m fa", "2h fa").
+ * Oltre `limitHours` restituisce data e ora di pubblicazione.
+ */
+export function formatSince(iso: string, now: number, limitHours = 12): string {
+  const diff = now - Date.parse(iso);
+
+  if (diff < 0 || diff >= limitHours * 3_600_000) {
+    return formatDateTime(iso);
+  }
+  if (diff < 60_000) {
+    return 'adesso';
+  }
+
+  const minutes = Math.floor(diff / 60_000);
+  if (minutes < 60) {
+    return `${minutes}m fa`;
+  }
+
+  const hours = Math.floor(minutes / 60);
+  const rest = minutes % 60;
+  return rest === 0 ? `${hours}h fa` : `${hours}h ${rest}m fa`;
+}
+
+/** Durata compatta a partire da millisecondi: "42m", "1h 05m". */
+export function formatDuration(ms: number): string {
+  const minutes = Math.max(0, Math.round(ms / 60_000));
+  if (minutes < 60) {
+    return `${minutes}m`;
+  }
+  const hours = Math.floor(minutes / 60);
+  return `${hours}h ${`${minutes % 60}`.padStart(2, '0')}m`;
+}
+
 @Injectable({ providedIn: 'root' })
 export class ContentService {
   private readonly all = signal<readonly Article[]>(

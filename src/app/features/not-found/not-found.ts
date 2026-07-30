@@ -64,7 +64,7 @@ import { Icon } from '../../shared/ui/icon';
       font-size: 13px;
       font-weight: 800;
       letter-spacing: 0.2em;
-      color: var(--gold-deep);
+      color: var(--accent-deep);
       margin-bottom: 14px;
     }
 
@@ -116,12 +116,12 @@ import { Icon } from '../../shared/ui/icon';
     }
 
     .nf__link:hover {
-      border-color: var(--gold-line);
-      color: var(--gold-soft);
+      border-color: var(--accent-line);
+      color: var(--accent-soft);
     }
 
     .nf__link app-icon {
-      color: var(--gold-deep);
+      color: var(--accent-deep);
     }
   `,
 })

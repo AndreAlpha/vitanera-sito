@@ -135,7 +135,7 @@ const ICONS: Record<string, string> = {
       font-size: 16.5px;
       letter-spacing: -0.02em;
       margin-bottom: 12px;
-      color: var(--gold-soft);
+      color: var(--accent-soft);
     }
 
     .sec p {
@@ -151,7 +151,7 @@ const ICONS: Record<string, string> = {
     }
 
     .sec a {
-      color: var(--gold-soft);
+      color: var(--accent-soft);
       text-decoration: underline;
     }
 
@@ -179,15 +179,15 @@ const ICONS: Record<string, string> = {
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--gold);
+      background: var(--accent);
       opacity: 0.7;
     }
 
     .sec--final {
       padding: 18px 20px;
-      border: 1px solid var(--gold-line);
+      border: 1px solid var(--accent-line);
       border-radius: var(--r-md);
-      background: var(--gold-dim);
+      background: var(--accent-dim);
     }
 
     .side {
@@ -243,8 +243,8 @@ const ICONS: Record<string, string> = {
     }
 
     .side__link--active {
-      background: var(--gold-dim);
-      color: var(--gold-soft);
+      background: var(--accent-dim);
+      color: var(--accent-soft);
     }
 
     .side__card--warn {
