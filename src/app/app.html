@@ -1,0 +1,143 @@
+<div class="app-decor" aria-hidden="true">
+  <div class="app-decor__glow"></div>
+  <div class="app-decor__globe"></div>
+  <div class="app-decor__grid"></div>
+</div>
+
+<app-disclaimer-bar />
+
+<div class="shell">
+  <!-- ------------------------------------------------------------------ -->
+  <!-- Barra laterale                                                      -->
+  <!-- ------------------------------------------------------------------ -->
+  <aside class="app-sidebar" [class.app-sidebar--open]="menuOpen()">
+    <a class="brand" routerLink="/">
+      <span class="brand__mark">V</span>
+      <span class="brand__text">
+        <span class="brand__name">{{ site.name }}</span>
+        <span class="brand__tag">Macro · Geopolitica · Oro</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Navigazione principale">
+      @for (group of nav; track group.label) {
+        <div class="nav__group">
+          <p class="eyebrow nav__label">{{ group.label }}</p>
+          @for (item of group.items; track item.path) {
+            <a
+              class="nav__item"
+              [routerLink]="item.path"
+              routerLinkActive="nav__item--active"
+              [routerLinkActiveOptions]="{ exact: !!item.exact }"
+            >
+              <span class="nav__icon"><app-icon [name]="item.icon" [size]="17" /></span>
+              <span>{{ item.label }}</span>
+            </a>
+          }
+        </div>
+      }
+    </nav>
+
+    <div class="side-note">
+      <div class="side-note__head">
+        <app-icon name="shield" [size]="14" />
+        <span>Trasparenza</span>
+      </div>
+      <p>
+        Sito personale, <strong>non una testata giornalistica</strong>. Nessun contenuto è
+        consulenza finanziaria.
+      </p>
+      <a routerLink="/avvertenze"
+        >Leggi le avvertenze <app-icon name="arrow-right" [size]="13"
+      /></a>
+    </div>
+  </aside>
+
+  @if (menuOpen()) {
+    <button class="scrim" type="button" aria-label="Chiudi il menu" (click)="toggleMenu()"></button>
+  }
+
+  <!-- ------------------------------------------------------------------ -->
+  <!-- Colonna principale                                                  -->
+  <!-- ------------------------------------------------------------------ -->
+  <div class="main">
+    <header class="app-topbar">
+      <button
+        class="icon-btn menu-btn"
+        type="button"
+        aria-label="Apri il menu"
+        (click)="toggleMenu()"
+      >
+        <app-icon name="menu" [size]="19" />
+      </button>
+
+      <div class="crumbs">
+        <nav class="crumbs__trail" aria-label="Percorso">
+          <a routerLink="/" class="crumbs__home" aria-label="Panoramica">
+            <app-icon name="dashboard" [size]="13" />
+          </a>
+          @for (crumb of crumbs(); track crumb.link) {
+            <span class="crumbs__sep">/</span>
+            <a [routerLink]="crumb.link">{{ crumb.label }}</a>
+          }
+        </nav>
+        <p class="crumbs__title">{{ pageTitle() }}</p>
+      </div>
+
+      <div class="search" [class.search--open]="searchOpen()">
+        <app-icon name="search" [size]="16" />
+        <input
+          type="search"
+          placeholder="Cerca un’analisi, un tema, uno strumento…"
+          aria-label="Cerca nel sito"
+          [value]="query()"
+          (input)="onQuery($event)"
+          (focus)="searchFocused.set(true)"
+          (blur)="searchFocused.set(false)"
+        />
+        @if (searchOpen()) {
+          <div class="search__panel">
+            @if (results().length) {
+              @for (item of results(); track item.slug) {
+                <button type="button" class="search__row" (mousedown)="goTo(item.slug)">
+                  <span class="search__kicker">{{ item.kicker }}</span>
+                  <span class="search__title">{{ item.title }}</span>
+                </button>
+              }
+            } @else {
+              <p class="search__empty">Nessun risultato per «{{ query() }}».</p>
+            }
+            <p class="search__legal">
+              I risultati rimandano a contenuti informativi, non a indicazioni operative.
+            </p>
+          </div>
+        }
+      </div>
+
+      <div class="top-actions">
+        <span class="chip chip--gold top-chip">
+          <app-icon name="alert" [size]="12" />
+          Non è consulenza finanziaria
+        </span>
+        <a
+          class="icon-btn"
+          routerLink="/avvertenze"
+          aria-label="Avvertenze e rischi"
+          title="Avvertenze e rischi"
+        >
+          <app-icon name="shield" [size]="17" />
+        </a>
+        <a class="icon-btn" routerLink="/glossario" aria-label="Glossario" title="Glossario">
+          <app-icon name="book" [size]="17" />
+        </a>
+      </div>
+    </header>
+
+    <main id="contenuto" class="content">
+      <router-outlet />
+      <app-site-footer />
+    </main>
+  </div>
+</div>
+
+<app-disclaimer-modal />

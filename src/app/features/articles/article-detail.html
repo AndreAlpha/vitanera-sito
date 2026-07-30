@@ -1,0 +1,230 @@
+@if (article(); as a) {
+  <div class="progress no-print" aria-hidden="true">
+    <span [style.transform]="'scaleX(' + progress() + ')'"></span>
+  </div>
+
+  <article class="detail print-legal">
+    <!-- ------------------------------------------------------------------ -->
+    <!-- Testata                                                             -->
+    <!-- ------------------------------------------------------------------ -->
+    <header class="hero anim-up">
+      <div class="hero__top">
+        @if (category(); as c) {
+          <a
+            class="chip chip--gold"
+            [routerLink]="['/', c.slug === 'previsioni' ? 'orizzonti' : c.slug]"
+          >
+            <app-icon [name]="c.icon" [size]="12" />
+            {{ c.name }}
+          </a>
+        }
+        <span class="hero__date">{{ published() }}</span>
+      </div>
+
+      <p class="hero__kicker">{{ a.kicker }}</p>
+      <h1 class="hero__title">{{ a.title }}</h1>
+      <p class="hero__dek">{{ a.dek }}</p>
+
+      <div class="hero__meta">
+        <span><app-icon name="compass" [size]="13" />{{ a.author }}</span>
+        <span><app-icon name="clock" [size]="13" />{{ a.readingMinutes }} minuti di lettura</span>
+        @for (h of a.horizons; track h) {
+          <span class="chip chip--sm">{{ horizonLabel(h) }}</span>
+        }
+      </div>
+
+      <div class="hero__chips">
+        @if (a.bias; as bias) {
+          <app-bias-badge
+            [direction]="bias.direction"
+            [strength]="bias.strength"
+            [prefix]="bias.asset + ' ·'"
+          />
+        }
+        <span class="chip chip--neutral">
+          <app-icon name="target" [size]="12" />
+          Certezza {{ a.certainty }}
+        </span>
+        @for (i of a.instruments; track i) {
+          <span class="chip chip--sm">{{ i }}</span>
+        }
+      </div>
+
+      <div class="hero__actions no-print">
+        <button type="button" class="btn btn--ghost btn--sm" (click)="print()">
+          <app-icon name="print" [size]="14" />
+          Stampa
+        </button>
+        <button type="button" class="btn btn--ghost btn--sm" (click)="copyLink()">
+          <app-icon name="link" [size]="14" />
+          {{ copied() ? 'Link copiato' : 'Copia link' }}
+        </button>
+      </div>
+    </header>
+
+    <app-risk-notice variant="card" title="Prima di leggere" />
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- Corpo + colonna laterale                                            -->
+    <!-- ------------------------------------------------------------------ -->
+    <div class="layout">
+      <div class="body">
+        @if (a.takeaways.length) {
+          <section class="summary">
+            <p class="summary__title">
+              <app-icon name="spark" [size]="15" />
+              In sintesi
+            </p>
+            <ul>
+              @for (t of a.takeaways; track t) {
+                <li><span class="summary__dot"></span>{{ t }}</li>
+              }
+            </ul>
+            <p class="summary__legal">
+              Sintesi redazionale del contenuto. Non è un riepilogo di raccomandazioni: non lo è
+              nessuna parte di questo testo.
+            </p>
+          </section>
+        }
+
+        @for (block of a.blocks; track $index) {
+          <app-content-block [block]="block" />
+        }
+
+        @if (a.bias; as bias) {
+          <section class="regime">
+            <p class="regime__label">Regime descritto</p>
+            <p class="regime__text">{{ bias.regime }}</p>
+            <div class="regime__row">
+              <app-bias-badge
+                [direction]="bias.direction"
+                [strength]="bias.strength"
+                [prefix]="bias.asset + ' ·'"
+              />
+              <span class="chip chip--sm chip--neutral"
+                >Forza del segnale: {{ bias.strength }}</span
+              >
+            </div>
+          </section>
+        }
+
+        @if (a.nextEvent; as ev) {
+          <section class="event">
+            <div class="event__icon"><app-icon name="calendar" [size]="19" /></div>
+            <div>
+              <p class="event__when">{{ ev.when }}</p>
+              <p class="event__title">{{ ev.title }}</p>
+              @if (ev.detail) {
+                <p class="event__detail">{{ ev.detail }}</p>
+              }
+            </div>
+          </section>
+        }
+
+        @if (a.invalidation?.length) {
+          <section class="invalid">
+            <p class="invalid__title">
+              <app-icon name="close" [size]="15" />
+              Cosa invaliderebbe questa lettura
+            </p>
+            <ul>
+              @for (item of a.invalidation; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+            <p class="invalid__note">
+              L’elenco è dichiarato in anticipo per rendere verificabile l’analisi. Non descrive
+              livelli operativi né suggerisce comportamenti.
+            </p>
+          </section>
+        }
+
+        @if (a.certaintyNote) {
+          <section class="certainty">
+            <p class="certainty__title">Livello di certezza dichiarato: {{ a.certainty }}</p>
+            <p class="certainty__text">{{ a.certaintyNote }}</p>
+            <div class="certainty__meter" [attr.data-level]="a.certainty">
+              <i></i><i></i><i></i>
+            </div>
+          </section>
+        }
+
+        <div class="tags">
+          @for (tag of a.tags; track tag) {
+            <span class="chip chip--sm">#{{ tag }}</span>
+          }
+        </div>
+
+        <app-risk-notice variant="full" />
+      </div>
+
+      <!-- ---------------------------------------------------------------- -->
+      <aside class="side no-print">
+        <div class="side__sticky">
+          @if (toc().length) {
+            <nav class="toc" aria-label="Indice dell’analisi">
+              <p class="toc__title">Indice</p>
+              @for (entry of toc(); track entry.anchor) {
+                <a
+                  [href]="'#' + entry.anchor"
+                  [class.toc__link--active]="activeAnchor() === entry.anchor"
+                  class="toc__link"
+                >
+                  {{ entry.text }}
+                </a>
+              }
+            </nav>
+          }
+
+          <div class="side__card">
+            <p class="side__label">Strumenti citati</p>
+            <div class="side__chips">
+              @for (i of a.instruments; track i) {
+                <span class="chip chip--sm">{{ i }}</span>
+              }
+            </div>
+            <p class="side__hint">
+              Citati a titolo descrittivo. Nessun invito a operare su tali strumenti.
+            </p>
+          </div>
+
+          <div class="side__card side__card--warn">
+            <p class="side__label side__label--warn">
+              <app-icon name="alert" [size]="13" />
+              Promemoria
+            </p>
+            <p class="side__hint">
+              Vitanera non è una testata giornalistica registrata. Nessun contenuto è consulenza
+              finanziaria o raccomandazione di investimento.
+            </p>
+            <a class="side__link" routerLink="/avvertenze"
+              >Avvertenze complete <app-icon name="arrow-right" [size]="12"
+            /></a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ------------------------------------------------------------------ -->
+    @if (related().length) {
+      <section class="related no-print">
+        <div class="related__head">
+          <h2>Altre analisi</h2>
+          <a routerLink="/analisi">Archivio completo <app-icon name="arrow-right" [size]="14" /></a>
+        </div>
+        <div class="related__grid">
+          @for (item of related(); track item.slug) {
+            <app-article-card [article]="item" />
+          }
+        </div>
+      </section>
+    }
+  </article>
+} @else {
+  <section class="missing">
+    <app-icon name="archive" [size]="30" />
+    <h1>Analisi non trovata</h1>
+    <p>Il contenuto richiesto non esiste o è stato rimosso.</p>
+    <a class="btn btn--gold" routerLink="/analisi">Vai all’archivio</a>
+  </section>
+}
