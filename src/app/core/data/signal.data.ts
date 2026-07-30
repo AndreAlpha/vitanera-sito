@@ -10,6 +10,11 @@ import { BiasDirection, Level } from '../models/article.model';
  * Trascorsi `validityMinutes` minuti dall'aggiornamento, l'indicatore scade
  * automaticamente e la panoramica passa allo stato «in attesa di notizie».
  *
+ * La durata non è fissa: si sceglie a ogni pubblicazione in base a quanto regge
+ * la lettura. Un controllo intraday cross-asset vale poche decine di minuti, un
+ * dato macro o una decisione di banca centrale reggono l'intera seduta. Il
+ * valore è mostrato anche al lettore, quindi va tenuto tondo.
+ *
  * Resta un riepilogo editoriale di quanto scritto negli articoli: non è
  * consulenza finanziaria né un segnale di acquisto o vendita.
  */

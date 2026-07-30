@@ -1,6 +1,6 @@
 ---
 name: pubblica-analisi
-description: Pubblica una o più analisi su Vitanera partendo dal testo grezzo. Decide titolo e sezione, lo converte in blocchi strutturati, aggiorna l'indicatore operativo e i riferimenti di mercato in panoramica, verifica la build e i test, poi fa commit e push. Usare quando l'utente fornisce il testo di un'analisi da pubblicare ("aggiungi questo articolo", "pubblica questa analisi", "pubblica queste analisi", "inserisci questi").
+description: Pubblica una o più analisi su Vitanera partendo dal testo grezzo. Decide titolo, sezione e durata della lettura, la converte in blocchi strutturati, aggiorna l'indicatore operativo e i riferimenti di mercato in panoramica, verifica la build e i test, poi fa commit e push. Usare quando l'utente fornisce il testo di un'analisi da pubblicare ("aggiungi questo articolo", "pubblica questa analisi", "pubblica queste analisi", "inserisci questi").
 ---
 
 # Pubblicare un'analisi su Vitanera
@@ -8,9 +8,9 @@ description: Pubblica una o più analisi su Vitanera partendo dal testo grezzo. 
 L'argomento è il **testo grezzo** dell'analisi. Se è un percorso di file, leggilo.
 Se manca del tutto, chiedi il testo e fermati.
 
-Non chiedere conferma su titolo, sezione o orario: sono decisioni tue, prese con
-le regole qui sotto. Chiedi solo se il testo è ambiguo al punto da rendere
-impossibile capire di quale strumento parla.
+Non chiedere conferma su titolo, sezione, orario o durata della lettura: sono
+decisioni tue, prese con le regole qui sotto. Chiedi solo se il testo è ambiguo
+al punto da rendere impossibile capire di quale strumento parla.
 
 ## 0. Quante analisi ci sono nell'argomento
 
@@ -170,7 +170,8 @@ Se hai pubblicato più analisi in una volta, l'indicatore riflette **solo la pi�
 recente**: è quella che descrive il mercato adesso. Le precedenti possono
 comparire nello `stance` e in `sources`, mai nella direzione.
 
-- `updatedAt`: identico al `publishedAt` del nuovo articolo — quindi anch'esso già trascorso. Fa scattare la validità di 60 minuti. Con più analisi è il `publishedAt` della più recente, ossia il più alto dei valori appena scritti.
+- `updatedAt`: identico al `publishedAt` del nuovo articolo — quindi anch'esso già trascorso. Fa scattare il conto alla rovescia. Con più analisi è il `publishedAt` della più recente, ossia il più alto dei valori appena scritti.
+- `validityMinutes`: quanto dura la lettura. **Va deciso ogni volta**, vedi sotto.
 - `direction`, `strength`: dal bias del nuovo articolo, se ne ha uno; altrimenti resta il più recente disponibile.
 - `headline`: una riga, il fatto che conta adesso.
 - `stance`: due o tre righe che tengono insieme le ultime letture delle diverse sezioni.
@@ -178,6 +179,64 @@ comparire nello `stance` e in `sources`, mai nella direzione.
 - `invalidation`: la condizione che fa decadere la lettura.
 - `confirming` / `contradicting`: etichette brevissime con il valore, per esempio `DXY debole ≈ 100,65`.
 - `sources`: fino a tre slug, dal più recente, possibilmente di sezioni diverse. Devono esistere in `articles.data.ts`.
+
+### Quanto deve durare la lettura
+
+`validityMinutes` **non è un valore fisso**: 60 minuti è solo il punto di
+partenza. Scaduto il termine la panoramica passa a «in attesa di notizie», ed è
+giusto che accada quando la lettura non descrive più il mercato — non un minuto
+prima e non un'ora dopo.
+
+Il numero è **visibile al lettore** («valido X minuti dall'aggiornamento»),
+quindi usa valori tondi: `30`, `45`, `60`, `90`, `120`, `180`, `240`.
+
+Parti dalla natura dell'analisi:
+
+| Tipo di analisi | Durata tipica | Perché |
+| --- | --- | --- |
+| Controllo intraday cross-asset | 30–45 | Vive di variazioni che cambiano nel giro di minuti: il testo stesso avverte che perde validità se dollaro e rendimenti si muovono. |
+| Pubblicazione di un dato macro | 90–120 | Il dato resta un fatto per tutta la seduta; a muoversi è solo la reazione. |
+| Decisione di banca centrale | 120–240 | Il quadro regge fino al dato o all'intervento successivo. |
+| Scheda geopolitica o di sintesi | 180–240 | Descrive un contesto, non un movimento di prezzo. |
+
+Poi correggi in base a **quello che è successo prima**, guardando le ultime
+pubblicazioni in archivio:
+
+- **Accorcia** se la direzione è cambiata più di una volta nelle ultime ore: un
+  regime che si è già ribaltato due volte non merita una validità lunga.
+- **Accorcia** se la lettura poggia su una sola conferma, o se il testo dichiara
+  una divergenza aperta: sono le letture che decadono per prime.
+- **Allunga** se i correlati sono allineati e concordi, o se l'analisi conferma
+  quella precedente invece di ribaltarla: due letture coerenti di fila valgono
+  più a lungo di una isolata.
+- **Allunga** se il fatto nuovo è strutturale — un dato pubblicato, una
+  decisione presa — e non una reazione di prezzo.
+
+Due vincoli che vengono prima di tutto il resto:
+
+- Se l'articolo ha un `nextEvent`, **la validità non deve superare quel
+  catalizzatore**: dopo, la lettura è per definizione da rifare.
+- Se il testo dice esplicitamente per quanto vale («fino alla chiusura
+  americana», «in attesa del dato delle 14:30»), quella indicazione vince su
+  qualunque valore di tabella.
+
+Motiva la scelta nel resoconto finale (passo 9), in mezza riga: chi legge deve
+capire perché quella lettura dura 45 minuti e la precedente ne durava 120.
+
+### Prolungare una lettura già pubblicata
+
+Se serve tenere viva la lettura corrente più a lungo senza pubblicare una nuova
+analisi — succede quando il mercato non offre fatti nuovi — **alza
+`validityMinutes`, non toccare `updatedAt`**.
+
+`updatedAt` deve restare identico al `publishedAt` dell'ultima analisi: è un
+controllo dei test, e spostarlo significherebbe dichiarare un aggiornamento che
+non è avvenuto. Aggiornare la sola durata è invece una scelta editoriale
+legittima: la lettura è la stessa, dura di più.
+
+Ricordati che il nuovo valore è visibile al lettore, quindi resta un numero
+tondo, e ricalcola l'ora di scadenza prima di rispondere: `updatedAt` più
+`validityMinutes`, non «un'ora da adesso».
 
 ## 5. Aggiorna i riferimenti di mercato
 
@@ -305,9 +364,10 @@ Riporta all'utente quale dei tre casi è, senza rifare build o commit inutili.
 ## 9. Riferisci
 
 Chiudi dicendo, in poche righe: titolo scelto, sezione e perché, orario di
-pubblicazione, come è cambiato l'indicatore, e **quali modifiche hai fatto al
-testo dell'autore** (refusi, riformulazioni, tagli). Quest'ultimo punto va
-sempre esplicitato.
+pubblicazione, come è cambiato l'indicatore — **direzione, forza e durata
+scelta, con l'ora di scadenza calcolata** — e **quali modifiche hai fatto al
+testo dell'autore** (refusi, riformulazioni, tagli). Gli ultimi due punti vanno
+sempre esplicitati.
 
 Con più analisi ripeti titolo, sezione e orario per ciascuna, poi dai una volta
 sola l'esito dell'indicatore e dei riferimenti di mercato. Se hai unito o
