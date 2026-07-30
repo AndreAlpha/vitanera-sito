@@ -189,6 +189,26 @@ export type RiskNoticeVariant = 'line' | 'card' | 'full';
       padding-top: 16px;
       border-top: 1px solid var(--line);
     }
+
+    @media (max-width: 620px) {
+      .notice {
+        padding: 14px 15px;
+      }
+
+      .full {
+        padding: 18px 16px;
+      }
+
+      /* Su colonna stretta il testo giustificato apre buchi fra le parole. */
+      .full__body p {
+        text-align: left;
+        hyphens: none;
+      }
+
+      .full__foot .btn {
+        flex: 1 0 100%;
+      }
+    }
   `,
 })
 export class RiskNotice {

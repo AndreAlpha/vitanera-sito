@@ -203,12 +203,37 @@ import { Icon } from '../ui/icon';
     }
 
     @media (max-width: 560px) {
+      .overlay {
+        padding: 12px;
+      }
+
       .sheet {
-        padding: 24px 20px 20px;
+        padding: 22px 18px 18px;
+        max-height: calc(100dvh - 24px);
+      }
+
+      .sheet__head {
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .mark {
+        width: 40px;
+        height: 40px;
+        border-radius: 13px;
       }
 
       h2 {
         font-size: 18px;
+      }
+
+      .points {
+        padding: 15px 14px 14px;
+        gap: 11px;
+      }
+
+      .points li {
+        font-size: 12.6px;
       }
 
       .sheet__foot .btn {

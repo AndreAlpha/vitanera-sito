@@ -293,6 +293,32 @@ const ICONS: Record<string, string> = {
         position: static;
       }
     }
+
+    @media (max-width: 620px) {
+      /* I documenti legali sono i testi più lunghi del sito: a bandiera
+         restano leggibili anche su colonna stretta. */
+      .sec p {
+        text-align: left;
+        hyphens: none;
+      }
+
+      .sec {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+      }
+
+      .sec h2 {
+        font-size: 15.5px;
+      }
+
+      .sec--final {
+        padding: 16px 15px;
+      }
+
+      .meta {
+        gap: 6px;
+      }
+    }
   `,
 })
 export class LegalPage {

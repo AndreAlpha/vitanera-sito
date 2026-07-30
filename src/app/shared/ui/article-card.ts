@@ -225,6 +225,33 @@ import { Timestamp } from './timestamp';
     .art:hover .art__cta {
       gap: 12px;
     }
+
+    @media (max-width: 620px) {
+      .art {
+        padding: 16px 17px 15px;
+      }
+
+      .art__title {
+        font-size: 17px;
+      }
+
+      .art--feature .art__title {
+        font-size: 20px;
+      }
+
+      .art__top {
+        margin-bottom: 12px;
+      }
+
+      .art__points {
+        margin-top: 13px;
+        padding: 12px 13px;
+      }
+
+      .art__points li {
+        font-size: 12px;
+      }
+    }
   `,
 })
 export class ArticleCard {

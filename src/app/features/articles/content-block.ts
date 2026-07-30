@@ -390,7 +390,7 @@ import { Icon } from '../../shared/ui/icon';
 
     .stats__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr));
       gap: 10px;
     }
 
@@ -479,7 +479,7 @@ import { Icon } from '../../shared/ui/icon';
 
     .scen__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
       gap: 12px;
     }
 
@@ -550,7 +550,7 @@ import { Icon } from '../../shared/ui/icon';
 
     .bal__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
       gap: 12px;
     }
 
@@ -729,6 +729,7 @@ import { Icon } from '../../shared/ui/icon';
     @media (max-width: 700px) {
       .para {
         font-size: 16.4px;
+        line-height: 1.72;
       }
 
       .para--lead {
@@ -737,6 +738,42 @@ import { Icon } from '../../shared/ui/icon';
 
       .h2 {
         font-size: 19px;
+        margin: 32px 0 14px;
+        scroll-margin-top: 96px;
+      }
+
+      .ulist li,
+      .olist li {
+        font-size: 14.6px;
+      }
+
+      .callout,
+      .stats,
+      .scen__card,
+      .bal__side {
+        padding: 15px 16px;
+      }
+
+      .callout__text,
+      .callout__list li {
+        font-size: 13.8px;
+      }
+
+      .stats__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .stat__value {
+        font-size: 15.5px;
+      }
+
+      .quote {
+        padding-left: 16px;
+      }
+
+      .quote p {
+        font-size: 16.5px;
       }
     }
   `,

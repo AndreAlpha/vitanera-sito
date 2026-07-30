@@ -352,9 +352,11 @@ import { Timestamp } from '../../shared/ui/timestamp';
       min-width: 0;
     }
 
+    /* La lettura scaduta resta leggibile ma chiaramente in secondo piano:
+       sotto questa soglia le etichette diventavano illeggibili su mobile. */
     .sig--expired .detail {
-      opacity: 0.42;
-      filter: saturate(0.4);
+      opacity: 0.58;
+      filter: saturate(0.45);
     }
 
     .detail__headline {
@@ -373,7 +375,7 @@ import { Timestamp } from '../../shared/ui/timestamp';
 
     .cols {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
       gap: 12px;
       margin-top: 20px;
     }
@@ -579,10 +581,63 @@ import { Timestamp } from '../../shared/ui/timestamp';
 
       .sig__legal {
         text-align: left;
+        min-width: 0;
       }
 
       .tags__label {
         min-width: 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .sig__bar {
+        padding: 13px 16px 11px;
+        gap: 10px;
+      }
+
+      .sig__timing {
+        flex-wrap: wrap;
+        gap: 4px 10px;
+        margin-left: 0;
+        flex: 1 0 100%;
+      }
+
+      .gauge,
+      .detail {
+        padding: 18px 16px;
+      }
+
+      .gauge__icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 15px;
+        margin-bottom: 14px;
+      }
+
+      .gauge__value {
+        font-size: 18px;
+      }
+
+      .detail__headline {
+        font-size: 17px;
+      }
+
+      .detail__stance {
+        font-size: 13.4px;
+      }
+
+      .sig__foot {
+        padding: 13px 16px 15px;
+      }
+
+      /* In verticale l'etichetta va sopra ai relativi indicatori. */
+      .tags__row {
+        gap: 5px;
+      }
+
+      .tags__label {
+        flex: 1 0 100%;
+        margin-bottom: 1px;
       }
     }
   `,

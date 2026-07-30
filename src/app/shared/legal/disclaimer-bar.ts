@@ -17,8 +17,8 @@ import { Icon } from '../ui/icon';
         <strong>Avvertenza permanente.</strong>
         <span class="d-md">Vitanera non è una testata giornalistica registrata.</span>
         I contenuti sono informativi e didattici e
-        <strong>non costituiscono consulenza finanziaria</strong> né raccomandazione di
-        investimento.
+        <strong>non costituiscono consulenza finanziaria</strong
+        ><span class="d-sm"> né raccomandazione di investimento</span>.
       </p>
       <a routerLink="/avvertenze">
         Dettagli
@@ -89,6 +89,26 @@ import { Icon } from '../ui/icon';
       .bar {
         padding: 6px 14px;
         font-size: 11px;
+      }
+    }
+
+    /* Sotto questa larghezza resta solo il nucleo dell'avvertenza: senza il
+       taglio occuperebbe quattro righe in cima a ogni schermata. */
+    @media (max-width: 560px) {
+      .d-sm {
+        display: none;
+      }
+
+      .bar {
+        align-items: flex-start;
+        gap: 8px;
+        padding: 7px 12px;
+        font-size: 10.8px;
+        line-height: 1.4;
+      }
+
+      .bar > app-icon {
+        margin-top: 1px;
       }
     }
   `,

@@ -234,7 +234,7 @@ const HORIZONS: readonly HorizonBlock[] = [
 
     .current__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
       gap: 14px;
     }
 
@@ -322,7 +322,7 @@ const HORIZONS: readonly HorizonBlock[] = [
 
     .hz__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
       gap: 26px;
     }
 
@@ -383,6 +383,46 @@ const HORIZONS: readonly HorizonBlock[] = [
 
     .hz__limits strong {
       color: var(--text-soft);
+    }
+
+    @media (max-width: 620px) {
+      .warn-strip {
+        padding: 12px 14px;
+      }
+
+      .hz {
+        padding: 18px 16px;
+      }
+
+      .hz__head {
+        gap: 12px;
+        padding-bottom: 14px;
+        margin-bottom: 16px;
+      }
+
+      .hz__icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 13px;
+      }
+
+      .hz__head h2 {
+        font-size: 18px;
+      }
+
+      .hz__grid {
+        gap: 20px;
+      }
+
+      .cur {
+        padding: 16px 16px;
+      }
+
+      .sec-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
     }
   `,
 })

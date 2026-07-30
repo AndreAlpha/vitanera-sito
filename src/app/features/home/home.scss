@@ -105,7 +105,7 @@
 
 .refs {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
   gap: 12px;
 }
 
@@ -338,7 +338,7 @@
 
 .sections {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 12px;
 }
 
@@ -389,6 +389,10 @@
 }
 
 @media (max-width: 640px) {
+  .block {
+    margin-bottom: 38px;
+  }
+
   .sec-head {
     flex-direction: column;
     align-items: flex-start;
@@ -396,6 +400,51 @@
   }
 
   .hero {
-    padding: 18px 0 30px;
+    padding: 14px 0 26px;
+  }
+
+  .hero__text {
+    font-size: 14.3px;
+  }
+
+  /* A tutta larghezza i pulsanti sono più facili da centrare col pollice. */
+  .hero__actions {
+    gap: 8px;
+  }
+
+  .hero__actions .btn {
+    flex: 1 0 100%;
+  }
+
+  /* Due riferimenti per riga: una colonna sola allungherebbe troppo la pagina. */
+  .refs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .ref {
+    padding: 14px 14px 12px;
+  }
+
+  .ref__icon {
+    display: none;
+  }
+
+  .ref__value {
+    font-size: 17px;
+  }
+
+  .strip__item {
+    padding: 6px 12px;
+  }
+
+  .feed a {
+    padding: 13px 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  .refs {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

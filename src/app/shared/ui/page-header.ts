@@ -80,6 +80,35 @@ import { Icon } from './icon';
     .head__rule {
       margin-top: 24px;
     }
+
+    @media (max-width: 620px) {
+      .head {
+        padding: 6px 0 18px;
+      }
+
+      .head__main {
+        gap: 12px;
+      }
+
+      .head__icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+      }
+
+      .head__desc {
+        margin-top: 13px;
+        font-size: 13.6px;
+      }
+
+      .head__slot {
+        margin-top: 15px;
+      }
+
+      .head__rule {
+        margin-top: 20px;
+      }
+    }
   `,
 })
 export class PageHeader {

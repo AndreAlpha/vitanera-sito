@@ -198,7 +198,7 @@ import {
 
     .foot__notes {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
       gap: 14px;
       padding: 18px 0 26px;
       border-top: 1px solid var(--line);
@@ -257,9 +257,27 @@ import {
     }
 
     @media (max-width: 620px) {
+      :host {
+        margin-top: 40px;
+      }
+
+      .foot {
+        padding: 32px 0 44px;
+      }
+
       .cols {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 22px;
+      }
+
+      /* Testo a bandiera: giustificato su colonna stretta è illeggibile. */
+      .foot__legal p {
+        text-align: left;
+        hyphens: none;
+      }
+
+      .foot__notes {
+        padding: 16px 0 20px;
       }
     }
   `,

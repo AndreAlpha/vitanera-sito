@@ -136,7 +136,7 @@ import { PageHeader } from '../../shared/ui/page-header';
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
       gap: 14px;
       margin-bottom: 30px;
     }
@@ -197,6 +197,32 @@ import { PageHeader } from '../../shared/ui/page-header';
       padding: 40px 0 30px;
       font-size: 14px;
       color: var(--text-muted);
+    }
+
+    @media (max-width: 620px) {
+      .tools {
+        gap: 10px;
+      }
+
+      /* Il campo di ricerca prende tutta la riga, le lettere vanno sotto. */
+      .search {
+        flex: 1 0 100%;
+        min-width: 0;
+      }
+
+      /* Sotto i 16px Safari su iOS ingrandisce la pagina al fuoco del campo. */
+      .search input {
+        font-size: 16px;
+      }
+
+      .letters .chip {
+        min-width: 32px;
+        padding: 6px 8px;
+      }
+
+      .term {
+        padding: 16px 16px;
+      }
     }
   `,
 })

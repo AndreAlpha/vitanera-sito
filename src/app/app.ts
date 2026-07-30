@@ -1,10 +1,14 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
+  Injector,
+  afterNextRender,
   computed,
   effect,
   inject,
   signal,
+  viewChild,
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
@@ -48,6 +52,7 @@ const SEGMENT_LABELS: Record<string, string> = {
 })
 export class App {
   private readonly router = inject(Router);
+  private readonly injector = inject(Injector);
   protected readonly content = inject(ContentService);
 
   protected readonly site = SITE;
@@ -64,6 +69,10 @@ export class App {
   protected readonly menuOpen = signal(false);
   protected readonly query = signal('');
   protected readonly searchFocused = signal(false);
+
+  /** Su schermo stretto la ricerca è nascosta dietro un pulsante. */
+  protected readonly searchBarOpen = signal(false);
+  private readonly searchInput = viewChild<ElementRef<HTMLInputElement>>('searchInput');
 
   protected readonly results = computed(() => this.content.search(this.query()));
 
@@ -133,6 +142,27 @@ export class App {
       this.menuOpen.set(false);
       this.query.set('');
       this.searchFocused.set(false);
+      this.searchBarOpen.set(false);
+    });
+
+    // Con il menu a scomparsa aperto la pagina sottostante non deve scorrere.
+    effect(() => {
+      document.body.style.overflow = this.menuOpen() ? 'hidden' : '';
+    });
+  }
+
+  protected toggleSearchBar(): void {
+    this.searchBarOpen.update((v) => !v);
+
+    if (!this.searchBarOpen()) {
+      this.query.set('');
+      return;
+    }
+
+    // Il fuoco va dato dopo il disegno: finché la classe non è applicata il
+    // campo è ancora display:none e focus() non ha alcun effetto.
+    afterNextRender(() => this.searchInput()?.nativeElement.focus(), {
+      injector: this.injector,
     });
   }
 

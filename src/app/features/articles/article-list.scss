@@ -170,7 +170,7 @@
 
 .matrix {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
   gap: 16px;
   margin-top: 26px;
 }
@@ -240,7 +240,7 @@
 
 .mx__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(84px, 100%), 1fr));
   gap: 5px;
 }
 
@@ -405,7 +405,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
   gap: 16px;
   margin-top: 26px;
 }
@@ -447,7 +447,7 @@
 
 .sections__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 12px;
   margin-top: 14px;
 }
@@ -532,5 +532,55 @@
 
   .dispatch__rail::after {
     display: none;
+  }
+
+  /* Bersagli più comodi al tocco: i filtri sono l'unico comando della pagina. */
+  .toolbar__tags .chip {
+    padding: 7px 12px;
+    font-size: 11.5px;
+  }
+
+  .dossier__item a {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 12px;
+    padding: 20px 2px;
+  }
+
+  .dossier__index {
+    font-size: 20px;
+  }
+
+  .dossier__title {
+    font-size: 18px;
+  }
+
+  .dossier__top {
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+
+  .mx,
+  .dispatch__card {
+    padding: 16px 16px;
+  }
+
+  .mx__title,
+  .dispatch__title {
+    font-size: 16.5px;
+  }
+
+  .mx__grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(72px, 100%), 1fr));
+  }
+
+  .dispatch__top,
+  .mx__head {
+    flex-wrap: wrap;
+    gap: 6px 10px;
+  }
+
+  .sections {
+    margin-top: 34px;
+    padding-top: 22px;
   }
 }
