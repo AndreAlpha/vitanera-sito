@@ -653,13 +653,19 @@ export class OperationalSignalCard {
 
   private readonly totalMs = MARKET_SIGNAL.validityMinutes * 60_000;
 
-  private readonly elapsed = computed(() => this.clock.now() - Date.parse(this.signal.updatedAt));
+  /**
+   * Tempo trascorso dall'aggiornamento, mai negativo.
+   *
+   * L'orologio del visitatore può essere indietro di qualche minuto rispetto a
+   * quello di chi pubblica: senza questo troncamento una lettura appena uscita
+   * risulterebbe "nel futuro" e verrebbe mostrata come scaduta.
+   */
+  private readonly elapsed = computed(() =>
+    Math.max(0, this.clock.now() - Date.parse(this.signal.updatedAt)),
+  );
 
   /** Vera finché non sono trascorsi i minuti di validità dichiarati. */
-  protected readonly live = computed(() => {
-    const e = this.elapsed();
-    return e >= 0 && e < this.totalMs;
-  });
+  protected readonly live = computed(() => this.elapsed() < this.totalMs);
 
   protected readonly remainingShare = computed(() =>
     Math.max(0, Math.min(100, ((this.totalMs - this.elapsed()) / this.totalMs) * 100)),

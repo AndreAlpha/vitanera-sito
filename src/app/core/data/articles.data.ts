@@ -1035,7 +1035,7 @@ const deterioramento: Article = {
   dek:
     'XAU/USD resta positivo intorno a 4.078–4.080, ma argento, platino, valute legate ai metalli e petrolio non ' +
     'accompagnano più il movimento. L’oro sta salendo quasi da solo, sostenuto soprattutto da un dollaro debole.',
-  publishedAt: '2026-07-30T14:45:00+02:00',
+  publishedAt: '2026-07-30T14:41:00+02:00',
   author: AUTHOR,
   readingMinutes: 5,
   tags: ['Correlazioni', 'Cross-asset', 'Metalli', 'Dollaro', 'Divergenza'],

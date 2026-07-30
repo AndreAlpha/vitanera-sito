@@ -21,11 +21,16 @@ Prima di scrivere, apri sempre:
 - `src/app/core/data/markets.data.ts` — riferimenti numerici in panoramica
 - `src/app/core/models/article.model.ts` — tipi, se hai dubbi sui campi
 
-Serve anche l'ora corrente, perché `publishedAt` non può essere nel futuro:
+Serve anche l'ora corrente:
 
 ```powershell
 Get-Date -Format "yyyy-MM-ddTHH:mm:ssK"
 ```
+
+**Usa un orario già trascorso**, non arrotondato in avanti. Un `publishedAt`
+anche di due minuti nel futuro fa apparire l'indicatore come «in attesa di
+notizie» appena pubblicato e mostra la data assoluta al posto del tempo
+trascorso. Nel dubbio togli qualche minuto.
 
 ## 2. Decidi la sezione
 
@@ -101,7 +106,11 @@ Non appiattire tutto in paragrafi.
 `MARKET_SIGNAL` in `src/app/core/data/signal.data.ts` è la sintesi delle
 **ultime pubblicazioni di tutte le sezioni**, non solo dell'ultima.
 
-- `updatedAt`: identico al `publishedAt` del nuovo articolo. Fa scattare la validità di 60 minuti.
+L'aggiornamento non è facoltativo: se lo salti, la panoramica continua a
+mostrare la lettura precedente e, passata l'ora, resta bloccata su «in attesa
+di notizie» anche se hai appena pubblicato.
+
+- `updatedAt`: identico al `publishedAt` del nuovo articolo — quindi anch'esso già trascorso. Fa scattare la validità di 60 minuti.
 - `direction`, `strength`: dal bias del nuovo articolo, se ne ha uno; altrimenti resta il più recente disponibile.
 - `headline`: una riga, il fatto che conta adesso.
 - `stance`: due o tre righe che tengono insieme le ultime letture delle diverse sezioni.
@@ -119,21 +128,43 @@ contrario, `warn` ambiguo, `neutral` fermo.
 
 Non toccare le note che ricordano che i dati non sono in tempo reale.
 
-## 6. Verifica
+## 6. Verifica e build
+
+Va eseguita **prima** del commit, in quest'ordine:
 
 ```powershell
 npx prettier --write "src/app/core/data/*.ts"
-npx ng build
-npx ng test --no-watch
+npm run build
+npm test -- --no-watch
 ```
 
-Tutti e tre devono passare. La suite rende ogni pagina e ogni articolo: se il
-nuovo contenuto rompe un template, il test fallisce. Non proseguire con errori.
+Tutti e tre devono passare. Non fare commit né push se uno solo fallisce:
+correggi e ripeti.
+
+I test in `src/app/core/data/data.spec.ts` controllano proprio gli errori che
+non rompono la compilazione ma si vedono solo a sito acceso: date di
+pubblicazione nel futuro, `updatedAt` dell'indicatore non allineato all'ultima
+analisi, fonti che puntano a slug inesistenti, ancore o slug duplicati. Se uno
+di questi fallisce, il problema è nei dati che hai appena scritto.
+
+Due avvertenze sui comandi:
+
+- Usa **`npm run build`**, non `ng build`. Lo script incatena `ng build` e
+  `scripts/prepare-pages.mjs`, che aggiunge all'output `404.html` (necessario
+  perché GitHub Pages gestisca gli indirizzi diretti come `/analisi/uno-slug`),
+  `.nojekyll` e la copia del `CNAME`. Con il solo `ng build` l'output non è
+  pubblicabile.
+- Usa **`npm test -- --no-watch`**: senza quel flag il comando resta in ascolto
+  e non termina.
+
+Il risultato finisce in `dist/vitanera/browser`, che non viene versionato:
+serve a verificare che il sito compili davvero prima di pubblicare. La build
+che va in produzione la rifà il workflow sul runner.
 
 ## 7. Commit e push
 
-Messaggio in italiano: prima riga sintetica, poi i punti principali.
-Chiudi sempre con la riga di attribuzione.
+Solo a build e test superati. Messaggio in italiano: prima riga sintetica, poi
+i punti principali. Chiudi sempre con la riga di attribuzione.
 
 ```powershell
 git add -A

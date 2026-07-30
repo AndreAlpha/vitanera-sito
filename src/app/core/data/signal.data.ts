@@ -31,7 +31,7 @@ export interface OperationalSignal {
 }
 
 export const MARKET_SIGNAL: OperationalSignal = {
-  updatedAt: '2026-07-30T14:45:00+02:00',
+  updatedAt: '2026-07-30T14:41:00+02:00',
   validityMinutes: 60,
   asset: 'XAU/USD',
   direction: 'neutrale-rialzista',

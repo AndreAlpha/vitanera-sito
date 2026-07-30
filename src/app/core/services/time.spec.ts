@@ -24,9 +24,14 @@ describe('tempo trascorso', () => {
     expect(label).toContain('·');
   });
 
-  it('una data futura non produce un tempo negativo', () => {
-    const label = formatSince(iso(-60_000), BASE);
-    expect(label).toContain('luglio');
+  it('tollera un piccolo scarto d’orologio', () => {
+    // Fino a cinque minuti "nel futuro" la pubblicazione è appena uscita.
+    expect(formatSince(iso(-60_000), BASE)).toBe('adesso');
+    expect(formatSince(iso(-4 * 60_000), BASE)).toBe('adesso');
+  });
+
+  it('oltre la tolleranza mostra data e ora', () => {
+    expect(formatSince(iso(-30 * 60_000), BASE)).toContain('luglio');
   });
 });
 

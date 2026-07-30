@@ -43,6 +43,9 @@ export function formatDate(iso: string): string {
   return `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
 }
 
+/** Scarto d'orologio tollerato fra chi pubblica e chi legge. */
+const SKEW_MS = 5 * 60_000;
+
 /** Solo l'ora: "08:40". */
 export function formatTime(iso: string): string {
   const d = new Date(iso);
@@ -56,7 +59,9 @@ export function formatTime(iso: string): string {
 export function formatSince(iso: string, now: number, limitHours = 12): string {
   const diff = now - Date.parse(iso);
 
-  if (diff < 0 || diff >= limitHours * 3_600_000) {
+  // Tolleranza per lo scarto fra l'orologio di chi pubblica e quello di chi
+  // legge: fino a cinque minuti "nel futuro" la pubblicazione è appena uscita.
+  if (diff < -SKEW_MS || diff >= limitHours * 3_600_000) {
     return formatDateTime(iso);
   }
   if (diff < 60_000) {
