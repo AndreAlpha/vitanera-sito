@@ -38,8 +38,25 @@ installa le dipendenze, esegue i test, compila e pubblica `dist/vitanera/browser
 > workflow compila ma la pubblicazione non avviene, perché Pages continua a servire i file del
 > repository invece dell’output compilato.
 
+Il file `.nojekyll` nella radice del repository è la rete di sicurezza per quel caso: impedisce a
+Jekyll di trasformare questo README nella homepage. Se la sorgente finisce per errore su un branch,
+l’indirizzo restituisce un errore invece di mostrare il README — un sintomo molto più leggibile.
+
 L’output non viene versionato: `dist/` resta in `.gitignore` e il sito viene ricompilato dal
 workflow a ogni push.
+
+### Se il browser mostra una pagina vecchia
+
+L’`index.html` viene servito con `Cache-Control: max-age=600`: fino a dieci minuti il browser può
+riproporre la versione precedente. Per sapere che cosa sta davvero servendo il dominio, senza
+fidarsi di quello che si vede a schermo:
+
+```powershell
+curl.exe -s -I https://vitanera.it/ | Select-String 'last-modified'
+```
+
+Se l’orario corrisponde all’ultimo push, il sito è aggiornato e la differenza è solo nel browser:
+ricaricamento forzato con `Ctrl+F5`, oppure una finestra in incognito per averne la certezza.
 
 ## Struttura
 
