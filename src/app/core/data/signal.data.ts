@@ -31,43 +31,38 @@ export interface OperationalSignal {
 }
 
 export const MARKET_SIGNAL: OperationalSignal = {
-  updatedAt: '2026-07-30T16:12:00+02:00',
+  updatedAt: '2026-07-30T16:20:00+02:00',
   validityMinutes: 60,
   asset: 'XAU/USD',
-  direction: 'neutrale-rialzista',
+  direction: 'ribassista',
   strength: 'media',
-  headline: 'L’oro riprende 4.100 sul dato macro morbido, ma i rendimenti lunghi non cedono',
+  headline: 'L’oro perde 4.070–4.080 dopo l’apertura USA mentre i correlati restano forti',
   stance:
-    'Il dettaglio mensile del PCE e un PIL a +1,5% rendono il quadro fondamentale moderatamente rialzista e XAU/USD ' +
-    'ha recuperato 4.100 con un massimo intorno a 4.120. La conferma cross-asset resta però parziale — argento, ' +
-    'platino e petrolio non accompagnano — e il rischio energetico legato all’Iran continua a lavorare in senso ' +
-    'inflazionistico.',
+    'Il quadro macro della mattina resta favorevole all’oro — PCE mensile in raffreddamento e PIL sotto le attese — ' +
+    'ma nel brevissimo XAU/USD ha rotto al ribasso ignorando azionario risk-on, rame e valute legate ai metalli. ' +
+    'Confermano la discesa i Treasury ancora elevati e il petrolio in calo, che toglie anche il premio geopolitico. ' +
+    'Forza medio-alta: è una rottura di correlazione, non ancora una conferma ribassista cross-asset.',
   favours: [
-    'Un’impostazione rialzista solo finché l’oro resta sopra 4.100, con spazio per ritestare 4.116–4.120.',
-    'Attendere un consolidamento sopra 4.116–4.120 prima di considerare confermata la continuazione.',
+    'Restare fuori dal lato rialzista finché XAU/USD non recupera il livello appena perso e non lo trasforma di nuovo in supporto.',
+    'Considerare lo short solo dopo la rottura di un Key Level e un retest fallito dal basso.',
   ],
   avoid: [
-    'Considerare accettato il breakout senza tenuta di 4.100: un ritorno rapido sotto quel livello lo smentirebbe.',
-    'Impostazioni ribassiste sull’oro finché inflazione mensile e crescita restano orientate verso una Fed meno aggressiva.',
+    'Aprire posizioni rialziste solo perché il DXY e alcuni metalli restano favorevoli.',
+    'Inseguire il crollo: la conclusione è attendere pullback o retest su un Key Level rotto.',
   ],
   invalidation:
-    'Una perdita stabile di 4.100 accompagnata da DXY e Treasury in rialzo, oppure una nuova escalation capace di ' +
-    'spingere il petrolio fortemente più in alto e far tornare dominanti le aspettative di stretta Fed.',
+    'Un recupero dell’area 4.070–4.080 trasformata nuovamente in supporto, oppure una reazione sul grafico a 5 ' +
+    'minuti in corrispondenza di un Key Level.',
   confirming: [
-    'Core PCE mensile +0,1%, atteso +0,2%',
-    'PCE generale mensile −0,1%',
-    'PIL T2 +1,5%, atteso ≈ 2,1%',
-    'XAU/USD sopra 4.100, massimo ≈ 4.120',
+    'US 2Y ≈ 4,29%, sopra l’ultimo controllo',
+    'US 10Y ≈ 4,67 – 4,68%',
+    'WTI ≈ −1,35%',
+    'Brent ≈ −1,56%',
   ],
-  contradicting: [
-    'US 30Y ≈ 5,21%',
-    'US 10Y ≈ 4,67 – 4,69%',
-    'Sussidi: media 4 settimane 202.750',
-    'Core PCE annuale ancora 3,3%',
-  ],
+  contradicting: ['Nasdaq +1,6%', 'S&P 500 ≈ +1%', 'Rame +2,1 / +2,8%', 'Platino ancora positivo'],
   sources: [
+    'rottura-di-correlazione-ribassista-dopo-apertura-usa',
     'oro-sopra-4100-ma-i-rendimenti-lunghi-non-cedono',
-    'deterioramento-della-conferma-cross-asset',
     'hormuz-e-bab-el-mandeb-rischio-non-ancora-blocco',
   ],
 };

@@ -1378,7 +1378,208 @@ const oroSopra4100: Article = {
   ],
 };
 
+/* ========================================================================== */
+/* 9 — Correlazioni · rottura di correlazione dopo l'apertura USA             */
+/* ========================================================================== */
+
+const rotturaCorrelazione: Article = {
+  slug: 'rottura-di-correlazione-ribassista-dopo-apertura-usa',
+  category: 'correlazioni',
+  featured: true,
+  kicker: 'Correlazioni · Controllo cross-asset',
+  title: 'Rottura di correlazione ribassista dopo l’apertura americana',
+  dek:
+    'XAU/USD ha perso rapidamente l’area 4.070–4.080 scendendo verso 4.035–4.041, mentre indici azionari, rame e ' +
+    'parte del fronte valutario restano favorevoli. Non è una correzione ordinata: è l’oro che ignora i correlati ' +
+    'potenzialmente rialzisti.',
+  publishedAt: '2026-07-30T16:20:00+02:00',
+  author: AUTHOR,
+  readingMinutes: 4,
+  tags: ['Correlazioni', 'Cross-asset', 'Divergenza', 'Treasury', 'Indici', 'Metalli'],
+  instruments: [
+    'XAU/USD',
+    'US02Y',
+    'US10Y',
+    'WTI',
+    'Brent',
+    'Nasdaq',
+    'S&P 500',
+    'EUR/USD',
+    'AUD/USD',
+    'NZD/USD',
+    'XPT/USD',
+  ],
+  horizons: ['breve'],
+  bias: {
+    asset: 'XAU/USD',
+    direction: 'ribassista',
+    strength: 'media',
+    regime:
+      'Rottura di correlazione: l’oro scende mentre azionario, rame e valute restano potenzialmente favorevoli.',
+  },
+  certainty: 'media',
+  certaintyNote:
+    'Le variazioni citate sono quelle rilevabili al momento del controllo. La divergenza è osservabile, ma resta ' +
+    'aperta: finché non compare una reazione non è possibile stabilire in che direzione si chiuderà.',
+  takeaways: [
+    'Bias intraday ribassista nel breve, forza del segnale medio-alta, con divergenza ancora aperta.',
+    'XAU/USD ha perso rapidamente l’area 4.070–4.080 ed è sceso verso 4.035–4.041.',
+    'Confermano il ribasso i Treasury ancora elevati — 2Y ≈ 4,29% e 10Y ≈ 4,67–4,68% — e il petrolio in calo.',
+    'Contraddicono il ribasso un’apertura azionaria chiaramente risk-on e un comparto metalli non uniformemente debole.',
+    'La conclusione operativa è bias short senza inseguire il crollo: attendere pullback o retest su un Key Level rotto.',
+  ],
+  invalidation: [
+    'Un recupero di XAU/USD del livello appena perso, trasformato nuovamente in supporto.',
+    'Una reazione sul grafico a 5 minuti in corrispondenza di un Key Level, che aprirebbe la strada al recupero.',
+    'Una discesa congiunta di argento, platino, AUD/USD e indici: chiuderebbe la divergenza, ma nella direzione opposta, rafforzando il segnale short fino a renderlo forte.',
+  ],
+  blocks: [
+    {
+      kind: 'paragraph',
+      lead: true,
+      text: 'Bias intraday: ribassista nel breve, ma con divergenza ancora aperta. Forza del segnale: medio-alta.',
+    },
+    {
+      kind: 'paragraph',
+      text:
+        'La novità importante è questa: XAU/USD ha perso rapidamente l’area 4.070–4.080 dollari ed è sceso verso ' +
+        '4.035–4.041, mentre una parte consistente dei correlati resta favorevole all’oro. È quindi comparsa una ' +
+        'rottura di correlazione ribassista sull’oro, non una semplice correzione ordinata.',
+    },
+    {
+      kind: 'stats',
+      title: 'Riferimenti del controllo',
+      caption:
+        'Valori rilevati al momento del controllo. Non sono quotazioni in tempo reale e non sono forniti a fini operativi.',
+      items: [
+        {
+          label: 'XAU/USD',
+          value: '4.035 – 4.041 $',
+          tone: 'gold',
+          note: 'Persa l’area 4.070–4.080',
+        },
+        { label: 'US 2Y', value: '≈ 4,29%', tone: 'bear', note: 'Sopra l’ultimo controllo' },
+        { label: 'US 10Y', value: '≈ 4,67 – 4,68%', tone: 'bear' },
+        { label: 'WTI', value: '≈ −1,35%', tone: 'bear', note: 'Brent ≈ −1,56%' },
+        { label: 'Nasdaq', value: '+1,6%', tone: 'bull', note: 'S&P 500 ≈ +1%, Dow +0,6%' },
+        { label: 'Rame', value: '+2,1 / +2,8%', tone: 'bull' },
+      ],
+    },
+    { kind: 'heading', text: 'Conferme ribassiste', anchor: 'conferme-ribassiste' },
+    {
+      kind: 'scenarios',
+      items: [
+        {
+          label: 'Treasury',
+          tone: 'bear',
+          text:
+            'Rendimenti ancora elevati: il 2 anni è intorno al 4,29% e il 10 anni circa 4,67–4,68%. La pressione del ' +
+            'costo opportunità resta concreta e il 2Y è tornato sopra il livello dell’ultimo controllo.',
+        },
+        {
+          label: 'Petrolio',
+          tone: 'bear',
+          text:
+            'WTI circa −1,35% e Brent circa −1,56% nell’ultima rilevazione Reuters. Si riduce la spinta ' +
+            'inflazionistica e geopolitica che prima aiutava l’oro.',
+        },
+        {
+          label: 'Tempistica',
+          tone: 'bear',
+          text:
+            'L’oro ha ceduto proprio dopo l’apertura americana: questo indica che sono entrati venditori reali o ' +
+            'prese di profitto più forti delle conferme esterne.',
+        },
+      ],
+    },
+    { kind: 'heading', text: 'Correlati che contraddicono il ribasso', anchor: 'contraddizioni' },
+    {
+      kind: 'callout',
+      tone: 'bull',
+      title: 'Ciò che non accompagna la discesa',
+      items: [
+        'Dow +0,6%, S&P 500 circa +1% e Nasdaq +1,6%: apertura chiaramente risk-on. Nello schema più frequente azionario forte e dollaro debole dovrebbero sostenere XAU/USD; stavolta l’oro non segue.',
+        'Rame circa +2,1/+2,8% e platino ancora positivo: il comparto metalli non è uniformemente ribassista.',
+        'EUR/USD e NZD/USD risultano ancora sopra i precedenti livelli in alcune rilevazioni, mentre AUD/USD appare più debole e meno convincente.',
+      ],
+    },
+    { kind: 'heading', text: 'Lettura del cambio di regime', anchor: 'cambio-di-regime' },
+    {
+      kind: 'paragraph',
+      text: 'Questa è la parte più importante: XAU/USD sta ignorando correlati potenzialmente rialzisti.',
+    },
+    {
+      kind: 'paragraph',
+      text:
+        'Nel metodo seguito, quando l’oro non accompagna AUD, NZD, EUR e gli altri metalli, la divergenza può ' +
+        'anticipare un movimento verso un Key Level e una successiva reazione. Ma finché la reazione non compare non ' +
+        'bisogna presumere che l’oro debba necessariamente recuperare: conta la direzionalità effettiva, non il valore ' +
+        'giornaliero isolato.',
+    },
+    {
+      kind: 'list',
+      title: 'A cosa il mercato sta probabilmente dando più peso',
+      items: [
+        'Rendimenti USA ancora molto elevati.',
+        'Liquidazioni dopo il massimo intraday.',
+        'Spostamento di liquidità verso l’azionario tecnologico.',
+        'Perdita del premio geopolitico sul petrolio.',
+      ],
+    },
+    { kind: 'heading', text: 'Implicazione operativa', anchor: 'implicazione-operativa' },
+    {
+      kind: 'paragraph',
+      text: 'Non aprire posizioni rialziste solo perché il DXY e alcuni metalli restano favorevoli.',
+    },
+    {
+      kind: 'callout',
+      tone: 'bear',
+      title: 'La lettura concreta',
+      items: [
+        'Short favorito soltanto dopo la rottura di un Key Level e un retest fallito dal basso.',
+        'Long da escludere nell’immediato, finché XAU/USD non recupera il livello appena perso e non lo trasforma nuovamente in supporto.',
+      ],
+    },
+    {
+      kind: 'balance',
+      title: 'Le due evoluzioni possibili della divergenza',
+      left: {
+        title: 'La divergenza si allarga',
+        tone: 'warn',
+        items: [
+          'L’oro continua a scendere mentre platino, rame, EUR/USD e indici restano forti.',
+          'La divergenza aumenta, ma non è ancora un segnale long.',
+          'Serve una reazione sul grafico a 5 minuti in corrispondenza del Key Level.',
+        ],
+      },
+      right: {
+        title: 'La divergenza si chiude al ribasso',
+        tone: 'bear',
+        items: [
+          'Anche argento, platino, AUD/USD e indici iniziano a cedere insieme.',
+          'Si avrebbe una vera conferma ribassista cross-asset.',
+          'Il segnale short salirebbe a forte.',
+        ],
+      },
+    },
+    {
+      kind: 'callout',
+      tone: 'warn',
+      title: 'Conclusione operativa',
+      text: 'Ora bias short, ma senza inseguire il crollo: attendere pullback o retest su un Key Level rotto.',
+    },
+    {
+      kind: 'note',
+      text:
+        'Lettura intraday, riferita al momento del controllo. I livelli citati non sono indicazioni di acquisto o ' +
+        'vendita né obiettivi di prezzo affidabili: sono riferimenti utili solo a rendere verificabile il ragionamento ' +
+        'esposto, e perdono rapidamente validità al variare dei correlati.',
+    },
+  ],
+};
+
 export const ARTICLES: readonly Article[] = [
+  rotturaCorrelazione,
   oroSopra4100,
   deterioramento,
   pce,
