@@ -836,7 +836,353 @@ const petrolioTreasury: Article = {
   ],
 };
 
+/* ========================================================================== */
+/* 6 — Fondamentali · pubblicazione del PCE                                   */
+/* ========================================================================== */
+
+const pce: Article = {
+  slug: 'pce-usa-piu-morbido-delle-attese',
+  category: 'fondamentali',
+  featured: true,
+  kicker: 'Dati macro · PCE di giugno',
+  title: 'PCE USA più morbido delle attese',
+  dek:
+    'Core PCE annuale al 3,3% contro il 3,4% atteso e indice generale in rallentamento al 3,7%. Il dollaro arretra, ' +
+    'l’oro resta sostenuto: si riduce la pressione immediata su un nuovo rialzo della Fed, non l’inflazione.',
+  publishedAt: '2026-07-30T14:35:00+02:00',
+  author: AUTHOR,
+  readingMinutes: 6,
+  tags: ['PCE', 'Fed', 'Inflazione', 'Dollaro', 'Tassi'],
+  instruments: ['XAU/USD', 'DXY', 'US30Y', 'WTI', 'Brent'],
+  horizons: ['breve', 'medio'],
+  bias: {
+    asset: 'XAU/USD',
+    direction: 'neutrale-rialzista',
+    strength: 'media',
+    regime:
+      'Inflazione in rallentamento ma ancora lontana dall’obiettivo: pressione sulla Fed ridotta, non rimossa.',
+  },
+  certainty: 'media',
+  certaintyNote:
+    'I dati pubblicati sono confermati. Resta da verificare come si aggiorneranno le probabilità implicite sui ' +
+    'futures Fed Funds e se i rendimenti a lunga scadenza accompagneranno il movimento.',
+  takeaways: [
+    'PCE generale annuale al 3,7%, in rallentamento dal 4,1% precedente.',
+    'Core PCE annuale al 3,3% contro il 3,4% atteso: la misura preferita dalla Fed sorprende al ribasso.',
+    'Il Dollar Index reagisce in calo, intorno a 100,5.',
+    'L’oro resta sostenuto nell’area dei 4.070 dollari; WTI e Brent correggono leggermente.',
+    'Il 3,3% resta però nettamente sopra l’obiettivo del 2%: la pressione si riduce, non sparisce.',
+  ],
+  nextEvent: {
+    when: 'Prossimi giorni',
+    title: 'Dati sul lavoro USA e reazione dei rendimenti',
+    detail:
+      'La traiettoria dipenderà da occupazione, petrolio, Stretto di Hormuz, rendimenti Treasury e nuove dichiarazioni della Fed.',
+  },
+  invalidation: [
+    'Un ritorno al rialzo simultaneo di dollaro e rendimenti.',
+    'Una discesa di XAU/USD sotto 4.053, che indebolirebbe seriamente la lettura rialzista.',
+    'Una ripresa decisa del petrolio, che riporterebbe pressione inflazionistica.',
+  ],
+  blocks: [
+    {
+      kind: 'paragraph',
+      lead: true,
+      text:
+        'Alle 14:30 italiane è stato pubblicato il PCE di giugno. Il dato è rilevante perché il Core PCE è la misura ' +
+        'd’inflazione preferita dalla Federal Reserve, che ha appena mantenuto i tassi al 3,50%–3,75% continuando a ' +
+        'descrivere l’inflazione come ancora elevata.',
+    },
+    { kind: 'heading', text: 'Fatti confermati', anchor: 'fatti-confermati' },
+    {
+      kind: 'list',
+      items: [
+        'PCE generale annuale: 3,7%, in rallentamento dal 4,1% precedente.',
+        'Core PCE annuale: 3,3%, contro 3,4% atteso.',
+        'Il Dollar Index sta reagendo in calo, intorno a 100,5.',
+        'L’oro resta sostenuto nell’area dei 4.070 dollari.',
+        'WTI e Brent stanno invece correggendo leggermente.',
+      ],
+    },
+    {
+      kind: 'stats',
+      title: 'Il dato in sintesi',
+      caption:
+        'Valori rilevati al momento della redazione. Non sono quotazioni in tempo reale e non sono forniti a fini operativi.',
+      items: [
+        { label: 'PCE generale', value: '3,7%', tone: 'bull', note: 'Da 4,1%' },
+        { label: 'Core PCE', value: '3,3%', tone: 'bull', note: 'Atteso 3,4%' },
+        { label: 'DXY', value: '≈ 100,5', tone: 'bull', note: 'In calo' },
+        { label: 'XAU/USD', value: '≈ 4.070 $', tone: 'gold', note: 'Sostenuto' },
+        { label: 'Obiettivo Fed', value: '2%', tone: 'warn', note: 'Ancora distante' },
+      ],
+    },
+    { kind: 'heading', text: 'Cosa sta prezzando il mercato', anchor: 'cosa-prezza-il-mercato' },
+    {
+      kind: 'paragraph',
+      text:
+        'Il dato non significa che l’inflazione sia risolta: il 3,3% resta nettamente sopra il target del 2%. ' +
+        'Tuttavia, essendo leggermente inferiore alle attese, riduce la pressione immediata sulla Fed affinché alzi ' +
+        'nuovamente i tassi.',
+    },
+    {
+      kind: 'paragraph',
+      text:
+        'Prima del dato il mercato attribuiva circa il 63% di probabilità a un rialzo a settembre, in calo rispetto al ' +
+        '77% precedente alla riunione Fed. È probabile che il PCE più morbido riduca ulteriormente quella probabilità, ' +
+        'anche se servirà la conferma aggiornata dei futures Fed Funds.',
+    },
+    { kind: 'heading', text: 'Impatto per XAU/USD', anchor: 'impatto-xauusd' },
+    {
+      kind: 'paragraph',
+      text: 'Bias fondamentale immediato: moderatamente rialzista.',
+    },
+    {
+      kind: 'balance',
+      title: 'Il bilancio dei fattori',
+      left: {
+        title: 'Elementi favorevoli all’oro',
+        tone: 'bull',
+        items: [
+          'Core PCE sotto le attese.',
+          'Dollaro in indebolimento.',
+          'Minore urgenza di un nuovo rialzo Fed.',
+          'Tensioni USA-Iran ancora presenti.',
+          'Petrolio in lieve correzione, quindi minore pressione inflazionistica immediata.',
+        ],
+      },
+      right: {
+        title: 'Elementi contrari',
+        tone: 'bear',
+        items: [
+          'Inflazione core ancora al 3,3%.',
+          'Treasury lunghi ancora molto elevati.',
+          'Rendimento del trentennale vicino ai massimi da 19 anni.',
+          'Mercato del lavoro ancora resistente.',
+        ],
+      },
+    },
+    {
+      kind: 'callout',
+      tone: 'warn',
+      title: 'Forza del segnale: media',
+      text:
+        'È un dato favorevole all’oro, ma non è un crollo dell’inflazione tale da provocare automaticamente un cambio ' +
+        'radicale della politica della Fed.',
+    },
+    { kind: 'heading', text: 'Lettura tecnica del livello', anchor: 'lettura-tecnica' },
+    {
+      kind: 'paragraph',
+      text:
+        'Sul grafico XAU/USD era arrivato nella zona decisionale 4.068–4.072. Il PCE fornisce ora una conferma ' +
+        'fondamentale rialzista, ma tecnicamente una candela impulsiva direttamente sotto la resistenza resta una ' +
+        'situazione poco pulita.',
+    },
+    {
+      kind: 'list',
+      title: 'Come viene letto lo schema',
+      items: [
+        'Impostazione rialzista più pulita: rottura sopra 4.072 sul grafico a 5 minuti, seguita da un retest mantenuto dell’area 4.068–4.072.',
+        'Obiettivi indicati in sequenza: 4.076, poi 4.080, poi 4.084–4.088, poi 4.090–4.092.',
+        'Se il prezzo rompe 4.072 ma torna subito sotto 4.067–4.068, la rottura è debole o falsa.',
+        'Sotto 4.064 aumenta il rischio di un ritorno verso 4.060 e poi 4.056–4.053.',
+        'Lo scenario rialzista verrebbe seriamente indebolito solo sotto 4.053, soprattutto con dollaro e rendimenti nuovamente in salita.',
+      ],
+    },
+    {
+      kind: 'note',
+      text:
+        'I livelli citati descrivono la lettura del grafico al momento della redazione. Non sono indicazioni di ' +
+        'acquisto o vendita né obiettivi di prezzo affidabili: sono riferimenti utili solo a rendere verificabile il ' +
+        'ragionamento esposto.',
+    },
+    { kind: 'heading', text: 'Nei prossimi giorni', anchor: 'prossimi-giorni' },
+    {
+      kind: 'paragraph',
+      text: 'Il PCE riduce il rischio di un rialzo Fed immediato, ma la traiettoria dipenderà da diversi fattori.',
+    },
+    {
+      kind: 'list',
+      items: [
+        'Dati sul lavoro statunitense.',
+        'Andamento del petrolio.',
+        'Evoluzione dello Stretto di Hormuz.',
+        'Reazione dei rendimenti Treasury.',
+        'Nuove dichiarazioni della Fed.',
+      ],
+    },
+    {
+      kind: 'callout',
+      tone: 'gold',
+      title: 'Conclusione',
+      text:
+        'Il quadro fondamentale è ora favorevole all’impostazione rialzista, ma senza rottura e retest validi di 4.072 ' +
+        'non c’è conferma: nessuna lettura impulsiva.',
+    },
+  ],
+};
+
+/* ========================================================================== */
+/* 7 — Correlazioni · deterioramento delle conferme                           */
+/* ========================================================================== */
+
+const deterioramento: Article = {
+  slug: 'deterioramento-della-conferma-cross-asset',
+  category: 'correlazioni',
+  featured: true,
+  kicker: 'Correlazioni · Controllo cross-asset',
+  title: 'Deterioramento della conferma cross-asset',
+  dek:
+    'XAU/USD resta positivo intorno a 4.078–4.080, ma argento, platino, valute legate ai metalli e petrolio non ' +
+    'accompagnano più il movimento. L’oro sta salendo quasi da solo, sostenuto soprattutto da un dollaro debole.',
+  publishedAt: '2026-07-30T14:45:00+02:00',
+  author: AUTHOR,
+  readingMinutes: 5,
+  tags: ['Correlazioni', 'Cross-asset', 'Metalli', 'Dollaro', 'Divergenza'],
+  instruments: [
+    'XAU/USD',
+    'DXY',
+    'XAG/USD',
+    'XPT/USD',
+    'AUD/USD',
+    'NZD/USD',
+    'EUR/USD',
+    'WTI',
+    'Brent',
+  ],
+  horizons: ['breve'],
+  bias: {
+    asset: 'XAU/USD',
+    direction: 'neutrale-rialzista',
+    strength: 'bassa',
+    regime:
+      'Divergenza fra oro e comparto: rialzo sostenuto dal solo dollaro debole, senza conferme.',
+  },
+  certainty: 'media',
+  certaintyNote:
+    'Le variazioni citate sono quelle rilevabili al momento del controllo. Le variazioni sincronizzate a 1, 5 e 15 ' +
+    'minuti non sono disponibili dalle fonti pubbliche consultabili, quindi la lettura resta parziale.',
+  takeaways: [
+    'Non c’è più una conferma rialzista pulita rispetto al controllo precedente.',
+    'XAU/USD resta positivo intorno a 4.078–4.080, circa +0,3%.',
+    'Il DXY debole a circa 100,65 è il principale elemento ancora favorevole.',
+    'Argento a circa −1,9% e platino a circa −1,35% non confermano il recupero.',
+    'Scenario preferibile: restare fuori finché la divergenza non si risolve.',
+  ],
+  invalidation: [
+    'Argento e platino che smettono di scendere mentre il DXY resta debole: la divergenza si chiuderebbe a favore del rialzo.',
+    'Un DXY che accelera al rialzo: verrebbe meno l’unico sostegno rimasto.',
+    'Una discesa dell’oro coerente con il resto del comparto: la divergenza si chiuderebbe al ribasso.',
+  ],
+  blocks: [
+    {
+      kind: 'paragraph',
+      lead: true,
+      text:
+        'Bias intraday: neutrale, con lieve inclinazione rialzista solo finché regge il recupero dell’oro. Forza del ' +
+        'segnale: bassa-media.',
+    },
+    {
+      kind: 'paragraph',
+      text:
+        'Rispetto al controllo precedente non c’è più una conferma rialzista pulita. XAU/USD resta positivo intorno a ' +
+        '4.078–4.080 dollari, circa +0,3%, ma diversi correlati che prima sostenevano il movimento hanno invertito o ' +
+        'perso forza.',
+    },
+    { kind: 'heading', text: 'Cosa sostiene ancora l’oro', anchor: 'cosa-sostiene' },
+    {
+      kind: 'scenarios',
+      items: [
+        {
+          label: 'Dollaro',
+          tone: 'bull',
+          text:
+            'DXY debole, intorno a 100,65, sotto l’apertura di 100,85: è il principale elemento favorevole a XAU/USD. ' +
+            'Gli indicatori tecnici intraday restano prevalentemente orientati al ribasso, anche se il dollaro è ' +
+            'vicino alla parte bassa del range e potrebbe tentare un rimbalzo.',
+        },
+        {
+          label: 'Rame',
+          tone: 'bull',
+          text: 'Circa +2,3%: permane forza nella componente industriale delle materie prime.',
+        },
+        {
+          label: 'Rendimenti',
+          tone: 'neutral',
+          text:
+            'Restano elevati ma non stanno producendo un nuovo minimo dell’oro: permane una parziale rottura della ' +
+            'normale correlazione inversa. Il 2Y è vicino al 4,29%, il 10Y era intorno al 4,63% nell’ultima ' +
+            'rilevazione disponibile.',
+        },
+      ],
+    },
+    { kind: 'heading', text: 'Contraddizioni diventate importanti', anchor: 'contraddizioni' },
+    {
+      kind: 'callout',
+      tone: 'bear',
+      title: 'I correlati che non accompagnano il movimento',
+      items: [
+        'Argento spot circa −1,9%: non conferma il recupero dell’oro.',
+        'Platino circa −1,35%: particolarmente rilevante, perché il platino può anticipare cambiamenti del comparto.',
+        'AUD/USD circa −0,36% e NZD/USD debole o quasi piatto: le valute legate ai metalli non accompagnano l’oro.',
+        'WTI circa −0,65% e Brent circa −0,93%: nessuna conferma inflazionistica o geopolitica rialzista.',
+        'EUR/USD sostanzialmente laterale: non emerge un’accelerazione sufficiente a validare da sola il movimento.',
+      ],
+    },
+    {
+      kind: 'paragraph',
+      text:
+        'Nel metodo seguito non basta che i valori assoluti siano positivi o negativi: conta soprattutto se i ' +
+        'correlati stanno guadagnando o perdendo forza nell’ultima parte del movimento. Argento e platino sono ' +
+        'particolarmente utili per anticipare una possibile rotazione dell’oro.',
+    },
+    { kind: 'heading', text: 'Implicazione operativa', anchor: 'implicazione-operativa' },
+    {
+      kind: 'paragraph',
+      text:
+        'L’oro sta salendo quasi da solo, sostenuto principalmente dal dollaro debole, mentre argento, platino, AUD e ' +
+        'petrolio contraddicono il movimento. È una divergenza che aumenta il rischio di falso breakout o di ritorno ' +
+        'verso il basso.',
+    },
+    {
+      kind: 'balance',
+      title: 'Le due condizioni',
+      left: {
+        title: 'Cosa renderebbe valido il rialzo',
+        tone: 'bull',
+        items: [
+          'Rottura di un livello tecnico importante con retest mantenuto.',
+          'Argento e platino che smettono contemporaneamente di scendere.',
+          'DXY che resta debole.',
+        ],
+      },
+      right: {
+        title: 'Perché il ribasso non è confermato',
+        tone: 'bear',
+        items: ['L’oro continua comunque a tenere.', 'Il DXY non sta accelerando al rialzo.'],
+      },
+    },
+    {
+      kind: 'callout',
+      tone: 'gold',
+      title: 'Scenario preferibile',
+      text:
+        'Restare fuori finché non si risolve la divergenza. La regola resta input più conferme: il solo movimento di ' +
+        'XAU/USD, senza conferma dei correlati, non costituisce una lettura completa.',
+    },
+    {
+      kind: 'note',
+      text:
+        'Alle 14:32 italiane Wall Street non era ancora aperta, quindi Dow Jones, Nasdaq e S&P 500 non entrano ancora ' +
+        'nella conferma. Le variazioni affidabili e sincronizzate a 1, 5 e 15 minuti non sono disponibili dalle fonti ' +
+        'pubbliche consultabili.',
+    },
+  ],
+};
+
 export const ARTICLES: readonly Article[] = [
+  deterioramento,
+  pce,
   petrolioTreasury,
   crossAsset,
   chokepoint,

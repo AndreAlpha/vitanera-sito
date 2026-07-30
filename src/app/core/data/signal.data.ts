@@ -31,43 +31,43 @@ export interface OperationalSignal {
 }
 
 export const MARKET_SIGNAL: OperationalSignal = {
-  updatedAt: '2026-07-30T13:15:00+02:00',
+  updatedAt: '2026-07-30T14:45:00+02:00',
   validityMinutes: 60,
   asset: 'XAU/USD',
-  direction: 'neutrale-ribassista',
-  strength: 'media',
-  headline: 'Il petrolio riparte e i rendimenti lunghi frenano l’oro',
+  direction: 'neutrale-rialzista',
+  strength: 'bassa',
+  headline: 'L’oro sale quasi da solo: le conferme cross-asset si stanno sfaldando',
   stance:
-    'Fase volatile e laterale: la domanda rifugio impedisce una discesa netta ma non basta a produrre un rialzo ' +
-    'pulito, con il trentennale americano al 5,24% e il Brent tornato in area 92. Forza del segnale medio-alta sul ' +
-    'rischio di volatilità, media sulla direzione netta.',
+    'Il PCE più morbido delle attese migliora il quadro di fondo, ma nell’immediato solo il dollaro debole accompagna ' +
+    'l’oro: argento, platino, valute legate ai metalli e petrolio non confermano il movimento. Forza del segnale ' +
+    'bassa-media: è una divergenza, non un trend.',
   favours: [
-    'Attendere il dato PCE prima di prendere direzione: è il catalizzatore dichiarato dalla lettura.',
-    'Trattare l’area come laterale e volatile, non come inizio di un movimento direzionale.',
+    'Restare fuori finché la divergenza non si risolve.',
+    'Considerare valida l’impostazione rialzista solo con rottura e retest tenuto di 4.072, argento e platino che smettono di scendere e DXY ancora debole.',
   ],
   avoid: [
-    'Inseguire un breakout rialzista mentre i rendimenti lunghi segnano nuovi massimi.',
-    'Considerare la sola domanda rifugio sufficiente a sostenere un rialzo pulito.',
+    'Inseguire il rialzo adesso: aumenta il rischio di falso breakout o di ritorno verso il basso.',
+    'Impostazioni ribassiste: l’oro continua a tenere e il DXY non sta accelerando al rialzo.',
   ],
   invalidation:
-    'Una rapida de-escalation, una nuova discesa del Brent sotto 89–90 dollari oppure un PCE sensibilmente più ' +
-    'debole delle attese.',
+    'Un DXY che accelera al rialzo oppure una discesa dell’oro coerente con il resto del comparto. Sotto 4.053 il ' +
+    'quadro fondamentale rialzista sarebbe seriamente indebolito.',
   confirming: [
-    'Escalation USA-Iran',
-    'Instabilità delle rotte energetiche',
-    'Contesto di rischio-off',
-    'Tenuta dell’oro in area 4.060',
+    'Core PCE 3,3%, sotto le attese',
+    'DXY debole ≈ 100,65',
+    'Rame ≈ +2,3%',
+    'Rendimenti che non producono nuovi minimi dell’oro',
   ],
   contradicting: [
-    'Brent sopra 92 dollari',
-    'Treasury 30Y a 5,24%, massimo da 19 anni',
-    'Dollaro stabile o forte ≈ 100,9',
-    'Fed percepita più restrittiva',
+    'Argento ≈ −1,9%',
+    'Platino ≈ −1,35%',
+    'AUD/USD ≈ −0,36%',
+    'WTI e Brent in correzione',
   ],
   sources: [
+    'deterioramento-della-conferma-cross-asset',
+    'pce-usa-piu-morbido-delle-attese',
     'petrolio-riparte-e-treasury-lunghi-a-nuovi-massimi',
-    'xauusd-cambio-rilevante-nella-lettura-cross-asset',
-    'hormuz-e-bab-el-mandeb-rischio-non-ancora-blocco',
   ],
 };
 
