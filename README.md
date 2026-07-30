@@ -91,7 +91,7 @@ pubblicazione. Sintetizza le ultime analisi di **tutte** le sezioni, non solo de
 | Campo | Cosa contiene |
 | --- | --- |
 | `updatedAt` | Data e ora dell’aggiornamento. Fa fede per la scadenza. |
-| `validityMinutes` | Durata della validità, oggi `60`. |
+| `validityMinutes` | Durata della validità in minuti, mostrata anche al lettore. Scaduta, la panoramica passa a «in attesa di notizie». |
 | `direction` / `strength` | Impostazione e forza del segnale. |
 | `headline` / `stance` | Titolo e sintesi discorsiva. |
 | `favours` / `avoid` | Le due colonne «Favorito» e «Da evitare». |
