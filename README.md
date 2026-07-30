@@ -10,11 +10,36 @@ Tema scuro con accento oro, contenuti organizzati per sezioni e avvertenze legal
 ## Comandi
 
 ```bash
-npm install     # una sola volta
-npm start       # server di sviluppo su http://localhost:4200/
-npm run build   # build di produzione in dist/vitanera
-npm test        # test unitari (Vitest)
+npm install                 # una sola volta
+npm start                   # server di sviluppo su http://localhost:4200/
+npm run build               # build di produzione in dist/vitanera/browser
+npm test -- --no-watch      # test unitari (Vitest)
 ```
+
+## Pubblicazione su GitHub Pages
+
+Il sito è servito da GitHub Pages sul dominio indicato nel file `CNAME`.
+
+`npm run build` esegue `ng build` e poi `scripts/prepare-pages.mjs`, che rende l’output
+direttamente pubblicabile:
+
+- **`404.html`** — copia di `index.html`. GitHub Pages restituisce questo file per ogni percorso che
+  non corrisponde a un file statico: senza di esso un indirizzo diretto come `/analisi/uno-slug`
+  mostrerebbe la pagina di errore di GitHub invece della pagina richiesta.
+- **`.nojekyll`** — impedisce a Jekyll di rielaborare l’output.
+- **`CNAME`** — ricopiato nell’output per non perdere il dominio personalizzato.
+
+La pubblicazione è automatica: il workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml)
+installa le dipendenze, esegue i test, compila e pubblica `dist/vitanera/browser` a ogni push su
+`master`.
+
+> **Impostazione necessaria una sola volta.** Su GitHub: *Settings → Pages → Build and deployment →
+> Source* deve essere impostato su **GitHub Actions**. Finché resta su *Deploy from a branch* il
+> workflow compila ma la pubblicazione non avviene, perché Pages continua a servire i file del
+> repository invece dell’output compilato.
+
+L’output non viene versionato: `dist/` resta in `.gitignore` e il sito viene ricompilato dal
+workflow a ogni push.
 
 ## Struttura
 
