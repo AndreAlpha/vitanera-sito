@@ -31,39 +31,39 @@ export interface OperationalSignal {
 }
 
 export const MARKET_SIGNAL: OperationalSignal = {
-  updatedAt: '2026-07-30T16:20:00+02:00',
+  updatedAt: '2026-07-30T16:33:00+02:00',
   validityMinutes: 60,
   asset: 'XAU/USD',
-  direction: 'ribassista',
-  strength: 'media',
-  headline: 'L’oro perde 4.070–4.080 dopo l’apertura USA mentre i correlati restano forti',
+  direction: 'rialzista',
+  strength: 'alta',
+  headline: 'Inversione intraday dell’oro: dollaro sotto 100 e correlati finalmente allineati',
   stance:
-    'Il quadro macro della mattina resta favorevole all’oro — PCE mensile in raffreddamento e PIL sotto le attese — ' +
-    'ma nel brevissimo XAU/USD ha rotto al ribasso ignorando azionario risk-on, rame e valute legate ai metalli. ' +
-    'Confermano la discesa i Treasury ancora elevati e il petrolio in calo, che toglie anche il premio geopolitico. ' +
-    'Forza medio-alta: è una rottura di correlazione, non ancora una conferma ribassista cross-asset.',
+    'XAU/USD è risalito verso 4.095–4.104 e stavolta non sale da solo: dollaro in accelerazione ribassista sotto ' +
+    '100, rendimenti in calo, metalli, valute correlate e azionario si muovono nella stessa direzione. Lo short del ' +
+    'controllo precedente è invalidato e il quadro macro della mattina — PCE mensile in raffreddamento e PIL sotto ' +
+    'le attese — resta coerente. Unica contraddizione il petrolio, ancora negativo.',
   favours: [
-    'Restare fuori dal lato rialzista finché XAU/USD non recupera il livello appena perso e non lo trasforma di nuovo in supporto.',
-    'Considerare lo short solo dopo la rottura di un Key Level e un retest fallito dal basso.',
+    'Long su pullback o retest tenuto in area 4.090–4.095.',
+    'In alternativa, breakout pulito sopra 4.104 seguito da retest.',
   ],
   avoid: [
-    'Aprire posizioni rialziste solo perché il DXY e alcuni metalli restano favorevoli.',
-    'Inseguire il crollo: la conclusione è attendere pullback o retest su un Key Level rotto.',
+    'Inseguire una candela già estesa senza ritorno.',
+    'Impostazioni short contro questo allineamento.',
   ],
   invalidation:
-    'Un recupero dell’area 4.070–4.080 trasformata nuovamente in supporto, oppure una reazione sul grafico a 5 ' +
-    'minuti in corrispondenza di un Key Level.',
+    'Un ritorno sotto 4.078–4.080 indebolirebbe il segnale; la perdita decisa di 4.065–4.070, insieme a un recupero ' +
+    'del DXY, annullerebbe il cambio rialzista.',
   confirming: [
-    'US 2Y ≈ 4,29%, sopra l’ultimo controllo',
-    'US 10Y ≈ 4,67 – 4,68%',
-    'WTI ≈ −1,35%',
-    'Brent ≈ −1,56%',
+    'DXY sotto 100, nuovi minimi intraday',
+    'US 2Y ≈ 4,23%',
+    'Platino +2,5 / +3%',
+    'Nasdaq +2,26%',
   ],
-  contradicting: ['Nasdaq +1,6%', 'S&P 500 ≈ +1%', 'Rame +2,1 / +2,8%', 'Platino ancora positivo'],
+  contradicting: ['WTI ≈ −0,8%', 'Brent ≈ −1,1%'],
   sources: [
+    'inversione-intraday-con-i-correlati-allineati',
     'rottura-di-correlazione-ribassista-dopo-apertura-usa',
     'oro-sopra-4100-ma-i-rendimenti-lunghi-non-cedono',
-    'hormuz-e-bab-el-mandeb-rischio-non-ancora-blocco',
   ],
 };
 

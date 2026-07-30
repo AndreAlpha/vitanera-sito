@@ -1578,7 +1578,194 @@ const rotturaCorrelazione: Article = {
   ],
 };
 
+/* ========================================================================== */
+/* 10 — Correlazioni · inversione intraday con conferme allineate             */
+/* ========================================================================== */
+
+const inversioneIntraday: Article = {
+  slug: 'inversione-intraday-con-i-correlati-allineati',
+  category: 'correlazioni',
+  featured: true,
+  kicker: 'Correlazioni · Controllo cross-asset',
+  title: 'Inversione intraday dell’oro con i correlati finalmente allineati',
+  dek:
+    'XAU/USD è risalito verso 4.095–4.104 recuperando oltre 50–60 dollari, e stavolta non sale da solo: dollaro sotto ' +
+    '100, rendimenti in calo, metalli, valute correlate e azionario si muovono tutti nella stessa direzione. Lo short ' +
+    'del controllo precedente è invalidato.',
+  publishedAt: '2026-07-30T16:33:00+02:00',
+  author: AUTHOR,
+  readingMinutes: 4,
+  tags: ['Correlazioni', 'Cross-asset', 'Dollaro', 'Metalli', 'Indici', 'Inversione'],
+  instruments: [
+    'XAU/USD',
+    'DXY',
+    'US02Y',
+    'US10Y',
+    'XAG/USD',
+    'XPT/USD',
+    'EUR/USD',
+    'AUD/USD',
+    'NZD/USD',
+    'Nasdaq',
+    'S&P 500',
+    'WTI',
+    'Brent',
+  ],
+  horizons: ['breve'],
+  bias: {
+    asset: 'XAU/USD',
+    direction: 'rialzista',
+    strength: 'alta',
+    regime:
+      'Dollaro in accelerazione ribassista e conferme cross-asset allineate: la divergenza si è chiusa al rialzo.',
+  },
+  certainty: 'media',
+  certaintyNote:
+    'Le variazioni citate sono quelle rilevabili al momento del controllo e le conferme sono numerose e concordi. ' +
+    'Resta una lettura intraday, che perde validità se il dollaro riprende a salire.',
+  takeaways: [
+    'Bias long: XAU/USD è risalito verso 4.095–4.104, oltre 50–60 dollari sopra l’area 4.035–4.041 del controllo precedente.',
+    'Il DXY accelera al ribasso sotto 100 con nuovi minimi intraday: è il principale carburante del recupero.',
+    'Treasury 2Y verso 4,23% e 10Y verso 4,66%: la pressione dei rendimenti si è allentata.',
+    'Argento, platino e rame confermano ora pienamente l’oro, insieme a EUR/USD, AUD/USD, NZD/USD e a un azionario in netto risk-on.',
+    'Unica contraddizione il petrolio, ancora negativo: WTI ≈ −0,8% e Brent ≈ −1,1%.',
+  ],
+  invalidation: [
+    'Un ritorno sotto 4.078–4.080 indebolirebbe il segnale.',
+    'La perdita decisa di 4.065–4.070, insieme a un recupero del DXY, annullerebbe il cambio rialzista.',
+  ],
+  blocks: [
+    {
+      kind: 'paragraph',
+      lead: true,
+      text:
+        'La pressione ribassista vista poco fa è stata rapidamente riassorbita: XAU/USD è risalito verso 4.095–4.104 ' +
+        'dollari, recuperando oltre 50–60 dollari rispetto all’area 4.035–4.041 indicata nel controllo precedente. ' +
+        'Non è più una semplice tenuta: è una forte inversione intraday.',
+    },
+    {
+      kind: 'stats',
+      title: 'Riferimenti del controllo',
+      caption:
+        'Valori rilevati al momento del controllo. Non sono quotazioni in tempo reale e non sono forniti a fini operativi.',
+      items: [
+        { label: 'XAU/USD', value: '4.095 – 4.104 $', tone: 'gold', note: 'Da 4.035–4.041' },
+        { label: 'DXY', value: 'Sotto 100', tone: 'bull', note: 'Nuovi minimi intraday' },
+        { label: 'US 2Y', value: '≈ 4,23%', tone: 'bull', note: 'In calo dai massimi' },
+        { label: 'US 10Y', value: '≈ 4,66%', tone: 'bull' },
+        {
+          label: 'Platino',
+          value: '+2,5 / +3%',
+          tone: 'bull',
+          note: 'Argento ≈ +0,9%, rame ≈ +2,5%',
+        },
+        { label: 'Nasdaq', value: '+2,26%', tone: 'bull', note: 'S&P 500 +1,16%, Dow +0,6%' },
+      ],
+    },
+    { kind: 'heading', text: 'Conferme molto più pulite', anchor: 'conferme-pulite' },
+    {
+      kind: 'scenarios',
+      items: [
+        {
+          label: 'Dollaro',
+          tone: 'bull',
+          text:
+            'DXY in forte accelerazione ribassista, con rilevazioni sotto 100 e nuovi minimi intraday: è il ' +
+            'principale carburante del recupero dell’oro.',
+        },
+        {
+          label: 'Treasury',
+          tone: 'bull',
+          text:
+            'Il 2 anni è sceso verso il 4,23% e il 10 anni verso il 4,66%: entrambi hanno allentato la pressione ' +
+            'rispetto ai massimi precedenti.',
+        },
+        {
+          label: 'Metalli',
+          tone: 'bull',
+          text:
+            'Argento circa +0,9%, platino +2,5/+3% e rame circa +2,5%: il comparto conferma ora pienamente XAU/USD. ' +
+            'Il platino, che nel metodo seguito funziona da anticipatore, è diventato una conferma rialzista forte.',
+        },
+        {
+          label: 'Valute',
+          tone: 'bull',
+          text:
+            'EUR/USD, AUD/USD e NZD/USD sono in rialzo: anche il blocco valutario correlato positivamente all’oro ' +
+            'accompagna il movimento.',
+        },
+        {
+          label: 'Azionario',
+          tone: 'bull',
+          text:
+            'Wall Street ha rafforzato il risk-on: Dow +0,6%, S&P 500 +1,16% e Nasdaq +2,26%. Con il dollaro in calo ' +
+            'questo è il regime classico in cui azionario e oro possono avanzare insieme.',
+        },
+      ],
+    },
+    { kind: 'heading', text: 'Unica contraddizione', anchor: 'unica-contraddizione' },
+    {
+      kind: 'callout',
+      tone: 'bear',
+      title: 'Il petrolio non accompagna',
+      text:
+        'WTI e Brent restano negativi, circa −0,8% e −1,1%: il petrolio non conferma una nuova accelerazione ' +
+        'inflazionistica. In questo momento, però, il segnale viene dominato da dollaro, rendimenti e metalli.',
+    },
+    { kind: 'heading', text: 'Lettura operativa', anchor: 'lettura-operativa' },
+    {
+      kind: 'paragraph',
+      text:
+        'Lo short del controllo precedente è invalidato: niente più impostazioni in vendita finché l’oro mantiene il ' +
+        'recupero.',
+    },
+    {
+      kind: 'callout',
+      tone: 'gold',
+      title: 'Scenario preferito',
+      items: [
+        'Long su pullback o retest tenuto in area 4.090–4.095.',
+        'In alternativa, breakout pulito sopra 4.104 seguito da retest.',
+        'Evitare di inseguire una candela già estesa senza ritorno.',
+      ],
+    },
+    {
+      kind: 'callout',
+      tone: 'warn',
+      title: 'Cosa indebolirebbe il segnale',
+      items: [
+        'Un ritorno sotto 4.078–4.080.',
+        'Una perdita decisa di 4.065–4.070 insieme a un recupero del DXY: annullerebbe il cambio rialzista.',
+      ],
+    },
+    { kind: 'heading', text: 'Perché la direzionalità è confermata', anchor: 'direzionalita' },
+    {
+      kind: 'paragraph',
+      text:
+        'Secondo la regola della direzionalità seguita, il punto decisivo è che ora non è salito soltanto XAU/USD: il ' +
+        'DXY scende, i rendimenti calano, valute correlate e metalli salgono tutti insieme. L’input dispone quindi ' +
+        'finalmente delle conferme richieste.',
+    },
+    {
+      kind: 'callout',
+      tone: 'bull',
+      title: 'Conclusione',
+      text:
+        'Bias long, ma entrata solo su retest o breakout confermato; nessuna impostazione short contro questo ' +
+        'allineamento.',
+    },
+    {
+      kind: 'note',
+      text:
+        'Lettura intraday, riferita al momento del controllo. I livelli citati non sono indicazioni di acquisto o ' +
+        'vendita né obiettivi di prezzo affidabili: sono riferimenti utili solo a rendere verificabile il ragionamento ' +
+        'esposto, e perdono rapidamente validità al variare dei correlati.',
+    },
+  ],
+};
+
 export const ARTICLES: readonly Article[] = [
+  inversioneIntraday,
   rotturaCorrelazione,
   oroSopra4100,
   deterioramento,
