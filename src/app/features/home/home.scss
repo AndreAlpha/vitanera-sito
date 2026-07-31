@@ -388,9 +388,256 @@
   }
 }
 
+/* --- Calendario economico ------------------------------------------------- */
+
+.cal {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.cal__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cal__next {
+  padding: 18px 22px 14px;
+}
+
+.cal__list {
+  list-style: none;
+  margin-top: 6px;
+}
+
+.cal__list li + li {
+  border-top: 1px solid var(--line);
+}
+
+.cal__list a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2px;
+  padding: 11px 0;
+  color: var(--text-soft);
+}
+
+.cal__list a:hover .cal__name {
+  color: var(--accent-soft);
+}
+
+.cal__when {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cal__name {
+  font-size: 13.6px;
+  font-weight: 600;
+  color: var(--text);
+  transition: color 0.25s var(--ease);
+}
+
+.cal__meta {
+  font-size: 11.5px;
+  color: var(--text-faint);
+}
+
+.cal__empty {
+  margin-top: 12px;
+  font-size: 12.5px;
+  color: var(--text-faint);
+}
+
+.cal__side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cal__area {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 18px;
+}
+
+.cal__area-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: 13px;
+  border: 1px solid var(--accent-line);
+  background: rgba(var(--accent-rgb), 0.1);
+  color: var(--accent);
+}
+
+.cal__area > span:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.cal__area-name {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.cal__area-tag {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.cal__area app-icon:last-child {
+  color: var(--text-faint);
+}
+
+.cal__banks {
+  padding: 16px 18px 14px;
+}
+
+.cal__banks-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.cal__banks-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.cal__banks-date {
+  font-size: 10.5px;
+  color: var(--text-faint);
+}
+
+.cal__banks-title {
+  font-size: 12.4px;
+  color: var(--text-soft);
+  line-height: 1.4;
+}
+
+.cal__banks-link {
+  margin-top: 14px;
+}
+
+/* --- Archivio ancora vuoto ------------------------------------------------- */
+
+.void {
+  padding: 34px 32px 30px;
+  text-align: center;
+}
+
+.void__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  border: 1px solid var(--accent-line);
+  background: linear-gradient(140deg, rgba(var(--accent-rgb), 0.16), rgba(var(--accent-rgb), 0.03));
+  color: var(--accent);
+}
+
+.void h3 {
+  margin-top: 16px;
+  font-size: 19px;
+  letter-spacing: -0.02em;
+}
+
+.void p {
+  max-width: 62ch;
+  margin: 10px auto 0;
+  font-size: 13.6px;
+  line-height: 1.68;
+  color: var(--text-muted);
+}
+
+.void__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* --- Categorie con analisi ------------------------------------------------- */
+
+.tagline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tagline__label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.tagline__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 11px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line);
+  font-size: 11.5px;
+  color: var(--text-muted);
+  transition:
+    border-color 0.25s var(--ease),
+    color 0.25s var(--ease);
+}
+
+.tagline__link:hover {
+  border-color: var(--accent-line);
+  color: var(--accent-soft);
+}
+
+.tagline__link span {
+  color: var(--text-faint);
+  font-size: 10.5px;
+}
+
+@media (max-width: 900px) {
+  .cal {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 @media (max-width: 640px) {
   .block {
     margin-bottom: 38px;
+  }
+
+  .void {
+    padding: 26px 20px 24px;
+  }
+
+  .void__actions .btn {
+    flex: 1 0 100%;
   }
 
   .sec-head {

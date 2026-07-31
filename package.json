@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build && node scripts/prepare-pages.mjs",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "calendario": "node scripts/build-calendar.mjs"
   },
   "private": true,
   "packageManager": "npm@11.4.2",

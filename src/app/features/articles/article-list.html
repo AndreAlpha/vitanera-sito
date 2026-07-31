@@ -4,181 +4,118 @@
   [description]="description()"
   [icon]="icon()"
 >
-  <div class="toolbar">
-    <p class="toolbar__note"><app-icon name="layers" [size]="13" />{{ layoutNote() }}</p>
-    <div class="toolbar__tags">
-      <button
-        type="button"
-        class="chip chip--sm"
-        [class.chip--gold]="!activeTag()"
-        (click)="activeTag.set(null)"
-      >
-        Tutti i temi
-      </button>
-      @for (tag of tags(); track tag) {
-        <button
-          type="button"
-          class="chip chip--sm"
-          [class.chip--gold]="activeTag() === tag"
-          (click)="toggleTag(tag)"
-        >
-          {{ tag }}
-        </button>
+  @if (filtered().length || tags().length) {
+    <div class="toolbar">
+      @if (filtered().length) {
+        <p class="toolbar__note"><app-icon name="layers" [size]="13" />{{ layoutNote() }}</p>
+      }
+      @if (tags().length) {
+        <div class="toolbar__tags">
+          <button
+            type="button"
+            class="chip chip--sm"
+            [class.chip--gold]="!activeTag()"
+            (click)="activeTag.set(null)"
+          >
+            Tutti i temi
+          </button>
+          @for (tag of tags(); track tag) {
+            <button
+              type="button"
+              class="chip chip--sm"
+              [class.chip--gold]="activeTag() === tag"
+              (click)="toggleTag(tag)"
+            >
+              {{ tag }}
+            </button>
+          }
+        </div>
       }
     </div>
-  </div>
+  }
 </app-page-header>
 
-<app-risk-notice variant="card" title="Come leggere questa sezione" />
+<app-risk-notice variant="card" title="Come leggere questa pagina" />
 
 @if (filtered().length) {
-  @switch (layout()) {
-    <!-- ---------------------------------------------------------------- -->
-    <!-- Fondamentali · dossier numerato                                   -->
-    <!-- ---------------------------------------------------------------- -->
-    @case ('dossier') {
-      <ol class="dossier">
-        @for (article of filtered(); track article.slug; let i = $index) {
-          <li class="dossier__item">
-            <a [routerLink]="['/analisi', article.slug]">
-              <span class="dossier__index">{{ index(i) }}</span>
+  @if (layout() === 'elenco') {
+    <!-- ------------------------------------------------------------------ -->
+    <!-- Categoria · elenco a righe numerato                                 -->
+    <!-- ------------------------------------------------------------------ -->
+    <ol class="dossier">
+      @for (article of filtered(); track article.slug; let i = $index) {
+        <li class="dossier__item">
+          <a [routerLink]="['/analisi', article.slug]">
+            <span class="dossier__index">{{ index(i) }}</span>
 
-              <span class="dossier__main">
-                <span class="dossier__top">
-                  <span class="dossier__kicker">{{ article.kicker }}</span>
-                  <app-timestamp [iso]="article.publishedAt" [withIcon]="true" />
-                </span>
-                <span class="dossier__title">{{ article.title }}</span>
-                <span class="dossier__dek">{{ article.dek }}</span>
-                <span class="dossier__points">
-                  @for (t of article.takeaways.slice(0, 2); track t) {
-                    <span><i></i>{{ t }}</span>
-                  }
-                </span>
+            <span class="dossier__main">
+              <span class="dossier__top">
+                <span class="dossier__kicker">{{ article.kicker }}</span>
+                <app-timestamp [iso]="article.publishedAt" [withIcon]="true" />
               </span>
-
-              <span class="dossier__side">
-                @if (article.bias; as bias) {
-                  <app-bias-badge
-                    [direction]="bias.direction"
-                    [strength]="bias.strength"
-                    [prefix]="bias.asset + ' ·'"
-                  />
+              <span class="dossier__title">{{ article.title }}</span>
+              <span class="dossier__dek">{{ article.dek }}</span>
+              <span class="dossier__points">
+                @for (t of article.takeaways.slice(0, 2); track t) {
+                  <span><i></i>{{ t }}</span>
                 }
-                <span class="chip chip--sm chip--neutral">Certezza {{ article.certainty }}</span>
-                <span class="chip chip--sm">{{ article.readingMinutes }} min</span>
-                <span class="dossier__legal"
-                  >Contenuto informativo · non è consulenza finanziaria</span
-                >
               </span>
-            </a>
-          </li>
-        }
-      </ol>
-    }
+            </span>
 
-    <!-- ---------------------------------------------------------------- -->
-    <!-- Correlazioni · matrice cross-asset                                -->
-    <!-- ---------------------------------------------------------------- -->
-    @case ('matrice') {
-      <div class="matrix">
-        @for (article of filtered(); track article.slug) {
-          <a class="mx" [routerLink]="['/analisi', article.slug]">
-            <span class="mx__head">
-              <app-timestamp [iso]="article.publishedAt" [withIcon]="true" />
+            <span class="dossier__side">
               @if (article.bias; as bias) {
-                <app-bias-badge [direction]="bias.direction" [strength]="bias.strength" />
+                <app-bias-badge
+                  [direction]="bias.direction"
+                  [strength]="bias.strength"
+                  [prefix]="bias.asset + ' ·'"
+                />
               }
-            </span>
-
-            <span class="mx__kicker">{{ article.kicker }}</span>
-            <h2 class="mx__title">{{ article.title }}</h2>
-            <p class="mx__dek">{{ article.dek }}</p>
-
-            <span class="mx__label">Strumenti osservati</span>
-            <span class="mx__grid">
-              @for (i of article.instruments; track i) {
-                <span class="mx__cell">{{ i }}</span>
-              }
-            </span>
-
-            <span class="mx__foot">
               <span class="chip chip--sm chip--neutral">Certezza {{ article.certainty }}</span>
-              <span class="mx__legal">Non è consulenza finanziaria</span>
+              <span class="chip chip--sm">{{ article.readingMinutes }} min</span>
+              @for (c of otherCategories(article); track c.slug) {
+                <span class="chip chip--sm">{{ c.short }}</span>
+              }
+              <span class="dossier__legal"
+                >Contenuto informativo · non è consulenza finanziaria</span
+              >
             </span>
           </a>
-        }
-      </div>
-    }
-
-    <!-- ---------------------------------------------------------------- -->
-    <!-- Geopolitica · dispaccio cronologico                               -->
-    <!-- ---------------------------------------------------------------- -->
-    @case ('dispaccio') {
-      <ol class="dispatch">
-        @for (article of filtered(); track article.slug) {
-          <li>
-            <span class="dispatch__rail">
-              <span class="dispatch__time tnum">{{ time(article.publishedAt) }}</span>
-              <span class="dispatch__dot"></span>
-            </span>
-            <a class="dispatch__card" [routerLink]="['/analisi', article.slug]">
-              <span class="dispatch__top">
-                <span class="dispatch__kicker">{{ article.kicker }}</span>
-                <app-timestamp [iso]="article.publishedAt" />
-              </span>
-              <h2 class="dispatch__title">{{ article.title }}</h2>
-              <p class="dispatch__dek">{{ article.dek }}</p>
-              <span class="dispatch__tags">
-                @for (tag of article.tags.slice(0, 4); track tag) {
-                  <span class="chip chip--sm">{{ tag }}</span>
-                }
-              </span>
-              <span class="dispatch__legal">
-                <app-icon name="alert" [size]="11" />
-                Contenuto informativo · non è consulenza finanziaria
-              </span>
-            </a>
-          </li>
-        }
-      </ol>
-    }
-
-    <!-- ---------------------------------------------------------------- -->
-    <!-- Archivio · griglia                                                -->
-    <!-- ---------------------------------------------------------------- -->
-    @default {
-      <div class="grid">
-        @for (article of filtered(); track article.slug) {
-          <app-article-card [article]="article" />
-        }
-      </div>
-    }
+        </li>
+      }
+    </ol>
+  } @else {
+    <!-- ------------------------------------------------------------------ -->
+    <!-- Archivio · griglia di schede                                        -->
+    <!-- ------------------------------------------------------------------ -->
+    <div class="grid">
+      @for (article of filtered(); track article.slug) {
+        <app-article-card [article]="article" />
+      }
+    </div>
   }
-} @else {
-  <div class="empty card card--pad">
-    <app-icon name="archive" [size]="26" />
-    <p class="empty__title">Nessuna analisi in questa selezione</p>
-    <p class="empty__text">
-      La sezione è attiva ma non contiene ancora contenuti corrispondenti al filtro scelto. Le
-      pubblicazioni non seguono alcuna periodicità prestabilita.
-    </p>
-    <a class="btn btn--ghost btn--sm" routerLink="/analisi">Vedi tutte le analisi</a>
-  </div>
-}
 
-<section class="sections">
-  <p class="eyebrow">Altre sezioni</p>
-  <div class="sections__grid">
-    @for (c of otherSections(); track c.slug) {
-      <a class="card card--hover sec" [routerLink]="routeFor(c.slug)">
-        <span class="sec__icon"><app-icon [name]="c.icon" [size]="17" /></span>
+  <!-- Quando l'elenco è vuoto il rimando vive già dentro il riquadro. -->
+  <section class="sections">
+    <p class="eyebrow">Continua da qui</p>
+    <div class="sections__grid">
+      <a class="card card--hover sec" routerLink="/argomenti">
+        <span class="sec__icon"><app-icon name="layers" [size]="17" /></span>
         <span class="sec__body">
-          <span class="sec__name">{{ c.name }}</span>
-          <span class="sec__tag">{{ c.tagline }}</span>
+          <span class="sec__name">Tutti gli argomenti</span>
+          <span class="sec__tag">Le categorie raccolte per famiglia</span>
         </span>
         <app-icon name="chevron-right" [size]="15" />
       </a>
-    }
+    </div>
+  </section>
+} @else {
+  <div class="empty card card--pad">
+    <app-icon name="archive" [size]="26" />
+    <p class="empty__title">{{ emptyTitle() }}</p>
+    <p class="empty__text">{{ emptyText() }}</p>
+    <div class="row wrap gap-8">
+      <a class="btn btn--ghost btn--sm" routerLink="/calendario">Calendario economico</a>
+      <a class="btn btn--ghost btn--sm" routerLink="/argomenti">Vedi gli argomenti</a>
+    </div>
   </div>
-</section>
+}

@@ -1,6 +1,6 @@
 ---
 name: pubblica-analisi
-description: Pubblica una o più analisi su Vitanera partendo dal testo grezzo. Decide titolo, sezione e durata della lettura, la converte in blocchi strutturati, aggiorna l'indicatore operativo e i riferimenti di mercato in panoramica, verifica la build e i test, poi fa commit e push. Usare quando l'utente fornisce il testo di un'analisi da pubblicare ("aggiungi questo articolo", "pubblica questa analisi", "pubblica queste analisi", "inserisci questi").
+description: Pubblica una o più analisi su Vitanera partendo dal testo grezzo. Decide titolo, categorie e durata della lettura, la converte in blocchi strutturati, aggiorna l'indicatore operativo e i riferimenti di mercato in panoramica, verifica la build e i test, poi fa commit e push. Usare quando l'utente fornisce il testo di un'analisi da pubblicare ("aggiungi questo articolo", "pubblica questa analisi", "pubblica queste analisi", "inserisci questi").
 ---
 
 # Pubblicare un'analisi su Vitanera
@@ -8,7 +8,7 @@ description: Pubblica una o più analisi su Vitanera partendo dal testo grezzo. 
 L'argomento è il **testo grezzo** dell'analisi. Se è un percorso di file, leggilo.
 Se manca del tutto, chiedi il testo e fermati.
 
-Non chiedere conferma su titolo, sezione, orario o durata della lettura: sono
+Non chiedere conferma su titolo, categorie, orario o durata della lettura: sono
 decisioni tue, prese con le regole qui sotto. Chiedi solo se il testo è ambiguo
 al punto da rendere impossibile capire di quale strumento parla.
 
@@ -42,8 +42,8 @@ articolo unico si può sempre dividere dopo.
    parla dell'apertura americana viene dopo uno che commenta il dato delle
    14:30.
 2. **Scrivi tutti gli articoli** seguendo i passi 1-3, uno per testo. Ogni
-   articolo ha la sua `const`, il suo slug e la sua sezione: due analisi dello
-   stesso giorno possono finire in sezioni diverse.
+   articolo ha la sua `const`, il suo slug e le sue categorie: due analisi dello
+   stesso giorno possono avere categorie del tutto diverse.
 3. **Assegna i `publishedAt` in ordine crescente**, tutti già trascorsi e tutti
    successivi all'ultimo articolo già in archivio. Distanziali di qualche
    minuto rispettando l'ordine cronologico reale: se i testi citano un orario
@@ -71,6 +71,12 @@ Prima di scrivere, apri sempre:
 - `src/app/core/data/signal.data.ts` — indicatore in panoramica
 - `src/app/core/data/markets.data.ts` — riferimenti numerici in panoramica
 - `src/app/core/models/article.model.ts` — tipi, se hai dubbi sui campi
+- `src/app/core/config/site.config.ts` — l'elenco autorevole delle categorie
+
+L'archivio può essere **vuoto**: è lo stato in cui il sito riparte. In quel caso
+non c'è un articolo precedente da cui copiare lo stile — usa i tipi in
+`article.model.ts` e questa guida — e `MARKET_SIGNAL` vale `null`, quindi il
+passo 4 lo scrive da zero invece di aggiornarlo.
 
 Serve anche l'ora corrente:
 
@@ -83,16 +89,44 @@ anche di due minuti nel futuro fa apparire l'indicatore come «in attesa di
 notizie» appena pubblicato e mostra la data assoluta al posto del tempo
 trascorso. Nel dubbio togli qualche minuto.
 
-## 2. Decidi la sezione
+## 2. Decidi le categorie
 
-| Sezione | `category` | Quando |
-| --- | --- | --- |
-| Fondamentali | `fondamentali` | Dati macro, banche centrali, decisioni sui tassi, inflazione, occupazione. Struttura tipica: fatti confermati → perché conta → interpretazione → impatto → catalizzatore. |
-| Correlazioni | `correlazioni` | Controlli cross-asset: conferme e contraddizioni fra oro, dollaro, rendimenti, energia, metalli, valute. Parole spia: «conferma», «divergenza», «correlati», «bias intraday». |
-| Geopolitica | `geopolitica` | Conflitti, rotte marittime, energia come fattore di rischio, colli di bottiglia. |
+Il campo è `categories` ed è un **elenco**: un'analisi appartiene a tutte le
+categorie di cui parla davvero. L'elenco autorevole è `CATEGORIES` in
+`src/app/core/config/site.config.ts`; usa solo slug presenti lì, altrimenti la
+compilazione fallisce.
 
-Se il testo copre più temi, scegli la sezione del **fatto nuovo** che lo ha
-generato, non degli argomenti citati di sfuggita.
+**La prima categoria è quella principale**: determina la tinta della pagina e la
+pastiglia in evidenza sulle schede. Scegli come principale la categoria del
+**fatto nuovo** che ha generato l'analisi, non di ciò che è citato di sfuggita.
+
+Il modo più affidabile di comporre l'elenco è per strati, in quest'ordine:
+
+1. **L'indicatore o il tema di cui parla** — è quasi sempre la principale:
+   `nfp`, `variazione-ipc`, `ipc-core`, `pce-core-annuale`, `variazione-ipp`,
+   `tasso-di-interesse`, `pil`, `fiducia-consumatori`, `geopolitica`…
+2. **L'area** a cui il fatto si riferisce: `usa`, `europa`, `asia`.
+3. **L'istituto**, se c'entra: `fed`, `bce`.
+4. **Le categorie collegate** che il testo tratta esplicitamente. Un commento
+   all'IPC americano che discute anche la componente core sta in `variazione-ipc`
+   **e** in `ipc-core`.
+
+Esempi:
+
+| Testo | `categories` |
+| --- | --- |
+| Reazione al dato NFP di luglio | `['nfp', 'usa', 'fed']` |
+| IPC americano sopra le attese, core in accelerazione | `['variazione-ipc', 'usa', 'ipc-core', 'fed']` |
+| Riunione BCE, tassi fermi | `['tasso-di-interesse', 'bce', 'europa']` |
+| Stretto di Hormuz e premio di rischio | `['geopolitica', 'asia']` |
+| Controllo cross-asset intraday su XAU/USD | `['usa', 'tasso-di-interesse']` |
+
+Due limiti pratici: **almeno una** categoria, e in genere **non più di cinque**.
+Oltre quel numero l'analisi compare ovunque e l'archivio smette di filtrare.
+
+Non forzare una categoria di indicatore quando il testo non lo tratta: le pagine
+di argomento affiancano le analisi allo storico del calendario economico, e un
+accostamento sbagliato si nota subito.
 
 ## 3. Scrivi l'articolo
 
@@ -110,6 +144,7 @@ degli errori che i test intercettano.
 | Campo | Regola |
 | --- | --- |
 | `slug` | Dal titolo: minuscolo, senza accenti né apostrofi, parole separate da trattini, max ~60 caratteri. Deve essere unico. |
+| `categories` | L'elenco deciso al passo 2, con la principale per prima. Solo slug esistenti in `CATEGORIES`. |
 | `title` | Se il testo ne ha già uno usabile, riprendilo sistemando maiuscole e refusi. Se manca o è troncato, scrivilo tu: sintetico, in italiano, senza punto finale, senza maiuscole enfatiche. |
 | `kicker` | `Tema · Sottotema`, coerente con quelli già presenti (per esempio `Correlazioni · Controllo cross-asset`). |
 | `dek` | Due o tre righe che riassumono il fatto nuovo e perché conta. Non ripetere il titolo. |
@@ -160,7 +195,7 @@ Non appiattire tutto in paragrafi.
 ## 4. Aggiorna l'indicatore
 
 `MARKET_SIGNAL` in `src/app/core/data/signal.data.ts` è la sintesi delle
-**ultime pubblicazioni di tutte le sezioni**, non solo dell'ultima.
+**ultime pubblicazioni, quali che siano le loro categorie**, non solo dell'ultima.
 
 L'aggiornamento non è facoltativo: se lo salti, la panoramica continua a
 mostrare la lettura precedente e, passata l'ora, resta bloccata su «in attesa
@@ -174,11 +209,11 @@ comparire nello `stance` e in `sources`, mai nella direzione.
 - `validityMinutes`: quanto dura la lettura. **Va deciso ogni volta**, vedi sotto.
 - `direction`, `strength`: dal bias del nuovo articolo, se ne ha uno; altrimenti resta il più recente disponibile.
 - `headline`: una riga, il fatto che conta adesso.
-- `stance`: due o tre righe che tengono insieme le ultime letture delle diverse sezioni.
+- `stance`: due o tre righe che tengono insieme le ultime letture pubblicate.
 - `favours` / `avoid`: cosa il testo indica come favorito e cosa come da evitare. Se il testo dice di restare fuori, `favours` deve dirlo esplicitamente.
 - `invalidation`: la condizione che fa decadere la lettura.
 - `confirming` / `contradicting`: etichette brevissime con il valore, per esempio `DXY debole ≈ 100,65`.
-- `sources`: fino a tre slug, dal più recente, possibilmente di sezioni diverse. Devono esistere in `articles.data.ts`.
+- `sources`: fino a tre slug, dal più recente, possibilmente di categorie diverse. Devono esistere in `articles.data.ts`.
 
 ### Quanto deve durare la lettura
 
@@ -245,7 +280,18 @@ schede) e `MARKET_STRIP` (striscia sotto) ai valori citati nelle analisi più
 recenti. `tone` guida il colore: `gold` per l'oro, `bull` favorevole, `bear`
 contrario, `warn` ambiguo, `neutral` fermo.
 
+I due array possono essere **vuoti**: è lo stato in cui il sito riparte, e la
+panoramica in quel caso omette del tutto il blocco. Popolali solo con valori
+che le analisi appena pubblicate citano davvero. Un numero rimasto lì da una
+pubblicazione precedente, senza più un testo che lo motivi, è una quotazione
+senza fonte sotto l'etichetta «valori citati nelle analisi».
+
 Non toccare le note che ricordano che i dati non sono in tempo reale.
+
+**Non confonderli con il calendario economico.** Sono cose diverse:
+`markets.data.ts` sono riferimenti editoriali scritti a mano; il calendario in
+`src/app/core/data/calendar.series.ts` è generato da `npm run calendario` e non
+va mai modificato a mano. Pubblicare un'analisi non richiede di rigenerarlo.
 
 ## 6. Verifica e build
 
@@ -302,7 +348,7 @@ git add -A
 git commit -m @'
 Nuova analisi: <titolo>
 
-- <sezione>: sintesi in una riga.
+- <categoria principale>: sintesi in una riga.
 - Indicatore aggiornato: <direzione e messaggio>.
 - Riferimenti di mercato allineati ai valori citati.
 
@@ -317,8 +363,8 @@ punto elenco per articolo:
 ```
 Nuove analisi: <titolo 1> e <titolo 2>
 
-- <sezione 1>: sintesi in una riga.
-- <sezione 2>: sintesi in una riga.
+- <categoria principale 1>: sintesi in una riga.
+- <categoria principale 2>: sintesi in una riga.
 - Indicatore aggiornato sull'analisi più recente: <direzione e messaggio>.
 - Riferimenti di mercato allineati ai valori citati.
 ```
@@ -363,12 +409,12 @@ Riporta all'utente quale dei tre casi è, senza rifare build o commit inutili.
 
 ## 9. Riferisci
 
-Chiudi dicendo, in poche righe: titolo scelto, sezione e perché, orario di
+Chiudi dicendo, in poche righe: titolo scelto, categorie scelte e perché, orario di
 pubblicazione, come è cambiato l'indicatore — **direzione, forza e durata
 scelta, con l'ora di scadenza calcolata** — e **quali modifiche hai fatto al
 testo dell'autore** (refusi, riformulazioni, tagli). Gli ultimi due punti vanno
 sempre esplicitati.
 
-Con più analisi ripeti titolo, sezione e orario per ciascuna, poi dai una volta
+Con più analisi ripeti titolo, categorie e orario per ciascuna, poi dai una volta
 sola l'esito dell'indicatore e dei riferimenti di mercato. Se hai unito o
 separato dei testi rispetto a come li hai ricevuti, dillo e spiega perché.

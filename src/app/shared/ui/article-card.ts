@@ -21,9 +21,17 @@ import { Timestamp } from './timestamp';
       [routerLink]="['/analisi', article().slug]"
     >
       <div class="art__top">
-        <span class="chip chip--gold chip--sm">
-          <app-icon [name]="categoryIcon()" [size]="12" />
-          {{ categoryName() }}
+        <span class="art__cats">
+          <span class="chip chip--gold chip--sm">
+            <app-icon [name]="primaryIcon()" [size]="12" />
+            {{ primaryName() }}
+          </span>
+          @for (c of secondary(); track c.slug) {
+            <span class="chip chip--sm art__cat">{{ c.short }}</span>
+          }
+          @if (hidden(); as n) {
+            <span class="chip chip--sm art__cat" [attr.title]="hiddenNames()">+{{ n }}</span>
+          }
         </span>
         <span class="art__date"
           ><app-timestamp [iso]="article().publishedAt" [withIcon]="true"
@@ -105,6 +113,23 @@ import { Timestamp } from './timestamp';
       justify-content: space-between;
       gap: 10px;
       margin-bottom: 14px;
+    }
+
+    .art__cats {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+      min-width: 0;
+    }
+
+    .art__cat {
+      padding: 2px 7px;
+      font-size: 9.8px;
+      font-weight: 600;
+      color: var(--text-faint);
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.02);
     }
 
     .art__date {
@@ -260,11 +285,23 @@ export class ArticleCard {
   readonly article = input.required<Article>();
   readonly feature = input<boolean>(false);
 
-  protected readonly categoryName = computed(
-    () => this.content.categoryBySlug(this.article().category)?.name ?? 'Analisi',
-  );
+  private readonly primary = computed(() => this.content.primaryCategory(this.article()));
 
-  protected readonly categoryIcon = computed(
-    () => this.content.categoryBySlug(this.article().category)?.icon ?? 'archive',
+  /** Le categorie oltre la principale, nell'ordine dichiarato. */
+  private readonly others = computed(() => this.content.categoriesOf(this.article()).slice(1));
+
+  protected readonly primaryName = computed(() => this.primary()?.name ?? 'Analisi');
+  protected readonly primaryIcon = computed(() => this.primary()?.icon ?? 'archive');
+
+  // La scheda in evidenza è più larga e regge una pastiglia in più senza crescere.
+  protected readonly secondary = computed(() => this.others().slice(0, this.feature() ? 3 : 2));
+
+  protected readonly hidden = computed(() => this.others().length - this.secondary().length);
+
+  protected readonly hiddenNames = computed(() =>
+    this.others()
+      .slice(this.secondary().length)
+      .map((c) => c.name)
+      .join(' · '),
   );
 }

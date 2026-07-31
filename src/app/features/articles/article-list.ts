@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CategorySlug } from '../../core/models/article.model';
-import { ContentService, formatTime } from '../../core/services/content.service';
+import { Article, Category, CategorySlug } from '../../core/models/article.model';
+import { ContentService } from '../../core/services/content.service';
 import { RiskNotice } from '../../shared/legal/risk-notice';
 import { ArticleCard } from '../../shared/ui/article-card';
 import { BiasBadge } from '../../shared/ui/bias-badge';
@@ -10,12 +10,11 @@ import { PageHeader } from '../../shared/ui/page-header';
 import { Timestamp } from '../../shared/ui/timestamp';
 
 /**
- * Elenco delle analisi.
+ * Elenco delle analisi: serve sia l'archivio completo sia una singola categoria.
  *
- * Ogni sezione ha un proprio impaginato — dossier numerato, matrice
- * cross-asset, dispaccio cronologico, griglia d'archivio — costruito però sugli
- * stessi token di colore, spaziatura e tipografia, così che le pagine risultino
- * distinte ma coerenti fra loro.
+ * Gli impaginati sono due soltanto — griglia di schede per l'archivio, elenco a
+ * righe per una categoria — perché con ventinove categorie un taglio grafico
+ * per ciascuna renderebbe il sito disordinato invece che vario.
  */
 @Component({
   selector: 'app-article-list',
@@ -30,39 +29,20 @@ export class ArticleList {
   /** Valorizzata dai dati di rotta; `null` per l'archivio completo. */
   readonly category = input<CategorySlug | null>(null);
 
-  protected readonly categories = this.content.categories;
   protected readonly activeTag = signal<string | null>(null);
 
-  protected readonly articles = computed(() => {
+  private readonly categoryInfo = computed(() => {
     const slug = this.category();
-    return slug ? this.content.byCategory(slug) : this.content.articles();
+    return slug ? this.content.categoryBySlug(slug) : null;
   });
 
-  /** Impaginato dedicato alla sezione. */
-  protected readonly layout = computed(() => {
-    switch (this.category()) {
-      case 'fondamentali':
-        return 'dossier';
-      case 'correlazioni':
-        return 'matrice';
-      case 'geopolitica':
-        return 'dispaccio';
-      default:
-        return 'griglia';
-    }
-  });
-
-  protected readonly layoutNote = computed(() => {
-    switch (this.layout()) {
-      case 'dossier':
-        return 'Dossier in ordine cronologico inverso: fatti confermati, effetti descritti e condizioni di invalidazione.';
-      case 'matrice':
-        return 'Matrice cross-asset: ogni scheda riporta gli strumenti osservati nel confronto.';
-      case 'dispaccio':
-        return 'Dispaccio cronologico: le schede sono ordinate per orario di pubblicazione.';
-      default:
-        return 'Tutte le pubblicazioni, dalla più recente.';
-    }
+  /**
+   * Uno slug sconosciuto ricade sull'archivio completo: meglio mostrare tutto
+   * che una pagina che si contraddice fra intestazione ed elenco.
+   */
+  protected readonly articles = computed(() => {
+    const info = this.categoryInfo();
+    return info ? this.content.byCategory(info.slug) : this.content.articles();
   });
 
   protected readonly tags = computed(() => {
@@ -80,15 +60,22 @@ export class ArticleList {
     return tag ? this.articles().filter((a) => a.tags.includes(tag)) : this.articles();
   });
 
-  private readonly categoryInfo = computed(() => {
-    const slug = this.category();
-    return slug ? this.content.categoryBySlug(slug) : null;
-  });
+  protected readonly layout = computed<'elenco' | 'griglia'>(() =>
+    this.categoryInfo() ? 'elenco' : 'griglia',
+  );
+
+  protected readonly layoutNote = computed(() =>
+    this.layout() === 'elenco'
+      ? 'Elenco numerato dalla pubblicazione più recente: per ciascuna analisi i punti chiave, l’orientamento dichiarato e il livello di certezza.'
+      : 'Griglia dell’archivio: una scheda per analisi, dalla più recente.',
+  );
 
   protected readonly heading = computed(() => this.categoryInfo()?.name ?? 'Archivio analisi');
+
   protected readonly eyebrow = computed(
     () => this.categoryInfo()?.tagline ?? 'Tutte le pubblicazioni',
   );
+
   protected readonly icon = computed(() => this.categoryInfo()?.icon ?? 'archive');
 
   protected readonly description = computed(
@@ -98,24 +85,42 @@ export class ArticleList {
         'e hanno finalità esclusivamente informative e didattiche.',
   );
 
-  protected readonly otherSections = computed(() =>
-    this.categories.filter((c) => c.slug !== this.category()),
+  protected readonly emptyTitle = computed(() =>
+    this.activeTag() ? 'Nessuna analisi con questo tema' : 'Ancora nessuna pubblicazione',
   );
+
+  protected readonly emptyText = computed(() => {
+    const tag = this.activeTag();
+    if (tag) {
+      return `Nessuna delle analisi pubblicate riporta il tema «${tag}». Togli il filtro per vedere tutto ciò che è disponibile.`;
+    }
+
+    const info = this.categoryInfo();
+    if (info) {
+      return `L’archivio riparte da zero e su «${info.name}» non c’è ancora nulla. Le analisi di questo argomento compariranno qui, senza periodicità prestabilita.`;
+    }
+
+    return 'L’archivio riparte da zero: al momento non è stata pubblicata alcuna analisi. Le prossime compariranno qui, senza periodicità prestabilita.';
+  });
 
   protected toggleTag(tag: string): void {
     this.activeTag.update((current) => (current === tag ? null : tag));
   }
 
-  /** Numerazione decrescente del dossier: la più recente ha il numero più alto. */
+  /** Numerazione decrescente dell'elenco: la più recente ha il numero più alto. */
   protected index(i: number): string {
     return `${this.filtered().length - i}`.padStart(2, '0');
   }
 
-  protected time(iso: string): string {
-    return formatTime(iso);
-  }
-
-  protected routeFor(slug: string): string {
-    return slug === 'previsioni' ? '/orizzonti' : `/${slug}`;
+  /**
+   * Le altre categorie dell'analisi: su una pagina di categoria dicono al
+   * lettore da dove altro può ritrovare lo stesso testo.
+   */
+  protected otherCategories(article: Article): readonly Category[] {
+    const current = this.category();
+    return this.content
+      .categoriesOf(article)
+      .filter((c) => c.slug !== current)
+      .slice(0, 3);
   }
 }

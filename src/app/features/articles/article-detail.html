@@ -9,14 +9,20 @@
     <!-- ------------------------------------------------------------------ -->
     <header class="hero anim-up">
       <div class="hero__top">
-        @if (category(); as c) {
-          <a
-            class="chip chip--gold"
-            [routerLink]="['/', c.slug === 'previsioni' ? 'orizzonti' : c.slug]"
-          >
-            <app-icon [name]="c.icon" [size]="12" />
-            {{ c.name }}
-          </a>
+        @if (categories().length) {
+          <div class="hero__cats">
+            @if (primary(); as c) {
+              <a class="chip chip--gold" [routerLink]="['/argomenti', c.slug]">
+                <app-icon [name]="c.icon" [size]="12" />
+                {{ c.name }}
+              </a>
+            }
+            @for (c of secondary(); track c.slug) {
+              <a class="chip chip--sm hero__cat" [routerLink]="['/argomenti', c.slug]">
+                {{ c.short }}
+              </a>
+            }
+          </div>
         }
         <span class="hero__date">
           <app-timestamp [iso]="a.publishedAt" [withIcon]="true" />

@@ -14,6 +14,34 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink, Icon, ContentBlock, RiskNotice, ArticleCard, BiasBadge, Timestamp],
   templateUrl: './article-detail.html',
   styleUrl: './article-detail.scss',
+  // Un'analisi può stare in parecchie categorie: la riga di testata deve andare
+  // a capo invece di schiacciare la data di pubblicazione.
+  styles: `
+    .hero__top {
+      flex-wrap: wrap;
+    }
+
+    .hero__cats {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .hero__cat {
+      border-color: var(--line);
+      color: var(--text-muted);
+      transition:
+        color 0.25s var(--ease),
+        border-color 0.25s var(--ease);
+    }
+
+    .hero__cat:hover {
+      color: var(--accent-soft);
+      border-color: var(--accent-line);
+    }
+  `,
   host: { '(window:scroll)': 'onScroll()' },
 })
 export class ArticleDetail {
@@ -30,10 +58,12 @@ export class ArticleDetail {
     const a = this.article();
     return a ? this.content.related(a) : [];
   });
-  protected readonly category = computed(() => {
+  protected readonly categories = computed(() => {
     const a = this.article();
-    return a ? this.content.categoryBySlug(a.category) : null;
+    return a ? this.content.categoriesOf(a) : [];
   });
+  protected readonly primary = computed(() => this.categories()[0] ?? null);
+  protected readonly secondary = computed(() => this.categories().slice(1));
   protected readonly published = computed(() => {
     const a = this.article();
     return a ? formatDateTime(a.publishedAt) : '';

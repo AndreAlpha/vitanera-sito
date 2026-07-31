@@ -2,8 +2,8 @@ import { Injectable, computed, signal } from '@angular/core';
 import { ARTICLES } from '../data/articles.data';
 import { GLOSSARY } from '../data/glossary.data';
 import { LEGAL_DOCUMENTS } from '../data/legal.data';
-import { CATEGORIES } from '../config/site.config';
-import { Article, CategorySlug, TocEntry } from '../models/article.model';
+import { CATEGORIES, CATEGORY_FAMILIES } from '../config/site.config';
+import { Article, Category, CategorySlug, TocEntry } from '../models/article.model';
 
 const MONTHS = [
   'gennaio',
@@ -96,12 +96,23 @@ export class ContentService {
 
   readonly articles = this.all.asReadonly();
   readonly categories = CATEGORIES;
+  readonly families = CATEGORY_FAMILIES;
   readonly glossary = GLOSSARY;
   readonly legalDocuments = LEGAL_DOCUMENTS;
+
+  /** Vera finché non è stata pubblicata alcuna analisi. */
+  readonly empty = computed(() => this.all().length === 0);
 
   readonly latest = computed(() => this.all()[0] ?? null);
 
   readonly featured = computed(() => this.all().filter((a) => a.featured));
+
+  /** Categorie che hanno almeno un'analisi, dalla più popolata. */
+  readonly activeCategories = computed(() =>
+    CATEGORIES.map((c) => ({ category: c, count: this.countByCategory(c.slug) }))
+      .filter((row) => row.count > 0)
+      .sort((a, b) => b.count - a.count || a.category.name.localeCompare(b.category.name, 'it')),
+  );
 
   /** Lettere disponibili nel glossario, per la navigazione alfabetica. */
   readonly glossaryLetters = computed(() =>
@@ -121,26 +132,38 @@ export class ContentService {
   });
 
   byCategory(slug: CategorySlug): readonly Article[] {
-    return this.all().filter((a) => a.category === slug);
+    return this.all().filter((a) => a.categories.includes(slug));
   }
 
   bySlug(slug: string): Article | null {
     return this.all().find((a) => a.slug === slug) ?? null;
   }
 
-  categoryBySlug(slug: CategorySlug) {
+  categoryBySlug(slug: string): Category | null {
     return CATEGORIES.find((c) => c.slug === slug) ?? null;
+  }
+
+  /** Le categorie di un'analisi, risolte e nell'ordine dichiarato. */
+  categoriesOf(article: Article): readonly Category[] {
+    return article.categories
+      .map((slug) => this.categoryBySlug(slug))
+      .filter((c): c is Category => c !== null);
+  }
+
+  /** Categoria principale: la prima dichiarata, da cui deriva la tinta. */
+  primaryCategory(article: Article): Category | null {
+    return this.categoriesOf(article)[0] ?? null;
   }
 
   countByCategory(slug: CategorySlug): number {
     return this.byCategory(slug).length;
   }
 
-  /** Altre analisi correlate: stessa categoria, poi tag in comune. */
+  /** Altre analisi correlate: categorie in comune, poi tag in comune. */
   related(article: Article, limit = 3): readonly Article[] {
     const others = this.all().filter((a) => a.slug !== article.slug);
     const score = (a: Article) =>
-      (a.category === article.category ? 3 : 0) +
+      a.categories.filter((c) => article.categories.includes(c)).length * 3 +
       a.tags.filter((t) => article.tags.includes(t)).length;
     return [...others].sort((a, b) => score(b) - score(a)).slice(0, limit);
   }

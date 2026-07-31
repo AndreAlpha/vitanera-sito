@@ -1,6 +1,11 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { DIRECTION_LABEL, MARKET_SIGNAL, STRENGTH_VALUE } from '../../core/data/signal.data';
+import {
+  DIRECTION_LABEL,
+  MARKET_SIGNAL,
+  OperationalSignal,
+  STRENGTH_VALUE,
+} from '../../core/data/signal.data';
 import { ClockService } from '../../core/services/clock.service';
 import { ContentService, formatDuration } from '../../core/services/content.service';
 import { Icon } from '../../shared/ui/icon';
@@ -9,120 +14,163 @@ import { Timestamp } from '../../shared/ui/timestamp';
 /**
  * Indicatore operativo sull'oro.
  *
- * Vale sessanta minuti dall'ultimo aggiornamento: scaduto quel termine passa
+ * Vale i minuti dichiarati dalla lettura stessa: scaduto quel termine passa
  * automaticamente allo stato «in attesa di notizie» e la lettura precedente
  * resta visibile solo come storico, marcata come non più valida.
+ *
+ * Quando non esiste alcuna lettura la scheda non sparisce: tiene lo stesso
+ * riquadro in stato di attesa, così la panoramica non resta con un vuoto al
+ * posto dell'indicatore.
  */
 @Component({
   selector: 'app-operational-signal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterLink, Icon, Timestamp],
   template: `
-    <section class="sig" [class.sig--expired]="!live()" [attr.aria-live]="'polite'">
-      <div class="sig__meter" [style.--fill]="fill()"></div>
+    <section
+      class="sig"
+      [class.sig--expired]="signal !== null && !live()"
+      [class.sig--empty]="signal === null"
+      [attr.aria-live]="'polite'"
+    >
+      @if (signal; as s) {
+        <div class="sig__meter" [style.--fill]="fill()"></div>
 
-      <header class="sig__bar">
-        <span class="state" [class.state--live]="live()">
-          <i class="state__dot"></i>
-          {{ live() ? 'Lettura valida' : 'In attesa di notizie' }}
-        </span>
-
-        <span class="sig__asset">{{ signal.asset }}</span>
-
-        <span class="sig__timing">
-          @if (live()) {
-            <span class="sig__left">valida ancora {{ remainingLabel() }}</span>
-          }
-          <span class="sig__updated"> aggiornato <app-timestamp [iso]="signal.updatedAt" /> </span>
-        </span>
-      </header>
-
-      <div class="sig__body">
-        <!-- Quadrante ---------------------------------------------------- -->
-        <div class="gauge">
-          <span class="gauge__icon">
-            <app-icon [name]="live() ? icon() : 'clock'" [size]="26" />
+        <header class="sig__bar">
+          <span class="state" [class.state--live]="live()">
+            <i class="state__dot"></i>
+            {{ live() ? 'Lettura valida' : 'In attesa di notizie' }}
           </span>
-          <p class="gauge__label">{{ live() ? 'Impostazione' : 'Stato' }}</p>
-          <p class="gauge__value">{{ live() ? directionLabel : 'In attesa di notizie' }}</p>
 
-          @if (live()) {
-            <div class="gauge__strength">
-              <span>Forza del segnale</span>
-              <span class="dots">
-                @for (i of dots; track i) {
-                  <i [class.on]="i <= strengthValue"></i>
-                }
-              </span>
-              <span class="gauge__strengthText">{{ signal.strength }}</span>
+          <span class="sig__asset">{{ s.asset }}</span>
+
+          <span class="sig__timing">
+            @if (live()) {
+              <span class="sig__left">valida ancora {{ remainingLabel() }}</span>
+            }
+            <span class="sig__updated"> aggiornato <app-timestamp [iso]="s.updatedAt" /> </span>
+          </span>
+        </header>
+
+        <div class="sig__body">
+          <!-- Quadrante ---------------------------------------------------- -->
+          <div class="gauge">
+            <span class="gauge__icon">
+              <app-icon [name]="live() ? icon() : 'clock'" [size]="26" />
+            </span>
+            <p class="gauge__label">{{ live() ? 'Impostazione' : 'Stato' }}</p>
+            <p class="gauge__value">{{ live() ? directionLabel : 'In attesa di notizie' }}</p>
+
+            @if (live()) {
+              <div class="gauge__strength">
+                <span>Forza del segnale</span>
+                <span class="dots">
+                  @for (i of dots; track i) {
+                    <i [class.on]="i <= strengthValue"></i>
+                  }
+                </span>
+                <span class="gauge__strengthText">{{ s.strength }}</span>
+              </div>
+            } @else {
+              <p class="gauge__note">
+                L’ultima lettura è scaduta. Nessuna indicazione è considerata valida finché non
+                viene pubblicato un nuovo aggiornamento.
+              </p>
+            }
+          </div>
+
+          <!-- Contenuto ---------------------------------------------------- -->
+          <div class="detail">
+            <h2 class="detail__headline">{{ s.headline }}</h2>
+            <p class="detail__stance">{{ s.stance }}</p>
+
+            <div class="cols">
+              <div class="col col--fav">
+                <p class="col__title"><app-icon name="check" [size]="13" /> Favorito</p>
+                <ul>
+                  @for (item of s.favours; track item) {
+                    <li>{{ item }}</li>
+                  }
+                </ul>
+              </div>
+              <div class="col col--avoid">
+                <p class="col__title"><app-icon name="close" [size]="13" /> Da evitare</p>
+                <ul>
+                  @for (item of s.avoid; track item) {
+                    <li>{{ item }}</li>
+                  }
+                </ul>
+              </div>
             </div>
-          } @else {
-            <p class="gauge__note">
-              L’ultima lettura è scaduta. Nessuna indicazione è considerata valida finché non viene
-              pubblicato un nuovo aggiornamento.
+
+            <div class="tags">
+              <div class="tags__row">
+                <span class="tags__label tags__label--bull">Confermano</span>
+                @for (item of s.confirming; track item) {
+                  <span class="tag tag--bull">{{ item }}</span>
+                }
+              </div>
+              <div class="tags__row">
+                <span class="tags__label tags__label--bear">Contraddicono</span>
+                @for (item of s.contradicting; track item) {
+                  <span class="tag tag--bear">{{ item }}</span>
+                }
+              </div>
+            </div>
+
+            <p class="invalid">
+              <app-icon name="alert" [size]="13" />
+              <span><strong>Decade con:</strong> {{ s.invalidation }}</span>
             </p>
-          }
+          </div>
         </div>
 
-        <!-- Contenuto ---------------------------------------------------- -->
-        <div class="detail">
-          <h2 class="detail__headline">{{ signal.headline }}</h2>
-          <p class="detail__stance">{{ signal.stance }}</p>
-
-          <div class="cols">
-            <div class="col col--fav">
-              <p class="col__title"><app-icon name="check" [size]="13" /> Favorito</p>
-              <ul>
-                @for (item of signal.favours; track item) {
-                  <li>{{ item }}</li>
-                }
-              </ul>
-            </div>
-            <div class="col col--avoid">
-              <p class="col__title"><app-icon name="close" [size]="13" /> Da evitare</p>
-              <ul>
-                @for (item of signal.avoid; track item) {
-                  <li>{{ item }}</li>
-                }
-              </ul>
-            </div>
+        <footer class="sig__foot">
+          <div class="sources">
+            <span class="sources__label">Deriva da</span>
+            @for (a of sourceArticles(); track a.slug) {
+              <a [routerLink]="['/analisi', a.slug]">{{ a.kicker }}</a>
+            }
           </div>
-
-          <div class="tags">
-            <div class="tags__row">
-              <span class="tags__label tags__label--bull">Confermano</span>
-              @for (item of signal.confirming; track item) {
-                <span class="tag tag--bull">{{ item }}</span>
-              }
-            </div>
-            <div class="tags__row">
-              <span class="tags__label tags__label--bear">Contraddicono</span>
-              @for (item of signal.contradicting; track item) {
-                <span class="tag tag--bear">{{ item }}</span>
-              }
-            </div>
-          </div>
-
-          <p class="invalid">
-            <app-icon name="alert" [size]="13" />
-            <span><strong>Decade con:</strong> {{ signal.invalidation }}</span>
+          <p class="sig__legal">
+            Riepilogo editoriale delle analisi pubblicate, valido {{ s.validityMinutes }} minuti
+            dall’aggiornamento. <strong>Non è consulenza finanziaria</strong> né un segnale di
+            acquisto o vendita.
           </p>
-        </div>
-      </div>
+        </footer>
+      } @else {
+        <header class="sig__bar">
+          <span class="state">
+            <i class="state__dot"></i>
+            In attesa di notizie
+          </span>
+        </header>
 
-      <footer class="sig__foot">
-        <div class="sources">
-          <span class="sources__label">Deriva da</span>
-          @for (a of sourceArticles(); track a.slug) {
-            <a [routerLink]="['/analisi', a.slug]">{{ a.kicker }}</a>
-          }
+        <div class="waiting">
+          <span class="waiting__icon"><app-icon name="clock" [size]="26" /></span>
+          <div class="waiting__body">
+            <p class="waiting__title">Nessuna lettura in corso</p>
+            <p class="waiting__text">
+              Al momento non è in corso alcuna lettura operativa. Le letture compaiono qui dopo la
+              pubblicazione di un’analisi e restano valide per il tempo dichiarato al momento
+              dell’aggiornamento.
+            </p>
+            <div class="waiting__actions">
+              <a class="btn btn--ghost btn--sm" routerLink="/calendario">
+                Guarda il calendario economico <app-icon name="arrow-right" [size]="13" />
+              </a>
+              <a class="btn btn--ghost btn--sm" routerLink="/metodologia">Come lavoriamo</a>
+            </div>
+          </div>
         </div>
-        <p class="sig__legal">
-          Riepilogo editoriale delle analisi pubblicate, valido {{ signal.validityMinutes }} minuti
-          dall’aggiornamento. <strong>Non è consulenza finanziaria</strong> né un segnale di
-          acquisto o vendita.
-        </p>
-      </footer>
+
+        <footer class="sig__foot">
+          <p class="sig__legal">
+            L’indicatore riepiloga le analisi pubblicate e vale solo per il tempo che dichiara.
+            <strong>Non è consulenza finanziaria</strong> né un segnale di acquisto o vendita.
+          </p>
+        </footer>
+      }
     </section>
   `,
   styles: `
@@ -145,7 +193,8 @@ import { Timestamp } from '../../shared/ui/timestamp';
         background 0.5s var(--ease);
     }
 
-    .sig--expired {
+    .sig--expired,
+    .sig--empty {
       border-color: var(--line);
       background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.028), rgba(255, 255, 255, 0.006)),
@@ -512,6 +561,55 @@ import { Timestamp } from '../../shared/ui/timestamp';
       color: var(--text-soft);
     }
 
+    /* --- Attesa ------------------------------------------------------------ */
+
+    .waiting {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 26px 24px;
+    }
+
+    .waiting__icon {
+      display: grid;
+      place-items: center;
+      flex: none;
+      width: 56px;
+      height: 56px;
+      border-radius: 19px;
+      border: 1px solid var(--line-strong);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+    }
+
+    .waiting__body {
+      min-width: 0;
+    }
+
+    .waiting__title {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: var(--text-soft);
+    }
+
+    .waiting__text {
+      margin-top: 9px;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 68ch;
+    }
+
+    .waiting__actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
     /* --- Piede -------------------------------------------------------------- */
 
     .sig__foot {
@@ -563,6 +661,12 @@ import { Timestamp } from '../../shared/ui/timestamp';
       font-size: 10.5px;
       line-height: 1.5;
       color: var(--text-faint);
+    }
+
+    /* Senza l'elenco delle fonti accanto, l'allineamento a destra resterebbe
+       appeso nel vuoto. */
+    .sig--empty .sig__legal {
+      text-align: left;
     }
 
     .sig__legal strong {
@@ -626,6 +730,22 @@ import { Timestamp } from '../../shared/ui/timestamp';
         font-size: 13.4px;
       }
 
+      .waiting {
+        flex-direction: column;
+        gap: 14px;
+        padding: 20px 16px;
+      }
+
+      .waiting__icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 15px;
+      }
+
+      .waiting__title {
+        font-size: 16px;
+      }
+
       .sig__foot {
         padding: 13px 16px 15px;
       }
@@ -646,12 +766,12 @@ export class OperationalSignalCard {
   private readonly clock = inject(ClockService);
   private readonly content = inject(ContentService);
 
-  protected readonly signal = MARKET_SIGNAL;
-  protected readonly directionLabel = DIRECTION_LABEL[MARKET_SIGNAL.direction];
-  protected readonly strengthValue = STRENGTH_VALUE[MARKET_SIGNAL.strength];
+  protected readonly signal: OperationalSignal | null = MARKET_SIGNAL;
+  protected readonly directionLabel = this.signal ? DIRECTION_LABEL[this.signal.direction] : '';
+  protected readonly strengthValue = this.signal ? STRENGTH_VALUE[this.signal.strength] : 0;
   protected readonly dots = [1, 2, 3];
 
-  private readonly totalMs = MARKET_SIGNAL.validityMinutes * 60_000;
+  private readonly totalMs = (this.signal?.validityMinutes ?? 0) * 60_000;
 
   /**
    * Tempo trascorso dall'aggiornamento, mai negativo.
@@ -660,12 +780,13 @@ export class OperationalSignalCard {
    * quello di chi pubblica: senza questo troncamento una lettura appena uscita
    * risulterebbe "nel futuro" e verrebbe mostrata come scaduta.
    */
-  private readonly elapsed = computed(() =>
-    Math.max(0, this.clock.now() - Date.parse(this.signal.updatedAt)),
-  );
+  private readonly elapsed = computed(() => {
+    const s = this.signal;
+    return s === null ? 0 : Math.max(0, this.clock.now() - Date.parse(s.updatedAt));
+  });
 
   /** Vera finché non sono trascorsi i minuti di validità dichiarati. */
-  protected readonly live = computed(() => this.elapsed() < this.totalMs);
+  protected readonly live = computed(() => this.signal !== null && this.elapsed() < this.totalMs);
 
   protected readonly remainingShare = computed(() =>
     Math.max(0, Math.min(100, ((this.totalMs - this.elapsed()) / this.totalMs) * 100)),
@@ -676,12 +797,13 @@ export class OperationalSignalCard {
 
   protected readonly remainingLabel = computed(() => formatDuration(this.totalMs - this.elapsed()));
 
-  protected readonly sourceArticles = computed(() =>
-    this.signal.sources.map((slug) => this.content.bySlug(slug)).filter((a) => a !== null),
-  );
+  protected readonly sourceArticles = computed(() => {
+    const sources: readonly string[] = this.signal?.sources ?? [];
+    return sources.map((slug) => this.content.bySlug(slug)).filter((a) => a !== null);
+  });
 
   protected readonly icon = computed(() => {
-    const d = this.signal.direction;
+    const d = this.signal?.direction ?? '';
     if (d.endsWith('ribassista')) {
       return 'arrow-down';
     }

@@ -6,7 +6,51 @@
  * inteso come raccomandazione di investimento o segnale operativo.
  */
 
-export type CategorySlug = 'fondamentali' | 'correlazioni' | 'geopolitica' | 'previsioni';
+/**
+ * Categorie dell'archivio.
+ *
+ * Sono di tre famiglie — area geografica, tema e indicatore macroeconomico — e
+ * un'analisi può appartenere a più categorie contemporaneamente: un commento
+ * all'inflazione americana sta insieme in `usa`, `ipc` e `variazione-ipc`.
+ */
+export type CategorySlug =
+  // Aree e temi
+  | 'usa'
+  | 'europa'
+  | 'asia'
+  | 'geopolitica'
+  // Banche centrali
+  | 'fed'
+  | 'bce'
+  | 'tasso-di-interesse'
+  // Lavoro
+  | 'tasso-di-disoccupazione'
+  | 'richieste-iniziali-sussidi'
+  | 'nfp'
+  // Prezzi
+  | 'ipc'
+  | 'variazione-ipc'
+  | 'ipc-core'
+  | 'variazione-ipc-core'
+  | 'pce'
+  | 'pce-core-annuale'
+  | 'pce-core-trimestrale'
+  | 'variazione-pce-core'
+  | 'variazione-ipp'
+  | 'variazione-ipp-core'
+  // Attività economica
+  | 'fiducia-consumatori'
+  | 'produzione-industriale'
+  | 'variazione-produzione-industriale'
+  | 'pil'
+  | 'pil-annuale'
+  | 'pil-trimestrale'
+  | 'variazione-vendite-dettaglio'
+  | 'vendite-dettaglio-essenziali'
+  | 'indice-vendite-dettaglio';
+
+/** Famiglia a cui appartiene una categoria, usata per raggrupparle a video. */
+export type CategoryFamily = 'aree' | 'banche-centrali' | 'lavoro' | 'prezzi' | 'attivita';
 
 export type Tone = 'gold' | 'bull' | 'bear' | 'warn' | 'neutral';
 
@@ -20,9 +64,19 @@ export type Horizon = 'breve' | 'medio' | 'lungo';
 export interface Category {
   readonly slug: CategorySlug;
   readonly name: string;
+  /** Nome accorciato per pastiglie ed elenchi stretti. */
+  readonly short: string;
+  readonly family: CategoryFamily;
   readonly icon: string;
   readonly tagline: string;
   readonly description: string;
+}
+
+export interface CategoryFamilyInfo {
+  readonly slug: CategoryFamily;
+  readonly name: string;
+  readonly tagline: string;
+  readonly icon: string;
 }
 
 export interface StatItem {
@@ -154,7 +208,12 @@ export interface NextEvent {
 
 export interface Article {
   readonly slug: string;
-  readonly category: CategorySlug;
+  /**
+   * Categorie a cui l'analisi appartiene, dalla più caratterizzante alla più
+   * generica. La prima determina la tinta della pagina e la pastiglia in
+   * evidenza sulle schede; le altre servono a ritrovarla dall'archivio.
+   */
+  readonly categories: readonly CategorySlug[];
   readonly title: string;
   /** Occhiello sopra il titolo. */
   readonly kicker: string;

@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { ARTICLES } from './core/data/articles.data';
+import { CATEGORIES } from './core/config/site.config';
+import { areaBySlug, metaBySlug } from './core/data/calendar.meta';
 
 const suffix = ' · Vitanera';
 
@@ -10,24 +12,8 @@ export const routes: Routes = [
     title: `Panoramica${suffix}`,
     loadComponent: () => import('./features/home/home').then((m) => m.Home),
   },
-  {
-    path: 'fondamentali',
-    title: `Fondamentali${suffix}`,
-    data: { category: 'fondamentali' },
-    loadComponent: () => import('./features/articles/article-list').then((m) => m.ArticleList),
-  },
-  {
-    path: 'correlazioni',
-    title: `Correlazioni${suffix}`,
-    data: { category: 'correlazioni' },
-    loadComponent: () => import('./features/articles/article-list').then((m) => m.ArticleList),
-  },
-  {
-    path: 'geopolitica',
-    title: `Geopolitica${suffix}`,
-    data: { category: 'geopolitica' },
-    loadComponent: () => import('./features/articles/article-list').then((m) => m.ArticleList),
-  },
+
+  /* ---------------------------------------------------------------- Analisi */
   {
     path: 'analisi',
     title: `Archivio analisi${suffix}`,
@@ -43,11 +29,63 @@ export const routes: Routes = [
     },
     loadComponent: () => import('./features/articles/article-detail').then((m) => m.ArticleDetail),
   },
+
+  /* ------------------------------------------------------------- Argomenti */
+  {
+    path: 'argomenti',
+    pathMatch: 'full',
+    title: `Argomenti${suffix}`,
+    loadComponent: () => import('./features/topics/topics').then((m) => m.Topics),
+  },
+  {
+    path: 'argomenti/:category',
+    title: (route) => {
+      const slug = route.paramMap.get('category');
+      const category = CATEGORIES.find((c) => c.slug === slug);
+      return category ? `${category.name}${suffix}` : `Argomento${suffix}`;
+    },
+    loadComponent: () => import('./features/articles/article-list').then((m) => m.ArticleList),
+  },
+
+  /* ------------------------------------------------------------ Calendario */
+  {
+    path: 'calendario',
+    pathMatch: 'full',
+    title: `Calendario economico indici principali${suffix}`,
+    loadComponent: () =>
+      import('./features/calendar/calendar-overview').then((m) => m.CalendarOverview),
+  },
+  {
+    path: 'calendario/banche-centrali',
+    title: `Banche centrali${suffix}`,
+    loadComponent: () => import('./features/calendar/central-banks').then((m) => m.CentralBanks),
+  },
+  {
+    path: 'calendario/:area',
+    title: (route) => {
+      const area = areaBySlug(route.paramMap.get('area') ?? '');
+      return area ? `Calendario ${area.name}${suffix}` : `Calendario economico${suffix}`;
+    },
+    loadComponent: () => import('./features/calendar/calendar-area').then((m) => m.CalendarArea),
+  },
+  {
+    path: 'calendario/:area/:key',
+    title: (route) => {
+      const meta = metaBySlug(route.paramMap.get('area') ?? '', route.paramMap.get('key') ?? '');
+      return meta ? `${meta.name}${suffix}` : `Indicatore${suffix}`;
+    },
+    loadComponent: () =>
+      import('./features/calendar/indicator-detail').then((m) => m.IndicatorDetail),
+  },
+
+  /* ---------------------------------------------------------------- Scenari */
   {
     path: 'orizzonti',
     title: `Orizzonti XAU/USD${suffix}`,
     loadComponent: () => import('./features/outlook/outlook').then((m) => m.Outlook),
   },
+
+  /* -------------------------------------------------------------- Strumenti */
   {
     path: 'metodologia',
     title: `Metodologia${suffix}`,
@@ -58,6 +96,8 @@ export const routes: Routes = [
     title: `Glossario${suffix}`,
     loadComponent: () => import('./features/glossary/glossary').then((m) => m.Glossary),
   },
+
+  /* ----------------------------------------------------------- Trasparenza */
   {
     path: 'avvertenze',
     title: `Avvertenze e rischi${suffix}`,
@@ -76,6 +116,7 @@ export const routes: Routes = [
     data: { documentSlug: 'privacy' },
     loadComponent: () => import('./features/legal/legal-page').then((m) => m.LegalPage),
   },
+
   {
     path: '**',
     title: `Pagina non trovata${suffix}`,

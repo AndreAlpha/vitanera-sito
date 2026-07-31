@@ -46,6 +46,24 @@
   --info: #cfc8bb;
   --info-dim: rgba(207, 200, 187, 0.09);
 
+  /* --- Grafici ----------------------------------------------------------
+     Il valore effettivo è la serie che conta e porta il colore di marca; il
+     consenso è contesto e resta grigio. Le tinte non seguono l'accento di
+     sezione: un grafico deve avere lo stesso significato in ogni pagina.
+
+     Per lo scostamento dal consenso servono due tinte che restino distinte
+     anche a chi non separa rosso e verde: la coppia salvia / terracotta è
+     verificata (ΔE 10,1 in deuteranopia) e in ogni caso il segno è sempre
+     scritto accanto al colore.
+     ---------------------------------------------------------------------- */
+  --chart-actual: #e9b949;
+  --chart-forecast: #8d8377;
+  --chart-muted: #5f5951;
+  --chart-up: #4ad295;
+  --chart-down: #e2705a;
+  --chart-up-dim: rgba(74, 210, 149, 0.16);
+  --chart-down-dim: rgba(226, 112, 90, 0.16);
+
   /* --- Forma ------------------------------------------------------------ */
   --r-xs: 8px;
   --r-sm: 12px;
@@ -84,7 +102,9 @@
    essere riconoscibili ovunque.
    ========================================================================== */
 
-[data-accent='fondamentali'] {
+/* Rame — area statunitense e categorie dei prezzi. */
+[data-accent='usa'],
+[data-accent='prezzi'] {
   --accent: #e8913f;
   --accent-soft: #f7c48f;
   --accent-deep: #a2571a;
@@ -94,7 +114,9 @@
   --accent-rgb: 232, 145, 63;
 }
 
-[data-accent='correlazioni'] {
+/* Verde salvia — area euro e categorie del lavoro. */
+[data-accent='euro'],
+[data-accent='lavoro'] {
   --accent: #57c9a5;
   --accent-soft: #a8e7d4;
   --accent-deep: #2b7a61;
@@ -104,7 +126,8 @@
   --accent-rgb: 87, 201, 165;
 }
 
-[data-accent='geopolitica'] {
+/* Terracotta — aree geografiche e geopolitica. */
+[data-accent='aree'] {
   --accent: #e2705a;
   --accent-soft: #f5ac9c;
   --accent-deep: #983b29;
@@ -114,6 +137,8 @@
   --accent-rgb: 226, 112, 90;
 }
 
+/* Prugna — banche centrali e orizzonti. */
+[data-accent='banche-centrali'],
 [data-accent='orizzonti'] {
   --accent: #ab86d6;
   --accent-soft: #d4bdf0;
@@ -124,7 +149,10 @@
   --accent-rgb: 171, 134, 214;
 }
 
-[data-accent='strumenti'] {
+/* Sabbia — strumenti, argomenti, categorie di attività economica. */
+[data-accent='strumenti'],
+[data-accent='argomenti'],
+[data-accent='attivita'] {
   --accent: #c8bda3;
   --accent-soft: #e6ddc9;
   --accent-deep: #7b7157;

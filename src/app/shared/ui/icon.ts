@@ -177,6 +177,34 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
         @case ('bolt') {
           <svg:path d="M13.2 2.5 4.5 13.6h6.3L10.8 21.5 19.5 10.4h-6.3Z" />
         }
+        @case ('euro') {
+          <svg:path d="M18.5 6.4a7.2 7.2 0 0 0-10.8 2.4 8 8 0 0 0 0 6.4 7.2 7.2 0 0 0 10.8 2.4" />
+          <svg:path d="M4.5 10.3h9M4.5 13.7h9" />
+        }
+        @case ('map') {
+          <svg:path d="m3 6.6 6-2.4 6 2.4 6-2.4v13.2l-6 2.4-6-2.4-6 2.4Z" />
+          <svg:path d="M9 4.2v15M15 6.6v15" />
+        }
+        @case ('users') {
+          <svg:circle cx="9" cy="8" r="3.6" />
+          <svg:path d="M2.8 20.2a6.2 6.2 0 0 1 12.4 0" />
+          <svg:path d="M16.2 5.1a3.6 3.6 0 0 1 0 6.9M17.8 14.8a6.2 6.2 0 0 1 3.4 5.4" />
+        }
+        @case ('factory') {
+          <svg:path d="M3 20.5h18" />
+          <svg:path d="M3 20.5V10l6 3.6V10l6 3.6V6.2h6v14.3" />
+          <svg:path d="M18.5 10.4h.01M18.5 14.4h.01" />
+        }
+        @case ('basket') {
+          <svg:path d="M3 9h18l-1.7 9.2a2 2 0 0 1-2 1.6H6.7a2 2 0 0 1-2-1.6Z" />
+          <svg:path d="m8 9 2.4-5.5M16 9l-2.4-5.5" />
+          <svg:path d="M10 13v3M14 13v3" />
+        }
+        @case ('gauge') {
+          <svg:path d="M3.6 18.5a9 9 0 1 1 16.8 0" />
+          <svg:path d="m12 14.5 4.2-4.6" />
+          <svg:circle cx="12" cy="15.4" r="1.4" />
+        }
         @default {
           <svg:circle cx="12" cy="12" r="9" />
         }

@@ -15,6 +15,7 @@ import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } fro
 import { filter, map } from 'rxjs';
 
 import { NAV, SITE } from './core/config/site.config';
+import { areaBySlug, metaBySlug } from './core/data/calendar.meta';
 import { ContentService } from './core/services/content.service';
 import { DisclaimerBar } from './shared/legal/disclaimer-bar';
 import { DisclaimerModal } from './shared/legal/disclaimer-modal';
@@ -23,10 +24,10 @@ import { Icon } from './shared/ui/icon';
 
 const SEGMENT_LABELS: Record<string, string> = {
   '': 'Panoramica',
-  fondamentali: 'Fondamentali',
-  correlazioni: 'Correlazioni',
-  geopolitica: 'Geopolitica',
   analisi: 'Archivio analisi',
+  argomenti: 'Argomenti',
+  calendario: 'Calendario economico',
+  'banche-centrali': 'Banche centrali',
   orizzonti: 'Orizzonti XAU/USD',
   metodologia: 'Metodologia',
   glossario: 'Glossario',
@@ -91,16 +92,37 @@ export class App {
     let path = '';
     for (const [index, segment] of segments.entries()) {
       path += `/${segment}`;
-      const known = SEGMENT_LABELS[segment];
+      // `hasOwn` e non un semplice accesso: un indirizzo scritto a mano come
+      // /analisi/constructor risolverebbe sulla catena dei prototipi e
+      // stamperebbe il codice di una funzione al posto di un'etichetta.
+      const known = Object.hasOwn(SEGMENT_LABELS, segment) ? SEGMENT_LABELS[segment] : undefined;
       if (known) {
         trail.push({ label: known, link: path });
         continue;
       }
-      const article = index > 0 && segments[0] === 'analisi' ? this.content.bySlug(segment) : null;
-      trail.push({ label: article ? article.kicker : 'Pagina', link: path });
+      trail.push({ label: this.labelFor(segments, index, segment), link: path });
     }
     return trail;
   });
+
+  /** Etichetta di un segmento dinamico: analisi, argomento, area, indicatore. */
+  private labelFor(segments: readonly string[], index: number, segment: string): string {
+    const root = segments[0];
+
+    if (root === 'analisi' && index > 0) {
+      return this.content.bySlug(segment)?.kicker ?? 'Analisi';
+    }
+    if (root === 'argomenti' && index === 1) {
+      return this.content.categoryBySlug(segment)?.name ?? 'Argomento';
+    }
+    if (root === 'calendario' && index === 1) {
+      return areaBySlug(segment)?.name ?? 'Area';
+    }
+    if (root === 'calendario' && index === 2) {
+      return metaBySlug(segments[1], segment)?.short ?? 'Indicatore';
+    }
+    return 'Pagina';
+  }
 
   protected readonly pageTitle = computed(() => this.crumbs().at(-1)?.label ?? 'Panoramica');
 
@@ -112,15 +134,23 @@ export class App {
     const segments = this.url().split('?')[0].split('#')[0].split('/').filter(Boolean);
     const [first, second] = segments;
 
+    // Analisi e argomenti prendono la tinta dalla famiglia della categoria
+    // principale: con ventinove categorie una tinta ciascuna sarebbe illeggibile.
     if (first === 'analisi' && second) {
       const article = this.content.bySlug(second);
-      return article ? article.category : null;
+      return article ? (this.content.primaryCategory(article)?.family ?? null) : null;
+    }
+    if (first === 'argomenti') {
+      return second ? (this.content.categoryBySlug(second)?.family ?? 'argomenti') : 'argomenti';
+    }
+    if (first === 'calendario') {
+      if (!second) {
+        return null;
+      }
+      return second === 'banche-centrali' ? 'banche-centrali' : (areaBySlug(second)?.area ?? null);
     }
 
     switch (first) {
-      case 'fondamentali':
-      case 'correlazioni':
-      case 'geopolitica':
       case 'orizzonti':
         return first;
       case 'metodologia':

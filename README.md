@@ -1,7 +1,9 @@
 # Vitanera
 
 Sito in Angular 21 dedicato a macroeconomia, banche centrali, geopolitica e XAU/USD.
-Tema scuro con accento oro, contenuti organizzati per sezioni e avvertenze legali diffuse in ogni schermata.
+Tema scuro con accento oro, contenuti organizzati per categorie, un calendario economico con lo
+storico completo dei principali indicatori di Stati Uniti e area euro, e avvertenze legali diffuse in
+ogni schermata.
 
 > **Avvertenza.** Il sito non è una testata giornalistica ai sensi della L. 62/2001 e non è registrato presso
 > alcun tribunale. I contenuti hanno finalità informative e didattiche e non costituiscono consulenza
@@ -14,6 +16,7 @@ npm install                 # una sola volta
 npm start                   # server di sviluppo su http://localhost:4200/
 npm run build               # build di produzione in dist/vitanera/browser
 npm test -- --no-watch      # test unitari (Vitest)
+npm run calendario          # riscarica lo storico del calendario economico
 ```
 
 ## Pubblicazione su GitHub Pages
@@ -63,32 +66,78 @@ ricaricamento forzato con `Ctrl+F5`, oppure una finestra in incognito per averne
 ```
 src/app/
 ├─ core/
-│  ├─ config/site.config.ts     testi legali centralizzati, navigazione, categorie
-│  ├─ data/articles.data.ts     archivio delle analisi
-│  ├─ data/glossary.data.ts     voci del glossario
-│  ├─ data/legal.data.ts        testi di avvertenze, note legali, privacy
-│  ├─ data/markets.data.ts      riferimenti numerici citati nelle analisi
-│  ├─ data/signal.data.ts       indicatore operativo mostrato in panoramica
-│  ├─ models/article.model.ts   modello dei contenuti e dei blocchi
-│  └─ services/                 contenuti, orologio condiviso, presa visione
+│  ├─ config/site.config.ts        testi legali, navigazione, le 29 categorie e le 5 famiglie
+│  ├─ data/articles.data.ts        archivio delle analisi
+│  ├─ data/calendar.meta.ts        testi redazionali degli indicatori e anagrafica di chi parla
+│  ├─ data/calendar.series.ts      GENERATO — storico dei valori
+│  ├─ data/calendar.events.ts      GENERATO — appuntamenti di Fed e BCE
+│  ├─ data/calendar.data.ts        unione dei tre precedenti
+│  ├─ data/glossary.data.ts        voci del glossario
+│  ├─ data/legal.data.ts           testi di avvertenze, note legali, privacy
+│  ├─ data/markets.data.ts         riferimenti numerici citati nelle analisi
+│  ├─ data/signal.data.ts          indicatore operativo mostrato in panoramica
+│  ├─ models/article.model.ts      modello dei contenuti, dei blocchi e delle categorie
+│  ├─ models/calendar.model.ts     modello del calendario economico
+│  └─ services/                    contenuti, calendario, orologio condiviso, presa visione
 ├─ shared/
-│  ├─ legal/                    barra permanente, modale, avvertenza riutilizzabile, footer
-│  └─ ui/                       icone, schede, badge di bias, orari, intestazione pagina
+│  ├─ legal/                       barra permanente, modale, avvertenza riutilizzabile, footer
+│  └─ ui/                          icone, schede, badge, orari, intestazione, grafici
 └─ features/
-   ├─ home/                     panoramica e indicatore operativo
-   ├─ articles/                 elenco, dettaglio, resa dei blocchi
-   ├─ outlook/                  orizzonti breve · medio · lungo
-   ├─ methodology/              metodologia e limiti dichiarati
-   ├─ glossary/                 glossario
-   ├─ legal/                    pagine di trasparenza
-   └─ not-found/                404
+   ├─ home/                        panoramica e indicatore operativo
+   ├─ calendar/                    calendario economico: aree, indicatori, banche centrali
+   ├─ topics/                      indice degli argomenti
+   ├─ articles/                    elenco, dettaglio, resa dei blocchi
+   ├─ outlook/                     orizzonti breve · medio · lungo
+   ├─ methodology/                 metodologia e limiti dichiarati
+   ├─ glossary/                    glossario
+   ├─ legal/                       pagine di trasparenza
+   └─ not-found/                   404
 ```
+
+## Calendario economico
+
+`/calendario` raccoglie **29 indicatori** in due aree — venti per gli Stati Uniti, nove per l’area
+euro. Ogni indicatore ha uno storico di oltre cento diffusioni (data e ora, valore atteso dal
+consenso, valore effettivo, precedente), un grafico che mette a confronto effettivo e consenso, e la
+data della prossima uscita con il relativo previsto. `/calendario/banche-centrali` riporta le riunioni
+già fissate di Federal Reserve e BCE e gli interventi annunciati dei loro membri.
+
+| Percorso | Pagina |
+| --- | --- |
+| `/calendario` | Le due aree, le prossime uscite, l’agenda delle banche centrali |
+| `/calendario/usa` | I venti indicatori statunitensi |
+| `/calendario/euro-zona` | I nove indicatori dell’area euro |
+| `/calendario/<area>/<indicatore>` | Storico completo, grafico, prossima uscita |
+| `/calendario/banche-centrali` | Decisioni sui tassi, discorsi, verbali, conferenze stampa |
+
+### Aggiornare i dati
+
+```bash
+npm run calendario
+```
+
+Lo script `scripts/build-calendar.mjs` riscrive **soltanto** i due file generati,
+`calendar.series.ts` e `calendar.events.ts`. I testi redazionali degli indicatori vivono in
+`calendar.meta.ts` e non vengono mai toccati: l’aggiornamento dei numeri e la stesura delle
+descrizioni restano due lavori separati.
+
+I dati provengono dal calendario economico pubblico di TradingView, che aggrega i comunicati degli
+istituti di statistica (BLS, BEA, Census, Federal Reserve, Eurostat, BCE) e il consenso degli
+analisti. Le date delle riunioni di politica monetaria arrivano invece dai calendari ufficiali dei
+due istituti, elencati in testa allo script: il calendario economico pubblica solo poche settimane in
+avanti, mentre Fed e BCE annunciano le riunioni con oltre un anno di anticipo.
+
+Lo storico è in un pacchetto caricato solo da chi apre il calendario, non nel primo caricamento del
+sito. Per non riscaricare tutto a ogni prova, `CALENDAR_CACHE=1 npm run calendario` riusa la copia
+grezza in `.calendar-cache/`.
+
+> Il valore «**previsto**» è il consenso degli analisti rilevato prima dell’uscita, non una previsione
+> di questo sito. Le date future possono essere spostate dagli enti che diffondono i dati.
 
 ## Aggiungere un’analisi
 
 1. Aprire `src/app/core/data/articles.data.ts`.
-2. Duplicare un oggetto `Article` esistente e modificarne i campi.
-3. Inserirlo nell’array `ARTICLES` in fondo al file.
+2. Aggiungere un oggetto `Article` all’array `ARTICLES` (l’archivio parte vuoto).
 
 I blocchi disponibili per il corpo del testo sono: `paragraph`, `heading`, `list`, `callout`, `stats`,
 `scenarios`, `balance`, `timeline`, `quote`, `note`. L’indice laterale viene generato automaticamente dai
@@ -97,13 +146,38 @@ blocchi `heading`.
 Campi che alimentano la resa grafica: `bias` (direzione e forza), `certainty`, `horizons`, `takeaways`
 (riquadro «In sintesi»), `invalidation` (riquadro di chiusura), `nextEvent`.
 
-La sezione si sceglie con `category`: `fondamentali`, `correlazioni`, `geopolitica`. L’ordine
-dell’archivio è calcolato da `publishedAt`, non dalla posizione nell’array.
+L’ordine dell’archivio è calcolato da `publishedAt`, non dalla posizione nell’array.
+
+### Le categorie
+
+Un’analisi appartiene a **una o più** categorie, dichiarate in `categories`. La prima è la principale:
+da essa dipendono la tinta della pagina e la pastiglia in evidenza sulle schede.
+
+Le categorie sono ventinove, raccolte in cinque famiglie e definite in `site.config.ts`:
+
+| Famiglia | Categorie |
+| --- | --- |
+| Aree e temi | USA, Europa, Asia, Geopolitica |
+| Banche centrali | Fed, Bce, Tasso di interesse |
+| Lavoro | Tasso di disoccupazione, Richieste iniziali sussidi di disoccupazione, Buste paga settore non agricolo (NFP) |
+| Prezzi e inflazione | Indice dei prezzi al consumo (IPC), Variazione IPC, IPC Core, Variazione IPC Core, Indice dei prezzi per i consumi personali (PCE), PCE Core Annuale, PCE Core Trimestrale, Variazione PCE Core, Variazione IPP, Variazione IPP Core (PPI) |
+| Attività economica | Rapporto sulla fiducia dei consumatori, Indice di produzione industriale, Variazione produzione industriale, PIL, PIL Annuale, PIL Trimestrale, Variazione vendite al dettaglio, Vendite al dettaglio beni essenziali, Indice delle vendite al dettaglio |
+
+Un commento all’inflazione americana sta quindi insieme in `usa`, `variazione-ipc` e `ipc-core`, e si
+ritrova da tutte e tre le pagine di argomento. L’indice completo è in `/argomenti`; l’elenco di una
+singola categoria in `/argomenti/<slug>`.
+
+Le categorie che corrispondono a un indicatore macroeconomico sono le stesse usate dal calendario
+economico: è il collegamento fra ciò che si legge e i numeri da cui nasce.
 
 ## Aggiornare l’indicatore operativo
 
 L’indicatore in panoramica vive in `src/app/core/data/signal.data.ts` e va aggiornato a mano dopo ogni
-pubblicazione. Sintetizza le ultime analisi di **tutte** le sezioni, non solo dell’ultima pubblicata.
+pubblicazione. Sintetizza le ultime analisi pubblicate, quali che siano le loro categorie, non solo
+l’ultima.
+
+Vale `null` finché non esiste alcuna lettura in corso — è lo stato in cui il sito riparte: la
+panoramica mostra allora il riquadro «In attesa di notizie» al posto dell’indicatore.
 
 | Campo | Cosa contiene |
 | --- | --- |
@@ -125,27 +199,36 @@ Nessun intervento manuale è necessario per farlo scadere: basta non aggiornare 
 `ClockService` aggiorna un segnale ogni quindici secondi; `<app-timestamp>` lo usa per mostrare il
 tempo trascorso senza ricaricare la pagina. Entro **dodici ore** compare la forma relativa
 (`adesso`, `18m fa`, `2h 20m fa`), oltre quella soglia data e ora complete. Le pubblicazioni
-dell’ultima ora sono evidenziate nel colore della sezione. La soglia si cambia in
+dell’ultima ora sono evidenziate nel colore dell’accento corrente. La soglia si cambia in
 `RELATIVE_LIMIT_HOURS`.
 
 ## Stile per sezione
 
-Ogni area ha una propria tinta e un proprio impaginato, costruiti sugli stessi token di forma,
-spaziatura e tipografia.
+Ogni area ha una propria tinta, costruita sempre sugli stessi token di forma, spaziatura e tipografia.
 
-| Sezione | Tinta | Impaginato |
-| --- | --- | --- |
-| Panoramica | oro | blocchi ampi, indicatore in evidenza |
-| Fondamentali | rame | dossier numerato a righe piene |
-| Correlazioni | verde salvia | matrice cross-asset con griglia strumenti |
-| Geopolitica | terracotta | dispaccio cronologico con binario orario |
-| Orizzonti | prugna | tre pannelli per orizzonte temporale |
-| Metodologia e glossario | sabbia | schede e definizioni |
-| Pagine legali | ambra | documento con indice laterale |
+| Sezione | Tinta |
+| --- | --- |
+| Panoramica e calendario | oro |
+| Calendario USA · categorie dei prezzi | rame |
+| Calendario Euro zona · categorie del lavoro | verde salvia |
+| Banche centrali · orizzonti | prugna |
+| Aree e temi (USA, Europa, Asia, geopolitica) | terracotta |
+| Argomenti · attività economica · metodologia e glossario | sabbia |
+| Pagine legali | ambra |
 
 Le tinte sono definite in `src/styles.scss` nei blocchi `[data-accent='…']`; l’attributo viene
-applicato al guscio dal metodo `accent()` di `src/app/app.ts`. Il segno di marca resta sempre oro e le
-avvertenze legali sempre ambra, così da essere riconoscibili in qualunque sezione.
+applicato al guscio dal metodo `accent()` di `src/app/app.ts`. Con ventinove categorie una tinta
+ciascuna sarebbe illeggibile: le pagine di argomento e le analisi prendono quindi il colore della
+**famiglia** della categoria principale. Il segno di marca resta sempre oro e le avvertenze legali
+sempre ambra, così da essere riconoscibili in qualunque sezione.
+
+### I grafici
+
+I grafici del calendario sono SVG scritti a mano in `src/app/shared/ui/` — nessuna libreria, nessuna
+richiesta di rete. Il valore effettivo è la serie che conta e porta il colore di marca; il consenso è
+contesto e resta grigio. Le tinte dei grafici (`--chart-*` in `styles.scss`) non seguono l’accento di
+sezione: un grafico deve avere lo stesso significato in ogni pagina. Il colore non è mai l’unico
+canale — legenda, etichetta finale e tabella riportano gli stessi numeri.
 
 ## Dove compaiono le avvertenze
 

@@ -1,6 +1,5 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ContentService } from '../../core/services/content.service';
 import { RiskNotice } from '../../shared/legal/risk-notice';
 import { Icon } from '../../shared/ui/icon';
 
@@ -23,17 +22,14 @@ import { Icon } from '../../shared/ui/icon';
       </div>
 
       <div class="nf__links">
-        <p class="eyebrow">Sezioni disponibili</p>
+        <p class="eyebrow">Destinazioni utili</p>
         <div class="nf__grid">
-          @for (c of categories; track c.slug) {
-            <a
-              class="nf__link"
-              [routerLink]="['/', c.slug === 'previsioni' ? 'orizzonti' : c.slug]"
-            >
-              <app-icon [name]="c.icon" [size]="15" />
-              {{ c.name }}
-            </a>
-          }
+          <a class="nf__link" routerLink="/calendario"
+            ><app-icon name="calendar" [size]="15" />Calendario economico</a
+          >
+          <a class="nf__link" routerLink="/argomenti"
+            ><app-icon name="layers" [size]="15" />Argomenti</a
+          >
           <a class="nf__link" routerLink="/glossario"
             ><app-icon name="book" [size]="15" />Glossario</a
           >
@@ -125,7 +121,4 @@ import { Icon } from '../../shared/ui/icon';
     }
   `,
 })
-export class NotFound {
-  private readonly content = inject(ContentService);
-  protected readonly categories = this.content.categories;
-}
+export class NotFound {}

@@ -3,12 +3,7 @@ import { RouterLink } from '@angular/router';
 import { Icon } from '../ui/icon';
 import { RiskNotice } from './risk-notice';
 import { ConsentService } from '../../core/services/consent.service';
-import {
-  CATEGORIES,
-  DISCLAIMER_COOKIE,
-  DISCLAIMER_DATA,
-  SITE,
-} from '../../core/config/site.config';
+import { DISCLAIMER_COOKIE, DISCLAIMER_DATA, SITE } from '../../core/config/site.config';
 
 /** Piè di pagina presente su ogni schermata, con le avvertenze estese. */
 @Component({
@@ -38,19 +33,23 @@ import {
 
         <nav class="cols" aria-label="Navigazione piè di pagina">
           <div class="col">
-            <p class="eyebrow">Sezioni</p>
-            @for (c of categories; track c.slug) {
-              <a [routerLink]="['/', c.slug === 'previsioni' ? 'orizzonti' : c.slug]">{{
-                c.name
-              }}</a>
-            }
+            <p class="eyebrow">Osservatorio</p>
+            <a routerLink="/">Panoramica</a>
             <a routerLink="/analisi">Archivio analisi</a>
+            <a routerLink="/argomenti">Argomenti</a>
+          </div>
+          <div class="col">
+            <p class="eyebrow">Calendario</p>
+            <a routerLink="/calendario">Calendario economico</a>
+            <a routerLink="/calendario/usa">USA</a>
+            <a routerLink="/calendario/euro-zona">Euro zona</a>
+            <a routerLink="/calendario/banche-centrali">Banche centrali</a>
           </div>
           <div class="col">
             <p class="eyebrow">Strumenti</p>
+            <a routerLink="/orizzonti">Orizzonti XAU/USD</a>
             <a routerLink="/metodologia">Metodologia</a>
             <a routerLink="/glossario">Glossario</a>
-            <a routerLink="/orizzonti">Orizzonti XAU/USD</a>
           </div>
           <div class="col">
             <p class="eyebrow">Trasparenza</p>
@@ -167,7 +166,7 @@ import {
 
     .cols {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
       gap: 28px;
     }
 
@@ -285,7 +284,6 @@ import {
 export class SiteFooter {
   protected readonly consent = inject(ConsentService);
   protected readonly site = SITE;
-  protected readonly categories = CATEGORIES;
   protected readonly dataNote = DISCLAIMER_DATA;
   protected readonly cookieNote = DISCLAIMER_COOKIE;
   protected readonly year = new Date().getFullYear();

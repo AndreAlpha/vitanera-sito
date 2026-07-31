@@ -125,6 +125,12 @@ const HORIZONS: readonly HorizonBlock[] = [
               >Leggi l’analisi <app-icon name="arrow-right" [size]="13"
             /></span>
           </a>
+        } @empty {
+          <p class="card current__void">
+            Nessuna analisi ha ancora dichiarato un’impostazione su XAU/USD. Gli orizzonti descritti
+            più sotto restano validi come quadro di riferimento; la lettura del momento comparirà
+            qui con la prima pubblicazione.
+          </p>
         }
       </div>
 
@@ -236,6 +242,15 @@ const HORIZONS: readonly HorizonBlock[] = [
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
       gap: 14px;
+    }
+
+    .current__void {
+      grid-column: 1 / -1;
+      padding: 22px 24px;
+      max-width: 74ch;
+      font-size: 13.4px;
+      line-height: 1.68;
+      color: var(--text-muted);
     }
 
     .cur {

@@ -35,42 +35,12 @@ export interface OperationalSignal {
   readonly sources: readonly string[];
 }
 
-export const MARKET_SIGNAL: OperationalSignal = {
-  updatedAt: '2026-07-30T16:33:00+02:00',
-  validityMinutes: 120,
-  asset: 'XAU/USD',
-  direction: 'rialzista',
-  strength: 'alta',
-  headline: 'Inversione intraday dell’oro: dollaro sotto 100 e correlati finalmente allineati',
-  stance:
-    'XAU/USD è risalito verso 4.095–4.104 e stavolta non sale da solo: dollaro in accelerazione ribassista sotto ' +
-    '100, rendimenti in calo, metalli, valute correlate e azionario si muovono nella stessa direzione. Lo short del ' +
-    'controllo precedente è invalidato e il quadro macro della mattina — PCE mensile in raffreddamento e PIL sotto ' +
-    'le attese — resta coerente. Unica contraddizione il petrolio, ancora negativo.',
-  favours: [
-    'Long su pullback o retest tenuto in area 4.090–4.095.',
-    'In alternativa, breakout pulito sopra 4.104 seguito da retest.',
-  ],
-  avoid: [
-    'Inseguire una candela già estesa senza ritorno.',
-    'Impostazioni short contro questo allineamento.',
-  ],
-  invalidation:
-    'Un ritorno sotto 4.078–4.080 indebolirebbe il segnale; la perdita decisa di 4.065–4.070, insieme a un recupero ' +
-    'del DXY, annullerebbe il cambio rialzista.',
-  confirming: [
-    'DXY sotto 100, nuovi minimi intraday',
-    'US 2Y ≈ 4,23%',
-    'Platino +2,5 / +3%',
-    'Nasdaq +2,26%',
-  ],
-  contradicting: ['WTI ≈ −0,8%', 'Brent ≈ −1,1%'],
-  sources: [
-    'inversione-intraday-con-i-correlati-allineati',
-    'rottura-di-correlazione-ribassista-dopo-apertura-usa',
-    'oro-sopra-4100-ma-i-rendimenti-lunghi-non-cedono',
-  ],
-};
+/**
+ * `null` quando non esiste alcuna lettura in corso: è lo stato in cui si trova
+ * il sito finché non viene pubblicata la prima analisi. La panoramica mostra in
+ * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
+ */
+export const MARKET_SIGNAL: OperationalSignal | null = null;
 
 export const DIRECTION_LABEL: Record<BiasDirection, string> = {
   rialzista: 'Rialzista',
