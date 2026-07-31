@@ -63,10 +63,23 @@ describe('pagine', () => {
   it('archivio e ogni categoria', async () => {
     for (const category of [null, ...CATEGORIES.map((c) => c.slug)]) {
       const info = CATEGORIES.find((c) => c.slug === category);
+      const nome = info?.name ?? 'archivio';
       const text = textOf(await render(ArticleList, { category }));
       expect(text).toContain(info?.name ?? 'Archivio analisi');
-      // L'archivio riparte da zero: ogni elenco deve dirlo, non restare muto.
-      expect(text).toMatch(/Ancora nessuna pubblicazione|Nessuna analisi/);
+
+      // Le due facce dello stesso elenco. Con ventinove categorie e un
+      // archivio che cresce, in qualunque momento alcune pagine sono piene e
+      // altre vuote: il controllo deve valere per entrambe, altrimenti scade
+      // alla prima pubblicazione.
+      const attese = category ? ARTICLES.filter((a) => a.categories.includes(category)) : ARTICLES;
+
+      if (attese.length === 0) {
+        expect(text, nome).toMatch(/Ancora nessuna pubblicazione|Nessuna analisi/);
+      } else {
+        for (const article of attese) {
+          expect(text, nome).toContain(article.title);
+        }
+      }
     }
   });
 

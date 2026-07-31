@@ -15,7 +15,42 @@ import { MarketReference } from '../models/article.model';
  * Per i dati macroeconomici — quelli sì completi di storico e fonte — la
  * sezione di riferimento è il calendario economico.
  */
-export const MARKET_REFERENCES: readonly MarketReference[] = [];
+export const MARKET_REFERENCES: readonly MarketReference[] = [
+  {
+    symbol: 'XAU/USD',
+    name: 'Oro spot',
+    value: '4.049,83',
+    change: '−1,3%',
+    tone: 'gold',
+    icon: 'coin',
+    note: 'Chiusura precedente alla piena diffusione dell’indiscrezione sull’Iran.',
+  },
+  {
+    symbol: 'BRENT',
+    name: 'Brent',
+    value: '90,12 $',
+    change: '+1,2%',
+    tone: 'bull',
+    icon: 'bolt',
+    note: 'Già sostenuto dalle difficoltà di transito attraverso Hormuz.',
+  },
+  {
+    symbol: 'WTI',
+    name: 'West Texas Intermediate',
+    value: '84,67 $',
+    change: '+1,3%',
+    tone: 'bull',
+    icon: 'bolt',
+    note: 'Si muove con il Brent sul rischio di danni all’offerta.',
+  },
+];
 
-/** Riferimenti secondari mostrati nella striscia sotto le schede. */
+/**
+ * Riferimenti secondari.
+ *
+ * Resta vuoto finché non c'è un valore da mettere: la panoramica concatena i
+ * due array in un'unica griglia, quindi la distinzione non si vede più a video
+ * e non ha senso riempirlo per simmetria. DXY e Treasury sono citati
+ * nell'ultima analisi, ma senza un numero: senza numero non sono un riferimento.
+ */
 export const MARKET_STRIP: readonly MarketReference[] = [];

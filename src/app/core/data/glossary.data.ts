@@ -87,6 +87,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     why: 'Può mantenere elevati i rendimenti a lunga scadenza anche quando le aspettative sui tassi a breve scendono.',
   },
   {
+    term: 'Premio di rischio geopolitico',
+    letter: 'P',
+    definition:
+      'Parte del prezzo che riflette la possibilità di un evento politico o militare, non un fatto già avvenuto.',
+    why: 'Si forma su notizie ancora da confermare e si riassorbe in fretta se l’evento non si realizza: è la ragione per cui un rialzo su indiscrezioni vale meno di un rialzo su un fatto.',
+    related: ['Bene rifugio', 'Stretto di Hormuz'],
+  },
+  {
     term: 'Brent',
     letter: 'B',
     definition:

@@ -146,9 +146,9 @@ import { Timestamp } from '../../shared/ui/timestamp';
             </div>
           }
           <p class="sig__legal">
-            Riepilogo editoriale delle analisi pubblicate, valido {{ s.validityMinutes }} minuti
-            dall’aggiornamento. <strong>Non è consulenza finanziaria</strong> né un segnale di
-            acquisto o vendita.
+            Riepilogo editoriale delle analisi pubblicate, valido
+            {{ validityLabel() }} dall’aggiornamento.
+            <strong>Non è consulenza finanziaria</strong> né un segnale di acquisto o vendita.
           </p>
         </footer>
       } @else {
@@ -677,6 +677,17 @@ export class OperationalSignalCard {
   protected readonly fill = computed(() => `${this.live() ? this.remainingShare() : 0}%`);
 
   protected readonly remainingLabel = computed(() => formatDuration(this.totalMs - this.elapsed()));
+
+  /**
+   * La durata dichiarata, in forma leggibile.
+   *
+   * Era scritta in minuti grezzi: finché una lettura dura un'ora o due «valido
+   * 90 minuti» si capisce, ma una scheda che copre un fine settimana diventa
+   * «valido 2880 minuti», e nessuno converte a mente. Si usa lo stesso
+   * formatatore del conto alla rovescia lì sopra, così le due durate della
+   * stessa scheda sono espresse nella stessa unità.
+   */
+  protected readonly validityLabel = computed(() => formatDuration(this.totalMs));
 
   protected readonly sourceArticles = computed(() => {
     const sources: readonly string[] = this.signal?.sources ?? [];

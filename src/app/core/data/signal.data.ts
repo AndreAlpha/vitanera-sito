@@ -40,7 +40,36 @@ export interface OperationalSignal {
  * il sito finché non viene pubblicata la prima analisi. La panoramica mostra in
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
-export const MARKET_SIGNAL: OperationalSignal | null = null;
+export const MARKET_SIGNAL: OperationalSignal | null = {
+  updatedAt: '2026-08-01T01:12:00+02:00',
+  // La lettura è scritta per la riapertura di lunedì e il testo lo dice
+  // esplicitamente («alla riapertura non inseguirei un eventuale gap»): la
+  // durata segue quell'orizzonte invece della tabella, e scade poco dopo il
+  // ritorno degli scambi, che è il momento in cui va rifatta.
+  validityMinutes: 2880,
+  asset: 'XAU/USD',
+  direction: 'neutrale-rialzista',
+  strength: 'bassa',
+  headline: 'Un piano di attacchi sull’energia iraniana, non ancora un ordine',
+  stance:
+    'Reuters e Axios riferiscono di una campagna statunitense e israeliana in valutazione contro le ' +
+    'infrastrutture energetiche iraniane, possibile già nel fine settimana, ma senza il via libera ' +
+    'definitivo. Il petrolio era già sostenuto dalle difficoltà di transito a Hormuz. Il bias risale da ' +
+    'ribassista a neutrale con rischio rialzista, non oltre: manca l’ordine di attacco.',
+  favours: [
+    'Attendere la conferma della notizia prima di considerare valido il rialzo',
+    'Il premio di rischio sull’energia, che ha una causa diretta e verificabile',
+  ],
+  avoid: [
+    'Inseguire un eventuale gap rialzista alla riapertura di lunedì',
+    'Leggere un piano riportato dalla stampa come se fosse un fatto avvenuto',
+  ],
+  invalidation:
+    'Il via libera non arriva e l’oro restituisce subito l’eventuale gap: il mercato torna su rendimenti elevati e quadro Fed.',
+  confirming: ['Brent ≈ 90,12 $ (+1,2%)', 'WTI ≈ 84,67 $ (+1,3%)'],
+  contradicting: ['Oro spot ≈ 4.049,83 (−1,3%)', 'Nessun ordine di attacco confermato'],
+  sources: ['attacchi-energia-iraniana-piano-non-ordine'],
+};
 
 export const DIRECTION_LABEL: Record<BiasDirection, string> = {
   rialzista: 'Rialzista',
