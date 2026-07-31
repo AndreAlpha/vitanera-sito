@@ -20,8 +20,14 @@ import { LegalPage } from './legal/legal-page';
 import { NotFound } from './not-found/not-found';
 
 /**
- * Verifica che ogni pagina venga effettivamente resa senza errori di template e
- * che l'avvertenza legale sia presente dove deve esserlo.
+ * Verifica che ogni pagina venga resa senza errori di template.
+ *
+ * Sulle avvertenze il criterio è cambiato. Prima si controllava che ci fossero;
+ * ora si controlla anche che non si ripetano: comparivano dodici volte in giro
+ * per il sito, più la barra fissa in cima e la modale di primo accesso, e la
+ * ripetizione le rendeva invisibili invece che chiare. Il testo integrale vive
+ * in `/avvertenze`, il riassunto nel piè di pagina, e una riga sola compare
+ * dove il lettore incontra un giudizio.
  */
 
 async function render<T>(type: Type<T>, inputs: Record<string, unknown> = {}) {
@@ -39,6 +45,11 @@ function textOf(fixture: { nativeElement: unknown }): string {
   return (fixture.nativeElement as HTMLElement).textContent ?? '';
 }
 
+/** Quante volte una pagina ripete la stessa formula di avvertenza. */
+function occurrences(text: string, needle: string): number {
+  return text.split(needle).length - 1;
+}
+
 describe('pagine', () => {
   it('panoramica', async () => {
     const text = textOf(await render(Home));
@@ -51,8 +62,11 @@ describe('pagine', () => {
 
   it('archivio e ogni categoria', async () => {
     for (const category of [null, ...CATEGORIES.map((c) => c.slug)]) {
+      const info = CATEGORIES.find((c) => c.slug === category);
       const text = textOf(await render(ArticleList, { category }));
-      expect(text).toContain('non costituisce consulenza finanziaria');
+      expect(text).toContain(info?.name ?? 'Archivio analisi');
+      // L'archivio riparte da zero: ogni elenco deve dirlo, non restare muto.
+      expect(text).toMatch(/Ancora nessuna pubblicazione|Nessuna analisi/);
     }
   });
 
@@ -69,7 +83,8 @@ describe('pagine', () => {
       const text = textOf(await render(ArticleDetail, { slug: article.slug }));
       expect(text).toContain(article.title);
       expect(text).toContain('In sintesi');
-      expect(text).toContain('Avvertenze legali e informativa sui rischi');
+      // Una sola avvertenza, in chiusura: prima ne portava cinque.
+      expect(occurrences(text, 'Non costituisce consulenza finanziaria')).toBe(1);
     }
   });
 
@@ -91,6 +106,64 @@ describe('pagine', () => {
       expect(text).toContain(doc.title);
       expect(text).toContain('Non è consulenza finanziaria');
     }
+  });
+});
+
+/**
+ * Il vincolo che tiene onesto il taglio delle avvertenze.
+ *
+ * Senza di esso la formula torna a moltiplicarsi da sola: basta una scheda
+ * riutilizzata in una griglia, o una nuova pagina che «per sicurezza» aggiunge
+ * il riquadro, e si è di nuovo a dodici ripetizioni. La regola è semplice:
+ * l'avvertenza compare dove il lettore incontra un giudizio — un'analisi, uno
+ * scenario, la metodologia — e mai più di una volta per schermata.
+ */
+describe('le avvertenze non si ripetono', () => {
+  /** La formula standard, quella resa da `<app-risk-notice />`. */
+  const FORMULA = 'Non costituisce consulenza finanziaria';
+
+  it('le pagine di dati e di indice non ne portano nessuna', async () => {
+    const pages: [string, Type<unknown>, Record<string, unknown>][] = [
+      ['argomenti', Topics, {}],
+      ['glossario', Glossary, {}],
+      ['404', NotFound, {}],
+      ['calendario', CalendarOverview, {}],
+      ['calendario USA', CalendarArea, { area: 'usa' }],
+      ['banche centrali', CentralBanks, {}],
+    ];
+
+    for (const [name, page, inputs] of pages) {
+      const text = textOf(await render(page, inputs));
+      expect(occurrences(text, FORMULA), name).toBe(0);
+    }
+  });
+
+  it('le pagine di giudizio ne portano esattamente una', async () => {
+    for (const [name, page] of [
+      ['orizzonti', Outlook],
+      ['metodologia', Methodology],
+    ] as [string, Type<unknown>][]) {
+      const text = textOf(await render(page));
+      expect(occurrences(text, FORMULA), name).toBe(1);
+    }
+  });
+
+  /**
+   * La panoramica è il caso limite e vale la pena scriverlo per esteso.
+   *
+   * Non porta la formula standard, perché non è una pagina di lettura: porta
+   * però l'indicatore operativo, che è un giudizio, e quel giudizio si chiude
+   * con una frase propria — «Non è consulenza finanziaria né un segnale di
+   * acquisto o vendita» — cucita nel discorso invece che in un riquadro.
+   * Una avvertenza contestuale, scritta per quello che sta accanto, vale più
+   * di un riquadro uguale a sé stesso ripetuto su ogni schermata; ma resta
+   * una sola, e va contata.
+   */
+  it('la panoramica ne porta una sola, e contestuale', async () => {
+    const text = textOf(await render(Home));
+
+    expect(occurrences(text, FORMULA)).toBe(0);
+    expect(occurrences(text, 'Non è consulenza finanziaria')).toBe(1);
   });
 });
 

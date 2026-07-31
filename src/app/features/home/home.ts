@@ -9,16 +9,22 @@ import {
   calendarDayLabel,
   calendarTime,
 } from '../../core/services/calendar.service';
-import { RiskNotice } from '../../shared/legal/risk-notice';
 import { ArticleCard } from '../../shared/ui/article-card';
 import { Icon } from '../../shared/ui/icon';
 import { Timestamp } from '../../shared/ui/timestamp';
 import { OperationalSignalCard } from './operational-signal';
 
+/**
+ * Panoramica.
+ *
+ * Portava in coda l'avvertenza in riquadro: il piè di pagina la ripete a ogni
+ * schermata, e in apertura di sito era la terza volta che il lettore leggeva la
+ * stessa frase prima di aver letto una riga di analisi.
+ */
 @Component({
   selector: 'app-home',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, Icon, ArticleCard, RiskNotice, Timestamp, OperationalSignalCard],
+  imports: [RouterLink, Icon, ArticleCard, Timestamp, OperationalSignalCard],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -27,8 +33,17 @@ export class Home {
   protected readonly calendar = inject(CalendarService);
 
   protected readonly site = SITE;
-  protected readonly references = MARKET_REFERENCES;
-  protected readonly strip = MARKET_STRIP;
+
+  /**
+   * I valori del quadro sintetico, in un elenco solo.
+   *
+   * Erano due liste rese in due modi diversi nella stessa schermata — una
+   * griglia di schede e, sotto, una striscia di pastiglie — con dentro gli
+   * stessi campi. Le sorgenti restano distinte (riferimenti principali e
+   * secondari), a video sono una griglia sola.
+   */
+  protected readonly marketRows = [...MARKET_REFERENCES, ...MARKET_STRIP];
+
   protected readonly dataNote = DISCLAIMER_DATA;
   protected readonly families = CATEGORY_FAMILIES;
 

@@ -11,6 +11,19 @@ const ICONS: Record<string, string> = {
   privacy: 'lock',
 };
 
+/**
+ * Pagine di trasparenza: avvertenze, note legali, privacy.
+ *
+ * È l'unico posto del sito dove l'avvertenza sta per intero, quindi il testo
+ * non si tocca: si lavora soltanto sulla lettura. Colonna alla misura di
+ * lettura, sezioni separate da un filetto e nessun riquadro ambrato attorno ai
+ * paragrafi — un fondo colorato su un documento di dieci sezioni stanca prima
+ * della fine del primo capoverso, e qui l'obiettivo è che si arrivi in fondo.
+ *
+ * Nella colonna laterale la cosa più utile è passare da un documento all'altro:
+ * i tre rimandi stanno su una guida verticale e quello corrente è marcato da un
+ * filetto d'accento, così si vede dov'è chi legge senza aggiungere un riquadro.
+ */
 @Component({
   selector: 'app-legal-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23,16 +36,11 @@ const ICONS: Record<string, string> = {
         [icon]="icon()"
         [description]="doc.intro"
       >
-        <div class="meta">
-          <span class="chip chip--sm chip--neutral">
-            <app-icon name="clock" [size]="11" />
-            Ultimo aggiornamento: {{ doc.updatedAt }}
-          </span>
-          <span class="chip chip--sm chip--warn">
-            <app-icon name="alert" [size]="11" />
-            Documento informativo, non un parere legale
-          </span>
-        </div>
+        <p class="meta">
+          <span>Ultimo aggiornamento: {{ doc.updatedAt }}</span>
+          <span aria-hidden="true">·</span>
+          <span>Documento informativo, non un parere legale</span>
+        </p>
       </app-page-header>
 
       <div class="layout print-legal">
@@ -55,7 +63,7 @@ const ICONS: Record<string, string> = {
             </section>
           }
 
-          <section class="sec sec--final">
+          <section class="sec">
             <h2>Contatti</h2>
             <p>
               Per segnalazioni, richieste di rettifica o chiarimenti è possibile scrivere a
@@ -67,12 +75,13 @@ const ICONS: Record<string, string> = {
         </article>
 
         <aside class="side no-print">
-          <nav class="side__card">
-            <p class="side__label">Documenti</p>
+          <nav class="docs" aria-label="Documenti di trasparenza">
+            <p class="eyebrow docs__label">Documenti</p>
             @for (d of documents; track d.slug) {
               <a
-                class="side__link"
-                [class.side__link--active]="d.slug === document()?.slug"
+                class="docs__link"
+                [class.docs__link--active]="d.slug === doc.slug"
+                [attr.aria-current]="d.slug === doc.slug ? 'page' : null"
                 [routerLink]="'/' + d.slug"
               >
                 <app-icon [name]="iconFor(d.slug)" [size]="14" />
@@ -81,12 +90,9 @@ const ICONS: Record<string, string> = {
             }
           </nav>
 
-          <div class="side__card side__card--warn">
-            <p class="side__label side__label--warn">
-              <app-icon name="alert" [size]="13" />
-              In breve
-            </p>
-            <ul class="side__points">
+          <div class="card card--pad brief">
+            <p class="brief__label">In breve</p>
+            <ul class="brief__list">
               <li>Non è una testata giornalistica registrata.</li>
               <li>Non è consulenza finanziaria.</li>
               <li>L’autore non è un soggetto abilitato o vigilato.</li>
@@ -107,216 +113,208 @@ const ICONS: Record<string, string> = {
     .meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: var(--s-2);
+      font-size: var(--t-xs);
+      color: var(--text-faint);
     }
+
+    /* --- Documento ------------------------------------------------------- */
 
     .layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 260px;
-      gap: 40px;
+      grid-template-columns: minmax(0, 1fr) 236px;
+      gap: var(--s-8);
       align-items: start;
     }
 
     .doc {
-      max-width: 84ch;
+      max-width: var(--measure);
     }
 
-    .sec {
-      padding-bottom: 24px;
-      margin-bottom: 24px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .sec:last-child {
-      border-bottom: 0;
+    .sec + .sec {
+      margin-top: var(--s-6);
+      padding-top: var(--s-6);
+      border-top: 1px solid var(--line);
     }
 
     .sec h2 {
-      font-size: 16.5px;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-      color: var(--accent-soft);
+      font-size: var(--t-md);
+      font-weight: 600;
+      margin-bottom: var(--s-3);
     }
 
     .sec p {
-      font-size: 13.6px;
-      line-height: 1.75;
-      color: var(--text-muted);
-      text-align: justify;
-      hyphens: auto;
+      font-size: var(--t-base);
+      line-height: var(--lh-loose);
+      color: var(--text-soft);
     }
 
     .sec p + p {
-      margin-top: 11px;
+      margin-top: var(--s-3);
     }
 
     .sec a {
-      color: var(--accent-soft);
+      color: var(--accent);
       text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color var(--dur) var(--ease);
+    }
+
+    .sec a:hover {
+      color: var(--accent-soft);
     }
 
     .sec ul {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 9px;
-      margin-top: 13px;
+      gap: var(--s-3);
+      margin-top: var(--s-4);
     }
 
     .sec li {
       position: relative;
-      padding-left: 18px;
-      font-size: 13.4px;
-      line-height: 1.66;
-      color: var(--text-muted);
+      padding-left: var(--s-4);
+      font-size: var(--t-base);
+      line-height: var(--lh-base);
+      color: var(--text-soft);
     }
 
+    /* Un trattino grigio invece del pallino d'accento: in un documento con
+       quindici elenchi puntati l'accento diventava carta da parati. */
     .sec li::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 9px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      opacity: 0.7;
+      top: var(--s-3);
+      width: 5px;
+      height: 1px;
+      background: var(--text-faint);
     }
 
-    .sec--final {
-      padding: 18px 20px;
-      border: 1px solid var(--accent-line);
-      border-radius: var(--r-md);
-      background: var(--accent-dim);
-    }
+    /* --- Colonna laterale -------------------------------------------------- */
 
     .side {
       position: sticky;
-      top: 100px;
+      top: calc(var(--topbar-h) + var(--s-5));
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: var(--s-6);
     }
 
-    .side__card {
+    .docs {
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      padding: 16px 17px;
-      border: 1px solid var(--line);
-      border-radius: var(--r-md);
-      background: rgba(255, 255, 255, 0.025);
     }
 
-    .side__label {
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-      margin-bottom: 8px;
+    .docs__label {
+      margin-bottom: var(--s-3);
     }
 
-    .side__label--warn {
+    .docs__link {
       display: flex;
       align-items: center;
-      gap: 7px;
-      color: var(--warn);
-    }
-
-    .side__link {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      padding: 8px 10px;
-      border-radius: var(--r-sm);
-      font-size: 12.5px;
+      gap: var(--s-3);
+      padding: var(--s-3);
+      border-left: 2px solid var(--line);
+      font-size: var(--t-sm);
       color: var(--text-muted);
       transition:
-        background 0.2s var(--ease),
-        color 0.2s var(--ease);
+        background var(--dur) var(--ease),
+        border-color var(--dur) var(--ease),
+        color var(--dur) var(--ease);
     }
 
-    .side__link:hover {
-      background: rgba(255, 255, 255, 0.04);
+    .docs__link app-icon {
+      color: var(--text-faint);
+    }
+
+    .docs__link:hover {
+      background: var(--surface-hover);
+      border-left-color: var(--line-strong);
       color: var(--text);
     }
 
-    .side__link--active {
-      background: var(--accent-dim);
+    .docs__link--active,
+    .docs__link--active:hover {
+      border-left-color: var(--accent);
       color: var(--accent-soft);
+      font-weight: 500;
     }
 
-    .side__card--warn {
-      border-color: rgba(240, 169, 59, 0.26);
-      background: rgba(240, 169, 59, 0.06);
+    .docs__link--active app-icon {
+      color: var(--accent);
     }
 
-    .side__points {
+    /* --- In breve ------------------------------------------------------------
+       Resta perché è l'unica sintesi del documento, ma è un riquadro come gli
+       altri: il fondo ambra pieno la faceva gridare più del testo che riassume.
+       ------------------------------------------------------------------------ */
+
+    .brief__label {
+      font-size: var(--t-xs);
+      font-weight: 600;
+      color: var(--text-soft);
+      margin-bottom: var(--s-3);
+    }
+
+    .brief__list {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
     }
 
-    .side__points li {
-      position: relative;
-      padding-left: 14px;
-      font-size: 11.5px;
-      line-height: 1.5;
+    .brief__list li {
+      padding: var(--s-2) 0;
+      border-top: 1px solid var(--line-soft);
+      font-size: var(--t-xs);
+      line-height: var(--lh-snug);
       color: var(--text-muted);
     }
 
-    .side__points li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 7px;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--warn);
+    .brief__list li:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .brief__list li:last-child {
+      padding-bottom: 0;
     }
 
     .missing {
-      padding: 60px 0;
+      padding: var(--s-9) 0;
       color: var(--text-muted);
+    }
+
+    /* Giustificato solo dove la riga è lunga abbastanza da reggerlo: su colonna
+       stretta i buchi fra le parole si notano più delle parole. */
+    @media (min-width: 621px) {
+      .sec p {
+        text-align: justify;
+        hyphens: auto;
+      }
     }
 
     @media (max-width: 1000px) {
       .layout {
         grid-template-columns: minmax(0, 1fr);
-        gap: 26px;
+        gap: var(--s-6);
       }
 
       .side {
         position: static;
+        padding-top: var(--s-6);
+        border-top: 1px solid var(--line);
       }
     }
 
     @media (max-width: 620px) {
-      /* I documenti legali sono i testi più lunghi del sito: a bandiera
-         restano leggibili anche su colonna stretta. */
-      .sec p {
-        text-align: left;
-        hyphens: none;
+      .sec + .sec {
+        margin-top: var(--s-5);
+        padding-top: var(--s-5);
       }
 
-      .sec {
-        padding-bottom: 20px;
-        margin-bottom: 20px;
-      }
-
-      .sec h2 {
-        font-size: 15.5px;
-      }
-
-      .sec--final {
-        padding: 16px 15px;
-      }
-
-      .meta {
-        gap: 6px;
+      .sec p,
+      .sec li {
+        font-size: var(--t-sm);
       }
     }
   `,

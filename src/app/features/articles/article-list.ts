@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Article, Category, CategorySlug } from '../../core/models/article.model';
+import { CategorySlug } from '../../core/models/article.model';
 import { ContentService } from '../../core/services/content.service';
-import { RiskNotice } from '../../shared/legal/risk-notice';
 import { ArticleCard } from '../../shared/ui/article-card';
 import { BiasBadge } from '../../shared/ui/bias-badge';
 import { Icon } from '../../shared/ui/icon';
@@ -19,7 +18,7 @@ import { Timestamp } from '../../shared/ui/timestamp';
 @Component({
   selector: 'app-article-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, PageHeader, ArticleCard, RiskNotice, Icon, BiasBadge, Timestamp],
+  imports: [RouterLink, PageHeader, ArticleCard, Icon, BiasBadge, Timestamp],
   templateUrl: './article-list.html',
   styleUrl: './article-list.scss',
 })
@@ -110,17 +109,5 @@ export class ArticleList {
   /** Numerazione decrescente dell'elenco: la più recente ha il numero più alto. */
   protected index(i: number): string {
     return `${this.filtered().length - i}`.padStart(2, '0');
-  }
-
-  /**
-   * Le altre categorie dell'analisi: su una pagina di categoria dicono al
-   * lettore da dove altro può ritrovare lo stesso testo.
-   */
-  protected otherCategories(article: Article): readonly Category[] {
-    const current = this.category();
-    return this.content
-      .categoriesOf(article)
-      .filter((c) => c.slug !== current)
-      .slice(0, 3);
   }
 }

@@ -29,7 +29,7 @@ import { Icon } from './icon';
     time {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: var(--s-1);
       font-size: inherit;
       color: inherit;
       font-variant-numeric: tabular-nums;

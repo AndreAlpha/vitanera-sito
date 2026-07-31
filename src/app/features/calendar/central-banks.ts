@@ -8,7 +8,6 @@ import {
   calendarDate,
   calendarTime,
 } from '../../core/services/calendar.service';
-import { RiskNotice } from '../../shared/legal/risk-notice';
 import { Icon } from '../../shared/ui/icon';
 import { PageHeader } from '../../shared/ui/page-header';
 
@@ -26,11 +25,17 @@ const AGENDA_LIMIT = 22;
  * anticipo e vengono mostrate per intero. Discorsi e audizioni compaiono invece
  * solo a poche settimane, perché è con quel preavviso che gli istituti li
  * annunciano: dove l'agenda finisce, finisce l'informazione disponibile.
+ *
+ * La pagina si legge come un'agenda di carta: una data, sotto di essa gli orari
+ * incolonnati, e per ciascuna riga il tipo di appuntamento scritto per esteso in
+ * una pastiglia. Prima ogni riga era un riquadro a sé e il tipo era affidato al
+ * colore del fondo: venti riquadri colorati di seguito sono un elenco che non si
+ * riesce a percorrere con l'occhio.
  */
 @Component({
   selector: 'app-central-banks',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, PageHeader, Icon, RiskNotice],
+  imports: [RouterLink, PageHeader, Icon],
   template: `
     <app-page-header
       eyebrow="Chi decide il costo del denaro"
@@ -39,12 +44,12 @@ const AGENDA_LIMIT = 22;
       [description]="intro"
     >
       <div class="head-facts">
-        <a class="chip chip--sm chip--neutral" routerLink="/calendario">
-          <app-icon name="calendar" [size]="11" />
+        <a class="chip chip--accent" routerLink="/calendario">
+          <app-icon name="calendar" [size]="12" />
           Calendario economico
         </a>
-        <span class="chip chip--sm chip--warn">
-          <app-icon name="clock" [size]="11" />
+        <span class="chip">
+          <app-icon name="clock" [size]="12" />
           Orari di Roma
         </span>
       </div>
@@ -61,41 +66,41 @@ const AGENDA_LIMIT = 22;
         </div>
       </div>
 
-      <div class="decisions">
+      <div class="rates">
         @for (bank of banks(); track bank.area) {
-          <article class="card decision" [attr.data-accent]="bank.area">
-            <p class="decision__bank">
-              <app-icon name="bank" [size]="15" />
+          <article class="card card--pad rate" [attr.data-accent]="bank.area">
+            <h3 class="rate__bank">
+              <app-icon name="bank" [size]="14" />
               {{ bank.name }}
-            </p>
+            </h3>
 
-            <div class="decision__now">
-              <span>
-                <span class="decision__label">Tasso in vigore</span>
-                <span class="decision__rate tnum">{{ bank.current }}</span>
-              </span>
-              <span class="decision__since">dal {{ bank.since }}</span>
+            <div class="rate__now">
+              <p class="rate__label">Tasso in vigore</p>
+              <p class="rate__figure">
+                <span class="rate__value tnum">{{ bank.current }}</span>
+                <span class="rate__since">dal {{ bank.since }}</span>
+              </p>
             </div>
 
             @if (bank.next; as next) {
-              <div class="decision__next">
-                <p class="decision__label">Prossima riunione</p>
-                <p class="decision__date">{{ dayOf(next.at) }}</p>
-                <p class="decision__time">alle {{ timeOf(next.at) }} · annuncio della decisione</p>
+              <div class="rate__next">
+                <p class="rate__label">Prossima riunione</p>
+                <p class="rate__date">{{ dayOf(next.at) }}</p>
+                <p class="rate__time">alle {{ timeOf(next.at) }} · annuncio della decisione</p>
               </div>
             } @else {
-              <p class="decision__time">Nessuna riunione già in calendario.</p>
+              <p class="rate__next rate__time">Nessuna riunione già in calendario.</p>
             }
 
             @if (bank.chair; as chair) {
-              <p class="decision__chair">
+              <p class="rate__chair">
                 <app-icon name="users" [size]="12" />
                 {{ chair }}
               </p>
             }
 
             <a
-              class="decision__link"
+              class="link rate__link"
               [routerLink]="['/calendario', bank.path, 'tasso-di-interesse']"
             >
               Storico del tasso <app-icon name="arrow-right" [size]="13" />
@@ -119,22 +124,26 @@ const AGENDA_LIMIT = 22;
       @if (agenda().length) {
         <ol class="agenda">
           @for (day of agenda(); track day.key) {
-            <li class="agenda__day">
-              <p class="agenda__date">{{ day.label }}</p>
-              <ul class="agenda__rows">
+            <li class="day">
+              <p class="day__label">{{ day.label }}</p>
+              <ul class="day__rows">
                 @for (event of day.events; track event.at + event.title) {
-                  <li class="agenda__row" [attr.data-accent]="event.area">
-                    <span class="agenda__time tnum">{{ timeOf(event.at) }}</span>
-                    <span class="agenda__kind" [class]="'agenda__kind--' + event.kind">
-                      {{ event.note }}
-                    </span>
-                    <span class="agenda__body">
-                      <strong>{{ event.title }}</strong>
+                  <li class="ev">
+                    <span class="ev__time tnum">{{ timeOf(event.at) }}</span>
+                    <span class="ev__main">
+                      <span class="ev__title">{{ event.title }}</span>
                       @if (event.role) {
-                        <span class="agenda__role">{{ event.role }}</span>
+                        <span class="ev__role">{{ event.role }}</span>
                       }
                     </span>
-                    <span class="agenda__bank">{{ bankOf(event.area) }}</span>
+                    <span class="ev__meta">
+                      @if (event.note; as note) {
+                        <!-- Accento solo su ciò che è fissato dal calendario
+                             ufficiale: il tipo resta comunque scritto. -->
+                        <span class="chip" [class.chip--accent]="event.scheduled">{{ note }}</span>
+                      }
+                      <span class="ev__bank">{{ bankOf(event.area) }}</span>
+                    </span>
                   </li>
                 }
               </ul>
@@ -142,7 +151,7 @@ const AGENDA_LIMIT = 22;
           }
         </ol>
       } @else {
-        <p class="card empty">Nessun appuntamento già fissato nell’archivio corrente.</p>
+        <p class="card card--pad empty">Nessun appuntamento già fissato nell’archivio corrente.</p>
       }
     </section>
 
@@ -169,14 +178,12 @@ const AGENDA_LIMIT = 22;
       </section>
     }
 
-    <p class="fineprint">
+    <p class="fineprint sources">
       <app-icon name="info" [size]="12" />
       Le date delle riunioni di politica monetaria sono quelle pubblicate dai calendari ufficiali di
       Federal Reserve e Banca centrale europea. Gli interventi dei singoli membri vengono annunciati
       con pochi giorni di preavviso e possono essere aggiunti, spostati o annullati senza preavviso.
     </p>
-
-    <app-risk-notice variant="card" title="Avvertenza sempre valida" />
   `,
   styles: `
     :host {
@@ -186,284 +193,247 @@ const AGENDA_LIMIT = 22;
     .head-facts {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: var(--s-2);
     }
 
-    /* --- Decisioni -------------------------------------------------------- */
-
-    .decisions {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 16px;
+    /* La pastiglia che porta altrove deve rispondere al puntatore: cambia
+       fondo, non posizione. */
+    .head-facts a.chip {
+      transition:
+        background var(--dur) var(--ease),
+        color var(--dur) var(--ease);
     }
 
-    .decision {
-      display: flex;
-      flex-direction: column;
-      padding: 20px 24px 18px;
-      border-color: var(--accent-line);
-    }
-
-    .decision__bank {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    .decision__now {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .decision__label {
-      display: block;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-    }
-
-    .decision__rate {
-      display: block;
-      margin-top: 4px;
-      font-size: 34px;
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: -0.035em;
+    .head-facts a.chip:hover {
+      background: var(--accent-dim);
       color: var(--accent-soft);
     }
 
-    .decision__since {
-      font-size: 11.5px;
+    /* --- Decisioni sui tassi ---------------------------------------------- */
+
+    .rates {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--s-4);
+    }
+
+    .rate {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Il colore dell'area sta sull'icona: il nome dell'istituto è già il
+       titolo della scheda e non ha bisogno anche di una tinta. */
+    .rate__bank {
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
+      font-size: var(--t-md);
+    }
+
+    .rate__bank app-icon {
+      color: var(--accent);
+    }
+
+    .rate__label {
+      font-size: var(--t-xs);
       color: var(--text-faint);
     }
 
-    .decision__next {
-      margin-top: 16px;
-      padding-top: 14px;
+    .rate__now {
+      margin-top: var(--s-4);
+    }
+
+    .rate__figure {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: var(--s-2);
+      margin-top: var(--s-1);
+    }
+
+    .rate__value {
+      font-size: var(--t-2xl);
+      font-weight: 600;
+      line-height: var(--lh-tight);
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .rate__since {
+      font-size: var(--t-xs);
+      color: var(--text-faint);
+    }
+
+    .rate__next {
+      margin-top: var(--s-4);
+      padding-top: var(--s-4);
       border-top: 1px solid var(--line);
     }
 
-    .decision__date {
-      margin-top: 5px;
-      font-size: 17px;
-      font-weight: 600;
+    .rate__date {
+      margin-top: var(--s-1);
+      font-size: var(--t-md);
+      font-weight: 500;
       color: var(--text);
     }
 
-    .decision__time {
-      margin-top: 3px;
-      font-size: 12px;
+    .rate__time {
+      font-size: var(--t-xs);
       color: var(--text-muted);
     }
 
-    .decision__chair {
+    /* Vale solo quando la riunione c'è: da sola, la frase di assenza è già
+       staccata dal filetto di .rate__next. */
+    .rate__date + .rate__time {
+      margin-top: var(--s-1);
+    }
+
+    .rate__chair {
       display: flex;
       align-items: center;
-      gap: 7px;
-      margin-top: 12px;
-      font-size: 12px;
+      gap: var(--s-2);
+      margin-top: var(--s-3);
+      font-size: var(--t-xs);
       color: var(--text-faint);
     }
 
-    .decision__link {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
+    /* Ancorato in fondo perché le due schede finiscano alla stessa altezza
+       anche quando una delle due non ha l'intervento del presidente. */
+    .rate__link {
+      align-self: flex-start;
       margin-top: auto;
-      padding-top: 16px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--accent);
-      transition: gap 0.3s var(--ease);
+      padding-top: var(--s-5);
     }
 
-    .decision__link:hover {
-      gap: 12px;
-    }
-
-    /* --- Agenda ----------------------------------------------------------- */
+    /* --- Agenda ------------------------------------------------------------
+       Nessun riquadro per riga e nessun binario verticale: la giornata è tenuta
+       insieme dalla sua data e da un filetto, come su un'agenda di carta.
+       ---------------------------------------------------------------------- */
 
     .agenda {
       list-style: none;
-      position: relative;
-      padding-left: 22px;
     }
 
-    /* Binario verticale che tiene insieme le giornate. */
-    .agenda::before {
-      content: '';
-      position: absolute;
-      left: 4px;
-      top: 8px;
-      bottom: 8px;
-      width: 1px;
-      background: linear-gradient(
-        180deg,
-        transparent,
-        var(--line-strong) 12%,
-        var(--line-strong) 88%,
-        transparent
-      );
+    .day + .day {
+      margin-top: var(--s-6);
     }
 
-    .agenda__day {
-      position: relative;
-      padding-bottom: 22px;
-    }
-
-    .agenda__day::before {
-      content: '';
-      position: absolute;
-      left: -22px;
-      top: 6px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      border: 1px solid var(--accent-line);
-      background: var(--bg);
-    }
-
-    .agenda__date {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+    .day__label {
+      padding-bottom: var(--s-2);
+      border-bottom: 1px solid var(--line);
+      font-size: var(--t-xs);
+      font-weight: 500;
       color: var(--accent);
     }
 
-    .agenda__rows {
+    .day__rows {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 10px;
     }
 
-    .agenda__row {
+    .ev {
       display: grid;
-      grid-template-columns: 48px 128px minmax(0, 1fr) auto;
+      grid-template-columns: 52px minmax(0, 1fr) auto;
       align-items: baseline;
-      gap: 12px;
-      padding: 11px 16px;
-      border-radius: var(--r-md);
-      border: 1px solid var(--line);
-      background: var(--panel-glass);
+      gap: var(--s-3);
+      padding: var(--s-3) 0;
     }
 
-    .agenda__time {
-      font-size: 12.5px;
-      font-weight: 600;
+    .ev + .ev {
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .ev__time {
+      font-size: var(--t-sm);
+      font-weight: 500;
       color: var(--text);
     }
 
-    .agenda__kind {
-      justify-self: start;
-      padding: 2px 9px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--line);
-      font-size: 10.5px;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-
-    .agenda__kind--decisione,
-    .agenda__kind--conferenza {
-      border-color: var(--accent-line);
-      background: var(--accent-dim);
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .agenda__body {
+    .ev__main {
       display: flex;
       flex-direction: column;
-      gap: 2px;
-      font-size: 13.2px;
-      color: var(--text-soft);
-      line-height: 1.45;
+      gap: var(--s-1);
     }
 
-    .agenda__role {
-      font-size: 11px;
+    .ev__title {
+      font-size: var(--t-sm);
+      line-height: var(--lh-snug);
+      color: var(--text-soft);
+    }
+
+    .ev__role {
+      font-size: var(--t-micro);
       color: var(--text-faint);
     }
 
-    .agenda__bank {
-      font-size: 11px;
+    .ev__meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: var(--s-3);
+    }
+
+    .ev__bank {
+      font-size: var(--t-micro);
       color: var(--text-faint);
       white-space: nowrap;
     }
 
-    /* --- Passati ---------------------------------------------------------- */
+    /* --- Appena passati ----------------------------------------------------- */
 
     .past {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
     }
 
     .past li {
       display: grid;
       grid-template-columns: 150px minmax(0, 1fr) auto;
-      gap: 14px;
-      padding: 9px 16px;
-      border-radius: var(--r-sm);
-      font-size: 12.5px;
+      align-items: baseline;
+      gap: var(--s-4);
+      padding: var(--s-3) 0;
+      font-size: var(--t-sm);
       color: var(--text-muted);
     }
 
-    .past li:nth-child(odd) {
-      background: rgba(255, 255, 255, 0.018);
+    .past li + li {
+      border-top: 1px solid var(--line-soft);
     }
 
     .past__date {
+      font-size: var(--t-xs);
       color: var(--text-faint);
-      font-size: 11.5px;
     }
 
     .past__bank {
+      font-size: var(--t-micro);
       color: var(--text-faint);
-      font-size: 11px;
       white-space: nowrap;
     }
 
     .empty {
-      padding: 26px;
       text-align: center;
+      font-size: var(--t-sm);
       color: var(--text-muted);
-      font-size: 13.4px;
+    }
+
+    /* La nota sulle fonti è testo corrente: si ferma alla misura di lettura. */
+    .sources {
+      max-width: var(--measure);
     }
 
     @media (max-width: 760px) {
-      .agenda__row {
-        grid-template-columns: 48px minmax(0, 1fr);
-        row-gap: 5px;
+      .ev {
+        grid-template-columns: 52px minmax(0, 1fr);
+        row-gap: var(--s-2);
       }
 
-      .agenda__kind {
-        grid-column: 2;
-      }
-
-      .agenda__body {
-        grid-column: 2;
-      }
-
-      .agenda__bank {
+      .ev__meta {
         grid-column: 2;
       }
 
       .past li {
         grid-template-columns: minmax(0, 1fr);
-        gap: 2px;
+        gap: var(--s-1);
       }
     }
   `,

@@ -11,13 +11,9 @@ import { Icon } from './icon';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [Icon],
   template: `
-    <span
-      class="badge"
-      [class]="'badge--' + tone()"
-      [attr.title]="'Bias descritto: ' + direction()"
-    >
-      <app-icon [name]="icon()" [size]="13" />
-      <span class="badge__text">{{ label() }}</span>
+    <span class="chip badge" [class]="tone()" [attr.title]="'Bias descritto: ' + direction()">
+      <app-icon [name]="icon()" [size]="12" />
+      {{ label() }}
       @if (strength(); as s) {
         <span class="badge__dots" [attr.aria-label]="'Forza del segnale: ' + s">
           @for (i of dots; track i) {
@@ -28,47 +24,20 @@ import { Icon } from './icon';
     </span>
   `,
   styles: `
+    /* Forma e tinte arrivano dal primitivo globale .chip: qui resta solo ciò
+       che una pastiglia non sa fare, cioè i tre pallini della forza. */
     .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 5px 12px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--line-strong);
-      background: rgba(255, 255, 255, 0.04);
-      font-size: 11.5px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      white-space: nowrap;
-    }
-
-    .badge--bull {
-      border-color: rgba(74, 210, 149, 0.35);
-      background: var(--bull-dim);
-      color: var(--bull);
-    }
-
-    .badge--bear {
-      border-color: rgba(255, 95, 102, 0.35);
-      background: var(--bear-dim);
-      color: var(--bear);
-    }
-
-    .badge--neutral {
-      border-color: var(--line-strong);
-      background: var(--info-dim);
-      color: var(--info);
+      gap: var(--s-2);
     }
 
     .badge__dots {
       display: inline-flex;
-      gap: 3px;
-      margin-left: 1px;
+      gap: 2px;
     }
 
     .badge__dots i {
-      width: 4px;
-      height: 4px;
+      width: 3px;
+      height: 3px;
       border-radius: 50%;
       background: currentColor;
       opacity: 0.25;
@@ -93,15 +62,16 @@ export class BiasBadge {
     return p ? `${p} ${text}` : text.charAt(0).toUpperCase() + text.slice(1);
   });
 
+  /** La variante del primitivo `.chip` che corrisponde alla direzione. */
   protected readonly tone = computed(() => {
     const d = this.direction();
     if (d.endsWith('ribassista')) {
-      return 'bear';
+      return 'chip--down';
     }
     if (d.endsWith('rialzista')) {
-      return 'bull';
+      return 'chip--up';
     }
-    return 'neutral';
+    return 'chip--flat';
   });
 
   protected readonly icon = computed(() => {

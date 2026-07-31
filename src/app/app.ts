@@ -14,11 +14,9 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { filter, map } from 'rxjs';
 
-import { NAV, SITE } from './core/config/site.config';
+import { LEGAL_NAV, NAV, SITE } from './core/config/site.config';
 import { areaBySlug, metaBySlug } from './core/data/calendar.meta';
 import { ContentService } from './core/services/content.service';
-import { DisclaimerBar } from './shared/legal/disclaimer-bar';
-import { DisclaimerModal } from './shared/legal/disclaimer-modal';
 import { SiteFooter } from './shared/legal/site-footer';
 import { Icon } from './shared/ui/icon';
 
@@ -39,15 +37,7 @@ const SEGMENT_LABELS: Record<string, string> = {
 @Component({
   selector: 'app-root',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    RouterOutlet,
-    RouterLink,
-    RouterLinkActive,
-    DisclaimerBar,
-    DisclaimerModal,
-    SiteFooter,
-    Icon,
-  ],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, SiteFooter, Icon],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
@@ -58,6 +48,7 @@ export class App {
 
   protected readonly site = SITE;
   protected readonly nav = NAV;
+  protected readonly legal = LEGAL_NAV;
 
   protected readonly url = toSignal(
     this.router.events.pipe(
@@ -81,11 +72,15 @@ export class App {
     () => this.searchFocused() && this.query().trim().length >= 2,
   );
 
-  /** Briciole di pane derivate dall'URL corrente. */
+  /**
+   * Briciole di pane derivate dall'URL corrente, **senza** la panoramica: quel
+   * primo anello è già scritto a parte nella barra superiore e ripeterlo
+   * darebbe «Panoramica / Panoramica» sulla home.
+   */
   protected readonly crumbs = computed(() => {
     const segments = this.url().split('?')[0].split('#')[0].split('/').filter(Boolean);
     if (segments.length === 0) {
-      return [{ label: 'Panoramica', link: '/' }];
+      return [];
     }
 
     const trail: { label: string; link: string }[] = [];
@@ -123,8 +118,6 @@ export class App {
     }
     return 'Pagina';
   }
-
-  protected readonly pageTitle = computed(() => this.crumbs().at(-1)?.label ?? 'Panoramica');
 
   /**
    * Tinta della sezione corrente. Cambia solo la famiglia cromatica: forma,

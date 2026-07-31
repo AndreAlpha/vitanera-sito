@@ -140,7 +140,13 @@ function decimalFormat(decimals: number): Intl.NumberFormat {
   return f;
 }
 
-/** Valore con unità: "3,75%", "197K", "335,12 pt". */
+/**
+ * Valore con unità: "3,75%", "197K", "335,12 pt".
+ *
+ * Il segno meno è quello tipografico (−, U+2212) e non il trattino: sta alla
+ * stessa altezza del più e ha la stessa larghezza delle cifre, così le colonne
+ * di numeri restano allineate.
+ */
 export function formatValue(
   value: number | null | undefined,
   unit: string,
@@ -149,7 +155,7 @@ export function formatValue(
   if (value === null || value === undefined) {
     return '—';
   }
-  const n = decimalFormat(decimals).format(value);
+  const n = decimalFormat(decimals).format(value).replace('-', '−');
   return unit === '%' ? `${n}%` : unit === 'K' ? `${n}K` : `${n} ${unit}`;
 }
 

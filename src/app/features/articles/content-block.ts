@@ -6,9 +6,12 @@ import { Icon } from '../../shared/ui/icon';
 /**
  * Rende un singolo blocco di contenuto di un'analisi.
  *
- * Ogni tipo di blocco ha una resa dedicata: paragrafi in carattere con grazie
- * per la lettura lunga, elenchi, riquadri, tabelle di riferimenti, scenari e
- * bilanci a due colonne.
+ * I dieci tipi di blocco avevano dieci vestiti diversi — fondi, sfumature,
+ * bordi colorati, piastrelle numerate — e un'analisi lunga sembrava dieci
+ * pagine incollate. Ora il vocabolario è uno solo: a separare bastano un
+ * filetto e dello spazio. Il riquadro resta dove il blocco interrompe davvero
+ * il filo del discorso — il riquadro di richiamo e la nota — e la citazione se
+ * la cava con un filetto laterale. I blocchi numerici sono tabelle.
  */
 @Component({
   selector: 'app-content-block',
@@ -20,16 +23,13 @@ import { Icon } from '../../shared/ui/icon';
     }
 
     @if (heading(); as b) {
-      <h2 class="h2" [id]="headingAnchor()">
-        <span class="h2__bar"></span>
-        {{ b.text }}
-      </h2>
+      <h2 class="head" [id]="headingAnchor()">{{ b.text }}</h2>
     }
 
     @if (list(); as b) {
-      <div class="listwrap">
+      <div class="blk">
         @if (b.title) {
-          <p class="listwrap__title">{{ b.title }}</p>
+          <p class="eyebrow blk__title">{{ b.title }}</p>
         }
         @if (b.ordered) {
           <ol class="olist">
@@ -40,7 +40,7 @@ import { Icon } from '../../shared/ui/icon';
         } @else {
           <ul class="ulist">
             @for (item of b.items; track item) {
-              <li><span class="dot"></span>{{ item }}</li>
+              <li>{{ item }}</li>
             }
           </ul>
         }
@@ -48,9 +48,9 @@ import { Icon } from '../../shared/ui/icon';
     }
 
     @if (callout(); as b) {
-      <aside class="callout" [class]="'callout--' + b.tone">
+      <aside class="callout" [attr.data-tone]="b.tone">
         <p class="callout__title">
-          <app-icon [name]="toneIcon(b.tone)" [size]="15" />
+          <app-icon [name]="toneIcon(b.tone)" [size]="14" />
           {{ b.title }}
         </p>
         @if (b.text) {
@@ -67,62 +67,68 @@ import { Icon } from '../../shared/ui/icon';
     }
 
     @if (stats(); as b) {
-      <figure class="stats">
+      <figure class="blk">
         @if (b.title) {
-          <figcaption class="stats__title">{{ b.title }}</figcaption>
+          <figcaption class="eyebrow blk__title">{{ b.title }}</figcaption>
         }
-        <div class="stats__grid">
-          @for (item of b.items; track item.label) {
-            <div class="stat" [class]="'stat--' + (item.tone ?? 'neutral')">
-              <p class="stat__label">{{ item.label }}</p>
-              <p class="stat__value tnum">{{ item.value }}</p>
-              @if (item.note) {
-                <p class="stat__note">{{ item.note }}</p>
+        <div class="scroll">
+          <table class="figures">
+            <tbody>
+              @for (item of b.items; track item.label) {
+                <tr [attr.data-tone]="item.tone ?? 'neutral'">
+                  <th scope="row">
+                    {{ item.label }}
+                    @if (item.note) {
+                      <span class="figures__note">{{ item.note }}</span>
+                    }
+                  </th>
+                  <td class="tnum">{{ item.value }}</td>
+                </tr>
               }
-            </div>
-          }
+            </tbody>
+          </table>
         </div>
         @if (b.caption) {
-          <p class="stats__caption"><app-icon name="info" [size]="12" />{{ b.caption }}</p>
+          <p class="fineprint"><app-icon name="info" [size]="12" />{{ b.caption }}</p>
         }
       </figure>
     }
 
     @if (scenarios(); as b) {
-      <section class="scen">
+      <section class="blk">
         @if (b.title) {
-          <p class="scen__title">{{ b.title }}</p>
+          <p class="eyebrow blk__title">{{ b.title }}</p>
         }
-        <div class="scen__grid">
+        <dl class="rows">
           @for (item of b.items; track item.label) {
-            <article class="scen__card" [class]="'scen__card--' + item.tone">
-              <p class="scen__label">
+            <div class="rows__item" [attr.data-tone]="item.tone">
+              <dt class="rows__label">
                 <app-icon [name]="toneIcon(item.tone)" [size]="13" />
                 {{ item.label }}
-              </p>
-              <p class="scen__text">{{ item.text }}</p>
-            </article>
+              </dt>
+              <dd class="rows__text">{{ item.text }}</dd>
+            </div>
           }
-        </div>
+        </dl>
         @if (b.caption) {
-          <p class="scen__caption"><app-icon name="alert" [size]="12" />{{ b.caption }}</p>
+          <p class="fineprint"><app-icon name="alert" [size]="12" />{{ b.caption }}</p>
         }
       </section>
     }
 
     @if (balance(); as b) {
-      <section class="bal">
+      <section class="blk">
         @if (b.title) {
-          <p class="bal__title">{{ b.title }}</p>
+          <p class="eyebrow blk__title">{{ b.title }}</p>
         }
-        <div class="bal__grid">
+        <div class="bal">
           @for (side of [b.left, b.right]; track side.title) {
-            <div class="bal__side" [class]="'bal__side--' + side.tone">
+            <div class="bal__side" [attr.data-tone]="side.tone">
               <p class="bal__head">
-                <app-icon [name]="toneIcon(side.tone)" [size]="14" />
+                <app-icon [name]="toneIcon(side.tone)" [size]="13" />
                 {{ side.title }}
               </p>
-              <ul>
+              <ul class="bal__list">
                 @for (item of side.items; track item) {
                   <li>{{ item }}</li>
                 }
@@ -134,14 +140,14 @@ import { Icon } from '../../shared/ui/icon';
     }
 
     @if (timeline(); as b) {
-      <section class="tl">
+      <section class="blk">
         @if (b.title) {
-          <p class="tl__title">{{ b.title }}</p>
+          <p class="eyebrow blk__title">{{ b.title }}</p>
         }
-        <ol>
+        <ol class="tl">
           @for (item of b.items; track item.title) {
-            <li>
-              <span class="tl__when">{{ item.when }}</span>
+            <li class="tl__item">
+              <p class="tl__when">{{ item.when }}</p>
               <p class="tl__head">{{ item.title }}</p>
               <p class="tl__text">{{ item.text }}</p>
             </li>
@@ -168,612 +174,498 @@ import { Icon } from '../../shared/ui/icon';
       display: block;
     }
 
-    /* --- Paragrafi -------------------------------------------------------- */
+    /* --- Il tono ------------------------------------------------------------
+       Il tono arriva dai dati ed è la stessa informazione ovunque compaia. Una
+       sola mappa da nome a colore, invece di una variante di stile per ciascun
+       tipo di blocco: prima erano venti regole che dicevano la stessa cosa.
+       ----------------------------------------------------------------------- */
+
+    [data-tone] {
+      --tone: var(--text);
+      --tone-line: var(--line-strong);
+    }
+
+    [data-tone='gold'] {
+      --tone: var(--accent);
+      --tone-line: var(--accent-line);
+    }
+
+    [data-tone='bull'] {
+      --tone: var(--up);
+      --tone-line: var(--up-line);
+    }
+
+    [data-tone='bear'] {
+      --tone: var(--down);
+      --tone-line: var(--down-line);
+    }
+
+    [data-tone='warn'] {
+      --tone: var(--warn);
+      --tone-line: var(--warn-line);
+    }
+
+    /* --- Ossatura comune ----------------------------------------------------
+       Ogni blocco strutturato ha lo stesso stacco sotto e la stessa etichetta
+       sopra: è ciò che tiene insieme un'analisi lunga.
+       ----------------------------------------------------------------------- */
+
+    .blk {
+      margin: 0 0 var(--s-6);
+    }
+
+    .blk__title {
+      margin-bottom: var(--s-3);
+    }
+
+    .scroll {
+      overflow-x: auto;
+    }
+
+    /* --- Paragrafi -----------------------------------------------------------
+       Il corpo è in carattere con grazie perché è testo da leggere per intero.
+       Si ferma a --measure: oltre le settanta battute l'occhio perde la riga di
+       ritorno, anche se la colonna intorno sarebbe più larga.
+       ----------------------------------------------------------------------- */
 
     .para {
+      max-width: var(--measure);
+      margin: 0 0 var(--s-5);
       font-family: var(--ff-serif);
-      font-size: 17.4px;
-      line-height: 1.8;
+      font-size: var(--t-lg);
+      line-height: var(--lh-loose);
       color: var(--text-soft);
-      margin: 0 0 20px;
     }
 
     .para--lead {
-      font-size: 20px;
-      line-height: 1.68;
+      font-size: var(--t-xl);
+      line-height: var(--lh-base);
       color: var(--text);
     }
 
-    /* --- Titoli ----------------------------------------------------------- */
+    /* --- Titoli interni ------------------------------------------------------
+       Niente barretta in sfumatura davanti al titolo: a distinguerlo dal corpo
+       bastano il carattere senza grazie e lo spazio. Molto sopra e poco sotto,
+       così il titolo appartiene visibilmente al testo che introduce.
+       ----------------------------------------------------------------------- */
 
-    .h2 {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 21px;
-      letter-spacing: -0.025em;
-      margin: 40px 0 18px;
-      scroll-margin-top: 130px;
+    .head {
+      margin: var(--s-8) 0 var(--s-3);
+      font-size: var(--t-lg);
+      font-weight: 600;
+      /* L'ancora dell'indice non deve finire sotto la barra superiore. */
+      scroll-margin-top: calc(var(--topbar-h) + var(--s-6));
     }
 
-    .h2__bar {
-      width: 4px;
-      height: 20px;
-      border-radius: 3px;
-      background: linear-gradient(180deg, var(--accent-soft), var(--accent-deep));
-    }
+    /* --- Elenchi -------------------------------------------------------------
+       Il pallino con l'alone e il numero dentro la piastrella erano due modi di
+       decorare un elenco puntato. Un trattino e una cifra nel colore di sezione
+       dicono la stessa cosa senza aggiungere un oggetto alla pagina.
+       ----------------------------------------------------------------------- */
 
-    /* --- Elenchi ---------------------------------------------------------- */
-
-    .listwrap {
-      margin: 0 0 24px;
-    }
-
-    .listwrap__title {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent-deep);
-      margin-bottom: 11px;
-    }
-
-    .ulist {
+    .ulist,
+    .olist {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 11px;
+      gap: var(--s-3);
     }
 
-    .ulist li {
-      display: flex;
-      gap: 12px;
-      font-size: 15.4px;
-      line-height: 1.68;
+    .ulist li,
+    .olist li {
+      position: relative;
+      font-size: var(--t-md);
+      line-height: var(--lh-base);
       color: var(--text-soft);
     }
 
-    .dot {
+    .ulist li {
+      padding-left: var(--s-5);
+    }
+
+    .ulist li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: var(--s-3);
       width: 6px;
-      height: 6px;
-      margin-top: 9px;
-      flex: none;
-      border-radius: 50%;
+      height: 1px;
       background: var(--accent);
-      box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.14);
     }
 
     .olist {
       counter-reset: step;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
     }
 
     .olist li {
-      position: relative;
-      padding-left: 34px;
-      font-size: 15.4px;
-      line-height: 1.68;
-      color: var(--text-soft);
+      padding-left: var(--s-6);
     }
 
     .olist li::before {
       counter-increment: step;
-      content: counter(step);
+      content: counter(step) '.';
       position: absolute;
       left: 0;
-      top: 1px;
-      display: grid;
-      place-items: center;
-      width: 22px;
-      height: 22px;
-      border-radius: 8px;
-      background: rgba(var(--accent-rgb), 0.14);
-      border: 1px solid var(--accent-line);
-      color: var(--accent-soft);
+      top: 2px;
       font-family: var(--ff-sans);
-      font-size: 11px;
-      font-weight: 700;
+      font-size: var(--t-sm);
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+      color: var(--accent);
     }
 
-    /* --- Riquadri --------------------------------------------------------- */
+    /* --- Incisi --------------------------------------------------------------
+       Qui il riquadro è giustificato: l'inciso deve staccarsi dal filo del
+       discorso. Un fondo piatto, un bordo di un pixel e un filetto a sinistra
+       nel colore del tono, al posto dei quattro fondi colorati di prima.
+       ----------------------------------------------------------------------- */
 
     .callout {
-      margin: 0 0 26px;
-      padding: 18px 20px;
+      max-width: var(--measure);
+      margin: 0 0 var(--s-6);
+      padding: var(--s-card);
+      border: 1px solid var(--line);
+      border-left: 2px solid var(--tone-line);
       border-radius: var(--r-md);
-      border: 1px solid var(--line-strong);
-      background: rgba(255, 255, 255, 0.025);
-      border-left-width: 3px;
+      background: var(--surface);
     }
 
     .callout__title {
       display: flex;
       align-items: center;
-      gap: 9px;
-      font-size: 13.5px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 9px;
+      gap: var(--s-2);
+      font-size: var(--t-sm);
+      font-weight: 600;
+      color: var(--tone);
+    }
+
+    .callout__text,
+    .callout__list {
+      margin-top: var(--s-3);
     }
 
     .callout__text,
     .callout__list li {
-      font-size: 14.4px;
-      line-height: 1.66;
-      color: var(--text-muted);
+      font-size: var(--t-base);
+      line-height: var(--lh-base);
+      color: var(--text-soft);
     }
 
     .callout__list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 7px;
-      margin-top: 4px;
+      gap: var(--s-2);
+    }
+
+    .callout__list li {
+      position: relative;
+      padding-left: var(--s-4);
     }
 
     .callout__list li::before {
-      content: '—';
-      margin-right: 8px;
-      opacity: 0.45;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: var(--s-3);
+      width: 6px;
+      height: 1px;
+      background: var(--text-faint);
     }
 
-    .callout--bull {
-      border-color: rgba(74, 210, 149, 0.3);
-      border-left-color: var(--bull);
-      background: var(--bull-dim);
+    /* --- Riferimenti numerici ------------------------------------------------
+       Erano piastrelle in griglia, una per numero, e il fondo scuro di ognuna
+       pesava più del valore che conteneva. Incolonnati a destra i numeri si
+       confrontano a colpo d'occhio, e i filetti bastano a separare le righe.
+       ----------------------------------------------------------------------- */
+
+    .figures {
+      width: 100%;
+      border-collapse: collapse;
     }
 
-    .callout--bull .callout__title {
-      color: var(--bull);
-    }
-
-    .callout--bear {
-      border-color: rgba(255, 95, 102, 0.3);
-      border-left-color: var(--bear);
-      background: var(--bear-dim);
-    }
-
-    .callout--bear .callout__title {
-      color: var(--bear);
-    }
-
-    .callout--warn {
-      border-color: rgba(240, 169, 59, 0.3);
-      border-left-color: var(--warn);
-      background: var(--warn-dim);
-    }
-
-    .callout--warn .callout__title {
-      color: var(--warn);
-    }
-
-    .callout--gold {
-      border-color: var(--accent-line);
-      border-left-color: var(--accent);
-      background: var(--accent-dim);
-    }
-
-    .callout--gold .callout__title {
-      color: var(--accent-soft);
-    }
-
-    .callout--neutral {
-      border-left-color: var(--text-faint);
-    }
-
-    .callout--neutral .callout__title {
-      color: var(--text-soft);
-    }
-
-    /* --- Riferimenti numerici --------------------------------------------- */
-
-    .stats {
-      margin: 0 0 28px;
-      padding: 18px 20px 16px;
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      background: rgba(255, 255, 255, 0.022);
-    }
-
-    .stats__title {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-      margin-bottom: 14px;
-    }
-
-    .stats__grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr));
-      gap: 10px;
-    }
-
-    .stat {
-      padding: 12px 13px;
-      border-radius: var(--r-sm);
-      border: 1px solid var(--line);
-      background: rgba(0, 0, 0, 0.24);
-    }
-
-    .stat__label {
-      font-size: 10.5px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-    }
-
-    .stat__value {
-      margin-top: 5px;
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .stat__note {
-      margin-top: 4px;
-      font-size: 10.5px;
-      color: var(--text-faint);
-      line-height: 1.4;
-    }
-
-    .stat--gold .stat__value {
-      color: var(--accent);
-    }
-
-    .stat--bull .stat__value {
-      color: var(--bull);
-    }
-
-    .stat--bear .stat__value {
-      color: var(--bear);
-    }
-
-    .stat--warn .stat__value {
-      color: var(--warn);
-    }
-
-    .stats__caption,
-    .scen__caption {
-      display: flex;
-      align-items: flex-start;
-      gap: 7px;
-      margin-top: 13px;
-      padding-top: 11px;
+    .figures th,
+    .figures td {
+      padding: var(--s-3) 0;
       border-top: 1px solid var(--line);
-      font-size: 11px;
-      line-height: 1.5;
-      color: var(--text-faint);
+      vertical-align: baseline;
     }
 
-    .stats__caption app-icon,
-    .scen__caption app-icon {
-      margin-top: 2px;
+    .figures tr:last-child th,
+    .figures tr:last-child td {
+      border-bottom: 1px solid var(--line);
     }
 
-    .scen__caption app-icon {
-      color: var(--warn);
-    }
-
-    /* --- Scenari ---------------------------------------------------------- */
-
-    .scen {
-      margin: 0 0 28px;
-    }
-
-    .scen__title,
-    .bal__title,
-    .tl__title {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent-deep);
-      margin-bottom: 13px;
-    }
-
-    .scen__grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
-      gap: 12px;
-    }
-
-    .scen__card {
-      padding: 16px 17px;
-      border-radius: var(--r-md);
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.024);
-      border-top: 2px solid var(--line-strong);
-    }
-
-    .scen__label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12.5px;
-      font-weight: 700;
-      margin-bottom: 9px;
-    }
-
-    .scen__text {
-      font-size: 13.6px;
-      line-height: 1.62;
+    .figures th {
+      text-align: left;
+      font-size: var(--t-sm);
+      font-weight: 400;
+      line-height: var(--lh-snug);
       color: var(--text-muted);
     }
 
-    .scen__card--bull {
-      border-top-color: var(--bull);
+    .figures__note {
+      display: block;
+      margin-top: 2px;
+      font-size: var(--t-xs);
+      line-height: var(--lh-snug);
+      color: var(--text-faint);
     }
 
-    .scen__card--bull .scen__label {
-      color: var(--bull);
+    .figures td {
+      /* La colonna dei valori si stringe sul contenuto: l'etichetta prende il
+         resto e va a capo al posto del numero. */
+      width: 1%;
+      padding-left: var(--s-5);
+      text-align: right;
+      white-space: nowrap;
+      font-size: var(--t-lg);
+      font-weight: 600;
+      color: var(--tone);
     }
 
-    .scen__card--bear {
-      border-top-color: var(--bear);
+    /* --- Scenari -------------------------------------------------------------
+       Non sono schede affiancate: sono voci di un elenco, e come tali si
+       leggono in verticale. Etichetta a sinistra, descrizione a destra, un
+       filetto fra l'una e l'altra.
+       ----------------------------------------------------------------------- */
+
+    .rows {
+      margin: 0;
+      border-top: 1px solid var(--line);
     }
 
-    .scen__card--bear .scen__label {
-      color: var(--bear);
+    .rows__item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+      gap: var(--s-2) var(--s-4);
+      padding: var(--s-4) 0;
+      border-bottom: 1px solid var(--line);
     }
 
-    .scen__card--warn {
-      border-top-color: var(--warn);
+    .rows__label {
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
+      font-size: var(--t-sm);
+      font-weight: 600;
+      line-height: var(--lh-snug);
+      color: var(--tone);
     }
 
-    .scen__card--warn .scen__label {
-      color: var(--warn);
-    }
-
-    .scen__card--gold {
-      border-top-color: var(--accent);
-    }
-
-    .scen__card--gold .scen__label {
-      color: var(--accent-soft);
-    }
-
-    .scen__card--neutral .scen__label {
+    .rows__text {
+      margin: 0;
+      font-size: var(--t-base);
+      line-height: var(--lh-base);
       color: var(--text-soft);
     }
 
-    /* --- Bilancio a due colonne -------------------------------------------- */
+    /* --- Bilancio a due colonne ----------------------------------------------
+       Due elenchi affiancati, senza scatole né fondi colorati: a separarli
+       basta un filetto verticale, che su schermo stretto diventa orizzontale.
+       ----------------------------------------------------------------------- */
 
     .bal {
-      margin: 0 0 28px;
-    }
-
-    .bal__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--s-6);
     }
 
-    .bal__side {
-      padding: 17px 19px;
-      border-radius: var(--r-md);
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.022);
+    .bal__side + .bal__side {
+      padding-left: var(--s-6);
+      border-left: 1px solid var(--line);
     }
 
     .bal__head {
       display: flex;
       align-items: center;
-      gap: 9px;
-      font-size: 13px;
-      font-weight: 700;
-      padding-bottom: 11px;
-      margin-bottom: 12px;
+      gap: var(--s-2);
+      padding-bottom: var(--s-3);
+      margin-bottom: var(--s-3);
       border-bottom: 1px solid var(--line);
+      font-size: var(--t-sm);
+      font-weight: 600;
+      color: var(--tone);
     }
 
-    .bal__side ul {
+    .bal__list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 9px;
+      gap: var(--s-3);
     }
 
-    .bal__side li {
+    .bal__list li {
       position: relative;
-      padding-left: 16px;
-      font-size: 13.8px;
-      line-height: 1.58;
-      color: var(--text-muted);
-    }
-
-    .bal__side li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 9px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: currentColor;
-      opacity: 0.5;
-    }
-
-    .bal__side--bull {
-      border-color: rgba(74, 210, 149, 0.24);
-      background: var(--bull-dim);
-    }
-
-    .bal__side--bull .bal__head {
-      color: var(--bull);
-    }
-
-    .bal__side--bear {
-      border-color: rgba(255, 95, 102, 0.24);
-      background: var(--bear-dim);
-    }
-
-    .bal__side--bear .bal__head {
-      color: var(--bear);
-    }
-
-    .bal__side--warn {
-      border-color: rgba(240, 169, 59, 0.24);
-      background: var(--warn-dim);
-    }
-
-    .bal__side--warn .bal__head {
-      color: var(--warn);
-    }
-
-    .bal__side--gold .bal__head {
-      color: var(--accent-soft);
-    }
-
-    .bal__side--neutral .bal__head {
+      padding-left: var(--s-4);
+      font-size: var(--t-base);
+      line-height: var(--lh-base);
       color: var(--text-soft);
     }
 
-    /* --- Cronologia -------------------------------------------------------- */
-
-    .tl {
-      margin: 0 0 28px;
+    .bal__list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: var(--s-3);
+      width: 6px;
+      height: 1px;
+      background: var(--text-faint);
     }
 
-    .tl ol {
+    /* --- Cronologia ----------------------------------------------------------
+       La linea resta, perché è ciò che rende una sequenza una sequenza; ma è di
+       un pixel nel grigio dei filetti, e i pallini sono piccoli e senza alone:
+       segnano la tappa, non la illuminano.
+       ----------------------------------------------------------------------- */
+
+    .tl {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      border-left: 1px solid var(--line-strong);
-      padding-left: 20px;
+      gap: var(--s-5);
+      padding-left: var(--s-5);
+      border-left: 1px solid var(--line);
     }
 
-    .tl li {
+    .tl__item {
       position: relative;
     }
 
-    .tl li::before {
+    /* Il pallino sta a cavallo della linea: l'imbottitura più mezzo pallino. */
+    .tl__item::before {
       content: '';
       position: absolute;
-      left: -25px;
+      left: calc(-1 * var(--s-5) - 3px);
       top: 6px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
+      width: 5px;
+      height: 5px;
+      border-radius: var(--r-pill);
       background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.12);
     }
 
     .tl__when {
-      font-size: 10.5px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent-deep);
+      font-size: var(--t-xs);
+      font-weight: 500;
+      line-height: var(--lh-snug);
+      color: var(--accent);
     }
 
     .tl__head {
-      font-size: 14px;
+      margin-top: var(--s-1);
+      font-size: var(--t-base);
       font-weight: 600;
-      margin: 4px 0 4px;
+      line-height: var(--lh-snug);
+      color: var(--text);
     }
 
     .tl__text {
-      font-size: 13.6px;
-      line-height: 1.6;
+      margin-top: var(--s-1);
+      font-size: var(--t-sm);
+      line-height: var(--lh-base);
       color: var(--text-muted);
     }
 
-    /* --- Citazione e nota --------------------------------------------------- */
+    /* --- Citazione -----------------------------------------------------------
+       Via le virgolette giganti in sfumatura: un filetto a sinistra e il corsivo
+       con grazie dicono già che la voce non è quella dell'analisi.
+       ----------------------------------------------------------------------- */
 
     .quote {
-      margin: 0 0 26px;
-      padding: 4px 0 4px 22px;
-      border-left: 3px solid var(--accent-line);
+      max-width: var(--measure);
+      margin: 0 0 var(--s-6);
+      padding-left: var(--s-5);
+      border-left: 2px solid var(--accent-line);
     }
 
     .quote p {
       font-family: var(--ff-serif);
-      font-size: 18px;
+      font-size: var(--t-lg);
       font-style: italic;
-      line-height: 1.66;
+      line-height: var(--lh-base);
       color: var(--text);
     }
 
     .quote cite {
       display: block;
-      margin-top: 9px;
-      font-size: 12px;
+      margin-top: var(--s-2);
+      font-size: var(--t-xs);
       font-style: normal;
       color: var(--text-faint);
     }
 
+    /* --- Nota ----------------------------------------------------------------
+       Il bordo tratteggiato faceva sembrare la nota un segnaposto da riempire.
+       È un riquadro piatto come gli altri, solo più sommesso nel testo.
+       ----------------------------------------------------------------------- */
+
     .note {
       display: flex;
       align-items: flex-start;
-      gap: 9px;
-      margin: 0 0 24px;
-      padding: 12px 14px;
-      border-radius: var(--r-sm);
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px dashed var(--line-strong);
-      font-size: 12.2px;
-      line-height: 1.6;
-      color: var(--text-faint);
+      gap: var(--s-2);
+      max-width: var(--measure);
+      margin: 0 0 var(--s-6);
+      padding: var(--s-4);
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      background: var(--surface);
+      font-size: var(--t-sm);
+      line-height: var(--lh-snug);
+      color: var(--text-muted);
     }
 
     .note app-icon {
       margin-top: 2px;
+      color: var(--text-faint);
     }
 
     @media (max-width: 700px) {
       .para {
-        font-size: 16.4px;
-        line-height: 1.72;
+        font-size: var(--t-md);
       }
 
       .para--lead {
-        font-size: 18px;
+        font-size: var(--t-lg);
       }
 
-      .h2 {
-        font-size: 19px;
-        margin: 32px 0 14px;
-        scroll-margin-top: 96px;
+      .head {
+        margin-top: var(--s-7);
       }
 
-      .ulist li,
-      .olist li {
-        font-size: 14.6px;
+      .callout {
+        padding: var(--s-4);
       }
 
-      .callout,
-      .stats,
-      .scen__card,
-      .bal__side {
-        padding: 15px 16px;
+      .figures td {
+        font-size: var(--t-md);
+        padding-left: var(--s-4);
       }
 
-      .callout__text,
-      .callout__list li {
-        font-size: 13.8px;
+      /* Etichetta sopra e descrizione sotto: due colonne su trecento pixel
+         lasciano quattro parole per riga. */
+      .rows__item {
+        grid-template-columns: minmax(0, 1fr);
+        padding: var(--s-3) 0;
       }
 
-      .stats__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
+      .bal {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--s-5);
       }
 
-      .stat__value {
-        font-size: 15.5px;
+      .bal__side + .bal__side {
+        padding-left: 0;
+        padding-top: var(--s-5);
+        border-left: 0;
+        border-top: 1px solid var(--line);
       }
 
       .quote {
-        padding-left: 16px;
+        padding-left: var(--s-4);
       }
 
       .quote p {
-        font-size: 16.5px;
+        font-size: var(--t-md);
       }
     }
   `,

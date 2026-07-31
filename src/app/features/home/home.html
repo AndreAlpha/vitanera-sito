@@ -1,21 +1,22 @@
 <!-- ---------------------------------------------------------------------- -->
 <!-- Apertura                                                               -->
 <!-- ---------------------------------------------------------------------- -->
-<section class="hero anim-up">
-  <p class="hero__eyebrow">{{ site.name }} · Osservatorio indipendente</p>
+<section class="hero anim-in">
+  <p class="eyebrow hero__eyebrow">{{ site.name }} · Osservatorio indipendente</p>
   <h1 class="hero__title">Macro, geopolitica e <span class="hero__accent">XAU/USD</span></h1>
   <p class="hero__text">
     Analisi su banche centrali, inflazione, rendimenti reali, energia e rischio geopolitico, e un
     calendario economico con lo storico completo dei dati che li muovono. Ogni lettura dichiara
     l’orizzonte a cui si riferisce e le condizioni che la renderebbero non più valida.
   </p>
+
+  <!-- Due rimandi, non quattro: argomenti e avvertenze sono già nella barra
+       laterale, e una fila di bottoni tutti uguali non è una scelta. -->
   <div class="hero__actions">
-    <a class="btn btn--gold" routerLink="/calendario"
+    <a class="btn btn--primary" routerLink="/calendario"
       >Calendario economico <app-icon name="arrow-right" [size]="15"
     /></a>
     <a class="btn btn--ghost" routerLink="/analisi">Analisi</a>
-    <a class="btn btn--ghost" routerLink="/argomenti">Argomenti</a>
-    <a class="btn btn--ghost" routerLink="/avvertenze">Avvertenze e rischi</a>
   </div>
 </section>
 
@@ -24,7 +25,7 @@
 <!-- ---------------------------------------------------------------------- -->
 <section class="block">
   <div class="sec-head">
-    <div>
+    <div class="stack gap-1">
       <p class="eyebrow">Sintesi delle ultime pubblicazioni</p>
       <h2>Come si sta muovendo l’oro</h2>
     </div>
@@ -37,7 +38,7 @@
 <!-- ---------------------------------------------------------------------- -->
 <section class="block">
   <div class="sec-head">
-    <div>
+    <div class="stack gap-1">
       <p class="eyebrow">{{ indicatorCount }} indicatori · {{ releaseCount() }} diffusioni</p>
       <h2>Calendario economico</h2>
     </div>
@@ -48,10 +49,7 @@
 
   <div class="cal">
     <div class="cal__next card">
-      <p class="cal__label">
-        <app-icon name="calendar" [size]="13" />
-        Prossime uscite
-      </p>
+      <h3 class="cal__label">Prossime uscite</h3>
       @if (upcoming().length) {
         <ul class="cal__list">
           @for (row of upcoming(); track row.indicator.slug) {
@@ -80,29 +78,28 @@
     </div>
 
     <div class="cal__side">
-      <a class="card card--hover cal__area" routerLink="/calendario/usa" data-accent="usa">
-        <span class="cal__area-icon"><app-icon name="dollar" [size]="18" /></span>
-        <span>
+      <!-- L'icona dell'area distingue le due voci: sta in linea col nome,
+           senza la piastrella che prima pesava quanto il titolo. -->
+      <a class="card card--link cal__area" routerLink="/calendario/usa" data-accent="usa">
+        <app-icon name="dollar" [size]="15" />
+        <span class="cal__area-body">
           <span class="cal__area-name">USA</span>
           <span class="cal__area-tag">Venti indicatori · Federal Reserve</span>
         </span>
-        <app-icon name="chevron-right" [size]="15" />
+        <app-icon name="chevron-right" [size]="14" />
       </a>
 
-      <a class="card card--hover cal__area" routerLink="/calendario/euro-zona" data-accent="euro">
-        <span class="cal__area-icon"><app-icon name="euro" [size]="18" /></span>
-        <span>
+      <a class="card card--link cal__area" routerLink="/calendario/euro-zona" data-accent="euro">
+        <app-icon name="euro" [size]="15" />
+        <span class="cal__area-body">
           <span class="cal__area-name">Euro zona</span>
           <span class="cal__area-tag">Nove indicatori · BCE</span>
         </span>
-        <app-icon name="chevron-right" [size]="15" />
+        <app-icon name="chevron-right" [size]="14" />
       </a>
 
       <div class="card cal__banks">
-        <p class="cal__label">
-          <app-icon name="bank" [size]="13" />
-          Banche centrali
-        </p>
+        <h3 class="cal__label">Banche centrali</h3>
         @if (nextEvents().length) {
           <ul class="cal__banks-list">
             @for (event of nextEvents(); track event.at + event.title) {
@@ -132,46 +129,33 @@
 <!-- ---------------------------------------------------------------------- -->
 <!-- Riferimenti di mercato — solo se ce n’è almeno uno da mostrare         -->
 <!-- ---------------------------------------------------------------------- -->
-@if (references.length || strip.length) {
+@if (marketRows.length) {
   <section class="block">
     <div class="sec-head">
-      <div>
+      <div class="stack gap-1">
         <p class="eyebrow">Valori citati nelle analisi</p>
         <h2>Quadro sintetico</h2>
       </div>
-      <span class="chip chip--sm chip--warn">
-        <app-icon name="alert" [size]="11" />
-        Dati non in tempo reale
-      </span>
     </div>
 
+    <!-- Una sola rappresentazione: la griglia. La striscia di pastiglie che
+         stava qui sotto ripeteva gli stessi valori a due centimetri di
+         distanza, e la nota in coda dice già che non sono quotazioni. -->
     <div class="refs">
-      @for (item of references; track item.symbol) {
+      @for (item of marketRows; track item.symbol) {
         <article class="card ref" [class]="'ref--' + item.tone">
-          <div class="ref__row">
-            <div class="ref__main">
-              <p class="ref__symbol">{{ item.symbol }}</p>
-              <p class="ref__value tnum">{{ item.value }}</p>
-              @if (item.change) {
-                <span class="ref__change">{{ item.change }}</span>
-              }
-            </div>
-            <span class="ref__icon"><app-icon [name]="item.icon" [size]="18" /></span>
-          </div>
+          <p class="ref__symbol">
+            <app-icon [name]="item.icon" [size]="13" />
+            {{ item.symbol }}
+          </p>
+          <p class="ref__line">
+            <span class="ref__value tnum">{{ item.value }}</span>
+            @if (item.change) {
+              <span class="ref__change tnum">{{ item.change }}</span>
+            }
+          </p>
           <p class="ref__note">{{ item.note }}</p>
         </article>
-      }
-    </div>
-
-    <div class="strip">
-      @for (item of strip; track item.symbol) {
-        <span class="strip__item" [attr.title]="item.note">
-          <span class="strip__symbol">{{ item.symbol }}</span>
-          <span class="strip__value tnum" [class]="'tone-' + item.tone">{{ item.value }}</span>
-          @if (item.change) {
-            <span class="strip__change">{{ item.change }}</span>
-          }
-        </span>
       }
     </div>
 
@@ -184,7 +168,7 @@
 <!-- ---------------------------------------------------------------------- -->
 <section class="block">
   <div class="sec-head">
-    <div>
+    <div class="stack gap-1">
       <p class="eyebrow">Pubblicazioni</p>
       <h2>Ultime analisi</h2>
     </div>
@@ -197,7 +181,6 @@
 
   @if (empty()) {
     <div class="card void">
-      <span class="void__icon"><app-icon name="archive" [size]="22" /></span>
       <h3>Ancora nessuna pubblicazione</h3>
       <p>
         L’archivio riparte da zero: le analisi compariranno qui man mano che vengono pubblicate, e
@@ -205,7 +188,7 @@
         calendario economico è già completo di storico e prossime uscite.
       </p>
       <div class="void__actions">
-        <a class="btn btn--gold" routerLink="/calendario"
+        <a class="btn btn--primary" routerLink="/calendario"
           >Calendario economico <app-icon name="arrow-right" [size]="15"
         /></a>
         <a class="btn btn--ghost" routerLink="/argomenti">Vedi gli argomenti</a>
@@ -217,7 +200,7 @@
         <app-article-card [article]="article" [feature]="true" />
       }
 
-      <ol class="feed">
+      <ol class="card feed">
         @for (article of others(); track article.slug) {
           <li>
             <a [routerLink]="['/analisi', article.slug]">
@@ -240,7 +223,7 @@
 <!-- ---------------------------------------------------------------------- -->
 <section class="block">
   <div class="sec-head">
-    <div>
+    <div class="stack gap-1">
       <p class="eyebrow">Come è organizzato il sito</p>
       <h2>Argomenti</h2>
     </div>
@@ -251,13 +234,13 @@
 
   <div class="sections">
     @for (family of families; track family.slug) {
-      <a class="card card--hover section" routerLink="/argomenti" [attr.data-accent]="family.slug">
-        <span class="section__icon"><app-icon [name]="family.icon" [size]="19" /></span>
+      <a class="card card--link section" routerLink="/argomenti" [attr.data-accent]="family.slug">
+        <app-icon [name]="family.icon" [size]="15" />
         <span class="section__body">
           <span class="section__name">{{ family.name }}</span>
           <span class="section__tag">{{ family.tagline }}</span>
         </span>
-        <app-icon name="chevron-right" [size]="15" />
+        <app-icon name="chevron-right" [size]="14" />
       </a>
     }
   </div>
@@ -266,7 +249,7 @@
     <div class="tagline">
       <span class="tagline__label">Con analisi pubblicate</span>
       @for (row of activeCategories(); track row.category.slug) {
-        <a class="tagline__link" [routerLink]="['/argomenti', row.category.slug]">
+        <a class="chip tagline__link" [routerLink]="['/argomenti', row.category.slug]">
           {{ row.category.short }}
           <span class="tnum">{{ row.count }}</span>
         </a>
@@ -274,5 +257,3 @@
     </div>
   }
 </section>
-
-<app-risk-notice variant="card" title="Avvertenza sempre valida" />

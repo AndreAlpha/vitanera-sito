@@ -8,7 +8,11 @@ import { Timestamp } from './timestamp';
 
 /**
  * Scheda di anteprima di un'analisi.
- * Ogni variante riporta comunque l'avvertenza sintetica.
+ *
+ * Portava, sotto ogni copia, la riga «Contenuto informativo · non è consulenza
+ * finanziaria»: in una griglia da nove schede erano nove volte la stessa frase
+ * nella stessa schermata. L'avvertenza sta nel piè di pagina e in apertura
+ * d'archivio, una volta sola.
  */
 @Component({
   selector: 'app-article-card',
@@ -16,41 +20,27 @@ import { Timestamp } from './timestamp';
   imports: [RouterLink, Icon, BiasBadge, Timestamp],
   template: `
     <a
-      class="card card--hover art"
+      class="card card--link art"
       [class.art--feature]="feature()"
       [routerLink]="['/analisi', article().slug]"
     >
-      <div class="art__top">
-        <span class="art__cats">
-          <span class="chip chip--gold chip--sm">
-            <app-icon [name]="primaryIcon()" [size]="12" />
-            {{ primaryName() }}
-          </span>
-          @for (c of secondary(); track c.slug) {
-            <span class="chip chip--sm art__cat">{{ c.short }}</span>
-          }
-          @if (hidden(); as n) {
-            <span class="chip chip--sm art__cat" [attr.title]="hiddenNames()">+{{ n }}</span>
-          }
-        </span>
-        <span class="art__date"
-          ><app-timestamp [iso]="article().publishedAt" [withIcon]="true"
-        /></span>
-      </div>
+      <p class="art__kicker">
+        <app-icon [name]="primaryIcon()" [size]="12" />
+        {{ primaryName() }}
+      </p>
 
-      <p class="art__kicker">{{ article().kicker }}</p>
       <h3 class="art__title">{{ article().title }}</h3>
       <p class="art__dek">{{ article().dek }}</p>
 
       @if (feature() && article().takeaways.length) {
         <ul class="art__points">
           @for (t of article().takeaways.slice(0, 3); track t) {
-            <li><app-icon name="check" [size]="13" />{{ t }}</li>
+            <li>{{ t }}</li>
           }
         </ul>
       }
 
-      <div class="art__meta">
+      <div class="art__foot">
         @if (article().bias; as bias) {
           <app-bias-badge
             [direction]="bias.direction"
@@ -58,25 +48,18 @@ import { Timestamp } from './timestamp';
             [prefix]="bias.asset"
           />
         }
-        <span class="chip chip--sm chip--neutral">
-          <app-icon name="target" [size]="11" />
-          Certezza {{ article().certainty }}
-        </span>
-        <span class="art__read">
-          <app-icon name="clock" [size]="12" />
-          {{ article().readingMinutes }} min
+        @for (c of secondary(); track c.slug) {
+          <span class="chip">{{ c.short }}</span>
+        }
+        @if (hidden(); as n) {
+          <span class="chip" [attr.title]="hiddenNames()">+{{ n }}</span>
+        }
+
+        <span class="art__when">
+          <app-timestamp [iso]="article().publishedAt" />
+          · {{ article().readingMinutes }} min
         </span>
       </div>
-
-      <p class="art__legal">
-        <app-icon name="alert" [size]="11" />
-        Contenuto informativo · non è consulenza finanziaria
-      </p>
-
-      <span class="art__cta">
-        Leggi l’analisi
-        <app-icon name="arrow-right" [size]="14" />
-      </span>
     </a>
   `,
   styles: `
@@ -89,73 +72,30 @@ import { Timestamp } from './timestamp';
       display: flex;
       flex-direction: column;
       height: 100%;
-      padding: 20px 22px 18px;
-      overflow: hidden;
-    }
-
-    .art::after {
-      content: '';
-      position: absolute;
-      inset: 0 0 auto;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent-line), transparent);
-      opacity: 0;
-      transition: opacity 0.4s var(--ease);
-    }
-
-    .art:hover::after {
-      opacity: 1;
-    }
-
-    .art__top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-
-    .art__cats {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 5px;
-      min-width: 0;
-    }
-
-    .art__cat {
-      padding: 2px 7px;
-      font-size: 9.8px;
-      font-weight: 600;
-      color: var(--text-faint);
-      border-color: var(--line);
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .art__date {
-      font-size: 11px;
-      color: var(--text-faint);
-      white-space: nowrap;
+      padding: var(--s-card);
     }
 
     .art__kicker {
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
+      font-size: var(--t-micro);
+      font-weight: 600;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
-      color: var(--accent-deep);
-      margin-bottom: 7px;
+      color: var(--accent);
+      margin-bottom: var(--s-3);
     }
 
     .art__title {
-      font-size: 18px;
-      line-height: 1.24;
-      margin-bottom: 9px;
-      transition: color 0.25s var(--ease);
+      font-size: var(--t-md);
+      font-weight: 600;
+      line-height: var(--lh-snug);
+      transition: color var(--dur) var(--ease);
     }
 
     .art--feature .art__title {
-      font-size: 23px;
+      font-size: var(--t-xl);
     }
 
     .art:hover .art__title {
@@ -163,8 +103,9 @@ import { Timestamp } from './timestamp';
     }
 
     .art__dek {
-      font-size: 13.2px;
-      line-height: 1.62;
+      margin-top: var(--s-2);
+      font-size: var(--t-sm);
+      line-height: var(--lh-base);
       color: var(--text-muted);
       display: -webkit-box;
       -webkit-line-clamp: 3;
@@ -182,99 +123,52 @@ import { Timestamp } from './timestamp';
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 7px;
-      margin-top: 15px;
-      padding: 14px 15px;
-      border-radius: var(--r-md);
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid var(--line);
+      gap: var(--s-2);
+      margin-top: var(--s-4);
+      padding-top: var(--s-4);
+      border-top: 1px solid var(--line);
     }
 
     .art__points li {
-      display: flex;
-      gap: 8px;
-      font-size: 12.3px;
-      line-height: 1.5;
+      position: relative;
+      padding-left: var(--s-4);
+      font-size: var(--t-sm);
+      line-height: var(--lh-snug);
       color: var(--text-soft);
     }
 
-    .art__points app-icon {
-      margin-top: 2px;
-      color: var(--accent);
+    .art__points li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 5px;
+      height: 1px;
+      background: var(--accent);
     }
 
-    .art__meta {
+    .art__foot {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 7px;
+      gap: var(--s-2);
       margin-top: auto;
-      padding-top: 16px;
+      padding-top: var(--s-4);
     }
 
-    .art__read {
+    .art__when {
+      margin-left: auto;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      font-size: 11px;
+      gap: var(--s-1);
+      font-size: var(--t-micro);
       color: var(--text-faint);
-    }
-
-    .art__legal {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 12px;
-      padding-top: 11px;
-      border-top: 1px solid var(--line);
-      font-size: 10.5px;
-      color: var(--text-faint);
-    }
-
-    .art__legal app-icon {
-      color: var(--warn);
-      opacity: 0.8;
-    }
-
-    .art__cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      margin-top: 12px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--accent);
-      transition: gap 0.3s var(--ease);
-    }
-
-    .art:hover .art__cta {
-      gap: 12px;
+      white-space: nowrap;
     }
 
     @media (max-width: 620px) {
-      .art {
-        padding: 16px 17px 15px;
-      }
-
-      .art__title {
-        font-size: 17px;
-      }
-
       .art--feature .art__title {
-        font-size: 20px;
-      }
-
-      .art__top {
-        margin-bottom: 12px;
-      }
-
-      .art__points {
-        margin-top: 13px;
-        padding: 12px 13px;
-      }
-
-      .art__points li {
-        font-size: 12px;
+        font-size: var(--t-lg);
       }
     }
   `,

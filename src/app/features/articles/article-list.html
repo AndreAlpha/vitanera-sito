@@ -10,11 +10,18 @@
         <p class="toolbar__note"><app-icon name="layers" [size]="13" />{{ layoutNote() }}</p>
       }
       @if (tags().length) {
-        <div class="toolbar__tags">
+        <!--
+          I temi erano pastiglie identiche a quelle decorative del resto della
+          pagina: nulla diceva che si potessero premere. Ora sono un gruppo
+          dichiarato, con `aria-pressed` a segnalare la scelta attiva anche a
+          chi il colore non lo vede.
+        -->
+        <div class="filters" role="group" aria-label="Filtra le analisi per tema">
           <button
             type="button"
-            class="chip chip--sm"
-            [class.chip--gold]="!activeTag()"
+            class="chip filters__chip"
+            [class.chip--accent]="!activeTag()"
+            [attr.aria-pressed]="!activeTag()"
             (click)="activeTag.set(null)"
           >
             Tutti i temi
@@ -22,8 +29,9 @@
           @for (tag of tags(); track tag) {
             <button
               type="button"
-              class="chip chip--sm"
-              [class.chip--gold]="activeTag() === tag"
+              class="chip filters__chip"
+              [class.chip--accent]="activeTag() === tag"
+              [attr.aria-pressed]="activeTag() === tag"
               (click)="toggleTag(tag)"
             >
               {{ tag }}
@@ -35,8 +43,6 @@
   }
 </app-page-header>
 
-<app-risk-notice variant="card" title="Come leggere questa pagina" />
-
 @if (filtered().length) {
   @if (layout() === 'elenco') {
     <!-- ------------------------------------------------------------------ -->
@@ -44,9 +50,11 @@
     <!-- ------------------------------------------------------------------ -->
     <ol class="dossier">
       @for (article of filtered(); track article.slug; let i = $index) {
-        <li class="dossier__item">
-          <a [routerLink]="['/analisi', article.slug]">
-            <span class="dossier__index">{{ index(i) }}</span>
+        <li>
+          <a class="dossier__row" [routerLink]="['/analisi', article.slug]">
+            <!-- L'ordine vero lo dichiara già <ol>: il numero a video serve
+                 all'occhio per tenere il segno, e va taciuto a chi ascolta. -->
+            <span class="dossier__index tnum" aria-hidden="true">{{ index(i) }}</span>
 
             <span class="dossier__main">
               <span class="dossier__top">
@@ -57,11 +65,14 @@
               <span class="dossier__dek">{{ article.dek }}</span>
               <span class="dossier__points">
                 @for (t of article.takeaways.slice(0, 2); track t) {
-                  <span><i></i>{{ t }}</span>
+                  <span>{{ t }}</span>
                 }
               </span>
             </span>
 
+            <!-- Tre indicazioni e basta: orientamento, certezza, tempo di
+                 lettura. Le categorie secondarie e la riga legale facevano
+                 sei pastiglie per riga, e nessuna si leggeva più. -->
             <span class="dossier__side">
               @if (article.bias; as bias) {
                 <app-bias-badge
@@ -70,14 +81,8 @@
                   [prefix]="bias.asset + ' ·'"
                 />
               }
-              <span class="chip chip--sm chip--neutral">Certezza {{ article.certainty }}</span>
-              <span class="chip chip--sm">{{ article.readingMinutes }} min</span>
-              @for (c of otherCategories(article); track c.slug) {
-                <span class="chip chip--sm">{{ c.short }}</span>
-              }
-              <span class="dossier__legal"
-                >Contenuto informativo · non è consulenza finanziaria</span
-              >
+              <span class="chip chip--flat">Certezza {{ article.certainty }}</span>
+              <span class="chip">{{ article.readingMinutes }} min</span>
             </span>
           </a>
         </li>
@@ -95,25 +100,20 @@
   }
 
   <!-- Quando l'elenco è vuoto il rimando vive già dentro il riquadro. -->
-  <section class="sections">
-    <p class="eyebrow">Continua da qui</p>
-    <div class="sections__grid">
-      <a class="card card--hover sec" routerLink="/argomenti">
-        <span class="sec__icon"><app-icon name="layers" [size]="17" /></span>
-        <span class="sec__body">
-          <span class="sec__name">Tutti gli argomenti</span>
-          <span class="sec__tag">Le categorie raccolte per famiglia</span>
-        </span>
-        <app-icon name="chevron-right" [size]="15" />
-      </a>
-    </div>
-  </section>
+  <p class="more">
+    Continua da qui:
+    <a class="link" routerLink="/argomenti">
+      Tutti gli argomenti
+      <app-icon name="chevron-right" [size]="12" />
+    </a>
+    <span class="more__note">Le categorie raccolte per famiglia</span>
+  </p>
 } @else {
   <div class="empty card card--pad">
-    <app-icon name="archive" [size]="26" />
+    <app-icon name="archive" [size]="16" />
     <p class="empty__title">{{ emptyTitle() }}</p>
     <p class="empty__text">{{ emptyText() }}</p>
-    <div class="row wrap gap-8">
+    <div class="row wrap gap-2">
       <a class="btn btn--ghost btn--sm" routerLink="/calendario">Calendario economico</a>
       <a class="btn btn--ghost btn--sm" routerLink="/argomenti">Vedi gli argomenti</a>
     </div>

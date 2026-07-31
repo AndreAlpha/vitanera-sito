@@ -40,21 +40,21 @@ import { ChangeDetectionStrategy, Component, computed, input } from '@angular/co
     .spark {
       fill: none;
       stroke: var(--chart-muted);
-      stroke-width: 1.6;
+      stroke-width: 1.4;
       stroke-linecap: round;
       stroke-linejoin: round;
       vector-effect: non-scaling-stroke;
     }
 
     .zero {
-      stroke: var(--line);
+      stroke: var(--chart-grid);
       stroke-width: 1;
       vector-effect: non-scaling-stroke;
     }
 
     .tip {
       fill: var(--chart-actual);
-      stroke: var(--panel);
+      stroke: var(--surface);
       stroke-width: 1.5;
       vector-effect: non-scaling-stroke;
     }

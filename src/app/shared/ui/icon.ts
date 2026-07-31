@@ -136,9 +136,6 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
           <svg:path d="M4 6.4v11.2c0 1.9 3.6 3.4 8 3.4s8-1.5 8-3.4V6.4" />
           <svg:path d="M4 12c0 1.9 3.6 3.4 8 3.4s8-1.5 8-3.4" />
         }
-        @case ('droplet') {
-          <svg:path d="M12 3.2s6.2 6.4 6.2 10.2a6.2 6.2 0 0 1-12.4 0C5.8 9.6 12 3.2 12 3.2Z" />
-        }
         @case ('dollar') {
           <svg:path d="M12 2.5v19" />
           <svg:path
@@ -199,6 +196,10 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
           <svg:path d="M3 9h18l-1.7 9.2a2 2 0 0 1-2 1.6H6.7a2 2 0 0 1-2-1.6Z" />
           <svg:path d="m8 9 2.4-5.5M16 9l-2.4-5.5" />
           <svg:path d="M10 13v3M14 13v3" />
+        }
+        @case ('download') {
+          <svg:path d="M12 3.5v12M7.5 11l4.5 4.5 4.5-4.5" />
+          <svg:path d="M4 16.5v2.2a1.8 1.8 0 0 0 1.8 1.8h12.4a1.8 1.8 0 0 0 1.8-1.8v-2.2" />
         }
         @case ('gauge') {
           <svg:path d="M3.6 18.5a9 9 0 1 1 16.8 0" />

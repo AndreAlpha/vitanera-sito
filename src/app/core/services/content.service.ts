@@ -46,12 +46,6 @@ export function formatDate(iso: string): string {
 /** Scarto d'orologio tollerato fra chi pubblica e chi legge. */
 const SKEW_MS = 5 * 60_000;
 
-/** Solo l'ora: "08:40". */
-export function formatTime(iso: string): string {
-  const d = new Date(iso);
-  return `${`${d.getHours()}`.padStart(2, '0')}:${`${d.getMinutes()}`.padStart(2, '0')}`;
-}
-
 /**
  * Tempo trascorso in forma compatta ("adesso", "18m fa", "2h fa").
  * Oltre `limitHours` restituisce data e ora di pubblicazione.

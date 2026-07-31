@@ -8,7 +8,8 @@ import {
   calendarDayKey,
   calendarDate,
 } from '../../core/services/calendar.service';
-import { RiskNotice } from '../../shared/legal/risk-notice';
+import { calendarMarkdown, exportFilename } from '../../core/services/calendar-export';
+import { ExportButton } from '../../shared/ui/export-button';
 import { Icon } from '../../shared/ui/icon';
 import { PageHeader } from '../../shared/ui/page-header';
 
@@ -18,11 +19,16 @@ import { PageHeader } from '../../shared/ui/page-header';
  * È la porta d'ingresso alle due aree. Mostra ciò che serve subito: che cosa
  * esce nei prossimi giorni e quali appuntamenti hanno in agenda le due banche
  * centrali. Il dettaglio di ogni indicatore vive nelle pagine d'area.
+ *
+ * La pagina chiudeva con il riquadro ambrato «Come leggere questi numeri», che
+ * ripeteva l'avvertenza generale già presente nel piè di pagina e in
+ * `/avvertenze`. Restano le due note sui dati, che invece dicono qualcosa di
+ * specifico: da dove vengono i valori e quanto è vecchio l'archivio.
  */
 @Component({
   selector: 'app-calendar-overview',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, PageHeader, Icon, RiskNotice],
+  imports: [RouterLink, PageHeader, Icon, ExportButton],
   template: `
     <app-page-header
       eyebrow="Dati ufficiali, storico e prossime uscite"
@@ -30,19 +36,27 @@ import { PageHeader } from '../../shared/ui/page-header';
       icon="calendar"
       [description]="intro"
     >
-      <div class="head-facts">
-        <span class="chip chip--sm chip--gold">
-          <app-icon name="layers" [size]="11" />
-          {{ calendar.indicators.length }} indicatori
-        </span>
-        <span class="chip chip--sm chip--neutral">
-          <app-icon name="archive" [size]="11" />
-          {{ releases() }} diffusioni in archivio
-        </span>
-        <span class="chip chip--sm chip--warn">
-          <app-icon name="clock" [size]="11" />
-          Orari di Roma
-        </span>
+      <!--
+        Erano tre pastiglie colorate: due conteggi e un fuso orario travestiti da
+        etichette di stato. Sono tre fatti sul contenuto della pagina, e come tali
+        stanno su una riga sola.
+      -->
+      <p class="head-facts">
+        {{ calendar.indicators.length }} indicatori · {{ releases() }} diffusioni in archivio ·
+        Orari di Roma
+      </p>
+
+      <div class="head-export">
+        <app-export-button
+          label="Esporta tutto in Markdown"
+          [filename]="exportName()"
+          [build]="buildExport"
+        />
+        <p class="head-export__note">
+          Un solo file con i {{ calendar.indicators.length }} indicatori di USA ed Euro zona:
+          descrizione, ultimo valore, prossima uscita e lo storico completo delle
+          {{ releases() }} diffusioni, più l’agenda delle banche centrali.
+        </p>
       </div>
     </app-page-header>
 
@@ -60,18 +74,18 @@ import { PageHeader } from '../../shared/ui/page-header';
       <div class="areas">
         @for (section of calendar.sections; track section.area) {
           <a
-            class="card card--hover area"
+            class="card card--link area"
             [routerLink]="['/calendario', calendar.areaPath(section.area)]"
             [attr.data-accent]="section.area"
           >
-            <div class="area__top">
-              <span class="area__icon"><app-icon [name]="section.icon" [size]="21" /></span>
-              <div>
-                <h3>{{ section.name }}</h3>
-                <p class="area__tag">{{ section.tagline }}</p>
-              </div>
-              <span class="area__count tnum">{{ section.indicators.length }}</span>
+            <div class="area__head">
+              <app-icon [name]="section.icon" [size]="15" />
+              <h3>{{ section.name }}</h3>
+              <span class="area__count tnum">
+                {{ section.indicators.length }}<span class="sr-only"> indicatori</span>
+              </span>
             </div>
+            <p class="area__tag">{{ section.tagline }}</p>
             <p class="area__desc">{{ section.description }}</p>
             <ul class="area__list">
               @for (indicator of section.indicators.slice(0, 6); track indicator.slug) {
@@ -96,49 +110,64 @@ import { PageHeader } from '../../shared/ui/page-header';
           <p class="eyebrow">Dati attesi</p>
           <h2>Prossime uscite</h2>
         </div>
-        <span class="chip chip--sm chip--neutral">
-          <app-icon name="info" [size]="11" />
-          Il previsto è il consenso degli analisti
-        </span>
       </div>
 
       @if (upcomingDays().length) {
-        <div class="card agenda">
-          @for (day of upcomingDays(); track day.key) {
-            <div class="agenda__day">
-              <p class="agenda__date">{{ day.label }}</p>
-              <ul class="agenda__rows">
+        <!--
+          È l'informazione più utile della pagina, e si legge per colonne: ora,
+          area, indicatore, valore atteso. Da elenco di righe libere è diventata
+          una tabella vera, con la giornata come intestazione di gruppo.
+        -->
+        <div class="agenda">
+          <table class="agenda__table">
+            <caption>
+              Il previsto è il consenso degli analisti
+            </caption>
+            <thead class="agenda__head">
+              <tr>
+                <th scope="col">Ora</th>
+                <th scope="col">Area</th>
+                <th scope="col">Indicatore</th>
+                <th scope="col" class="agenda__num">Atteso</th>
+              </tr>
+            </thead>
+            @for (day of upcomingDays(); track day.key) {
+              <tbody>
+                <tr>
+                  <th class="agenda__day" colspan="4" scope="colgroup">{{ day.label }}</th>
+                </tr>
                 @for (row of day.rows; track row.indicator.slug) {
-                  <li>
-                    <a
-                      [routerLink]="[
-                        '/calendario',
-                        calendar.areaPath(row.indicator.area),
-                        row.indicator.key,
-                      ]"
-                    >
-                      <span class="agenda__time tnum">{{ time(row.release.at) }}</span>
-                      <span class="agenda__flag" [attr.data-accent]="row.indicator.area">
-                        {{ calendar.areaName(row.indicator.area) }}
-                      </span>
-                      <span class="agenda__name">{{ row.indicator.name }}</span>
-                      <span class="agenda__fc tnum">
-                        @if (row.release.forecast !== null) {
-                          atteso {{ calendar.value(row.release.forecast, row.indicator) }}
-                        } @else {
-                          consenso non ancora rilevato
-                        }
-                      </span>
-                      <app-icon name="chevron-right" [size]="14" />
-                    </a>
-                  </li>
+                  <tr class="agenda__row">
+                    <td class="agenda__time tnum">{{ time(row.release.at) }}</td>
+                    <td class="agenda__area" [attr.data-accent]="row.indicator.area">
+                      {{ calendar.areaName(row.indicator.area) }}
+                    </td>
+                    <td class="agenda__name">
+                      <a
+                        [routerLink]="[
+                          '/calendario',
+                          calendar.areaPath(row.indicator.area),
+                          row.indicator.key,
+                        ]"
+                      >
+                        {{ row.indicator.name }}
+                      </a>
+                    </td>
+                    <td class="agenda__num tnum">
+                      @if (row.release.forecast !== null) {
+                        {{ calendar.value(row.release.forecast, row.indicator) }}
+                      } @else {
+                        <span class="agenda__pending">consenso non ancora rilevato</span>
+                      }
+                    </td>
+                  </tr>
                 }
-              </ul>
-            </div>
-          }
+              </tbody>
+            }
+          </table>
         </div>
       } @else {
-        <p class="card empty">Nessuna uscita già fissata nell’archivio corrente.</p>
+        <p class="empty">Nessuna uscita già fissata nell’archivio corrente.</p>
       }
     </section>
 
@@ -158,9 +187,9 @@ import { PageHeader } from '../../shared/ui/page-header';
 
       <div class="banks">
         @for (section of calendar.sections; track section.area) {
-          <article class="card bank" [attr.data-accent]="section.area">
+          <article class="card card--pad bank" [attr.data-accent]="section.area">
             <p class="bank__name">
-              <app-icon name="bank" [size]="15" />
+              <app-icon name="bank" [size]="14" />
               {{ section.bank }}
             </p>
             @if (nextEventsOf(section.area); as events) {
@@ -194,8 +223,6 @@ import { PageHeader } from '../../shared/ui/page-header';
       pubblicate, non quotazioni di mercato: le date future possono essere spostate dagli enti che
       le diffondono.
     </p>
-
-    <app-risk-notice variant="card" title="Come leggere questi numeri" />
   `,
   styles: `
     :host {
@@ -203,191 +230,237 @@ import { PageHeader } from '../../shared/ui/page-header';
     }
 
     .head-facts {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      font-size: var(--t-xs);
+      line-height: var(--lh-snug);
+      color: var(--text-faint);
     }
 
-    /* --- Aree ------------------------------------------------------------ */
+    .head-export {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--s-3) var(--s-4);
+      margin-top: var(--s-4);
+      padding-top: var(--s-4);
+      border-top: 1px solid var(--line);
+    }
+
+    .head-export__note {
+      flex: 1;
+      min-width: 260px;
+      max-width: var(--measure);
+      font-size: var(--t-xs);
+      line-height: var(--lh-base);
+      color: var(--text-muted);
+    }
+
+    /* --- Aree ------------------------------------------------------------
+       L'icona dell'area era una piastrella di 46 pixel con bordo e sfumatura,
+       e il conteggio un numero da 26 in grassetto: due elementi decorativi che
+       pesavano più del nome dell'area. Ora l'icona è alta quanto il titolo e il
+       conteggio è un numero grande quanto basta.
+       -------------------------------------------------------------------- */
 
     .areas {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 16px;
+      gap: var(--s-4);
     }
 
     .area {
       display: flex;
       flex-direction: column;
-      padding: 22px 24px 20px;
+      padding: var(--s-card);
     }
 
-    .area__top {
+    .area__head {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: var(--s-2);
     }
 
-    .area__icon {
-      display: grid;
-      place-items: center;
-      width: 46px;
-      height: 46px;
-      flex: none;
-      border-radius: 15px;
-      border: 1px solid var(--accent-line);
-      background: linear-gradient(
-        140deg,
-        rgba(var(--accent-rgb), 0.18),
-        rgba(var(--accent-rgb), 0.03)
-      );
+    .area__head app-icon {
       color: var(--accent);
     }
 
-    .area__top h3 {
-      font-size: 20px;
-      letter-spacing: -0.02em;
-    }
-
-    .area__tag {
-      margin-top: 2px;
-      font-size: 12px;
-      color: var(--text-muted);
+    .area__head h3 {
+      font-size: var(--t-lg);
     }
 
     .area__count {
       margin-left: auto;
-      font-size: 26px;
-      font-weight: 700;
+      font-size: var(--t-xl);
+      font-weight: 600;
+      line-height: var(--lh-tight);
       color: var(--accent);
-      line-height: 1;
     }
 
-    .area__desc {
-      margin-top: 15px;
-      font-size: 13.2px;
-      line-height: 1.62;
+    .area__tag {
+      margin-top: var(--s-1);
+      font-size: var(--t-xs);
       color: var(--text-muted);
     }
 
+    .area__desc {
+      max-width: var(--measure);
+      margin-top: var(--s-3);
+      font-size: var(--t-sm);
+      line-height: var(--lh-base);
+      color: var(--text-muted);
+    }
+
+    /* I nomi brevi erano dodici pastiglie per scheda: un elenco in linea dice
+       le stesse cose senza dodici bordi. */
     .area__list {
       list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 15px;
+      margin-top: var(--s-3);
+      font-size: var(--t-xs);
+      line-height: var(--lh-snug);
+      color: var(--text-muted);
     }
 
     .area__list li {
-      padding: 3px 10px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.025);
-      font-size: 11px;
-      color: var(--text-soft);
+      display: inline;
+    }
+
+    .area__list li + li::before {
+      content: ' · ';
+      color: var(--text-faint);
     }
 
     .area__more {
-      color: var(--text-faint) !important;
-      border-style: dashed !important;
+      color: var(--text-faint);
     }
 
+    /* Il rimando cambia colore, non posizione: prima la freccia si allontanava
+       dal testo al passaggio del puntatore. */
     .area__cta {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: var(--s-2);
       margin-top: auto;
-      padding-top: 18px;
-      font-size: 12.5px;
-      font-weight: 600;
+      padding-top: var(--s-4);
+      font-size: var(--t-xs);
+      font-weight: 500;
       color: var(--accent);
-      transition: gap 0.3s var(--ease);
+      transition: color var(--dur) var(--ease);
     }
 
     .area:hover .area__cta {
-      gap: 12px;
+      color: var(--accent-soft);
     }
 
-    /* --- Agenda ---------------------------------------------------------- */
+    /* --- Agenda ----------------------------------------------------------- */
 
     .agenda {
-      padding: 4px 0;
-      overflow: hidden;
+      overflow-x: auto;
     }
 
-    .agenda__day + .agenda__day {
+    .agenda__table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .agenda__table caption {
+      text-align: left;
+      padding-bottom: var(--s-3);
+      font-size: var(--t-xs);
+      color: var(--text-faint);
+    }
+
+    .agenda__table th,
+    .agenda__table td {
+      text-align: left;
+      vertical-align: baseline;
+      padding: var(--s-3) var(--s-3) var(--s-3) 0;
+    }
+
+    .agenda__table th:last-child,
+    .agenda__table td:last-child {
+      padding-right: 0;
+    }
+
+    .agenda__head th {
+      padding-top: 0;
+      font-size: var(--t-xs);
+      font-weight: 500;
+      color: var(--text-faint);
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* La giornata è un'intestazione di gruppo: sta nella colonna, non sopra un
+       fondo colorato, e si distingue solo per peso e filetto. */
+    .agenda__day {
+      padding-top: var(--s-4);
+      font-size: var(--t-xs);
+      font-weight: 500;
+      color: var(--text-soft);
+    }
+
+    tbody + tbody .agenda__day {
+      padding-top: var(--s-5);
       border-top: 1px solid var(--line);
     }
 
-    .agenda__date {
-      padding: 13px 22px 7px;
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
+    .agenda__row + .agenda__row td {
+      border-top: 1px solid var(--line-soft);
     }
 
-    .agenda__rows {
-      list-style: none;
-      padding-bottom: 8px;
-    }
-
-    .agenda__rows a {
-      display: grid;
-      grid-template-columns: 52px 82px minmax(0, 1fr) auto 16px;
-      align-items: center;
-      gap: 12px;
-      padding: 9px 22px;
-      color: var(--text-soft);
-      transition: background 0.2s var(--ease);
-    }
-
-    .agenda__rows a:hover {
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text);
+    .agenda__table .agenda__num {
+      text-align: right;
     }
 
     .agenda__time {
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--text);
+      font-size: var(--t-sm);
+      font-weight: 500;
+      color: var(--text-soft);
+      white-space: nowrap;
     }
 
-    .agenda__flag {
-      justify-self: start;
-      padding: 2px 9px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--accent-line);
-      background: var(--accent-dim);
+    .agenda__area {
+      font-size: var(--t-xs);
       color: var(--accent);
-      font-size: 10.5px;
-      font-weight: 600;
       white-space: nowrap;
     }
 
     .agenda__name {
-      font-size: 13.4px;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      font-size: var(--t-sm);
+    }
+
+    .agenda__name a {
+      color: var(--text);
+      transition: color var(--dur) var(--ease);
+    }
+
+    .agenda__name a:hover {
+      color: var(--accent-soft);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* La riga intera si schiarisce quando il puntatore è sul suo rimando: dice
+       che le quattro colonne parlano di una cosa sola. */
+    .agenda__row:has(a:hover) td {
+      background: var(--surface-hover);
+    }
+
+    td.agenda__num {
+      font-size: var(--t-sm);
+      color: var(--text-soft);
       white-space: nowrap;
     }
 
-    .agenda__fc {
-      font-size: 11.5px;
+    .agenda__pending {
+      font-size: var(--t-xs);
       color: var(--text-faint);
-      white-space: nowrap;
-    }
-
-    .agenda__rows app-icon {
-      color: var(--text-faint);
+      white-space: normal;
     }
 
     .empty {
-      padding: 26px;
+      padding: var(--s-6) 0;
       text-align: center;
+      font-size: var(--t-sm);
       color: var(--text-muted);
-      font-size: 13.4px;
     }
 
     /* --- Banche centrali -------------------------------------------------- */
@@ -395,44 +468,46 @@ import { PageHeader } from '../../shared/ui/page-header';
     .banks {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 16px;
-    }
-
-    .bank {
-      padding: 18px 22px 20px;
+      gap: var(--s-4);
     }
 
     .bank__name {
       display: flex;
       align-items: center;
-      gap: 9px;
-      padding-bottom: 12px;
+      gap: var(--s-2);
+      padding-bottom: var(--s-3);
       border-bottom: 1px solid var(--line);
-      font-size: 13.5px;
-      font-weight: 600;
+      font-size: var(--t-sm);
+      font-weight: 500;
       color: var(--accent);
     }
 
+    /* Data e appuntamento si incolonnano sulla griglia della lista: le date
+       restano allineate fra loro senza fissarne la larghezza a mano. */
     .bank__list {
+      display: grid;
+      grid-template-columns: auto 1fr;
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
-      margin-top: 14px;
     }
 
     .bank__list li {
-      display: flex;
-      gap: 13px;
-      font-size: 12.8px;
+      display: contents;
     }
 
-    .bank__when {
-      flex: none;
-      width: 78px;
+    .bank__list > li > span {
+      padding: var(--s-3) 0;
+      font-size: var(--t-sm);
+    }
+
+    .bank__list > li + li > span {
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .bank__list > li > .bank__when {
+      padding-right: var(--s-4);
+      font-size: var(--t-xs);
       color: var(--text-faint);
-      font-size: 11.5px;
-      padding-top: 1px;
+      white-space: nowrap;
     }
 
     .bank__what {
@@ -440,52 +515,33 @@ import { PageHeader } from '../../shared/ui/page-header';
       flex-direction: column;
       gap: 2px;
       color: var(--text-soft);
-      line-height: 1.45;
+      line-height: var(--lh-snug);
+    }
+
+    .bank__what strong {
+      font-weight: 500;
+      color: var(--text);
     }
 
     .bank__role {
-      font-size: 11px;
+      font-size: var(--t-xs);
       color: var(--text-faint);
     }
 
     .bank__empty {
-      margin-top: 14px;
-      font-size: 12.5px;
+      padding-top: var(--s-3);
+      font-size: var(--t-sm);
       color: var(--text-faint);
     }
 
-    @media (max-width: 760px) {
-      .agenda__rows a {
-        grid-template-columns: 46px minmax(0, 1fr) 14px;
-        row-gap: 3px;
-        padding: 11px 16px;
-      }
-
-      .agenda__flag {
-        grid-column: 2;
-      }
-
-      .agenda__name {
-        grid-column: 2;
-        white-space: normal;
-      }
-
-      .agenda__fc {
-        grid-column: 2;
-        white-space: normal;
-      }
-
-      .agenda__rows app-icon {
-        grid-row: 1 / span 3;
-        grid-column: 3;
-      }
-
-      .agenda__date {
-        padding-inline: 16px;
+    @media (max-width: 620px) {
+      .agenda__table th,
+      .agenda__table td {
+        padding: var(--s-2) var(--s-2) var(--s-2) 0;
       }
 
       .area {
-        padding: 18px 18px 17px;
+        padding: var(--s-4);
       }
     }
   `,
@@ -516,6 +572,24 @@ export class CalendarOverview {
     }
     return [...days.values()];
   });
+
+  protected exportName(): string {
+    return exportFilename('usa-euro-zona', new Date().toISOString());
+  }
+
+  /**
+   * Passato al pulsante e invocato solo al clic: costruire qui il documento
+   * intero a ogni disegno della pagina sarebbe mezzo megabyte buttato.
+   * È una proprietà e non un metodo perché il riferimento deve restare stabile.
+   */
+  protected readonly buildExport = (): string =>
+    calendarMarkdown({
+      indicators: this.calendar.indicators,
+      title: 'Calendario economico — indici principali di USA ed Euro zona',
+      events: this.calendar.events,
+      archiveGeneratedAt: this.calendar.generatedAt,
+      now: new Date().toISOString(),
+    });
 
   protected nextEventsOf(area: 'usa' | 'euro') {
     return this.calendar.nextEvents(area, 5);

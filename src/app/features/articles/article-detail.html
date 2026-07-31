@@ -7,20 +7,18 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- Testata                                                             -->
     <!-- ------------------------------------------------------------------ -->
-    <header class="hero anim-up">
+    <header class="hero anim-in">
       <div class="hero__top">
         @if (categories().length) {
           <div class="hero__cats">
             @if (primary(); as c) {
-              <a class="chip chip--gold" [routerLink]="['/argomenti', c.slug]">
+              <a class="chip chip--accent" [routerLink]="['/argomenti', c.slug]">
                 <app-icon [name]="c.icon" [size]="12" />
                 {{ c.name }}
               </a>
             }
             @for (c of secondary(); track c.slug) {
-              <a class="chip chip--sm hero__cat" [routerLink]="['/argomenti', c.slug]">
-                {{ c.short }}
-              </a>
+              <a class="chip" [routerLink]="['/argomenti', c.slug]">{{ c.short }}</a>
             }
           </div>
         }
@@ -30,16 +28,13 @@
         </span>
       </div>
 
-      <p class="hero__kicker">{{ a.kicker }}</p>
+      <p class="eyebrow hero__kicker">{{ a.kicker }}</p>
       <h1 class="hero__title">{{ a.title }}</h1>
-      <p class="hero__dek">{{ a.dek }}</p>
+      <p class="hero__dek prose">{{ a.dek }}</p>
 
       <div class="hero__meta">
         <span><app-icon name="compass" [size]="13" />{{ a.author }}</span>
         <span><app-icon name="clock" [size]="13" />{{ a.readingMinutes }} minuti di lettura</span>
-        @for (h of a.horizons; track h) {
-          <span class="chip chip--sm">{{ horizonLabel(h) }}</span>
-        }
       </div>
 
       <div class="hero__chips">
@@ -50,12 +45,15 @@
             [prefix]="bias.asset + ' ·'"
           />
         }
-        <span class="chip chip--neutral">
+        <span class="chip chip--flat">
           <app-icon name="target" [size]="12" />
           Certezza {{ a.certainty }}
         </span>
+        @for (h of a.horizons; track h) {
+          <span class="chip">{{ horizonLabel(h) }}</span>
+        }
         @for (i of a.instruments; track i) {
-          <span class="chip chip--sm">{{ i }}</span>
+          <span class="chip">{{ i }}</span>
         }
       </div>
 
@@ -71,8 +69,6 @@
       </div>
     </header>
 
-    <app-risk-notice variant="card" title="Prima di leggere" />
-
     <!-- ------------------------------------------------------------------ -->
     <!-- Corpo + colonna laterale                                            -->
     <!-- ------------------------------------------------------------------ -->
@@ -80,19 +76,15 @@
       <div class="body">
         @if (a.takeaways.length) {
           <section class="summary">
-            <p class="summary__title">
-              <app-icon name="spark" [size]="15" />
+            <p class="eyebrow summary__title">
+              <app-icon name="spark" [size]="13" />
               In sintesi
             </p>
             <ul>
               @for (t of a.takeaways; track t) {
-                <li><span class="summary__dot"></span>{{ t }}</li>
+                <li>{{ t }}</li>
               }
             </ul>
-            <p class="summary__legal">
-              Sintesi redazionale del contenuto. Non è un riepilogo di raccomandazioni: non lo è
-              nessuna parte di questo testo.
-            </p>
           </section>
         }
 
@@ -102,7 +94,7 @@
 
         @if (a.bias; as bias) {
           <section class="regime">
-            <p class="regime__label">Regime descritto</p>
+            <p class="eyebrow regime__label">Regime descritto</p>
             <p class="regime__text">{{ bias.regime }}</p>
             <div class="regime__row">
               <app-bias-badge
@@ -110,30 +102,28 @@
                 [strength]="bias.strength"
                 [prefix]="bias.asset + ' ·'"
               />
-              <span class="chip chip--sm chip--neutral"
-                >Forza del segnale: {{ bias.strength }}</span
-              >
+              <span class="chip chip--flat">Forza del segnale: {{ bias.strength }}</span>
             </div>
           </section>
         }
 
         @if (a.nextEvent; as ev) {
           <section class="event">
-            <div class="event__icon"><app-icon name="calendar" [size]="19" /></div>
-            <div>
-              <p class="event__when">{{ ev.when }}</p>
-              <p class="event__title">{{ ev.title }}</p>
-              @if (ev.detail) {
-                <p class="event__detail">{{ ev.detail }}</p>
-              }
-            </div>
+            <p class="event__when">
+              <app-icon name="calendar" [size]="13" />
+              {{ ev.when }}
+            </p>
+            <p class="event__title">{{ ev.title }}</p>
+            @if (ev.detail) {
+              <p class="event__detail">{{ ev.detail }}</p>
+            }
           </section>
         }
 
         @if (a.invalidation?.length) {
           <section class="invalid">
             <p class="invalid__title">
-              <app-icon name="close" [size]="15" />
+              <app-icon name="close" [size]="14" />
               Cosa invaliderebbe questa lettura
             </p>
             <ul>
@@ -141,10 +131,6 @@
                 <li>{{ item }}</li>
               }
             </ul>
-            <p class="invalid__note">
-              L’elenco è dichiarato in anticipo per rendere verificabile l’analisi. Non descrive
-              livelli operativi né suggerisce comportamenti.
-            </p>
           </section>
         }
 
@@ -152,7 +138,7 @@
           <section class="certainty">
             <p class="certainty__title">Livello di certezza dichiarato: {{ a.certainty }}</p>
             <p class="certainty__text">{{ a.certaintyNote }}</p>
-            <div class="certainty__meter" [attr.data-level]="a.certainty">
+            <div class="certainty__meter" [attr.data-level]="a.certainty" aria-hidden="true">
               <i></i><i></i><i></i>
             </div>
           </section>
@@ -160,11 +146,11 @@
 
         <div class="tags">
           @for (tag of a.tags; track tag) {
-            <span class="chip chip--sm">#{{ tag }}</span>
+            <span class="chip">#{{ tag }}</span>
           }
         </div>
 
-        <app-risk-notice variant="full" />
+        <app-risk-notice />
       </div>
 
       <!-- ---------------------------------------------------------------- -->
@@ -172,11 +158,12 @@
         <div class="side__sticky">
           @if (toc().length) {
             <nav class="toc" aria-label="Indice dell’analisi">
-              <p class="toc__title">Indice</p>
+              <p class="eyebrow toc__title">Indice</p>
               @for (entry of toc(); track entry.anchor) {
                 <a
                   [href]="'#' + entry.anchor"
                   [class.toc__link--active]="activeAnchor() === entry.anchor"
+                  [attr.aria-current]="activeAnchor() === entry.anchor ? 'true' : null"
                   class="toc__link"
                 >
                   {{ entry.text }}
@@ -186,29 +173,12 @@
           }
 
           <div class="side__card">
-            <p class="side__label">Strumenti citati</p>
+            <p class="eyebrow side__label">Strumenti citati</p>
             <div class="side__chips">
               @for (i of a.instruments; track i) {
-                <span class="chip chip--sm">{{ i }}</span>
+                <span class="chip">{{ i }}</span>
               }
             </div>
-            <p class="side__hint">
-              Citati a titolo descrittivo. Nessun invito a operare su tali strumenti.
-            </p>
-          </div>
-
-          <div class="side__card side__card--warn">
-            <p class="side__label side__label--warn">
-              <app-icon name="alert" [size]="13" />
-              Promemoria
-            </p>
-            <p class="side__hint">
-              Vitanera non è una testata giornalistica registrata. Nessun contenuto è consulenza
-              finanziaria o raccomandazione di investimento.
-            </p>
-            <a class="side__link" routerLink="/avvertenze"
-              >Avvertenze complete <app-icon name="arrow-right" [size]="12"
-            /></a>
           </div>
         </div>
       </aside>
@@ -217,9 +187,12 @@
     <!-- ------------------------------------------------------------------ -->
     @if (related().length) {
       <section class="related no-print">
-        <div class="related__head">
+        <div class="sec-head">
           <h2>Altre analisi</h2>
-          <a routerLink="/analisi">Archivio completo <app-icon name="arrow-right" [size]="14" /></a>
+          <a class="link" routerLink="/analisi">
+            Archivio completo
+            <app-icon name="arrow-right" [size]="12" />
+          </a>
         </div>
         <div class="related__grid">
           @for (item of related(); track item.slug) {
@@ -231,9 +204,9 @@
   </article>
 } @else {
   <section class="missing">
-    <app-icon name="archive" [size]="30" />
+    <app-icon name="archive" [size]="16" />
     <h1>Analisi non trovata</h1>
     <p>Il contenuto richiesto non esiste o è stato rimosso.</p>
-    <a class="btn btn--gold" routerLink="/analisi">Vai all’archivio</a>
+    <a class="btn btn--primary" routerLink="/analisi">Vai all’archivio</a>
   </section>
 }

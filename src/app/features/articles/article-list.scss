@@ -1,5 +1,10 @@
 /* ==========================================================================
-   Elenchi delle analisi — quattro impaginati, un solo sistema di stile.
+   Elenco delle analisi — due impaginati soltanto: righe numerate per una
+   categoria, griglia di schede per l'archivio.
+
+   Qui vivevano anche gli stili di «matrice» e «dispaccio», duecento righe per
+   due impaginati che nessun template rendeva più: cancellati invece che
+   lasciati a marcire in fondo al file.
    ========================================================================== */
 
 :host {
@@ -11,74 +16,90 @@
 .toolbar {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--s-4);
 }
 
 .toolbar__note {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
+  align-items: flex-start;
+  gap: var(--s-2);
+  max-width: var(--measure);
+  font-size: var(--t-xs);
+  line-height: var(--lh-snug);
   color: var(--text-faint);
 }
 
 .toolbar__note app-icon {
-  color: var(--accent-deep);
+  margin-top: 2px;
+  color: var(--text-faint);
 }
 
-.toolbar__tags {
+/* --- Filtri per tema -------------------------------------------------------
+   Sono l'unico comando della pagina. La pastiglia scelta si stacca per fondo
+   oltre che per bordo — il solo bordo, su ventinove temi in fila, non si
+   trovava — e ogni bersaglio è alto abbastanza da prendersi col pollice.
+   -------------------------------------------------------------------------- */
+
+.filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: var(--s-2);
 }
 
-.toolbar__tags .chip {
+.filters__chip {
+  min-height: var(--s-7);
+  padding: var(--s-2) var(--s-3);
   cursor: pointer;
   transition:
-    border-color 0.25s var(--ease),
-    color 0.25s var(--ease);
+    background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
 }
 
-.toolbar__tags .chip:hover {
+.filters__chip:hover {
   border-color: var(--accent-line);
   color: var(--accent-soft);
 }
 
+.filters__chip[aria-pressed='true'] {
+  background: var(--accent-dim);
+}
+
 /* ==========================================================================
-   Dossier — Fondamentali
+   Elenco a righe — pagina di categoria
    ========================================================================== */
 
 .dossier {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  margin-top: 26px;
+  margin-top: var(--s-6);
   border-top: 1px solid var(--line);
 }
 
-.dossier__item {
+.dossier li {
   border-bottom: 1px solid var(--line);
 }
 
-.dossier__item a {
+.dossier__row {
   display: grid;
-  grid-template-columns: 76px minmax(0, 1fr) 230px;
-  gap: 24px;
-  padding: 26px 8px;
-  transition: background 0.3s var(--ease);
+  grid-template-columns: var(--s-7) minmax(0, 1fr) 200px;
+  gap: var(--s-5);
+  padding: var(--s-5) var(--s-2);
+  transition: background var(--dur) var(--ease);
 }
 
-.dossier__item a:hover {
-  background: rgba(var(--accent-rgb), 0.05);
+.dossier__row:hover {
+  background: var(--surface-hover);
 }
 
+/* Un numero d'ordine, non un titolo: era un 32px in nero che pesava più
+   dell'analisi a cui si riferiva. Ora sta incolonnato a destra, in punta di
+   riga, e lo si legge solo se lo si cerca. */
 .dossier__index {
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.05em;
-  color: var(--accent-deep);
-  opacity: 0.75;
+  font-size: var(--t-sm);
+  font-weight: 500;
+  line-height: var(--lh-snug);
+  text-align: right;
+  color: var(--text-faint);
 }
 
 .dossier__main {
@@ -89,62 +110,67 @@
 .dossier__top {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 10.5px;
+  gap: var(--s-3);
+  font-size: var(--t-micro);
+  line-height: var(--lh-snug);
   color: var(--text-faint);
 }
 
 .dossier__kicker {
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent-deep);
+  color: var(--accent);
 }
 
 .dossier__title {
   display: block;
-  margin-top: 10px;
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 1.24;
-  letter-spacing: -0.03em;
-  transition: color 0.25s var(--ease);
+  margin-top: var(--s-2);
+  font-size: var(--t-lg);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  letter-spacing: -0.02em;
+  transition: color var(--dur) var(--ease);
 }
 
-.dossier__item a:hover .dossier__title {
+.dossier__row:hover .dossier__title {
   color: var(--accent-soft);
 }
 
 .dossier__dek {
   display: block;
-  margin-top: 9px;
-  max-width: 74ch;
-  font-size: 13.6px;
-  line-height: 1.66;
+  margin-top: var(--s-2);
+  max-width: var(--measure);
+  font-size: var(--t-sm);
+  line-height: var(--lh-base);
   color: var(--text-muted);
 }
 
 .dossier__points {
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  margin-top: 14px;
+  gap: var(--s-2);
+  max-width: var(--measure);
+  margin-top: var(--s-3);
 }
 
 .dossier__points span {
-  display: flex;
-  gap: 10px;
-  font-size: 12.4px;
-  line-height: 1.55;
+  position: relative;
+  padding-left: var(--s-4);
+  font-size: var(--t-xs);
+  line-height: var(--lh-snug);
   color: var(--text-faint);
 }
 
-.dossier__points i {
+/* Lo stesso trattino delle schede: il pallino pieno di prima pesava quanto la
+   frase che doveva soltanto introdurre. */
+.dossier__points span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
   width: 5px;
-  height: 5px;
-  margin-top: 7px;
-  flex: none;
-  border-radius: 50%;
+  height: 1px;
   background: var(--accent);
 }
 
@@ -152,354 +178,77 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 7px;
-  padding-left: 22px;
+  gap: var(--s-2);
+  padding-left: var(--s-5);
   border-left: 1px solid var(--line);
 }
 
-.dossier__legal {
-  margin-top: 6px;
-  font-size: 10px;
-  line-height: 1.45;
-  color: var(--text-faint);
-}
-
 /* ==========================================================================
-   Matrice — Correlazioni
-   ========================================================================== */
-
-.matrix {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
-  gap: 16px;
-  margin-top: 26px;
-}
-
-.mx {
-  display: block;
-  padding: 20px 22px;
-  border: 1px solid var(--line);
-  border-radius: var(--r-lg);
-  background:
-    linear-gradient(180deg, rgba(var(--accent-rgb), 0.05), transparent 55%),
-    rgba(255, 255, 255, 0.02);
-  transition:
-    border-color 0.35s var(--ease),
-    transform 0.35s var(--ease);
-}
-
-.mx:hover {
-  border-color: var(--accent-line);
-  transform: translateY(-2px);
-}
-
-.mx__head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding-bottom: 14px;
-  margin-bottom: 14px;
-  border-bottom: 1px dashed var(--line-strong);
-  font-size: 11px;
-  color: var(--text-faint);
-}
-
-.mx__kicker {
-  display: block;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent-deep);
-}
-
-.mx__title {
-  margin-top: 8px;
-  font-size: 18px;
-  line-height: 1.26;
-}
-
-.mx__dek {
-  margin-top: 9px;
-  font-size: 13px;
-  line-height: 1.62;
-  color: var(--text-muted);
-}
-
-.mx__label {
-  display: block;
-  margin-top: 18px;
-  margin-bottom: 9px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-}
-
-.mx__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(84px, 100%), 1fr));
-  gap: 5px;
-}
-
-.mx__cell {
-  padding: 7px 8px;
-  border-radius: var(--r-xs);
-  border: 1px solid var(--line);
-  background: rgba(0, 0, 0, 0.25);
-  font-size: 10.5px;
-  font-weight: 600;
-  text-align: center;
-  color: var(--text-soft);
-  font-variant-numeric: tabular-nums;
-}
-
-.mx__foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 18px;
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
-}
-
-.mx__legal {
-  font-size: 10px;
-  color: var(--text-faint);
-}
-
-/* ==========================================================================
-   Dispaccio — Geopolitica
-   ========================================================================== */
-
-.dispatch {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 26px;
-}
-
-.dispatch li {
-  display: grid;
-  grid-template-columns: 78px minmax(0, 1fr);
-  gap: 18px;
-}
-
-.dispatch__rail {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  gap: 12px;
-  padding-top: 20px;
-}
-
-.dispatch__rail::after {
-  content: '';
-  position: absolute;
-  top: 30px;
-  bottom: -28px;
-  right: 4px;
-  width: 1px;
-  background: var(--line);
-}
-
-.dispatch li:last-child .dispatch__rail::after {
-  display: none;
-}
-
-.dispatch__time {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--text-faint);
-}
-
-.dispatch__dot {
-  position: relative;
-  z-index: 1;
-  width: 9px;
-  height: 9px;
-  margin-top: 4px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.15);
-}
-
-.dispatch__card {
-  display: block;
-  padding: 18px 20px;
-  border: 1px solid var(--line);
-  border-left: 2px solid var(--accent-line);
-  border-radius: var(--r-md);
-  background: rgba(255, 255, 255, 0.022);
-  transition:
-    border-color 0.3s var(--ease),
-    background 0.3s var(--ease);
-}
-
-.dispatch__card:hover {
-  border-left-color: var(--accent);
-  background: rgba(var(--accent-rgb), 0.05);
-}
-
-.dispatch__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  font-size: 10.5px;
-  color: var(--text-faint);
-}
-
-.dispatch__kicker {
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent-deep);
-}
-
-.dispatch__title {
-  margin-top: 9px;
-  font-size: 18px;
-  line-height: 1.26;
-}
-
-.dispatch__dek {
-  margin-top: 8px;
-  max-width: 78ch;
-  font-size: 13.2px;
-  line-height: 1.64;
-  color: var(--text-muted);
-}
-
-.dispatch__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 14px;
-}
-
-.dispatch__legal {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 13px;
-  padding-top: 11px;
-  border-top: 1px solid var(--line);
-  font-size: 10px;
-  color: var(--text-faint);
-}
-
-.dispatch__legal app-icon {
-  color: var(--warn);
-}
-
-/* ==========================================================================
-   Griglia — Archivio
+   Griglia di schede — archivio
    ========================================================================== */
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
-  gap: 16px;
-  margin-top: 26px;
+  gap: var(--s-4);
+  margin-top: var(--s-6);
 }
 
 /* ==========================================================================
-   Stati comuni
+   Coda di pagina
    ========================================================================== */
+
+/* Era una griglia responsiva con dentro una scheda sola, piastrella dell'icona
+   compresa, per dire una cosa che sta in una riga. */
+.more {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s-2);
+  margin-top: var(--s-section);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--line);
+  font-size: var(--t-xs);
+  color: var(--text-faint);
+}
+
+.more__note {
+  color: var(--text-muted);
+}
 
 .empty {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
-  margin-top: 24px;
+  gap: var(--s-3);
+  margin-top: var(--s-6);
   color: var(--text-muted);
 }
 
 .empty app-icon {
-  color: var(--accent-deep);
+  color: var(--text-faint);
 }
 
 .empty__title {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.empty__text {
-  font-size: 13.5px;
-  line-height: 1.65;
-  max-width: 62ch;
-}
-
-.sections {
-  margin-top: 46px;
-  padding-top: 28px;
-  border-top: 1px solid var(--line);
-}
-
-.sections__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
-  gap: 12px;
-  margin-top: 14px;
-}
-
-.sec {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  padding: 15px 17px;
-  color: var(--text-muted);
-}
-
-.sec__icon {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  flex: none;
-  border-radius: 12px;
-  border: 1px solid var(--accent-line);
-  background: var(--accent-dim);
-  color: var(--accent);
-}
-
-.sec__body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-width: 0;
-}
-
-.sec__name {
-  font-size: 14px;
+  font-size: var(--t-md);
   font-weight: 600;
   color: var(--text);
 }
 
-.sec__tag {
-  font-size: 11.5px;
-  color: var(--text-faint);
+.empty__text {
+  max-width: var(--measure);
+  font-size: var(--t-sm);
+  line-height: var(--lh-base);
 }
 
 /* --- Adattamento ------------------------------------------------------------ */
 
 @media (max-width: 1000px) {
-  .dossier__item a {
-    grid-template-columns: 54px minmax(0, 1fr);
-    gap: 16px;
-  }
-
-  .dossier__index {
-    font-size: 24px;
+  /* La colonna delle pastiglie scende sotto e diventa una riga: di fianco al
+     testo, sotto i mille pixel, restava larga quanto il titolo. */
+  .dossier__row {
+    grid-template-columns: var(--s-7) minmax(0, 1fr);
+    gap: var(--s-4);
   }
 
   .dossier__side {
@@ -508,79 +257,31 @@
     flex-wrap: wrap;
     align-items: center;
     padding-left: 0;
-    padding-top: 14px;
+    padding-top: var(--s-3);
     border-left: 0;
     border-top: 1px solid var(--line);
-  }
-
-  .dossier__legal {
-    margin-top: 0;
-    width: 100%;
   }
 }
 
 @media (max-width: 620px) {
-  .dispatch li {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 8px;
+  /* Al tocco il bersaglio conta più della compattezza. */
+  .filters__chip {
+    min-height: var(--s-8);
+    padding: var(--s-2) var(--s-4);
   }
 
-  .dispatch__rail {
-    justify-content: flex-start;
-    padding-top: 0;
-  }
-
-  .dispatch__rail::after {
-    display: none;
-  }
-
-  /* Bersagli più comodi al tocco: i filtri sono l'unico comando della pagina. */
-  .toolbar__tags .chip {
-    padding: 7px 12px;
-    font-size: 11.5px;
-  }
-
-  .dossier__item a {
-    grid-template-columns: 42px minmax(0, 1fr);
-    gap: 12px;
-    padding: 20px 2px;
-  }
-
-  .dossier__index {
-    font-size: 20px;
+  .dossier__row {
+    grid-template-columns: var(--s-6) minmax(0, 1fr);
+    gap: var(--s-3);
+    padding: var(--s-4) 0;
   }
 
   .dossier__title {
-    font-size: 18px;
+    font-size: var(--t-md);
   }
 
   .dossier__top {
     flex-wrap: wrap;
-    gap: 4px 12px;
-  }
-
-  .mx,
-  .dispatch__card {
-    padding: 16px 16px;
-  }
-
-  .mx__title,
-  .dispatch__title {
-    font-size: 16.5px;
-  }
-
-  .mx__grid {
-    grid-template-columns: repeat(auto-fill, minmax(min(72px, 100%), 1fr));
-  }
-
-  .dispatch__top,
-  .mx__head {
-    flex-wrap: wrap;
-    gap: 6px 10px;
-  }
-
-  .sections {
-    margin-top: 34px;
-    padding-top: 22px;
+    gap: var(--s-1) var(--s-3);
   }
 }

@@ -8,40 +8,25 @@ import { Icon } from '../../shared/ui/icon';
 import { Timestamp } from '../../shared/ui/timestamp';
 import { RouterLink } from '@angular/router';
 
+/**
+ * Pagina di lettura di un'analisi.
+ *
+ * Portava cinque avvertenze nella stessa schermata — in apertura, sotto la
+ * sintesi, sotto l'elenco delle invalidazioni, sotto gli strumenti citati e in
+ * una scheda laterale dedicata — più il testo esteso in fondo. Chi legge le
+ * saltava tutte. Ne resta una, alla fine del corpo, con il rimando alla pagina
+ * che le contiene per intero.
+ *
+ * Il foglio di stile sta tutto in `article-detail.scss`: le poche regole che
+ * vivevano qui in linea riguardavano la testata e non avevano ragione di
+ * stare separate dalle altre.
+ */
 @Component({
   selector: 'app-article-detail',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterLink, Icon, ContentBlock, RiskNotice, ArticleCard, BiasBadge, Timestamp],
   templateUrl: './article-detail.html',
   styleUrl: './article-detail.scss',
-  // Un'analisi può stare in parecchie categorie: la riga di testata deve andare
-  // a capo invece di schiacciare la data di pubblicazione.
-  styles: `
-    .hero__top {
-      flex-wrap: wrap;
-    }
-
-    .hero__cats {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 7px;
-      min-width: 0;
-    }
-
-    .hero__cat {
-      border-color: var(--line);
-      color: var(--text-muted);
-      transition:
-        color 0.25s var(--ease),
-        border-color 0.25s var(--ease);
-    }
-
-    .hero__cat:hover {
-      color: var(--accent-soft);
-      border-color: var(--accent-line);
-    }
-  `,
   host: { '(window:scroll)': 'onScroll()' },
 })
 export class ArticleDetail {

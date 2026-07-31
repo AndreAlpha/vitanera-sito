@@ -4,6 +4,15 @@ import { RiskNotice } from '../../shared/legal/risk-notice';
 import { Icon } from '../../shared/ui/icon';
 import { PageHeader } from '../../shared/ui/page-header';
 
+/**
+ * Metodologia.
+ *
+ * È la pagina più lunga del sito ed era anche la più affollata: un riquadro
+ * rosso, uno ambrato, sei caselle numerate, tre colonne di scale e quattro
+ * schede con la piastrella dell'icona. Ora è una colonna sola larga quanto la
+ * misura di lettura, con cinque titoli di pari livello ed elenchi separati da
+ * un filetto: il testo si legge dall'alto in basso senza scavalcare cornici.
+ */
 @Component({
   selector: 'app-methodology',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -18,17 +27,18 @@ import { PageHeader } from '../../shared/ui/page-header';
     />
 
     <!-- Che cosa non è ------------------------------------------------------- -->
-    <section class="card card--pad isnot">
-      <p class="isnot__title">
-        <app-icon name="close" [size]="16" />
-        Che cosa questo sito non è
-      </p>
-      <div class="isnot__grid">
-        @for (item of notList; track item) {
-          <p class="isnot__item"><span></span>{{ item }}</p>
-        }
+    <section class="block">
+      <div class="sec-head">
+        <h2>Che cosa questo sito non è</h2>
       </div>
-      <p class="isnot__note">
+
+      <ul class="notlist">
+        @for (item of notList; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+
+      <p class="note">
         Le stesse avvertenze sono riportate per esteso nella pagina
         <a routerLink="/avvertenze">Avvertenze e rischi</a>.
       </p>
@@ -36,11 +46,15 @@ import { PageHeader } from '../../shared/ui/page-header';
 
     <!-- Struttura di un'analisi ---------------------------------------------- -->
     <section class="block">
-      <h2>Struttura di un’analisi</h2>
+      <div class="sec-head">
+        <h2>Struttura di un’analisi</h2>
+      </div>
+
       <p class="lead">
         Ogni contenuto segue lo stesso ordine, così che sia possibile distinguere immediatamente i
         fatti dalle interpretazioni.
       </p>
+
       <ol class="steps">
         @for (s of steps; track s.title) {
           <li>
@@ -53,332 +67,267 @@ import { PageHeader } from '../../shared/ui/page-header';
 
     <!-- Vocabolario ----------------------------------------------------------- -->
     <section class="block">
-      <h2>Le etichette usate</h2>
-      <div class="scale">
-        <div class="scale__col">
-          <p class="scale__label">Bias</p>
-          <p class="scale__text">
-            Indica l’inclinazione descritta nel testo per lo strumento indicato, non una posizione
-            consigliata. La scala va da ribassista a rialzista, con due gradini intermedi di segno
-            neutro.
-          </p>
-          <div class="scale__chips">
-            <span class="chip chip--bear chip--sm">ribassista</span>
-            <span class="chip chip--bear chip--sm">neutrale · ribassista</span>
-            <span class="chip chip--neutral chip--sm">neutrale</span>
-            <span class="chip chip--bull chip--sm">neutrale · rialzista</span>
-            <span class="chip chip--bull chip--sm">rialzista</span>
-          </div>
-        </div>
-
-        <div class="scale__col">
-          <p class="scale__label">Forza del segnale</p>
-          <p class="scale__text">
-            Quanto le informazioni disponibili concordano fra loro. Una forza elevata non implica
-            alcuna probabilità di successo: implica soltanto che le fonti considerate raccontano la
-            stessa cosa.
-          </p>
-          <div class="scale__chips">
-            <span class="chip chip--sm">bassa</span>
-            <span class="chip chip--sm">media</span>
-            <span class="chip chip--sm">alta</span>
-          </div>
-        </div>
-
-        <div class="scale__col">
-          <p class="scale__label">Livello di certezza</p>
-          <p class="scale__text">
-            Riguarda la solidità dei fatti su cui poggia il testo, non l’esito del mercato. Anche
-            con certezza alta il risultato può essere opposto a quello descritto.
-          </p>
-          <div class="scale__chips">
-            <span class="chip chip--sm">bassa</span>
-            <span class="chip chip--sm">media</span>
-            <span class="chip chip--sm">alta</span>
-          </div>
-        </div>
+      <div class="sec-head">
+        <h2>Le etichette usate</h2>
       </div>
+
+      <section class="scale">
+        <h3>Bias</h3>
+        <p>
+          Indica l’inclinazione descritta nel testo per lo strumento indicato, non una posizione
+          consigliata. La scala va da ribassista a rialzista, con due gradini intermedi di segno
+          neutro.
+        </p>
+        <div class="scale__chips">
+          <span class="chip chip--down">ribassista</span>
+          <span class="chip chip--down">neutrale · ribassista</span>
+          <span class="chip chip--flat">neutrale</span>
+          <span class="chip chip--up">neutrale · rialzista</span>
+          <span class="chip chip--up">rialzista</span>
+        </div>
+      </section>
+
+      <section class="scale">
+        <h3>Forza del segnale</h3>
+        <p>
+          Quanto le informazioni disponibili concordano fra loro. Una forza elevata non implica
+          alcuna probabilità di successo: implica soltanto che le fonti considerate raccontano la
+          stessa cosa.
+        </p>
+        <div class="scale__chips">
+          <span class="chip">bassa</span>
+          <span class="chip">media</span>
+          <span class="chip">alta</span>
+        </div>
+      </section>
+
+      <section class="scale">
+        <h3>Livello di certezza</h3>
+        <p>
+          Riguarda la solidità dei fatti su cui poggia il testo, non l’esito del mercato. Anche con
+          certezza alta il risultato può essere opposto a quello descritto.
+        </p>
+        <div class="scale__chips">
+          <span class="chip">bassa</span>
+          <span class="chip">media</span>
+          <span class="chip">alta</span>
+        </div>
+      </section>
     </section>
 
     <!-- Fonti e limiti --------------------------------------------------------- -->
     <section class="block">
-      <h2>Fonti, dati e limiti</h2>
-      <div class="cards">
-        @for (c of limits; track c.title) {
-          <article class="card card--pad limit">
-            <span class="limit__icon"><app-icon [name]="c.icon" [size]="17" /></span>
-            <h3>{{ c.title }}</h3>
-            <p>{{ c.text }}</p>
-          </article>
-        }
+      <div class="sec-head">
+        <h2>Fonti, dati e limiti</h2>
       </div>
+
+      <ul class="limits">
+        @for (c of limits; track c.title) {
+          <li>
+            <h3><app-icon [name]="c.icon" [size]="14" />{{ c.title }}</h3>
+            <p>{{ c.text }}</p>
+          </li>
+        }
+      </ul>
     </section>
 
     <!-- Invalidazione ---------------------------------------------------------- -->
-    <section class="card card--pad invalid">
-      <p class="invalid__title">
-        <app-icon name="target" [size]="16" />
-        Perché ogni analisi dichiara la propria invalidazione
-      </p>
-      <p>
-        Alla fine di ciascun testo viene indicato che cosa renderebbe la lettura non più
-        sostenibile. È un impegno di trasparenza: rende verificabile a posteriori il ragionamento e
-        riduce il rischio di riscritture comode dopo l’esito. Non descrive livelli operativi e non
-        suggerisce alcun comportamento.
-      </p>
-      <p>
-        Quando le condizioni di invalidazione si verificano, il contenuto resta pubblicato così
-        com’è: non viene modificato per farlo sembrare corretto. Eventuali aggiornamenti vengono
-        indicati come tali.
-      </p>
+    <section class="block">
+      <div class="sec-head">
+        <h2>Perché ogni analisi dichiara la propria invalidazione</h2>
+      </div>
+
+      <div class="invalid">
+        <p>
+          Alla fine di ciascun testo viene indicato che cosa renderebbe la lettura non più
+          sostenibile. È un impegno di trasparenza: rende verificabile a posteriori il ragionamento
+          e riduce il rischio di riscritture comode dopo l’esito. Non descrive livelli operativi e
+          non suggerisce alcun comportamento.
+        </p>
+        <p>
+          Quando le condizioni di invalidazione si verificano, il contenuto resta pubblicato così
+          com’è: non viene modificato per farlo sembrare corretto. Eventuali aggiornamenti vengono
+          indicati come tali.
+        </p>
+      </div>
     </section>
 
-    <app-risk-notice variant="full" />
+    <app-risk-notice />
   `,
   styles: `
+    /* Una pagina di sola lettura: la colonna non supera la misura, così le righe
+       restano corte anche su uno schermo largo. */
     :host {
       display: block;
+      max-width: var(--measure);
     }
 
-    section {
-      margin-bottom: 34px;
-    }
-
-    h2 {
-      font-size: 21px;
-      margin-bottom: 12px;
+    app-risk-notice {
+      display: block;
+      margin-top: var(--s-section);
     }
 
     .lead {
-      font-size: 14.5px;
-      line-height: 1.7;
-      color: var(--text-muted);
-      max-width: 78ch;
-      margin-bottom: 20px;
-    }
-
-    /* --- Che cosa non è ---------------------------------------------------- */
-
-    .isnot {
-      border-color: rgba(255, 95, 102, 0.24);
-      background: linear-gradient(180deg, rgba(255, 95, 102, 0.07), rgba(255, 95, 102, 0.012));
-    }
-
-    .isnot__title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--bear);
-      margin-bottom: 16px;
-    }
-
-    .isnot__grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-      gap: 10px 24px;
-    }
-
-    .isnot__item {
-      display: flex;
-      gap: 11px;
-      font-size: 13.4px;
-      line-height: 1.6;
+      margin-bottom: var(--s-5);
+      font-size: var(--t-md);
+      line-height: var(--lh-loose);
       color: var(--text-muted);
     }
 
-    .isnot__item span {
-      width: 6px;
-      height: 6px;
-      margin-top: 8px;
-      flex: none;
-      border-radius: 50%;
-      background: var(--bear);
-      opacity: 0.7;
+    /* --- Che cosa non è -------------------------------------------------------
+       Era un riquadro rosso in sfumatura con sei pallini rossi: il tono
+       d'allarme era più forte di quello delle avvertenze vere. Sei righe
+       separate da un filetto dicono la stessa cosa senza alzare la voce.
+       ------------------------------------------------------------------------ */
+
+    .notlist {
+      list-style: none;
     }
 
-    .isnot__note {
-      margin-top: 18px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(255, 95, 102, 0.16);
-      font-size: 12px;
+    .notlist li {
+      padding: var(--s-3) 0;
+      border-top: 1px solid var(--line);
+      font-size: var(--t-base);
+      line-height: var(--lh-base);
+      color: var(--text-soft);
+    }
+
+    .note {
+      margin-top: var(--s-4);
+      font-size: var(--t-xs);
+      line-height: var(--lh-snug);
       color: var(--text-faint);
     }
 
-    .isnot__note a {
-      color: var(--accent-soft);
+    .note a {
+      color: var(--text-muted);
       text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    /* --- Passaggi ----------------------------------------------------------- */
+    .note a:hover {
+      color: var(--text-soft);
+    }
+
+    /* --- Passaggi -------------------------------------------------------------
+       Sei caselle affiancate suggerivano sei cose da confrontare; sono invece
+       sei momenti in fila, e un elenco numerato lo dice meglio.
+       ------------------------------------------------------------------------ */
 
     .steps {
       counter-reset: step;
       list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-      gap: 14px;
     }
 
     .steps li {
-      position: relative;
-      padding: 18px 20px 18px 20px;
-      border: 1px solid var(--line);
-      border-radius: var(--r-md);
-      background: rgba(255, 255, 255, 0.022);
+      display: grid;
+      grid-template-columns: var(--s-7) 1fr;
+      align-items: baseline;
+      padding: var(--s-4) 0;
+      border-top: 1px solid var(--line);
     }
 
     .steps li::before {
       counter-increment: step;
-      content: '0' counter(step);
-      display: block;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      color: var(--accent-deep);
-      margin-bottom: 9px;
+      content: counter(step, decimal-leading-zero);
+      grid-column: 1;
+      grid-row: 1;
+      font-size: var(--t-xs);
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+      color: var(--accent);
     }
 
     .steps__title {
-      font-size: 14.5px;
-      font-weight: 700;
-      letter-spacing: -0.015em;
-      margin-bottom: 7px;
+      grid-column: 2;
+      font-size: var(--t-base);
+      font-weight: 500;
     }
 
     .steps__text {
-      font-size: 13px;
-      line-height: 1.62;
+      grid-column: 2;
+      margin-top: var(--s-1);
+      font-size: var(--t-sm);
+      line-height: var(--lh-base);
       color: var(--text-muted);
     }
 
-    /* --- Scale --------------------------------------------------------------- */
+    /* --- Scale ---------------------------------------------------------------- */
 
     .scale {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
-      gap: 16px;
+      padding: var(--s-5) 0;
+      border-top: 1px solid var(--line);
     }
 
-    .scale__col {
-      padding: 18px 20px;
-      border: 1px solid var(--line);
-      border-radius: var(--r-md);
-      background: rgba(255, 255, 255, 0.022);
+    .scale h3 {
+      font-size: var(--t-base);
     }
 
-    .scale__label {
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent-deep);
-      margin-bottom: 10px;
-    }
-
-    .scale__text {
-      font-size: 13px;
-      line-height: 1.64;
+    .scale p {
+      margin-top: var(--s-2);
+      font-size: var(--t-sm);
+      line-height: var(--lh-base);
       color: var(--text-muted);
     }
 
     .scale__chips {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 14px;
+      gap: var(--s-2);
+      margin-top: var(--s-3);
     }
 
-    /* --- Limiti --------------------------------------------------------------- */
+    /* --- Limiti ----------------------------------------------------------------
+       Le quattro schede avevano una piastrella di 40 pixel per un'icona di 17:
+       l'icona ora sta accanto al titolo, alla sua misura.
+       -------------------------------------------------------------------------- */
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
-      gap: 14px;
+    .limits {
+      list-style: none;
     }
 
-    .limit__icon {
-      display: grid;
-      place-items: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 13px;
-      border: 1px solid var(--accent-line);
-      background: var(--accent-dim);
+    .limits li {
+      padding: var(--s-4) 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .limits h3 {
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
+      font-size: var(--t-base);
+    }
+
+    .limits h3 app-icon {
       color: var(--accent);
-      margin-bottom: 14px;
     }
 
-    .limit h3 {
-      font-size: 15.5px;
-      margin-bottom: 8px;
-    }
-
-    .limit p {
-      font-size: 13px;
-      line-height: 1.64;
+    .limits p {
+      margin-top: var(--s-2);
+      font-size: var(--t-sm);
+      line-height: var(--lh-base);
       color: var(--text-muted);
     }
 
-    /* --- Invalidazione --------------------------------------------------------- */
+    /* --- Invalidazione ---------------------------------------------------------- */
 
-    .invalid {
-      border-color: var(--accent-line);
-      background: linear-gradient(
-        180deg,
-        rgba(var(--accent-rgb), 0.07),
-        rgba(var(--accent-rgb), 0.012)
-      );
-    }
-
-    .invalid__title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--accent-soft);
-      margin-bottom: 14px;
+    .invalid p {
+      font-size: var(--t-base);
+      line-height: var(--lh-loose);
+      color: var(--text-muted);
     }
 
     .invalid p + p {
-      margin-top: 11px;
-    }
-
-    .invalid p {
-      font-size: 13.6px;
-      line-height: 1.68;
-      color: var(--text-muted);
-      max-width: 84ch;
+      margin-top: var(--s-3);
     }
 
     @media (max-width: 620px) {
-      section {
-        margin-bottom: 26px;
+      .lead {
+        font-size: var(--t-base);
       }
 
-      h2 {
-        font-size: 19px;
-      }
-
-      .isnot,
-      .invalid {
-        padding: 18px 16px;
-      }
-
-      .isnot__grid {
-        gap: 9px;
-      }
-
-      .steps li,
-      .scale__col,
-      .limit {
-        padding: 16px 16px;
-      }
-
-      .scale__chips {
-        gap: 5px;
+      .steps li {
+        grid-template-columns: var(--s-6) 1fr;
       }
     }
   `,

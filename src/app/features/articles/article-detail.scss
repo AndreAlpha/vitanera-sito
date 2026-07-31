@@ -1,512 +1,453 @@
+/* ==========================================================================
+   Dettaglio di un'analisi
+
+   È la pagina in cui si legge, e basta. Tutto ciò che non serve a leggere —
+   piastrelle, sfumature, vetri smerigliati, quattro riquadri in fila dopo il
+   testo — è stato tolto o ridotto a un filetto. Restano il corpo in carattere
+   con grazie, largo quanto una riga si legge senza perdere il segno, e una
+   colonna laterale che serve soltanto a sapere dove si è.
+   ========================================================================== */
+
 :host {
   display: block;
 }
 
-/* --- Barra di avanzamento lettura ---------------------------------------- */
+/* --- Barra di avanzamento della lettura -----------------------------------
+   Resta perché su un testo lungo dice quanto manca, ma è un filo di due pixel
+   in tinta piena: la sfumatura a tre fermate era la prima cosa che si vedeva
+   entrando nella pagina, prima del titolo.
+   ------------------------------------------------------------------------- */
 
 .progress {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 2px;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--line-soft);
 }
 
 .progress span {
   display: block;
   height: 100%;
   transform-origin: left;
-  background: linear-gradient(90deg, var(--accent-deep), var(--accent), var(--accent-soft));
+  background: var(--accent);
 }
 
-/* --- Testata -------------------------------------------------------------- */
+/* --- Testata --------------------------------------------------------------- */
 
 .hero {
-  padding: 10px 0 26px;
-  max-width: 90ch;
+  padding-bottom: var(--s-7);
+  border-bottom: 1px solid var(--line);
 }
 
+/* Un'analisi può stare in parecchie categorie: la riga di testata va a capo
+   invece di schiacciare la data di pubblicazione. */
 .hero__top {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 18px;
+  gap: var(--s-3);
+  margin-bottom: var(--s-5);
+}
+
+.hero__cats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+  min-width: 0;
+}
+
+.hero__cats a {
+  transition:
+    color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+
+.hero__cats a:hover {
+  color: var(--accent-soft);
+  border-color: var(--accent-line);
 }
 
 .hero__date {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 11.5px;
+  gap: var(--s-1);
+  margin-left: auto;
+  font-size: var(--t-micro);
   color: var(--text-faint);
-}
-
-.hero__abs {
-  color: var(--text-faint);
-}
-
-@media (max-width: 620px) {
-  .hero__abs {
-    display: none;
-  }
 }
 
 .hero__kicker {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--accent-deep);
-  margin-bottom: 10px;
+  margin-bottom: var(--s-3);
+  color: var(--accent);
 }
 
 .hero__title {
-  font-size: clamp(28px, 4.2vw, 46px);
-  line-height: 1.1;
-  letter-spacing: -0.038em;
+  font-size: var(--t-3xl);
+  letter-spacing: -0.025em;
+  max-width: 24ch;
 }
 
+/* Il sommario prende dalla classe .prose il carattere con grazie e l'interlinea
+   larga; qui resta solo la misura di lettura e il grigio più basso, perché non
+   deve competere con il titolo. */
 .hero__dek {
-  margin-top: 16px;
-  font-family: var(--ff-serif);
-  font-size: 19px;
-  line-height: 1.66;
+  margin-top: var(--s-4);
+  max-width: var(--measure);
   color: var(--text-muted);
-  max-width: 72ch;
 }
 
 .hero__meta {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16px;
-  margin-top: 22px;
-  padding-top: 18px;
+  gap: var(--s-2) var(--s-5);
+  margin-top: var(--s-6);
+  padding-top: var(--s-5);
   border-top: 1px solid var(--line);
-  font-size: 12px;
+  font-size: var(--t-xs);
   color: var(--text-faint);
 }
 
 .hero__meta > span {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--s-2);
 }
 
 .hero__chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 16px;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
 }
 
 .hero__actions {
   display: flex;
-  gap: 9px;
-  margin-top: 20px;
+  gap: var(--s-2);
+  margin-top: var(--s-5);
 }
 
-/* --- Impaginazione a due colonne ------------------------------------------ */
+/* --- Impaginazione a due colonne -------------------------------------------- */
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 268px;
-  gap: 42px;
+  grid-template-columns: minmax(0, 1fr) var(--sidebar-w);
+  gap: var(--s-8);
   align-items: start;
-  margin-top: 30px;
+  margin-top: var(--s-7);
 }
 
+/* La riga di lettura si ferma alla misura: oltre, l'occhio perde il capo del
+   rigo successivo. */
 .body {
   min-width: 0;
-  max-width: 76ch;
+  max-width: var(--measure);
 }
 
 .side__sticky {
   position: sticky;
-  top: 100px;
+  top: calc(var(--topbar-h) + var(--s-5));
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--s-6);
 }
 
-/* --- In sintesi ----------------------------------------------------------- */
+/* --- In sintesi -------------------------------------------------------------
+   L'unico riquadro tinto in apertura: fondo piatto e bordo d'accento, senza la
+   sfumatura verticale che lo faceva sembrare un pulsante gigante.
+   ---------------------------------------------------------------------------- */
 
 .summary {
-  padding: 20px 22px 18px;
-  margin-bottom: 32px;
+  padding: var(--s-card);
+  margin-bottom: var(--s-7);
   border: 1px solid var(--accent-line);
   border-radius: var(--r-lg);
-  background: linear-gradient(
-    180deg,
-    rgba(var(--accent-rgb), 0.09),
-    rgba(var(--accent-rgb), 0.015)
-  );
+  background: var(--accent-dim);
 }
 
 .summary__title {
   display: flex;
   align-items: center;
-  gap: 9px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--accent-soft);
-  margin-bottom: 14px;
+  gap: var(--s-2);
+  margin-bottom: var(--s-4);
+  color: var(--accent);
 }
 
 .summary ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: var(--s-3);
 }
 
 .summary li {
-  display: flex;
-  gap: 12px;
-  font-size: 14.6px;
-  line-height: 1.62;
+  position: relative;
+  padding-left: var(--s-4);
+  font-size: var(--t-base);
+  line-height: var(--lh-base);
   color: var(--text-soft);
 }
 
-.summary__dot {
-  width: 6px;
-  height: 6px;
-  margin-top: 8px;
-  flex: none;
-  border-radius: 50%;
+/* Un trattino di un pixel al posto del pallino: segna il punto senza pesare. */
+.summary li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: var(--s-3);
+  width: 5px;
+  height: 1px;
   background: var(--accent);
 }
 
-.summary__legal {
-  margin-top: 15px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(var(--accent-rgb), 0.2);
-  font-size: 11px;
-  line-height: 1.5;
-  color: var(--text-faint);
-}
-
-/* --- Regime, evento, invalidazione, certezza ------------------------------- */
+/* --- Regime e certezza -------------------------------------------------------
+   Erano due riquadri fra altri due: in coda al testo diventavano una pila di
+   scatole tutte uguali. Qui sono blocchi separati da un filetto, e il riquadro
+   resta solo dove il colore dice qualcosa (evento in arrivo, invalidazione).
+   ---------------------------------------------------------------------------- */
 
 .regime,
-.event,
-.invalid,
 .certainty {
-  margin: 0 0 26px;
-  padding: 18px 20px;
-  border-radius: var(--r-md);
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.022);
+  margin: 0 0 var(--s-6);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--line);
 }
 
-.regime__label,
-.side__label {
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  margin-bottom: 9px;
+.regime__label {
+  margin-bottom: var(--s-2);
 }
 
 .regime__text {
-  font-size: 15px;
-  line-height: 1.6;
+  max-width: var(--measure);
+  font-size: var(--t-md);
+  line-height: var(--lh-base);
   color: var(--text);
 }
 
 .regime__row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
 }
 
-.event {
-  display: flex;
-  gap: 15px;
-  border-color: var(--accent-line);
-  background: linear-gradient(
-    135deg,
-    rgba(var(--accent-rgb), 0.09),
-    rgba(var(--accent-rgb), 0.015)
-  );
+.certainty__title {
+  margin-bottom: var(--s-2);
+  font-size: var(--t-sm);
+  font-weight: 500;
 }
 
-.event__icon {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  flex: none;
-  border-radius: 15px;
-  background: linear-gradient(135deg, var(--accent-soft), var(--accent-deep));
-  color: var(--accent-ink);
-}
-
-.event__when {
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent-soft);
-}
-
-.event__title {
-  margin-top: 5px;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.event__detail {
-  margin-top: 7px;
-  font-size: 13.4px;
-  line-height: 1.6;
+.certainty__text {
+  max-width: var(--measure);
+  font-size: var(--t-sm);
+  line-height: var(--lh-base);
   color: var(--text-muted);
 }
 
+/* Tre barrette in tinta piena: il livello è già scritto qui sopra, il metro lo
+   ripete a colpo d'occhio ed è quindi nascosto ai lettori di schermo. */
+.certainty__meter {
+  display: flex;
+  gap: var(--s-1);
+  margin-top: var(--s-4);
+}
+
+.certainty__meter i {
+  width: var(--s-8);
+  height: 2px;
+  border-radius: var(--r-pill);
+  background: var(--line-strong);
+}
+
+.certainty__meter[data-level='bassa'] i:nth-child(1),
+.certainty__meter[data-level='media'] i:nth-child(-n + 2),
+.certainty__meter[data-level='alta'] i {
+  background: var(--accent);
+}
+
+/* --- Prossimo appuntamento ---------------------------------------------------
+   La data non ha più la piastrella di 46 pixel in sfumatura: l'icona è alta
+   quanto la riga che accompagna, e il riquadro è piatto.
+   ---------------------------------------------------------------------------- */
+
+.event {
+  margin: 0 0 var(--s-6);
+  padding: var(--s-card);
+  border: 1px solid var(--accent-line);
+  border-radius: var(--r-md);
+  background: var(--accent-dim);
+}
+
+.event__when {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.event__title {
+  margin-top: var(--s-2);
+  font-size: var(--t-md);
+  font-weight: 600;
+}
+
+.event__detail {
+  margin-top: var(--s-2);
+  font-size: var(--t-sm);
+  line-height: var(--lh-base);
+  color: var(--text-muted);
+}
+
+/* --- Che cosa invaliderebbe la lettura ---------------------------------------
+   Rosso di mercato, non rosso d'allarme: è la stessa tinta con cui altrove si
+   scrive un numero in calo.
+   ---------------------------------------------------------------------------- */
+
 .invalid {
-  border-color: rgba(255, 95, 102, 0.26);
-  background: var(--bear-dim);
+  margin: 0 0 var(--s-6);
+  padding: var(--s-card);
+  border: 1px solid var(--down-line);
+  border-radius: var(--r-md);
+  background: var(--down-dim);
 }
 
 .invalid__title {
   display: flex;
   align-items: center;
-  gap: 9px;
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--bear);
-  margin-bottom: 12px;
+  gap: var(--s-2);
+  margin-bottom: var(--s-3);
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--down);
 }
 
 .invalid ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: var(--s-2);
 }
 
 .invalid li {
   position: relative;
-  padding-left: 17px;
-  font-size: 14.2px;
-  line-height: 1.6;
-  color: var(--text-muted);
+  padding-left: var(--s-4);
+  font-size: var(--t-base);
+  line-height: var(--lh-base);
+  color: var(--text-soft);
 }
 
 .invalid li::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 9px;
-  width: 7px;
-  height: 1.5px;
-  background: var(--bear);
-  opacity: 0.7;
-}
-
-.invalid__note {
-  margin-top: 13px;
-  padding-top: 11px;
-  border-top: 1px solid rgba(255, 95, 102, 0.18);
-  font-size: 11px;
-  line-height: 1.5;
-  color: var(--text-faint);
-}
-
-.certainty__title {
-  font-size: 13.5px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  text-transform: capitalize;
-}
-
-.certainty__text {
-  font-size: 13.8px;
-  line-height: 1.64;
-  color: var(--text-muted);
-}
-
-.certainty__meter {
-  display: flex;
-  gap: 6px;
-  margin-top: 14px;
-}
-
-.certainty__meter i {
-  height: 5px;
-  width: 46px;
-  border-radius: 99px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.certainty__meter[data-level='bassa'] i:nth-child(1),
-.certainty__meter[data-level='media'] i:nth-child(-n + 2),
-.certainty__meter[data-level='alta'] i {
-  background: linear-gradient(90deg, var(--accent-deep), var(--accent));
+  top: var(--s-3);
+  width: 5px;
+  height: 1px;
+  background: var(--down);
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
-  margin: 30px 0 26px;
+  gap: var(--s-2);
+  margin: var(--s-7) 0 var(--s-5);
 }
 
-/* --- Colonna laterale ------------------------------------------------------ */
+/* --- Colonna laterale ---------------------------------------------------------
+   Non è più fatta di schede: erano tre riquadri col vetro smerigliato, di cui
+   due contenevano solo avvertenze. Resta l'indice, che è la sola cosa con cui
+   si interagisce davvero, e l'elenco degli strumenti sotto un filetto.
+   ----------------------------------------------------------------------------- */
 
-.toc,
-.side__card {
-  padding: 16px 17px;
-  border: 1px solid var(--line);
-  border-radius: var(--r-md);
-  background: rgba(255, 255, 255, 0.025);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+.toc__title,
+.side__label {
+  margin-bottom: var(--s-3);
 }
 
-.toc__title {
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  margin-bottom: 11px;
-}
-
+/* I bordi sinistri dei rimandi si toccano e formano una guida continua: la voce
+   in cui ci si trova la accende, senza fondo pieno che sposti il peso. */
 .toc__link {
   display: block;
-  padding: 7px 10px;
+  padding: var(--s-2) var(--s-3);
   border-left: 2px solid var(--line);
-  font-size: 12.4px;
-  line-height: 1.45;
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
   color: var(--text-muted);
   transition:
-    color 0.25s var(--ease),
-    border-color 0.25s var(--ease),
-    background 0.25s var(--ease);
+    color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
 }
 
 .toc__link:hover {
   color: var(--text);
-  background: rgba(255, 255, 255, 0.03);
+  border-left-color: var(--line-strong);
 }
 
 .toc__link--active {
+  font-weight: 500;
   color: var(--accent-soft);
   border-left-color: var(--accent);
-  background: var(--accent-dim);
+}
+
+.toc + .side__card {
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--line);
 }
 
 .side__chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: var(--s-2);
 }
 
-.side__hint {
-  margin-top: 11px;
-  font-size: 11px;
-  line-height: 1.55;
-  color: var(--text-faint);
-}
-
-.side__card--warn {
-  border-color: rgba(240, 169, 59, 0.26);
-  background: rgba(240, 169, 59, 0.06);
-}
-
-.side__label--warn {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  color: var(--warn);
-}
-
-.side__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: 10px;
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--accent-soft);
-}
-
-.side__link:hover {
-  text-decoration: underline;
-}
-
-/* --- Correlate ------------------------------------------------------------- */
+/* --- Correlate ----------------------------------------------------------------- */
 
 .related {
-  margin-top: 46px;
-  padding-top: 30px;
-  border-top: 1px solid var(--line);
-}
-
-.related__head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 20px;
-}
-
-.related__head h2 {
-  font-size: 20px;
-}
-
-.related__head a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--accent);
+  margin-top: var(--s-9);
 }
 
 .related__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-  gap: 16px;
+  gap: var(--s-4);
 }
 
-/* --- Contenuto assente ------------------------------------------------------ */
+/* --- Contenuto assente ---------------------------------------------------------- */
 
 .missing {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-  padding: 90px 20px;
+  gap: var(--s-4);
+  padding: var(--s-10) var(--s-5);
   text-align: center;
   color: var(--text-muted);
 }
 
-.missing h1 {
-  font-size: 26px;
+.missing app-icon {
+  color: var(--text-faint);
 }
 
-/* --- Adattamento ------------------------------------------------------------ */
+.missing h1 {
+  font-size: var(--t-2xl);
+}
 
 /* ==========================================================================
    Adattamento
    ========================================================================== */
 
 /* In colonna singola la barra laterale viene sciolta nella griglia principale:
-   l'indice sale sopra al testo (dove serve davvero) e le due schede
-   informative scendono in fondo, invece di restare tutte dopo l'articolo. */
+   l'indice sale sopra al testo, dove serve davvero, e gli strumenti citati
+   scendono in fondo. */
 @media (max-width: 1100px) {
   .layout {
     grid-template-columns: minmax(0, 1fr);
-    gap: 26px;
+    gap: var(--s-6);
   }
 
   .side,
@@ -516,6 +457,8 @@
 
   .toc {
     order: -1;
+    padding-bottom: var(--s-5);
+    border-bottom: 1px solid var(--line);
   }
 
   .body {
@@ -525,25 +468,33 @@
   .side__card {
     order: 1;
   }
-
-  .toc__link {
-    padding: 6px 10px;
-  }
 }
 
 @media (max-width: 620px) {
   .hero {
-    padding-bottom: 20px;
+    padding-bottom: var(--s-6);
+  }
+
+  .hero__abs {
+    display: none;
+  }
+
+  .hero__date {
+    margin-left: 0;
+  }
+
+  .hero__title {
+    font-size: var(--t-2xl);
   }
 
   .hero__dek {
-    font-size: 17px;
+    font-size: var(--t-md);
   }
 
   .hero__meta {
-    gap: 10px 14px;
-    margin-top: 18px;
-    padding-top: 14px;
+    gap: var(--s-2) var(--s-4);
+    margin-top: var(--s-5);
+    padding-top: var(--s-4);
   }
 
   .hero__actions .btn {
@@ -551,25 +502,9 @@
   }
 
   .summary,
-  .regime,
   .event,
-  .invalid,
-  .certainty {
-    padding: 16px 15px;
-  }
-
-  .summary li {
-    font-size: 13.8px;
-  }
-
-  .event {
-    gap: 12px;
-  }
-
-  .event__icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 13px;
+  .invalid {
+    padding: var(--s-4);
   }
 
   .certainty__meter i {
@@ -578,13 +513,6 @@
   }
 
   .related {
-    margin-top: 34px;
-    padding-top: 24px;
-  }
-
-  .related__head {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    margin-top: var(--s-8);
   }
 }

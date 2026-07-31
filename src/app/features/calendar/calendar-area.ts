@@ -1,14 +1,15 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DISCLAIMER_DATA } from '../../core/config/site.config';
+import { Tone } from '../../core/models/article.model';
 import { Indicator, Stage } from '../../core/models/calendar.model';
 import {
   CalendarService,
   STAGE_LABEL,
-  calendarDate,
   calendarDateTime,
 } from '../../core/services/calendar.service';
-import { RiskNotice } from '../../shared/legal/risk-notice';
+import { calendarMarkdown, exportFilename } from '../../core/services/calendar-export';
+import { ExportButton } from '../../shared/ui/export-button';
 import { Icon } from '../../shared/ui/icon';
 import { PageHeader } from '../../shared/ui/page-header';
 import { Sparkline } from '../../shared/ui/sparkline';
@@ -18,12 +19,18 @@ import { Sparkline } from '../../shared/ui/sparkline';
  *
  * Ogni scheda risponde a tre domande nell'ordine in cui il lettore se le pone:
  * qual è l'ultimo valore, quanto si è scostato dalle attese, quando esce il
- * prossimo. Il resto — storico completo e grafico — sta nella pagina di dettaglio.
+ * prossimo. Sono tre righe separate da un filetto — non tre fondi diversi
+ * dentro lo stesso riquadro — così l'occhio scende dritto senza doversi
+ * chiedere ogni volta dove finisce un'informazione e ne comincia un'altra.
+ * Il resto — storico completo e grafico — sta nella pagina di dettaglio.
+ *
+ * Non porta più l'avvertenza estesa: la pagina non esprime giudizi, riporta
+ * statistiche già pubblicate, e la formula per intero vive in `/avvertenze`.
  */
 @Component({
   selector: 'app-calendar-area',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, PageHeader, Icon, RiskNotice, Sparkline],
+  imports: [RouterLink, PageHeader, Icon, Sparkline, ExportButton],
   template: `
     @if (section(); as area) {
       <app-page-header
@@ -33,18 +40,30 @@ import { Sparkline } from '../../shared/ui/sparkline';
         [description]="area.description"
       >
         <div class="head-facts">
-          <span class="chip chip--sm chip--gold">
-            <app-icon name="layers" [size]="11" />
+          <span class="chip chip--accent">
+            <app-icon name="layers" [size]="12" />
             {{ area.indicators.length }} indicatori
           </span>
-          <span class="chip chip--sm chip--neutral">
-            <app-icon name="bank" [size]="11" />
+          <span class="chip chip--flat">
+            <app-icon name="bank" [size]="12" />
             {{ area.bank }}
           </span>
-          <a class="chip chip--sm chip--neutral" routerLink="/calendario">
-            <app-icon name="calendar" [size]="11" />
+          <a class="chip chip--flat" routerLink="/calendario">
+            <app-icon name="calendar" [size]="12" />
             Tutte le aree
           </a>
+        </div>
+
+        <div class="head-export">
+          <app-export-button
+            [label]="'Esporta ' + area.name + ' in Markdown'"
+            [filename]="exportName()"
+            [build]="buildExport"
+          />
+          <p class="head-export__note">
+            Un file con i {{ area.indicators.length }} indicatori di quest’area e lo storico
+            completo di ciascuno: data e ora, previsto, attuale, precedente e scostamento.
+          </p>
         </div>
       </app-page-header>
 
@@ -59,23 +78,24 @@ import { Sparkline } from '../../shared/ui/sparkline';
               <h2>Prossime uscite</h2>
             </div>
           </div>
-          <ul class="next-strip">
+
+          <!-- Erano cinque riquadri affiancati per tre righe di testo ciascuno:
+               un elenco con i filetti dice le stesse cose e si scorre. -->
+          <ul class="card next">
             @for (row of upcoming(); track row.indicator.slug) {
               <li>
-                <a
-                  class="card card--hover next"
-                  [routerLink]="['/calendario', area.slugPath, row.indicator.key]"
-                >
-                  <p class="next__when">{{ when(row.release.at) }}</p>
-                  <p class="next__name">{{ row.indicator.short }}</p>
-                  <p class="next__fc tnum">
+                <a [routerLink]="['/calendario', area.slugPath, row.indicator.key]">
+                  <span class="next__when tnum">{{ when(row.release.at) }}</span>
+                  <span class="next__name">{{ row.indicator.short }}</span>
+                  <span class="next__fc tnum">
                     @if (row.release.forecast !== null) {
                       atteso
                       <strong>{{ calendar.value(row.release.forecast, row.indicator) }}</strong>
                     } @else {
                       consenso non rilevato
                     }
-                  </p>
+                  </span>
+                  <app-icon name="chevron-right" [size]="14" />
                 </a>
               </li>
             }
@@ -92,26 +112,26 @@ import { Sparkline } from '../../shared/ui/sparkline';
             <p class="eyebrow">Storico e prossima uscita</p>
             <h2>Indicatori</h2>
           </div>
-          <span class="chip chip--sm chip--warn">
-            <app-icon name="clock" [size]="11" />
-            Orari di Roma
-          </span>
+          <!-- Era una pastiglia ambrata, ma il fuso non è un allarme: è la
+               nota della sezione, e come tale si legge di fianco al titolo. -->
+          <span class="sec-head__note">Orari di Roma</span>
         </div>
 
         <div class="grid">
           @for (row of rows(); track row.indicator.slug) {
             <a
-              class="card card--hover ind"
+              class="card card--link ind"
               [routerLink]="['/calendario', area.slugPath, row.indicator.key]"
             >
               <div class="ind__head">
                 <h3>{{ row.indicator.name }}</h3>
-                <app-icon name="chevron-right" [size]="15" />
+                <app-icon name="chevron-right" [size]="14" />
               </div>
               <p class="ind__cadence">{{ cadence(row.indicator) }} · {{ row.indicator.source }}</p>
 
-              <div class="ind__body">
-                <div class="ind__value">
+              <!-- 1. Ultimo valore, con la forma della serie accanto. -->
+              <div class="ind__row ind__value">
+                <div>
                   <p class="ind__num tnum">{{ calendar.value(row.last?.actual, row.indicator) }}</p>
                   @if (row.last; as last) {
                     <p class="ind__period">
@@ -129,9 +149,10 @@ import { Sparkline } from '../../shared/ui/sparkline';
                 />
               </div>
 
-              <div class="ind__surprise">
+              <!-- 2. Scostamento dal consenso. -->
+              <div class="ind__row ind__surprise">
                 @if (row.surprise; as s) {
-                  <span class="pill" [class]="'pill--' + s.tone">
+                  <span class="chip tnum" [class]="chipTone(s.tone)">
                     <app-icon [name]="arrow(s.delta)" [size]="11" />
                     {{ s.label }}
                   </span>
@@ -141,16 +162,19 @@ import { Sparkline } from '../../shared/ui/sparkline';
                 }
               </div>
 
-              <p class="ind__next">
+              <!-- 3. Prossima uscita. -->
+              <p class="ind__row ind__next">
                 <app-icon name="calendar" [size]="12" />
-                @if (row.next; as next) {
-                  Prossima uscita <strong>{{ when(next.at) }}</strong>
-                  @if (next.forecast !== null) {
-                    · atteso {{ calendar.value(next.forecast, row.indicator) }}
+                <span>
+                  @if (row.next; as next) {
+                    Prossima uscita <strong>{{ when(next.at) }}</strong>
+                    @if (next.forecast !== null) {
+                      · atteso {{ calendar.value(next.forecast, row.indicator) }}
+                    }
+                  } @else {
+                    Prossima uscita non ancora fissata
                   }
-                } @else {
-                  Prossima uscita non ancora fissata
-                }
+                </span>
               </p>
             </a>
           }
@@ -158,7 +182,6 @@ import { Sparkline } from '../../shared/ui/sparkline';
       </section>
 
       <p class="fineprint"><app-icon name="info" [size]="12" />{{ dataNote }}</p>
-      <app-risk-notice variant="card" title="Come leggere questi numeri" />
     } @else {
       <app-page-header
         eyebrow="Calendario economico"
@@ -166,7 +189,7 @@ import { Sparkline } from '../../shared/ui/sparkline';
         icon="calendar"
         description="L’area richiesta non esiste. Le aree disponibili sono USA ed Euro zona."
       />
-      <a class="btn btn--gold" routerLink="/calendario">
+      <a class="btn btn--primary" routerLink="/calendario">
         Torna al calendario <app-icon name="arrow-right" [size]="15" />
       </a>
     }
@@ -176,79 +199,129 @@ import { Sparkline } from '../../shared/ui/sparkline';
       display: block;
     }
 
+    /* --- Intestazione ------------------------------------------------------ */
+
     .head-facts {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: var(--s-2);
     }
 
-    /* --- Striscia delle prossime uscite ----------------------------------- */
-
-    .next-strip {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 12px;
+    /* La pastiglia che è anche un rimando cambia colore, non posizione. */
+    .head-facts a {
+      transition:
+        color var(--dur) var(--ease),
+        border-color var(--dur) var(--ease);
     }
+
+    .head-facts a:hover {
+      border-color: var(--accent-line);
+      color: var(--accent-soft);
+    }
+
+    .head-export {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--s-3) var(--s-4);
+      margin-top: var(--s-4);
+      padding-top: var(--s-4);
+      border-top: 1px solid var(--line);
+    }
+
+    .head-export__note {
+      flex: 1;
+      min-width: 260px;
+      max-width: var(--measure);
+      font-size: var(--t-xs);
+      line-height: var(--lh-base);
+      color: var(--text-muted);
+    }
+
+    /* --- Prossime uscite ---------------------------------------------------- */
 
     .next {
-      display: block;
-      padding: 14px 16px 13px;
-      height: 100%;
+      list-style: none;
+      /* Il fondo dell'ultima riga in evidenza non deve uscire dagli angoli. */
+      overflow: hidden;
+    }
+
+    .next li + li {
+      border-top: 1px solid var(--line);
+    }
+
+    .next a {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) auto 14px;
+      align-items: center;
+      gap: var(--s-4);
+      padding: var(--s-3) var(--s-4);
+      color: var(--text-soft);
+      transition:
+        background var(--dur) var(--ease),
+        color var(--dur) var(--ease);
+    }
+
+    .next a:hover {
+      background: var(--surface-hover);
+      color: var(--text);
     }
 
     .next__when {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      font-size: var(--t-xs);
+      font-weight: 500;
       color: var(--accent);
     }
 
     .next__name {
-      margin-top: 6px;
-      font-size: 13.6px;
-      font-weight: 600;
+      font-size: var(--t-base);
+      font-weight: 500;
       color: var(--text);
-      line-height: 1.35;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .next__fc {
-      margin-top: 6px;
-      font-size: 11.5px;
+      font-size: var(--t-xs);
       color: var(--text-faint);
+      white-space: nowrap;
     }
 
     .next__fc strong {
       color: var(--text-soft);
+      font-weight: 500;
     }
 
-    /* --- Griglia degli indicatori ----------------------------------------- */
+    .next app-icon {
+      color: var(--text-faint);
+    }
+
+    /* --- Griglia degli indicatori ------------------------------------------- */
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: var(--s-4);
     }
 
     .ind {
       display: flex;
       flex-direction: column;
-      padding: 18px 20px 16px;
+      padding: var(--s-card);
     }
 
     .ind__head {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      gap: 12px;
+      gap: var(--s-3);
     }
 
     .ind__head h3 {
-      font-size: 15px;
-      line-height: 1.3;
-      letter-spacing: -0.015em;
-      transition: color 0.25s var(--ease);
+      font-size: var(--t-md);
+      line-height: var(--lh-snug);
+      transition: color var(--dur) var(--ease);
     }
 
     .ind:hover .ind__head h3 {
@@ -261,117 +334,104 @@ import { Sparkline } from '../../shared/ui/sparkline';
     }
 
     .ind__cadence {
-      margin-top: 4px;
-      font-size: 11px;
+      margin-top: var(--s-1);
+      font-size: var(--t-xs);
       color: var(--text-faint);
     }
 
-    .ind__body {
+    /* Le tre risposte della scheda: stesso fondo, un filetto a dividerle. */
+    .ind__row {
       display: flex;
-      align-items: flex-end;
+      align-items: center;
+      gap: var(--s-4);
+      margin-top: var(--s-4);
+      padding-top: var(--s-4);
+      border-top: 1px solid var(--line);
+    }
+
+    .ind__value {
       justify-content: space-between;
-      gap: 16px;
-      margin-top: 16px;
+      align-items: flex-end;
     }
 
     .ind__num {
-      font-size: 25px;
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: -0.03em;
+      font-size: var(--t-xl);
+      font-weight: 600;
+      line-height: var(--lh-tight);
       color: var(--text);
     }
 
     .ind__period {
-      margin-top: 5px;
-      font-size: 11px;
+      margin-top: var(--s-1);
+      font-size: var(--t-xs);
       color: var(--text-muted);
     }
 
+    /* La revisione era una pastiglia dentro una riga già minuta: basta il
+       punto mediano che separa le altre coppie di dati della scheda. */
     .ind__stage {
-      margin-left: 5px;
-      padding: 1px 6px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--line);
-      font-size: 9.5px;
       color: var(--text-faint);
+    }
+
+    .ind__stage::before {
+      content: '·';
+      margin: 0 var(--s-1);
     }
 
     .ind__spark {
       width: 120px;
       flex: none;
-      padding-bottom: 4px;
+      padding-bottom: var(--s-1);
     }
 
+    /* Assorbe l'altezza in più quando un titolo accanto va a capo, così la
+       riga della prossima uscita resta appoggiata al fondo di ogni scheda. */
     .ind__surprise {
-      display: flex;
+      flex: 1;
       flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-      margin-top: 14px;
-      min-height: 22px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 2px 9px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--line);
-      font-size: 11px;
-      font-weight: 600;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .pill--bull {
-      color: var(--chart-up);
-      border-color: rgba(74, 210, 149, 0.3);
-      background: var(--chart-up-dim);
-    }
-
-    .pill--bear {
-      color: var(--chart-down);
-      border-color: rgba(226, 112, 90, 0.32);
-      background: var(--chart-down-dim);
-    }
-
-    .pill--warn {
-      color: var(--warn);
-      border-color: rgba(240, 169, 59, 0.3);
-      background: var(--warn-dim);
-    }
-
-    .pill--neutral,
-    .pill--gold {
-      color: var(--text-muted);
-      background: rgba(255, 255, 255, 0.03);
+      gap: var(--s-2);
     }
 
     .ind__wording {
-      font-size: 11.5px;
+      font-size: var(--t-xs);
       color: var(--text-muted);
     }
 
     .ind__next {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      margin-top: auto;
-      padding-top: 14px;
-      border-top: 1px solid var(--line);
-      font-size: 11.5px;
+      align-items: flex-start;
+      gap: var(--s-2);
+      font-size: var(--t-xs);
       color: var(--text-muted);
     }
 
     .ind__next app-icon {
       color: var(--accent);
-      flex: none;
+      margin-top: 2px;
     }
 
     .ind__next strong {
       color: var(--text-soft);
-      font-weight: 600;
+      font-weight: 500;
+    }
+
+    @media (max-width: 760px) {
+      .next a {
+        grid-template-columns: minmax(0, 1fr) 14px;
+        gap: var(--s-1) var(--s-3);
+      }
+
+      .next__when,
+      .next__name,
+      .next__fc {
+        grid-column: 1;
+        white-space: normal;
+      }
+
+      .next app-icon {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+        align-self: center;
+      }
     }
 
     @media (max-width: 620px) {
@@ -380,11 +440,7 @@ import { Sparkline } from '../../shared/ui/sparkline';
       }
 
       .ind {
-        padding: 16px 17px 14px;
-      }
-
-      .ind__num {
-        font-size: 22px;
+        padding: var(--s-4);
       }
 
       .ind__spark {
@@ -427,12 +483,24 @@ export class CalendarArea {
     }),
   );
 
-  protected when(iso: string): string {
-    return calendarDateTime(iso);
+  protected exportName(): string {
+    return exportFilename(this.section()?.slugPath ?? 'area', new Date().toISOString());
   }
 
-  protected day(iso: string): string {
-    return calendarDate(iso);
+  /** Invocato solo al clic: vedi `ExportButton`. */
+  protected readonly buildExport = (): string => {
+    const section = this.section();
+    return calendarMarkdown({
+      indicators: section?.indicators ?? [],
+      title: `Calendario economico — ${section?.name ?? 'area'}`,
+      events: section ? this.calendar.events.filter((e) => e.area === section.area) : [],
+      archiveGeneratedAt: this.calendar.generatedAt,
+      now: new Date().toISOString(),
+    });
+  };
+
+  protected when(iso: string): string {
+    return calendarDateTime(iso);
   }
 
   /** "Mensile", "Settimanale": la cadenza è memorizzata in minuscolo. */
@@ -447,5 +515,22 @@ export class CalendarArea {
 
   protected arrow(delta: number): string {
     return delta > 0 ? 'arrow-up' : delta < 0 ? 'arrow-down' : 'arrow-flat';
+  }
+
+  /**
+   * Il verso della sorpresa nella forma delle pastiglie globali: prima ogni
+   * pagina si disegnava le proprie, con verdi e rossi leggermente diversi.
+   */
+  protected chipTone(tone: Tone): string {
+    switch (tone) {
+      case 'bull':
+        return 'chip--up';
+      case 'bear':
+        return 'chip--down';
+      case 'warn':
+        return 'chip--warn';
+      default:
+        return 'chip--flat';
+    }
   }
 }

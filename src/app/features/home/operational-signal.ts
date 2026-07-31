@@ -21,6 +21,12 @@ import { Timestamp } from '../../shared/ui/timestamp';
  * Quando non esiste alcuna lettura la scheda non sparisce: tiene lo stesso
  * riquadro in stato di attesa, così la panoramica non resta con un vuoto al
  * posto dell'indicatore.
+ *
+ * È l'informazione più importante della panoramica, e per questo era anche la
+ * più rumorosa: fondo in due sfumature, ombra, piastrelle dorate sotto le
+ * icone, un pallino che pulsava all'infinito. Resta un riquadro come gli altri,
+ * dove a segnalare che la lettura è viva sono soltanto il bordo in tinta
+ * d'accento e la barra della validità residua.
  */
 @Component({
   selector: 'app-operational-signal',
@@ -28,17 +34,19 @@ import { Timestamp } from '../../shared/ui/timestamp';
   imports: [RouterLink, Icon, Timestamp],
   template: `
     <section
-      class="sig"
+      class="card sig"
+      [class.sig--live]="live()"
       [class.sig--expired]="signal !== null && !live()"
-      [class.sig--empty]="signal === null"
-      [attr.aria-live]="'polite'"
+      aria-live="polite"
     >
       @if (signal; as s) {
-        <div class="sig__meter" [style.--fill]="fill()"></div>
+        <div class="meter" aria-hidden="true">
+          <span class="meter__fill" [style.width]="fill()"></span>
+        </div>
 
         <header class="sig__bar">
-          <span class="state" [class.state--live]="live()">
-            <i class="state__dot"></i>
+          <span class="chip" [class.chip--accent]="live()">
+            <i class="state__dot" aria-hidden="true"></i>
             {{ live() ? 'Lettura valida' : 'In attesa di notizie' }}
           </span>
 
@@ -46,7 +54,7 @@ import { Timestamp } from '../../shared/ui/timestamp';
 
           <span class="sig__timing">
             @if (live()) {
-              <span class="sig__left">valida ancora {{ remainingLabel() }}</span>
+              <span class="sig__left tnum">valida ancora {{ remainingLabel() }}</span>
             }
             <span class="sig__updated"> aggiornato <app-timestamp [iso]="s.updatedAt" /> </span>
           </span>
@@ -55,22 +63,24 @@ import { Timestamp } from '../../shared/ui/timestamp';
         <div class="sig__body">
           <!-- Quadrante ---------------------------------------------------- -->
           <div class="gauge">
-            <span class="gauge__icon">
-              <app-icon [name]="live() ? icon() : 'clock'" [size]="26" />
-            </span>
             <p class="gauge__label">{{ live() ? 'Impostazione' : 'Stato' }}</p>
-            <p class="gauge__value">{{ live() ? directionLabel : 'In attesa di notizie' }}</p>
+            <p class="gauge__value">
+              <app-icon [name]="live() ? icon() : 'clock'" [size]="16" />
+              {{ live() ? directionLabel : 'In attesa di notizie' }}
+            </p>
 
             @if (live()) {
-              <div class="gauge__strength">
+              <p class="strength">
                 <span>Forza del segnale</span>
-                <span class="dots">
+                <!-- I tre segmenti ripetono la parola che sta lì accanto: per chi
+                     legge con uno screen reader sono decorazione. -->
+                <span class="strength__bar" aria-hidden="true">
                   @for (i of dots; track i) {
                     <i [class.on]="i <= strengthValue"></i>
                   }
                 </span>
-                <span class="gauge__strengthText">{{ s.strength }}</span>
-              </div>
+                <span class="strength__value">{{ s.strength }}</span>
+              </p>
             } @else {
               <p class="gauge__note">
                 L’ultima lettura è scaduta. Nessuna indicazione è considerata valida finché non
@@ -104,34 +114,37 @@ import { Timestamp } from '../../shared/ui/timestamp';
             </div>
 
             <div class="tags">
-              <div class="tags__row">
-                <span class="tags__label tags__label--bull">Confermano</span>
+              <span class="tags__label tags__label--up">Confermano</span>
+              <span class="tags__items">
                 @for (item of s.confirming; track item) {
-                  <span class="tag tag--bull">{{ item }}</span>
+                  <span class="chip">{{ item }}</span>
                 }
-              </div>
-              <div class="tags__row">
-                <span class="tags__label tags__label--bear">Contraddicono</span>
+              </span>
+
+              <span class="tags__label tags__label--down">Contraddicono</span>
+              <span class="tags__items">
                 @for (item of s.contradicting; track item) {
-                  <span class="tag tag--bear">{{ item }}</span>
+                  <span class="chip">{{ item }}</span>
                 }
-              </div>
+              </span>
             </div>
 
-            <p class="invalid">
-              <app-icon name="alert" [size]="13" />
+            <p class="fineprint invalid">
+              <app-icon name="alert" [size]="12" />
               <span><strong>Decade con:</strong> {{ s.invalidation }}</span>
             </p>
           </div>
         </div>
 
         <footer class="sig__foot">
-          <div class="sources">
-            <span class="sources__label">Deriva da</span>
-            @for (a of sourceArticles(); track a.slug) {
-              <a [routerLink]="['/analisi', a.slug]">{{ a.kicker }}</a>
-            }
-          </div>
+          @if (sourceArticles().length) {
+            <div class="sources">
+              <span class="sources__label">Deriva da</span>
+              @for (a of sourceArticles(); track a.slug) {
+                <a class="link" [routerLink]="['/analisi', a.slug]">{{ a.kicker }}</a>
+              }
+            </div>
+          }
           <p class="sig__legal">
             Riepilogo editoriale delle analisi pubblicate, valido {{ s.validityMinutes }} minuti
             dall’aggiornamento. <strong>Non è consulenza finanziaria</strong> né un segnale di
@@ -140,27 +153,27 @@ import { Timestamp } from '../../shared/ui/timestamp';
         </footer>
       } @else {
         <header class="sig__bar">
-          <span class="state">
-            <i class="state__dot"></i>
+          <span class="chip">
+            <i class="state__dot" aria-hidden="true"></i>
             In attesa di notizie
           </span>
         </header>
 
         <div class="waiting">
-          <span class="waiting__icon"><app-icon name="clock" [size]="26" /></span>
-          <div class="waiting__body">
-            <p class="waiting__title">Nessuna lettura in corso</p>
-            <p class="waiting__text">
-              Al momento non è in corso alcuna lettura operativa. Le letture compaiono qui dopo la
-              pubblicazione di un’analisi e restano valide per il tempo dichiarato al momento
-              dell’aggiornamento.
-            </p>
-            <div class="waiting__actions">
-              <a class="btn btn--ghost btn--sm" routerLink="/calendario">
-                Guarda il calendario economico <app-icon name="arrow-right" [size]="13" />
-              </a>
-              <a class="btn btn--ghost btn--sm" routerLink="/metodologia">Come lavoriamo</a>
-            </div>
+          <p class="waiting__title">
+            <app-icon name="clock" [size]="15" />
+            Nessuna lettura in corso
+          </p>
+          <p class="waiting__text">
+            Al momento non è in corso alcuna lettura operativa. Le letture compaiono qui dopo la
+            pubblicazione di un’analisi e restano valide per il tempo dichiarato al momento
+            dell’aggiornamento.
+          </p>
+          <div class="waiting__actions">
+            <a class="btn btn--ghost btn--sm" routerLink="/calendario">
+              Guarda il calendario economico <app-icon name="arrow-right" [size]="13" />
+            </a>
+            <a class="btn btn--ghost btn--sm" routerLink="/metodologia">Come lavoriamo</a>
           </div>
         </div>
 
@@ -178,305 +191,257 @@ import { Timestamp } from '../../shared/ui/timestamp';
       display: block;
     }
 
+    /* Il pannello è un riquadro come gli altri: a dire che la lettura è viva
+       basta il bordo in tinta d'accento. Il fondo in sfumatura e l'ombra
+       larga lo staccavano dalla pagina come un pannello di controllo acceso. */
     .sig {
       position: relative;
-      overflow: hidden;
-      border: 1px solid var(--accent-line);
-      border-radius: var(--r-xl);
-      background:
-        radial-gradient(120% 100% at 0% 0%, rgba(var(--accent-rgb), 0.14), transparent 60%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.008)),
-        rgba(13, 12, 11, 0.86);
-      box-shadow: var(--shadow-lg);
-      transition:
-        border-color 0.5s var(--ease),
-        background 0.5s var(--ease);
+      overflow: hidden; /* la barra di validità deve seguire l'angolo smussato */
+      transition: border-color var(--dur) var(--ease);
     }
 
-    .sig--expired,
-    .sig--empty {
-      border-color: var(--line);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.028), rgba(255, 255, 255, 0.006)),
-        rgba(12, 11, 10, 0.8);
+    .sig--live {
+      border-color: var(--accent-line);
     }
 
-    /* Barra di validità residua */
-    .sig__meter {
+    /* --- Barra della validità residua --------------------------------------
+       Fondo neutro e riempimento in tinta piena: la sfumatura da scuro a chiaro
+       faceva sembrare più lunga la coda di tempo che resta davvero.
+       ---------------------------------------------------------------------- */
+
+    .meter {
       position: absolute;
       inset: 0 0 auto;
       height: 3px;
-      background: rgba(255, 255, 255, 0.06);
+      background: var(--surface-2);
     }
 
-    .sig__meter::after {
-      content: '';
+    .meter__fill {
       display: block;
       height: 100%;
-      width: var(--fill, 0%);
-      background: linear-gradient(90deg, var(--accent-deep), var(--accent), var(--accent-soft));
+      background: var(--accent);
       transition: width 1s linear;
     }
 
+    /* --- Intestazione -------------------------------------------------------- */
+
     .sig__bar {
       display: flex;
-      align-items: center;
-      gap: 14px;
       flex-wrap: wrap;
-      padding: 16px 24px 14px;
+      align-items: center;
+      gap: var(--s-3);
+      padding: var(--s-4) var(--s-card);
       border-bottom: 1px solid var(--line);
     }
 
-    .state {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 5px 13px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--line-strong);
-      background: rgba(255, 255, 255, 0.04);
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      color: var(--text-muted);
-    }
-
-    .state--live {
-      border-color: rgba(74, 210, 149, 0.4);
-      background: var(--bull-dim);
-      color: var(--bull);
-    }
-
+    /* Il punto non lampeggia più: un'animazione che si ripete senza fine è la
+       cosa che stanca prima in una pagina fatta per essere letta. */
     .state__dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
+      width: 5px;
+      height: 5px;
+      border-radius: var(--r-pill);
       background: currentColor;
-      opacity: 0.55;
-    }
-
-    .state--live .state__dot {
-      opacity: 1;
-      animation: pulse 2.4s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%,
-      100% {
-        box-shadow: 0 0 0 0 rgba(74, 210, 149, 0.55);
-      }
-      70% {
-        box-shadow: 0 0 0 7px rgba(74, 210, 149, 0);
-      }
     }
 
     .sig__asset {
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      color: var(--accent-soft);
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--text-soft);
     }
 
     .sig__timing {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 14px;
+      gap: var(--s-1) var(--s-4);
       margin-left: auto;
-      font-size: 11.5px;
+      font-size: var(--t-xs);
       color: var(--text-faint);
     }
 
     .sig__left {
       color: var(--accent);
-      font-weight: 600;
-      font-variant-numeric: tabular-nums;
+      font-weight: 500;
     }
 
     .sig__updated {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: var(--s-1);
     }
 
-    /* --- Corpo ------------------------------------------------------------ */
+    /* --- Corpo ---------------------------------------------------------------- */
 
     .sig__body {
       display: grid;
-      grid-template-columns: 280px minmax(0, 1fr);
-      gap: 0;
+      grid-template-columns: 240px minmax(0, 1fr);
     }
 
+    /* La colonna di sinistra si separa con un filetto e non con un fondo più
+       scuro: dentro un riquadro già staccato dalla pagina, un secondo livello di
+       grigio non aggiungeva niente. */
     .gauge {
-      padding: 24px;
+      padding: var(--s-card);
       border-right: 1px solid var(--line);
-      background: rgba(0, 0, 0, 0.18);
-    }
-
-    .gauge__icon {
-      display: grid;
-      place-items: center;
-      width: 56px;
-      height: 56px;
-      border-radius: 19px;
-      background: linear-gradient(140deg, var(--accent-soft), var(--accent-deep));
-      color: var(--accent-ink);
-      box-shadow: var(--shadow-gold);
-      margin-bottom: 18px;
-    }
-
-    .sig--expired .gauge__icon {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--line-strong);
-      color: var(--text-muted);
-      box-shadow: none;
     }
 
     .gauge__label {
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
+      font-size: var(--t-xs);
       color: var(--text-faint);
     }
 
+    /* L'icona stava dentro una piastrella di 56px in sfumatura dorata, sopra al
+       valore. Adesso è in linea con la parola che qualifica, alla misura di
+       un'icona. */
     .gauge__value {
-      margin-top: 7px;
-      font-size: 21px;
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.03em;
-      color: var(--accent-soft);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--s-2);
+      margin-top: var(--s-2);
+      font-size: var(--t-lg);
+      font-weight: 600;
+      line-height: var(--lh-snug);
+      color: var(--text);
     }
 
+    .gauge__value app-icon {
+      margin-top: var(--s-1);
+      color: var(--accent);
+    }
+
+    /* Lettura scaduta: cambia il grigio, non il colore. Lo stato d'attesa si
+       riconosce perché si spegne, non perché si accende di un'altra tinta. */
     .sig--expired .gauge__value {
       color: var(--text-muted);
     }
 
-    .gauge__strength {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 18px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-      font-size: 11px;
+    .sig--expired .gauge__value app-icon {
       color: var(--text-faint);
     }
 
-    .gauge__strengthText {
-      color: var(--accent);
-      font-weight: 700;
+    .strength {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--s-2);
+      margin-top: var(--s-4);
+      padding-top: var(--s-4);
+      border-top: 1px solid var(--line);
+      font-size: var(--t-xs);
+      color: var(--text-faint);
+    }
+
+    .strength__bar {
+      display: inline-flex;
+      gap: 2px;
+    }
+
+    .strength__bar i {
+      width: 14px;
+      height: 3px;
+      border-radius: var(--r-pill);
+      background: var(--surface-2);
+    }
+
+    .strength__bar i.on {
+      background: var(--accent);
+    }
+
+    .strength__value {
+      color: var(--text-soft);
+      font-weight: 500;
       text-transform: capitalize;
     }
 
-    .dots {
-      display: inline-flex;
-      gap: 4px;
-    }
-
-    .dots i {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      opacity: 0.2;
-    }
-
-    .dots i.on {
-      opacity: 1;
-    }
-
     .gauge__note {
-      margin-top: 16px;
-      padding-top: 14px;
+      margin-top: var(--s-4);
+      padding-top: var(--s-4);
       border-top: 1px solid var(--line);
-      font-size: 12px;
-      line-height: 1.6;
+      font-size: var(--t-xs);
+      line-height: var(--lh-snug);
       color: var(--text-faint);
     }
 
     .detail {
-      padding: 24px;
+      padding: var(--s-card);
       min-width: 0;
     }
 
-    /* La lettura scaduta resta leggibile ma chiaramente in secondo piano:
-       sotto questa soglia le etichette diventavano illeggibili su mobile. */
-    .sig--expired .detail {
-      opacity: 0.58;
-      filter: saturate(0.45);
+    .detail__headline {
+      font-size: var(--t-xl);
+      line-height: var(--lh-snug);
+      max-width: var(--measure);
     }
 
-    .detail__headline {
-      font-size: 20px;
-      line-height: 1.28;
-      letter-spacing: -0.03em;
+    .sig--expired .detail__headline {
+      color: var(--text-soft);
     }
 
     .detail__stance {
-      margin-top: 10px;
-      font-size: 14px;
-      line-height: 1.65;
+      max-width: var(--measure);
+      margin-top: var(--s-3);
+      font-size: var(--t-base);
+      line-height: var(--lh-base);
       color: var(--text-muted);
-      max-width: 72ch;
     }
+
+    /* --- Favorito e da evitare -----------------------------------------------
+       Erano due riquadri col fondo verde e col fondo rosso, uno accanto
+       all'altro: due macchie di colore che pesavano più della frase che sta
+       sopra. Restano distinguibili a colpo d'occhio con il filetto in tinta e
+       l'intestazione colorata, che è quanto serve per capire quale è quale.
+       ------------------------------------------------------------------------ */
 
     .cols {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
-      gap: 12px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+      gap: var(--s-5);
+      margin-top: var(--s-5);
     }
 
     .col {
-      padding: 15px 17px;
-      border-radius: var(--r-md);
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.022);
+      padding-top: var(--s-3);
+      border-top: 1px solid var(--line);
     }
 
     .col__title {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 11px;
+      gap: var(--s-2);
+      margin-bottom: var(--s-3);
+      font-size: var(--t-xs);
+      font-weight: 500;
     }
 
     .col--fav {
-      border-color: rgba(74, 210, 149, 0.26);
-      background: var(--bull-dim);
+      border-top-color: var(--up-line);
     }
 
     .col--fav .col__title {
-      color: var(--bull);
+      color: var(--up);
     }
 
     .col--avoid {
-      border-color: rgba(255, 95, 102, 0.26);
-      background: var(--bear-dim);
+      border-top-color: var(--down-line);
     }
 
     .col--avoid .col__title {
-      color: var(--bear);
+      color: var(--down);
     }
 
     .col ul {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: var(--s-2);
     }
 
     .col li {
       position: relative;
-      padding-left: 15px;
-      font-size: 13.2px;
-      line-height: 1.58;
+      padding-left: var(--s-4);
+      font-size: var(--t-sm);
+      line-height: var(--lh-snug);
       color: var(--text-soft);
     }
 
@@ -485,192 +450,152 @@ import { Timestamp } from '../../shared/ui/timestamp';
       position: absolute;
       left: 0;
       top: 9px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: currentColor;
-      opacity: 0.45;
+      width: 5px;
+      height: 1px;
+      background: var(--text-faint);
     }
+
+    .col--fav li::before {
+      background: var(--up);
+    }
+
+    .col--avoid li::before {
+      background: var(--down);
+    }
+
+    /* --- Conferme e contraddizioni --------------------------------------------
+       Due righe etichettate: il colore sta sull'etichetta, le voci restano
+       pastiglie neutre. Colorarle tutte faceva sedici macchie verdi e rosse in
+       un riquadro che ne aveva già abbastanza.
+       -------------------------------------------------------------------------- */
 
     .tags {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-      margin-top: 18px;
-    }
-
-    .tags__row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 6px;
+      display: grid;
+      grid-template-columns: max-content minmax(0, 1fr);
+      align-items: baseline;
+      gap: var(--s-2) var(--s-3);
+      margin-top: var(--s-5);
     }
 
     .tags__label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      min-width: 96px;
+      font-size: var(--t-xs);
+      font-weight: 500;
     }
 
-    .tags__label--bull {
-      color: var(--bull);
+    .tags__label--up {
+      color: var(--up);
     }
 
-    .tags__label--bear {
-      color: var(--bear);
+    .tags__label--down {
+      color: var(--down);
     }
 
-    .tag {
-      padding: 3px 10px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.03);
-      font-size: 11px;
+    .tags__items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2);
+    }
+
+    /* Scaduta la lettura, verde e rosso direbbero ancora «vale adesso». */
+    .sig--expired .col {
+      border-top-color: var(--line);
+    }
+
+    .sig--expired .col__title,
+    .sig--expired .tags__label {
       color: var(--text-muted);
     }
 
-    .tag--bull {
-      border-color: rgba(74, 210, 149, 0.24);
+    .sig--expired .col li::before {
+      background: var(--text-faint);
     }
 
-    .tag--bear {
-      border-color: rgba(255, 95, 102, 0.24);
-    }
-
+    /* Condizione di decadenza: il filetto la stacca dal resto, l'icona resta
+       l'unico segno ambrato del riquadro. */
     .invalid {
-      display: flex;
-      align-items: flex-start;
-      gap: 9px;
-      margin-top: 18px;
-      padding-top: 15px;
+      padding-top: var(--s-4);
       border-top: 1px solid var(--line);
-      font-size: 12.5px;
-      line-height: 1.6;
-      color: var(--text-faint);
     }
 
     .invalid app-icon {
-      margin-top: 2px;
       color: var(--warn);
-      flex: none;
     }
 
     .invalid strong {
+      font-weight: 500;
       color: var(--text-soft);
     }
 
-    /* --- Attesa ------------------------------------------------------------ */
+    /* --- Attesa ---------------------------------------------------------------- */
 
     .waiting {
-      display: flex;
-      align-items: flex-start;
-      gap: 18px;
-      padding: 26px 24px;
-    }
-
-    .waiting__icon {
-      display: grid;
-      place-items: center;
-      flex: none;
-      width: 56px;
-      height: 56px;
-      border-radius: 19px;
-      border: 1px solid var(--line-strong);
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-muted);
-    }
-
-    .waiting__body {
-      min-width: 0;
+      padding: var(--s-card);
     }
 
     .waiting__title {
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
+      font-size: var(--t-lg);
+      font-weight: 600;
+      line-height: var(--lh-snug);
       color: var(--text-soft);
     }
 
+    .waiting__title app-icon {
+      color: var(--text-faint);
+    }
+
     .waiting__text {
-      margin-top: 9px;
-      font-size: 13.5px;
-      line-height: 1.65;
+      max-width: var(--measure);
+      margin-top: var(--s-3);
+      font-size: var(--t-sm);
+      line-height: var(--lh-base);
       color: var(--text-muted);
-      max-width: 68ch;
     }
 
     .waiting__actions {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 10px;
-      margin-top: 18px;
+      gap: var(--s-2);
+      margin-top: var(--s-5);
     }
 
-    /* --- Piede -------------------------------------------------------------- */
+    /* --- Piede -------------------------------------------------------------------- */
 
     .sig__foot {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 14px 24px 16px;
+      flex-direction: column;
+      gap: var(--s-3);
+      padding: var(--s-4) var(--s-card);
       border-top: 1px solid var(--line);
-      background: rgba(0, 0, 0, 0.2);
     }
 
     .sources {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 8px;
-      font-size: 11px;
+      gap: var(--s-2) var(--s-3);
+      font-size: var(--t-xs);
     }
 
     .sources__label {
       color: var(--text-faint);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 10px;
     }
 
-    .sources a {
-      padding: 3px 10px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--line);
-      color: var(--text-muted);
-      transition:
-        border-color 0.25s var(--ease),
-        color 0.25s var(--ease);
-    }
-
-    .sources a:hover {
-      border-color: var(--accent-line);
-      color: var(--accent-soft);
-    }
-
+    /* L'avvertenza resta, ma in grigio: era ambrata e allineata a destra, e
+       nel piede finiva per essere la cosa che si guardava per prima. */
     .sig__legal {
-      flex: 1;
-      min-width: 260px;
-      text-align: right;
-      font-size: 10.5px;
-      line-height: 1.5;
+      max-width: var(--measure);
+      font-size: var(--t-xs);
+      line-height: var(--lh-snug);
       color: var(--text-faint);
     }
 
-    /* Senza l'elenco delle fonti accanto, l'allineamento a destra resterebbe
-       appeso nel vuoto. */
-    .sig--empty .sig__legal {
-      text-align: left;
-    }
-
     .sig__legal strong {
-      color: var(--warn);
+      font-weight: 500;
+      color: var(--text-soft);
     }
 
     @media (max-width: 900px) {
@@ -682,82 +607,38 @@ import { Timestamp } from '../../shared/ui/timestamp';
         border-right: 0;
         border-bottom: 1px solid var(--line);
       }
-
-      .sig__legal {
-        text-align: left;
-        min-width: 0;
-      }
-
-      .tags__label {
-        min-width: 0;
-      }
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 620px) {
       .sig__bar {
-        padding: 13px 16px 11px;
-        gap: 10px;
+        gap: var(--s-2) var(--s-3);
+        padding: var(--s-3) var(--s-4);
       }
 
       .sig__timing {
-        flex-wrap: wrap;
-        gap: 4px 10px;
-        margin-left: 0;
         flex: 1 0 100%;
+        margin-left: 0;
       }
 
       .gauge,
-      .detail {
-        padding: 18px 16px;
-      }
-
-      .gauge__icon {
-        width: 46px;
-        height: 46px;
-        border-radius: 15px;
-        margin-bottom: 14px;
-      }
-
-      .gauge__value {
-        font-size: 18px;
+      .detail,
+      .waiting,
+      .sig__foot {
+        padding-left: var(--s-4);
+        padding-right: var(--s-4);
       }
 
       .detail__headline {
-        font-size: 17px;
+        font-size: var(--t-lg);
       }
 
-      .detail__stance {
-        font-size: 13.4px;
+      /* In verticale l'etichetta va sopra alle voci che introduce. */
+      .tags {
+        grid-template-columns: minmax(0, 1fr);
       }
 
-      .waiting {
-        flex-direction: column;
-        gap: 14px;
-        padding: 20px 16px;
-      }
-
-      .waiting__icon {
-        width: 46px;
-        height: 46px;
-        border-radius: 15px;
-      }
-
-      .waiting__title {
-        font-size: 16px;
-      }
-
-      .sig__foot {
-        padding: 13px 16px 15px;
-      }
-
-      /* In verticale l'etichetta va sopra ai relativi indicatori. */
-      .tags__row {
-        gap: 5px;
-      }
-
-      .tags__label {
-        flex: 1 0 100%;
-        margin-bottom: 1px;
+      .tags__items + .tags__label {
+        margin-top: var(--s-2);
       }
     }
   `,

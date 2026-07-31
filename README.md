@@ -1,9 +1,8 @@
 # Vitanera
 
 Sito in Angular 21 dedicato a macroeconomia, banche centrali, geopolitica e XAU/USD.
-Tema scuro con accento oro, contenuti organizzati per categorie, un calendario economico con lo
-storico completo dei principali indicatori di Stati Uniti e area euro, e avvertenze legali diffuse in
-ogni schermata.
+Tema scuro con accento oro, contenuti organizzati per categorie e un calendario economico con lo
+storico completo dei principali indicatori di Stati Uniti e area euro.
 
 > **Avvertenza.** Il sito non è una testata giornalistica ai sensi della L. 62/2001 e non è registrato presso
 > alcun tribunale. I contenuti hanno finalità informative e didattiche e non costituiscono consulenza
@@ -36,8 +35,8 @@ La pubblicazione è automatica: il workflow [`.github/workflows/pages.yml`](.git
 installa le dipendenze, esegue i test, compila e pubblica `dist/vitanera/browser` a ogni push su
 `master`.
 
-> **Impostazione necessaria una sola volta.** Su GitHub: *Settings → Pages → Build and deployment →
-> Source* deve essere impostato su **GitHub Actions**. Finché resta su *Deploy from a branch* il
+> **Impostazione necessaria una sola volta.** Su GitHub: _Settings → Pages → Build and deployment →
+> Source_ deve essere impostato su **GitHub Actions**. Finché resta su _Deploy from a branch_ il
 > workflow compila ma la pubblicazione non avviene, perché Pages continua a servire i file del
 > repository invece dell’output compilato.
 
@@ -66,7 +65,7 @@ ricaricamento forzato con `Ctrl+F5`, oppure una finestra in incognito per averne
 ```
 src/app/
 ├─ core/
-│  ├─ config/site.config.ts        testi legali, navigazione, le 29 categorie e le 5 famiglie
+│  ├─ config/site.config.ts        navigazione, testi legali brevi, 29 categorie e 5 famiglie
 │  ├─ data/articles.data.ts        archivio delle analisi
 │  ├─ data/calendar.meta.ts        testi redazionali degli indicatori e anagrafica di chi parla
 │  ├─ data/calendar.series.ts      GENERATO — storico dei valori
@@ -78,9 +77,9 @@ src/app/
 │  ├─ data/signal.data.ts          indicatore operativo mostrato in panoramica
 │  ├─ models/article.model.ts      modello dei contenuti, dei blocchi e delle categorie
 │  ├─ models/calendar.model.ts     modello del calendario economico
-│  └─ services/                    contenuti, calendario, orologio condiviso, presa visione
+│  └─ services/                    contenuti, calendario, orologio condiviso, esportazione
 ├─ shared/
-│  ├─ legal/                       barra permanente, modale, avvertenza riutilizzabile, footer
+│  ├─ legal/                       avvertenza in una riga, piè di pagina
 │  └─ ui/                          icone, schede, badge, orari, intestazione, grafici
 └─ features/
    ├─ home/                        panoramica e indicatore operativo
@@ -102,13 +101,34 @@ consenso, valore effettivo, precedente), un grafico che mette a confronto effett
 data della prossima uscita con il relativo previsto. `/calendario/banche-centrali` riporta le riunioni
 già fissate di Federal Reserve e BCE e gli interventi annunciati dei loro membri.
 
-| Percorso | Pagina |
-| --- | --- |
-| `/calendario` | Le due aree, le prossime uscite, l’agenda delle banche centrali |
-| `/calendario/usa` | I venti indicatori statunitensi |
-| `/calendario/euro-zona` | I nove indicatori dell’area euro |
-| `/calendario/<area>/<indicatore>` | Storico completo, grafico, prossima uscita |
-| `/calendario/banche-centrali` | Decisioni sui tassi, discorsi, verbali, conferenze stampa |
+| Percorso                          | Pagina                                                          |
+| --------------------------------- | --------------------------------------------------------------- |
+| `/calendario`                     | Le due aree, le prossime uscite, l’agenda delle banche centrali |
+| `/calendario/usa`                 | I venti indicatori statunitensi                                 |
+| `/calendario/euro-zona`           | I nove indicatori dell’area euro                                |
+| `/calendario/<area>/<indicatore>` | Storico completo, grafico, prossima uscita                      |
+| `/calendario/banche-centrali`     | Decisioni sui tassi, discorsi, verbali, conferenze stampa       |
+
+### Esportare i dati
+
+Ogni pagina del calendario ha un pulsante che genera un file **Markdown** e lo scarica: l’intero
+calendario da `/calendario`, una sola area dalla pagina d’area, un solo indicatore dalla sua scheda.
+
+| Da dove                           | Che cosa contiene                                                       | Peso    |
+| --------------------------------- | ----------------------------------------------------------------------- | ------- |
+| `/calendario`                     | I 29 indicatori di entrambe le aree, più l’agenda delle banche centrali | ~300 kB |
+| `/calendario/usa`                 | I 20 indicatori statunitensi                                            | ~200 kB |
+| `/calendario/euro-zona`           | I 9 indicatori dell’area euro                                           | ~100 kB |
+| `/calendario/<area>/<indicatore>` | Un solo indicatore                                                      | ~10 kB  |
+
+Per ogni indicatore il file riporta scheda descrittiva, fonte, ultimo valore, prossima uscita e la
+tabella completa delle diffusioni — data e ora, previsto, attuale, precedente, scostamento — nello
+stesso formato numerico e nello stesso fuso usati a video.
+
+Il documento si costruisce solo al clic ([`export-button.ts`](src/app/shared/ui/export-button.ts)):
+tenerne in memoria trecento kilobyte per chi la pagina la sta soltanto leggendo non avrebbe senso.
+La generazione vive in [`calendar-export.ts`](src/app/core/services/calendar-export.ts) ed è fatta di
+funzioni pure, verificate da `src/app/core/services/export.spec.ts`.
 
 ### Aggiornare i dati
 
@@ -155,13 +175,13 @@ da essa dipendono la tinta della pagina e la pastiglia in evidenza sulle schede.
 
 Le categorie sono ventinove, raccolte in cinque famiglie e definite in `site.config.ts`:
 
-| Famiglia | Categorie |
-| --- | --- |
-| Aree e temi | USA, Europa, Asia, Geopolitica |
-| Banche centrali | Fed, Bce, Tasso di interesse |
-| Lavoro | Tasso di disoccupazione, Richieste iniziali sussidi di disoccupazione, Buste paga settore non agricolo (NFP) |
-| Prezzi e inflazione | Indice dei prezzi al consumo (IPC), Variazione IPC, IPC Core, Variazione IPC Core, Indice dei prezzi per i consumi personali (PCE), PCE Core Annuale, PCE Core Trimestrale, Variazione PCE Core, Variazione IPP, Variazione IPP Core (PPI) |
-| Attività economica | Rapporto sulla fiducia dei consumatori, Indice di produzione industriale, Variazione produzione industriale, PIL, PIL Annuale, PIL Trimestrale, Variazione vendite al dettaglio, Vendite al dettaglio beni essenziali, Indice delle vendite al dettaglio |
+| Famiglia            | Categorie                                                                                                                                                                                                                                                |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Aree e temi         | USA, Europa, Asia, Geopolitica                                                                                                                                                                                                                           |
+| Banche centrali     | Fed, Bce, Tasso di interesse                                                                                                                                                                                                                             |
+| Lavoro              | Tasso di disoccupazione, Richieste iniziali sussidi di disoccupazione, Buste paga settore non agricolo (NFP)                                                                                                                                             |
+| Prezzi e inflazione | Indice dei prezzi al consumo (IPC), Variazione IPC, IPC Core, Variazione IPC Core, Indice dei prezzi per i consumi personali (PCE), PCE Core Annuale, PCE Core Trimestrale, Variazione PCE Core, Variazione IPP, Variazione IPP Core (PPI)               |
+| Attività economica  | Rapporto sulla fiducia dei consumatori, Indice di produzione industriale, Variazione produzione industriale, PIL, PIL Annuale, PIL Trimestrale, Variazione vendite al dettaglio, Vendite al dettaglio beni essenziali, Indice delle vendite al dettaglio |
 
 Un commento all’inflazione americana sta quindi insieme in `usa`, `variazione-ipc` e `ipc-core`, e si
 ritrova da tutte e tre le pagine di argomento. L’indice completo è in `/argomenti`; l’elenco di una
@@ -179,16 +199,16 @@ l’ultima.
 Vale `null` finché non esiste alcuna lettura in corso — è lo stato in cui il sito riparte: la
 panoramica mostra allora il riquadro «In attesa di notizie» al posto dell’indicatore.
 
-| Campo | Cosa contiene |
-| --- | --- |
-| `updatedAt` | Data e ora dell’aggiornamento. Fa fede per la scadenza. |
-| `validityMinutes` | Durata della validità in minuti, mostrata anche al lettore. Scaduta, la panoramica passa a «in attesa di notizie». |
-| `direction` / `strength` | Impostazione e forza del segnale. |
-| `headline` / `stance` | Titolo e sintesi discorsiva. |
-| `favours` / `avoid` | Le due colonne «Favorito» e «Da evitare». |
-| `confirming` / `contradicting` | Strumenti che confermano o contraddicono. |
-| `invalidation` | Condizione che fa decadere la lettura. |
-| `sources` | Slug delle analisi da cui deriva; diventano collegamenti. |
+| Campo                          | Cosa contiene                                                                                                      |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `updatedAt`                    | Data e ora dell’aggiornamento. Fa fede per la scadenza.                                                            |
+| `validityMinutes`              | Durata della validità in minuti, mostrata anche al lettore. Scaduta, la panoramica passa a «in attesa di notizie». |
+| `direction` / `strength`       | Impostazione e forza del segnale.                                                                                  |
+| `headline` / `stance`          | Titolo e sintesi discorsiva.                                                                                       |
+| `favours` / `avoid`            | Le due colonne «Favorito» e «Da evitare».                                                                          |
+| `confirming` / `contradicting` | Strumenti che confermano o contraddicono.                                                                          |
+| `invalidation`                 | Condizione che fa decadere la lettura.                                                                             |
+| `sources`                      | Slug delle analisi da cui deriva; diventano collegamenti.                                                          |
 
 Trascorsi i minuti di validità l’indicatore passa da solo allo stato **«In attesa di notizie»**: la
 barra si svuota, il pannello si attenua e la lettura precedente resta visibile solo come storico.
@@ -202,25 +222,83 @@ tempo trascorso senza ricaricare la pagina. Entro **dodici ore** compare la form
 dell’ultima ora sono evidenziate nel colore dell’accento corrente. La soglia si cambia in
 `RELATIVE_LIMIT_HOURS`.
 
-## Stile per sezione
+## Il sistema di stile
 
-Ogni area ha una propria tinta, costruita sempre sugli stessi token di forma, spaziatura e tipografia.
+Tutto vive in [`src/styles.scss`](src/styles.scss) e sta in tre regole.
 
-| Sezione | Tinta |
-| --- | --- |
-| Panoramica e calendario | oro |
-| Calendario USA · categorie dei prezzi | rame |
-| Calendario Euro zona · categorie del lavoro | verde salvia |
-| Banche centrali · orizzonti | prugna |
-| Aree e temi (USA, Europa, Asia, geopolitica) | terracotta |
-| Argomenti · attività economica · metodologia e glossario | sabbia |
-| Pagine legali | ambra |
+**Le superfici sono piatte.** Un bordo di un pixel separa le cose. Non ci sono ombre dentro la
+pagina, né vetri smerigliati, né sfumature su fondi o testo: `--shadow-pop` è l'unica ombra
+rimasta e serve solo a ciò che galleggia davvero, cioè il pannello dei risultati di ricerca.
 
-Le tinte sono definite in `src/styles.scss` nei blocchi `[data-accent='…']`; l’attributo viene
-applicato al guscio dal metodo `accent()` di `src/app/app.ts`. Con ventinove categorie una tinta
-ciascuna sarebbe illeggibile: le pagine di argomento e le analisi prendono quindi il colore della
-**famiglia** della categoria principale. Il segno di marca resta sempre oro e le avvertenze legali
-sempre ambra, così da essere riconoscibili in qualunque sezione.
+**Le misure vengono da una scala.** Corpo del testo, spazi e raggi hanno un numero fisso di
+valori possibili; se una misura non è nella scala, non si usa.
+
+| Scala      | Token                                 | Valori                                        |
+| ---------- | ------------------------------------- | --------------------------------------------- |
+| Corpo      | `--t-micro` → `--t-3xl`               | 11 · 12 · 13 · 14 · 15 · 17 · 20 · 25 · 32 px |
+| Spazi      | `--s-1` → `--s-10`                    | multipli di 4, da 4 a 72 px                   |
+| Raggi      | `--r-sm` `--r-md` `--r-lg` `--r-pill` | 6 · 10 · 14 px · pillola                      |
+| Interlinea | `--lh-tight` → `--lh-loose`           | 1,2 · 1,45 · 1,6 · 1,75                       |
+
+`--s-section` (44 px) è la distanza fra due blocchi di una pagina e `--s-card` (20 px)
+l'imbottitura interna di un riquadro: sono le due misure che danno il ritmo a tutto il resto.
+`--measure` (68ch) è la larghezza massima di una colonna di testo.
+
+I pesi tipografici sono tre: 400 per il corpo, 500 per enfasi ed etichette, 600 per titoli e
+numeri di rilievo. Il grassetto a 700 e 800 non si usa, e infatti non viene nemmeno scaricato.
+
+**Il colore è informazione.** L'accento marca ciò che si può toccare e la sezione in cui ci si
+trova; `--up` e `--down` dicono il segno di un numero. Tutto il resto è grigio caldo.
+
+I primitivi condivisi — `.card`, `.chip`, `.btn`, `.sec-head`, `.block`, `.link`, `.fineprint`,
+`.eyebrow`, `.prose` — sono dichiarati una volta sola e nessuna pagina li ridefinisce.
+
+### Movimento
+
+Una sola animazione, `.anim-in`: una comparsa di 0,28 s all'ingresso in pagina. Non c'è nulla che
+si sollevi al passaggio del puntatore, che ruoti o che pulsi. L'hover cambia colore, fondo o
+bordo, e la pagina non si muove sotto il puntatore.
+
+### Tinte di sezione
+
+Ogni area ha una propria tinta, costruita sempre sugli stessi token di forma, spaziatura e
+tipografia. Tutte sono desaturate sulla stessa intensità: cambia la famiglia cromatica, non
+quanto il colore si fa sentire.
+
+| Sezione                                                  | Tinta        |
+| -------------------------------------------------------- | ------------ |
+| Panoramica e calendario                                  | oro          |
+| Calendario USA · categorie dei prezzi                    | rame         |
+| Calendario Euro zona · categorie del lavoro              | verde salvia |
+| Banche centrali · orizzonti                              | prugna       |
+| Aree e temi (USA, Europa, Asia, geopolitica)             | terracotta   |
+| Argomenti · attività economica · metodologia e glossario | sabbia       |
+| Pagine legali                                            | ambra        |
+
+Le tinte sono definite nei blocchi `[data-accent='…']`; l’attributo viene applicato al guscio dal
+metodo `accent()` di [`src/app/app.ts`](src/app/app.ts). Con ventinove categorie una tinta ciascuna
+sarebbe illeggibile: le pagine di argomento e le analisi prendono quindi il colore della
+**famiglia** della categoria principale. Il segno di marca resta sempre oro e le pagine di
+trasparenza sempre ambra, così da essere riconoscibili in qualunque sezione.
+
+## Navigazione
+
+Il guscio è in [`app.html`](src/app/app.html) e [`app.scss`](src/app/app.scss), e ha due elementi.
+
+La **barra laterale** è l'unica mappa del sito: quattro gruppi — osservatorio, calendario,
+scenari, strumenti — e in fondo, staccate da un filetto, le tre pagine di trasparenza. Stanno lì e
+non fra le voci di navigazione perché sono documenti da consultare, non contenuto da leggere: per
+questo vivono in `LEGAL_NAV` e non in `NAV`. Sotto i 1080 px la barra diventa un menu a scomparsa.
+
+La **barra superiore** è alta una riga sola e porta le briciole di pane e la ricerca. L'ultima
+briciola è il nome della pagina corrente: prima c'erano la catena _e_ il titolo ripetuto sotto,
+più una pastiglia di avvertenza e due scorciatoie che erano già nella barra laterale. Sotto i
+720 px restano la panoramica e la pagina corrente — i due punti in cui si vuole tornare — e la
+ricerca si apre da un pulsante.
+
+Lo sfondo è una tinta piatta. C'erano tre strati sovrapposti dietro ogni parola del sito: un
+bagliore dorato, un globo punteggiato che ruotava su sé stesso in quattro minuti e una griglia
+sfumata. Da lì veniva quasi tutto il rumore.
 
 ### I grafici
 
@@ -232,21 +310,33 @@ canale — legenda, etichetta finale e tabella riportano gli stessi numeri.
 
 ## Dove compaiono le avvertenze
 
-| Punto                    | Contenuto                                                   |
-| ------------------------ | ----------------------------------------------------------- |
-| Barra superiore          | avvertenza permanente, non chiudibile                       |
-| Modale di primo accesso  | cinque punti chiave, presa visione memorizzata localmente   |
-| Barra laterale           | riquadro «Trasparenza»                                      |
-| Ogni scheda in elenco    | riga «Contenuto informativo · non è consulenza finanziaria» |
-| Apertura di ogni analisi | riquadro «Prima di leggere»                                 |
-| Chiusura di ogni analisi | avvertenza estesa in sette paragrafi                        |
-| Piè di pagina            | avvertenza estesa, note su dati e cookie, copyright         |
-| Pagine dedicate          | `/avvertenze`, `/note-legali`, `/privacy`                   |
-| `index.html`             | meta description, meta `disclaimer`, blocco `<noscript>`    |
-| Stampa                   | nota legale aggiunta in coda tramite CSS                    |
+L’avvertenza compare **dove il lettore incontra un giudizio**, e mai più di una volta per
+schermata.
 
-I testi sono centralizzati in `src/app/core/config/site.config.ts` e `src/app/core/data/legal.data.ts`:
-modificarli lì aggiorna l’intero sito.
+| Punto                   | Contenuto                                                             |
+| ----------------------- | --------------------------------------------------------------------- |
+| Pagine dedicate         | `/avvertenze`, `/note-legali`, `/privacy` — il testo integrale        |
+| Piè di pagina           | il riassunto in tre righe, con il rimando al testo integrale          |
+| Barra laterale          | i tre documenti, in fondo alla navigazione                            |
+| Chiusura di un’analisi  | una riga: `<app-risk-notice />`                                       |
+| Orizzonti e metodologia | la stessa riga, per lo stesso motivo                                  |
+| Pagine del calendario   | nessuna avvertenza legale; resta la nota sui dati, che è informazione |
+| `index.html`            | meta description, meta `disclaimer`, blocco `<noscript>`              |
+| Stampa                  | nota legale aggiunta in coda tramite CSS                              |
+
+Prima erano dodici riquadri sparsi per il sito, più una barra permanente in cima a ogni schermata
+e una modale che bloccava il primo accesso. Sulla pagina di un’analisi se ne contavano cinque, e
+il piè di pagina diceva tre volte la stessa cosa: sette paragrafi estesi, due paragrafi che li
+riassumevano e una riga di chiusura. La ripetizione non rende un’avvertenza più chiara — la rende
+invisibile, e con essa tutto il resto della pagina.
+
+Il vincolo è verificato: [`pages.spec.ts`](src/app/features/pages.spec.ts) controlla che le pagine
+di dati e di indice non ne portino **nessuna** e che quelle di giudizio ne portino **esattamente
+una**. Senza quel controllo la formula si moltiplica da sola, perché aggiungerla «per sicurezza» è
+sempre la scelta che costa meno sul momento.
+
+I testi vivono in [`site.config.ts`](src/app/core/config/site.config.ts) — ne restano tre, tutti
+brevi — e in [`legal.data.ts`](src/app/core/data/legal.data.ts), che è la fonte del testo integrale.
 
 I testi legali sono redatti in forma divulgativa e **non costituiscono un parere legale**: per un
 adeguamento normativo puntuale è opportuna la revisione di un professionista abilitato.

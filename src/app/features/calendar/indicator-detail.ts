@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DISCLAIMER_DATA } from '../../core/config/site.config';
-import { Release, Stage } from '../../core/models/calendar.model';
+import { Stage } from '../../core/models/calendar.model';
 import { ContentService } from '../../core/services/content.service';
 import {
   CalendarService,
@@ -10,7 +10,8 @@ import {
   calendarDateTime,
   calendarTime,
 } from '../../core/services/calendar.service';
-import { RiskNotice } from '../../shared/legal/risk-notice';
+import { calendarMarkdown, exportFilename } from '../../core/services/calendar-export';
+import { ExportButton } from '../../shared/ui/export-button';
 import { Icon } from '../../shared/ui/icon';
 import { PageHeader } from '../../shared/ui/page-header';
 import { IndicatorChart } from '../../shared/ui/indicator-chart';
@@ -24,12 +25,15 @@ const PREVIEW_ROWS = 14;
  *
  * La tabella non è un ripiego rispetto al grafico: è il modo in cui i tre
  * numeri che contano — atteso, effettivo, scostamento — restano leggibili anche
- * a chi non distingue i colori del grafico o legge la pagina stampata.
+ * a chi non distingue i colori del grafico o legge la pagina stampata. Per
+ * questo tutto il resto della pagina le fa spazio: l'identikit dell'indicatore
+ * è una riga di testo, la sintesi in alto è una riga di dati divisa da filetti,
+ * e la scheda descrittiva è un elenco, non una fila di riquadri.
  */
 @Component({
   selector: 'app-indicator-detail',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, PageHeader, Icon, RiskNotice, IndicatorChart],
+  imports: [RouterLink, PageHeader, Icon, IndicatorChart, ExportButton],
   template: `
     @if (indicator(); as ind) {
       <app-page-header
@@ -38,85 +42,97 @@ const PREVIEW_ROWS = 14;
         icon="chart"
         [description]="ind.what"
       >
-        <div class="head-facts">
-          <a class="chip chip--sm chip--neutral" [routerLink]="['/calendario', areaPath()]">
-            <app-icon name="arrow-right" [size]="11" />
-            {{ calendar.areaName(ind.area) }}
-          </a>
-          <span class="chip chip--sm chip--neutral">
-            <app-icon name="clock" [size]="11" />
-            {{ cadenceLabel() }}
-          </span>
-          <span class="chip chip--sm chip--neutral">
-            <app-icon name="bank" [size]="11" />
-            {{ ind.source }}
-          </span>
-          <span class="chip chip--sm chip--gold">
-            <app-icon name="archive" [size]="11" />
-            {{ ind.releases.length }} diffusioni
-          </span>
+        <!-- Area, cadenza, fonte e profondità dell'archivio: erano quattro
+             pastiglie, ma sono quattro dati di servizio e stanno in una riga. -->
+        <p class="ident">
+          <a class="link" [routerLink]="['/calendario', areaPath()]">{{
+            calendar.areaName(ind.area)
+          }}</a>
+          · {{ cadenceLabel() }} · {{ ind.source }} · {{ ind.releases.length }} diffusioni
+        </p>
+
+        <div class="export">
+          <app-export-button
+            label="Esporta questo indicatore"
+            [filename]="exportName()"
+            [build]="buildExport"
+          />
+          <p class="export__note">
+            Scarica in Markdown la scheda e tutte le {{ ind.releases.length }} diffusioni. Per
+            l’intero calendario c’è l’esportazione completa in
+            <a routerLink="/calendario">Indici principali</a>.
+          </p>
         </div>
       </app-page-header>
 
       <!-- ---------------------------------------------------------------- -->
-      <!-- Ultimo dato e prossima uscita                                     -->
+      <!-- Ultimo dato, scostamento, prossima uscita                         -->
       <!-- ---------------------------------------------------------------- -->
       <section class="block">
-        <div class="facts">
-          <article class="card fact fact--main">
-            <p class="fact__label">Ultimo valore diffuso</p>
+        <div class="card summary">
+          <div class="summary__cell">
+            <p class="summary__label">Ultimo valore diffuso</p>
             @if (last(); as l) {
-              <p class="fact__value tnum">{{ calendar.value(l.actual, ind) }}</p>
-              <p class="fact__meta">
+              <p class="summary__value tnum">{{ calendar.value(l.actual, ind) }}</p>
+              <p class="summary__meta">
                 {{ l.period }}
                 @if (l.stage) {
                   · {{ stageLabel(l.stage) }}
                 }
               </p>
-              <p class="fact__meta fact__meta--dim">Diffuso il {{ when(l.at) }}</p>
-              <div class="fact__row">
-                <span class="fact__mini">
-                  Atteso <strong class="tnum">{{ calendar.value(l.forecast, ind) }}</strong>
-                </span>
-                @if (surprise(); as s) {
-                  <span class="pill" [class]="'pill--' + s.tone">
-                    <app-icon [name]="arrow(s.delta)" [size]="11" />
-                    {{ s.label }} · {{ s.wording }}
-                  </span>
-                }
-              </div>
+              <p class="summary__meta">Diffuso il {{ when(l.at) }}</p>
             } @else {
-              <p class="fact__value">—</p>
-              <p class="fact__meta">Nessuna diffusione registrata.</p>
+              <p class="summary__value">—</p>
+              <p class="summary__meta">Nessuna diffusione registrata.</p>
             }
-          </article>
+          </div>
 
-          <article class="card fact fact--next">
-            <p class="fact__label">Prossima uscita</p>
-            @if (next(); as next) {
-              <p class="fact__value fact__value--date">{{ dayOf(next.at) }}</p>
-              <p class="fact__meta">alle {{ timeOf(next.at) }} · ora di Roma</p>
-              <p class="fact__meta fact__meta--dim">Periodo di riferimento: {{ next.period }}</p>
-              <div class="fact__row">
-                <span class="fact__mini">
-                  Previsto
-                  <strong class="tnum">
-                    @if (next.forecast !== null) {
-                      {{ calendar.value(next.forecast, ind) }}
-                    } @else {
-                      non ancora rilevato
-                    }
-                  </strong>
-                </span>
-              </div>
+          <div class="summary__cell">
+            <p class="summary__label">Scostamento</p>
+            @if (last(); as l) {
+              @if (surprise(); as s) {
+                <!-- Il colore non basta da solo: accanto ci sono sempre il
+                     segno del numero e la freccia che ne ripete il verso. -->
+                <p class="summary__value tnum" [class]="'tone--' + s.tone">
+                  <app-icon [name]="arrow(s.delta)" [size]="14" />
+                  {{ s.label }}
+                </p>
+                <p class="summary__meta">{{ s.wording }}</p>
+              } @else {
+                <p class="summary__value">—</p>
+              }
+              <p class="summary__meta">
+                Atteso <strong class="tnum">{{ calendar.value(l.forecast, ind) }}</strong>
+              </p>
             } @else {
-              <p class="fact__value fact__value--date">Non fissata</p>
-              <p class="fact__meta">
+              <p class="summary__value">—</p>
+            }
+          </div>
+
+          <div class="summary__cell">
+            <p class="summary__label">Prossima uscita</p>
+            @if (next(); as next) {
+              <p class="summary__value summary__value--date">{{ dayOf(next.at) }}</p>
+              <p class="summary__meta">alle {{ timeOf(next.at) }} · ora di Roma</p>
+              <p class="summary__meta">Periodo di riferimento: {{ next.period }}</p>
+              <p class="summary__meta">
+                Previsto
+                <strong class="tnum">
+                  @if (next.forecast !== null) {
+                    {{ calendar.value(next.forecast, ind) }}
+                  } @else {
+                    non ancora rilevato
+                  }
+                </strong>
+              </p>
+            } @else {
+              <p class="summary__value summary__value--date">Non fissata</p>
+              <p class="summary__meta">
                 La data della prossima diffusione non è ancora stata pubblicata dall’ente che la
                 cura.
               </p>
             }
-          </article>
+          </div>
         </div>
       </section>
 
@@ -130,7 +146,7 @@ const PREVIEW_ROWS = 14;
             <h2>Effettivo e consenso a confronto</h2>
           </div>
         </div>
-        <div class="card chart-card">
+        <div class="card card--pad">
           <app-indicator-chart [indicator]="ind" [series]="series()" />
         </div>
       </section>
@@ -139,28 +155,22 @@ const PREVIEW_ROWS = 14;
       <!-- Perché si guarda                                                  -->
       <!-- ---------------------------------------------------------------- -->
       <section class="block">
-        <div class="why">
-          <article class="card why__card">
-            <p class="why__label">
-              <app-icon name="info" [size]="13" />
-              Che cosa misura
-            </p>
-            <p>{{ ind.what }}</p>
-          </article>
-          <article class="card why__card">
-            <p class="why__label">
-              <app-icon name="target" [size]="13" />
-              Perché si guarda
-            </p>
-            <p>{{ ind.why }}</p>
-          </article>
-        </div>
+        <dl class="about">
+          <div class="about__row">
+            <dt>Che cosa misura</dt>
+            <dd>{{ ind.what }}</dd>
+          </div>
+          <div class="about__row">
+            <dt>Perché si guarda</dt>
+            <dd>{{ ind.why }}</dd>
+          </div>
+        </dl>
 
         @if (categories().length) {
           <div class="topics">
             <span class="topics__label">Argomenti collegati</span>
             @for (category of categories(); track category.slug) {
-              <a class="topics__link" [routerLink]="['/argomenti', category.slug]">
+              <a class="chip topics__link" [routerLink]="['/argomenti', category.slug]">
                 {{ category.name }}
               </a>
             }
@@ -177,16 +187,13 @@ const PREVIEW_ROWS = 14;
             <p class="eyebrow">{{ ind.releases.length }} diffusioni</p>
             <h2>Storico</h2>
           </div>
-          <span class="chip chip--sm chip--neutral">
-            <app-icon name="clock" [size]="11" />
-            Date e orari nel fuso di Roma
-          </span>
+          <span class="sec-head__note">Date e orari nel fuso di Roma</span>
         </div>
 
         <div class="card table-card">
           <div class="table-scroll">
             <table>
-              <caption class="visually-hidden">
+              <caption class="sr-only">
                 Storico delle diffusioni di
                 {{
                   ind.name
@@ -213,7 +220,7 @@ const PREVIEW_ROWS = 14;
                     <td>
                       {{ row.release.period }}
                       @if (row.release.stage) {
-                        <span class="cell__stage">{{ stageLabel(row.release.stage) }}</span>
+                        <span class="cell__stage">· {{ stageLabel(row.release.stage) }}</span>
                       }
                     </td>
                     <td class="num tnum">{{ calendar.value(row.release.forecast, ind) }}</td>
@@ -229,9 +236,9 @@ const PREVIEW_ROWS = 14;
                     <td class="num tnum cell__prev">
                       {{ calendar.value(row.release.previous, ind) }}
                     </td>
-                    <td class="num">
+                    <td class="num tnum">
                       @if (row.surprise; as s) {
-                        <span class="pill pill--sm" [class]="'pill--' + s.tone">{{ s.label }}</span>
+                        <span [class]="'tone--' + s.tone">{{ s.label }}</span>
                       } @else {
                         <span class="cell__prev">—</span>
                       }
@@ -257,17 +264,20 @@ const PREVIEW_ROWS = 14;
 
         <p class="fineprint">
           <app-icon name="info" [size]="12" />
-          Fonte dei dati: {{ ind.source }} —
-          <a [attr.href]="ind.sourceUrl" target="_blank" rel="noopener noreferrer">{{
-            ind.sourceUrl
-          }}</a
-          >. Il valore «previsto» è il consenso degli analisti rilevato prima dell’uscita, non una
-          previsione di questo sito.
+          <span>
+            Fonte dei dati: {{ ind.source }} —
+            <a class="src" [attr.href]="ind.sourceUrl" target="_blank" rel="noopener noreferrer">{{
+              ind.sourceUrl
+            }}</a
+            >. Il valore «previsto» è il consenso degli analisti rilevato prima dell’uscita, non una
+            previsione di questo sito.
+          </span>
         </p>
-        <p class="fineprint"><app-icon name="alert" [size]="12" />{{ dataNote }}</p>
+        <p class="fineprint">
+          <app-icon name="alert" [size]="12" />
+          <span>{{ dataNote }}</span>
+        </p>
       </section>
-
-      <app-risk-notice variant="card" title="Come leggere questi numeri" />
     } @else {
       <app-page-header
         eyebrow="Calendario economico"
@@ -275,7 +285,7 @@ const PREVIEW_ROWS = 14;
         icon="calendar"
         description="L’indicatore richiesto non esiste in questa area."
       />
-      <a class="btn btn--gold" routerLink="/calendario">
+      <a class="btn btn--primary" routerLink="/calendario">
         Torna al calendario <app-icon name="arrow-right" [size]="15" />
       </a>
     }
@@ -285,172 +295,151 @@ const PREVIEW_ROWS = 14;
       display: block;
     }
 
-    .head-facts {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    /* --- Identikit ed esportazione, dentro l'intestazione ------------------ */
 
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip-path: inset(50%);
-      white-space: nowrap;
-    }
-
-    /* --- Ultimo dato / prossima uscita ------------------------------------ */
-
-    .facts {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 16px;
-    }
-
-    .fact {
-      padding: 20px 24px 19px;
-    }
-
-    .fact--main {
-      border-color: var(--accent-line);
-      background: linear-gradient(160deg, rgba(var(--accent-rgb), 0.07), transparent 60%);
-    }
-
-    .fact__label {
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-    }
-
-    .fact__value {
-      margin-top: 10px;
-      font-size: 38px;
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: -0.035em;
-      color: var(--text);
-    }
-
-    .fact--main .fact__value {
-      color: var(--accent-soft);
-    }
-
-    .fact__value--date {
-      font-size: 24px;
-      letter-spacing: -0.02em;
-    }
-
-    .fact__meta {
-      margin-top: 9px;
-      font-size: 12.5px;
+    .ident {
+      font-size: var(--t-xs);
+      line-height: var(--lh-snug);
       color: var(--text-muted);
     }
 
-    .fact__meta--dim {
-      margin-top: 3px;
-      font-size: 11.5px;
-      color: var(--text-faint);
-    }
-
-    .fact__row {
+    .export {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 10px;
-      margin-top: 15px;
-      padding-top: 13px;
+      gap: var(--s-3) var(--s-4);
+      margin-top: var(--s-4);
+      padding-top: var(--s-4);
       border-top: 1px solid var(--line);
     }
 
-    .fact__mini {
-      font-size: 12px;
+    .export__note {
+      flex: 1;
+      min-width: 30ch;
+      max-width: var(--measure);
+      font-size: var(--t-xs);
+      line-height: var(--lh-base);
       color: var(--text-faint);
     }
 
-    .fact__mini strong {
-      color: var(--text-soft);
-      font-weight: 600;
+    .export__note a {
+      color: var(--accent);
+      transition: color var(--dur) var(--ease);
     }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 2px 10px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--line);
-      font-size: 11px;
-      font-weight: 600;
-      font-variant-numeric: tabular-nums;
+    .export__note a:hover {
+      color: var(--accent-soft);
     }
 
-    .pill--sm {
-      padding: 1px 8px;
-      font-size: 10.5px;
-    }
+    /* --- Sintesi: una riga di dati, divisa da filetti ----------------------
+       Erano due riquadri, uno dei quali in sfumatura d'accento. Sono tre dati
+       dello stesso rango — ultimo valore, scostamento, prossima uscita — e si
+       leggono meglio affiancati nello stesso riquadro.
+       ---------------------------------------------------------------------- */
 
-    .pill--bull {
-      color: var(--chart-up);
-      border-color: rgba(74, 210, 149, 0.3);
-      background: var(--chart-up-dim);
-    }
-
-    .pill--bear {
-      color: var(--chart-down);
-      border-color: rgba(226, 112, 90, 0.32);
-      background: var(--chart-down-dim);
-    }
-
-    .pill--warn {
-      color: var(--warn);
-      border-color: rgba(240, 169, 59, 0.3);
-      background: var(--warn-dim);
-    }
-
-    .pill--neutral,
-    .pill--gold {
-      color: var(--text-muted);
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    /* --- Grafico ---------------------------------------------------------- */
-
-    .chart-card {
-      padding: 20px 24px 16px;
-    }
-
-    /* --- Che cosa misura / perché ----------------------------------------- */
-
-    .why {
+    .summary {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .why__card {
-      padding: 18px 22px 19px;
+    .summary__cell {
+      padding: var(--s-card);
     }
 
-    .why__label {
+    .summary__cell + .summary__cell {
+      border-left: 1px solid var(--line);
+    }
+
+    .summary__label {
+      font-size: var(--t-xs);
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    /* Nessun colore dichiarato: il valore eredita quello del testo, così le
+       classi di segno qui sotto bastano a colorare lo scostamento. */
+    .summary__value {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 10px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
+      gap: var(--s-2);
+      margin-top: var(--s-3);
+      font-size: var(--t-2xl);
+      font-weight: 600;
+      line-height: var(--lh-tight);
+      letter-spacing: -0.02em;
     }
 
-    .why__card p:last-child {
-      font-size: 13.4px;
-      line-height: 1.68;
+    .summary__value--date {
+      font-size: var(--t-xl);
+      letter-spacing: -0.015em;
+    }
+
+    .summary__meta {
+      margin-top: var(--s-1);
+      font-size: var(--t-xs);
+      line-height: var(--lh-snug);
+      color: var(--text-muted);
+    }
+
+    .summary__value + .summary__meta {
+      margin-top: var(--s-3);
+    }
+
+    .summary__meta strong {
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    /* Verso della sorpresa: vale per il numero grande e per la colonna dello
+       scostamento in tabella. Il segno è scritto in entrambi i casi. */
+    .tone--bull {
+      color: var(--up);
+    }
+
+    .tone--bear {
+      color: var(--down);
+    }
+
+    .tone--warn {
+      color: var(--warn);
+    }
+
+    .tone--neutral {
+      color: var(--text-soft);
+    }
+
+    /* --- Che cosa misura / perché ------------------------------------------
+       Due riquadri affiancati per due paragrafi erano contenitori vuoti: qui
+       basta un elenco di definizioni separato da filetti.
+       ---------------------------------------------------------------------- */
+
+    .about {
+      margin: 0;
+    }
+
+    .about__row {
+      display: grid;
+      grid-template-columns: 22ch minmax(0, 1fr);
+      gap: var(--s-4);
+      padding: var(--s-4) 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .about__row:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about dt {
+      font-size: var(--t-sm);
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .about dd {
+      margin: 0;
+      max-width: var(--measure);
+      font-size: var(--t-sm);
+      line-height: var(--lh-base);
       color: var(--text-muted);
     }
 
@@ -458,28 +447,19 @@ const PREVIEW_ROWS = 14;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 8px;
-      margin-top: 16px;
+      gap: var(--s-2);
+      margin-top: var(--s-4);
     }
 
     .topics__label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      font-size: var(--t-xs);
       color: var(--text-faint);
-      margin-right: 3px;
     }
 
     .topics__link {
-      padding: 3px 11px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--line);
-      font-size: 11.5px;
-      color: var(--text-muted);
       transition:
-        border-color 0.25s var(--ease),
-        color 0.25s var(--ease);
+        border-color var(--dur) var(--ease),
+        color var(--dur) var(--ease);
     }
 
     .topics__link:hover {
@@ -487,10 +467,12 @@ const PREVIEW_ROWS = 14;
       color: var(--accent-soft);
     }
 
-    /* --- Tabella ---------------------------------------------------------- */
+    /* --- Tabella dello storico ---------------------------------------------
+       È la ragione d'essere della pagina: righe separate da un filetto, niente
+       fasce alternate, numeri incolonnati a destra.
+       ---------------------------------------------------------------------- */
 
     .table-card {
-      padding: 0;
       overflow: hidden;
     }
 
@@ -501,20 +483,18 @@ const PREVIEW_ROWS = 14;
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 12.8px;
+      font-size: var(--t-sm);
     }
 
     thead th {
       position: sticky;
       top: 0;
-      padding: 12px 16px;
+      padding: var(--s-3) var(--s-4);
       border-bottom: 1px solid var(--line-strong);
-      background: var(--panel-2);
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-faint);
+      background: var(--surface-2);
+      font-size: var(--t-xs);
+      font-weight: 500;
+      color: var(--text-muted);
       text-align: left;
       white-space: nowrap;
     }
@@ -525,7 +505,7 @@ const PREVIEW_ROWS = 14;
     }
 
     tbody td {
-      padding: 10px 16px;
+      padding: var(--s-3) var(--s-4);
       border-bottom: 1px solid var(--line);
       color: var(--text-soft);
       white-space: nowrap;
@@ -536,9 +516,10 @@ const PREVIEW_ROWS = 14;
     }
 
     tbody tr:hover td {
-      background: rgba(255, 255, 255, 0.022);
+      background: var(--surface-hover);
     }
 
+    /* Unica riga con un fondo proprio: quella non ancora uscita. */
     .row--pending td {
       background: var(--accent-dim);
     }
@@ -548,23 +529,20 @@ const PREVIEW_ROWS = 14;
     }
 
     .cell__time {
-      margin-left: 8px;
+      margin-left: var(--s-2);
+      font-size: var(--t-xs);
       color: var(--text-faint);
-      font-size: 11.5px;
     }
 
     .cell__stage {
-      margin-left: 6px;
-      padding: 1px 7px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--line);
-      font-size: 9.5px;
+      margin-left: var(--s-1);
+      font-size: var(--t-xs);
       color: var(--text-faint);
     }
 
     .cell__actual {
       color: var(--text);
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .cell__prev {
@@ -572,63 +550,79 @@ const PREVIEW_ROWS = 14;
     }
 
     .cell__await {
+      font-size: var(--t-xs);
+      font-weight: 500;
       color: var(--accent);
-      font-size: 11px;
-      font-weight: 600;
     }
 
     .cell__missing {
-      color: var(--text-muted);
-      font-size: 11px;
+      font-size: var(--t-xs);
       font-style: italic;
+      color: var(--text-muted);
     }
 
     .table-more {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: var(--s-2);
       width: 100%;
-      padding: 13px;
-      border: 0;
+      padding: var(--s-3);
       border-top: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.02);
+      font-size: var(--t-xs);
+      font-weight: 500;
       color: var(--accent);
-      font-family: inherit;
-      font-size: 12.5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s var(--ease);
+      transition: background var(--dur) var(--ease);
     }
 
     .table-more:hover {
-      background: rgba(255, 255, 255, 0.045);
+      background: var(--surface-hover);
     }
 
     .flip {
       transform: rotate(180deg);
     }
 
+    /* Il rimando alla fonte è un indirizzo intero: deve poter andare a capo. */
+    .src {
+      color: var(--text-muted);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      overflow-wrap: anywhere;
+    }
+
+    .src:hover {
+      color: var(--text-soft);
+    }
+
+    @media (max-width: 820px) {
+      .summary {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .summary__cell + .summary__cell {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .about__row {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--s-2);
+      }
+    }
+
     @media (max-width: 620px) {
-      .fact {
-        padding: 17px 18px 16px;
+      .summary__value {
+        font-size: var(--t-xl);
       }
 
-      .fact__value {
-        font-size: 31px;
-      }
-
-      .fact__value--date {
-        font-size: 20px;
-      }
-
-      .chart-card {
-        padding: 16px 14px 12px;
+      .summary__value--date {
+        font-size: var(--t-lg);
       }
 
       tbody td,
       thead th {
-        padding-inline: 12px;
+        padding-inline: var(--s-3);
       }
     }
   `,
@@ -693,7 +687,7 @@ export class IndicatorDetail {
 
   /**
    * Lo storico si apre sulle ultime righe. Una diffusione già in calendario ma
-   * non ancora avvenuta compare in testa, così la tabella e il riquadro
+   * non ancora avvenuta compare in testa, così la tabella e il dato
    * «prossima uscita» raccontano la stessa cosa.
    */
   protected readonly visibleRows = computed(() => {
@@ -728,6 +722,25 @@ export class IndicatorDetail {
         return 'Ogni mese';
     }
   });
+
+  protected exportName(): string {
+    const ind = this.indicator();
+    return exportFilename(
+      ind ? `${this.areaPath()}-${ind.key}` : 'indicatore',
+      new Date().toISOString(),
+    );
+  }
+
+  /** Invocato solo al clic: vedi `ExportButton`. */
+  protected readonly buildExport = (): string => {
+    const ind = this.indicator();
+    return calendarMarkdown({
+      indicators: ind ? [ind] : [],
+      title: `Calendario economico — ${ind?.name ?? 'indicatore'}`,
+      archiveGeneratedAt: this.calendar.generatedAt,
+      now: new Date().toISOString(),
+    });
+  };
 
   protected toggle(): void {
     this.expanded.update((v) => !v);

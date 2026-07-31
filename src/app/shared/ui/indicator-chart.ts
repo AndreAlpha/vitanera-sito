@@ -104,7 +104,7 @@ function niceStep(range: number, decimals: number): number {
             <svg:path class="line line--actual" [attr.d]="actualPath()" />
 
             @if (last(); as p) {
-              <svg:circle class="dot" [attr.cx]="p.x" [attr.cy]="p.y" r="4.5" />
+              <svg:circle class="dot" [attr.cx]="p.x" [attr.cy]="p.y" r="4" />
               <svg:text class="endlabel" [attr.x]="p.x + 11" [attr.y]="p.y + 4">
                 {{ endLabel() }}
               </svg:text>
@@ -118,7 +118,7 @@ function niceStep(range: number, decimals: number): number {
                 [attr.y1]="padTop"
                 [attr.y2]="bottom"
               />
-              <svg:circle class="dot dot--hover" [attr.cx]="p.x" [attr.cy]="p.y" r="4.5" />
+              <svg:circle class="dot" [attr.cx]="p.x" [attr.cy]="p.y" r="4" />
             }
 
             @for (label of axisLabels(); track label.x) {
@@ -162,26 +162,32 @@ function niceStep(range: number, decimals: number): number {
       margin: 0;
     }
 
+    /* La legenda resta anche quando le serie sono due sole: il colore non è
+       mai l'unico canale con cui si distingue una linea dall'altra. */
     .chart__legend {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 10px;
-      font-size: 11.5px;
+      gap: var(--s-4);
+      margin-bottom: var(--s-3);
+      font-size: var(--t-xs);
       color: var(--text-muted);
     }
 
     .key {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: var(--s-2);
     }
 
+    /* Ogni voce dichiara la propria tinta: la simmetria fra le due regole dice
+       da sola che l'effettivo porta il colore di marca e il consenso no. */
     .key__mark {
-      width: 14px;
+      width: var(--s-4);
       height: 2px;
-      border-radius: 2px;
+    }
+
+    .key--actual .key__mark {
       background: var(--chart-actual);
     }
 
@@ -192,14 +198,17 @@ function niceStep(range: number, decimals: number): number {
     .chart__range {
       margin-left: auto;
       color: var(--text-faint);
-      font-size: 11px;
+      font-size: var(--t-micro);
     }
 
     .chart__frame {
       position: relative;
     }
 
-    /* Il rapporto è imposto dal viewBox: così il testo non viene deformato. */
+    /* Il rapporto è imposto dal viewBox: così il testo non viene deformato.
+       L'altezza segue la larghezza a ogni misura di schermo; l'altezza fissa
+       che c'era sotto i 620px non ingrandiva il disegno, aggiungeva soltanto
+       fascia vuota sopra e sotto. */
     svg {
       display: block;
       width: 100%;
@@ -209,17 +218,14 @@ function niceStep(range: number, decimals: number): number {
     }
 
     .grid {
-      stroke: var(--line);
+      stroke: var(--chart-grid);
       stroke-width: 1;
       vector-effect: non-scaling-stroke;
     }
 
-    .zero {
-      stroke: var(--line-strong);
-      stroke-width: 1;
-      vector-effect: non-scaling-stroke;
-    }
-
+    /* Lo zero e il mirino sono riferimenti che si devono leggere: stanno un
+       gradino sopra la griglia, non due. */
+    .zero,
     .cross {
       stroke: var(--line-strong);
       stroke-width: 1;
@@ -242,11 +248,10 @@ function niceStep(range: number, decimals: number): number {
       stroke: var(--chart-forecast);
     }
 
+    /* Il punto è pieno e basta: l'anello nel colore del fondo che lo circondava
+       serviva a staccarlo da un alone che non c'è più. */
     .dot {
       fill: var(--chart-actual);
-      stroke: var(--panel);
-      stroke-width: 2;
-      vector-effect: non-scaling-stroke;
     }
 
     /* Le etichette non ereditano la deformazione del riquadro. */
@@ -255,7 +260,7 @@ function niceStep(range: number, decimals: number): number {
       font-family: var(--ff-sans);
       font-variant-numeric: tabular-nums;
       fill: var(--text-faint);
-      font-size: 11px;
+      font-size: var(--t-micro);
     }
 
     .tick {
@@ -268,21 +273,23 @@ function niceStep(range: number, decimals: number): number {
 
     .endlabel {
       fill: var(--text-soft);
-      font-size: 11.5px;
+      font-size: var(--t-xs);
       font-weight: 600;
       text-anchor: start;
     }
 
+    /* Il riquadro informativo è l'unica cosa che galleggia davvero sopra la
+       pagina, e l'unica qui dentro a portare un'ombra. */
     .tip {
       position: absolute;
-      top: 8px;
+      top: var(--s-2);
       transform: translateX(-50%);
-      min-width: 148px;
-      padding: 9px 12px 8px;
+      min-width: 150px;
+      padding: var(--s-3);
       border-radius: var(--r-sm);
       border: 1px solid var(--line-strong);
-      background: var(--panel-2);
-      box-shadow: var(--shadow-md);
+      background: var(--surface-2);
+      box-shadow: var(--shadow-pop);
       pointer-events: none;
       z-index: 2;
     }
@@ -292,19 +299,18 @@ function niceStep(range: number, decimals: number): number {
     }
 
     .tip__period {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
+      font-size: var(--t-xs);
+      font-weight: 600;
       color: var(--text);
-      margin-bottom: 6px;
+      margin-bottom: var(--s-2);
     }
 
     .tip__row {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      gap: 14px;
-      font-size: 11.5px;
+      gap: var(--s-4);
+      font-size: var(--t-xs);
       color: var(--text-muted);
     }
 
@@ -318,17 +324,11 @@ function niceStep(range: number, decimals: number): number {
     }
 
     .tip__date {
-      margin-top: 6px;
-      padding-top: 5px;
+      margin-top: var(--s-2);
+      padding-top: var(--s-2);
       border-top: 1px solid var(--line);
-      font-size: 10px;
+      font-size: var(--t-micro);
       color: var(--text-faint);
-    }
-
-    @media (max-width: 620px) {
-      svg {
-        height: 210px;
-      }
     }
   `,
 })

@@ -77,6 +77,15 @@ const HORIZONS: readonly HorizonBlock[] = [
   },
 ];
 
+/**
+ * Orizzonti XAU/USD.
+ *
+ * I tre orizzonti erano tre schede a tutta larghezza, ciascuna con la piastrella
+ * dell'icona e la propria cornice: sembravano tre proposte in concorrenza, e la
+ * prima — quella più rumorosa — sembrava anche la più importante. Ora sono tre
+ * colonne pari sotto lo stesso filetto: a distinguerle sono la posizione e la
+ * scala temporale scritta in testa, non il colore né il riquadro.
+ */
 @Component({
   selector: 'app-outlook',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -90,31 +99,29 @@ const HORIZONS: readonly HorizonBlock[] = [
         Non contiene previsioni: contiene ipotesi condizionate, i fattori che le sostengono e ciò che le renderebbe non
         più valide."
     >
-      <div class="warn-strip">
-        <app-icon name="alert" [size]="15" />
-        <p>
-          <strong>Nessun contenuto di questa pagina è una previsione affidabile</strong> né
-          un’indicazione di acquisto o vendita. Gli scenari descritti possono non realizzarsi e sono
-          soggetti a revisione senza preavviso.
-        </p>
-      </div>
+      <!-- Era un riquadro ambrato con l'icona d'allarme, il terzo avviso della
+           stessa schermata. Resta la frase, appoggiata a un filetto: chi legge
+           la deve trovare, non subire. -->
+      <p class="caveat">
+        <strong>Nessun contenuto di questa pagina è una previsione affidabile</strong> né
+        un’indicazione di acquisto o vendita. Gli scenari descritti possono non realizzarsi e sono
+        soggetti a revisione senza preavviso.
+      </p>
     </app-page-header>
 
     <!-- Lettura corrente derivata dalle analisi pubblicate ------------------ -->
-    <section class="current">
+    <section class="block">
+      <p class="eyebrow cur__eyebrow">Ricavata dalle analisi pubblicate</p>
       <div class="sec-head">
-        <div>
-          <p class="eyebrow">Ricavata dalle analisi pubblicate</p>
-          <h2>Impostazione descritta al momento</h2>
-        </div>
+        <h2>Impostazione descritta al momento</h2>
         <a class="link" routerLink="/analisi"
           >Archivio <app-icon name="arrow-right" [size]="13"
         /></a>
       </div>
 
-      <div class="current__grid">
+      <div class="cur__grid">
         @for (item of currentReadings(); track item.slug) {
-          <a class="card card--hover cur" [routerLink]="['/analisi', item.slug]">
+          <a class="card card--link cur" [routerLink]="['/analisi', item.slug]">
             <p class="cur__date">{{ item.date }}</p>
             <p class="cur__title">{{ item.title }}</p>
             @if (item.direction; as dir) {
@@ -126,7 +133,7 @@ const HORIZONS: readonly HorizonBlock[] = [
             /></span>
           </a>
         } @empty {
-          <p class="card current__void">
+          <p class="card card--pad cur__void">
             Nessuna analisi ha ancora dichiarato un’impostazione su XAU/USD. Gli orizzonti descritti
             più sotto restano validi come quadro di riferimento; la lettura del momento comparirà
             qui con la prima pubblicazione.
@@ -134,309 +141,240 @@ const HORIZONS: readonly HorizonBlock[] = [
         }
       </div>
 
-      <p class="current__legal">
+      <p class="fineprint cur__note">
         <app-icon name="info" [size]="13" />
-        Le impostazioni riportate sono quelle dichiarate negli articoli alla data di pubblicazione.
-        Non vengono aggiornate automaticamente e possono essere già superate.
+        <span>
+          Le impostazioni riportate sono quelle dichiarate negli articoli alla data di
+          pubblicazione. Non vengono aggiornate automaticamente e possono essere già superate.
+        </span>
       </p>
     </section>
 
-    <!-- I tre orizzonti ------------------------------------------------------ -->
-    @for (h of horizons; track h.key) {
-      <section class="hz card card--pad">
-        <header class="hz__head">
-          <span class="hz__icon"><app-icon [name]="h.icon" [size]="20" /></span>
-          <div>
-            <p class="eyebrow">{{ h.range }}</p>
-            <h2>{{ h.title }}</h2>
-          </div>
-        </header>
+    <!-- I tre orizzonti, affiancati e di pari peso ---------------------------- -->
+    <div class="block hz__grid">
+      @for (h of horizons; track h.key) {
+        <section class="hz">
+          <p class="hz__range">
+            <app-icon [name]="h.icon" [size]="13" />
+            {{ h.range }}
+          </p>
+          <h2 class="hz__title">{{ h.title }}</h2>
 
-        <div class="hz__grid">
-          <div>
-            <p class="hz__label">Cosa muove il quadro</p>
-            <ul class="hz__list">
-              @for (d of h.drivers; track d) {
-                <li><span class="dot"></span>{{ d }}</li>
-              }
-            </ul>
-          </div>
-          <div>
-            <p class="hz__label">Cosa viene osservato</p>
-            <ul class="hz__list">
-              @for (w of h.watch; track w) {
-                <li><span class="dot dot--soft"></span>{{ w }}</li>
-              }
-            </ul>
-          </div>
-        </div>
+          <p class="hz__label">Cosa muove il quadro</p>
+          <ul class="hz__list">
+            @for (d of h.drivers; track d) {
+              <li>{{ d }}</li>
+            }
+          </ul>
 
-        <p class="hz__limits">
-          <app-icon name="alert" [size]="14" />
-          <span><strong>Limiti dichiarati.</strong> {{ h.limits }}</span>
-        </p>
-      </section>
-    }
+          <p class="hz__label">Cosa viene osservato</p>
+          <ul class="hz__list">
+            @for (w of h.watch; track w) {
+              <li>{{ w }}</li>
+            }
+          </ul>
 
-    <app-risk-notice variant="full" />
+          <p class="hz__limits"><strong>Limiti dichiarati.</strong> {{ h.limits }}</p>
+        </section>
+      }
+    </div>
+
+    <app-risk-notice />
   `,
   styles: `
     :host {
       display: block;
     }
 
-    section {
-      margin-bottom: 26px;
+    app-risk-notice {
+      display: block;
+      margin-top: var(--s-section);
     }
 
-    .warn-strip {
-      display: flex;
-      align-items: flex-start;
-      gap: 11px;
-      padding: 14px 16px;
-      border: 1px solid rgba(240, 169, 59, 0.3);
-      border-radius: var(--r-md);
-      background: rgba(240, 169, 59, 0.07);
-      max-width: 82ch;
-    }
+    /* --- Avvertenza in apertura --------------------------------------------- */
 
-    .warn-strip app-icon {
-      margin-top: 2px;
-      color: var(--warn);
-      flex: none;
-    }
-
-    .warn-strip p {
-      font-size: 12.8px;
-      line-height: 1.62;
+    .caveat {
+      max-width: var(--measure);
+      padding-left: var(--s-4);
+      border-left: 1px solid var(--warn-line);
+      font-size: var(--t-sm);
+      line-height: var(--lh-base);
       color: var(--text-muted);
     }
 
-    .warn-strip strong {
-      color: var(--accent-soft);
+    .caveat strong {
+      font-weight: 500;
+      color: var(--text);
     }
 
-    .sec-head {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 18px;
+    /* --- Impostazione descritta al momento ----------------------------------- */
+
+    .cur__eyebrow {
+      margin-bottom: var(--s-2);
     }
 
-    .sec-head h2 {
-      margin-top: 5px;
-      font-size: 21px;
-    }
-
-    .link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    .current__grid {
+    .cur__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-      gap: 14px;
-    }
-
-    .current__void {
-      grid-column: 1 / -1;
-      padding: 22px 24px;
-      max-width: 74ch;
-      font-size: 13.4px;
-      line-height: 1.68;
-      color: var(--text-muted);
+      grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+      gap: var(--s-4);
     }
 
     .cur {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 10px;
-      padding: 18px 20px;
+      gap: var(--s-3);
+      padding: var(--s-card);
     }
 
+    /* La data era in maiuscoletto spaziato: una seconda etichetta gridata in una
+       sezione che ne ha già una. */
     .cur__date {
-      font-size: 10.5px;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
+      font-size: var(--t-micro);
       color: var(--text-faint);
     }
 
     .cur__title {
-      font-size: 15.5px;
-      font-weight: 700;
-      line-height: 1.35;
+      font-size: var(--t-md);
+      font-weight: 600;
+      line-height: var(--lh-snug);
       letter-spacing: -0.02em;
+      transition: color var(--dur) var(--ease);
+    }
+
+    .cur:hover .cur__title {
+      color: var(--accent-soft);
     }
 
     .cur__regime {
-      font-size: 12.5px;
-      line-height: 1.6;
+      font-size: var(--t-sm);
+      line-height: var(--lh-base);
       color: var(--text-muted);
     }
 
     .cur__cta {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: var(--s-1);
       margin-top: auto;
-      font-size: 12px;
-      font-weight: 600;
+      font-size: var(--t-xs);
+      font-weight: 500;
       color: var(--accent);
     }
 
-    .current__legal {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-top: 14px;
-      font-size: 11.5px;
-      line-height: 1.55;
-      color: var(--text-faint);
+    .cur__void {
+      grid-column: 1 / -1;
+      max-width: var(--measure);
+      font-size: var(--t-sm);
+      line-height: var(--lh-base);
+      color: var(--text-muted);
     }
 
-    .current__legal app-icon {
-      margin-top: 2px;
+    .cur__note {
+      max-width: var(--measure);
     }
 
-    .hz__head {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding-bottom: 18px;
-      margin-bottom: 20px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hz__icon {
-      display: grid;
-      place-items: center;
-      width: 46px;
-      height: 46px;
-      flex: none;
-      border-radius: 15px;
-      border: 1px solid var(--accent-line);
-      background: linear-gradient(
-        140deg,
-        rgba(var(--accent-rgb), 0.18),
-        rgba(var(--accent-rgb), 0.03)
-      );
-      color: var(--accent);
-    }
-
-    .hz__head h2 {
-      margin-top: 4px;
-      font-size: 20px;
-    }
+    /* --- I tre orizzonti ------------------------------------------------------
+       Tre colonne uguali: stessa larghezza, stesso filetto in testa, stesso
+       accento. L'ordine breve → medio → lungo è l'unica gerarchia dichiarata.
+       ------------------------------------------------------------------------ */
 
     .hz__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-      gap: 26px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--s-7);
     }
 
+    .hz {
+      max-width: var(--measure);
+      padding-top: var(--s-5);
+      border-top: 1px solid var(--line);
+    }
+
+    .hz__range {
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
+      font-size: var(--t-xs);
+      color: var(--text-faint);
+    }
+
+    .hz__range app-icon {
+      color: var(--accent);
+    }
+
+    .hz__title {
+      margin-top: var(--s-2);
+      font-size: var(--t-lg);
+    }
+
+    /* Etichetta interna in tondo: le due che stavano qui erano maiuscole
+       spaziate, moltiplicate per tre colonne facevano sei richiami. */
     .hz__label {
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent-deep);
-      margin-bottom: 12px;
+      margin-top: var(--s-5);
+      margin-bottom: var(--s-3);
+      font-size: var(--t-xs);
+      font-weight: 500;
+      color: var(--text-soft);
     }
 
     .hz__list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: var(--s-3);
     }
 
     .hz__list li {
-      display: flex;
-      gap: 11px;
-      font-size: 13.6px;
-      line-height: 1.62;
+      position: relative;
+      padding-left: var(--s-4);
+      font-size: var(--t-sm);
+      line-height: var(--lh-base);
       color: var(--text-muted);
     }
 
-    .dot {
-      width: 6px;
-      height: 6px;
-      margin-top: 8px;
-      flex: none;
-      border-radius: 50%;
+    /* Un trattino al posto del pallino: i due elenchi si distinguono per
+       l'etichetta che li introduce, non per il colore del segno. */
+    .hz__list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 5px;
+      height: 1px;
       background: var(--accent);
     }
 
-    .dot--soft {
-      background: var(--text-faint);
-    }
-
     .hz__limits {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-top: 22px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-      font-size: 12.3px;
-      line-height: 1.6;
+      margin-top: var(--s-5);
+      padding-top: var(--s-4);
+      border-top: 1px solid var(--line-soft);
+      font-size: var(--t-xs);
+      line-height: var(--lh-snug);
       color: var(--text-faint);
     }
 
-    .hz__limits app-icon {
-      margin-top: 2px;
-      color: var(--warn);
-      flex: none;
-    }
-
     .hz__limits strong {
+      font-weight: 500;
       color: var(--text-soft);
     }
 
-    @media (max-width: 620px) {
-      .warn-strip {
-        padding: 12px 14px;
-      }
-
-      .hz {
-        padding: 18px 16px;
-      }
-
-      .hz__head {
-        gap: 12px;
-        padding-bottom: 14px;
-        margin-bottom: 16px;
-      }
-
-      .hz__icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 13px;
-      }
-
-      .hz__head h2 {
-        font-size: 18px;
-      }
-
+    /* Sotto i mille pixel tre colonne diventano tre strettoie: si impilano, e il
+       filetto in testa a ciascuna continua a separarle. */
+    @media (max-width: 1000px) {
       .hz__grid {
-        gap: 20px;
+        grid-template-columns: 1fr;
+        gap: var(--s-6);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .caveat {
+        font-size: var(--t-xs);
       }
 
       .cur {
-        padding: 16px 16px;
-      }
-
-      .sec-head {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
+        padding: var(--s-4);
       }
     }
   `,

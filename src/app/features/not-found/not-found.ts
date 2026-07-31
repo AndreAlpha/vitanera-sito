@@ -1,49 +1,48 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { RiskNotice } from '../../shared/legal/risk-notice';
 import { Icon } from '../../shared/ui/icon';
 
+/**
+ * Pagina di errore.
+ *
+ * Chiudeva con l'avvertenza legale in riquadro: a chi ha sbagliato indirizzo
+ * non serve, e il piè di pagina la riporta comunque su ogni schermata. Restano
+ * una riga che spiega cos'è successo e tre rimandi — panoramica, archivio,
+ * calendario — perché da qui l'unica cosa utile è ripartire da qualche parte.
+ *
+ * Erano cinque pastiglie in fila e un titolo da quarantadue pixel: adesso è un
+ * elenco separato da filetti, allineato a sinistra come il resto del sito.
+ */
 @Component({
   selector: 'app-not-found',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, Icon, RiskNotice],
+  imports: [RouterLink, Icon],
   template: `
-    <section class="nf">
-      <span class="nf__code">404</span>
+    <section class="nf anim-in">
+      <p class="eyebrow">404</p>
       <h1>Questa pagina non esiste</h1>
       <p class="nf__text">
         L’indirizzo richiesto non corrisponde ad alcun contenuto pubblicato. Può essere stato
         rimosso, rinominato o non essere mai esistito.
       </p>
 
-      <div class="nf__actions">
-        <a class="btn btn--gold" routerLink="/">Torna alla panoramica</a>
-        <a class="btn btn--ghost" routerLink="/analisi">Archivio analisi</a>
-      </div>
+      <nav class="nf__links" aria-labelledby="nf-dest">
+        <p class="nf__label" id="nf-dest">Destinazioni utili</p>
 
-      <div class="nf__links">
-        <p class="eyebrow">Destinazioni utili</p>
-        <div class="nf__grid">
-          <a class="nf__link" routerLink="/calendario"
-            ><app-icon name="calendar" [size]="15" />Calendario economico</a
-          >
-          <a class="nf__link" routerLink="/argomenti"
-            ><app-icon name="layers" [size]="15" />Argomenti</a
-          >
-          <a class="nf__link" routerLink="/glossario"
-            ><app-icon name="book" [size]="15" />Glossario</a
-          >
-          <a class="nf__link" routerLink="/metodologia"
-            ><app-icon name="compass" [size]="15" />Metodologia</a
-          >
-          <a class="nf__link" routerLink="/avvertenze"
-            ><app-icon name="shield" [size]="15" />Avvertenze</a
-          >
-        </div>
-      </div>
+        <a class="nf__link" routerLink="/">
+          <span>Panoramica</span>
+          <app-icon name="arrow-right" [size]="14" />
+        </a>
+        <a class="nf__link" routerLink="/analisi">
+          <span>Archivio analisi</span>
+          <app-icon name="arrow-right" [size]="14" />
+        </a>
+        <a class="nf__link" routerLink="/calendario">
+          <span>Calendario economico</span>
+          <app-icon name="arrow-right" [size]="14" />
+        </a>
+      </nav>
     </section>
-
-    <app-risk-notice variant="card" />
   `,
   styles: `
     :host {
@@ -51,73 +50,72 @@ import { Icon } from '../../shared/ui/icon';
     }
 
     .nf {
-      padding: 60px 0 40px;
-      max-width: 70ch;
-    }
-
-    .nf__code {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.2em;
-      color: var(--accent-deep);
-      margin-bottom: 14px;
+      padding: var(--s-8) 0 var(--s-7);
+      max-width: var(--measure);
     }
 
     h1 {
-      font-size: clamp(28px, 4vw, 42px);
-      letter-spacing: -0.035em;
+      margin-top: var(--s-3);
+      font-size: var(--t-2xl);
     }
 
     .nf__text {
-      margin-top: 16px;
-      font-size: 15px;
-      line-height: 1.7;
+      margin-top: var(--s-4);
+      font-size: var(--t-md);
+      line-height: var(--lh-loose);
       color: var(--text-muted);
-    }
-
-    .nf__actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 24px;
     }
 
     .nf__links {
-      margin-top: 40px;
-      padding-top: 24px;
-      border-top: 1px solid var(--line);
+      max-width: 40ch;
+      margin-top: var(--s-7);
     }
 
-    .nf__grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
+    .nf__label {
+      margin-bottom: var(--s-2);
+      font-size: var(--t-xs);
+      font-weight: 500;
+      color: var(--text-faint);
     }
 
     .nf__link {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 9px 15px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.025);
-      font-size: 12.5px;
-      color: var(--text-muted);
-      transition:
-        border-color 0.25s var(--ease),
-        color 0.25s var(--ease);
+      justify-content: space-between;
+      gap: var(--s-4);
+      padding: var(--s-3) 0;
+      border-top: 1px solid var(--line);
+      font-size: var(--t-sm);
+      color: var(--text-soft);
+      transition: color var(--dur) var(--ease);
     }
 
-    .nf__link:hover {
-      border-color: var(--accent-line);
-      color: var(--accent-soft);
+    .nf__link:last-child {
+      border-bottom: 1px solid var(--line);
     }
 
     .nf__link app-icon {
-      color: var(--accent-deep);
+      color: var(--text-faint);
+      transition: color var(--dur) var(--ease);
+    }
+
+    .nf__link:hover,
+    .nf__link:hover app-icon {
+      color: var(--accent);
+    }
+
+    @media (max-width: 620px) {
+      .nf {
+        padding: var(--s-7) 0 var(--s-6);
+      }
+
+      h1 {
+        font-size: var(--t-xl);
+      }
+
+      .nf__text {
+        font-size: var(--t-sm);
+      }
     }
   `,
 })

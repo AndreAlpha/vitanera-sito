@@ -3,22 +3,25 @@ import { RouterLink } from '@angular/router';
 import { CATEGORY_FAMILIES, categoriesOfFamily } from '../../core/config/site.config';
 import { ContentService } from '../../core/services/content.service';
 import { CalendarService } from '../../core/services/calendar.service';
-import { RiskNotice } from '../../shared/legal/risk-notice';
 import { Icon } from '../../shared/ui/icon';
 import { PageHeader } from '../../shared/ui/page-header';
 
 /**
  * Indice degli argomenti.
  *
- * Le categorie sono ventinove: presentate di fila sarebbero un muro. Sono
- * perciò raccolte in cinque famiglie, e ciascuna scheda dichiara quante analisi
- * contiene e se esiste un indicatore del calendario che le corrisponde — è il
- * collegamento fra ciò che si legge e i numeri da cui nasce.
+ * Questa pagina serve a trovare una categoria in fretta, non a farsi ammirare:
+ * erano ventinove schede con la piastrella dell'icona, e ventinove riquadri
+ * affiancati si leggono uno per uno. Ora ogni famiglia è una sezione e ogni
+ * categoria una riga separata da un filetto — nome, che cosa contiene, quante
+ * analisi — su due colonne quando lo schermo lo consente.
+ *
+ * Resta indicato se la categoria corrisponde a un indicatore del calendario: è
+ * il collegamento fra ciò che si legge e i numeri da cui nasce.
  */
 @Component({
   selector: 'app-topics',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, PageHeader, Icon, RiskNotice],
+  imports: [RouterLink, PageHeader, Icon],
   template: `
     <app-page-header
       eyebrow="Ventinove categorie in cinque famiglie"
@@ -26,155 +29,208 @@ import { PageHeader } from '../../shared/ui/page-header';
       icon="layers"
       [description]="intro"
     >
-      <div class="head-facts">
-        <span class="chip chip--sm chip--gold">
-          <app-icon name="layers" [size]="11" />
-          {{ total }} categorie
-        </span>
+      <div class="facts">
+        <span class="chip chip--accent">{{ total }} categorie</span>
         @if (published(); as n) {
-          <span class="chip chip--sm chip--neutral">
-            <app-icon name="archive" [size]="11" />
-            {{ n }} analisi pubblicate
-          </span>
+          <span class="chip">{{ n }} analisi pubblicate</span>
         }
-        <a class="chip chip--sm chip--neutral" routerLink="/calendario">
-          <app-icon name="calendar" [size]="11" />
+        <a class="chip facts__link" routerLink="/calendario">
+          <app-icon name="calendar" [size]="12" />
           Calendario economico
         </a>
       </div>
     </app-page-header>
 
     @for (family of families; track family.slug) {
-      <section class="block" [attr.data-accent]="family.slug">
+      <section class="block" [id]="family.slug" [attr.data-accent]="family.slug">
         <div class="sec-head">
-          <div>
-            <p class="eyebrow">{{ family.tagline }}</p>
-            <h2>
-              <app-icon [name]="family.icon" [size]="19" />
-              {{ family.name }}
-            </h2>
-          </div>
+          <h2 class="fam">
+            <app-icon [name]="family.icon" [size]="15" />
+            {{ family.name }}
+          </h2>
+          <p class="fam__note">{{ family.tagline }}</p>
         </div>
 
-        <div class="grid">
+        <ul class="cats">
           @for (row of rowsOf(family.slug); track row.category.slug) {
-            <a class="card card--hover topic" [routerLink]="['/argomenti', row.category.slug]">
-              <div class="topic__head">
-                <span class="topic__icon"><app-icon [name]="row.category.icon" [size]="17" /></span>
-                <h3>{{ row.category.name }}</h3>
-              </div>
-              <p class="topic__tag">{{ row.category.tagline }}</p>
-              <div class="topic__foot">
-                <span class="topic__count">
+            <li>
+              <a class="cat" [routerLink]="['/argomenti', row.category.slug]">
+                <app-icon class="cat__icon" [name]="row.category.icon" [size]="14" />
+
+                <span class="cat__body">
+                  <span class="cat__name">{{ row.category.name }}</span>
+                  <span class="cat__tag">{{ row.category.tagline }}</span>
+                </span>
+
+                <span class="cat__meta">
+                  @if (row.inCalendar) {
+                    <span class="cat__cal">
+                      <app-icon name="chart" [size]="12" />
+                      nel calendario
+                    </span>
+                  }
+                  <!-- Il conteggio compare solo se c'è qualcosa da contare:
+                       con l'archivio vuoto, «nessuna analisi» sarebbe scritto
+                       ventinove volte in colonna e non direbbe nulla che
+                       l'assenza stessa non dica già. -->
                   @if (row.count) {
-                    {{ row.count }} {{ row.count === 1 ? 'analisi' : 'analisi' }}
-                  } @else {
-                    nessuna analisi
+                    <span class="cat__count tnum">{{ row.count }} analisi</span>
                   }
                 </span>
-                @if (row.inCalendar) {
-                  <span class="topic__data">
-                    <app-icon name="chart" [size]="11" />
-                    nel calendario
-                  </span>
-                }
-              </div>
-            </a>
+              </a>
+            </li>
           }
-        </div>
+        </ul>
       </section>
     }
-
-    <app-risk-notice variant="card" title="Avvertenza sempre valida" />
   `,
   styles: `
     :host {
       display: block;
     }
 
-    .head-facts {
+    .facts {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: var(--s-2);
     }
 
-    .sec-head h2 {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .facts__link {
+      transition:
+        border-color var(--dur) var(--ease),
+        color var(--dur) var(--ease);
     }
 
-    .sec-head h2 app-icon {
-      color: var(--accent);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 12px;
-    }
-
-    .topic {
-      display: flex;
-      flex-direction: column;
-      padding: 15px 17px 13px;
-    }
-
-    .topic__head {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-    }
-
-    .topic__icon {
-      display: grid;
-      place-items: center;
-      width: 34px;
-      height: 34px;
-      flex: none;
-      border-radius: 11px;
-      border: 1px solid var(--accent-line);
-      background: rgba(var(--accent-rgb), 0.09);
-      color: var(--accent);
-    }
-
-    .topic__head h3 {
-      font-size: 13.8px;
-      line-height: 1.28;
-      letter-spacing: -0.012em;
-      transition: color 0.25s var(--ease);
-    }
-
-    .topic:hover .topic__head h3 {
+    .facts__link:hover {
+      border-color: var(--accent-line);
       color: var(--accent-soft);
     }
 
-    .topic__tag {
-      margin-top: 10px;
-      font-size: 12px;
-      line-height: 1.55;
+    /* L'icona della famiglia sta sulla riga del titolo e ne prende l'altezza:
+       serve a riconoscere la sezione scorrendo la pagina, non ad aprirla. */
+    .fam {
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
+    }
+
+    .fam app-icon {
+      color: var(--accent);
+    }
+
+    .fam__note {
+      font-size: var(--t-xs);
+      line-height: var(--lh-snug);
+      color: var(--text-faint);
+      text-align: right;
+    }
+
+    /* Due colonne di righe, non una griglia di schede: il filetto basta a
+       separare due voci e lascia l'occhio libero di scorrere i nomi.
+
+       Due, non tre: a 320px di minimo lo schermo largo ne faceva stare tre, e
+       in un terzo di colonna «Richieste iniziali sussidi di disoccupazione»
+       andava a capo tre volte. Un elenco che si legge in fretta ha bisogno che
+       i nomi stiano su una riga, non che ce ne stiano di più per schermata. */
+    .cats {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr));
+      column-gap: var(--s-8);
+    }
+
+    .cats li {
+      display: flex;
+    }
+
+    .cat {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: var(--s-3);
+      padding: var(--s-3) var(--s-2);
+      border-top: 1px solid var(--line);
+      transition: background var(--dur) var(--ease);
+    }
+
+    .cat:hover {
+      background: var(--surface-hover);
+    }
+
+    /* Ogni icona stava in una piastrella di 34 pixel con bordo e fondo colorato:
+       ventinove piastrelle erano il rumore principale della pagina. Resta il
+       solo segno, spento, che si accende quando la riga è sotto il puntatore.
+       Il margine di due pixel la allinea alla prima riga del nome. */
+    .cat__icon {
+      margin-top: 2px;
+      color: var(--text-faint);
+      transition: color var(--dur) var(--ease);
+    }
+
+    .cat:hover .cat__icon {
+      color: var(--accent);
+    }
+
+    .cat__body {
+      flex: 1;
+      min-width: 12ch;
+    }
+
+    .cat__name {
+      display: block;
+      font-size: var(--t-sm);
+      font-weight: 500;
+      line-height: var(--lh-snug);
+      transition: color var(--dur) var(--ease);
+    }
+
+    .cat:hover .cat__name {
+      color: var(--accent-soft);
+    }
+
+    .cat__tag {
+      display: block;
+      margin-top: 2px;
+      font-size: var(--t-xs);
+      line-height: var(--lh-snug);
       color: var(--text-muted);
     }
 
-    .topic__foot {
+    /* Quando la riga si stringe, conteggio e rimando al calendario scendono
+       sotto restando allineati a destra. */
+    .cat__meta {
+      flex: none;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      gap: 8px;
-      margin-top: auto;
-      padding-top: 12px;
-      font-size: 10.8px;
+      gap: var(--s-3);
+      margin-top: 2px;
+      margin-left: auto;
+      font-size: var(--t-micro);
+      line-height: var(--lh-snug);
       color: var(--text-faint);
+      white-space: nowrap;
     }
 
-    .topic__data {
+    .cat__cal {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      padding: 1px 8px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--accent-line);
-      color: var(--accent);
+      gap: var(--s-1);
+    }
+
+    .cat__count {
+      min-width: 9ch;
+      text-align: right;
+    }
+
+    @media (max-width: 620px) {
+      .fam__note {
+        text-align: left;
+      }
+
+      .cat {
+        padding: var(--s-3) 0;
+      }
     }
   `,
 })

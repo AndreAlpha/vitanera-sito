@@ -1,22 +1,13 @@
-<div class="app-decor" aria-hidden="true" [attr.data-accent]="accent()">
-  <div class="app-decor__glow"></div>
-  <div class="app-decor__globe"></div>
-  <div class="app-decor__grid"></div>
-</div>
-
-<app-disclaimer-bar />
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
 
 <div class="shell" [attr.data-accent]="accent()">
   <!-- ------------------------------------------------------------------ -->
-  <!-- Barra laterale                                                      -->
+  <!-- Barra laterale — l'unica mappa del sito                             -->
   <!-- ------------------------------------------------------------------ -->
   <aside class="app-sidebar" [class.app-sidebar--open]="menuOpen()">
     <a class="brand" routerLink="/">
       <span class="brand__mark">V</span>
-      <span class="brand__text">
-        <span class="brand__name">{{ site.name }}</span>
-        <span class="brand__tag">Macro · Geopolitica · Oro</span>
-      </span>
+      <span class="brand__name">{{ site.name }}</span>
     </a>
 
     <nav class="nav" aria-label="Navigazione principale">
@@ -29,8 +20,10 @@
               [routerLink]="item.path"
               routerLinkActive="nav__item--active"
               [routerLinkActiveOptions]="{ exact: !!item.exact }"
+              #active="routerLinkActive"
+              [attr.aria-current]="active.isActive ? 'page' : null"
             >
-              <span class="nav__icon"><app-icon [name]="item.icon" [size]="17" /></span>
+              <app-icon [name]="item.icon" [size]="15" />
               <span>{{ item.label }}</span>
             </a>
           }
@@ -38,18 +31,10 @@
       }
     </nav>
 
-    <div class="side-note">
-      <div class="side-note__head">
-        <app-icon name="shield" [size]="14" />
-        <span>Trasparenza</span>
-      </div>
-      <p>
-        Sito personale, <strong>non una testata giornalistica</strong>. Nessun contenuto è
-        consulenza finanziaria.
-      </p>
-      <a routerLink="/avvertenze"
-        >Leggi le avvertenze <app-icon name="arrow-right" [size]="13"
-      /></a>
+    <div class="side-foot">
+      @for (item of legal; track item.path) {
+        <a [routerLink]="item.path">{{ item.label }}</a>
+      }
     </div>
   </aside>
 
@@ -66,44 +51,30 @@
         class="icon-btn menu-btn"
         type="button"
         aria-label="Apri il menu"
+        [attr.aria-expanded]="menuOpen()"
         (click)="toggleMenu()"
       >
-        <app-icon name="menu" [size]="19" />
+        <app-icon name="menu" [size]="18" />
       </button>
 
-      <div class="crumbs">
-        <nav class="crumbs__trail" aria-label="Percorso">
-          <a routerLink="/" class="crumbs__home" aria-label="Panoramica">
-            <app-icon name="dashboard" [size]="13" />
-          </a>
-          @for (crumb of crumbs(); track crumb.link) {
-            <span class="crumbs__sep">/</span>
-            <a [routerLink]="crumb.link">{{ crumb.label }}</a>
-          }
-        </nav>
-        <p class="crumbs__title">{{ pageTitle() }}</p>
-      </div>
+      <nav class="crumbs" aria-label="Percorso">
+        <a class="crumbs__home" routerLink="/">Panoramica</a>
+        @for (crumb of crumbs(); track crumb.link; let last = $last) {
+          <span class="crumbs__step">
+            <span class="crumbs__sep" aria-hidden="true">/</span>
+            <a [routerLink]="crumb.link" [attr.aria-current]="last ? 'page' : null">{{
+              crumb.label
+            }}</a>
+          </span>
+        }
+      </nav>
 
-      <button
-        class="icon-btn search-toggle"
-        type="button"
-        [attr.aria-expanded]="searchBarOpen()"
-        [attr.aria-label]="searchBarOpen() ? 'Chiudi la ricerca' : 'Apri la ricerca'"
-        (click)="toggleSearchBar()"
-      >
-        <app-icon [name]="searchBarOpen() ? 'close' : 'search'" [size]="18" />
-      </button>
-
-      <div
-        class="search"
-        [class.search--open]="searchOpen()"
-        [class.search--revealed]="searchBarOpen()"
-      >
-        <app-icon name="search" [size]="16" />
+      <div class="search" [class.search--revealed]="searchBarOpen()">
+        <app-icon name="search" [size]="15" />
         <input
           #searchInput
           type="search"
-          placeholder="Cerca un’analisi, un tema, uno strumento…"
+          placeholder="Cerca un’analisi o un tema…"
           aria-label="Cerca nel sito"
           [value]="query()"
           (input)="onQuery($event)"
@@ -115,37 +86,26 @@
             @if (results().length) {
               @for (item of results(); track item.slug) {
                 <button type="button" class="search__row" (mousedown)="goTo(item.slug)">
-                  <span class="search__kicker">{{ item.kicker }}</span>
+                  <span class="eyebrow">{{ item.kicker }}</span>
                   <span class="search__title">{{ item.title }}</span>
                 </button>
               }
             } @else {
               <p class="search__empty">Nessun risultato per «{{ query() }}».</p>
             }
-            <p class="search__legal">
-              I risultati rimandano a contenuti informativi, non a indicazioni operative.
-            </p>
           </div>
         }
       </div>
 
-      <div class="top-actions">
-        <span class="chip chip--gold top-chip">
-          <app-icon name="alert" [size]="12" />
-          Non è consulenza finanziaria
-        </span>
-        <a
-          class="icon-btn"
-          routerLink="/avvertenze"
-          aria-label="Avvertenze e rischi"
-          title="Avvertenze e rischi"
-        >
-          <app-icon name="shield" [size]="17" />
-        </a>
-        <a class="icon-btn" routerLink="/glossario" aria-label="Glossario" title="Glossario">
-          <app-icon name="book" [size]="17" />
-        </a>
-      </div>
+      <button
+        class="icon-btn search-toggle"
+        type="button"
+        [attr.aria-expanded]="searchBarOpen()"
+        [attr.aria-label]="searchBarOpen() ? 'Chiudi la ricerca' : 'Apri la ricerca'"
+        (click)="toggleSearchBar()"
+      >
+        <app-icon [name]="searchBarOpen() ? 'close' : 'search'" [size]="17" />
+      </button>
     </header>
 
     <main id="contenuto" class="content">
@@ -154,5 +114,3 @@
     </main>
   </div>
 </div>
-
-<app-disclaimer-modal />
