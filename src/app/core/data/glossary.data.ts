@@ -108,6 +108,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     why: 'Confrontato con il Brent, aiuta a distinguere tensioni globali da dinamiche interne agli Stati Uniti.',
   },
   {
+    term: 'OPEC+',
+    letter: 'O',
+    definition:
+      'Gruppo formato dai paesi dell’Organizzazione dei paesi esportatori di petrolio e da altri produttori, fra cui la Russia, che concordano quote di produzione comuni.',
+    why: 'Le quote fissano l’offerta consentita, non quella effettiva: guerre e interruzioni possono far crescere la produzione reale molto meno di quanto la decisione lasci prevedere.',
+    related: ['Brent', 'WTI'],
+  },
+  {
     term: 'Stretto di Hormuz',
     letter: 'S',
     definition:

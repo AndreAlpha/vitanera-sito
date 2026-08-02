@@ -41,43 +41,45 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-02T16:06:00+02:00',
-  // Scheda di sintesi: la tabella darebbe 180-240 minuti. Allungata di un
-  // gradino perché conferma la lettura precedente invece di ribaltarla e
-  // poggia su un dato pubblicato, non su una reazione di prezzo. Si ferma
-  // comunque prima della riapertura degli scambi di domenica sera, che resta
-  // il momento in cui la sintesi va rifatta.
+  updatedAt: '2026-08-02T16:13:00+02:00',
+  // L'analisi ragiona tutta «alla riapertura» e quell'indicazione vince sulla
+  // tabella: la lettura vale fino a poco prima del ritorno degli scambi di
+  // domenica sera, che è anche il `nextEvent` dell'articolo.
   validityMinutes: 360,
   asset: 'XAU/USD',
-  direction: 'neutrale',
+  direction: 'neutrale-ribassista',
   strength: 'bassa',
-  headline: 'Banche centrali di nuovo compratrici, rendimenti ancora il freno',
+  headline: 'Più offerta e una nave fuori da Hormuz: il premio di rischio si sgonfia',
   stance:
-    'Il World Gold Council ha rivisto al ribasso il primo trimestre ma registra un forte recupero nel ' +
-    'secondo, intorno alle 289 tonnellate, con Polonia e Cina fra i principali acquirenti: è un supporto ' +
-    'strutturale di medio periodo, non un catalizzatore intraday. Su Fed, dati macro, dollaro e dossier ' +
-    'iraniano non risultano fatti nuovi. I fondamentali restano bilanciati e la lettura conferma il ' +
-    'neutrale del controllo precedente.',
+    'OPEC+ alza le quote di circa 188.000 barili al giorno da settembre e una metaniera di QatarEnergy esce ' +
+    'da Hormuz, primo transito dall’11 luglio: entrambe le novità riducono il premio di rischio sul ' +
+    'petrolio. Per l’oro l’effetto è meno lineare, perché un greggio più debole può frenare i rendimenti ' +
+    'statunitensi e compensare la perdita di domanda rifugio. Il neutrale della sintesi precedente si ' +
+    'inclina leggermente al ribasso, senza diventare ribassista.',
   favours: [
-    'Distinguere il supporto strutturale delle banche centrali dal movimento della singola seduta',
-    'Restare sull’attesa finché uno dei due piatti non si muove davvero',
+    'Tenere separate le due catene: meno premio rifugio da una parte, rendimenti potenzialmente più bassi dall’altra',
+    'Guardare al petrolio, che è il mercato su cui la notizia agisce più direttamente',
   ],
   avoid: [
-    'Leggere le 289 tonnellate come un catalizzatore immediato per l’intraday',
-    'Dare per acquisito il vantaggio rialzista, che è soltanto condizionato',
+    'Trattare un singolo transito come la prova che Hormuz è tornata normale',
+    'Dare per scontato che le quote concordate si traducano in altrettanta offerta effettiva',
   ],
   invalidation:
-    'L’equilibrio si rompe verso il basso se i rendimenti statunitensi salgono ancora senza un fatto geopolitico nuovo, e verso l’alto se le tensioni si riaccendono o se dollaro e rendimenti si indeboliscono.',
-  confirming: ['Acquisti banche centrali 2T ≈ 289 t', 'Premio geopolitico ancora presente'],
+    'Nuovi problemi a Hormuz invalidano immediatamente lo scenario di normalizzazione; lo stesso vale se i negoziati falliscono o se l’offerta effettiva resta molto sotto le quote concordate.',
+  confirming: [
+    'OPEC+ +188.000 b/g da settembre',
+    'Primo transito da Hormuz dall’11 luglio',
+    'Borse del Golfo in rialzo domenica',
+  ],
   contradicting: [
-    'Rendimenti Treasury su livelli elevati',
-    'Fed ferma al 3,50%-3,75%, nessun segnale di allentamento',
-    'Primo trimestre rivisto al ribasso',
+    'Offerta effettiva forse sotto le quote',
+    'Opzione militare ancora implicitamente aperta',
+    'Iran in stato di elevata preparazione',
   ],
   sources: [
+    'opec-alza-le-quote-e-una-metaniera-esce-da-hormuz',
     'banche-centrali-tornano-a-comprare-oro-rendimenti-freno',
     'attacco-sospeso-non-cancellato-iran-smentisce',
-    'trump-cancella-attacco-iran-accordo-non-chiuso',
   ],
 };
 

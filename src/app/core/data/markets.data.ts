@@ -26,6 +26,15 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     note: 'Ultima chiusura, precedente all’annuncio sulla pausa militare.',
   },
   {
+    symbol: 'OPEC+',
+    name: 'Aumento delle quote produttive OPEC+',
+    value: '+188.000 b/g',
+    change: 'da settembre 2026',
+    tone: 'warn',
+    icon: 'flow',
+    note: 'Offerta consentita, non necessariamente offerta effettiva: guerre e interruzioni limitano ancora alcune esportazioni.',
+  },
+  {
     symbol: 'ACQUISTI BC',
     name: 'Acquisti di oro delle banche centrali',
     value: '≈ 289 t',
@@ -59,7 +68,7 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     change: '+1,2%',
     tone: 'bull',
     icon: 'bolt',
-    note: 'Sostenuto dalle difficoltà di transito a Hormuz, la cui riapertura è nel negoziato.',
+    note: 'Ultima chiusura: quote OPEC+ più alte e transito a Hormuz spingono ora in senso contrario.',
   },
 ];
 
