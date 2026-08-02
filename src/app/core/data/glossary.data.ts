@@ -129,6 +129,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     why: 'L’oro è storicamente considerato tale, ma il comportamento non è né automatico né garantito.',
   },
   {
+    term: 'Acquisti delle banche centrali',
+    letter: 'A',
+    definition:
+      'Oro comprato dalle autorità monetarie per le proprie riserve ufficiali, misurato in tonnellate e rilevato a cadenza trimestrale da stime che vengono spesso riviste.',
+    why: 'È una domanda che non dipende dal prezzo di breve periodo: sostiene il mercato nel medio termine ma non muove la singola seduta, e le revisioni possono cambiare il quadro a posteriori.',
+    related: ['Bene rifugio'],
+  },
+  {
     term: 'Divergenza',
     letter: 'D',
     definition:

@@ -41,46 +41,43 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-02T12:46:00+02:00',
-  // Il catalizzatore resta la riapertura degli scambi di domenica sera e la
-  // validità non la supera. È però più corta di quella data alla lettura che
-  // corregge: la direzione è cambiata due volte nella stessa giornata, e una
-  // sintesi che poggia su una ricostruzione appena rivista non merita di
-  // restare in piedi fino all'ultimo minuto utile.
-  validityMinutes: 480,
+  updatedAt: '2026-08-02T16:06:00+02:00',
+  // Scheda di sintesi: la tabella darebbe 180-240 minuti. Allungata di un
+  // gradino perché conferma la lettura precedente invece di ribaltarla e
+  // poggia su un dato pubblicato, non su una reazione di prezzo. Si ferma
+  // comunque prima della riapertura degli scambi di domenica sera, che resta
+  // il momento in cui la sintesi va rifatta.
+  validityMinutes: 360,
   asset: 'XAU/USD',
   direction: 'neutrale',
   strength: 'bassa',
-  headline: 'Pausa militare dichiarata da una parte sola: il bias torna neutrale',
+  headline: 'Banche centrali di nuovo compratrici, rendimenti ancora il freno',
   stance:
-    'La ricostruzione di Reuters corregge l’annuncio: l’azione militare è sospesa o rinviata per lasciare ' +
-    'spazio a un accordo, non cancellata, e l’opzione resta aperta. L’Iran nega di aver chiesto una pausa e ' +
-    'definisce fuorviante la versione statunitense. Lo scenario ribassista del controllo precedente si ' +
-    'ridimensiona: il vero freno per l’oro resta la combinazione di rendimenti lunghi elevati e Fed attenta ' +
-    'all’inflazione, non una de-escalation concordata.',
+    'Il World Gold Council ha rivisto al ribasso il primo trimestre ma registra un forte recupero nel ' +
+    'secondo, intorno alle 289 tonnellate, con Polonia e Cina fra i principali acquirenti: è un supporto ' +
+    'strutturale di medio periodo, non un catalizzatore intraday. Su Fed, dati macro, dollaro e dossier ' +
+    'iraniano non risultano fatti nuovi. I fondamentali restano bilanciati e la lettura conferma il ' +
+    'neutrale del controllo precedente.',
   favours: [
-    'Trattare la pausa come dichiarata da una parte sola, non come tregua condivisa',
-    'Guardare ai rendimenti lunghi e alla Fed come al vero freno dell’oro',
+    'Distinguere il supporto strutturale delle banche centrali dal movimento della singola seduta',
+    'Restare sull’attesa finché uno dei due piatti non si muove davvero',
   ],
   avoid: [
-    'Portare avanti lo scenario ribassista costruito sull’annuncio di cancellazione',
-    'Leggere l’assenza di nuovi attacchi come conferma della cornice negoziale',
+    'Leggere le 289 tonnellate come un catalizzatore immediato per l’intraday',
+    'Dare per acquisito il vantaggio rialzista, che è soltanto condizionato',
   ],
   invalidation:
-    'Un accordo confermato anche da Teheran, con Hormuz effettivamente riaperto e petrolio in discesa stabile, sposta la lettura verso il basso; nuovi attacchi, il fallimento esplicito dei negoziati o altri incidenti marittimi la spostano verso l’alto.',
-  confirming: [
-    'Trentennale USA su livelli pluriennali',
-    'Fed ferma al 3,50%-3,75%',
-    'Oro venerdì −1,26%',
-  ],
+    'L’equilibrio si rompe verso il basso se i rendimenti statunitensi salgono ancora senza un fatto geopolitico nuovo, e verso l’alto se le tensioni si riaccendono o se dollaro e rendimenti si indeboliscono.',
+  confirming: ['Acquisti banche centrali 2T ≈ 289 t', 'Premio geopolitico ancora presente'],
   contradicting: [
-    'Teheran nega la pausa e resta in allerta',
-    'Opzione militare statunitense ancora aperta',
+    'Rendimenti Treasury su livelli elevati',
+    'Fed ferma al 3,50%-3,75%, nessun segnale di allentamento',
+    'Primo trimestre rivisto al ribasso',
   ],
   sources: [
+    'banche-centrali-tornano-a-comprare-oro-rendimenti-freno',
     'attacco-sospeso-non-cancellato-iran-smentisce',
     'trump-cancella-attacco-iran-accordo-non-chiuso',
-    'attacchi-energia-iraniana-piano-non-ordine',
   ],
 };
 

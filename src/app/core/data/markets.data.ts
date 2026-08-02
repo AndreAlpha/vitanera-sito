@@ -26,6 +26,15 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     note: 'Ultima chiusura, precedente all’annuncio sulla pausa militare.',
   },
   {
+    symbol: 'ACQUISTI BC',
+    name: 'Acquisti di oro delle banche centrali',
+    value: '≈ 289 t',
+    change: '2° trimestre 2026',
+    tone: 'bull',
+    icon: 'basket',
+    note: 'Stima rivista del World Gold Council: Polonia e Cina fra i principali acquirenti.',
+  },
+  {
     symbol: 'US30Y',
     name: 'Treasury a 30 anni',
     value: 'Livelli pluriennali',
@@ -51,15 +60,6 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     tone: 'bull',
     icon: 'bolt',
     note: 'Sostenuto dalle difficoltà di transito a Hormuz, la cui riapertura è nel negoziato.',
-  },
-  {
-    symbol: 'WTI',
-    name: 'West Texas Intermediate',
-    value: '84,67 $',
-    change: '+1,3%',
-    tone: 'bull',
-    icon: 'bolt',
-    note: 'Si muove con il Brent sul rischio di danni all’offerta.',
   },
 ];
 
