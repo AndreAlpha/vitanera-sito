@@ -41,34 +41,45 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-01T01:12:00+02:00',
-  // La lettura è scritta per la riapertura di lunedì e il testo lo dice
-  // esplicitamente («alla riapertura non inseguirei un eventuale gap»): la
-  // durata segue quell'orizzonte invece della tabella, e scade poco dopo il
-  // ritorno degli scambi, che è il momento in cui va rifatta.
-  validityMinutes: 2880,
+  updatedAt: '2026-08-02T12:38:00+02:00',
+  // L'analisi descrive espressamente l'effetto «alla riapertura» e ha come
+  // catalizzatore il ritorno degli scambi di domenica sera: la lettura vale
+  // fino a poco prima di quel momento, non oltre, perché è il primo prezzo a
+  // dire se la cancellazione viene letta come de-escalation.
+  validityMinutes: 600,
   asset: 'XAU/USD',
-  direction: 'neutrale-rialzista',
-  strength: 'bassa',
-  headline: 'Un piano di attacchi sull’energia iraniana, non ancora un ordine',
+  direction: 'ribassista',
+  strength: 'media',
+  headline: 'Attacco cancellato, ma l’Iran non ha ratificato nulla',
   stance:
-    'Reuters e Axios riferiscono di una campagna statunitense e israeliana in valutazione contro le ' +
-    'infrastrutture energetiche iraniane, possibile già nel fine settimana, ma senza il via libera ' +
-    'definitivo. Il petrolio era già sostenuto dalle difficoltà di transito a Hormuz. Il bias risale da ' +
-    'ribassista a neutrale con rischio rialzista, non oltre: manca l’ordine di attacco.',
+    'Trump ha annunciato di aver cancellato — non rinviato — il nuovo attacco contro l’Iran, citando ' +
+    'un’intesa preliminare che comprenderebbe la riapertura completa di Hormuz. Reuters parla più ' +
+    'prudentemente di sospensione. Il premio geopolitico che aveva riportato il bias sul neutrale ' +
+    'venerdì si sgonfia: la lettura passa a moderatamente ribassista, ma poggia su una dichiarazione ' +
+    'e non su un accordo firmato.',
   favours: [
-    'Attendere la conferma della notizia prima di considerare valido il rialzo',
-    'Il premio di rischio sull’energia, che ha una causa diretta e verificabile',
+    'Trattare la de-escalation come annunciata e non ancora strutturale',
+    'Verificare la reazione del petrolio, dove Hormuz è il punto centrale della trattativa',
   ],
   avoid: [
-    'Inseguire un eventuale gap rialzista alla riapertura di lunedì',
-    'Leggere un piano riportato dalla stampa come se fosse un fatto avvenuto',
+    'Considerare chiuso il rischio geopolitico prima di una conferma iraniana',
+    'Leggere l’assenza di smentite del fine settimana come una ratifica',
   ],
   invalidation:
-    'Il via libera non arriva e l’oro restituisce subito l’eventuale gap: il mercato torna su rendimenti elevati e quadro Fed.',
-  confirming: ['Brent ≈ 90,12 $ (+1,2%)', 'WTI ≈ 84,67 $ (+1,3%)'],
-  contradicting: ['Oro spot ≈ 4.049,83 (−1,3%)', 'Nessun ordine di attacco confermato'],
-  sources: ['attacchi-energia-iraniana-piano-non-ordine'],
+    'Teheran smentisce l’intesa, i negoziati falliscono o Hormuz non viene riaperto; oppure l’oro assorbe subito le vendite mentre DXY e rendimenti non riescono a salire.',
+  confirming: [
+    'Attacco cancellato, non rinviato',
+    'Hormuz nel perimetro dell’accordo',
+    'Fed ferma al 3,50%-3,75%',
+  ],
+  contradicting: [
+    'Nessuna ratifica pubblica da Teheran',
+    'Minaccia iraniana di risposta dura confermata',
+  ],
+  sources: [
+    'trump-cancella-attacco-iran-accordo-non-chiuso',
+    'attacchi-energia-iraniana-piano-non-ordine',
+  ],
 };
 
 export const DIRECTION_LABEL: Record<BiasDirection, string> = {

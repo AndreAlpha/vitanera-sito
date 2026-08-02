@@ -23,7 +23,16 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     change: '−1,3%',
     tone: 'gold',
     icon: 'coin',
-    note: 'Chiusura precedente alla piena diffusione dell’indiscrezione sull’Iran.',
+    note: 'Ultima chiusura, precedente all’annuncio sulla cancellazione dell’attacco.',
+  },
+  {
+    symbol: 'FED FUNDS',
+    name: 'Tasso ufficiale della Federal Reserve',
+    value: '3,50%-3,75%',
+    change: '',
+    tone: 'bear',
+    icon: 'bank',
+    note: 'Fermo dal comunicato del 29 luglio, con l’inflazione ancora descritta come elevata.',
   },
   {
     symbol: 'BRENT',
@@ -32,7 +41,7 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     change: '+1,2%',
     tone: 'bull',
     icon: 'bolt',
-    note: 'Già sostenuto dalle difficoltà di transito attraverso Hormuz.',
+    note: 'Sostenuto dalle difficoltà di transito a Hormuz, la cui riapertura è nel negoziato.',
   },
   {
     symbol: 'WTI',
