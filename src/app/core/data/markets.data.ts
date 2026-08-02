@@ -20,10 +20,19 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     symbol: 'XAU/USD',
     name: 'Oro spot',
     value: '4.049,83',
-    change: '−1,3%',
+    change: '−1,26%',
     tone: 'gold',
     icon: 'coin',
-    note: 'Ultima chiusura, precedente all’annuncio sulla cancellazione dell’attacco.',
+    note: 'Ultima chiusura, precedente all’annuncio sulla pausa militare.',
+  },
+  {
+    symbol: 'US30Y',
+    name: 'Treasury a 30 anni',
+    value: 'Livelli pluriennali',
+    change: '',
+    tone: 'bear',
+    icon: 'arrow-up',
+    note: 'Toccati venerdì mentre l’oro cedeva: è il principale freno per XAU/USD.',
   },
   {
     symbol: 'FED FUNDS',
@@ -59,7 +68,7 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
  *
  * Resta vuoto finché non c'è un valore da mettere: la panoramica concatena i
  * due array in un'unica griglia, quindi la distinzione non si vede più a video
- * e non ha senso riempirlo per simmetria. DXY e Treasury sono citati
- * nell'ultima analisi, ma senza un numero: senza numero non sono un riferimento.
+ * e non ha senso riempirlo per simmetria. Il DXY è citato nell'ultima analisi,
+ * ma senza un numero: senza numero non è un riferimento.
  */
 export const MARKET_STRIP: readonly MarketReference[] = [];

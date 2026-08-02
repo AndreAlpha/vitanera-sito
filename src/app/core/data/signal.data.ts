@@ -41,42 +41,44 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-02T12:38:00+02:00',
-  // L'analisi descrive espressamente l'effetto «alla riapertura» e ha come
-  // catalizzatore il ritorno degli scambi di domenica sera: la lettura vale
-  // fino a poco prima di quel momento, non oltre, perché è il primo prezzo a
-  // dire se la cancellazione viene letta come de-escalation.
-  validityMinutes: 600,
+  updatedAt: '2026-08-02T12:46:00+02:00',
+  // Il catalizzatore resta la riapertura degli scambi di domenica sera e la
+  // validità non la supera. È però più corta di quella data alla lettura che
+  // corregge: la direzione è cambiata due volte nella stessa giornata, e una
+  // sintesi che poggia su una ricostruzione appena rivista non merita di
+  // restare in piedi fino all'ultimo minuto utile.
+  validityMinutes: 480,
   asset: 'XAU/USD',
-  direction: 'ribassista',
-  strength: 'media',
-  headline: 'Attacco cancellato, ma l’Iran non ha ratificato nulla',
+  direction: 'neutrale',
+  strength: 'bassa',
+  headline: 'Pausa militare dichiarata da una parte sola: il bias torna neutrale',
   stance:
-    'Trump ha annunciato di aver cancellato — non rinviato — il nuovo attacco contro l’Iran, citando ' +
-    'un’intesa preliminare che comprenderebbe la riapertura completa di Hormuz. Reuters parla più ' +
-    'prudentemente di sospensione. Il premio geopolitico che aveva riportato il bias sul neutrale ' +
-    'venerdì si sgonfia: la lettura passa a moderatamente ribassista, ma poggia su una dichiarazione ' +
-    'e non su un accordo firmato.',
+    'La ricostruzione di Reuters corregge l’annuncio: l’azione militare è sospesa o rinviata per lasciare ' +
+    'spazio a un accordo, non cancellata, e l’opzione resta aperta. L’Iran nega di aver chiesto una pausa e ' +
+    'definisce fuorviante la versione statunitense. Lo scenario ribassista del controllo precedente si ' +
+    'ridimensiona: il vero freno per l’oro resta la combinazione di rendimenti lunghi elevati e Fed attenta ' +
+    'all’inflazione, non una de-escalation concordata.',
   favours: [
-    'Trattare la de-escalation come annunciata e non ancora strutturale',
-    'Verificare la reazione del petrolio, dove Hormuz è il punto centrale della trattativa',
+    'Trattare la pausa come dichiarata da una parte sola, non come tregua condivisa',
+    'Guardare ai rendimenti lunghi e alla Fed come al vero freno dell’oro',
   ],
   avoid: [
-    'Considerare chiuso il rischio geopolitico prima di una conferma iraniana',
-    'Leggere l’assenza di smentite del fine settimana come una ratifica',
+    'Portare avanti lo scenario ribassista costruito sull’annuncio di cancellazione',
+    'Leggere l’assenza di nuovi attacchi come conferma della cornice negoziale',
   ],
   invalidation:
-    'Teheran smentisce l’intesa, i negoziati falliscono o Hormuz non viene riaperto; oppure l’oro assorbe subito le vendite mentre DXY e rendimenti non riescono a salire.',
+    'Un accordo confermato anche da Teheran, con Hormuz effettivamente riaperto e petrolio in discesa stabile, sposta la lettura verso il basso; nuovi attacchi, il fallimento esplicito dei negoziati o altri incidenti marittimi la spostano verso l’alto.',
   confirming: [
-    'Attacco cancellato, non rinviato',
-    'Hormuz nel perimetro dell’accordo',
+    'Trentennale USA su livelli pluriennali',
     'Fed ferma al 3,50%-3,75%',
+    'Oro venerdì −1,26%',
   ],
   contradicting: [
-    'Nessuna ratifica pubblica da Teheran',
-    'Minaccia iraniana di risposta dura confermata',
+    'Teheran nega la pausa e resta in allerta',
+    'Opzione militare statunitense ancora aperta',
   ],
   sources: [
+    'attacco-sospeso-non-cancellato-iran-smentisce',
     'trump-cancella-attacco-iran-accordo-non-chiuso',
     'attacchi-energia-iraniana-piano-non-ordine',
   ],
