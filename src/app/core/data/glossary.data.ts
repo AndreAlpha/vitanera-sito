@@ -108,6 +108,22 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     why: 'Confrontato con il Brent, aiuta a distinguere tensioni globali da dinamiche interne agli Stati Uniti.',
   },
   {
+    term: 'Intervento valutario coordinato',
+    letter: 'I',
+    definition:
+      'Operazione con cui due o più autorità monetarie comprano e vendono valuta nello stesso momento, per spostare un cambio ritenuto disallineato.',
+    why: 'Vale più della somma degli importi, perché segnala che le parti sono d’accordo: il mercato reagisce anche prima di conoscere i numeri ufficiali.',
+    related: ['DXY'],
+  },
+  {
+    term: 'Linea di liquidità in dollari',
+    letter: 'L',
+    definition:
+      'Strumento con cui la Federal Reserve fornisce dollari a un’altra banca centrale in cambio della sua valuta, per un periodo definito.',
+    why: 'Permette a chi interviene sul cambio di procurarsi dollari senza vendere titoli del Tesoro statunitense, e quindi senza spingere al rialzo i rendimenti.',
+    related: ['Treasury'],
+  },
+  {
     term: 'OPEC+',
     letter: 'O',
     definition:

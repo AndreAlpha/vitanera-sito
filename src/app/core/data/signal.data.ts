@@ -41,45 +41,46 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-02T16:13:00+02:00',
-  // L'analisi ragiona tutta «alla riapertura» e quell'indicazione vince sulla
-  // tabella: la lettura vale fino a poco prima del ritorno degli scambi di
-  // domenica sera, che è anche il `nextEvent` dell'articolo.
-  validityMinutes: 360,
+  updatedAt: '2026-08-02T18:20:00+02:00',
+  // Massimo della tabella per una scheda di sintesi, e coincide con
+  // l'orizzonte dichiarato dal testo: la verifica dell'intervento avviene
+  // alla riapertura degli scambi, che è anche il `nextEvent` dell'articolo.
+  // La lettura scade poco prima, perché è lì che va rifatta.
+  validityMinutes: 240,
   asset: 'XAU/USD',
-  direction: 'neutrale-ribassista',
+  direction: 'neutrale-rialzista',
   strength: 'bassa',
-  headline: 'Più offerta e una nave fuori da Hormuz: il premio di rischio si sgonfia',
+  headline: 'Intervento coordinato sullo yen: il sostegno all’oro arriva dal dollaro',
   stance:
-    'OPEC+ alza le quote di circa 188.000 barili al giorno da settembre e una metaniera di QatarEnergy esce ' +
-    'da Hormuz, primo transito dall’11 luglio: entrambe le novità riducono il premio di rischio sul ' +
-    'petrolio. Per l’oro l’effetto è meno lineare, perché un greggio più debole può frenare i rendimenti ' +
-    'statunitensi e compensare la perdita di domanda rifugio. Il neutrale della sintesi precedente si ' +
-    'inclina leggermente al ribasso, senza diventare ribassista.',
+    'Reuters riferisce del primo intervento congiunto Stati Uniti-Giappone dal 2011 a sostegno dello yen, ' +
+    'con acquisti per un importo giapponese vicino a 59 miliardi di dollari e liquidità presa da una linea ' +
+    'della Fed invece che da vendite di Treasury. Un dollaro più debole con rendimenti non spinti più in ' +
+    'alto sarebbe favorevole all’oro e compensa in parte il premio geopolitico che Iran, Hormuz e OPEC+ ' +
+    'continuano a sgonfiare. Il bias si inclina appena al rialzo.',
   favours: [
-    'Tenere separate le due catene: meno premio rifugio da una parte, rendimenti potenzialmente più bassi dall’altra',
-    'Guardare al petrolio, che è il mercato su cui la notizia agisce più direttamente',
+    'Verificare il DXY prima dello yen: è il passaggio da cui dipende l’effetto sull’oro',
+    'Trattare la struttura dell’operazione, non l’importo, come l’elemento che conta',
   ],
   avoid: [
-    'Trattare un singolo transito come la prova che Hormuz è tornata normale',
-    'Dare per scontato che le quote concordate si traducano in altrettanta offerta effettiva',
+    'Dare per acquisito l’importo finché manca l’annuncio ufficiale giapponese',
+    'Leggere uno yen più forte come sinonimo automatico di dollaro più debole',
   ],
   invalidation:
-    'Nuovi problemi a Hormuz invalidano immediatamente lo scenario di normalizzazione; lo stesso vale se i negoziati falliscono o se l’offerta effettiva resta molto sotto le quote concordate.',
+    'L’intervento si rivela inefficace, il DXY torna forte, i rendimenti statunitensi accelerano oppure chiarimenti ufficiali ridimensionano il coinvolgimento statunitense.',
   confirming: [
-    'OPEC+ +188.000 b/g da settembre',
-    'Primo transito da Hormuz dall’11 luglio',
-    'Borse del Golfo in rialzo domenica',
+    'Intervento giapponese ≈ 59 mld $',
+    'Liquidità dalla linea Fed, non da vendite di Treasury',
+    'PBoC «appropriatamente accomodante»',
   ],
   contradicting: [
-    'Offerta effettiva forse sotto le quote',
-    'Opzione militare ancora implicitamente aperta',
-    'Iran in stato di elevata preparazione',
+    'Annuncio ufficiale giapponese ancora atteso',
+    'Premio geopolitico in riduzione su Iran e Hormuz',
+    'OPEC+ +188.000 b/g da settembre',
   ],
   sources: [
+    'intervento-coordinato-usa-giappone-sullo-yen',
     'opec-alza-le-quote-e-una-metaniera-esce-da-hormuz',
     'banche-centrali-tornano-a-comprare-oro-rendimenti-freno',
-    'attacco-sospeso-non-cancellato-iran-smentisce',
   ],
 };
 

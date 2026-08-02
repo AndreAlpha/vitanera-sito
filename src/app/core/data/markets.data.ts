@@ -26,6 +26,15 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     note: 'Ultima chiusura, precedente all’annuncio sulla pausa militare.',
   },
   {
+    symbol: 'INTERVENTO JPY',
+    name: 'Intervento coordinato sullo yen',
+    value: '≈ 59 mld $',
+    change: 'primo dal 2011',
+    tone: 'bull',
+    icon: 'dollar',
+    note: 'Importo giapponese riportato da Reuters, con liquidità presa da una linea della Fed.',
+  },
+  {
     symbol: 'OPEC+',
     name: 'Aumento delle quote produttive OPEC+',
     value: '+188.000 b/g',
@@ -60,15 +69,6 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     tone: 'bear',
     icon: 'bank',
     note: 'Fermo dal comunicato del 29 luglio, con l’inflazione ancora descritta come elevata.',
-  },
-  {
-    symbol: 'BRENT',
-    name: 'Brent',
-    value: '90,12 $',
-    change: '+1,2%',
-    tone: 'bull',
-    icon: 'bolt',
-    note: 'Ultima chiusura: quote OPEC+ più alte e transito a Hormuz spingono ora in senso contrario.',
   },
 ];
 
