@@ -41,46 +41,46 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-03T15:00:00+02:00',
-  // La lettura scade all'apertura americana, che è il catalizzatore dichiarato
-  // nell'analisi: pubblicata alle 15:00, vale mezz'ora. È volutamente sotto i
-  // 30-45 minuti di un controllo intraday, perché qui non si descrive un
-  // movimento già avvenuto ma se ne deduce uno da verificare sui prezzi.
+  updatedAt: '2026-08-03T16:05:00+02:00',
+  // Controllo intraday a pochi minuti dal dato, con una divergenza aperta
+  // dichiarata — il dato suggerisce una cosa, i prezzi ne fanno un'altra — e il
+  // numero ISM principale ancora mancante: si sta al minimo dei 30-45 minuti
+  // della fascia intraday. Il catalizzatore dichiarato è «nei prossimi minuti».
   validityMinutes: 30,
   asset: 'XAU/USD',
   direction: 'neutrale-rialzista',
   strength: 'bassa',
-  headline: 'Sullo yen gli Stati Uniti hanno venduto euro: il dollaro non era il bersaglio',
+  headline: 'Primi componenti ISM leggermente contro l’oro, ma i prezzi non hanno ancora girato',
   stance:
-    'Il coordinamento con il Giappone è confermato, ma la gamba americana sarebbe stata fatta di euro e non ' +
-    'di dollari: l’obiettivo era sostenere lo yen senza indebolire il dollaro nel suo complesso, anche per ' +
-    'non alimentare l’inflazione interna. Restano favorevoli all’oro il petrolio in calo e i rendimenti in ' +
-    'discesa, con Williams che tiene la Fed in attesa; viene meno invece il canale valutario, che era il ' +
-    'sostegno più recente. Della BCE si sa solo che sarebbe stata in contatto con la Fed.',
+    'Prezzi pagati a 71,1 sopra le attese ma in calo dal 73,0, nuovi ordini a 56,7 in aumento: la domanda ' +
+    'industriale non cede e il rischio di una Fed costretta a restare restrittiva sale un poco. Il dato ISM ' +
+    'principale non è però ancora verificabile, e soprattutto DXY e rendimenti continuano a scendere nella ' +
+    'seduta: nessuna inversione cross-asset. Sullo sfondo restano la struttura dell’intervento sullo yen, che ' +
+    'ha tolto una gamba al canale valutario, e una Fed che secondo Williams può ancora aspettare.',
   favours: [
-    'Verificare sui prezzi se il dollaro si stabilizza contro euro invece di cedere su tutti i fronti',
-    'Tenere petrolio e rendimenti come le due gambe che reggono ancora la lettura',
+    'Trattare la lettura come una divergenza aperta fra ciò che il dato suggerisce e ciò che i prezzi fanno',
+    'Aspettare il numero ISM principale prima di dare peso pieno al blocco dei componenti',
   ],
   avoid: [
-    'Continuare a leggere l’intervento sullo yen come volontà americana di un dollaro debole',
-    'Dare per acquisita una partecipazione della BCE, di cui risulta soltanto un contatto con la Fed',
+    'Leggere i prezzi pagati sopra le attese come una nuova accelerazione: restano in discesa dal 73,0',
+    'Anticipare l’inversione su una sola delle tre condizioni invece che sulle tre insieme',
   ],
   invalidation:
-    'Il DXY continua a scendere in modo generalizzato, i Treasury si indeboliscono ancora e l’oro mantiene comunque il rialzo, oppure arriva una smentita ufficiale americana sull’utilizzo dell’euro.',
+    'Oro in calo, DXY in recupero e Treasury a 2 e a 10 anni in salita nello stesso momento, oppure un dato ISM principale che smentisce il quadro suggerito dai componenti già pubblicati.',
   confirming: [
-    'Petrolio in calo, Brent quasi −5%',
-    'Decennale −5/−6 pb',
+    'DXY e rendimenti ancora in calo nella seduta',
+    'Prezzi pagati giù dal 73,0 al 71,1',
     'Fed in attesa, tassi fermi al 3,50%-3,75%',
   ],
   contradicting: [
-    'Gamba americana in euro, non in dollari',
-    'Dollaro che può recuperare contro euro',
-    'Dettagli ufficiali di Tesoro e Fed di New York non ancora pubblicati',
+    'Prezzi pagati 71,1 contro 70,0 atteso',
+    'Nuovi ordini in aumento a 56,7',
+    'Dato ISM principale non ancora verificabile',
   ],
   sources: [
+    'primi-dati-ism-prezzi-sopra-le-attese-ordini-in-aumento',
     'intervento-sullo-yen-washington-ha-venduto-euro',
     'williams-politica-della-fed-ben-posizionata',
-    'intervento-coordinato-usa-giappone-sullo-yen',
   ],
 };
 

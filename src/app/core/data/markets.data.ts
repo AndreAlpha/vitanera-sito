@@ -44,13 +44,22 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     note: 'Williams ha sostenuto con convinzione la decisione di non muoversi, ma alzerebbe senza un ritorno credibile dell’inflazione al 2%.',
   },
   {
+    symbol: 'ISM PREZZI',
+    name: 'ISM manifatturiero, prezzi pagati',
+    value: '71,1',
+    change: 'atteso 70,0, precedente 73,0',
+    tone: 'warn',
+    icon: 'factory',
+    note: 'Sopra le attese, il che alza il rischio di una Fed costretta a restare restrittiva; ma in discesa dal 73,0, quindi non una nuova accelerazione inflazionistica netta.',
+  },
+  {
     symbol: 'US10Y',
     name: 'Treasury a 10 anni',
     value: '−5/−6 pb',
-    change: 'in giornata',
+    change: 'ancora in calo nella seduta',
     tone: 'bull',
     icon: 'percent',
-    note: 'È il canale da cui l’oro trae il beneficio maggiore. La discesa può fermarsi se il greggio rimbalza e tornano i timori inflazionistici.',
+    note: 'È il canale da cui l’oro trae il beneficio maggiore. Dopo i componenti ISM il rischio di rimbalzo cresce, soprattutto sulla scadenza a 2 anni: per ora però non si è materializzato.',
   },
   {
     symbol: 'DXY',
@@ -59,7 +68,7 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     change: '≈ 99,8, sotto quota 100',
     tone: 'warn',
     icon: 'dollar',
-    note: 'La struttura dell’intervento sullo yen indebolisce questa gamba della lettura: il dollaro può stabilizzarsi o recuperare, soprattutto contro l’euro, invece di continuare a cedere su tutti i fronti.',
+    note: 'Due spinte al recupero — la struttura dell’intervento sullo yen e ora i componenti ISM — che però non si sono ancora viste sui prezzi: nella seduta il dollaro continua a cedere.',
   },
   {
     symbol: 'PETROLIO',
