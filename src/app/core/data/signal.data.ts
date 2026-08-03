@@ -41,48 +41,48 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-03T08:55:00+02:00',
-  // Base di 30-45 minuti per un controllo intraday cross-asset, alzata a 90
-  // per i due motivi previsti: i correlati sono allineati e l'analisi conferma
-  // la precedente invece di ribaltarla. Resta comunque dentro la sessione
-  // europea, che è l'orizzonte dichiarato dal testo, e ben prima del
-  // `nextEvent` dell'articolo, che è a giorni.
-  validityMinutes: 90,
+  updatedAt: '2026-08-03T10:05:00+02:00',
+  // Una scheda geopolitica varrebbe 180-240, ma il testo dichiara una
+  // divergenza aperta — la stessa notizia sostiene il rifugio e apre al
+  // rimbalzo di petrolio e rendimenti — e questo accorcia. Sopra i 90 minuti
+  // del controllo precedente perché il fatto è una dichiarazione ufficiale e
+  // non una variazione di prezzo.
+  validityMinutes: 120,
   asset: 'XAU/USD',
   direction: 'rialzista',
-  strength: 'media',
-  headline: 'Il movimento diventa cross-asset: petrolio giù, dollaro sotto quota 100',
+  strength: 'bassa',
+  headline: 'Teheran smentisce i negoziati: il premio rifugio regge, il quadro si fa fragile',
   stance:
-    'Il petrolio perde oltre il 6% sulle attese di un’intesa fra Stati Uniti e Iran, il Dollar Index scende ' +
-    'sotto quota 100 intorno a 99,8 e anche euro e sterlina salgono contro il dollaro: la reazione non è più ' +
-    'circoscritta a USD/JPY. Reuters collega l’oro sostenuto al minore rischio d’inflazione e alla ' +
-    'conseguente attenuazione delle pressioni sui tassi statunitensi, mentre Bessent si dice pronto a ' +
-    'ripetere l’intervento sullo yen e chiede di ampliare la facility FIMA. Il bias sale rispetto al ' +
-    'controllo precedente non per una notizia più grande, ma perché tre mercati la confermano insieme.',
+    'Il ministero degli Esteri iraniano nega che siano in corso negoziati con gli Stati Uniti: i colloqui ' +
+    'mediati dall’Oman riguardano solo un corridoio temporaneo nello Stretto di Hormuz, che non sarà ' +
+    'riaperto pienamente finché continuerà quella che Teheran definisce «aggressione» americana. La ' +
+    'smentita arriva su un mercato che aveva già prezzato il contrario, con il petrolio in forte calo e le ' +
+    'Borse europee in rialzo. Resta il sostegno valutario descritto in mattinata, ma il premio geopolitico ' +
+    'che si stava sgonfiando torna in parte in piedi: stessa direzione del controllo precedente, con meno forza.',
   favours: [
-    'Trattare quota 100 sul DXY e la tenuta di Brent e WTI come le due condizioni da verificare',
-    'Leggere la coerenza fra i tre mercati come il vero elemento nuovo, più delle singole variazioni',
+    'Tenere distinta la solidità della dichiarazione dall’effetto di mercato, che è la parte incerta',
+    'Trattare il canale omanita per quello che è: transito delle navi, non accordo politico',
   ],
   avoid: [
-    'Estendere oltre la sessione europea una lettura costruita su variazioni intraday',
-    'Dare per scontato che il calo del petrolio si traduca subito in rendimenti più bassi',
+    'Leggere il ritorno del rischio geopolitico come automaticamente rialzista per l’oro',
+    'Contare ancora sul solo dollaro debole se il petrolio rimbalza e i rendimenti si riprendono',
   ],
   invalidation:
-    'Il DXY recupera stabilmente quota 100, i Treasury a 2 e a 10 anni tornano in forte rialzo, i negoziati con l’Iran falliscono in modo dichiarato oppure il petrolio rimbalza bruscamente.',
+    'Arriva una conferma ufficiale di negoziati diretti fra Stati Uniti e Iran, un accordo verificabile sulla riapertura di Hormuz, oppure il petrolio continua a scendere nonostante la smentita iraniana.',
   confirming: [
-    'Petrolio oltre −6%',
-    'DXY ≈ 99,8, sotto quota 100',
-    'Euro e sterlina in rialzo contro il dollaro',
+    'Teheran: nessun negoziato in corso',
+    'Hormuz non riapribile del tutto',
+    'DXY ≈ 99,8, ancora sotto quota 100',
   ],
   contradicting: [
-    'Lettura costruita su variazioni intraday',
-    'Dati sul lavoro statunitensi ancora attesi',
-    'Rendimenti in calo solo potenziale, non ancora osservato',
+    'Petrolio ancora in forte calo',
+    'Borse europee aperte in rialzo sulle speranze diplomatiche',
+    'Rimbalzo del greggio come rischio per i rendimenti',
   ],
   sources: [
+    'iran-smentisce-negoziati-diretti-con-gli-stati-uniti',
     'movimento-si-rafforza-petrolio-giu-dollaro-sotto-quota-100',
     'intervento-coordinato-usa-giappone-sullo-yen',
-    'opec-alza-le-quote-e-una-metaniera-esce-da-hormuz',
   ],
 };
 
