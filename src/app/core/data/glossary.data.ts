@@ -124,6 +124,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     related: ['Treasury'],
   },
   {
+    term: 'Facility FIMA',
+    letter: 'F',
+    definition:
+      'Strumento della Federal Reserve che consente alle autorità monetarie estere di ottenere dollari a fronte dei titoli del Tesoro statunitense che già detengono, invece di venderli sul mercato.',
+    why: 'È la variante su scala più ampia dello stesso principio della linea di liquidità: senza vendite forzate di Treasury viene meno la spinta al rialzo dei rendimenti, che resta il freno principale per l’oro.',
+    related: ['Linea di liquidità in dollari', 'Treasury'],
+  },
+  {
     term: 'OPEC+',
     letter: 'O',
     definition:

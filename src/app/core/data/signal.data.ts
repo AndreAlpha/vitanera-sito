@@ -41,46 +41,48 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-02T18:20:00+02:00',
-  // Massimo della tabella per una scheda di sintesi, e coincide con
-  // l'orizzonte dichiarato dal testo: la verifica dell'intervento avviene
-  // alla riapertura degli scambi, che è anche il `nextEvent` dell'articolo.
-  // La lettura scade poco prima, perché è lì che va rifatta.
-  validityMinutes: 240,
+  updatedAt: '2026-08-03T08:55:00+02:00',
+  // Base di 30-45 minuti per un controllo intraday cross-asset, alzata a 90
+  // per i due motivi previsti: i correlati sono allineati e l'analisi conferma
+  // la precedente invece di ribaltarla. Resta comunque dentro la sessione
+  // europea, che è l'orizzonte dichiarato dal testo, e ben prima del
+  // `nextEvent` dell'articolo, che è a giorni.
+  validityMinutes: 90,
   asset: 'XAU/USD',
-  direction: 'neutrale-rialzista',
-  strength: 'bassa',
-  headline: 'Intervento coordinato sullo yen: il sostegno all’oro arriva dal dollaro',
+  direction: 'rialzista',
+  strength: 'media',
+  headline: 'Il movimento diventa cross-asset: petrolio giù, dollaro sotto quota 100',
   stance:
-    'Reuters riferisce del primo intervento congiunto Stati Uniti-Giappone dal 2011 a sostegno dello yen, ' +
-    'con acquisti per un importo giapponese vicino a 59 miliardi di dollari e liquidità presa da una linea ' +
-    'della Fed invece che da vendite di Treasury. Un dollaro più debole con rendimenti non spinti più in ' +
-    'alto sarebbe favorevole all’oro e compensa in parte il premio geopolitico che Iran, Hormuz e OPEC+ ' +
-    'continuano a sgonfiare. Il bias si inclina appena al rialzo.',
+    'Il petrolio perde oltre il 6% sulle attese di un’intesa fra Stati Uniti e Iran, il Dollar Index scende ' +
+    'sotto quota 100 intorno a 99,8 e anche euro e sterlina salgono contro il dollaro: la reazione non è più ' +
+    'circoscritta a USD/JPY. Reuters collega l’oro sostenuto al minore rischio d’inflazione e alla ' +
+    'conseguente attenuazione delle pressioni sui tassi statunitensi, mentre Bessent si dice pronto a ' +
+    'ripetere l’intervento sullo yen e chiede di ampliare la facility FIMA. Il bias sale rispetto al ' +
+    'controllo precedente non per una notizia più grande, ma perché tre mercati la confermano insieme.',
   favours: [
-    'Verificare il DXY prima dello yen: è il passaggio da cui dipende l’effetto sull’oro',
-    'Trattare la struttura dell’operazione, non l’importo, come l’elemento che conta',
+    'Trattare quota 100 sul DXY e la tenuta di Brent e WTI come le due condizioni da verificare',
+    'Leggere la coerenza fra i tre mercati come il vero elemento nuovo, più delle singole variazioni',
   ],
   avoid: [
-    'Dare per acquisito l’importo finché manca l’annuncio ufficiale giapponese',
-    'Leggere uno yen più forte come sinonimo automatico di dollaro più debole',
+    'Estendere oltre la sessione europea una lettura costruita su variazioni intraday',
+    'Dare per scontato che il calo del petrolio si traduca subito in rendimenti più bassi',
   ],
   invalidation:
-    'L’intervento si rivela inefficace, il DXY torna forte, i rendimenti statunitensi accelerano oppure chiarimenti ufficiali ridimensionano il coinvolgimento statunitense.',
+    'Il DXY recupera stabilmente quota 100, i Treasury a 2 e a 10 anni tornano in forte rialzo, i negoziati con l’Iran falliscono in modo dichiarato oppure il petrolio rimbalza bruscamente.',
   confirming: [
-    'Intervento giapponese ≈ 59 mld $',
-    'Liquidità dalla linea Fed, non da vendite di Treasury',
-    'PBoC «appropriatamente accomodante»',
+    'Petrolio oltre −6%',
+    'DXY ≈ 99,8, sotto quota 100',
+    'Euro e sterlina in rialzo contro il dollaro',
   ],
   contradicting: [
-    'Annuncio ufficiale giapponese ancora atteso',
-    'Premio geopolitico in riduzione su Iran e Hormuz',
-    'OPEC+ +188.000 b/g da settembre',
+    'Lettura costruita su variazioni intraday',
+    'Dati sul lavoro statunitensi ancora attesi',
+    'Rendimenti in calo solo potenziale, non ancora osservato',
   ],
   sources: [
+    'movimento-si-rafforza-petrolio-giu-dollaro-sotto-quota-100',
     'intervento-coordinato-usa-giappone-sullo-yen',
     'opec-alza-le-quote-e-una-metaniera-esce-da-hormuz',
-    'banche-centrali-tornano-a-comprare-oro-rendimenti-freno',
   ],
 };
 
