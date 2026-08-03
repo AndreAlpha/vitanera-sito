@@ -41,46 +41,45 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-03T16:15:00+02:00',
-  // Un dato pubblicato e completo regge la seduta: fascia dei 90-120 minuti.
-  // Si sta a 90 e non oltre perché la direzione si è già mossa due volte oggi
-  // — rialzista alle 12:50, neutrale-rialzista alle 15:00, neutrale ora — e
-  // perché l'effetto sui prezzi è ancora una deduzione da verificare.
-  validityMinutes: 90,
+  updatedAt: '2026-08-03T17:10:00+02:00',
+  // Una reazione di prezzo starebbe nella fascia intraday dei 30-45 minuti, ma
+  // qui si allunga a 60: la lettura conferma la precedente invece di ribaltarla
+  // e i correlati sono allineati — scendono anche argento, platino e palladio.
+  // Non si va oltre perché resta una reazione di prezzo, non un fatto nuovo.
+  validityMinutes: 60,
   asset: 'XAU/USD',
-  direction: 'neutrale',
+  direction: 'neutrale-ribassista',
   strength: 'media',
-  headline:
-    'ISM manifatturiero a 55,6: la sorpresa positiva toglie all’oro l’inclinazione rialzista',
+  headline: 'L’oro ha invertito il rialzo dopo l’ISM, e con lui tutto il comparto dei preziosi',
   stance:
-    'Il dato principale è uscito molto più forte del previsto — 55,6 contro 54,0 atteso — con l’occupazione ' +
-    'manifatturiera tornata sopra 50 e i prezzi pagati ancora oltre 70. Non implica un rialzo dei tassi, ma ' +
-    'rafforza i membri più aggressivi della Fed e rende meno accomodanti le parole di Williams. Il petrolio ' +
-    'debole continua a sostenere l’oro per via indiretta: le due spinte ora si annullano invece di sommarsi, ' +
-    'e la lettura costruita poco fa sui soli componenti va corretta, non confermata.',
+    'XAU/USD è passato dal rialzo iniziale a circa −0,3%, vicino ai 4.030 dollari, e sono scesi anche ' +
+    'argento, platino e palladio: quando cede l’intero comparto il movimento viene dal dollaro e dai tassi, ' +
+    'non da qualcosa di specifico dell’oro. Il mercato sta quindi pesando più la forza americana e il rischio ' +
+    'di tassi elevati che il calo del petrolio, e dalla Fed non è arrivata nessuna nuova comunicazione. La ' +
+    'Bank of Korea torna a comprare oro dopo dodici anni, ma è sostegno strutturale, non di giornata.',
   favours: [
-    'Trattare il numero principale come il riferimento, e i componenti usciti prima come un quadro parziale',
-    'Guardare al 2 anni come alla scadenza che reagisce per prima a un cambio di attese sulla Fed',
+    'Leggere la discesa dell’intero comparto dei preziosi come conferma che il canale è dollaro e tassi',
+    'Tenere separati i due orizzonti: l’ISM muove il pomeriggio, la domanda ufficiale coreana i mesi',
   ],
   avoid: [
-    'Leggere il dato come un rialzo dei tassi già deciso: sposta gli argomenti, non la decisione',
-    'Dare per scontato il recupero di dollaro e rendimenti prima di averlo visto sui prezzi',
+    'Usare l’annuncio della Bank of Korea per contrastare la pressione di oggi: le quantità non sono note',
+    'Trattare 4.030 e 4.000 dollari come obiettivi invece che come riferimenti approssimati',
   ],
   invalidation:
-    'Dollaro e rendimenti non riescono a recuperare nonostante il dato, oppure XAU/USD lo assorbe e torna sopra i massimi precedenti: in quel caso il mercato sta pesando di più il calo del petrolio e il rischio geopolitico della forza manifatturiera.',
+    'L’oro recupera rapidamente il livello precedente al dato mentre DXY e rendimenti restano deboli, oppure una nuova escalation concreta su Iran e Hormuz riporta forte domanda di bene rifugio.',
   confirming: [
-    'ISM 55,6 contro 54,0 atteso',
-    'Occupazione ISM 52,8, sopra la soglia di espansione',
-    'Prezzi pagati ancora oltre 70',
+    'XAU/USD ≈ −0,3%, vicino a 4.030 $',
+    'In calo anche argento, platino e palladio',
+    'ISM 55,6, massimo da oltre quattro anni',
   ],
   contradicting: [
-    'Petrolio debole che riduce l’inflazione attesa',
-    'Spesa per costruzioni −0,1% contro +0,2% atteso',
+    'Bank of Korea di nuovo acquirente dal 2013',
+    'Petrolio ancora debole',
     'Recupero di dollaro e rendimenti ancora da verificare',
   ],
   sources: [
+    'oro-inverte-il-rialzo-dopo-il-dato-ism',
     'ism-manifatturiero-a-55-6-piu-forte-del-previsto',
-    'primi-dati-ism-prezzi-sopra-le-attese-ordini-in-aumento',
     'intervento-sullo-yen-washington-ha-venduto-euro',
   ],
 };
