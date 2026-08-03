@@ -41,46 +41,47 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-03T17:10:00+02:00',
-  // Una reazione di prezzo starebbe nella fascia intraday dei 30-45 minuti, ma
-  // qui si allunga a 60: la lettura conferma la precedente invece di ribaltarla
-  // e i correlati sono allineati — scendono anche argento, platino e palladio.
-  // Non si va oltre perché resta una reazione di prezzo, non un fatto nuovo.
-  validityMinutes: 60,
+  updatedAt: '2026-08-03T22:40:00+02:00',
+  // Una scheda di sintesi starebbe fra i 180 e i 240 minuti, ma qui si scende a
+  // 120: il testo dichiara due forze opposte in equilibrio e la direzione si è
+  // mossa quattro volte in giornata. Non si scende sotto, perché i fatti sono
+  // strutturali — una previsione di indebitamento e una posizione diplomatica —
+  // e il catalizzatore vero è il piano del Tesoro di mercoledì.
+  validityMinutes: 120,
   asset: 'XAU/USD',
-  direction: 'neutrale-ribassista',
-  strength: 'media',
-  headline: 'L’oro ha invertito il rialzo dopo l’ISM, e con lui tutto il comparto dei preziosi',
+  direction: 'neutrale',
+  strength: 'bassa',
+  headline: 'Più debito americano in arrivo, e una distensione iraniana che l’Iran smentisce',
   stance:
-    'XAU/USD è passato dal rialzo iniziale a circa −0,3%, vicino ai 4.030 dollari, e sono scesi anche ' +
-    'argento, platino e palladio: quando cede l’intero comparto il movimento viene dal dollaro e dai tassi, ' +
-    'non da qualcosa di specifico dell’oro. Il mercato sta quindi pesando più la forza americana e il rischio ' +
-    'di tassi elevati che il calo del petrolio, e dalla Fed non è arrivata nessuna nuova comunicazione. La ' +
-    'Bank of Korea torna a comprare oro dopo dodici anni, ma è sostegno strutturale, non di giornata.',
+    'Il Tesoro prevede di indebitarsi per 739 miliardi di dollari nel terzo trimestre, 68 in più della stima ' +
+    'di maggio, e mercoledì dirà come: se il finanziamento andasse sulle scadenze lunghe sarebbe pressione ' +
+    'sui rendimenti e quindi sull’oro. Sull’altro fronte Teheran nega che esistano negoziati, proprio nel ' +
+    'giorno in cui il mercato ha fatto crollare il WTI del 7% sull’ipotesi contraria. Petrolio in calo da una ' +
+    'parte, ISM forte e più debito dall’altra: le due spinte oggi si annullano.',
   favours: [
-    'Leggere la discesa dell’intero comparto dei preziosi come conferma che il canale è dollaro e tassi',
-    'Tenere separati i due orizzonti: l’ISM muove il pomeriggio, la domanda ufficiale coreana i mesi',
+    'Aspettare la composizione delle emissioni: conta più di quanto conti il fabbisogno in sé',
+    'Considerare che il greggio sta scontando una distensione che la controparte smentisce',
   ],
   avoid: [
-    'Usare l’annuncio della Bank of Korea per contrastare la pressione di oggi: le quantità non sono note',
-    'Trattare 4.030 e 4.000 dollari come obiettivi invece che come riferimenti approssimati',
+    'Leggere il maggiore fabbisogno come pressione già in atto sui rendimenti',
+    'Dare per acquisita la distensione fra Stati Uniti e Iran sulla base del solo movimento del petrolio',
   ],
   invalidation:
-    'L’oro recupera rapidamente il livello precedente al dato mentre DXY e rendimenti restano deboli, oppure una nuova escalation concreta su Iran e Hormuz riporta forte domanda di bene rifugio.',
+    'Per il rischio rialzista, una conferma concreta di negoziati fra Stati Uniti e Iran con riapertura stabile di Hormuz; per la pressione ribassista da debito, un Tesoro che mercoledì lascia invariate le aste lunghe e finanzia sui titoli brevi.',
   confirming: [
-    'XAU/USD ≈ −0,3%, vicino a 4.030 $',
-    'In calo anche argento, platino e palladio',
-    'ISM 55,6, massimo da oltre quattro anni',
+    'WTI ≈ −7%, Brent verso 83-84 $',
+    'Rendimenti giù con le aspettative inflazionistiche',
+    'Iran: nessun negoziato, nessun incontro programmato',
   ],
   contradicting: [
-    'Bank of Korea di nuovo acquirente dal 2013',
-    'Petrolio ancora debole',
-    'Recupero di dollaro e rendimenti ancora da verificare',
+    'Fabbisogno del terzo trimestre a 739 mld $',
+    'ISM 55,6, massimo da oltre quattro anni',
+    'Composizione delle emissioni ignota fino a mercoledì',
   ],
   sources: [
+    'tesoro-alza-il-fabbisogno-iran-raffredda-la-distensione',
     'oro-inverte-il-rialzo-dopo-il-dato-ism',
     'ism-manifatturiero-a-55-6-piu-forte-del-previsto',
-    'intervento-sullo-yen-washington-ha-venduto-euro',
   ],
 };
 

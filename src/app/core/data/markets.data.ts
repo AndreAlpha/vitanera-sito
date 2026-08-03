@@ -77,7 +77,7 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     change: 'recupero atteso, non ancora visto',
     tone: 'warn',
     icon: 'percent',
-    note: 'È il canale da cui l’oro trae il beneficio maggiore, ed è quello che l’ISM mette più a rischio: il rimbalzo dovrebbe partire dalla scadenza a 2 anni, la più sensibile alle attese sulla Fed.',
+    note: 'È il canale da cui l’oro trae il beneficio maggiore. Oggi è sceso con le aspettative inflazionistiche, ma ora ha due spinte contrarie: la forza dell’ISM e la maggiore offerta di titoli in arrivo dal Tesoro.',
   },
   {
     symbol: 'DXY',
@@ -91,11 +91,20 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: 'quasi −5%',
-    change: 'in giornata',
+    value: '83-84 $',
+    change: 'WTI ≈ −7% in giornata',
     tone: 'warn',
     icon: 'arrow-down',
-    note: 'Il calo poggia sulle attese di una soluzione diplomatica che Teheran ha smentito: resta il rischio che sia stato eccessivo e che un rimbalzo riporti in alto i rendimenti.',
+    note: 'Il crollo poggia su un’ipotesi di distensione che Teheran smentisce. È il principale sostegno indiretto all’oro, ed è anche quello che rischia di rientrare più in fretta.',
+  },
+  {
+    symbol: 'TESORO USA',
+    name: 'Fabbisogno del Tesoro, terzo trimestre',
+    value: '739 mld $',
+    change: '+68 mld sulla stima di maggio',
+    tone: 'bear',
+    icon: 'print',
+    note: 'Più offerta di Treasury in arrivo. Quanto pesi sull’oro dipende dalla composizione delle emissioni, che il piano di rifinanziamento dirà mercoledì.',
   },
   {
     symbol: 'INTERVENTO JPY',
@@ -105,15 +114,6 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     tone: 'warn',
     icon: 'shield',
     note: 'Importo giapponese riportato da Reuters. Secondo il Financial Times la gamba americana è stata fatta vendendo euro: sostiene lo yen senza indebolire il dollaro nel suo complesso. Dettagli ufficiali non ancora pubblicati.',
-  },
-  {
-    symbol: 'OPEC+',
-    name: 'Aumento delle quote produttive OPEC+',
-    value: '+188.000 b/g',
-    change: 'da settembre 2026',
-    tone: 'warn',
-    icon: 'flow',
-    note: 'Offerta consentita, non necessariamente offerta effettiva: guerre e interruzioni limitano ancora alcune esportazioni.',
   },
 ];
 
