@@ -41,47 +41,46 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-03T22:40:00+02:00',
-  // Una scheda di sintesi starebbe fra i 180 e i 240 minuti, ma qui si scende a
-  // 120: il testo dichiara due forze opposte in equilibrio e la direzione si è
-  // mossa quattro volte in giornata. Non si scende sotto, perché i fatti sono
-  // strutturali — una previsione di indebitamento e una posizione diplomatica —
-  // e il catalizzatore vero è il piano del Tesoro di mercoledì.
-  validityMinutes: 120,
+  updatedAt: '2026-08-04T00:10:00+02:00',
+  // Una scheda geopolitica starebbe fra i 180 e i 240 minuti, ma qui decide il
+  // catalizzatore: il testo indica la riapertura asiatica come la verifica, e
+  // la validità non può superarla. Pubblicata alle 00:10, scade all'01:40,
+  // poco prima che i mercati asiatici riaprano.
+  validityMinutes: 90,
   asset: 'XAU/USD',
   direction: 'neutrale',
   strength: 'bassa',
-  headline: 'Più debito americano in arrivo, e una distensione iraniana che l’Iran smentisce',
+  headline: 'Trump minaccia Teheran e sostiene che si tratti, l’Iran nega entrambe le cose',
   stance:
-    'Il Tesoro prevede di indebitarsi per 739 miliardi di dollari nel terzo trimestre, 68 in più della stima ' +
-    'di maggio, e mercoledì dirà come: se il finanziamento andasse sulle scadenze lunghe sarebbe pressione ' +
-    'sui rendimenti e quindi sull’oro. Sull’altro fronte Teheran nega che esistano negoziati, proprio nel ' +
-    'giorno in cui il mercato ha fatto crollare il WTI del 7% sull’ipotesi contraria. Petrolio in calo da una ' +
-    'parte, ISM forte e più debito dall’altra: le due spinte oggi si annullano.',
+    'Un’ultima possibilità di accordo, altrimenti un attacco molto pesante, con un riferimento esplicito alla ' +
+    'possibile «decapitazione» della leadership iraniana: la minaccia arriva proprio dopo il crollo del ' +
+    'greggio di lunedì, con il Brent a 83,77 dollari e il WTI a 80,34. Il mercato ha chiuso continuando a ' +
+    'prezzare un accordo che nessuna fonte iraniana conferma. Per l’oro il rischio geopolitico torna a ' +
+    'salire, ma ISM forte e maggiore offerta di Treasury restano dall’altra parte.',
   favours: [
-    'Aspettare la composizione delle emissioni: conta più di quanto conti il fabbisogno in sé',
-    'Considerare che il greggio sta scontando una distensione che la controparte smentisce',
+    'Trattare la distensione come l’ipotesi di una parte sola, finché Teheran non conferma i colloqui',
+    'Cercare le tre condizioni insieme — petrolio su, azioni giù, rendimenti giù — e non una alla volta',
   ],
   avoid: [
-    'Leggere il maggiore fabbisogno come pressione già in atto sui rendimenti',
-    'Dare per acquisita la distensione fra Stati Uniti e Iran sulla base del solo movimento del petrolio',
+    'Leggere la minaccia come un segnale rialzista pulito: due canali contrari restano aperti',
+    'Dimenticare che anche il dollaro raccoglie domanda rifugio, e che questo limita il rialzo dell’oro',
   ],
   invalidation:
-    'Per il rischio rialzista, una conferma concreta di negoziati fra Stati Uniti e Iran con riapertura stabile di Hormuz; per la pressione ribassista da debito, un Tesoro che mercoledì lascia invariate le aste lunghe e finanzia sui titoli brevi.',
+    'Una conferma ufficiale dei colloqui fra Stati Uniti e Iran, un accordo verificabile, oppure la prosecuzione del calo del petrolio nonostante la minaccia: in quel caso il mercato non le sta dando credito.',
   confirming: [
-    'WTI ≈ −7%, Brent verso 83-84 $',
-    'Rendimenti giù con le aspettative inflazionistiche',
-    'Iran: nessun negoziato, nessun incontro programmato',
+    'Minaccia militare esplicita rilanciata da Trump',
+    'Teheran nega negoziati e incontri programmati',
+    'Brent 83,77 $ giudicato un ribasso eccessivo',
   ],
   contradicting: [
-    'Fabbisogno del terzo trimestre a 739 mld $',
     'ISM 55,6, massimo da oltre quattro anni',
-    'Composizione delle emissioni ignota fino a mercoledì',
+    'Fabbisogno del Tesoro a 739 mld $',
+    'Domanda rifugio che può andare sul dollaro invece che sull’oro',
   ],
   sources: [
+    'trump-alza-di-nuovo-la-minaccia-contro-teheran',
     'tesoro-alza-il-fabbisogno-iran-raffredda-la-distensione',
     'oro-inverte-il-rialzo-dopo-il-dato-ism',
-    'ism-manifatturiero-a-55-6-piu-forte-del-previsto',
   ],
 };
 

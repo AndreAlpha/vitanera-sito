@@ -23,7 +23,16 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     change: '≈ −0,3%',
     tone: 'gold',
     icon: 'coin',
-    note: 'Rialzo iniziale restituito dopo l’ISM. Livello approssimato citato nell’analisi, non una quotazione: con l’oro sono scesi anche argento, platino e palladio.',
+    note: 'Rialzo iniziale restituito dopo l’ISM. Livello approssimato citato nell’analisi, non una quotazione: il rischio geopolitico che torna a salire lo sostiene, ma la domanda rifugio può anche andare sul dollaro.',
+  },
+  {
+    symbol: 'IRAN',
+    name: 'Minaccia militare statunitense',
+    value: 'ultima possibilità',
+    change: 'colloqui negati da Teheran',
+    tone: 'warn',
+    icon: 'alert',
+    note: 'Trump minaccia un attacco molto pesante e parla di possibile «decapitazione» della leadership, sostenendo che i colloqui siano in corso. L’Iran nega negoziati e incontri programmati.',
   },
   {
     symbol: 'HORMUZ',
@@ -62,15 +71,6 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     note: 'Acquisti dai produttori nazionali nell’ambito della gestione delle riserve. Sostegno strutturale alla domanda ufficiale, non un catalizzatore intraday.',
   },
   {
-    symbol: 'ISM PREZZI',
-    name: 'ISM manifatturiero, prezzi pagati',
-    value: '71,1',
-    change: 'atteso 70,3, precedente 73,0',
-    tone: 'warn',
-    icon: 'factory',
-    note: 'Sopra le attese, il che alza il rischio di una Fed costretta a restare restrittiva; ma in discesa dal 73,0, quindi non una nuova accelerazione inflazionistica netta.',
-  },
-  {
     symbol: 'US10Y',
     name: 'Treasury a 10 anni',
     value: '−5/−6 pb',
@@ -91,11 +91,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: '83-84 $',
-    change: 'WTI ≈ −7% in giornata',
+    value: '83,77 $',
+    change: 'WTI 80,34 $, chiusura di lunedì',
     tone: 'warn',
     icon: 'arrow-down',
-    note: 'Il crollo poggia su un’ipotesi di distensione che Teheran smentisce. È il principale sostegno indiretto all’oro, ed è anche quello che rischia di rientrare più in fretta.',
+    note: 'Diversi analisti considerano il crollo una possibile reazione eccessiva. Dopo la nuova minaccia americana il rischio di rimbalzo è concreto, ed è la variabile da cui dipende quasi tutto il resto.',
   },
   {
     symbol: 'TESORO USA',
