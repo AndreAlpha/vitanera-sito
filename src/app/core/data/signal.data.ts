@@ -41,48 +41,48 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-03T10:05:00+02:00',
-  // Una scheda geopolitica varrebbe 180-240, ma il testo dichiara una
-  // divergenza aperta — la stessa notizia sostiene il rifugio e apre al
-  // rimbalzo di petrolio e rendimenti — e questo accorcia. Sopra i 90 minuti
-  // del controllo precedente perché il fatto è una dichiarazione ufficiale e
-  // non una variazione di prezzo.
-  validityMinutes: 120,
+  updatedAt: '2026-08-03T12:50:00+02:00',
+  // Una posizione dichiarata da un membro stabile del FOMC è un fatto che
+  // regge la seduta, non una variazione di prezzo: sopra i 120 minuti del
+  // controllo precedente. Sotto i 240 perché il testo stesso avverte che
+  // l'intervista è del 31 luglio e che i movimenti erano già in corso, e
+  // perché il rischio di un rialzo a settembre resta aperto.
+  validityMinutes: 180,
   asset: 'XAU/USD',
   direction: 'rialzista',
-  strength: 'bassa',
-  headline: 'Teheran smentisce i negoziati: il premio rifugio regge, il quadro si fa fragile',
+  strength: 'media',
+  headline: 'Williams non ha fretta di alzare: la Fed può continuare ad aspettare',
   stance:
-    'Il ministero degli Esteri iraniano nega che siano in corso negoziati con gli Stati Uniti: i colloqui ' +
-    'mediati dall’Oman riguardano solo un corridoio temporaneo nello Stretto di Hormuz, che non sarà ' +
-    'riaperto pienamente finché continuerà quella che Teheran definisce «aggressione» americana. La ' +
-    'smentita arriva su un mercato che aveva già prezzato il contrario, con il petrolio in forte calo e le ' +
-    'Borse europee in rialzo. Resta il sostegno valutario descritto in mattinata, ma il premio geopolitico ' +
-    'che si stava sgonfiando torna in parte in piedi: stessa direzione del controllo precedente, con meno forza.',
+    'Il presidente della Fed di New York si aspetta ancora disinflazione fra il 2026 e il 2027, ha sostenuto ' +
+    'con convinzione i tassi fermi al 3,50%-3,75% e definisce la politica «ben posizionata»: una posizione ' +
+    'più morbida di quella dei tre membri del FOMC che chiedevano un rialzo immediato. Il contesto conferma ' +
+    'la direzione — dollaro ai minimi da metà giugno, decennale giù di 5-6 punti base, Brent quasi −5% — ma ' +
+    'quei movimenti erano già iniziati sulla scia dello yen e del petrolio, e la smentita iraniana di ' +
+    'stamattina tiene in piedi il rischio di un rimbalzo del greggio.',
   favours: [
-    'Tenere distinta la solidità della dichiarazione dall’effetto di mercato, che è la parte incerta',
-    'Trattare il canale omanita per quello che è: transito delle navi, non accordo politico',
+    'Leggere l’intervista come conferma di una direzione già presa, non come il suo innesco',
+    'Tenere il canale dei rendimenti come il vero collegamento fra Fed e oro',
   ],
   avoid: [
-    'Leggere il ritorno del rischio geopolitico come automaticamente rialzista per l’oro',
-    'Contare ancora sul solo dollaro debole se il petrolio rimbalza e i rendimenti si riprendono',
+    'Confondere «nessun rialzo adesso» con l’avvio di un ciclo di tagli',
+    'Dimenticare che le parole sono del 31 luglio e non commentano gli ultimi tre giorni',
   ],
   invalidation:
-    'Arriva una conferma ufficiale di negoziati diretti fra Stati Uniti e Iran, un accordo verificabile sulla riapertura di Hormuz, oppure il petrolio continua a scendere nonostante la smentita iraniana.',
+    'Escono dati statunitensi molto forti, l’inflazione core si dimostra persistente, il petrolio rimbalza nettamente oppure i Treasury a 2 e a 10 anni recuperano rapidamente nonostante le parole di Williams.',
   confirming: [
-    'Teheran: nessun negoziato in corso',
-    'Hormuz non riapribile del tutto',
-    'DXY ≈ 99,8, ancora sotto quota 100',
+    'Tassi fermi al 3,50%-3,75%, sostenuti da Williams',
+    'Decennale −5/−6 pb',
+    'Dollaro ai minimi da metà giugno',
   ],
   contradicting: [
-    'Petrolio ancora in forte calo',
-    'Borse europee aperte in rialzo sulle speranze diplomatiche',
-    'Rimbalzo del greggio come rischio per i rendimenti',
+    'Intervista realizzata il 31 luglio',
+    'Rialzo di settembre non escluso',
+    'Rimbalzo del greggio ancora possibile dopo la smentita iraniana',
   ],
   sources: [
+    'williams-politica-della-fed-ben-posizionata',
     'iran-smentisce-negoziati-diretti-con-gli-stati-uniti',
     'movimento-si-rafforza-petrolio-giu-dollaro-sotto-quota-100',
-    'intervento-coordinato-usa-giappone-sullo-yen',
   ],
 };
 

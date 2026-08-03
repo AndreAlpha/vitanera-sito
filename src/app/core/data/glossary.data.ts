@@ -30,6 +30,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     why: 'Definisce il costo del denaro di riferimento e orienta l’intera struttura dei rendimenti.',
   },
   {
+    term: 'Fed di New York',
+    letter: 'F',
+    definition:
+      'Una delle dodici Banche federali di riserva. Il suo presidente siede stabilmente nel FOMC ed è la sede che esegue le operazioni di mercato aperto decise dal comitato.',
+    why: 'Rende le sue dichiarazioni più rappresentative dell’orientamento del comitato rispetto a quelle di un presidente regionale che vota a rotazione.',
+    related: ['FOMC', 'Fed funds'],
+  },
+  {
     term: 'Dissenso',
     letter: 'D',
     definition:
@@ -78,6 +86,13 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     definition:
       'Rappresentazione dei rendimenti dei titoli di Stato in funzione della loro scadenza.',
     why: 'Movimenti diversi fra parte breve e parte lunga segnalano aspettative differenti su politica monetaria, inflazione e rischio fiscale.',
+  },
+  {
+    term: 'Punto base',
+    letter: 'P',
+    definition: 'Centesimo di punto percentuale: cento punti base fanno l’1%.',
+    why: 'È l’unità con cui si misurano i movimenti dei rendimenti e le decisioni sui tassi. Un calo di 5-6 punti base sul decennale è uno spostamento piccolo, ma abbastanza leggibile da contare per l’oro.',
+    related: ['Treasury', 'Curva dei rendimenti'],
   },
   {
     term: 'Premio per il rischio fiscale',
