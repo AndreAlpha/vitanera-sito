@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Icon } from '../ui/icon';
 import { DISCLAIMER_COOKIE, DISCLAIMER_DATA, SITE } from '../../core/config/site.config';
 
 /**
@@ -15,7 +14,7 @@ import { DISCLAIMER_COOKIE, DISCLAIMER_DATA, SITE } from '../../core/config/site
 @Component({
   selector: 'app-site-footer',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, Icon],
+  imports: [RouterLink],
   template: `
     <footer class="foot">
       <div class="foot__top">
@@ -25,10 +24,6 @@ import { DISCLAIMER_COOKIE, DISCLAIMER_DATA, SITE } from '../../core/config/site
             <p class="brand__name">{{ site.name }}</p>
           </div>
           <p class="brand__desc">{{ site.tagline }}. Progetto personale e indipendente.</p>
-          <a class="brand__mail" href="mailto:{{ site.email }}">
-            <app-icon name="mail" [size]="13" />
-            {{ site.email }}
-          </a>
         </div>
 
         <nav class="cols" aria-label="Navigazione piè di pagina">
@@ -123,21 +118,6 @@ import { DISCLAIMER_COOKIE, DISCLAIMER_DATA, SITE } from '../../core/config/site
       font-size: var(--t-xs);
       line-height: var(--lh-base);
       color: var(--text-muted);
-    }
-
-    .brand__mail {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--s-2);
-      margin-top: var(--s-3);
-      font-size: var(--t-xs);
-      color: var(--text-muted);
-    }
-
-    .brand__mail:hover {
-      color: var(--text-soft);
-      text-decoration: underline;
-      text-underline-offset: 3px;
     }
 
     /* --- Colonne di rimandi ------------------------------------------------- */

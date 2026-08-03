@@ -37,7 +37,7 @@ const avvertenze: LegalDocument = {
       paragraphs: [
         'L’autore non è un consulente finanziario abilitato, non è iscritto all’Albo unico dei consulenti finanziari tenuto dall’Organismo di vigilanza e tenuta dell’albo unico dei Consulenti Finanziari (OCF) e non è un soggetto vigilato da CONSOB, Banca d’Italia, IVASS o da altra autorità di vigilanza italiana o estera.',
         'L’autore non presta, in nessuna forma, servizi o attività di investimento riservati ai sensi del D.lgs. 58/1998 (TUF).',
-        'La semplice consultazione del sito, l’invio di messaggi di posta elettronica o qualsiasi altra interazione non instaurano alcun rapporto di consulenza, mandato, incarico professionale o obbligo di assistenza.',
+        'La semplice consultazione del sito o qualsiasi altra interazione con i suoi contenuti non instaura alcun rapporto di consulenza, mandato, incarico professionale o obbligo di assistenza.',
       ],
     },
     {
@@ -108,10 +108,10 @@ const noteLegali: LegalDocument = {
   updatedAt: '30 luglio 2026',
   sections: [
     {
-      heading: 'Titolarità e contatti',
+      heading: 'Titolarità',
       paragraphs: [
         'Vitanera è un sito personale gestito a titolo individuale, senza scopo di lucro e senza attività commerciale. Non costituisce impresa editoriale né fornitore di servizi di investimento.',
-        'Per qualsiasi comunicazione, segnalazione di errore o richiesta di rettifica è possibile scrivere all’indirizzo di posta elettronica indicato nel piè di pagina. Le segnalazioni di inesattezze sono benvenute e vengono valutate con la massima attenzione.',
+        'Il sito non pubblica recapiti né moduli di contatto e non prevede canali di corrispondenza con i lettori. Le inesattezze eventualmente riscontrate vengono corrette in occasione degli aggiornamenti dei contenuti, con indicazione dell’intervento.',
       ],
     },
     {
@@ -178,7 +178,7 @@ const privacy: LegalDocument = {
         'Nessun dato identificativo viene richiesto o raccolto direttamente dal sito.',
         'Non sono utilizzati sistemi di analisi statistica, pixel di tracciamento, strumenti pubblicitari o piattaforme di profilazione.',
         'Il fornitore di hosting può registrare, per finalità tecniche e di sicurezza, log di accesso contenenti indirizzo IP, data e ora della richiesta e tipo di browser; tali registrazioni sono gestite dal fornitore secondo le proprie politiche.',
-        'Se decidi di scrivere all’indirizzo di posta elettronica indicato, i dati contenuti nel messaggio saranno trattati al solo scopo di rispondere e non saranno comunicati a terzi.',
+        'Non essendo pubblicato alcun recapito né modulo di contatto, il sito non riceve comunicazioni dai lettori e non tratta i dati che vi sarebbero contenuti.',
       ],
     },
     {
@@ -197,14 +197,14 @@ const privacy: LegalDocument = {
     {
       heading: 'Diritti dell’interessato',
       paragraphs: [
-        'In relazione ai soli dati eventualmente comunicati via posta elettronica è possibile esercitare i diritti previsti dagli articoli da 15 a 22 del GDPR — accesso, rettifica, cancellazione, limitazione, opposizione e portabilità — scrivendo all’indirizzo indicato nel piè di pagina.',
-        'È inoltre riconosciuto il diritto di proporre reclamo all’Autorità Garante per la protezione dei dati personali.',
+        'Il sito non raccoglie dati personali e non conserva quindi informazioni su cui esercitare i diritti previsti dagli articoli da 15 a 22 del GDPR — accesso, rettifica, cancellazione, limitazione, opposizione e portabilità.',
+        'Per i soli log tecnici di accesso, trattati dal fornitore di hosting come titolare autonomo, i diritti vanno esercitati nei confronti del fornitore secondo la sua informativa. È in ogni caso riconosciuto il diritto di proporre reclamo all’Autorità Garante per la protezione dei dati personali.',
       ],
     },
     {
       heading: 'Conservazione e sicurezza',
       paragraphs: [
-        'La corrispondenza è conservata per il tempo necessario a dare riscontro e comunque non oltre quanto richiesto da eventuali obblighi di legge. Sono adottate misure ragionevoli di sicurezza, pur non potendo garantire l’assoluta inviolabilità di alcuna trasmissione via Internet.',
+        'Non essendo previsti canali di corrispondenza né raccolta di dati, il sito non conserva informazioni personali. Sono comunque adottate misure ragionevoli di sicurezza, pur non potendo garantire l’assoluta inviolabilità di alcuna trasmissione via Internet.',
       ],
     },
     {

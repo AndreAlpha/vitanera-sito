@@ -16,7 +16,6 @@ export const SITE = {
   tagline: 'Osservatorio indipendente su macro, geopolitica e XAU/USD',
   description:
     'Analisi indipendenti su banche centrali, inflazione, geopolitica e oro. Contenuti a scopo informativo e didattico.',
-  email: 'and.camp96@gmail.com',
   since: 2026,
 } as const;
 

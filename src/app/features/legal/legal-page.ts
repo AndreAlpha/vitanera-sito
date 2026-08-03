@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ContentService } from '../../core/services/content.service';
-import { SITE } from '../../core/config/site.config';
 import { Icon } from '../../shared/ui/icon';
 import { PageHeader } from '../../shared/ui/page-header';
 
@@ -62,16 +61,6 @@ const ICONS: Record<string, string> = {
               }
             </section>
           }
-
-          <section class="sec">
-            <h2>Contatti</h2>
-            <p>
-              Per segnalazioni, richieste di rettifica o chiarimenti è possibile scrivere a
-              <a href="mailto:{{ site.email }}">{{ site.email }}</a
-              >. Ogni segnalazione di inesattezza viene valutata e, se fondata, il contenuto viene
-              corretto indicando l’intervento.
-            </p>
-          </section>
         </article>
 
         <aside class="side no-print">
@@ -325,7 +314,6 @@ export class LegalPage {
   /** Valorizzato dai dati di rotta. */
   readonly documentSlug = input<string>('avvertenze');
 
-  protected readonly site = SITE;
   protected readonly documents = this.content.legalDocuments;
 
   protected readonly document = computed(
