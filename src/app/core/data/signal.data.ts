@@ -41,48 +41,46 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-03T12:50:00+02:00',
-  // Una posizione dichiarata da un membro stabile del FOMC è un fatto che
-  // regge la seduta, non una variazione di prezzo: sopra i 120 minuti del
-  // controllo precedente. Sotto i 240 perché il testo stesso avverte che
-  // l'intervista è del 31 luglio e che i movimenti erano già in corso, e
-  // perché il rischio di un rialzo a settembre resta aperto.
-  validityMinutes: 180,
+  updatedAt: '2026-08-03T15:00:00+02:00',
+  // La lettura scade all'apertura americana, che è il catalizzatore dichiarato
+  // nell'analisi: pubblicata alle 15:00, vale mezz'ora. È volutamente sotto i
+  // 30-45 minuti di un controllo intraday, perché qui non si descrive un
+  // movimento già avvenuto ma se ne deduce uno da verificare sui prezzi.
+  validityMinutes: 30,
   asset: 'XAU/USD',
-  direction: 'rialzista',
-  strength: 'media',
-  headline: 'Williams non ha fretta di alzare: la Fed può continuare ad aspettare',
+  direction: 'neutrale-rialzista',
+  strength: 'bassa',
+  headline: 'Sullo yen gli Stati Uniti hanno venduto euro: il dollaro non era il bersaglio',
   stance:
-    'Il presidente della Fed di New York si aspetta ancora disinflazione fra il 2026 e il 2027, ha sostenuto ' +
-    'con convinzione i tassi fermi al 3,50%-3,75% e definisce la politica «ben posizionata»: una posizione ' +
-    'più morbida di quella dei tre membri del FOMC che chiedevano un rialzo immediato. Il contesto conferma ' +
-    'la direzione — dollaro ai minimi da metà giugno, decennale giù di 5-6 punti base, Brent quasi −5% — ma ' +
-    'quei movimenti erano già iniziati sulla scia dello yen e del petrolio, e la smentita iraniana di ' +
-    'stamattina tiene in piedi il rischio di un rimbalzo del greggio.',
+    'Il coordinamento con il Giappone è confermato, ma la gamba americana sarebbe stata fatta di euro e non ' +
+    'di dollari: l’obiettivo era sostenere lo yen senza indebolire il dollaro nel suo complesso, anche per ' +
+    'non alimentare l’inflazione interna. Restano favorevoli all’oro il petrolio in calo e i rendimenti in ' +
+    'discesa, con Williams che tiene la Fed in attesa; viene meno invece il canale valutario, che era il ' +
+    'sostegno più recente. Della BCE si sa solo che sarebbe stata in contatto con la Fed.',
   favours: [
-    'Leggere l’intervista come conferma di una direzione già presa, non come il suo innesco',
-    'Tenere il canale dei rendimenti come il vero collegamento fra Fed e oro',
+    'Verificare sui prezzi se il dollaro si stabilizza contro euro invece di cedere su tutti i fronti',
+    'Tenere petrolio e rendimenti come le due gambe che reggono ancora la lettura',
   ],
   avoid: [
-    'Confondere «nessun rialzo adesso» con l’avvio di un ciclo di tagli',
-    'Dimenticare che le parole sono del 31 luglio e non commentano gli ultimi tre giorni',
+    'Continuare a leggere l’intervento sullo yen come volontà americana di un dollaro debole',
+    'Dare per acquisita una partecipazione della BCE, di cui risulta soltanto un contatto con la Fed',
   ],
   invalidation:
-    'Escono dati statunitensi molto forti, l’inflazione core si dimostra persistente, il petrolio rimbalza nettamente oppure i Treasury a 2 e a 10 anni recuperano rapidamente nonostante le parole di Williams.',
+    'Il DXY continua a scendere in modo generalizzato, i Treasury si indeboliscono ancora e l’oro mantiene comunque il rialzo, oppure arriva una smentita ufficiale americana sull’utilizzo dell’euro.',
   confirming: [
-    'Tassi fermi al 3,50%-3,75%, sostenuti da Williams',
+    'Petrolio in calo, Brent quasi −5%',
     'Decennale −5/−6 pb',
-    'Dollaro ai minimi da metà giugno',
+    'Fed in attesa, tassi fermi al 3,50%-3,75%',
   ],
   contradicting: [
-    'Intervista realizzata il 31 luglio',
-    'Rialzo di settembre non escluso',
-    'Rimbalzo del greggio ancora possibile dopo la smentita iraniana',
+    'Gamba americana in euro, non in dollari',
+    'Dollaro che può recuperare contro euro',
+    'Dettagli ufficiali di Tesoro e Fed di New York non ancora pubblicati',
   ],
   sources: [
+    'intervento-sullo-yen-washington-ha-venduto-euro',
     'williams-politica-della-fed-ben-posizionata',
-    'iran-smentisce-negoziati-diretti-con-gli-stati-uniti',
-    'movimento-si-rafforza-petrolio-giu-dollaro-sotto-quota-100',
+    'intervento-coordinato-usa-giappone-sullo-yen',
   ],
 };
 
