@@ -41,46 +41,47 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-03T16:05:00+02:00',
-  // Controllo intraday a pochi minuti dal dato, con una divergenza aperta
-  // dichiarata — il dato suggerisce una cosa, i prezzi ne fanno un'altra — e il
-  // numero ISM principale ancora mancante: si sta al minimo dei 30-45 minuti
-  // della fascia intraday. Il catalizzatore dichiarato è «nei prossimi minuti».
-  validityMinutes: 30,
+  updatedAt: '2026-08-03T16:15:00+02:00',
+  // Un dato pubblicato e completo regge la seduta: fascia dei 90-120 minuti.
+  // Si sta a 90 e non oltre perché la direzione si è già mossa due volte oggi
+  // — rialzista alle 12:50, neutrale-rialzista alle 15:00, neutrale ora — e
+  // perché l'effetto sui prezzi è ancora una deduzione da verificare.
+  validityMinutes: 90,
   asset: 'XAU/USD',
-  direction: 'neutrale-rialzista',
-  strength: 'bassa',
-  headline: 'Primi componenti ISM leggermente contro l’oro, ma i prezzi non hanno ancora girato',
+  direction: 'neutrale',
+  strength: 'media',
+  headline:
+    'ISM manifatturiero a 55,6: la sorpresa positiva toglie all’oro l’inclinazione rialzista',
   stance:
-    'Prezzi pagati a 71,1 sopra le attese ma in calo dal 73,0, nuovi ordini a 56,7 in aumento: la domanda ' +
-    'industriale non cede e il rischio di una Fed costretta a restare restrittiva sale un poco. Il dato ISM ' +
-    'principale non è però ancora verificabile, e soprattutto DXY e rendimenti continuano a scendere nella ' +
-    'seduta: nessuna inversione cross-asset. Sullo sfondo restano la struttura dell’intervento sullo yen, che ' +
-    'ha tolto una gamba al canale valutario, e una Fed che secondo Williams può ancora aspettare.',
+    'Il dato principale è uscito molto più forte del previsto — 55,6 contro 54,0 atteso — con l’occupazione ' +
+    'manifatturiera tornata sopra 50 e i prezzi pagati ancora oltre 70. Non implica un rialzo dei tassi, ma ' +
+    'rafforza i membri più aggressivi della Fed e rende meno accomodanti le parole di Williams. Il petrolio ' +
+    'debole continua a sostenere l’oro per via indiretta: le due spinte ora si annullano invece di sommarsi, ' +
+    'e la lettura costruita poco fa sui soli componenti va corretta, non confermata.',
   favours: [
-    'Trattare la lettura come una divergenza aperta fra ciò che il dato suggerisce e ciò che i prezzi fanno',
-    'Aspettare il numero ISM principale prima di dare peso pieno al blocco dei componenti',
+    'Trattare il numero principale come il riferimento, e i componenti usciti prima come un quadro parziale',
+    'Guardare al 2 anni come alla scadenza che reagisce per prima a un cambio di attese sulla Fed',
   ],
   avoid: [
-    'Leggere i prezzi pagati sopra le attese come una nuova accelerazione: restano in discesa dal 73,0',
-    'Anticipare l’inversione su una sola delle tre condizioni invece che sulle tre insieme',
+    'Leggere il dato come un rialzo dei tassi già deciso: sposta gli argomenti, non la decisione',
+    'Dare per scontato il recupero di dollaro e rendimenti prima di averlo visto sui prezzi',
   ],
   invalidation:
-    'Oro in calo, DXY in recupero e Treasury a 2 e a 10 anni in salita nello stesso momento, oppure un dato ISM principale che smentisce il quadro suggerito dai componenti già pubblicati.',
+    'Dollaro e rendimenti non riescono a recuperare nonostante il dato, oppure XAU/USD lo assorbe e torna sopra i massimi precedenti: in quel caso il mercato sta pesando di più il calo del petrolio e il rischio geopolitico della forza manifatturiera.',
   confirming: [
-    'DXY e rendimenti ancora in calo nella seduta',
-    'Prezzi pagati giù dal 73,0 al 71,1',
-    'Fed in attesa, tassi fermi al 3,50%-3,75%',
+    'ISM 55,6 contro 54,0 atteso',
+    'Occupazione ISM 52,8, sopra la soglia di espansione',
+    'Prezzi pagati ancora oltre 70',
   ],
   contradicting: [
-    'Prezzi pagati 71,1 contro 70,0 atteso',
-    'Nuovi ordini in aumento a 56,7',
-    'Dato ISM principale non ancora verificabile',
+    'Petrolio debole che riduce l’inflazione attesa',
+    'Spesa per costruzioni −0,1% contro +0,2% atteso',
+    'Recupero di dollaro e rendimenti ancora da verificare',
   ],
   sources: [
+    'ism-manifatturiero-a-55-6-piu-forte-del-previsto',
     'primi-dati-ism-prezzi-sopra-le-attese-ordini-in-aumento',
     'intervento-sullo-yen-washington-ha-venduto-euro',
-    'williams-politica-della-fed-ben-posizionata',
   ],
 };
 
