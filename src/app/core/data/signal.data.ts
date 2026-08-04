@@ -41,46 +41,47 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-04T16:30:00+02:00',
-  // Un dato pubblicato regge la seduta: fascia 90-120. Si prende il massimo
-  // perché i correlati sono allineati per la prima volta in due giorni — oro,
-  // dollaro e rendimenti confermano insieme. Non oltre, perché il testo
-  // qualifica il bias come intraday e la direzione si è mossa due volte oggi.
-  validityMinutes: 120,
+  updatedAt: '2026-08-04T18:25:00+02:00',
+  // Scheda geopolitica, fascia 180-240: si prende il minimo. L'analisi conferma
+  // la precedente invece di ribaltarla — la direzione è ferma da due ore dopo
+  // una giornata di capovolgimenti — ma il testo dichiara un sostegno «non
+  // pulito», con lo stesso scenario che aiuta l'oro da un lato e lo penalizza
+  // dall'altro. Scade alle 21:25, prima della chiusura americana.
+  validityMinutes: 180,
   asset: 'XAU/USD',
   direction: 'rialzista',
   strength: 'media',
-  headline: 'Offerte di lavoro sotto le attese, e stavolta i tre canali confermano insieme',
+  headline: 'I termini della trattativa su Hormuz sono aperti, e il petrolio non lo prezza',
   stance:
-    'Le offerte di lavoro di giugno scendono a 7,359 milioni contro 7,440 attesi, con maggio rivisto al ' +
-    'ribasso e il tasso di posti vacanti dal 4,6% al 4,4%; assunzioni e licenziamenti restano però stabili, ' +
-    'quindi è raffreddamento graduale e non crisi. La reazione è coerente: oro verso 4.080-4.085 dollari, ' +
-    'decennale dal 4,70% verso il 4,64%, DXY sotto quota 100 a 99,89. È la prima volta in due giorni che le ' +
-    'tre gambe si muovono insieme invece di annullarsi, e attenua il segnale restrittivo dell’ISM.',
+    'L’Iran chiede di mantenere il controllo sul traffico in entrata nello stretto e di poter intervenire su ' +
+    'quello in uscita, con l’Oman a gestire le autorizzazioni: ha attenuato la richiesta di controllo totale, ' +
+    'ma le divergenze restano e i termini operativi non sono concordati. Brent e WTI continuano intanto a ' +
+    'scendere verso 79,8 e 76 dollari sulla scommessa nella mediazione. Il quadro macro del pomeriggio — ' +
+    'JOLTS debole, dollaro e rendimenti giù — regge, e ora si aggiunge un rischio che il greggio non sconta.',
   favours: [
-    'Dare peso alla contemporaneità delle conferme più che all’entità del dato, che è modesta',
-    'Leggere il quadro come industria che corre e lavoro che no: due richieste diverse per la Fed',
+    'Considerare il ribasso del greggio più fragile di quanto il prezzo suggerisca, ora che i termini si conoscono',
+    'Tenere distinte le due facce di un blocco dei negoziati: rifugio a favore, rendimenti contro',
   ],
   avoid: [
-    'Trasformare una singola rilevazione mensile in una tendenza del mercato del lavoro',
-    'Ignorare che assunzioni a 5,3 milioni e licenziamenti stabili non descrivono un’occupazione in crisi',
+    'Leggere l’attenuazione della richiesta iraniana come un accordo in dirittura d’arrivo',
+    'Dare per pulito un sostegno che lo stesso scenario può ribaltare passando dai rendimenti',
   ],
   invalidation:
-    'XAU/USD che non riesce a mantenersi sopra i 4.070 dollari circa, il decennale che torna sopra il 4,70%, il DXY nuovamente sopra quota 100, oppure nuovi sviluppi diplomatici concreti che riducano fortemente la domanda di bene rifugio.',
+    'Un accordo ufficiale e verificabile sulla riapertura dello stretto, una ripresa stabile dei transiti, oppure un petrolio che resta sotto gli 80 dollari senza rimbalzare.',
   confirming: [
-    'Offerte di lavoro 7,359 mln contro 7,440 attese',
-    'Decennale dal 4,70% al 4,64% circa',
-    'DXY ≈ 99,89, sotto quota 100',
+    'Termini operativi non ancora concordati',
+    'Divergenze aperte sulla gestione dello stretto',
+    'JOLTS debole, dollaro e rendimenti in calo',
   ],
   contradicting: [
-    'Assunzioni stabili a 5,3 mln, licenziamenti fermi',
-    'ISM 55,6 ancora sul tavolo',
-    'Una sola rilevazione mensile',
+    'Brent ≈ 79,8 $, ancora in forte calo',
+    'Richiesta di controllo totale attenuata',
+    'Mediazione di Qatar, Oman e Pakistan in corso',
   ],
   sources: [
+    'iran-chiede-il-controllo-sugli-ingressi-a-hormuz',
     'jolts-piu-debole-delle-attese-oro-su-rendimenti-giu',
     'petrolio-inverte-bruscamente-bessent-apre-su-hormuz',
-    'rendimenti-a-30-anni-di-nuovo-sui-massimi-dal-2007',
   ],
 };
 
