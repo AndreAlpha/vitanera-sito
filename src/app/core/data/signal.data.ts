@@ -41,46 +41,46 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-04T00:10:00+02:00',
-  // Una scheda geopolitica starebbe fra i 180 e i 240 minuti, ma qui decide il
-  // catalizzatore: il testo indica la riapertura asiatica come la verifica, e
-  // la validità non può superarla. Pubblicata alle 00:10, scade all'01:40,
-  // poco prima che i mercati asiatici riaprano.
-  validityMinutes: 90,
+  updatedAt: '2026-08-04T08:45:00+02:00',
+  // Sale a 120 dai 90 della notte: il catalizzatore imminente — la riapertura
+  // asiatica — è passato e il prossimo, i dati sul lavoro, è a giorni. Non si
+  // arriva ai 180-240 di una scheda geopolitica perché l'episodio è isolato e
+  // solo una delle tre condizioni difensive si è presentata.
+  validityMinutes: 120,
   asset: 'XAU/USD',
-  direction: 'neutrale',
+  direction: 'neutrale-rialzista',
   strength: 'bassa',
-  headline: 'Trump minaccia Teheran e sostiene che si tratti, l’Iran nega entrambe le cose',
+  headline: 'Una nave colpita a Hormuz: il premio geopolitico rientra in scena, ma da solo',
   stance:
-    'Un’ultima possibilità di accordo, altrimenti un attacco molto pesante, con un riferimento esplicito alla ' +
-    'possibile «decapitazione» della leadership iraniana: la minaccia arriva proprio dopo il crollo del ' +
-    'greggio di lunedì, con il Brent a 83,77 dollari e il WTI a 80,34. Il mercato ha chiuso continuando a ' +
-    'prezzare un accordo che nessuna fonte iraniana conferma. Per l’oro il rischio geopolitico torna a ' +
-    'salire, ma ISM forte e maggiore offerta di Treasury restano dall’altra parte.',
+    'Il colpo su un mercantile dice che il rischio sulle rotte energetiche non era rientrato, e il greggio lo ' +
+    'conferma risalendo: Brent a 84,89 dollari, WTI a 81,11. L’oro sale verso i 4.060. Delle tre condizioni ' +
+    'che renderebbero il segnale netto ne è però arrivata una sola: le azioni asiatiche tengono, il decennale ' +
+    'risale invece di scendere e il dollaro resta vicino ai minimi di due mesi. Sui colloqui le due versioni ' +
+    'restano incompatibili, con Teheran che limita il tavolo omanita ai soli passaggi marittimi.',
   favours: [
-    'Trattare la distensione come l’ipotesi di una parte sola, finché Teheran non conferma i colloqui',
-    'Cercare le tre condizioni insieme — petrolio su, azioni giù, rendimenti giù — e non una alla volta',
+    'Trattare il recupero del greggio come la conferma più solida, perché è misurabile',
+    'Pesare l’episodio per quello che è finora: isolato, senza panico sulle azioni',
   ],
   avoid: [
-    'Leggere la minaccia come un segnale rialzista pulito: due canali contrari restano aperti',
-    'Dimenticare che anche il dollaro raccoglie domanda rifugio, e che questo limita il rialzo dell’oro',
+    'Leggere il rialzo dell’oro come inizio di un movimento rifugio pieno: manca il resto del quadro',
+    'Considerare chiusa la partita diplomatica in un senso o nell’altro, senza conferme verificabili',
   ],
   invalidation:
-    'Una conferma ufficiale dei colloqui fra Stati Uniti e Iran, un accordo verificabile, oppure la prosecuzione del calo del petrolio nonostante la minaccia: in quel caso il mercato non le sta dando credito.',
+    'Un chiarimento ufficiale che ridimensioni l’attacco, un accordo verificabile fra Stati Uniti e Iran, oppure un petrolio che torna rapidamente sui minimi nonostante l’incidente.',
   confirming: [
-    'Minaccia militare esplicita rilanciata da Trump',
-    'Teheran nega negoziati e incontri programmati',
-    'Brent 83,77 $ giudicato un ribasso eccessivo',
+    'Nave colpita nell’area di Hormuz',
+    'Brent 84,89 $, circa +1,3%',
+    'XAU/USD ≈ 4.060 $, circa +0,2%',
   ],
   contradicting: [
-    'ISM 55,6, massimo da oltre quattro anni',
-    'Fabbisogno del Tesoro a 739 mld $',
-    'Domanda rifugio che può andare sul dollaro invece che sull’oro',
+    'Azioni asiatiche ancora relativamente positive',
+    'Decennale leggermente risalito',
+    'DXY vicino ai minimi di due mesi',
   ],
   sources: [
+    'nave-colpita-nello-stretto-di-hormuz',
     'trump-alza-di-nuovo-la-minaccia-contro-teheran',
     'tesoro-alza-il-fabbisogno-iran-raffredda-la-distensione',
-    'oro-inverte-il-rialzo-dopo-il-dato-ism',
   ],
 };
 
