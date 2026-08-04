@@ -41,42 +41,46 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-04T12:35:00+02:00',
-  // Base di 30-45 per un controllo intraday cross-asset, alzata a 120 perché
-  // tutti e quattro i riferimenti puntano nella stessa direzione e la lettura
-  // conferma la precedente invece di ribaltarla. Scade alle 14:35, con margine
-  // prima del JOLTS delle 16:00 indicato come prossimo test.
-  validityMinutes: 120,
+  updatedAt: '2026-08-04T15:10:00+02:00',
+  // Decide il catalizzatore, non la tabella: il JOLTS delle 16:00 è il test
+  // dichiarato della lettura, e la validità non può superarlo. Pubblicata alle
+  // 15:10, scade alle 15:55. Coincide comunque con la fascia 30-45 di un
+  // controllo intraday, che è la natura di questa inversione di prezzo.
+  validityMinutes: 45,
   asset: 'XAU/USD',
-  direction: 'neutrale-ribassista',
-  strength: 'media',
-  headline: 'Il rischio Hormuz si scarica su petrolio e rendimenti, non sull’oro',
+  direction: 'neutrale-rialzista',
+  strength: 'bassa',
+  headline: 'Bessent apre a un accordo su Hormuz e il petrolio inverte di colpo',
   stance:
-    'Il Brent amplia il recupero a 86,04 dollari e il WTI a 82,06, mentre il decennale risale al 4,705% e il ' +
-    'Dollar Index torna appena sopra quota 100. L’oro resta quasi fermo a 4.053 dollari: i transiti a Hormuz ' +
-    'sono ancora estremamente ridotti, ma il premio di rischio si sta pagando sull’energia e sui tassi ' +
-    'invece che sul metallo. Stessa direzione della lettura precedente, che attribuiva il freno alla parte ' +
-    'lunga della curva, con una conferma in più: qui il canale che lo alimenta è il petrolio.',
+    'Brent e WTI passano dal recupero a un calo di circa il 4%, a 80,66 e 76,76 dollari, dopo che il ' +
+    'segretario al Tesoro ha detto che un’intesa per riaprire lo stretto potrebbe arrivare oggi o mercoledì; ' +
+    'il Qatar riferisce di una bozza in circolazione con Oman e Pakistan mediatori. Per l’oro si allenta il ' +
+    'canale che lo stava frenando — greggio, inflazione attesa, rendimenti — ma la stessa distensione toglie ' +
+    'domanda di rifugio. Nessun accordo è confermato e i transiti restano limitati.',
   favours: [
-    'Verificare la persistenza dei livelli, non il loro superamento: Brent e decennale sono già sulla soglia',
-    'Trattare la catena petrolio → inflazione attesa → rendimenti come il meccanismo che sta decidendo',
+    'Distinguere i due canali: il greggio più basso aiuta via rendimenti, la distensione toglie rifugio',
+    'Misurare la distanza fra un’intesa detta possibile e uno stretto che torna davvero a funzionare',
   ],
   avoid: [
-    'Aspettarsi domanda rifugio sull’oro finché azioni europee e futures statunitensi restano positivi',
-    'Estendere oltre il JOLTS delle 16:00 una lettura costruita su prezzi intraday',
+    'Trattare le dichiarazioni come un accordo: la controparte iraniana finora ha sempre smentito',
+    'Portare questa lettura oltre il JOLTS delle 16:00, che può ribaltarne il presupposto',
   ],
   invalidation:
-    'Il petrolio restituisce il recupero, il decennale torna sotto il 4,68% circa, il Dollar Index scende sotto quota 100 oppure l’oro supera con decisione l’area dei 4.100 dollari.',
-  confirming: ['Brent 86,04 $, circa +2,7%', 'Decennale 4,705%, +2,2 pb', 'DXY appena sopra 100'],
+    'Il fallimento delle trattative, una nuova smentita netta dell’Iran, ulteriori attacchi alle navi o un forte rimbalzo del petrolio; oppure un JOLTS molto forte, che farebbe risalire dollaro e rendimenti cancellando il beneficio del greggio più basso.',
+  confirming: [
+    'Brent ≈ 80,66 $, circa −4%',
+    'WTI ≈ 76,76 $',
+    'Bozza di accordo riferita dal Qatar',
+  ],
   contradicting: [
-    'Transiti a Hormuz ancora estremamente ridotti',
-    'Nessun panico: azioni e futures positivi',
-    'Persistenza dei livelli ancora da verificare',
+    'Nessun accordo confermato',
+    'Transiti a Hormuz ancora limitati',
+    'Meno domanda di rifugio se la distensione è vera',
   ],
   sources: [
+    'petrolio-inverte-bruscamente-bessent-apre-su-hormuz',
     'rischio-hormuz-si-paga-in-petrolio-e-rendimenti-non-in-oro',
     'rendimenti-a-30-anni-di-nuovo-sui-massimi-dal-2007',
-    'nave-colpita-nello-stretto-di-hormuz',
   ],
 };
 
