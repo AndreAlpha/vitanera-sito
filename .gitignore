@@ -46,3 +46,7 @@ __screenshots__/
 Thumbs.db
 
 .env
+
+# Grafo di conoscenza, rigenerabile da contenuti/ e con percorsi assoluti dentro
+/graphify-out
+/contenuti/graphify-out

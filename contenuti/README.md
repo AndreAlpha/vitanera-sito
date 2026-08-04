@@ -1,6 +1,15 @@
 # Contenuti
 
-Copie leggibili di ciò che il sito pubblica, generate dai dati e tenute fuori dalla build.
+Testi in markdown tenuti fuori dalla build: né compilati, né serviti, né raggiungibili da un
+indirizzo. Sono la materia prima per lavorarci sopra fuori dal sito — un grafo di conoscenza, una
+ricerca, un’esportazione.
+
+Le due cartelle hanno statuti opposti, e la differenza conta:
+
+| Cartella  | Che cos’è                                    | Si modifica a mano |
+| --------- | -------------------------------------------- | ------------------ |
+| `analisi/` | copia generata dall’archivio del sito         | **no**             |
+| `studio/`  | appunti scritti a mano, senza origine nel sito | sì                 |
 
 ## `analisi/`
 
@@ -28,3 +37,12 @@ di troppo ferma la pubblicazione invece di finire online disallineato.
 Che cosa passa e che cosa no: passano tutti i testi, i numeri e le etichette, più i toni dei blocchi
 dove distinguono una lettura favorevole da una contraria. Non passano le ancore dell’indice
 laterale, che sono impianto del sito e non contenuto.
+
+## `studio/`
+
+Appunti di metodo: quadri di analisi geopolitica, gestione del rischio, psicologia della decisione,
+microstruttura del mercato. Non nascono dal sito e non finiscono nel sito — sono scritti a mano e si
+modificano a mano.
+
+Si collegano fra loro con `[[nome-del-file]]` e citano la fonte in fondo, con i riferimenti di
+pagina fra parentesi quadre. Nessuno script li tocca: `npm run analisi` guarda soltanto `analisi/`.
