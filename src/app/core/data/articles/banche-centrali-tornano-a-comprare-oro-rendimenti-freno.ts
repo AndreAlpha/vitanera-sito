@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const acquistiBancheCentraliRivisti: Article = {
   slug: 'banche-centrali-tornano-a-comprare-oro-rendimenti-freno',
-  categories: ['usa', 'tasso-di-interesse', 'fed', 'geopolitica'],
+  categories: ['riserve-auree', 'oro', 'obbligazioni', 'usa'],
   title: 'Le banche centrali tornano a comprare oro, ma i rendimenti restano il freno',
   kicker: 'Fondamentali · Controllo a tutto campo',
   dek:
@@ -29,6 +29,7 @@ export const acquistiBancheCentraliRivisti: Article = {
     regime:
       'Fondamentali bilanciati: domanda strutturale delle banche centrali e premio geopolitico da una parte, ' +
       'rendimenti statunitensi elevati e Fed senza segnali di allentamento dall’altra.',
+    horizon: 'medio',
   },
   certainty: 'alta',
   certaintyNote:
@@ -48,6 +49,7 @@ export const acquistiBancheCentraliRivisti: Article = {
     'L’equilibrio si rompe verso il basso se i rendimenti statunitensi salgono ancora senza un fatto geopolitico nuovo.',
     'Si rompe verso l’alto se gli acquisti delle banche centrali proseguono al ritmo del secondo trimestre mentre il dollaro si indebolisce.',
   ],
+  sources: [{ outlet: 'World Gold Council' }],
   blocks: [
     {
       kind: 'paragraph',

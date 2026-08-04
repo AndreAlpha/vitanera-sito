@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const cancellazioneAttaccoIran: Article = {
   slug: 'trump-cancella-attacco-iran-accordo-non-chiuso',
-  categories: ['geopolitica', 'asia', 'usa', 'fed'],
+  categories: ['premio-di-rischio', 'medio-oriente', 'oro', 'petrolio'],
   title: 'Trump cancella l’attacco all’Iran, ma l’accordo non è chiuso',
   kicker: 'Geopolitica · De-escalation annunciata',
   dek:
@@ -30,6 +30,7 @@ export const cancellazioneAttaccoIran: Article = {
     regime:
       'Premio geopolitico in riassorbimento su un annuncio di de-escalation non ancora ratificato da Teheran, ' +
       'con la Fed che resta restrittiva sullo sfondo.',
+    horizon: 'breve',
   },
   certainty: 'media',
   certaintyNote:
@@ -56,6 +57,7 @@ export const cancellazioneAttaccoIran: Article = {
     detail:
       'Il primo prezzo dopo l’annuncio dirà se la cancellazione viene letta come de-escalation o soltanto come una tregua provvisoria.',
   },
+  sources: [{ outlet: 'Reuters' }],
   blocks: [
     {
       kind: 'paragraph',

@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ContentService, formatDate } from '../../core/services/content.service';
-import { Horizon } from '../../core/models/article.model';
+import { Horizon, Verdict } from '../../core/models/article.model';
+import { HORIZON_LABEL } from '../../core/data/signal.data';
 import { RiskNotice } from '../../shared/legal/risk-notice';
 import { BiasBadge } from '../../shared/ui/bias-badge';
 import { Icon } from '../../shared/ui/icon';
@@ -17,11 +18,18 @@ interface HorizonBlock {
   readonly limits: string;
 }
 
+const VERDICT_SHORT: Record<Verdict, string> = {
+  confermata: 'confermata',
+  parziale: 'parziale',
+  invalidata: 'invalidata',
+  'senza-verifica': 'non verificata',
+};
+
 const HORIZONS: readonly HorizonBlock[] = [
   {
     key: 'breve',
-    title: 'Breve termine',
-    range: 'Giorni · settimane',
+    title: 'Intraday',
+    range: 'Minuti · ore',
     icon: 'bolt',
     drivers: [
       'Pubblicazione dei dati macro statunitensi, in particolare inflazione e mercato del lavoro.',
@@ -40,7 +48,7 @@ const HORIZONS: readonly HorizonBlock[] = [
   {
     key: 'medio',
     title: 'Medio termine',
-    range: 'Settimane · mesi',
+    range: 'Giorni',
     icon: 'layers',
     drivers: [
       'Traiettoria dell’inflazione e distanza dall’obiettivo della banca centrale.',
@@ -59,7 +67,7 @@ const HORIZONS: readonly HorizonBlock[] = [
   {
     key: 'lungo',
     title: 'Lungo termine',
-    range: 'Trimestri · anni',
+    range: 'Settimane · mesi',
     icon: 'horizon',
     drivers: [
       'Credibilità della politica monetaria e ancoraggio delle aspettative di inflazione.',
@@ -122,12 +130,20 @@ const HORIZONS: readonly HorizonBlock[] = [
       <div class="cur__grid">
         @for (item of currentReadings(); track item.slug) {
           <a class="card card--link cur" [routerLink]="['/analisi', item.slug]">
-            <p class="cur__date">{{ item.date }}</p>
+            <p class="cur__date">
+              <span class="cur__hz">{{ item.horizonLabel }}</span>
+              {{ item.date }}
+            </p>
             <p class="cur__title">{{ item.title }}</p>
             @if (item.direction; as dir) {
               <app-bias-badge [direction]="dir" [strength]="item.strength" prefix="XAU/USD ·" />
             }
             <p class="cur__regime">{{ item.regime }}</p>
+            @if (item.verdict) {
+              <p class="cur__verdict" [attr.data-verdict]="item.verdict">
+                Esito: {{ item.verdictLabel }}
+              </p>
+            }
             <span class="cur__cta"
               >Leggi l’analisi <app-icon name="arrow-right" [size]="13"
             /></span>
@@ -141,11 +157,21 @@ const HORIZONS: readonly HorizonBlock[] = [
         }
       </div>
 
+      @if (olderCount(); as n) {
+        <p class="cur__more">
+          Altre {{ n }} impostazioni dichiarate prima di queste restano in
+          <a class="link" routerLink="/analisi">archivio</a>, con il loro esito dove è stato
+          registrato.
+        </p>
+      }
+
       <p class="fineprint cur__note">
         <app-icon name="info" [size]="13" />
         <span>
-          Le impostazioni riportate sono quelle dichiarate negli articoli alla data di
-          pubblicazione. Non vengono aggiornate automaticamente e possono essere già superate.
+          Qui compare al massimo l’impostazione più recente per ciascuno dei tre orizzonti: prima
+          c’erano tutte, ed erano ventidue letture di giorni diversi presentate insieme come se
+          fossero tutte attuali. Le altre restano in archivio. Le impostazioni sono quelle
+          dichiarate alla data di pubblicazione, non vengono aggiornate e possono essere superate.
         </span>
       </p>
     </section>
@@ -250,6 +276,38 @@ const HORIZONS: readonly HorizonBlock[] = [
       font-size: var(--t-sm);
       line-height: var(--lh-base);
       color: var(--text-muted);
+    }
+
+    .cur__hz {
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-right: var(--s-2);
+    }
+
+    .cur__verdict {
+      margin-top: var(--s-2);
+      font-size: var(--t-xs);
+      color: var(--text-faint);
+    }
+
+    .cur__verdict[data-verdict='confermata'] {
+      color: var(--up);
+    }
+
+    .cur__verdict[data-verdict='invalidata'] {
+      color: var(--down);
+    }
+
+    .cur__verdict[data-verdict='parziale'] {
+      color: var(--warn);
+    }
+
+    .cur__more {
+      margin-top: var(--s-4);
+      font-size: var(--t-sm);
+      color: var(--text-soft);
     }
 
     .cur__cta {
@@ -384,17 +442,43 @@ export class Outlook {
 
   protected readonly horizons = HORIZONS;
 
-  protected readonly currentReadings = computed(() =>
-    this.content
-      .articles()
-      .filter((a) => a.bias)
-      .map((a) => ({
-        slug: a.slug,
-        title: a.title,
-        date: formatDate(a.publishedAt),
-        direction: a.bias?.direction ?? null,
-        strength: a.bias?.strength ?? null,
-        regime: a.bias?.regime ?? '',
-      })),
+  /**
+   * L'impostazione più recente per ciascun orizzonte, e nient'altro.
+   *
+   * Prima erano **tutte** le analisi con un bias, senza filtro né taglio
+   * temporale: ventidue letture pubblicate in quattro giorni, sei rialziste e
+   * cinque neutrali, mostrate una accanto all'altra sotto un titolo che diceva
+   * «al momento». Non era un elenco lungo, era un elenco sbagliato — un archivio
+   * presentato come una posizione.
+   *
+   * Le tre restanti non si contraddicono per costruzione, perché parlano di archi
+   * di tempo diversi: l'oro può salire nelle prossime ore e restare fermo nel
+   * mese. Le altre non spariscono, tornano a essere quello che sono: archivio.
+   */
+  protected readonly currentReadings = computed(() => {
+    const conBias = this.content.articles().filter((a) => a.bias);
+    const ordine: readonly Horizon[] = ['breve', 'medio', 'lungo'];
+    return ordine
+      .map((h) => conBias.find((a) => a.bias?.horizon === h))
+      .filter((a): a is NonNullable<typeof a> => a !== undefined)
+      .map((a) => {
+        const esito = this.content.outcomeOf(a.slug);
+        return {
+          slug: a.slug,
+          title: a.title,
+          date: formatDate(a.publishedAt),
+          horizonLabel: HORIZON_LABEL[a.bias!.horizon],
+          direction: a.bias?.direction ?? null,
+          strength: a.bias?.strength ?? null,
+          regime: a.bias?.regime ?? '',
+          verdict: esito?.verdict ?? null,
+          verdictLabel: esito ? VERDICT_SHORT[esito.verdict] : '',
+        };
+      });
+  });
+
+  /** Quante impostazioni restano in archivio oltre alle tre mostrate. */
+  protected readonly olderCount = computed(
+    () => this.content.articles().filter((a) => a.bias).length - this.currentReadings().length,
   );
 }

@@ -7,7 +7,7 @@ pubblicata: "2026-08-03T12:50:00+02:00"
 autore: "Vitanera"
 minutiLettura: 3
 certezza: "alta"
-categorie: ["tasso-di-interesse", "usa", "fed"]
+categorie: ["fed", "tasso-di-interesse", "usa", "oro"]
 argomenti: ["Federal Reserve", "Williams", "Inflazione", "Dazi", "Tassi"]
 strumenti: ["XAU/USD", "DXY", "Treasury", "Brent"]
 orizzonti: ["breve", "medio"]
@@ -15,13 +15,16 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "rialzista"
   forza: "media"
+  orizzonte: "medio"
   regime: "Fed che può continuare ad aspettare invece di alzare subito, con il dollaro ai minimi da metà giugno e i rendimenti in calo. Il rischio di un rialzo più avanti resta però aperto e legato ai prossimi dati core su inflazione e lavoro."
 prossimoAppuntamento:
   quando: "Nei prossimi giorni"
   titolo: "Dati core su inflazione e lavoro"
   dettaglio: "Williams ha chiarito che ogni decisione dipenderà da lì. Il rischio di un rialzo a settembre o nei mesi successivi resta aperto."
+fonti:
+  - testata: "Reuters"
 sorgente: "src/app/core/data/articles/williams-politica-della-fed-ben-posizionata.ts"
-impronta: "de46e96e818b8d78"
+impronta: "e7d11f4deca0717b"
 ---
 
 # Williams: la politica della Fed è «ben posizionata»
@@ -106,6 +109,10 @@ Williams ha chiarito che ogni decisione dipenderà da lì. Il rischio di un rial
 
 ## Regime descritto
 
-Impostazione su XAU/USD: rialzista, forza media.
+Impostazione su XAU/USD: rialzista, forza media, orizzonte medio.
 
 Fed che può continuare ad aspettare invece di alzare subito, con il dollaro ai minimi da metà giugno e i rendimenti in calo. Il rischio di un rialzo più avanti resta però aperto e legato ai prossimi dati core su inflazione e lavoro.
+
+## Fonti consultate
+
+- **Reuters**

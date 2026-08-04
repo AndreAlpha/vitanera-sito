@@ -20,7 +20,7 @@ import { pathToFileURL } from 'node:url';
 import { renderAnalisi } from './lib/render-analisi.mjs';
 
 const root = resolve(import.meta.dirname, '..');
-const sorgente = join(root, 'src/app/core/data/articles.data.ts');
+const sorgente = join(root, 'src/app/core/data/analisi-export.ts');
 const destinazione = join(root, 'contenuti/analisi');
 const soloControllo = process.argv.includes('--check');
 
@@ -38,13 +38,13 @@ async function leggiArchivio() {
       logLevel: 'silent',
     });
     const modulo = await import(pathToFileURL(pacchetto).href);
-    return modulo.ARTICLES;
+    return { articoli: modulo.ARTICLES, esiti: modulo.OUTCOMES ?? [] };
   } finally {
     rmSync(lavoro, { recursive: true, force: true });
   }
 }
 
-const articoli = await leggiArchivio();
+const { articoli, esiti } = await leggiArchivio();
 if (!articoli?.length) {
   console.error(`Nessuna analisi trovata in ${sorgente}: controllare l'archivio.`);
   process.exit(1);
@@ -52,7 +52,10 @@ if (!articoli?.length) {
 
 mkdirSync(destinazione, { recursive: true });
 
-const attesi = new Map(articoli.map((a) => [`${a.slug}.md`, renderAnalisi(a)]));
+const esitoDi = new Map(esiti.map((o) => [o.slug, o]));
+const attesi = new Map(
+  articoli.map((a) => [`${a.slug}.md`, renderAnalisi(a, esitoDi.get(a.slug) ?? null)]),
+);
 const presenti = new Set(readdirSync(destinazione).filter((f) => f.endsWith('.md')));
 
 const nuovi = [];

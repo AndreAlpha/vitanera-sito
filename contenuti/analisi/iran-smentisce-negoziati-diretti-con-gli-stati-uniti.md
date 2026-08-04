@@ -7,7 +7,7 @@ pubblicata: "2026-08-03T10:05:00+02:00"
 autore: "Vitanera"
 minutiLettura: 3
 certezza: "alta"
-categorie: ["geopolitica", "asia", "usa"]
+categorie: ["premio-di-rischio", "medio-oriente", "petrolio", "oro"]
 argomenti: ["Iran", "Hormuz", "Oman", "Petrolio", "Premio di rischio"]
 strumenti: ["XAU/USD", "Brent", "WTI", "DXY", "Treasury"]
 orizzonti: ["breve", "medio"]
@@ -15,13 +15,14 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "rialzista"
   forza: "bassa"
+  orizzonte: "breve"
   regime: "Premio geopolitico che resta in parte in piedi dopo la smentita di Teheran, contro un mercato che continua a prezzare una soluzione diplomatica: il sostegno rifugio all’oro convive con il rischio che petrolio e rendimenti statunitensi rimbalzino insieme."
 prossimoAppuntamento:
   quando: "Nei prossimi giorni"
   titolo: "L’emergere o meno di un canale negoziale concreto"
   dettaglio: "Senza un canale verificabile il mercato potrebbe ridurre le scommesse su una normalizzazione veloce di Hormuz; un forte rimbalzo del petrolio riporterebbe però in primo piano le aspettative inflazionistiche."
 sorgente: "src/app/core/data/articles/iran-smentisce-negoziati-diretti-con-gli-stati-uniti.ts"
-impronta: "c5349d7da979c55b"
+impronta: "e110b2e3cf9e7b95"
 ---
 
 # L’Iran smentisce i negoziati diretti con gli Stati Uniti
@@ -114,6 +115,6 @@ Senza un canale verificabile il mercato potrebbe ridurre le scommesse su una nor
 
 ## Regime descritto
 
-Impostazione su XAU/USD: rialzista, forza bassa.
+Impostazione su XAU/USD: rialzista, forza bassa, orizzonte breve.
 
 Premio geopolitico che resta in parte in piedi dopo la smentita di Teheran, contro un mercato che continua a prezzare una soluzione diplomatica: il sostegno rifugio all’oro convive con il rischio che petrolio e rendimenti statunitensi rimbalzino insieme.

@@ -7,7 +7,7 @@ pubblicata: "2026-08-03T17:10:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "alta"
-categorie: ["usa", "tasso-di-interesse", "asia", "fed"]
+categorie: ["correlazioni", "oro", "ism", "riserve-auree"]
 argomenti: ["ISM", "Bank of Korea", "Banche centrali", "Metalli preziosi", "Dollaro"]
 strumenti: ["XAU/USD", "XAG/USD", "DXY", "Treasury", "Brent"]
 orizzonti: ["breve", "medio"]
@@ -15,13 +15,16 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale-ribassista"
   forza: "media"
+  orizzonte: "breve"
   regime: "Il prezzo ha reagito nella direzione coerente con un ISM al massimo da oltre quattro anni: il mercato sta pesando più la forza dell’economia statunitense e il rischio di tassi elevati che il calo del petrolio. La domanda ufficiale coreana sostiene il quadro di fondo, non quello della giornata."
 prossimoAppuntamento:
   quando: "Nei prossimi giorni"
   titolo: "Dati sul lavoro statunitensi"
   dettaglio: "Se anche questi risultassero forti, aumenterebbe il rischio di una discesa verso i 4.000 dollari. La domanda delle banche centrali può offrire sostegno più avanti, ma non è un catalizzatore intraday."
+fonti:
+  - testata: "Reuters"
 sorgente: "src/app/core/data/articles/oro-inverte-il-rialzo-dopo-il-dato-ism.ts"
-impronta: "c42d9a92b1d779c4"
+impronta: "e2ecd18b7864953d"
 ---
 
 # L’oro inverte il rialzo dopo l’ISM
@@ -105,6 +108,10 @@ Se anche questi risultassero forti, aumenterebbe il rischio di una discesa verso
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale-ribassista, forza media.
+Impostazione su XAU/USD: neutrale-ribassista, forza media, orizzonte breve.
 
 Il prezzo ha reagito nella direzione coerente con un ISM al massimo da oltre quattro anni: il mercato sta pesando più la forza dell’economia statunitense e il rischio di tassi elevati che il calo del petrolio. La domanda ufficiale coreana sostiene il quadro di fondo, non quello della giornata.
+
+## Fonti consultate
+
+- **Reuters**

@@ -7,7 +7,7 @@ pubblicata: "2026-08-04T20:05:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "media"
-categorie: ["usa", "tasso-di-interesse", "fed", "geopolitica"]
+categorie: ["correlazioni", "oro", "obbligazioni", "tasso-di-interesse"]
 argomenti: ["Oro", "Rendimenti", "Petrolio", "Metalli preziosi", "Fed"]
 strumenti: ["XAU/USD", "Brent", "WTI", "Treasury", "DXY"]
 orizzonti: ["breve", "medio"]
@@ -15,13 +15,16 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "rialzista"
   forza: "alta"
+  orizzonte: "breve"
   regime: "Catena coerente e verificata sui prezzi: petrolio in forte calo, minore pressione inflazionistica, rendimenti più bassi, minore costo-opportunità del metallo. Si aggiunge il raffreddamento graduale del lavoro indicato dal JOLTS. La spinta arriva dai tassi più che dalla domanda rifugio."
 prossimoAppuntamento:
   quando: "Nei prossimi giorni"
   titolo: "ADP e payroll statunitensi"
   dettaglio: "Le aspettative sulla Fed restano molto sensibili a questi due dati. Numeri nettamente superiori alle attese riporterebbero in alto rendimenti e dollaro, togliendo all’oro il canale che oggi lo sta sostenendo."
+fonti:
+  - testata: "Reuters"
 sorgente: "src/app/core/data/articles/oro-estende-il-rialzo-il-canale-e-quello-dei-tassi.ts"
-impronta: "5aec819bee6affbd"
+impronta: "878d1394e2063732"
 ---
 
 # L’oro estende il rialzo, e il canale è quello dei tassi
@@ -104,6 +107,10 @@ Le aspettative sulla Fed restano molto sensibili a questi due dati. Numeri netta
 
 ## Regime descritto
 
-Impostazione su XAU/USD: rialzista, forza alta.
+Impostazione su XAU/USD: rialzista, forza alta, orizzonte breve.
 
 Catena coerente e verificata sui prezzi: petrolio in forte calo, minore pressione inflazionistica, rendimenti più bassi, minore costo-opportunità del metallo. Si aggiunge il raffreddamento graduale del lavoro indicato dal JOLTS. La spinta arriva dai tassi più che dalla domanda rifugio.
+
+## Fonti consultate
+
+- **Reuters**

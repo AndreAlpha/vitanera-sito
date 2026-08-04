@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const movimentoCrossAssetSiRafforza: Article = {
   slug: 'movimento-si-rafforza-petrolio-giu-dollaro-sotto-quota-100',
-  categories: ['usa', 'tasso-di-interesse', 'geopolitica', 'fed'],
+  categories: ['correlazioni', 'oro', 'petrolio', 'valute'],
   title: 'Il movimento si rafforza: petrolio giù, dollaro sotto quota 100',
   kicker: 'Correlazioni · Controllo cross-asset',
   dek:
@@ -30,6 +30,7 @@ export const movimentoCrossAssetSiRafforza: Article = {
       'Movimento cross-asset coerente: petrolio in forte calo, dollaro debole contro tutte le principali ' +
       'valute e rendimenti statunitensi sotto potenziale pressione ribassista, con la minaccia di un nuovo ' +
       'intervento valutario a limitare il recupero del dollaro.',
+    horizon: 'breve',
   },
   certainty: 'media',
   certaintyNote:
@@ -55,6 +56,7 @@ export const movimentoCrossAssetSiRafforza: Article = {
     detail:
       'Numeri deboli rafforzerebbero l’aspettativa di una Federal Reserve meno aggressiva; numeri molto forti riporterebbero in alto dollaro e rendimenti.',
   },
+  sources: [{ outlet: 'Reuters' }],
   blocks: [
     {
       kind: 'paragraph',

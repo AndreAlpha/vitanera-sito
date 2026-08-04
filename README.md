@@ -69,10 +69,11 @@ scripts/                           calendario economico, markdown delle analisi,
 
 src/app/
 ├─ core/
-│  ├─ config/site.config.ts        navigazione, testi legali brevi, 29 categorie e 5 famiglie
+│  ├─ config/site.config.ts        navigazione, testi legali brevi, categorie e famiglie
 │  ├─ data/articles/<slug>.ts      un file per analisi, con lo stesso nome del suo slug
 │  ├─ data/articles.data.ts        elenco delle analisi: solo import e array, nessun testo
 │  ├─ data/author.ts               la firma, unica per tutte le analisi
+│  ├─ data/outcomes.data.ts        esiti: come sono andate a finire le analisi
 │  ├─ data/calendar.meta.ts        testi redazionali degli indicatori e anagrafica di chi parla
 │  ├─ data/calendar.series.ts      GENERATO — storico dei valori
 │  ├─ data/calendar.events.ts      GENERATO — appuntamenti di Fed e BCE
@@ -92,6 +93,7 @@ src/app/
    ├─ calendar/                    calendario economico: aree, indicatori, banche centrali
    ├─ topics/                      indice degli argomenti
    ├─ articles/                    elenco, dettaglio, resa dei blocchi
+   ├─ outcomes/                    registro degli esiti e calibrazione
    ├─ outlook/                     orizzonti breve · medio · lungo
    ├─ methodology/                 metodologia e limiti dichiarati
    ├─ glossary/                    glossario
@@ -169,6 +171,9 @@ il nome della copia markdown: da un solo nome si trovano tutti e tre.
 2. Importarlo in `src/app/core/data/articles.data.ts` e metterlo in testa all’array `ARTICLES`.
 3. Eseguire `npm run analisi`, che scrive `contenuti/analisi/<slug>.md`.
 
+La prima categoria non può appartenere alla famiglia `aree`: è un test, e serve a evitare che ogni
+analisi americana prenda la stessa tinta e annunci «USA» invece del fatto di cui parla.
+
 Il terzo passo non è facoltativo: `npm run build` si rifiuta di compilare se i markdown non
 corrispondono all’archivio, e un test lo verifica a parte.
 
@@ -184,24 +189,60 @@ L’ordine dell’archivio è calcolato da `publishedAt`, non dalla posizione ne
 ### Le categorie
 
 Un’analisi appartiene a **una o più** categorie, dichiarate in `categories`. La prima è la principale:
-da essa dipendono la tinta della pagina e la pastiglia in evidenza sulle schede.
+da essa dipendono la tinta della pagina e la pastiglia in evidenza sulle schede — e **non può essere
+un’area**, è un test. Con un’area davanti ogni analisi americana avrebbe la stessa tinta e la scheda
+annuncerebbe dove è successo invece di che cosa è successo.
 
-Le categorie sono ventinove, raccolte in cinque famiglie e definite in `site.config.ts`:
+`CategorySlug` è l’unione di due tipi. `IndicatorCategorySlug` sono le categorie che un indicatore del
+calendario dichiara: usarle porta il lettore anche allo storico del dato, e hanno `series: true`.
+`EditorialCategorySlug` sono solo editoriali, non hanno alcuno storico dietro e **crescono con quello
+che si scrive**: quando un’analisi tratta qualcosa che non ha una categoria, se ne aggiunge una
+invece di forzare quella che le somiglia. Un test rifiuta le categorie editoriali che nessuna
+analisi usa.
 
-| Famiglia            | Categorie                                                                                                                                                                                                                                                |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Aree e temi         | USA, Europa, Asia, Geopolitica                                                                                                                                                                                                                           |
-| Banche centrali     | Fed, Bce, Tasso di interesse                                                                                                                                                                                                                             |
-| Lavoro              | Tasso di disoccupazione, Richieste iniziali sussidi di disoccupazione, Buste paga settore non agricolo (NFP)                                                                                                                                             |
-| Prezzi e inflazione | Indice dei prezzi al consumo (IPC), Variazione IPC, IPC Core, Variazione IPC Core, Indice dei prezzi per i consumi personali (PCE), PCE Core Annuale, PCE Core Trimestrale, Variazione PCE Core, Variazione IPP, Variazione IPP Core (PPI)               |
-| Attività economica  | Rapporto sulla fiducia dei consumatori, Indice di produzione industriale, Variazione produzione industriale, PIL, PIL Annuale, PIL Trimestrale, Variazione vendite al dettaglio, Vendite al dettaglio beni essenziali, Indice delle vendite al dettaglio |
+Le categorie con uno storico dietro sono raccolte in queste famiglie, definite in `site.config.ts`:
 
-Un commento all’inflazione americana sta quindi insieme in `usa`, `variazione-ipc` e `ipc-core`, e si
+| Famiglia            | Categorie                                                                                                                                                                                                                                                | Storico |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| Aree                | USA, Europa                                                                                                                                                                                                                                              | sì      |
+| Aree                | Asia, Medio Oriente                                                                                                                                                                                                                                      | no      |
+| Banche centrali     | Fed, Bce, Tasso di interesse                                                                                                                                                                                                                             | sì      |
+| Mercati             | Oro, Petrolio, Valute, Obbligazioni                                                                                                                                                                                                                      | no      |
+| Temi                | Correlazioni, Premio di rischio, Rotte e approvvigionamento, Interventi valutari, Riserve auree, Debito pubblico                                                                                                                                         | no      |
+| Lavoro              | Tasso di disoccupazione, Richieste iniziali sussidi di disoccupazione, Buste paga settore non agricolo (NFP)                                                                                                                                             | sì      |
+| Lavoro              | Offerte di lavoro (JOLTS)                                                                                                                                                                                                                                | no      |
+| Prezzi e inflazione | Indice dei prezzi al consumo (IPC), Variazione IPC, IPC Core, Variazione IPC Core, Indice dei prezzi per i consumi personali (PCE), PCE Core Annuale, PCE Core Trimestrale, Variazione PCE Core, Variazione IPP, Variazione IPP Core (PPI)               | sì      |
+| Attività economica  | Rapporto sulla fiducia dei consumatori, Indice di produzione industriale, Variazione produzione industriale, PIL, PIL Annuale, PIL Trimestrale, Variazione vendite al dettaglio, Vendite al dettaglio beni essenziali, Indice delle vendite al dettaglio | sì      |
+| Attività economica  | Indagine ISM                                                                                                                                                                                                                                             | no      |
+
+Un commento all’inflazione americana sta quindi insieme in `variazione-ipc`, `usa` e `ipc-core`, e si
 ritrova da tutte e tre le pagine di argomento. L’indice completo è in `/argomenti`; l’elenco di una
 singola categoria in `/argomenti/<slug>`.
 
 Le categorie che corrispondono a un indicatore macroeconomico sono le stesse usate dal calendario
 economico: è il collegamento fra ciò che si legge e i numeri da cui nasce.
+
+## Gli esiti
+
+Ogni analisi dichiara, prima di sapere come andrà, l’elenco delle condizioni che la renderebbero
+sbagliata. `src/app/core/data/outcomes.data.ts` è dove quelle condizioni vengono ricontrollate a
+distanza di tempo, una per una, con il numero che si è visto. Da lì nasce `/esiti`.
+
+Tre regole, e sono tutte e tre il punto:
+
+1. **L’analisi non si tocca mai.** L’esito vive in un file separato e in sola aggiunta. Se si potesse
+   ritoccare l’analisi dopo, il registro misurerebbe la memoria di chi lo compila.
+2. **Il verdetto si ricava dalle condizioni**, non dall’impressione: nessuna scattata →
+   `confermata`, alcune → `parziale`, tutte → `invalidata`. Un test verifica il conteggio, e un
+   altro che le condizioni ricontrollate siano davvero quelle dichiarate prima.
+3. **Anche il silenzio è un esito.** Un’analisi che nessuno ha ricontrollato in tempo si registra
+   come `senza-verifica` e viene contata come tale.
+
+La pagina mostra anche la **calibrazione**: per ogni livello di `certainty` dichiarato, la quota di
+analisi confermate. È il modo per sapere se quel campo sta misurando qualcosa.
+
+L’archivio parte vuoto di proposito: riempirlo a posteriori, sapendo già come è andata, è esattamente
+l’errore che esiste per impedire.
 
 ## Le copie markdown delle analisi
 
@@ -211,8 +252,9 @@ un grafo di conoscenza, una ricerca, un’esportazione — senza dover leggere T
 apre mai.
 
 Ogni file ha un frontmatter con slug, titolo, occhiello, sommario, data, categorie, argomenti,
-strumenti, orizzonti, impostazione e prossimo appuntamento, poi il testo dell’analisi: «In sintesi»,
-i blocchi, le condizioni di invalidazione, il grado di certezza e il regime descritto.
+strumenti, orizzonti, impostazione, prossimo appuntamento e fonti, poi il testo dell’analisi: «In
+sintesi», i blocchi, le condizioni di invalidazione, il grado di certezza, il regime descritto e —
+quando c’è — **come è andata a finire**, con la tabella delle condizioni ricontrollate.
 
 **Non si modificano a mano**: la prima rigenerazione riscriverebbe tutto. Il testo si cambia nel
 file dell’analisi sotto `src/app/core/data/articles/`, poi si rilancia `npm run analisi`.
@@ -230,6 +272,14 @@ dopo la rimozione di un’analisi:
 L’indicatore in panoramica vive in `src/app/core/data/signal.data.ts` e va aggiornato a mano dopo ogni
 pubblicazione. Sintetizza le ultime analisi pubblicate, quali che siano le loro categorie, non solo
 l’ultima.
+
+Dice **tre cose per tre archi di tempo** — intraday, giorni, settimane — perché l’oro può salire
+nelle prossime ore e restare fermo nel mese, e una lettura sola costringeva a scegliere quale delle
+due dire. Ogni lettura ha la sua direzione, la sua forza e la sua condizione di decadenza.
+
+**Non scade.** C’era una durata dichiarata, dopo la quale la panoramica passava da sola a «in attesa
+di notizie»: era una precisione che nessuno poteva mantenere. Al suo posto c’è la data e l’ora
+dell’ultimo aggiornamento, scritta grande — quanto sia ancora attuale lo decide chi legge.
 
 Vale `null` finché non esiste alcuna lettura in corso — è lo stato in cui il sito riparte: la
 panoramica mostra allora il riquadro «In attesa di notizie» al posto dell’indicatore.
@@ -306,12 +356,14 @@ quanto il colore si fa sentire.
 | Calendario USA · categorie dei prezzi                    | rame         |
 | Calendario Euro zona · categorie del lavoro              | verde salvia |
 | Banche centrali · orizzonti                              | prugna       |
-| Aree e temi (USA, Europa, Asia, geopolitica)             | terracotta   |
+| Aree (USA, Europa, Asia, Medio Oriente)                  | terracotta   |
+| Mercati (oro, petrolio, valute, obbligazioni)            | ottanio      |
+| Temi · esiti                                             | blu polvere  |
 | Argomenti · attività economica · metodologia e glossario | sabbia       |
 | Pagine legali                                            | ambra        |
 
 Le tinte sono definite nei blocchi `[data-accent='…']`; l’attributo viene applicato al guscio dal
-metodo `accent()` di [`src/app/app.ts`](src/app/app.ts). Con ventinove categorie una tinta ciascuna
+metodo `accent()` di [`src/app/app.ts`](src/app/app.ts). Con quaranta categorie una tinta ciascuna
 sarebbe illeggibile: le pagine di argomento e le analisi prendono quindi il colore della
 **famiglia** della categoria principale. Il segno di marca resta sempre oro e le pagine di
 trasparenza sempre ambra, così da essere riconoscibili in qualunque sezione.

@@ -144,6 +144,30 @@
           </section>
         }
 
+        @if (outcome(); as o) {
+          <section class="outcome" [attr.data-verdict]="o.verdict">
+            <p class="outcome__title">
+              <app-icon name="scale" [size]="14" />
+              Come è andata: {{ verdictLabel(o.verdict) }}
+            </p>
+            <p class="outcome__what">{{ o.what }}</p>
+            @if (o.conditions.length) {
+              <ul class="outcome__conds">
+                @for (c of o.conditions; track c.condition) {
+                  <li [class.on]="c.triggered">
+                    <span>{{ c.condition }}</span>
+                    <span class="outcome__ev">{{ c.evidence }}</span>
+                  </li>
+                }
+              </ul>
+            }
+            <p class="outcome__foot">
+              Controllata il {{ outcomeChecked() }} ·
+              <a routerLink="/esiti">tutti gli esiti</a>
+            </p>
+          </section>
+        }
+
         <div class="tags">
           @for (tag of a.tags; track tag) {
             <span class="chip">#{{ tag }}</span>
@@ -180,6 +204,51 @@
               }
             </div>
           </div>
+
+          @if (a.sources?.length) {
+            <div class="side__card">
+              <p class="eyebrow side__label">Fonti consultate</p>
+              <ul class="side__sources">
+                @for (s of a.sources; track s.outlet + (s.title ?? '')) {
+                  <li>
+                    @if (s.url) {
+                      <a class="link" [href]="s.url" rel="noopener noreferrer" target="_blank">{{
+                        s.outlet
+                      }}</a>
+                    } @else {
+                      <span class="side__outlet">{{ s.outlet }}</span>
+                    }
+                    @if (s.title) {
+                      <span class="side__srcnote">{{ s.title }}</span>
+                    }
+                    @if (s.at) {
+                      <span class="side__srcnote">{{ s.at }}</span>
+                    }
+                  </li>
+                }
+              </ul>
+              <p class="side__fine">
+                Riferimenti consultati al momento della redazione, non verificati in seguito.
+              </p>
+            </div>
+          }
+
+          @if (terms().length) {
+            <div class="side__card">
+              <p class="eyebrow side__label">Termini di questa analisi</p>
+              <div class="side__chips">
+                @for (t of terms(); track t.term) {
+                  <a
+                    class="chip"
+                    routerLink="/glossario"
+                    [fragment]="'v-' + termAnchor(t.term)"
+                    [attr.title]="t.definition"
+                    >{{ t.term }}</a
+                  >
+                }
+              </div>
+            </div>
+          }
         </div>
       </aside>
     </div>

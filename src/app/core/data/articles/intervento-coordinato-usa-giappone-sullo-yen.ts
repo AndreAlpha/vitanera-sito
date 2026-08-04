@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const interventoCoordinatoYen: Article = {
   slug: 'intervento-coordinato-usa-giappone-sullo-yen',
-  categories: ['asia', 'usa', 'fed'],
+  categories: ['interventi-valutari', 'valute', 'asia', 'usa'],
   title: 'Intervento coordinato Stati Uniti-Giappone sullo yen',
   kicker: 'Valute · Intervento coordinato',
   dek:
@@ -29,6 +29,7 @@ export const interventoCoordinatoYen: Article = {
     regime:
       'Possibile indebolimento coordinato del dollaro con rendimenti non ulteriormente spinti in alto, mentre ' +
       'la de-escalation iraniana e l’offerta OPEC+ continuano a ridurre il premio rifugio e quello energetico.',
+    horizon: 'breve',
   },
   certainty: 'media',
   certaintyNote:
@@ -54,6 +55,7 @@ export const interventoCoordinatoYen: Article = {
     detail:
       'È il primo momento in cui si potrà misurare l’efficacia dell’intervento; l’annuncio ufficiale giapponese è atteso e potrebbe precisarne l’importo.',
   },
+  sources: [{ outlet: 'Reuters' }],
   blocks: [
     {
       kind: 'paragraph',

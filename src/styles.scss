@@ -221,6 +221,29 @@
   --accent-rgb: 188, 178, 160;
 }
 
+/* Ottanio — mercati e strumenti dell'analisi. */
+[data-accent='mercati'] {
+  --accent: #6ba6a8;
+  --accent-soft: #a5cdcf;
+  --accent-deep: #35696b;
+  --accent-dim: rgba(107, 166, 168, 0.1);
+  --accent-line: rgba(107, 166, 168, 0.26);
+  --accent-ink: #051d1e;
+  --accent-rgb: 107, 166, 168;
+}
+
+/* Blu polvere — temi, meccanismi e registro degli esiti. */
+[data-accent='temi'],
+[data-accent='esiti'] {
+  --accent: #8aa6c8;
+  --accent-soft: #b8cbe4;
+  --accent-deep: #4c6689;
+  --accent-dim: rgba(138, 166, 200, 0.1);
+  --accent-line: rgba(138, 166, 200, 0.26);
+  --accent-ink: #0a1524;
+  --accent-rgb: 138, 166, 200;
+}
+
 /* Ambra — pagine di trasparenza. */
 [data-accent='legale'] {
   --accent: #d6a55c;

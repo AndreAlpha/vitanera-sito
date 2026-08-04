@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const petrolioInverteBessent: Article = {
   slug: 'petrolio-inverte-bruscamente-bessent-apre-su-hormuz',
-  categories: ['geopolitica', 'asia', 'usa', 'tasso-di-interesse'],
+  categories: ['rotte-e-approvvigionamento', 'petrolio', 'medio-oriente', 'usa'],
   title: 'Il petrolio inverte bruscamente: Bessent apre su Hormuz',
   kicker: 'Geopolitica · Ipotesi di riapertura',
   dek:
@@ -30,6 +30,7 @@ export const petrolioInverteBessent: Article = {
       'Il greggio in forte calo allenta la spinta sull’inflazione attesa e quindi sui rendimenti, che erano ' +
       'l’ostacolo principale per l’oro. Lo stesso movimento toglie però domanda di bene rifugio: due effetti ' +
       'opposti che nascono dalla stessa notizia e che tengono contenuta la reazione netta.',
+    horizon: 'breve',
   },
   certainty: 'alta',
   certaintyNote:

@@ -7,7 +7,7 @@ pubblicata: "2026-08-03T08:55:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "media"
-categorie: ["usa", "tasso-di-interesse", "geopolitica", "fed"]
+categorie: ["correlazioni", "oro", "petrolio", "valute"]
 argomenti: ["Petrolio", "Dollaro", "Yen", "Rendimenti", "Iran"]
 strumenti: ["XAU/USD", "DXY", "Brent", "WTI", "USD/JPY", "Treasury"]
 orizzonti: ["breve", "medio"]
@@ -15,13 +15,16 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "rialzista"
   forza: "media"
+  orizzonte: "breve"
   regime: "Movimento cross-asset coerente: petrolio in forte calo, dollaro debole contro tutte le principali valute e rendimenti statunitensi sotto potenziale pressione ribassista, con la minaccia di un nuovo intervento valutario a limitare il recupero del dollaro."
 prossimoAppuntamento:
   quando: "Nei prossimi giorni"
   titolo: "Dati sul lavoro statunitensi"
   dettaglio: "Numeri deboli rafforzerebbero l’aspettativa di una Federal Reserve meno aggressiva; numeri molto forti riporterebbero in alto dollaro e rendimenti."
+fonti:
+  - testata: "Reuters"
 sorgente: "src/app/core/data/articles/movimento-si-rafforza-petrolio-giu-dollaro-sotto-quota-100.ts"
-impronta: "792b4c5053a6d566"
+impronta: "0104292255cfec34"
 ---
 
 # Il movimento si rafforza: petrolio giù, dollaro sotto quota 100
@@ -129,6 +132,10 @@ Numeri deboli rafforzerebbero l’aspettativa di una Federal Reserve meno aggres
 
 ## Regime descritto
 
-Impostazione su XAU/USD: rialzista, forza media.
+Impostazione su XAU/USD: rialzista, forza media, orizzonte breve.
 
 Movimento cross-asset coerente: petrolio in forte calo, dollaro debole contro tutte le principali valute e rendimenti statunitensi sotto potenziale pressione ribassista, con la minaccia di un nuovo intervento valutario a limitare il recupero del dollaro.
+
+## Fonti consultate
+
+- **Reuters**

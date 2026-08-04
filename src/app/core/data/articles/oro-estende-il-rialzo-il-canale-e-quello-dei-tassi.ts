@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const oroEstendeCanaleTassi: Article = {
   slug: 'oro-estende-il-rialzo-il-canale-e-quello-dei-tassi',
-  categories: ['usa', 'tasso-di-interesse', 'fed', 'geopolitica'],
+  categories: ['correlazioni', 'oro', 'obbligazioni', 'tasso-di-interesse'],
   title: 'L’oro estende il rialzo, e il canale è quello dei tassi',
   kicker: 'Correlazioni · Conferma cross-asset',
   dek:
@@ -30,6 +30,7 @@ export const oroEstendeCanaleTassi: Article = {
       'Catena coerente e verificata sui prezzi: petrolio in forte calo, minore pressione inflazionistica, ' +
       'rendimenti più bassi, minore costo-opportunità del metallo. Si aggiunge il raffreddamento graduale ' +
       'del lavoro indicato dal JOLTS. La spinta arriva dai tassi più che dalla domanda rifugio.',
+    horizon: 'breve',
   },
   certainty: 'media',
   certaintyNote:
@@ -55,6 +56,7 @@ export const oroEstendeCanaleTassi: Article = {
     detail:
       'Le aspettative sulla Fed restano molto sensibili a questi due dati. Numeri nettamente superiori alle attese riporterebbero in alto rendimenti e dollaro, togliendo all’oro il canale che oggi lo sta sostenendo.',
   },
+  sources: [{ outlet: 'Reuters' }],
   blocks: [
     {
       kind: 'paragraph',

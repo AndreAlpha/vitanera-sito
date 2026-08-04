@@ -7,18 +7,22 @@
  */
 
 /**
- * Categorie dell'archivio.
+ * Categorie dichiarate dagli indicatori del calendario economico.
  *
- * Sono di tre famiglie — area geografica, tema e indicatore macroeconomico — e
- * un'analisi può appartenere a più categorie contemporaneamente: un commento
- * all'inflazione americana sta insieme in `usa`, `ipc` e `variazione-ipc`.
+ * Sono le uniche che fanno da ponte fra un'analisi e uno storico di dati: la
+ * scheda di un indicatore mostra fra gli «argomenti collegati» le categorie che
+ * dichiara, e da lì si arriva alle analisi che le usano. Il collegamento passa
+ * solo da qui, e uno slug plausibile ma sbagliato non dà errore — manda il
+ * lettore su una serie che non contiene il numero che ha appena letto.
+ *
+ * Non si inventano: esistono perché `calendar.meta.ts` le dichiara. Aggiungerne
+ * una qui senza che nessun indicatore la dichiari la rende una categoria
+ * editoriale travestita.
  */
-export type CategorySlug =
-  // Aree e temi
+export type IndicatorCategorySlug =
+  // Aree coperte dal calendario
   | 'usa'
   | 'europa'
-  | 'asia'
-  | 'geopolitica'
   // Banche centrali
   | 'fed'
   | 'bce'
@@ -49,8 +53,45 @@ export type CategorySlug =
   | 'vendite-dettaglio-essenziali'
   | 'indice-vendite-dettaglio';
 
+/**
+ * Categorie puramente editoriali: nessuno storico dietro, nessun indicatore che
+ * le dichiari.
+ *
+ * Questo elenco **cresce con quello che si scrive**. Nasce dalle analisi
+ * pubblicate, non da una tassonomia decisa a tavolino: quando un'analisi tratta
+ * qualcosa che qui non c'è, la risposta giusta è aggiungere una voce, non
+ * forzare la categoria che le somiglia di più. Una categoria forzata sposta
+ * un'analisi nell'archivio sbagliato e non si nota mai più.
+ */
+export type EditorialCategorySlug =
+  // Aree non coperte dal calendario
+  | 'asia'
+  | 'medio-oriente'
+  // Mercati: lo strumento di cui l'analisi parla
+  | 'oro'
+  | 'petrolio'
+  | 'valute'
+  | 'obbligazioni'
+  // Temi: il meccanismo che l'analisi descrive
+  | 'correlazioni'
+  | 'premio-di-rischio'
+  | 'rotte-e-approvvigionamento'
+  | 'interventi-valutari'
+  | 'riserve-auree'
+  | 'debito-pubblico'
+  // Dati americani che il calendario non copre
+  | 'ism'
+  | 'jolts';
+
+/**
+ * Categorie dell'archivio: un'analisi può appartenere a più categorie
+ * contemporaneamente, e la prima determina la tinta della pagina.
+ */
+export type CategorySlug = IndicatorCategorySlug | EditorialCategorySlug;
+
 /** Famiglia a cui appartiene una categoria, usata per raggrupparle a video. */
-export type CategoryFamily = 'aree' | 'banche-centrali' | 'lavoro' | 'prezzi' | 'attivita';
+export type CategoryFamily =
+  'aree' | 'banche-centrali' | 'mercati' | 'temi' | 'lavoro' | 'prezzi' | 'attivita';
 
 export type Tone = 'gold' | 'bull' | 'bear' | 'warn' | 'neutral';
 
@@ -70,6 +111,15 @@ export interface Category {
   readonly icon: string;
   readonly tagline: string;
   readonly description: string;
+  /**
+   * Se un indicatore del calendario dichiara questa categoria, e quindi se
+   * usarla porta il lettore anche a uno storico di dati.
+   *
+   * Non è decorativo: è la differenza fra una categoria che collega l'analisi a
+   * una serie e una che la colloca soltanto in archivio. Il valore è verificato
+   * dai test contro `calendar.meta.ts`, così non può mentire.
+   */
+  readonly series: boolean;
 }
 
 export interface CategoryFamilyInfo {
@@ -198,12 +248,38 @@ export interface Bias {
   readonly direction: BiasDirection;
   readonly strength: Level;
   readonly regime: string;
+  /**
+   * Su quale arco di tempo vale la direzione descritta.
+   *
+   * Senza questo campo una lettura intraday e una lettura di settimane si
+   * leggono uguali, e messe in fila sembrano contraddirsi anche quando dicono
+   * cose compatibili: l'oro può salire nelle prossime ore e restare debole nel
+   * mese. È anche il campo con cui la panoramica separa le sue tre letture.
+   */
+  readonly horizon: Horizon;
 }
 
 export interface NextEvent {
   readonly when: string;
   readonly title: string;
   readonly detail?: string;
+}
+
+/**
+ * Una fonte consultata per scrivere l'analisi.
+ *
+ * Il testo cita le testate in prosa — «Reuters riferisce che…» — ma in prosa non
+ * sono verificabili né elencabili. Qui diventano un elenco: chi l'ha detto, che
+ * cosa, e dove si legge.
+ */
+export interface SourceRef {
+  /** La testata o l'ente: `Reuters`, `Bloomberg`, `World Gold Council`. */
+  readonly outlet: string;
+  /** Titolo o oggetto della notizia, se aiuta a ritrovarla. */
+  readonly title?: string;
+  readonly url?: string;
+  /** Quando è stata pubblicata o consultata, in forma leggibile. */
+  readonly at?: string;
 }
 
 export interface Article {
@@ -234,8 +310,64 @@ export interface Article {
   /** Condizioni che renderebbero non più valida la lettura proposta. */
   readonly invalidation?: readonly string[];
   readonly nextEvent?: NextEvent;
+  /** Le fonti consultate, nell'ordine in cui contano. */
+  readonly sources?: readonly SourceRef[];
   readonly blocks: readonly Block[];
   readonly featured?: boolean;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Esito di un'analisi                                                        */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Come è andata a finire.
+ *
+ * `confermata` e `invalidata` sono i due casi netti. `parziale` è quando
+ * qualcuna delle condizioni di invalidazione è scattata e altre no: succede
+ * spesso ed è il caso più informativo, perché dice quale parte del ragionamento
+ * ha retto. `senza-verifica` è la confessione onesta che nessuno è tornato a
+ * guardare in tempo utile — vale come esito e va contata come tale, altrimenti
+ * il registro misura solo le analisi che faceva comodo controllare.
+ */
+export type Verdict = 'confermata' | 'invalidata' | 'parziale' | 'senza-verifica';
+
+/** Una singola condizione di invalidazione, ricontrollata a posteriori. */
+export interface CheckedCondition {
+  /** Il testo della condizione, ripreso da `Article.invalidation`. */
+  readonly condition: string;
+  readonly triggered: boolean;
+  /** Che cosa si è visto: il numero, la data, il fatto. */
+  readonly evidence: string;
+}
+
+/**
+ * L'esito di un'analisi già pubblicata.
+ *
+ * Vive in un archivio suo e **non modifica mai l'analisi**: un'analisi resta
+ * com'era il giorno in cui è stata scritta, altrimenti il registro degli esiti
+ * misurerebbe la memoria di chi lo compila invece delle sue previsioni.
+ *
+ * Il verdetto non è un'impressione: si ricava ricontrollando una per una le
+ * condizioni che l'analisi aveva dichiarato prima di sapere come sarebbe andata.
+ * È l'unico modo per non cadere nel giudizio a posteriori — la tendenza a
+ * ricordare come «sostanzialmente giusta» qualunque lettura di cui si conosce
+ * già l'esito.
+ */
+export interface Outcome {
+  /** Lo slug dell'analisi giudicata. Deve esistere in archivio. */
+  readonly slug: string;
+  readonly checkedAt: string;
+  readonly verdict: Verdict;
+  /**
+   * Le condizioni di `Article.invalidation`, ricontrollate una per una.
+   * Vuoto solo per `senza-verifica`.
+   */
+  readonly conditions: readonly CheckedCondition[];
+  /** Che cosa è successo davvero, coi numeri. */
+  readonly what: string;
+  /** Che cosa cambia nel metodo, se cambia qualcosa. Facoltativo e raro. */
+  readonly lesson?: string;
 }
 
 /* -------------------------------------------------------------------------- */

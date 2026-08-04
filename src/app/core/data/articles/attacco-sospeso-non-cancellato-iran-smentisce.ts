@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const attaccoSospesoNonCancellato: Article = {
   slug: 'attacco-sospeso-non-cancellato-iran-smentisce',
-  categories: ['geopolitica', 'asia', 'usa', 'fed'],
+  categories: ['premio-di-rischio', 'medio-oriente', 'oro', 'obbligazioni'],
   title: 'L’attacco è sospeso, non cancellato, e Teheran smentisce',
   kicker: 'Geopolitica · Correzione della lettura',
   dek:
@@ -29,6 +29,7 @@ export const attaccoSospesoNonCancellato: Article = {
     regime:
       'Pausa militare dichiarata da una sola delle due parti, con premio geopolitico solo parzialmente ' +
       'riassorbito e rendimenti statunitensi lunghi che restano il vero freno.',
+    horizon: 'breve',
   },
   certainty: 'alta',
   certaintyNote:
@@ -52,6 +53,7 @@ export const attaccoSospesoNonCancellato: Article = {
     detail:
       'Con una pausa dichiarata da una parte sola, il primo prezzo dirà quanto premio geopolitico il mercato è disposto a restituire.',
   },
+  sources: [{ outlet: 'Reuters' }],
   blocks: [
     {
       kind: 'paragraph',

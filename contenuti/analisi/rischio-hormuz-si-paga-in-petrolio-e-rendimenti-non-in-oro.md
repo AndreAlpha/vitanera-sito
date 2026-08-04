@@ -7,7 +7,7 @@ pubblicata: "2026-08-04T12:35:00+02:00"
 autore: "Vitanera"
 minutiLettura: 3
 certezza: "media"
-categorie: ["usa", "tasso-di-interesse", "geopolitica"]
+categorie: ["correlazioni", "petrolio", "obbligazioni", "oro"]
 argomenti: ["Hormuz", "Brent", "Rendimenti", "JOLTS", "Costo-opportunità"]
 strumenti: ["XAU/USD", "Brent", "WTI", "Treasury", "DXY"]
 orizzonti: ["breve"]
@@ -15,13 +15,14 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale-ribassista"
   forza: "media"
+  orizzonte: "breve"
   regime: "Rischio geopolitico che si trasmette a petrolio e rendimenti invece che alla domanda rifugio: con il Brent sopra gli 86 dollari e il decennale al 4,705% sale il costo-opportunità di detenere oro, e la tensione su Hormuz non riesce a compensarlo."
 prossimoAppuntamento:
   quando: "Oggi alle 16:00"
   titolo: "JOLTS statunitense"
   dettaglio: "Un dato forte spingerebbe rendimenti e dollaro più in alto, con effetto negativo sull’oro; un dato debole aprirebbe a un calo dei rendimenti e a un recupero di XAU/USD."
 sorgente: "src/app/core/data/articles/rischio-hormuz-si-paga-in-petrolio-e-rendimenti-non-in-oro.ts"
-impronta: "aced6c8a1ee7801c"
+impronta: "42356cb80d7ea95e"
 ---
 
 # Il rischio Hormuz si paga in petrolio e rendimenti, non in oro
@@ -113,6 +114,6 @@ Un dato forte spingerebbe rendimenti e dollaro più in alto, con effetto negativ
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale-ribassista, forza media.
+Impostazione su XAU/USD: neutrale-ribassista, forza media, orizzonte breve.
 
 Rischio geopolitico che si trasmette a petrolio e rendimenti invece che alla domanda rifugio: con il Brent sopra gli 86 dollari e il decennale al 4,705% sale il costo-opportunità di detenere oro, e la tensione su Hormuz non riesce a compensarlo.

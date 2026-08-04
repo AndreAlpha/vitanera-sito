@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const iranControlloIngressiHormuz: Article = {
   slug: 'iran-chiede-il-controllo-sugli-ingressi-a-hormuz',
-  categories: ['geopolitica', 'asia', 'usa', 'tasso-di-interesse'],
+  categories: ['rotte-e-approvvigionamento', 'medio-oriente', 'petrolio', 'oro'],
   title: 'L’Iran chiede il controllo sugli ingressi a Hormuz',
   kicker: 'Geopolitica · Termini della trattativa',
   dek:
@@ -31,6 +31,7 @@ export const iranControlloIngressiHormuz: Article = {
       'aggiunge un rischio geopolitico che il prezzo del greggio non sta scontando. Il sostegno però non è ' +
       'pulito: un forte rimbalzo del petrolio aiuterebbe l’oro dal lato rifugio e lo penalizzerebbe da quello ' +
       'dei rendimenti.',
+    horizon: 'breve',
   },
   certainty: 'alta',
   certaintyNote:
@@ -49,6 +50,7 @@ export const iranControlloIngressiHormuz: Article = {
     'Una ripresa stabile dei transiti.',
     'Un petrolio che resta sotto gli 80 dollari senza rimbalzare.',
   ],
+  sources: [{ outlet: 'Reuters' }],
   blocks: [
     {
       kind: 'paragraph',

@@ -7,7 +7,7 @@ pubblicata: "2026-08-03T16:15:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "alta"
-categorie: ["usa", "tasso-di-interesse", "fed"]
+categorie: ["ism", "usa", "fed", "oro"]
 argomenti: ["ISM", "Occupazione", "Prezzi pagati", "Fed", "Spesa per costruzioni"]
 strumenti: ["XAU/USD", "DXY", "Treasury", "Brent"]
 orizzonti: ["breve", "medio"]
@@ -15,13 +15,14 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale"
   forza: "media"
+  orizzonte: "medio"
   regime: "Crescita industriale statunitense più robusta del previsto e occupazione manifatturiera tornata in espansione, con prezzi ancora sopra 70. Il petrolio debole continua a sostenere l’oro per via indiretta, ma non basta più a mantenere l’inclinazione rialzista."
 prossimoAppuntamento:
   quando: "Nei prossimi giorni"
   titolo: "JOLTS, ADP e payroll"
   dettaglio: "L’ISM alza l’importanza dei prossimi dati sul lavoro. Se confermassero forza, il mercato potrebbe aumentare le probabilità di una Fed più restrittiva, creando un ostacolo più serio per XAU/USD."
 sorgente: "src/app/core/data/articles/ism-manifatturiero-a-55-6-piu-forte-del-previsto.ts"
-impronta: "f32b3deb6100425d"
+impronta: "6e0a9a4b5bf4b0cd"
 ---
 
 # ISM manifatturiero a 55,6: molto più forte del previsto
@@ -104,6 +105,6 @@ L’ISM alza l’importanza dei prossimi dati sul lavoro. Se confermassero forza
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale, forza media.
+Impostazione su XAU/USD: neutrale, forza media, orizzonte medio.
 
 Crescita industriale statunitense più robusta del previsto e occupazione manifatturiera tornata in espansione, con prezzi ancora sopra 70. Il petrolio debole continua a sostenere l’oro per via indiretta, ma non basta più a mantenere l’inclinazione rialzista.

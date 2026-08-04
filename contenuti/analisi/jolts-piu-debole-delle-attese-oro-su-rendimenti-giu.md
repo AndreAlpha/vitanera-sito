@@ -7,7 +7,7 @@ pubblicata: "2026-08-04T16:30:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "alta"
-categorie: ["usa", "tasso-di-interesse", "fed"]
+categorie: ["jolts", "usa", "tasso-di-interesse", "oro"]
 argomenti: ["JOLTS", "Mercato del lavoro", "Fed", "Rendimenti", "Dollaro"]
 strumenti: ["XAU/USD", "Treasury", "DXY", "Brent"]
 orizzonti: ["breve", "medio"]
@@ -15,9 +15,10 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "rialzista"
   forza: "media"
+  orizzonte: "breve"
   regime: "Mercato del lavoro leggermente meno teso che riduce la necessità di un rialzo Fed ravvicinato e attenua il segnale restrittivo dell’ISM. La differenza rispetto agli ultimi aggiornamenti è che stavolta oro, dollaro e rendimenti confermano nello stesso momento invece di contraddirsi."
 sorgente: "src/app/core/data/articles/jolts-piu-debole-delle-attese-oro-su-rendimenti-giu.ts"
-impronta: "f263d106c4360460"
+impronta: "0167ca1f89321689"
 ---
 
 # JOLTS più debole delle attese: oro su, rendimenti giù
@@ -94,6 +95,6 @@ Alta sui dati, che sono pubblicati dal Bureau of Labor Statistics e completi del
 
 ## Regime descritto
 
-Impostazione su XAU/USD: rialzista, forza media.
+Impostazione su XAU/USD: rialzista, forza media, orizzonte breve.
 
 Mercato del lavoro leggermente meno teso che riduce la necessità di un rialzo Fed ravvicinato e attenua il segnale restrittivo dell’ISM. La differenza rispetto agli ultimi aggiornamenti è che stavolta oro, dollaro e rendimenti confermano nello stesso momento invece di contraddirsi.

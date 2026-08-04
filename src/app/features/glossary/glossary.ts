@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
-import { ContentService } from '../../core/services/content.service';
+import { ContentService, slugify } from '../../core/services/content.service';
 import { Icon } from '../../shared/ui/icon';
 import { PageHeader } from '../../shared/ui/page-header';
 
@@ -67,7 +67,7 @@ import { PageHeader } from '../../shared/ui/page-header';
     @if (filtered().length) {
       <dl class="terms">
         @for (entry of filtered(); track entry.term) {
-          <div class="term">
+          <div class="term" [id]="'v-' + anchor(entry.term)">
             <dt>{{ entry.term }}</dt>
             <dd class="term__def">{{ entry.definition }}</dd>
             <dd class="term__why"><strong>Perché conta.</strong> {{ entry.why }}</dd>
@@ -252,6 +252,11 @@ import { PageHeader } from '../../shared/ui/page-header';
   `,
 })
 export class Glossary {
+  /** Ancora della voce: le analisi ci arrivano da «Termini di questa analisi». */
+  protected anchor(term: string): string {
+    return slugify(term);
+  }
+
   private readonly content = inject(ContentService);
 
   protected readonly query = signal('');

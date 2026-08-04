@@ -7,7 +7,7 @@ pubblicata: "2026-08-04T11:15:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "alta"
-categorie: ["tasso-di-interesse", "usa", "fed", "geopolitica"]
+categorie: ["obbligazioni", "tasso-di-interesse", "usa", "debito-pubblico"]
 argomenti: ["Treasury", "Curva dei rendimenti", "Fed", "JOLTS", "Emissioni"]
 strumenti: ["XAU/USD", "Treasury", "DXY", "Brent"]
 orizzonti: ["breve", "medio"]
@@ -15,13 +15,14 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale-ribassista"
   forza: "bassa"
+  orizzonte: "medio"
   regime: "Rendimenti lunghi sui massimi dal 2007 che alzano il rendimento alternativo offerto dai titoli di Stato e frenano l’oro proprio mentre il rischio geopolitico dovrebbe sostenerlo. La tensione su Hormuz impedisce una lettura decisamente ribassista, ma non riesce a farsi pagare."
 prossimoAppuntamento:
   quando: "Oggi alle 16:00"
   titolo: "JOLTS statunitense"
   dettaglio: "È il prossimo catalizzatore macro importante. Domani arriva invece la conferma del Tesoro sulle emissioni: se aumentassero quelle a lunga scadenza, i rendimenti potrebbero restare elevati e limitare XAU/USD anche con le tensioni geopolitiche aperte."
 sorgente: "src/app/core/data/articles/rendimenti-a-30-anni-di-nuovo-sui-massimi-dal-2007.ts"
-impronta: "a5d2c1a73df37981"
+impronta: "19806225e9924e23"
 ---
 
 # Rendimenti a 30 anni di nuovo sui massimi dal 2007
@@ -102,6 +103,6 @@ Alta sul livello dei rendimenti, che è un prezzo osservabile; medio-alta sull�
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale-ribassista, forza bassa.
+Impostazione su XAU/USD: neutrale-ribassista, forza bassa, orizzonte medio.
 
 Rendimenti lunghi sui massimi dal 2007 che alzano il rendimento alternativo offerto dai titoli di Stato e frenano l’oro proprio mentre il rischio geopolitico dovrebbe sostenerlo. La tensione su Hormuz impedisce una lettura decisamente ribassista, ma non riesce a farsi pagare.

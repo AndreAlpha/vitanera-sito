@@ -1,34 +1,55 @@
-import { BiasDirection, Level } from '../models/article.model';
+import { BiasDirection, Horizon, Level } from '../models/article.model';
+
+/**
+ * Una delle tre letture della panoramica.
+ *
+ * Sono tre perché l'oro può salire nelle prossime ore e restare debole nel mese,
+ * e una lettura sola costringe a scegliere quale delle due dire. Separandole,
+ * una lettura intraday che si ribalta tre volte in un giorno non cancella più la
+ * lettura di fondo, e chi legge vede subito su quale arco di tempo sta guardando.
+ */
+export interface SignalReading {
+  readonly horizon: Horizon;
+  readonly direction: BiasDirection;
+  readonly strength: Level;
+  /** Una riga sul perché: il meccanismo, non il prezzo. */
+  readonly regime: string;
+  /** Che cosa farebbe decadere questa lettura. Più di 10 caratteri. */
+  readonly invalidation: string;
+}
 
 /**
  * Indicatore operativo sull'oro mostrato in panoramica.
  *
- * Sintetizza le ultime pubblicazioni di ogni sezione — fondamentali,
- * correlazioni, geopolitica — in una sola lettura. Va aggiornato a mano ogni
- * volta che viene pubblicata una nuova analisi: `updatedAt` fa fede.
+ * Sintetizza le ultime pubblicazioni in tre letture, una per orizzonte. Va
+ * aggiornato a mano ogni volta che viene pubblicata una nuova analisi.
  *
- * Trascorsi `validityMinutes` minuti dall'aggiornamento, l'indicatore scade
- * automaticamente e la panoramica passa allo stato «in attesa di notizie».
- *
- * La durata non è fissa: si sceglie a ogni pubblicazione in base a quanto regge
- * la lettura. Un controllo intraday cross-asset vale poche decine di minuti, un
- * dato macro o una decisione di banca centrale reggono l'intera seduta. Il
- * valore è mostrato anche al lettore, quindi va tenuto tondo.
+ * **Non scade.** C'era una durata dichiarata, `validityMinutes`, dopo la quale
+ * la panoramica passava da sola a «in attesa di notizie». È stata tolta: era
+ * precisione finta. Nessuno sa davvero se una lettura vale novanta minuti o
+ * duecento, e un indicatore che si dichiara valido fino alle 21:35 sta
+ * promettendo qualcosa che non può mantenere. Al suo posto c'è la data e l'ora
+ * dell'ultimo aggiornamento, scritta grande: quanto sia vecchia, e se quello che
+ * dice regga ancora, lo decide chi legge — che è l'unico ad avere davanti il
+ * mercato di adesso.
  *
  * Resta un riepilogo editoriale di quanto scritto negli articoli: non è
  * consulenza finanziaria né un segnale di acquisto o vendita.
  */
 export interface OperationalSignal {
+  /**
+   * Identico come stringa al `publishedAt` dell'analisi più recente: è quel
+   * momento che l'indicatore fotografa, non il momento in cui qualcuno lo ha
+   * ricopiato.
+   */
   readonly updatedAt: string;
-  readonly validityMinutes: number;
   readonly asset: string;
-  readonly direction: BiasDirection;
-  readonly strength: Level;
+  /** Le tre letture, in ordine di orizzonte crescente. */
+  readonly readings: readonly SignalReading[];
   readonly headline: string;
   readonly stance: string;
   readonly favours: readonly string[];
   readonly avoid: readonly string[];
-  readonly invalidation: string;
   readonly confirming: readonly string[];
   readonly contradicting: readonly string[];
   /** Slug delle analisi da cui deriva la lettura. */
@@ -42,14 +63,38 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-04T20:05:00+02:00',
-  // Base 30-45 di un controllo cross-asset, portata a 90 da tre ragioni della
-  // regola: i correlati sono allineati, è la terza conferma consecutiva della
-  // stessa direzione, e il movimento è durato invece di esaurirsi dopo il dato.
-  // Scade alle 21:35, poco prima della chiusura americana.
-  validityMinutes: 90,
   asset: 'XAU/USD',
-  direction: 'rialzista',
-  strength: 'alta',
+  readings: [
+    {
+      horizon: 'breve',
+      direction: 'rialzista',
+      strength: 'alta',
+      regime:
+        'Il movimento del dopo-JOLTS ha retto tutta la seduta invece di esaurirsi nei minuti successivi ' +
+        'al dato, e i tre correlati dicono la stessa cosa.',
+      invalidation: 'XAU/USD sotto i 4.070 dollari, oppure il decennale nuovamente sopra il 4,70%.',
+    },
+    {
+      horizon: 'medio',
+      direction: 'neutrale-rialzista',
+      strength: 'media',
+      regime:
+        'La catena greggio giù, inflazione attesa giù, rendimenti giù regge finché Hormuz resta chiuso a ' +
+        'metà: è un equilibrio, non una tendenza.',
+      invalidation:
+        'Un forte rimbalzo del petrolio, oppure dati ADP e payroll nettamente superiori alle attese.',
+    },
+    {
+      horizon: 'lungo',
+      direction: 'neutrale',
+      strength: 'bassa',
+      regime:
+        'Gli acquisti delle banche centrali sostengono da sotto, ma i rendimenti reali restano alti e ' +
+        'un rialzo Fed a settembre è ancora dato al 57%.',
+      invalidation:
+        'Una svolta monetaria confermata dalle riunioni, oppure il ritorno stabile del decennale sopra il 5%.',
+    },
+  ],
   headline: 'L’oro tiene il rialzo del dopo-JOLTS, e la spinta arriva dai tassi',
   stance:
     'XAU/USD sale verso i 4.092 dollari e il future Comex chiude a 4.095,40 con +1,53%: non è stata una ' +
@@ -65,8 +110,6 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Considerare acquisita la svolta monetaria: resta circa il 57% di probabilità di rialzo a settembre',
     'Trattare l’area dei 4.100 dollari come un obiettivo invece che come il test immediato',
   ],
-  invalidation:
-    'XAU/USD sotto i 4.070 dollari, il decennale nuovamente sopra il 4,70%, un forte rimbalzo del petrolio, oppure dati ADP e payroll nettamente superiori alle attese.',
   confirming: [
     'XAU/USD ≈ 4.092 $, Comex 4.095,40 $ (+1,53%)',
     'Brent 80,47 $, −3,9%',
@@ -93,3 +136,16 @@ export const DIRECTION_LABEL: Record<BiasDirection, string> = {
 };
 
 export const STRENGTH_VALUE: Record<Level, number> = { bassa: 1, media: 2, alta: 3 };
+
+/** Etichette dei tre orizzonti, con l'arco di tempo scritto per esteso. */
+export const HORIZON_LABEL: Record<Horizon, string> = {
+  breve: 'Intraday',
+  medio: 'Medio termine',
+  lungo: 'Lungo termine',
+};
+
+export const HORIZON_SPAN: Record<Horizon, string> = {
+  breve: 'prossimi minuti o ore',
+  medio: 'prossimi giorni',
+  lungo: 'prossime settimane o mesi',
+};

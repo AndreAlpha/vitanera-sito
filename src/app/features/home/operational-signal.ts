@@ -2,21 +2,37 @@ import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/c
 import { RouterLink } from '@angular/router';
 import {
   DIRECTION_LABEL,
+  HORIZON_LABEL,
+  HORIZON_SPAN,
   MARKET_SIGNAL,
   OperationalSignal,
   STRENGTH_VALUE,
 } from '../../core/data/signal.data';
-import { ClockService } from '../../core/services/clock.service';
-import { ContentService, formatDuration } from '../../core/services/content.service';
+import { BiasDirection } from '../../core/models/article.model';
+import { ContentService, formatDateTime } from '../../core/services/content.service';
 import { Icon } from '../../shared/ui/icon';
 import { Timestamp } from '../../shared/ui/timestamp';
+
+/** Freccia che accompagna una direzione. */
+function directionIcon(direction: BiasDirection): string {
+  if (direction.endsWith('ribassista')) {
+    return 'arrow-down';
+  }
+  if (direction.endsWith('rialzista')) {
+    return 'arrow-up';
+  }
+  return 'arrow-flat';
+}
 
 /**
  * Indicatore operativo sull'oro.
  *
- * Vale i minuti dichiarati dalla lettura stessa: scaduto quel termine passa
- * automaticamente allo stato «in attesa di notizie» e la lettura precedente
- * resta visibile solo come storico, marcata come non più valida.
+ * Dice tre cose per tre archi di tempo — intraday, giorni, settimane — e
+ * l'ora in cui è stata scritta. Non scade da sola: prima si dichiarava valida
+ * per un tot di minuti e allo scadere si spegneva, anche quando il quadro non
+ * era cambiato di una virgola. Quella durata era una precisione che nessuno
+ * poteva davvero garantire; adesso c'è la data, grande, e giudicare quanto sia
+ * ancora attuale tocca a chi legge.
  *
  * Quando non esiste alcuna lettura la scheda non sparisce: tiene lo stesso
  * riquadro in stato di attesa, così la panoramica non resta con un vuoto al
@@ -33,60 +49,58 @@ import { Timestamp } from '../../shared/ui/timestamp';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterLink, Icon, Timestamp],
   template: `
-    <section
-      class="card sig"
-      [class.sig--live]="live()"
-      [class.sig--expired]="signal !== null && !live()"
-      aria-live="polite"
-    >
+    <section class="card sig" [class.sig--live]="signal !== null" aria-live="polite">
       @if (signal; as s) {
-        <div class="meter" aria-hidden="true">
-          <span class="meter__fill" [style.width]="fill()"></span>
-        </div>
-
         <header class="sig__bar">
-          <span class="chip" [class.chip--accent]="live()">
-            <i class="state__dot" aria-hidden="true"></i>
-            {{ live() ? 'Lettura valida' : 'In attesa di notizie' }}
-          </span>
-
           <span class="sig__asset">{{ s.asset }}</span>
 
-          <span class="sig__timing">
-            @if (live()) {
-              <span class="sig__left tnum">valida ancora {{ remainingLabel() }}</span>
-            }
-            <span class="sig__updated"> aggiornato <app-timestamp [iso]="s.updatedAt" /> </span>
+          <!-- L'ora dell'ultimo aggiornamento, scritta grande.
+               Al suo posto c'era una barra che si svuotava e la scritta «valida
+               ancora 47 minuti». Era precisione finta: nessuno sa davvero se una
+               lettura vale novanta minuti, e allo scadere la scheda si spegneva
+               da sola anche quando il quadro non era cambiato di una virgola.
+               Adesso la scheda dice quando è stata scritta e lascia decidere a
+               chi legge, che è l'unico ad avere davanti il mercato di adesso. -->
+          <span class="stamp">
+            <span class="stamp__label">Ultimo aggiornamento</span>
+            <span class="stamp__value tnum">{{ updatedLabel }}</span>
+            <span class="stamp__ago">
+              <app-timestamp [iso]="s.updatedAt" />
+            </span>
           </span>
         </header>
 
         <div class="sig__body">
-          <!-- Quadrante ---------------------------------------------------- -->
+          <!-- Le tre letture --------------------------------------------- -->
           <div class="gauge">
-            <p class="gauge__label">{{ live() ? 'Impostazione' : 'Stato' }}</p>
-            <p class="gauge__value">
-              <app-icon [name]="live() ? icon() : 'clock'" [size]="16" />
-              {{ live() ? directionLabel : 'In attesa di notizie' }}
-            </p>
+            <p class="gauge__label">Impostazione per orizzonte</p>
 
-            @if (live()) {
-              <p class="strength">
-                <span>Forza del segnale</span>
-                <!-- I tre segmenti ripetono la parola che sta lì accanto: per chi
-                     legge con uno screen reader sono decorazione. -->
-                <span class="strength__bar" aria-hidden="true">
-                  @for (i of dots; track i) {
-                    <i [class.on]="i <= strengthValue"></i>
-                  }
-                </span>
-                <span class="strength__value">{{ s.strength }}</span>
-              </p>
-            } @else {
-              <p class="gauge__note">
-                L’ultima lettura è scaduta. Nessuna indicazione è considerata valida finché non
-                viene pubblicato un nuovo aggiornamento.
-              </p>
-            }
+            <ul class="reads">
+              @for (r of readings; track r.horizon) {
+                <li class="read">
+                  <p class="read__hz">
+                    {{ r.label }}
+                    <span class="read__span">{{ r.span }}</span>
+                  </p>
+                  <p class="read__dir">
+                    <app-icon [name]="r.icon" [size]="14" />
+                    {{ r.directionLabel }}
+                  </p>
+                  <p class="strength">
+                    <!-- I tre segmenti ripetono la parola che sta lì accanto: per
+                         chi legge con uno screen reader sono decorazione. -->
+                    <span class="strength__bar" aria-hidden="true">
+                      @for (i of dots; track i) {
+                        <i [class.on]="i <= r.strengthValue"></i>
+                      }
+                    </span>
+                    <span class="strength__value">forza {{ r.strength }}</span>
+                  </p>
+                  <p class="read__regime">{{ r.regime }}</p>
+                  <p class="read__inv"><strong>Decade con:</strong> {{ r.invalidation }}</p>
+                </li>
+              }
+            </ul>
           </div>
 
           <!-- Contenuto ---------------------------------------------------- -->
@@ -128,11 +142,6 @@ import { Timestamp } from '../../shared/ui/timestamp';
                 }
               </span>
             </div>
-
-            <p class="fineprint invalid">
-              <app-icon name="alert" [size]="12" />
-              <span><strong>Decade con:</strong> {{ s.invalidation }}</span>
-            </p>
           </div>
         </div>
 
@@ -146,8 +155,9 @@ import { Timestamp } from '../../shared/ui/timestamp';
             </div>
           }
           <p class="sig__legal">
-            Riepilogo editoriale delle analisi pubblicate, valido
-            {{ validityLabel() }} dall’aggiornamento.
+            Riepilogo editoriale delle analisi pubblicate al momento indicato sopra. Non ha una
+            scadenza dichiarata: quanto sia ancora attuale si giudica dalla data e da quello che il
+            mercato ha fatto da allora.
             <strong>Non è consulenza finanziaria</strong> né un segnale di acquisto o vendita.
           </p>
         </footer>
@@ -166,8 +176,8 @@ import { Timestamp } from '../../shared/ui/timestamp';
           </p>
           <p class="waiting__text">
             Al momento non è in corso alcuna lettura operativa. Le letture compaiono qui dopo la
-            pubblicazione di un’analisi e restano valide per il tempo dichiarato al momento
-            dell’aggiornamento.
+            pubblicazione di un’analisi, divise per orizzonte, con la data e l’ora in cui sono state
+            scritte.
           </p>
           <div class="waiting__actions">
             <a class="btn btn--ghost btn--sm" routerLink="/calendario">
@@ -179,7 +189,7 @@ import { Timestamp } from '../../shared/ui/timestamp';
 
         <footer class="sig__foot">
           <p class="sig__legal">
-            L’indicatore riepiloga le analisi pubblicate e vale solo per il tempo che dichiara.
+            L’indicatore riepiloga le analisi pubblicate e riporta la data in cui è stato scritto.
             <strong>Non è consulenza finanziaria</strong> né un segnale di acquisto o vendita.
           </p>
         </footer>
@@ -196,31 +206,11 @@ import { Timestamp } from '../../shared/ui/timestamp';
        larga lo staccavano dalla pagina come un pannello di controllo acceso. */
     .sig {
       position: relative;
-      overflow: hidden; /* la barra di validità deve seguire l'angolo smussato */
       transition: border-color var(--dur) var(--ease);
     }
 
     .sig--live {
       border-color: var(--accent-line);
-    }
-
-    /* --- Barra della validità residua --------------------------------------
-       Fondo neutro e riempimento in tinta piena: la sfumatura da scuro a chiaro
-       faceva sembrare più lunga la coda di tempo che resta davvero.
-       ---------------------------------------------------------------------- */
-
-    .meter {
-      position: absolute;
-      inset: 0 0 auto;
-      height: 3px;
-      background: var(--surface-2);
-    }
-
-    .meter__fill {
-      display: block;
-      height: 100%;
-      background: var(--accent);
-      transition: width 1s linear;
     }
 
     /* --- Intestazione -------------------------------------------------------- */
@@ -250,32 +240,117 @@ import { Timestamp } from '../../shared/ui/timestamp';
       color: var(--text-soft);
     }
 
-    .sig__timing {
+    /* --- Ultimo aggiornamento -------------------------------------------------
+       È la cosa che si guarda per prima quando si arriva sulla panoramica: prima
+       era una riga di sei parole in grigio chiaro accanto a un conto alla
+       rovescia che rubava la scena. Adesso la data è grande e il tempo trascorso
+       le sta sotto, come nota.
+       ------------------------------------------------------------------------- */
+
+    .stamp {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: var(--s-1) var(--s-4);
+      flex-direction: column;
+      align-items: flex-end;
       margin-left: auto;
-      font-size: var(--t-xs);
+      text-align: right;
+    }
+
+    .stamp__label {
+      font-size: var(--t-micro);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       color: var(--text-faint);
     }
 
-    .sig__left {
-      color: var(--accent);
-      font-weight: 500;
+    .stamp__value {
+      font-size: var(--t-lg);
+      font-weight: 600;
+      line-height: var(--lh-tight);
+      color: var(--text);
     }
 
-    .sig__updated {
-      display: inline-flex;
+    .stamp__ago {
+      font-size: var(--t-xs);
+      color: var(--text-soft);
+    }
+
+    /* --- Le tre letture ------------------------------------------------------- */
+
+    .reads {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      margin-top: var(--s-3);
+    }
+
+    .read {
+      padding: var(--s-4) 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .read:first-child {
+      border-top: 0;
+      padding-top: var(--s-1);
+    }
+
+    .read__hz {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: var(--s-2);
+      font-size: var(--t-xs);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .read__span {
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--text-faint);
+    }
+
+    .read__dir {
+      display: flex;
       align-items: center;
-      gap: var(--s-1);
+      gap: var(--s-2);
+      margin-top: var(--s-2);
+      font-size: var(--t-md);
+      font-weight: 600;
+      line-height: var(--lh-snug);
+      color: var(--text);
+    }
+
+    .read__dir app-icon {
+      color: var(--accent);
+    }
+
+    .read__regime {
+      margin-top: var(--s-2);
+      font-size: var(--t-xs);
+      line-height: var(--lh-snug);
+      color: var(--text-muted);
+    }
+
+    .read__inv {
+      margin-top: var(--s-2);
+      font-size: var(--t-xs);
+      line-height: var(--lh-snug);
+      color: var(--text-faint);
+    }
+
+    .read__inv strong {
+      font-weight: 500;
+      color: var(--text-soft);
     }
 
     /* --- Corpo ---------------------------------------------------------------- */
 
     .sig__body {
       display: grid;
-      grid-template-columns: 240px minmax(0, 1fr);
+      grid-template-columns: 300px minmax(0, 1fr);
     }
 
     /* La colonna di sinistra si separa con un filetto e non con un fondo più
@@ -291,43 +366,12 @@ import { Timestamp } from '../../shared/ui/timestamp';
       color: var(--text-faint);
     }
 
-    /* L'icona stava dentro una piastrella di 56px in sfumatura dorata, sopra al
-       valore. Adesso è in linea con la parola che qualifica, alla misura di
-       un'icona. */
-    .gauge__value {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--s-2);
-      margin-top: var(--s-2);
-      font-size: var(--t-lg);
-      font-weight: 600;
-      line-height: var(--lh-snug);
-      color: var(--text);
-    }
-
-    .gauge__value app-icon {
-      margin-top: var(--s-1);
-      color: var(--accent);
-    }
-
-    /* Lettura scaduta: cambia il grigio, non il colore. Lo stato d'attesa si
-       riconosce perché si spegne, non perché si accende di un'altra tinta. */
-    .sig--expired .gauge__value {
-      color: var(--text-muted);
-    }
-
-    .sig--expired .gauge__value app-icon {
-      color: var(--text-faint);
-    }
-
     .strength {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: var(--s-2);
-      margin-top: var(--s-4);
-      padding-top: var(--s-4);
-      border-top: 1px solid var(--line);
+      margin-top: var(--s-2);
       font-size: var(--t-xs);
       color: var(--text-faint);
     }
@@ -354,15 +398,6 @@ import { Timestamp } from '../../shared/ui/timestamp';
       text-transform: capitalize;
     }
 
-    .gauge__note {
-      margin-top: var(--s-4);
-      padding-top: var(--s-4);
-      border-top: 1px solid var(--line);
-      font-size: var(--t-xs);
-      line-height: var(--lh-snug);
-      color: var(--text-faint);
-    }
-
     .detail {
       padding: var(--s-card);
       min-width: 0;
@@ -372,10 +407,6 @@ import { Timestamp } from '../../shared/ui/timestamp';
       font-size: var(--t-xl);
       line-height: var(--lh-snug);
       max-width: var(--measure);
-    }
-
-    .sig--expired .detail__headline {
-      color: var(--text-soft);
     }
 
     .detail__stance {
@@ -496,36 +527,6 @@ import { Timestamp } from '../../shared/ui/timestamp';
       gap: var(--s-2);
     }
 
-    /* Scaduta la lettura, verde e rosso direbbero ancora «vale adesso». */
-    .sig--expired .col {
-      border-top-color: var(--line);
-    }
-
-    .sig--expired .col__title,
-    .sig--expired .tags__label {
-      color: var(--text-muted);
-    }
-
-    .sig--expired .col li::before {
-      background: var(--text-faint);
-    }
-
-    /* Condizione di decadenza: il filetto la stacca dal resto, l'icona resta
-       l'unico segno ambrato del riquadro. */
-    .invalid {
-      padding-top: var(--s-4);
-      border-top: 1px solid var(--line);
-    }
-
-    .invalid app-icon {
-      color: var(--warn);
-    }
-
-    .invalid strong {
-      font-weight: 500;
-      color: var(--text-soft);
-    }
-
     /* --- Attesa ---------------------------------------------------------------- */
 
     .waiting {
@@ -615,9 +616,11 @@ import { Timestamp } from '../../shared/ui/timestamp';
         padding: var(--s-3) var(--s-4);
       }
 
-      .sig__timing {
+      .stamp {
         flex: 1 0 100%;
+        align-items: flex-start;
         margin-left: 0;
+        text-align: left;
       }
 
       .gauge,
@@ -644,64 +647,36 @@ import { Timestamp } from '../../shared/ui/timestamp';
   `,
 })
 export class OperationalSignalCard {
-  private readonly clock = inject(ClockService);
   private readonly content = inject(ContentService);
 
   protected readonly signal: OperationalSignal | null = MARKET_SIGNAL;
-  protected readonly directionLabel = this.signal ? DIRECTION_LABEL[this.signal.direction] : '';
-  protected readonly strengthValue = this.signal ? STRENGTH_VALUE[this.signal.strength] : 0;
   protected readonly dots = [1, 2, 3];
 
-  private readonly totalMs = (this.signal?.validityMinutes ?? 0) * 60_000;
-
   /**
-   * Tempo trascorso dall'aggiornamento, mai negativo.
+   * Data e ora dell'ultimo aggiornamento, per esteso e in cifre.
    *
-   * L'orologio del visitatore può essere indietro di qualche minuto rispetto a
-   * quello di chi pubblica: senza questo troncamento una lettura appena uscita
-   * risulterebbe "nel futuro" e verrebbe mostrata come scaduta.
+   * È scritta per intero e non come «due ore fa» perché è l'informazione con cui
+   * chi legge decide se fidarsi: «aggiornato ieri alle 20:05» si giudica subito,
+   * «17 ore fa» costringe a fare un conto per capire se è prima o dopo la
+   * chiusura americana. Il tempo trascorso resta accanto, in piccolo.
    */
-  private readonly elapsed = computed(() => {
-    const s = this.signal;
-    return s === null ? 0 : Math.max(0, this.clock.now() - Date.parse(s.updatedAt));
-  });
+  protected readonly updatedLabel = this.signal ? formatDateTime(this.signal.updatedAt) : '';
 
-  /** Vera finché non sono trascorsi i minuti di validità dichiarati. */
-  protected readonly live = computed(() => this.signal !== null && this.elapsed() < this.totalMs);
-
-  protected readonly remainingShare = computed(() =>
-    Math.max(0, Math.min(100, ((this.totalMs - this.elapsed()) / this.totalMs) * 100)),
-  );
-
-  /** Larghezza della barra di validità residua. */
-  protected readonly fill = computed(() => `${this.live() ? this.remainingShare() : 0}%`);
-
-  protected readonly remainingLabel = computed(() => formatDuration(this.totalMs - this.elapsed()));
-
-  /**
-   * La durata dichiarata, in forma leggibile.
-   *
-   * Era scritta in minuti grezzi: finché una lettura dura un'ora o due «valido
-   * 90 minuti» si capisce, ma una scheda che copre un fine settimana diventa
-   * «valido 2880 minuti», e nessuno converte a mente. Si usa lo stesso
-   * formatatore del conto alla rovescia lì sopra, così le due durate della
-   * stessa scheda sono espresse nella stessa unità.
-   */
-  protected readonly validityLabel = computed(() => formatDuration(this.totalMs));
+  /** Le tre letture, già risolte in etichette pronte da mostrare. */
+  protected readonly readings = (this.signal?.readings ?? []).map((r) => ({
+    horizon: r.horizon,
+    label: HORIZON_LABEL[r.horizon],
+    span: HORIZON_SPAN[r.horizon],
+    directionLabel: DIRECTION_LABEL[r.direction],
+    strength: r.strength,
+    strengthValue: STRENGTH_VALUE[r.strength],
+    regime: r.regime,
+    invalidation: r.invalidation,
+    icon: directionIcon(r.direction),
+  }));
 
   protected readonly sourceArticles = computed(() => {
     const sources: readonly string[] = this.signal?.sources ?? [];
     return sources.map((slug) => this.content.bySlug(slug)).filter((a) => a !== null);
-  });
-
-  protected readonly icon = computed(() => {
-    const d = this.signal?.direction ?? '';
-    if (d.endsWith('ribassista')) {
-      return 'arrow-down';
-    }
-    if (d.endsWith('rialzista')) {
-      return 'arrow-up';
-    }
-    return 'arrow-flat';
   });
 }

@@ -25,14 +25,18 @@
  * Impronta di un'analisi, scritta nel frontmatter e ricalcolata dal controllo di
  * allineamento: se i due valori divergono, il markdown è vecchio.
  *
+ * Copre l'analisi **e il suo esito**: il markdown contiene entrambi, quindi
+ * registrare un esito rende vecchio il markdown esattamente come lo renderebbe
+ * vecchio una correzione di refuso.
+ *
  * È un FNV-1a a 32 bit ripetuto con due semi diversi — sedici cifre esadecimali
  * in tutto — e non un hash crittografico: deve solo dire «è cambiato qualcosa»,
  * e deve poter essere ricalcolato ovunque senza dipendenze. La stessa funzione è
  * ripetuta in `src/app/core/data/analisi.spec.ts`, che non può importare questo
  * file perché è JavaScript: se cambia qui, cambia anche là.
  */
-export function improntaAnalisi(article) {
-  const testo = JSON.stringify(article);
+export function improntaAnalisi(article, outcome = null) {
+  const testo = JSON.stringify([article, outcome]);
   return fnv1a(testo, 0x811c9dc5) + fnv1a(testo, 0x01000193);
 }
 
@@ -60,7 +64,7 @@ function yamlList(valori) {
   return `[${valori.map(yamlString).join(', ')}]`;
 }
 
-function frontmatter(article) {
+function frontmatter(article, outcome) {
   const righe = [
     `slug: ${yamlString(article.slug)}`,
     `titolo: ${yamlString(article.title)}`,
@@ -84,6 +88,7 @@ function frontmatter(article) {
       `  strumento: ${yamlString(article.bias.asset)}`,
       `  direzione: ${yamlString(article.bias.direction)}`,
       `  forza: ${yamlString(article.bias.strength)}`,
+      `  orizzonte: ${yamlString(article.bias.horizon)}`,
       `  regime: ${yamlString(article.bias.regime)}`,
     );
   }
@@ -97,9 +102,24 @@ function frontmatter(article) {
       righe.push(`  dettaglio: ${yamlString(article.nextEvent.detail)}`);
     }
   }
+  if (article.sources?.length) {
+    righe.push(`fonti:`);
+    for (const fonte of article.sources) {
+      righe.push(`  - testata: ${yamlString(fonte.outlet)}`);
+      if (fonte.title) righe.push(`    titolo: ${yamlString(fonte.title)}`);
+      if (fonte.url) righe.push(`    indirizzo: ${yamlString(fonte.url)}`);
+      if (fonte.at) righe.push(`    quando: ${yamlString(fonte.at)}`);
+    }
+  }
+  if (outcome) {
+    righe.push(
+      `esito: ${yamlString(outcome.verdict)}`,
+      `controllata: ${yamlString(outcome.checkedAt)}`,
+    );
+  }
   righe.push(
     `sorgente: ${yamlString(`src/app/core/data/articles/${article.slug}.ts`)}`,
-    `impronta: ${yamlString(improntaAnalisi(article))}`,
+    `impronta: ${yamlString(improntaAnalisi(article, outcome))}`,
   );
   return ['---', ...righe, '---'];
 }
@@ -213,10 +233,16 @@ function renderBlock(block) {
 /* Analisi intera                                                              */
 /* -------------------------------------------------------------------------- */
 
-/** Restituisce il markdown completo di un'analisi, terminatore di riga incluso. */
-export function renderAnalisi(article) {
+/**
+ * Restituisce il markdown completo di un'analisi, terminatore di riga incluso.
+ *
+ * L'esito, se c'è, entra nello stesso file e non in uno suo: un'analisi e come
+ * è andata a finire sono la stessa storia, e tenerle separate obbligherebbe
+ * chiunque le rilegga — un grafo compreso — a ricucirle da capo.
+ */
+export function renderAnalisi(article, outcome = null) {
   const righe = [
-    ...frontmatter(article),
+    ...frontmatter(article, outcome),
     '',
     `# ${article.title}`,
     '',
@@ -255,10 +281,43 @@ export function renderAnalisi(article) {
       '',
       '## Regime descritto',
       '',
-      `Impostazione su ${b.asset}: ${b.direction}, forza ${b.strength}.`,
+      `Impostazione su ${b.asset}: ${b.direction}, forza ${b.strength}, orizzonte ${b.horizon}.`,
       '',
       b.regime,
     );
+  }
+
+  if (outcome) {
+    righe.push(
+      '',
+      '## Come è andata',
+      '',
+      `Verdetto: **${outcome.verdict}**, controllata il ${outcome.checkedAt}.`,
+      '',
+      outcome.what,
+    );
+    if (outcome.conditions.length) {
+      righe.push(
+        '',
+        '| Condizione dichiarata | Scattata | Che cosa si è visto |',
+        '| --- | --- | --- |',
+      );
+      for (const c of outcome.conditions) {
+        righe.push(
+          `| ${cella(c.condition)} | ${c.triggered ? 'sì' : 'no'} | ${cella(c.evidence)} |`,
+        );
+      }
+    }
+    if (outcome.lesson) righe.push('', `**Che cosa cambia.** ${outcome.lesson}`);
+  }
+
+  if (article.sources?.length) {
+    righe.push('', '## Fonti consultate', '');
+    for (const f of article.sources) {
+      const coda = [f.title, f.at].filter(Boolean).join(' · ');
+      const nome = f.url ? `[${f.outlet}](${f.url})` : f.outlet;
+      righe.push(coda ? `- **${nome}** — ${coda}` : `- **${nome}**`);
+    }
   }
 
   return righe.join('\n').replace(/\n{3,}/g, '\n\n') + '\n';

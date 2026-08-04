@@ -27,6 +27,9 @@ import { Timestamp } from './timestamp';
       <p class="art__kicker">
         <app-icon [name]="primaryIcon()" [size]="12" />
         {{ primaryName() }}
+        @if (verdict(); as v) {
+          <span class="art__verdict" [attr.data-verdict]="v.key">{{ v.label }}</span>
+        }
       </p>
 
       <h3 class="art__title">{{ article().title }}</h3>
@@ -85,6 +88,28 @@ import { Timestamp } from './timestamp';
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: var(--s-3);
+    }
+
+    /* Il verdetto è l'unica cosa nell'occhiello che non parla di categoria:
+       spinto a destra, così non si confonde con il nome della sezione. */
+    .art__verdict {
+      margin-left: auto;
+      padding: 1px var(--s-2);
+      border: 1px solid currentColor;
+      color: var(--text-faint);
+      letter-spacing: 0.06em;
+    }
+
+    .art__verdict[data-verdict='confermata'] {
+      color: var(--up);
+    }
+
+    .art__verdict[data-verdict='invalidata'] {
+      color: var(--down);
+    }
+
+    .art__verdict[data-verdict='parziale'] {
+      color: var(--warn);
     }
 
     .art__title {
@@ -183,6 +208,27 @@ export class ArticleCard {
 
   /** Le categorie oltre la principale, nell'ordine dichiarato. */
   private readonly others = computed(() => this.content.categoriesOf(this.article()).slice(1));
+
+  /**
+   * L'esito, se l'analisi e stata ricontrollata.
+   *
+   * Sta nell'occhiello e non nel piede perche e la sola informazione che cambia
+   * il modo in cui si sceglie se aprire o no una scheda vecchia: senza, una
+   * lettura invalidata e indistinguibile da una che ha retto.
+   */
+  protected readonly verdict = computed(() => {
+    const o = this.content.outcomeOf(this.article().slug);
+    if (!o) {
+      return null;
+    }
+    const labels = {
+      confermata: 'confermata',
+      parziale: 'parziale',
+      invalidata: 'invalidata',
+      'senza-verifica': 'non verificata',
+    } as const;
+    return { key: o.verdict, label: labels[o.verdict] };
+  });
 
   protected readonly primaryName = computed(() => this.primary()?.name ?? 'Analisi');
   protected readonly primaryIcon = computed(() => this.primary()?.icon ?? 'archive');

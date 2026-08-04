@@ -7,7 +7,7 @@ pubblicata: "2026-08-04T15:10:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "alta"
-categorie: ["geopolitica", "asia", "usa", "tasso-di-interesse"]
+categorie: ["rotte-e-approvvigionamento", "petrolio", "medio-oriente", "usa"]
 argomenti: ["Hormuz", "Bessent", "Petrolio", "Iran", "JOLTS"]
 strumenti: ["XAU/USD", "Brent", "WTI", "Treasury", "DXY"]
 orizzonti: ["breve", "medio"]
@@ -15,13 +15,14 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale-rialzista"
   forza: "bassa"
+  orizzonte: "breve"
   regime: "Il greggio in forte calo allenta la spinta sull’inflazione attesa e quindi sui rendimenti, che erano l’ostacolo principale per l’oro. Lo stesso movimento toglie però domanda di bene rifugio: due effetti opposti che nascono dalla stessa notizia e che tengono contenuta la reazione netta."
 prossimoAppuntamento:
   quando: "Oggi alle 16:00"
   titolo: "JOLTS di giugno"
   dettaglio: "È il test immediato della lettura: un dato debole farebbe scendere insieme rendimenti e dollaro, rendendo il quadro più favorevole all’oro; uno molto forte annullerebbe il beneficio del greggio più basso."
 sorgente: "src/app/core/data/articles/petrolio-inverte-bruscamente-bessent-apre-su-hormuz.ts"
-impronta: "5fc403a5eeb09ca3"
+impronta: "c1d958de6ec539c8"
 ---
 
 # Il petrolio inverte bruscamente: Bessent apre su Hormuz
@@ -97,6 +98,6 @@ Alta sull’inversione del petrolio, che è un prezzo osservabile; media sulla c
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale-rialzista, forza bassa.
+Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 Il greggio in forte calo allenta la spinta sull’inflazione attesa e quindi sui rendimenti, che erano l’ostacolo principale per l’oro. Lo stesso movimento toglie però domanda di bene rifugio: due effetti opposti che nascono dalla stessa notizia e che tengono contenuta la reazione netta.

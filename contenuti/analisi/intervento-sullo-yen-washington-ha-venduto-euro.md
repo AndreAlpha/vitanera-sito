@@ -7,7 +7,7 @@ pubblicata: "2026-08-03T15:00:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "media"
-categorie: ["asia", "usa", "europa", "fed"]
+categorie: ["interventi-valutari", "valute", "europa", "asia"]
 argomenti: ["Yen", "Euro", "Intervento valutario", "Dollaro", "BCE"]
 strumenti: ["XAU/USD", "USD/JPY", "EUR/USD", "DXY", "Treasury"]
 orizzonti: ["breve", "medio"]
@@ -15,13 +15,17 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale-rialzista"
   forza: "bassa"
+  orizzonte: "breve"
   regime: "Sostegno allo yen ottenuto senza indebolire il dollaro nel suo complesso: restano favorevoli il calo del petrolio e quello dei rendimenti, ma viene meno la lettura dell’intervento come volontà americana di un dollaro più debole."
 prossimoAppuntamento:
   quando: "Dopo l’apertura americana"
   titolo: "Prima verifica su dollaro e oro"
   dettaglio: "È il momento in cui si vedrà se il dollaro si stabilizza davvero contro euro invece di continuare a cedere su tutti i fronti. Nel frattempo non risultano nuove decisioni della Fed, nuovi dati statunitensi o sviluppi su Iran e Hormuz."
+fonti:
+  - testata: "Reuters"
+  - testata: "Financial Times"
 sorgente: "src/app/core/data/articles/intervento-sullo-yen-washington-ha-venduto-euro.ts"
-impronta: "002a1be41e7e6cf2"
+impronta: "4a226c4387246bd5"
 ---
 
 # Sullo yen Washington ha venduto euro, non dollari
@@ -94,6 +98,11 @@ Alta sul coordinamento fra Stati Uniti e Giappone, che è confermato; medio-alta
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale-rialzista, forza bassa.
+Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 Sostegno allo yen ottenuto senza indebolire il dollaro nel suo complesso: restano favorevoli il calo del petrolio e quello dei rendimenti, ma viene meno la lettura dell’intervento come volontà americana di un dollaro più debole.
+
+## Fonti consultate
+
+- **Reuters**
+- **Financial Times**

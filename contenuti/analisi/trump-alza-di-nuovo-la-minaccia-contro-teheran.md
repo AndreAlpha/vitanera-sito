@@ -7,7 +7,7 @@ pubblicata: "2026-08-04T00:10:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "alta"
-categorie: ["geopolitica", "asia", "usa", "tasso-di-interesse"]
+categorie: ["premio-di-rischio", "medio-oriente", "petrolio", "oro"]
 argomenti: ["Trump", "Iran", "Escalation", "Petrolio", "Bene rifugio"]
 strumenti: ["XAU/USD", "Brent", "WTI", "DXY", "Treasury"]
 orizzonti: ["breve", "medio"]
@@ -15,13 +15,14 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale"
   forza: "bassa"
+  orizzonte: "breve"
   regime: "Il rischio geopolitico torna a salire proprio mentre il mercato ha appena finito di prezzare il suo contrario. La minaccia sostiene l’oro come bene rifugio, ma la forza dell’ISM e il rischio di rendimenti più alti restano dall’altra parte: la lettura resta neutrale, con il rischio ora sbilanciato verso l’alto."
 prossimoAppuntamento:
   quando: "Alla riapertura asiatica"
   titolo: "Le tre condizioni, se arrivano insieme"
   dettaglio: "Petrolio in recupero, azioni deboli e rendimenti Treasury in discesa. Solo se si presentano contemporaneamente la minaccia diventa un segnale nettamente rialzista per XAU/USD."
 sorgente: "src/app/core/data/articles/trump-alza-di-nuovo-la-minaccia-contro-teheran.ts"
-impronta: "510ae9910a501147"
+impronta: "137878d0920ccd46"
 ---
 
 # Trump alza di nuovo la minaccia contro Teheran
@@ -112,6 +113,6 @@ Petrolio in recupero, azioni deboli e rendimenti Treasury in discesa. Solo se si
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale, forza bassa.
+Impostazione su XAU/USD: neutrale, forza bassa, orizzonte breve.
 
 Il rischio geopolitico torna a salire proprio mentre il mercato ha appena finito di prezzare il suo contrario. La minaccia sostiene l’oro come bene rifugio, ma la forza dell’ISM e il rischio di rendimenti più alti restano dall’altra parte: la lettura resta neutrale, con il rischio ora sbilanciato verso l’alto.

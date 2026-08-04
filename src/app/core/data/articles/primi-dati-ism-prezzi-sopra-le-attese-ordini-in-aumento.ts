@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const primiComponentiIsm: Article = {
   slug: 'primi-dati-ism-prezzi-sopra-le-attese-ordini-in-aumento',
-  categories: ['usa', 'tasso-di-interesse', 'fed'],
+  categories: ['ism', 'usa', 'tasso-di-interesse', 'oro'],
   title: 'Primi dati ISM: prezzi sopra le attese, ordini in aumento',
   kicker: 'Dati USA · Primi componenti ISM',
   dek:
@@ -30,6 +30,7 @@ export const primiComponentiIsm: Article = {
       'Componenti ISM leggermente sfavorevoli all’oro — ordini solidi e prezzi ancora alti — ma dollaro e ' +
       'rendimenti che nella seduta continuano a scendere: la lettura resta appena inclinata al rialzo e più ' +
       'fragile di prima, in attesa che il quadro cross-asset si pronunci.',
+    horizon: 'breve',
   },
   certainty: 'media',
   certaintyNote:

@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const ismManifatturieroFortissimo: Article = {
   slug: 'ism-manifatturiero-a-55-6-piu-forte-del-previsto',
-  categories: ['usa', 'tasso-di-interesse', 'fed'],
+  categories: ['ism', 'usa', 'fed', 'oro'],
   title: 'ISM manifatturiero a 55,6: molto più forte del previsto',
   kicker: 'Dati USA · ISM manifatturiero',
   dek:
@@ -30,6 +30,7 @@ export const ismManifatturieroFortissimo: Article = {
       'Crescita industriale statunitense più robusta del previsto e occupazione manifatturiera tornata in ' +
       'espansione, con prezzi ancora sopra 70. Il petrolio debole continua a sostenere l’oro per via ' +
       'indiretta, ma non basta più a mantenere l’inclinazione rialzista.',
+    horizon: 'medio',
   },
   certainty: 'alta',
   certaintyNote:

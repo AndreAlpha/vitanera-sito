@@ -7,7 +7,7 @@ pubblicata: "2026-08-02T16:06:00+02:00"
 autore: "Vitanera"
 minutiLettura: 3
 certezza: "alta"
-categorie: ["usa", "tasso-di-interesse", "fed", "geopolitica"]
+categorie: ["riserve-auree", "oro", "obbligazioni", "usa"]
 argomenti: ["World Gold Council", "Riserve auree", "Rendimenti USA", "Cina", "Polonia"]
 strumenti: ["XAU/USD", "DXY", "Treasury"]
 orizzonti: ["breve", "medio"]
@@ -15,9 +15,12 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale"
   forza: "bassa"
+  orizzonte: "medio"
   regime: "Fondamentali bilanciati: domanda strutturale delle banche centrali e premio geopolitico da una parte, rendimenti statunitensi elevati e Fed senza segnali di allentamento dall’altra."
+fonti:
+  - testata: "World Gold Council"
 sorgente: "src/app/core/data/articles/banche-centrali-tornano-a-comprare-oro-rendimenti-freno.ts"
-impronta: "d6ef0b991762e3bf"
+impronta: "7f2c067f058488d9"
 ---
 
 # Le banche centrali tornano a comprare oro, ma i rendimenti restano il freno
@@ -94,6 +97,10 @@ Il fondamento è solido: una revisione pubblicata dal World Gold Council e una s
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale, forza bassa.
+Impostazione su XAU/USD: neutrale, forza bassa, orizzonte medio.
 
 Fondamentali bilanciati: domanda strutturale delle banche centrali e premio geopolitico da una parte, rendimenti statunitensi elevati e Fed senza segnali di allentamento dall’altra.
+
+## Fonti consultate
+
+- **World Gold Council**

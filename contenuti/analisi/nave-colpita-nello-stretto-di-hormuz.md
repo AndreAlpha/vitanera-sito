@@ -7,7 +7,7 @@ pubblicata: "2026-08-04T08:45:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "alta"
-categorie: ["geopolitica", "asia", "usa", "tasso-di-interesse"]
+categorie: ["rotte-e-approvvigionamento", "medio-oriente", "petrolio", "oro"]
 argomenti: ["Hormuz", "Iran", "Petrolio", "Bene rifugio", "Trasporti marittimi"]
 strumenti: ["XAU/USD", "Brent", "WTI", "DXY", "Treasury"]
 orizzonti: ["breve", "medio"]
@@ -15,13 +15,14 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale-rialzista"
   forza: "bassa"
+  orizzonte: "breve"
   regime: "Il premio geopolitico rientra in scena dopo essere stato quasi azzerato in una sola seduta, e il greggio lo conferma risalendo. Manca però il resto del quadro difensivo: le azioni asiatiche tengono, il decennale risale invece di scendere e il dollaro resta vicino ai minimi di due mesi."
 prossimoAppuntamento:
   quando: "Nei prossimi giorni"
   titolo: "Dati sul lavoro statunitensi"
   dettaglio: "È l’appuntamento che il mercato sta aspettando e che può riportare i rendimenti al centro della lettura sull’oro, togliendo spazio al premio geopolitico."
 sorgente: "src/app/core/data/articles/nave-colpita-nello-stretto-di-hormuz.ts"
-impronta: "9cb7545923b98a6f"
+impronta: "0f7cfeef6b2fc779"
 ---
 
 # Nave colpita nello Stretto di Hormuz
@@ -101,6 +102,6 @@ Alta sull’incidente e sul recupero del petrolio, che sono fatti riportati e mi
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale-rialzista, forza bassa.
+Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 Il premio geopolitico rientra in scena dopo essere stato quasi azzerato in una sola seduta, e il greggio lo conferma risalendo. Manca però il resto del quadro difensivo: le azioni asiatiche tengono, il decennale risale invece di scendere e il dollaro resta vicino ai minimi di due mesi.

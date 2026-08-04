@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const opecQuoteHormuzTransito: Article = {
   slug: 'opec-alza-le-quote-e-una-metaniera-esce-da-hormuz',
-  categories: ['geopolitica', 'asia', 'usa', 'fed'],
+  categories: ['rotte-e-approvvigionamento', 'petrolio', 'medio-oriente', 'oro'],
   title: 'OPEC+ alza le quote e una metaniera esce da Hormuz',
   kicker: 'Geopolitica · Premio di rischio sul petrolio',
   dek:
@@ -29,6 +29,7 @@ export const opecQuoteHormuzTransito: Article = {
     regime:
       'Premio di rischio sul petrolio in riduzione per offerta e navigazione, con l’effetto sull’oro attenuato ' +
       'dalla possibilità che rendimenti più bassi ne compensino la perdita di domanda rifugio.',
+    horizon: 'breve',
   },
   certainty: 'alta',
   certaintyNote:
@@ -53,6 +54,7 @@ export const opecQuoteHormuzTransito: Article = {
     detail:
       'È il momento in cui si vedrà quale delle due catene prevale: la perdita di domanda rifugio o il calo dei rendimenti che ne deriva.',
   },
+  sources: [{ outlet: 'Reuters' }],
   blocks: [
     {
       kind: 'paragraph',

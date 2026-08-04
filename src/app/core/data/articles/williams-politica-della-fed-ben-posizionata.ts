@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const williamsPoliticaBenPosizionata: Article = {
   slug: 'williams-politica-della-fed-ben-posizionata',
-  categories: ['tasso-di-interesse', 'usa', 'fed'],
+  categories: ['fed', 'tasso-di-interesse', 'usa', 'oro'],
   title: 'Williams: la politica della Fed è «ben posizionata»',
   kicker: 'Federal Reserve · Intervista a Williams',
   dek:
@@ -30,6 +30,7 @@ export const williamsPoliticaBenPosizionata: Article = {
       'Fed che può continuare ad aspettare invece di alzare subito, con il dollaro ai minimi da metà giugno e ' +
       'i rendimenti in calo. Il rischio di un rialzo più avanti resta però aperto e legato ai prossimi dati ' +
       'core su inflazione e lavoro.',
+    horizon: 'medio',
   },
   certainty: 'alta',
   certaintyNote:
@@ -55,6 +56,7 @@ export const williamsPoliticaBenPosizionata: Article = {
     detail:
       'Williams ha chiarito che ogni decisione dipenderà da lì. Il rischio di un rialzo a settembre o nei mesi successivi resta aperto.',
   },
+  sources: [{ outlet: 'Reuters' }],
   blocks: [
     {
       kind: 'paragraph',

@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const interventoYenVendutiEuro: Article = {
   slug: 'intervento-sullo-yen-washington-ha-venduto-euro',
-  categories: ['asia', 'usa', 'europa', 'fed'],
+  categories: ['interventi-valutari', 'valute', 'europa', 'asia'],
   title: 'Sullo yen Washington ha venduto euro, non dollari',
   kicker: 'Valute · Struttura dell’intervento',
   dek:
@@ -30,6 +30,7 @@ export const interventoYenVendutiEuro: Article = {
       'Sostegno allo yen ottenuto senza indebolire il dollaro nel suo complesso: restano favorevoli il calo ' +
       'del petrolio e quello dei rendimenti, ma viene meno la lettura dell’intervento come volontà americana ' +
       'di un dollaro più debole.',
+    horizon: 'breve',
   },
   certainty: 'media',
   certaintyNote:
@@ -55,6 +56,7 @@ export const interventoYenVendutiEuro: Article = {
     detail:
       'È il momento in cui si vedrà se il dollaro si stabilizza davvero contro euro invece di continuare a cedere su tutti i fronti. Nel frattempo non risultano nuove decisioni della Fed, nuovi dati statunitensi o sviluppi su Iran e Hormuz.',
   },
+  sources: [{ outlet: 'Reuters' }, { outlet: 'Financial Times' }],
   blocks: [
     {
       kind: 'paragraph',

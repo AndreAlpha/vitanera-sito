@@ -1,5 +1,11 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
-import { ContentService, formatDateTime } from '../../core/services/content.service';
+import {
+  ContentService,
+  formatDate,
+  formatDateTime,
+  slugify,
+} from '../../core/services/content.service';
+import { Verdict } from '../../core/models/article.model';
 import { ContentBlock } from './content-block';
 import { RiskNotice } from '../../shared/legal/risk-notice';
 import { ArticleCard } from '../../shared/ui/article-card';
@@ -53,6 +59,43 @@ export class ArticleDetail {
     const a = this.article();
     return a ? formatDateTime(a.publishedAt) : '';
   });
+
+  /**
+   * L'esito, se qualcuno è tornato a controllare questa analisi.
+   *
+   * Compare in fondo al testo e non in testata di proposito: l'analisi va letta
+   * per com'era, e solo dopo si guarda com'è finita. Sapere in apertura che una
+   * lettura è stata invalidata cambia il modo in cui si legge tutto il resto.
+   */
+  protected readonly outcome = computed(() => this.content.outcomeOf(this.slug()));
+
+  protected readonly outcomeChecked = computed(() => {
+    const o = this.outcome();
+    return o ? formatDate(o.checkedAt) : '';
+  });
+
+  /** Le voci di glossario che compaiono davvero nel testo. */
+  protected readonly terms = computed(() => {
+    const a = this.article();
+    return a ? this.content.glossaryFor(a) : [];
+  });
+
+  protected termAnchor(term: string): string {
+    return slugify(term);
+  }
+
+  protected verdictLabel(verdict: Verdict): string {
+    switch (verdict) {
+      case 'confermata':
+        return 'confermata';
+      case 'invalidata':
+        return 'invalidata';
+      case 'parziale':
+        return 'parzialmente confermata';
+      default:
+        return 'non verificata in tempo utile';
+    }
+  }
 
   protected readonly progress = signal(0);
   protected readonly activeAnchor = signal('');

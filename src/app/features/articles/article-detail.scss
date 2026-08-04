@@ -405,6 +405,118 @@
   gap: var(--s-2);
 }
 
+.side__card + .side__card {
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--line);
+}
+
+.side__sources {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.side__sources li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: var(--t-sm);
+}
+
+.side__outlet {
+  font-weight: 500;
+}
+
+.side__srcnote {
+  font-size: var(--t-xs);
+  color: var(--text-soft);
+  line-height: var(--lh-snug);
+}
+
+.side__fine {
+  margin-top: var(--s-3);
+  font-size: var(--t-micro);
+  color: var(--text-faint);
+  line-height: var(--lh-snug);
+}
+
+/* --- Esito --------------------------------------------------------------------
+   Sta in fondo al corpo e non in testata: l'analisi va letta per com'era, e solo
+   dopo si guarda com'e finita. Il filetto a sinistra prende il colore del
+   verdetto, che e l'unico punto della pagina in cui il colore dice un giudizio.
+   ----------------------------------------------------------------------------- */
+
+.outcome {
+  margin: 0 0 var(--s-6);
+  padding: var(--s-4) var(--s-card);
+  border-left: 2px solid var(--line-strong);
+  background: var(--surface);
+}
+
+.outcome[data-verdict='confermata'] {
+  border-left-color: var(--up);
+}
+
+.outcome[data-verdict='invalidata'] {
+  border-left-color: var(--down);
+}
+
+.outcome[data-verdict='parziale'] {
+  border-left-color: var(--warn);
+}
+
+.outcome__title {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-bottom: var(--s-2);
+  font-size: var(--t-sm);
+  font-weight: 600;
+}
+
+.outcome__what {
+  font-size: var(--t-base);
+  line-height: var(--lh-base);
+  color: var(--text-soft);
+}
+
+.outcome__conds {
+  list-style: none;
+  margin-top: var(--s-3);
+  display: flex;
+  flex-direction: column;
+}
+
+.outcome__conds li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s-2);
+  padding: var(--s-2) 0;
+  border-top: 1px dotted var(--line);
+  font-size: var(--t-sm);
+  color: var(--text-faint);
+}
+
+.outcome__conds li.on {
+  color: var(--text);
+}
+
+.outcome__ev {
+  color: var(--text-soft);
+}
+
+.outcome__conds li.on .outcome__ev {
+  color: var(--down);
+}
+
+.outcome__foot {
+  margin-top: var(--s-3);
+  font-size: var(--t-xs);
+  color: var(--text-soft);
+}
+
 /* --- Correlate ----------------------------------------------------------------- */
 
 .related {

@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const rischioHormuzSiPagaAltrove: Article = {
   slug: 'rischio-hormuz-si-paga-in-petrolio-e-rendimenti-non-in-oro',
-  categories: ['usa', 'tasso-di-interesse', 'geopolitica'],
+  categories: ['correlazioni', 'petrolio', 'obbligazioni', 'oro'],
   title: 'Il rischio Hormuz si paga in petrolio e rendimenti, non in oro',
   kicker: 'Correlazioni · Cambio di reazione',
   dek:
@@ -30,6 +30,7 @@ export const rischioHormuzSiPagaAltrove: Article = {
       'Rischio geopolitico che si trasmette a petrolio e rendimenti invece che alla domanda rifugio: con il ' +
       'Brent sopra gli 86 dollari e il decennale al 4,705% sale il costo-opportunità di detenere oro, e la ' +
       'tensione su Hormuz non riesce a compensarlo.',
+    horizon: 'breve',
   },
   certainty: 'media',
   certaintyNote:

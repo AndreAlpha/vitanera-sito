@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const joltsPiuDeboleDelleAttese: Article = {
   slug: 'jolts-piu-debole-delle-attese-oro-su-rendimenti-giu',
-  categories: ['usa', 'tasso-di-interesse', 'fed'],
+  categories: ['jolts', 'usa', 'tasso-di-interesse', 'oro'],
   title: 'JOLTS più debole delle attese: oro su, rendimenti giù',
   kicker: 'Dati USA · Offerte di lavoro',
   dek:
@@ -30,6 +30,7 @@ export const joltsPiuDeboleDelleAttese: Article = {
       'Mercato del lavoro leggermente meno teso che riduce la necessità di un rialzo Fed ravvicinato e ' +
       'attenua il segnale restrittivo dell’ISM. La differenza rispetto agli ultimi aggiornamenti è che ' +
       'stavolta oro, dollaro e rendimenti confermano nello stesso momento invece di contraddirsi.',
+    horizon: 'breve',
   },
   certainty: 'alta',
   certaintyNote:

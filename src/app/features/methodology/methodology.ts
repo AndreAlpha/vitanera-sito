@@ -44,6 +44,39 @@ import { PageHeader } from '../../shared/ui/page-header';
       </p>
     </section>
 
+    <!-- Come si forma un giudizio --------------------------------------------- -->
+    <section class="block">
+      <div class="sec-head">
+        <h2>Come si forma un giudizio</h2>
+      </div>
+
+      <p class="lead">
+        Quello che segue non descrive il formato di un’analisi ma il modo in cui viene deciso che
+        cosa scriverci dentro. Sono regole prese da chi fa questo mestiere da più tempo, tenute
+        perché reggono alla prova più semplice: dicono in anticipo che cosa dovrebbe succedere se
+        fossero sbagliate.
+      </p>
+
+      <ol class="steps">
+        @for (p of principles; track p.title) {
+          <li>
+            <p class="steps__title">{{ p.title }}</p>
+            <p class="steps__text">{{ p.text }}</p>
+          </li>
+        }
+      </ol>
+
+      <p class="fineprint method__note">
+        <app-icon name="info" [size]="13" />
+        <span>
+          Nessuno di questi principi rende un’analisi giusta. Servono a renderla
+          <strong>verificabile</strong>: è la ragione per cui ogni testo dichiara le proprie
+          condizioni di invalidazione, e per cui esiste il
+          <a class="link" routerLink="/esiti">registro degli esiti</a>.
+        </span>
+      </p>
+    </section>
+
     <!-- Struttura di un'analisi ---------------------------------------------- -->
     <section class="block">
       <div class="sec-head">
@@ -149,6 +182,12 @@ import { PageHeader } from '../../shared/ui/page-header';
           com’è: non viene modificato per farlo sembrare corretto. Eventuali aggiornamenti vengono
           indicati come tali.
         </p>
+        <p>
+          A distanza di tempo quelle condizioni vengono ricontrollate una per una, e il risultato —
+          compreso quando è brutto — finisce nel <a routerLink="/esiti">registro degli esiti</a>, in
+          un archivio separato che non tocca l’analisi. Lì si vede anche il confronto fra il livello
+          di certezza dichiarato prima e come è andata dopo.
+        </p>
       </div>
     </section>
 
@@ -236,6 +275,10 @@ import { PageHeader } from '../../shared/ui/page-header';
       font-weight: 500;
       font-variant-numeric: tabular-nums;
       color: var(--accent);
+    }
+
+    .method__note {
+      margin-top: var(--s-5);
     }
 
     .steps__title {
@@ -340,6 +383,40 @@ export class Methodology {
     'Non è ricerca in materia di investimenti ai sensi della normativa europea.',
     'Non è una fonte di dati di mercato: i valori citati non sono in tempo reale.',
     'Non è affiliato a broker, intermediari o società di gestione del risparmio.',
+  ];
+
+  /**
+   * I principi con cui si decide che cosa scrivere, non come impaginarlo.
+   *
+   * Sono sei e non trenta di proposito: un elenco lungo di buone intenzioni non
+   * vincola nessuno. Questi sei si riconoscono nei testi pubblicati, e quando
+   * un'analisi li viola si vede — è il motivo per cui vale la pena scriverli.
+   */
+  protected readonly principles = [
+    {
+      title: 'I vincoli prima delle intenzioni',
+      text: 'Che cosa un decisore dichiari di voler fare conta meno di che cosa può permettersi di fare. Le preferenze sono opzionali e cambiano; i vincoli materiali — riserve, rotte, scadenze elettorali, fabbisogno di finanziamento — no. Un’analisi che poggia su una dichiarazione è più fragile di una che poggia su un vincolo, e va dichiarata come tale.',
+    },
+    {
+      title: 'Prima la frequenza di base, poi il caso specifico',
+      text: 'Prima di chiedersi quanto sia particolare la situazione di oggi, ci si chiede quante volte una situazione così è finita in un certo modo. Partire dal caso specifico porta quasi sempre a considerarlo più eccezionale di quanto sia.',
+    },
+    {
+      title: 'Aggiornare per gradi, non ribaltare',
+      text: 'Una notizia nuova sposta una lettura, raramente la capovolge. Quanto la sposta dipende da quanto era attesa: un dato in linea con le attese non cambia quasi nulla anche quando fa muovere il prezzo, una smentita ufficiale su una notizia data per certa cambia molto.',
+    },
+    {
+      title: 'Distinguere il processo dal risultato',
+      text: 'Una lettura può essere ragionata bene e finire male, e viceversa. Giudicare una decisione dal suo esito — quando l’esito dipende anche dal caso — porta a cambiare metodo dopo ogni perdita e a tenere le abitudini peggiori dopo ogni guadagno.',
+    },
+    {
+      title: 'Dichiarare prima che cosa dimostrerebbe l’errore',
+      text: 'Ogni analisi scrive, prima di sapere come andrà, le condizioni che la renderebbero sbagliata. Senza quell’elenco qualunque esito si può raccontare come una conferma parziale, e non resta niente da imparare.',
+    },
+    {
+      title: 'Un numero non verificato non viene riportato',
+      text: 'I valori citati vengono da fonti pubbliche indicate nel testo. Quando una notizia è riportata ma non confermata, la differenza fra le due cose viene detta esplicitamente invece di essere lasciata intuire dal tono.',
+    },
   ];
 
   protected readonly steps = [

@@ -7,7 +7,7 @@ pubblicata: "2026-08-03T22:40:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "media"
-categorie: ["usa", "tasso-di-interesse", "geopolitica", "asia"]
+categorie: ["debito-pubblico", "obbligazioni", "usa", "medio-oriente"]
 argomenti: ["Tesoro USA", "Emissioni", "Iran", "Hormuz", "Petrolio"]
 strumenti: ["XAU/USD", "Treasury", "WTI", "Brent", "DXY"]
 orizzonti: ["breve", "medio"]
@@ -15,13 +15,14 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale"
   forza: "bassa"
+  orizzonte: "medio"
   regime: "Due forze opposte in equilibrio instabile: il petrolio in forte calo abbassa le aspettative inflazionistiche e i rendimenti, mentre la forza dell’ISM e il maggiore fabbisogno del Tesoro premono nella direzione contraria. Al rialzo resta soltanto un rischio geopolitico non prezzato."
 prossimoAppuntamento:
   quando: "Mercoledì"
   titolo: "Piano trimestrale di rifinanziamento del Tesoro"
   dettaglio: "Scadenze e dimensioni delle aste. Se l’aumento fosse concentrato sui Treasury bill a breve termine, l’impatto sull’oro sarebbe probabilmente limitato."
 sorgente: "src/app/core/data/articles/tesoro-alza-il-fabbisogno-iran-raffredda-la-distensione.ts"
-impronta: "c1760137798a2281"
+impronta: "7a5b52728daaf194"
 ---
 
 # Il Tesoro alza il fabbisogno, l’Iran raffredda la distensione
@@ -106,6 +107,6 @@ Scadenze e dimensioni delle aste. Se l’aumento fosse concentrato sui Treasury 
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale, forza bassa.
+Impostazione su XAU/USD: neutrale, forza bassa, orizzonte medio.
 
 Due forze opposte in equilibrio instabile: il petrolio in forte calo abbassa le aspettative inflazionistiche e i rendimenti, mentre la forza dell’ISM e il maggiore fabbisogno del Tesoro premono nella direzione contraria. Al rialzo resta soltanto un rischio geopolitico non prezzato.

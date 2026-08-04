@@ -78,6 +78,13 @@ export const routes: Routes = [
       import('./features/calendar/indicator-detail').then((m) => m.IndicatorDetail),
   },
 
+  /* ------------------------------------------------------------------ Esiti */
+  {
+    path: 'esiti',
+    title: `Esiti delle analisi${suffix}`,
+    loadComponent: () => import('./features/outcomes/outcomes').then((m) => m.Outcomes),
+  },
+
   /* ---------------------------------------------------------------- Scenari */
   {
     path: 'orizzonti',

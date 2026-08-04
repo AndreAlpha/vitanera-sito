@@ -145,6 +145,7 @@ export class App {
 
     switch (first) {
       case 'orizzonti':
+      case 'esiti':
         return first;
       case 'metodologia':
       case 'glossario':

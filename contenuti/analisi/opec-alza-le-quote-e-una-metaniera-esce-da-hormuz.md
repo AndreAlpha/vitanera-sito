@@ -7,7 +7,7 @@ pubblicata: "2026-08-02T16:13:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "alta"
-categorie: ["geopolitica", "asia", "usa", "fed"]
+categorie: ["rotte-e-approvvigionamento", "petrolio", "medio-oriente", "oro"]
 argomenti: ["OPEC+", "Hormuz", "Petrolio", "De-escalation", "Premio di rischio"]
 strumenti: ["XAU/USD", "Petrolio", "DXY", "Treasury"]
 orizzonti: ["breve"]
@@ -15,13 +15,16 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale-ribassista"
   forza: "bassa"
+  orizzonte: "breve"
   regime: "Premio di rischio sul petrolio in riduzione per offerta e navigazione, con l’effetto sull’oro attenuato dalla possibilità che rendimenti più bassi ne compensino la perdita di domanda rifugio."
 prossimoAppuntamento:
   quando: "Domenica sera"
   titolo: "Riapertura degli scambi"
   dettaglio: "È il momento in cui si vedrà quale delle due catene prevale: la perdita di domanda rifugio o il calo dei rendimenti che ne deriva."
+fonti:
+  - testata: "Reuters"
 sorgente: "src/app/core/data/articles/opec-alza-le-quote-e-una-metaniera-esce-da-hormuz.ts"
-impronta: "45576562df802994"
+impronta: "369b672bd87ac92d"
 ---
 
 # OPEC+ alza le quote e una metaniera esce da Hormuz
@@ -103,6 +106,10 @@ Alta sull’accordo OPEC+ e sul transito della nave, che sono entrambi fatti avv
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale-ribassista, forza bassa.
+Impostazione su XAU/USD: neutrale-ribassista, forza bassa, orizzonte breve.
 
 Premio di rischio sul petrolio in riduzione per offerta e navigazione, con l’effetto sull’oro attenuato dalla possibilità che rendimenti più bassi ne compensino la perdita di domanda rifugio.
+
+## Fonti consultate
+
+- **Reuters**

@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const tesoroFabbisognoEIran: Article = {
   slug: 'tesoro-alza-il-fabbisogno-iran-raffredda-la-distensione',
-  categories: ['usa', 'tasso-di-interesse', 'geopolitica', 'asia'],
+  categories: ['debito-pubblico', 'obbligazioni', 'usa', 'medio-oriente'],
   title: 'Il Tesoro alza il fabbisogno, l’Iran raffredda la distensione',
   kicker: 'Debito USA · Piano di rifinanziamento',
   dek:
@@ -30,6 +30,7 @@ export const tesoroFabbisognoEIran: Article = {
       'Due forze opposte in equilibrio instabile: il petrolio in forte calo abbassa le aspettative ' +
       'inflazionistiche e i rendimenti, mentre la forza dell’ISM e il maggiore fabbisogno del Tesoro premono ' +
       'nella direzione contraria. Al rialzo resta soltanto un rischio geopolitico non prezzato.',
+    horizon: 'medio',
   },
   certainty: 'media',
   certaintyNote:

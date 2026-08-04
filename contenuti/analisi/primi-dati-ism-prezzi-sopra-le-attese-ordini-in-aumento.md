@@ -7,7 +7,7 @@ pubblicata: "2026-08-03T16:05:00+02:00"
 autore: "Vitanera"
 minutiLettura: 3
 certezza: "media"
-categorie: ["usa", "tasso-di-interesse", "fed"]
+categorie: ["ism", "usa", "tasso-di-interesse", "oro"]
 argomenti: ["ISM", "Prezzi pagati", "Nuovi ordini", "PMI", "Inflazione"]
 strumenti: ["XAU/USD", "DXY", "Treasury", "Brent"]
 orizzonti: ["breve"]
@@ -15,13 +15,14 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale-rialzista"
   forza: "bassa"
+  orizzonte: "breve"
   regime: "Componenti ISM leggermente sfavorevoli all’oro — ordini solidi e prezzi ancora alti — ma dollaro e rendimenti che nella seduta continuano a scendere: la lettura resta appena inclinata al rialzo e più fragile di prima, in attesa che il quadro cross-asset si pronunci."
 prossimoAppuntamento:
   quando: "Nei prossimi minuti"
   titolo: "Dato ISM principale e reazione cross-asset"
   dettaglio: "Servono il numero principale, quando sarà verificabile, e la direzione presa insieme da oro, dollaro e rendimenti: è lì che si vede se la lettura regge o si ribalta."
 sorgente: "src/app/core/data/articles/primi-dati-ism-prezzi-sopra-le-attese-ordini-in-aumento.ts"
-impronta: "cea99aeebabf97d8"
+impronta: "2ea8e10e0b707428"
 ---
 
 # Primi dati ISM: prezzi sopra le attese, ordini in aumento
@@ -114,6 +115,6 @@ Servono il numero principale, quando sarà verificabile, e la direzione presa in
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale-rialzista, forza bassa.
+Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 Componenti ISM leggermente sfavorevoli all’oro — ordini solidi e prezzi ancora alti — ma dollaro e rendimenti che nella seduta continuano a scendere: la lettura resta appena inclinata al rialzo e più fragile di prima, in attesa che il quadro cross-asset si pronunci.

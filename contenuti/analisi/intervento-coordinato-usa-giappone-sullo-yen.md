@@ -7,7 +7,7 @@ pubblicata: "2026-08-02T18:20:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "media"
-categorie: ["asia", "usa", "fed"]
+categorie: ["interventi-valutari", "valute", "asia", "usa"]
 argomenti: ["Yen", "Intervento valutario", "Dollaro", "Cina", "Liquidità"]
 strumenti: ["XAU/USD", "USD/JPY", "DXY", "Treasury"]
 orizzonti: ["breve", "medio"]
@@ -15,13 +15,16 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale-rialzista"
   forza: "bassa"
+  orizzonte: "breve"
   regime: "Possibile indebolimento coordinato del dollaro con rendimenti non ulteriormente spinti in alto, mentre la de-escalation iraniana e l’offerta OPEC+ continuano a ridurre il premio rifugio e quello energetico."
 prossimoAppuntamento:
   quando: "Domenica sera"
   titolo: "Riapertura degli scambi"
   dettaglio: "È il primo momento in cui si potrà misurare l’efficacia dell’intervento; l’annuncio ufficiale giapponese è atteso e potrebbe precisarne l’importo."
+fonti:
+  - testata: "Reuters"
 sorgente: "src/app/core/data/articles/intervento-coordinato-usa-giappone-sullo-yen.ts"
-impronta: "1526e815c4b715b3"
+impronta: "6b24a31d430a494b"
 ---
 
 # Intervento coordinato Stati Uniti-Giappone sullo yen
@@ -112,6 +115,10 @@ Alta sull’intervento riportato da Reuters, media sulla sua durata e media sull
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale-rialzista, forza bassa.
+Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 Possibile indebolimento coordinato del dollaro con rendimenti non ulteriormente spinti in alto, mentre la de-escalation iraniana e l’offerta OPEC+ continuano a ridurre il premio rifugio e quello energetico.
+
+## Fonti consultate
+
+- **Reuters**

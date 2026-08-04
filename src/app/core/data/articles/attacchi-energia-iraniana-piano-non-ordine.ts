@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const attacchiEnergiaIraniana: Article = {
   slug: 'attacchi-energia-iraniana-piano-non-ordine',
-  categories: ['geopolitica', 'asia', 'usa'],
+  categories: ['premio-di-rischio', 'medio-oriente', 'petrolio', 'oro'],
   title: 'Attacchi all’energia iraniana: per ora un piano, non un ordine',
   kicker: 'Geopolitica · Rischio di offerta',
   dek:
@@ -29,6 +29,7 @@ export const attacchiEnergiaIraniana: Article = {
     regime:
       'Premio geopolitico in formazione su una notizia non confermata, con il petrolio già sostenuto dalle ' +
       'difficoltà di transito attraverso Hormuz.',
+    horizon: 'breve',
   },
   certainty: 'media',
   certaintyNote:
@@ -53,6 +54,7 @@ export const attacchiEnergiaIraniana: Article = {
     detail:
       'È il momento in cui si vedrà se il piano è diventato un ordine e se l’eventuale premio geopolitico regge oltre il primo impulso.',
   },
+  sources: [{ outlet: 'Reuters' }, { outlet: 'Axios' }, { outlet: 'CBS News' }],
   blocks: [
     {
       kind: 'paragraph',

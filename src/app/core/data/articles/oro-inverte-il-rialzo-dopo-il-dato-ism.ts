@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const oroInverteDopoIsm: Article = {
   slug: 'oro-inverte-il-rialzo-dopo-il-dato-ism',
-  categories: ['usa', 'tasso-di-interesse', 'asia', 'fed'],
+  categories: ['correlazioni', 'oro', 'ism', 'riserve-auree'],
   title: 'L’oro inverte il rialzo dopo l’ISM',
   kicker: 'Correlazioni · Reazione al dato ISM',
   dek:
@@ -30,6 +30,7 @@ export const oroInverteDopoIsm: Article = {
       'Il prezzo ha reagito nella direzione coerente con un ISM al massimo da oltre quattro anni: il mercato ' +
       'sta pesando più la forza dell’economia statunitense e il rischio di tassi elevati che il calo del ' +
       'petrolio. La domanda ufficiale coreana sostiene il quadro di fondo, non quello della giornata.',
+    horizon: 'breve',
   },
   certainty: 'alta',
   certaintyNote:
@@ -53,6 +54,7 @@ export const oroInverteDopoIsm: Article = {
     detail:
       'Se anche questi risultassero forti, aumenterebbe il rischio di una discesa verso i 4.000 dollari. La domanda delle banche centrali può offrire sostegno più avanti, ma non è un catalizzatore intraday.',
   },
+  sources: [{ outlet: 'Reuters' }],
   blocks: [
     {
       kind: 'paragraph',

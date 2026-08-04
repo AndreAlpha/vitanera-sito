@@ -7,7 +7,7 @@ pubblicata: "2026-08-04T18:25:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "alta"
-categorie: ["geopolitica", "asia", "usa", "tasso-di-interesse"]
+categorie: ["rotte-e-approvvigionamento", "medio-oriente", "petrolio", "oro"]
 argomenti: ["Hormuz", "Iran", "Oman", "Petrolio", "Negoziati"]
 strumenti: ["XAU/USD", "Brent", "WTI", "Treasury", "DXY"]
 orizzonti: ["breve", "medio"]
@@ -15,9 +15,12 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "rialzista"
   forza: "media"
+  orizzonte: "breve"
   regime: "JOLTS debole, dollaro e rendimenti in calo continuano a sostenere l’oro, e la condizione iraniana aggiunge un rischio geopolitico che il prezzo del greggio non sta scontando. Il sostegno però non è pulito: un forte rimbalzo del petrolio aiuterebbe l’oro dal lato rifugio e lo penalizzerebbe da quello dei rendimenti."
+fonti:
+  - testata: "Reuters"
 sorgente: "src/app/core/data/articles/iran-chiede-il-controllo-sugli-ingressi-a-hormuz.ts"
-impronta: "6f5e928bfe33ed0d"
+impronta: "98353bd6490e46b0"
 ---
 
 # L’Iran chiede il controllo sugli ingressi a Hormuz
@@ -93,6 +96,10 @@ Alta sull’esistenza delle richieste iraniane, che sono riportate da Reuters e 
 
 ## Regime descritto
 
-Impostazione su XAU/USD: rialzista, forza media.
+Impostazione su XAU/USD: rialzista, forza media, orizzonte breve.
 
 JOLTS debole, dollaro e rendimenti in calo continuano a sostenere l’oro, e la condizione iraniana aggiunge un rischio geopolitico che il prezzo del greggio non sta scontando. Il sostegno però non è pulito: un forte rimbalzo del petrolio aiuterebbe l’oro dal lato rifugio e lo penalizzerebbe da quello dei rendimenti.
+
+## Fonti consultate
+
+- **Reuters**

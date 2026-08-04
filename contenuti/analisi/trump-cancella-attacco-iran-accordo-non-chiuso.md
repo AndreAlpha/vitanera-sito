@@ -7,7 +7,7 @@ pubblicata: "2026-08-02T12:38:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "media"
-categorie: ["geopolitica", "asia", "usa", "fed"]
+categorie: ["premio-di-rischio", "medio-oriente", "oro", "petrolio"]
 argomenti: ["Iran", "Hormuz", "De-escalation", "Premio di rischio", "Bene rifugio"]
 strumenti: ["XAU/USD", "Brent", "WTI", "DXY", "Treasury"]
 orizzonti: ["breve"]
@@ -15,13 +15,16 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "ribassista"
   forza: "media"
+  orizzonte: "breve"
   regime: "Premio geopolitico in riassorbimento su un annuncio di de-escalation non ancora ratificato da Teheran, con la Fed che resta restrittiva sullo sfondo."
 prossimoAppuntamento:
   quando: "Domenica sera"
   titolo: "Riapertura degli scambi"
   dettaglio: "Il primo prezzo dopo l’annuncio dirà se la cancellazione viene letta come de-escalation o soltanto come una tregua provvisoria."
+fonti:
+  - testata: "Reuters"
 sorgente: "src/app/core/data/articles/trump-cancella-attacco-iran-accordo-non-chiuso.ts"
-impronta: "dfb2452ff4f19349"
+impronta: "c8539c695912866f"
 ---
 
 # Trump cancella l’attacco all’Iran, ma l’accordo non è chiuso
@@ -118,6 +121,10 @@ Il primo prezzo dopo l’annuncio dirà se la cancellazione viene letta come de-
 
 ## Regime descritto
 
-Impostazione su XAU/USD: ribassista, forza media.
+Impostazione su XAU/USD: ribassista, forza media, orizzonte breve.
 
 Premio geopolitico in riassorbimento su un annuncio di de-escalation non ancora ratificato da Teheran, con la Fed che resta restrittiva sullo sfondo.
+
+## Fonti consultate
+
+- **Reuters**

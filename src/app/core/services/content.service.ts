@@ -2,8 +2,19 @@ import { Injectable, computed, signal } from '@angular/core';
 import { ARTICLES } from '../data/articles.data';
 import { GLOSSARY } from '../data/glossary.data';
 import { LEGAL_DOCUMENTS } from '../data/legal.data';
+import { OUTCOMES } from '../data/outcomes.data';
 import { CATEGORIES, CATEGORY_FAMILIES } from '../config/site.config';
-import { Article, Category, CategorySlug, TocEntry } from '../models/article.model';
+import {
+  Article,
+  Block,
+  Category,
+  CategorySlug,
+  GlossaryEntry,
+  Level,
+  Outcome,
+  TocEntry,
+  Verdict,
+} from '../models/article.model';
 
 const MONTHS = [
   'gennaio',
@@ -27,6 +38,44 @@ export function slugify(value: string): string {
     .replace(/\p{Diacritic}/gu, '')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '');
+}
+
+/** Minuscolo e senza accenti, per confrontare testi senza inseguire le varianti. */
+function normalize(value: string): string {
+  return value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .replace(/[’']/g, ' ');
+}
+
+/** Tutto il testo leggibile di un blocco, qualunque sia il suo tipo. */
+function blockText(block: Block): readonly string[] {
+  switch (block.kind) {
+    case 'paragraph':
+    case 'heading':
+    case 'quote':
+    case 'note':
+      return [block.text];
+    case 'list':
+      return [block.title ?? '', ...block.items];
+    case 'callout':
+      return [block.title, block.text ?? '', ...(block.items ?? [])];
+    case 'stats':
+      return [block.title ?? '', ...block.items.flatMap((i) => [i.label, i.value, i.note ?? ''])];
+    case 'scenarios':
+      return [block.title ?? '', ...block.items.flatMap((i) => [i.label, i.text])];
+    case 'balance':
+      return [
+        block.title ?? '',
+        block.left.title,
+        ...block.left.items,
+        block.right.title,
+        ...block.right.items,
+      ];
+    case 'timeline':
+      return [block.title ?? '', ...block.items.flatMap((i) => [i.when, i.title, i.text])];
+  }
 }
 
 /** Formato "30 luglio 2026 · 08:40". */
@@ -153,6 +202,74 @@ export class ContentService {
     return this.byCategory(slug).length;
   }
 
+  /* ---------------------------------------------------------------------- */
+  /* Esiti                                                                  */
+  /* ---------------------------------------------------------------------- */
+
+  readonly outcomes = computed(() =>
+    [...OUTCOMES].sort((a, b) => Date.parse(b.checkedAt) - Date.parse(a.checkedAt)),
+  );
+
+  /** L'esito di un'analisi, se qualcuno è tornato a controllarla. */
+  outcomeOf(slug: string): Outcome | null {
+    return this.outcomes().find((o) => o.slug === slug) ?? null;
+  }
+
+  /** Le analisi ancora senza esito, dalla più vecchia: sono quelle da controllare. */
+  readonly pendingCheck = computed(() => {
+    const giudicate = new Set(this.outcomes().map((o) => o.slug));
+    return [...this.all()].reverse().filter((a) => !giudicate.has(a.slug));
+  });
+
+  /**
+   * Quante volte ciascun verdetto, e il tasso di conferma.
+   *
+   * `senza-verifica` entra nel totale ma non fra le confermate: un'analisi che
+   * nessuno ha controllato non è una vittoria, e nasconderla gonfierebbe il
+   * risultato di preciso quanto basta a renderlo inutile.
+   */
+  readonly record = computed(() => {
+    const esiti = this.outcomes();
+    const conta = (v: Verdict) => esiti.filter((o) => o.verdict === v).length;
+    const totale = esiti.length;
+    return {
+      totale,
+      confermate: conta('confermata'),
+      parziali: conta('parziale'),
+      invalidate: conta('invalidata'),
+      senzaVerifica: conta('senza-verifica'),
+      daControllare: this.pendingCheck().length,
+    };
+  });
+
+  /**
+   * Calibrazione: per ogni grado di certezza dichiarato, come sono andate.
+   *
+   * È il confronto che rende `certainty` un'affermazione verificabile invece di
+   * un'etichetta. Se le analisi dichiarate «alta» non vanno meglio di quelle
+   * dichiarate «media», il campo non sta misurando niente.
+   */
+  readonly calibration = computed(() => {
+    const esiti = this.outcomes();
+    const livelli: readonly Level[] = ['alta', 'media', 'bassa'];
+    return livelli
+      .map((livello) => {
+        const righe = esiti
+          .map((o) => ({ o, a: this.bySlug(o.slug) }))
+          .filter((r) => r.a?.certainty === livello);
+        const verificate = righe.filter((r) => r.o.verdict !== 'senza-verifica');
+        const confermate = righe.filter((r) => r.o.verdict === 'confermata').length;
+        return {
+          livello,
+          totale: righe.length,
+          verificate: verificate.length,
+          confermate,
+          quota: verificate.length ? Math.round((confermate / verificate.length) * 100) : null,
+        };
+      })
+      .filter((r) => r.totale > 0);
+  });
+
   /** Altre analisi correlate: categorie in comune, poi tag in comune. */
   related(article: Article, limit = 3): readonly Article[] {
     const others = this.all().filter((a) => a.slug !== article.slug);
@@ -160,6 +277,35 @@ export class ContentService {
       a.categories.filter((c) => article.categories.includes(c)).length * 3 +
       a.tags.filter((t) => article.tags.includes(t)).length;
     return [...others].sort((a, b) => score(b) - score(a)).slice(0, limit);
+  }
+
+  /**
+   * Le voci di glossario che compaiono davvero nel testo di un'analisi.
+   *
+   * Il glossario esisteva senza che nessuna analisi lo raggiungesse: trenta
+   * definizioni in una pagina che si apre solo di proposito. Qui il collegamento
+   * si fa al contrario, dall'analisi verso le definizioni, cercando ogni termine
+   * nel testo effettivo dell'articolo — titolo, sommario, corpo e argomenti.
+   *
+   * La ricerca è su confine di parola e senza accenti, così «bene rifugio» viene
+   * trovato anche scritto in mezzo a una frase, e «PCE» non viene trovato dentro
+   * un'altra sigla.
+   */
+  glossaryFor(article: Article): readonly GlossaryEntry[] {
+    const testo = normalize(
+      [
+        article.title,
+        article.dek,
+        article.kicker,
+        ...article.tags,
+        ...article.takeaways,
+        ...article.blocks.flatMap(blockText),
+      ].join(' '),
+    );
+    return GLOSSARY.filter((entry) => {
+      const termine = normalize(entry.term).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      return new RegExp(`(^|[^a-z0-9])${termine}([^a-z0-9]|$)`).test(testo);
+    });
   }
 
   /** Indice dei paragrafi di un articolo, derivato dai blocchi "heading". */

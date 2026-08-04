@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const rendimentiTrentennaleMassimi: Article = {
   slug: 'rendimenti-a-30-anni-di-nuovo-sui-massimi-dal-2007',
-  categories: ['tasso-di-interesse', 'usa', 'fed', 'geopolitica'],
+  categories: ['obbligazioni', 'tasso-di-interesse', 'usa', 'debito-pubblico'],
   title: 'Rendimenti a 30 anni di nuovo sui massimi dal 2007',
   kicker: 'Tassi USA · Parte lunga della curva',
   dek:
@@ -30,6 +30,7 @@ export const rendimentiTrentennaleMassimi: Article = {
       'Rendimenti lunghi sui massimi dal 2007 che alzano il rendimento alternativo offerto dai titoli di ' +
       'Stato e frenano l’oro proprio mentre il rischio geopolitico dovrebbe sostenerlo. La tensione su ' +
       'Hormuz impedisce una lettura decisamente ribassista, ma non riesce a farsi pagare.',
+    horizon: 'medio',
   },
   certainty: 'alta',
   certaintyNote:

@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const trumpUltimatumTeheran: Article = {
   slug: 'trump-alza-di-nuovo-la-minaccia-contro-teheran',
-  categories: ['geopolitica', 'asia', 'usa', 'tasso-di-interesse'],
+  categories: ['premio-di-rischio', 'medio-oriente', 'petrolio', 'oro'],
   title: 'Trump alza di nuovo la minaccia contro Teheran',
   kicker: 'Geopolitica · Ultimatum a Teheran',
   dek:
@@ -31,6 +31,7 @@ export const trumpUltimatumTeheran: Article = {
       'contrario. La minaccia sostiene l’oro come bene rifugio, ma la forza dell’ISM e il rischio di ' +
       'rendimenti più alti restano dall’altra parte: la lettura resta neutrale, con il rischio ora sbilanciato ' +
       'verso l’alto.',
+    horizon: 'breve',
   },
   certainty: 'alta',
   certaintyNote:

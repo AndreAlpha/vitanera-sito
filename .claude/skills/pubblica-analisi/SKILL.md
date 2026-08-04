@@ -1,6 +1,6 @@
 ---
 name: pubblica-analisi
-description: Pubblica una o più analisi su Vitanera partendo dal testo grezzo. Rigenera lo storico del calendario economico, decide titolo, categorie e durata della lettura, converte il testo in blocchi strutturati, scrive un file TypeScript per analisi e ne genera la copia markdown, aggiorna l'indicatore operativo e i riferimenti di mercato, verifica formattazione, build e test, poi fa commit e push. Usare quando l'utente fornisce il testo di un'analisi da pubblicare ("aggiungi questo articolo", "pubblica questa analisi", "pubblica queste analisi", "inserisci questi") e anche quando chiede solo di aggiornare i dati del calendario.
+description: Pubblica una o più analisi su Vitanera partendo dal testo grezzo. Rigenera il calendario economico, chiude gli esiti delle analisi precedenti ricontrollandone le condizioni di invalidazione, interroga il grafo di conoscenza in contenuti/ per collocare il testo rispetto a quanto già pubblicato e alle note di metodo — e può rielaborarne le conclusioni —, decide titolo e categorie aggiungendone di nuove se mancano, scrive un file TypeScript per analisi con la sua copia markdown, aggiorna l'indicatore operativo a tre orizzonti e i riferimenti di mercato, riaggiorna il grafo, verifica formattazione, build e test, poi fa commit e push. Usare quando l'utente fornisce il testo di un'analisi da pubblicare ("aggiungi questo articolo", "pubblica questa analisi", "pubblica queste analisi", "inserisci questi") e anche quando chiede solo di aggiornare i dati del calendario o di verificare come sono andate le analisi precedenti.
 ---
 
 # Pubblicare un'analisi su Vitanera
@@ -8,9 +8,16 @@ description: Pubblica una o più analisi su Vitanera partendo dal testo grezzo. 
 L'argomento è il **testo grezzo** dell'analisi. Se è un percorso di file, leggilo.
 Se manca del tutto, chiedi il testo e fermati.
 
-Non chiedere conferma su titolo, categorie, orario o durata della lettura: sono
-decisioni tue, prese con le regole qui sotto. Chiedi solo se il testo è ambiguo
-al punto da rendere impossibile capire di quale strumento parla.
+Non chiedere conferma su titolo, categorie, orario o orizzonte: sono decisioni
+tue, prese con le regole qui sotto. Chiedi solo se il testo è ambiguo al punto da
+rendere impossibile capire di quale strumento parla.
+
+**Il testo grezzo è materia prima, non un dettato.** Descrive un momento visto da
+chi aveva davanti il grafico; il tuo lavoro è collocarlo in tutto quello che è
+stato scritto prima e nei quadri di metodo raccolti in `contenuti/studio/`. Se il
+contesto porta a una conclusione diversa da quella dichiarata — direzione,
+orizzonte, forza — **la conclusione che pubblichi è la tua**, e il perché va
+scritto nel resoconto finale. Vedi il passo 4.
 
 ## L'ordine dei passi non è negoziabile
 
@@ -19,14 +26,31 @@ Il calendario si rigenera **per primo** e l'orario di pubblicazione si sceglie
 richieste di rete: se decidi `publishedAt` prima, quando arrivi al commit quel
 valore è già invecchiato di minuti.
 
+I numeri qui sotto sono quelli dei titoli di sezione, così «passo 7» si trova
+senza contarli.
+
 ```
-1  conta le analisi          7  passa in rassegna il resto del sito
-2  rigenera il calendario    8  genera i markdown
-3  leggi lo stato e l'ora    9  formatta, compila, prova
-4  scrivi gli articoli      10  commit e push
-5  aggiorna l'indicatore    11  riferisci
-6  aggiorna i mercati
+ 0  conta le analisi           8  aggiorna i riferimenti di mercato
+ 1  rigenera il calendario     9  passa in rassegna il resto del sito
+ 2  leggi lo stato e l'ora    10  genera i markdown e il grafo
+ 3  chiudi gli esiti aperti   11  formatta, compila, prova
+ 4  contestualizza col grafo  12  commit e push
+ 5  decidi le categorie       13  (solo se online non si aggiorna)
+ 6  scrivi l'articolo         14  riferisci
+ 7  aggiorna l'indicatore
 ```
+
+Due passi vengono **prima** di scrivere e non sono facoltativi.
+
+Il primo e' **chiudere gli esiti aperti**: si torna sull'analisi precedente e si
+guarda se le condizioni che aveva dichiarato sono scattate. Se questo passo non
+sta sul percorso obbligato della pubblicazione non succede mai, perche' nessuno
+torna spontaneamente a giudicare un testo vecchio, e il registro degli esiti
+resta vuoto per sempre.
+
+Il secondo e' **interrogare il grafo**. Il testo che ricevi descrive un momento;
+il grafo sa che cosa e' stato scritto prima e quali quadri di metodo si
+applicano. Un'analisi scritta senza guardarlo e' una notizia, non un'analisi.
 
 ---
 
@@ -185,6 +209,7 @@ Prima di scrivere, apri sempre:
 | `src/app/core/data/articles.data.ts`    | l'elenco: quali analisi ci sono e in che ordine |
 | `src/app/core/data/articles/` (uno solo) | lo stile di un'articolo già scritto          |
 | `src/app/core/data/signal.data.ts`      | indicatore in panoramica, e il suo tipo      |
+| `src/app/core/data/outcomes.data.ts`    | esiti già registrati: serve al passo 3       |
 | `src/app/core/data/markets.data.ts`     | riferimenti numerici in panoramica           |
 | `src/app/core/models/article.model.ts`  | i tipi, e l'elenco esatto degli slug         |
 | `src/app/core/config/site.config.ts`    | l'elenco autorevole delle categorie          |
@@ -216,50 +241,307 @@ significa nessuna pubblicazione online.
 
 ---
 
-## 3. Decidi le categorie
+## 3. Chiudi gli esiti aperti
+
+**Prima di scrivere qualcosa di nuovo, guarda com'è andata l'ultima volta.**
+
+Ogni analisi in archivio ha dichiarato, prima di sapere come sarebbe finita, un
+elenco di condizioni che la renderebbero sbagliata. Questo passo le ricontrolla e
+scrive il risultato in `src/app/core/data/outcomes.data.ts`.
+
+Non è un passo di cortesia. Senza, il registro degli esiti resta vuoto e tutto il
+resto — la calibrazione, il badge sulle schede, la pagina `/esiti` — è impianto
+senza contenuto. E si torna al punto di partenza: ventidue analisi che dichiarano
+di essere falsificabili e nessuna mai falsificata.
+
+### Che cosa controllare
+
+Guarda le analisi **senza esito il cui orizzonte è ormai trascorso**:
+
+| Orizzonte dichiarato | Si può giudicare dopo |
+| -------------------- | --------------------- |
+| `breve`              | qualche ora           |
+| `medio`              | un paio di giorni     |
+| `lungo`              | qualche settimana     |
+
+Di norma è una sola analisi, la precedente. Se ne sono maturate diverse insieme,
+chiudi almeno quella immediatamente precedente e le altre di orizzonte `breve`:
+sono quelle che scadono più in fretta e che, non chiuse subito, diventano
+impossibili da giudicare onestamente.
+
+### Come si ricava il verdetto
+
+L'ordine conta, ed è questo:
+
+1. **Rileggi `invalidation` dell'analisi**, senza guardare nient'altro.
+2. **Per ogni condizione, cerca il dato** che dice se è scattata o no. Sono
+   condizioni scritte apposta per essere verificabili: «XAU/USD sotto i 4.070
+   dollari», «il decennale sopra il 4,70%». Serve un numero e una data, non
+   un'impressione.
+3. **Solo adesso scrivi il verdetto**, che segue meccanicamente:
+
+   | Condizioni scattate | Verdetto     |
+   | ------------------- | ------------ |
+   | nessuna             | `confermata` |
+   | alcune              | `parziale`   |
+   | tutte               | `invalidata` |
+
+   Il conteggio è **verificato da un test** (`data.spec.ts`): un verdetto che non
+   corrisponde alle condizioni non compila il sito.
+
+Se le informazioni per giudicare non ci sono — nessuna fonte disponibile, troppo
+tempo passato — l'esito è `senza-verifica` con `conditions: []`. È un esito
+legittimo e va registrato: ometterlo farebbe del registro una raccolta delle
+analisi che faceva comodo controllare.
+
+> **Il verso è obbligatorio.** Verdetto prima e condizioni dopo produce sempre
+> «parziale», perché conoscendo l'esito si trova sempre il modo di dire che una
+> parte aveva ragione. È il singolo errore che rende inutile tutto il registro.
+
+### Che cosa non fare, mai
+
+- **Non toccare l'analisi.** Né il testo, né il bias, né l'invalidazione. Un
+  archivio in cui le previsioni si aggiustano dopo non misura più niente.
+- **Non inventare condizioni.** Un test controlla che ogni condizione
+  ricontrollata sia una di quelle davvero scritte nell'analisi.
+- **Non scrivere una `lesson` a ogni esito.** Serve solo quando è cambiato
+  qualcosa nel metodo. Una morale per ogni analisi è rumore.
+
+### La forma
+
+```ts
+{
+  slug: 'oro-estende-il-rialzo-il-canale-e-quello-dei-tassi',
+  checkedAt: '2026-08-06T09:10:00+02:00',
+  verdict: 'parziale',
+  conditions: [
+    {
+      condition: 'XAU/USD sotto i 4.070 dollari.',
+      triggered: true,
+      evidence: 'Minimo a 4.058 nella seduta del 5 agosto.',
+    },
+    // ...tutte le altre, nell'ordine dell'analisi
+  ],
+  what: 'Che cosa e successo davvero, coi numeri.',
+}
+```
+
+`conditions` deve contenere **tutte** le voci di `invalidation`, nello stesso
+ordine e con lo stesso testo: anche quelle che non sono scattate, perché la parte
+che ha retto è informativa quanto quella che ha ceduto.
+
+---
+
+## 4. Contestualizza con il grafo
+
+`contenuti/` è un grafo di conoscenza: le analisi già pubblicate e le note di
+metodo in `contenuti/studio/`. Il grafo esiste per essere interrogato prima di
+scrivere, non per essere ammirato dopo.
+
+**Il testo che ricevi descrive un momento. Tu devi collocarlo.** Chi scrive
+l'analisi grezza ha davanti il grafico di adesso; tu hai davanti tutto quello che
+è stato scritto prima e i quadri di metodo con cui si giudica. Sono due cose
+diverse, ed è questa la ragione per cui la skill esiste.
+
+### Le tre domande
+
+Interroga il grafo — la skill si chiama `graphify-windows` — e rispondi a queste
+tre, in quest'ordine:
+
+```powershell
+graphify query "che cosa dicevano le ultime analisi su <strumento e tema>"
+graphify query "quale quadro di metodo si applica a <il meccanismo descritto>"
+graphify path "<il fatto nuovo>" "<il tema dell'analisi precedente>"
+```
+
+1. **Che cosa è già stato detto?** Se il testo ripete una lettura già pubblicata
+   senza aggiungere un fatto, la risposta giusta può essere **non pubblicare**
+   (vedi sotto).
+2. **Quale nota di `studio/` inquadra questo ragionamento?** Vincoli contro
+   preferenze, tasso di base, aggiornamento bayesiano, premio di rischio che si
+   sgonfia: se una nota si applica, l'analisi la **usa nel testo**, con parole
+   proprie e senza citazioni di pagina, e rimanda a `/metodologia` invece che al
+   libro da cui la nota è tratta.
+3. **Che cosa contraddice questa lettura?** Il grafo è il modo più rapido per
+   trovare l'analisi precedente che diceva il contrario. Se c'è, il testo deve
+   dirlo: «rispetto al controllo delle 14:30, la direzione cambia perché…».
+
+Se `graphify query` non è disponibile, leggi direttamente i markdown in
+`contenuti/analisi/` e `contenuti/studio/`: sono lo stesso contenuto, solo senza
+la traversata. Non saltare il passo, fallo a mano.
+
+### Puoi contraddire il testo che ricevi
+
+Questa è la parte che conta. Se il testo grezzo dichiara un bias ribassista e il
+contesto dice altro, **la tua conclusione vince**, e il testo va rielaborato di
+conseguenza.
+
+Quando succede davvero:
+
+- **Il testo giudica un orizzonte e ne descrive un altro.** Un movimento di
+  quindici minuti dichiarato come impostazione di fondo va scritto come `breve`,
+  non come `lungo`.
+- **La direzione contraddice la catena causale descritta nel testo stesso.** Se
+  il testo dice «petrolio giù, rendimenti giù» e conclude ribassista sull'oro, la
+  catena e la conclusione non stanno insieme: una delle due è sbagliata, e quasi
+  sempre è la conclusione.
+- **Il fatto nuovo era già stato prezzato** in un'analisi precedente. Il grafo lo
+  dice; il testo grezzo, scritto guardando il grafico, no.
+- **Il testo tratta come confermato ciò che è riportato.** Un piano riferito
+  dalla stampa non è un ordine di attacco. La distanza fra le due cose è quasi
+  sempre la differenza fra rialzista e neutrale-rialzista.
+
+**Quello che non puoi fare** è cambiare la direzione perché ti convince di meno.
+Serve una ragione dicibile in una riga, presa dal grafo o dal testo stesso. E la
+ragione va **scritta nel resoconto finale**, sempre: se hai cambiato qualcosa che
+l'autore aveva dichiarato, deve saperlo.
+
+### Quando la risposta è non pubblicare
+
+Prima di scrivere, una domanda sola:
+
+> **Che cosa c'è qui che l'analisi precedente non diceva già?**
+
+| Risposta                                                   | Che cosa fare                                 |
+| ---------------------------------------------------------- | --------------------------------------------- |
+| Un dato uscito, una decisione presa, un vincolo che cambia | si pubblica                                   |
+| Una smentita o una conferma di qualcosa dato per certo     | si pubblica                                   |
+| Il prezzo si è mosso nella direzione già descritta         | **non si pubblica**: si aggiorna l'indicatore |
+| Il prezzo si è mosso e basta                               | **non si pubblica**                           |
+
+Ventidue analisi in quattro giorni sono un flusso di aggiornamenti, non un
+archivio di giudizi: la coesione di quel gruppo di nodi nel grafo è 0,09, la più
+bassa dell'intero corpus. Un archivio si rilegge fra un mese; una diretta no.
+
+Se decidi di non pubblicare, **dillo e spiega perché**, e proponi in alternativa
+di aggiornare l'indicatore operativo (passo 7), che non lascia in archivio una
+voce che si contraddice con quella di due ore prima.
+
+---
+
+## 5. Decidi le categorie
 
 Il campo è `categories` ed è un **elenco**: un'analisi appartiene a tutte le
 categorie di cui parla davvero. L'elenco autorevole è `CATEGORIES` in
-`site.config.ts`, e il tipo `CategorySlug` è una union di 29 letterali: uno slug
+`site.config.ts`, e il tipo `CategorySlug` è una union di letterali: uno slug
 scritto male **non compila**. Copiali, non scriverli a memoria.
 
-Sono ventinove, in cinque famiglie:
+### Le due metà dell'elenco, e perché non sono la stessa cosa
 
-| Famiglia        | Slug                                                                                                                                                                                                              |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| aree            | `usa` `europa` `asia` `geopolitica`                                                                                                                                                                               |
-| banche-centrali | `fed` `bce` `tasso-di-interesse`                                                                                                                                                                                  |
-| lavoro          | `tasso-di-disoccupazione` `richieste-iniziali-sussidi` `nfp`                                                                                                                                                      |
-| prezzi          | `ipc` `variazione-ipc` `ipc-core` `variazione-ipc-core` `pce` `pce-core-annuale` `pce-core-trimestrale` `variazione-pce-core` `variazione-ipp` `variazione-ipp-core`                                              |
-| attivita        | `fiducia-consumatori` `produzione-industriale` `variazione-produzione-industriale` `pil` `pil-annuale` `pil-trimestrale` `variazione-vendite-dettaglio` `vendite-dettaglio-essenziali` `indice-vendite-dettaglio` |
+`CategorySlug` è l'unione di due tipi, e la differenza è sostanziale:
 
-### Cosa fa davvero la prima categoria
+| Tipo                     | Che cosa sono                                    | `series` |
+| ------------------------ | ------------------------------------------------ | -------- |
+| `IndicatorCategorySlug`  | dichiarate dagli indicatori di `calendar.meta.ts` | `true`   |
+| `EditorialCategorySlug`  | solo editoriali, nessuno storico dietro           | `false`  |
 
-**Non** dà la tinta alla pagina da sola: la tinta viene dalla **famiglia** della
-prima categoria (29 categorie → 5 tinte, calcolate in `app.ts:126-138`). E sulla
-scheda d'archivio la prima non è una pastiglia ma la riga di occhiello in
-maiuscoletto, con l'icona.
+Usare una categoria con `series: true` porta il lettore **anche allo storico del
+dato** dalla scheda dell'indicatore. Usarne una editoriale lo colloca solo in
+archivio. Nessuna delle due è migliore: quello che non va è dichiarare la prima
+quando l'analisi non parla davvero di quel dato, perché manda chi legge su una
+serie che non contiene il numero che ha appena letto.
 
-Conseguenza pratica: se metti `usa` per prima, **ogni** analisi americana prende
-la tinta della famiglia «aree» e la scheda annuncia «USA» invece del dato di cui
-parla. Metti per prima la categoria del **fatto nuovo** che ha generato l'analisi.
+Un test (`data.spec.ts`) verifica che `series` corrisponda a ciò che il calendario
+dichiara davvero: non si può mentire in un verso né nell'altro.
+
+### L'elenco, per famiglia
+
+| Famiglia        | Slug                                                                                                                                                                                                            | Storico |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| aree            | `usa` `europa`                                                                                                                                                                                                  | sì      |
+| aree            | `asia` `medio-oriente`                                                                                                                                                                                          | no      |
+| banche-centrali | `fed` `bce` `tasso-di-interesse`                                                                                                                                                                                | sì      |
+| mercati         | `oro` `petrolio` `valute` `obbligazioni`                                                                                                                                                                        | no      |
+| temi            | `correlazioni` `premio-di-rischio` `rotte-e-approvvigionamento` `interventi-valutari` `riserve-auree` `debito-pubblico`                                                                                          | no      |
+| lavoro          | `tasso-di-disoccupazione` `richieste-iniziali-sussidi` `nfp`                                                                                                                                                    | sì      |
+| lavoro          | `jolts`                                                                                                                                                                                                         | no      |
+| prezzi          | `ipc` `variazione-ipc` `ipc-core` `variazione-ipc-core` `pce` `pce-core-annuale` `pce-core-trimestrale` `variazione-pce-core` `variazione-ipp` `variazione-ipp-core`                                            | sì      |
+| attivita        | `fiducia-consumatori` `produzione-industriale` `variazione-produzione-industriale` `pil` `pil-annuale` `pil-trimestrale` `variazione-vendite-dettaglio` `vendite-dettaglio-essenziali` `indice-vendite-dettaglio` | sì      |
+| attivita        | `ism`                                                                                                                                                                                                           | no      |
+
+### Se la categoria giusta non c'è, aggiungila
+
+**Questa è una regola, non un permesso.** L'elenco editoriale è nato dalle analisi
+già pubblicate e continua a crescere con quello che si scrive: quando un'analisi
+tratta qualcosa che non ha una categoria, la risposta giusta è **aggiungerne una**,
+non ripiegare su quella che le somiglia di più.
+
+Il ripiego costa più di quanto sembri. Era già successo: la tassonomia era stata
+disegnata sugli indicatori del calendario, poi le analisi hanno parlato di ISM,
+JOLTS, interventi valutari e transito a Hormuz — nessuno dei quali aveva una
+categoria — e per diciotto analisi su ventidue è finita per prima un'area. Ogni
+pagina prendeva la stessa tinta e ogni scheda annunciava «USA» invece del fatto
+di cui parlava.
+
+Come si aggiunge una categoria editoriale:
+
+1. Un letterale in `EditorialCategorySlug` (`article.model.ts`), nella famiglia
+   giusta fra `aree`, `mercati`, `temi`, o accanto ai dati fuori calendario.
+2. Una voce in `CATEGORIES` (`site.config.ts`) con `series: false`, `icon` presa
+   dallo switch di `icon.ts`, `short` corto davvero — finisce in una pastiglia —
+   e una `description` che dica **perché quel tema conta per l'oro**, non che cosa
+   sia in generale.
+3. Se serve una famiglia nuova, aggiungila a `CATEGORY_FAMILIES` **e** dàlle una
+   tinta in `styles.scss` (`[data-accent='<famiglia>']`): senza, tutte le sue
+   pagine restano sul colore di base senza che nulla segnali l'errore.
+
+Aggiungine **una alla volta e solo quando serve davvero**. Un test rifiuta le
+categorie editoriali che nessuna analisi usa: un elenco di buoni propositi non
+compila.
+
+E dillo nel resoconto finale: una categoria nuova è una scelta editoriale, non un
+dettaglio di implementazione.
+
+### La prima categoria non può essere un'area
+
+**È un test** (`data.spec.ts`), non un consiglio: se la prima categoria appartiene
+alla famiglia `aree`, la build fallisce.
+
+La ragione è che la prima categoria fa due cose. Dà la tinta alla pagina — via la
+**famiglia**, non la categoria — e sulla scheda d'archivio diventa la riga di
+occhiello in maiuscoletto con l'icona. Con un'area davanti, ogni analisi
+americana ha la stessa tinta di ogni altra e la scheda annuncia dove è successo
+invece di che cosa è successo.
+
+Metti per prima la categoria del **fatto nuovo** che ha generato l'analisi: il
+dato uscito, il meccanismo descritto, la decisione presa. Se non riesci a
+trovarne una, è il segnale che ne manca una da aggiungere — oppure che l'analisi
+non ha un fatto nuovo, e allora vale il passo 4: non pubblicarla.
 
 ### Quante, e in che ordine
 
-Componi per strati: **1)** l'indicatore o il tema, **2)** l'area, **3)** l'istituto
-se c'entra, **4)** le categorie collegate che il testo tratta davvero.
+Componi per strati: **1)** il fatto o il tema, **2)** il mercato di cui parla,
+**3)** l'area, **4)** l'istituto o la categoria collegata, se il testo la tratta
+davvero.
 
 Tieniti a **tre o quattro**. Sulla scheda si vedono la principale più due `short`
 (tre sulla scheda in evidenza) e un «+N» il cui contenuto compare solo nel
 `title`: oltre la quarta, le categorie sono invisibili a chi non passa col mouse.
-Il minimo è una — con zero il test `data.spec.ts:28-36` fallisce.
+Il minimo è una — con zero il test `data.spec.ts` fallisce.
 
-### L'area va sempre messa
+### L'area va sempre messa, ma non per prima
 
 `tasso-di-interesse` è una sola categoria per **due** banche centrali, e
 `tasso-di-disoccupazione`, `ipc`, `variazione-ipc`, `ipc-core`,
 `variazione-produzione-industriale` esistono in **entrambe** le aree. Senza `usa`
 o `europa` un taglio della BCE è indistinguibile da un FOMC.
+
+Per il Golfo, l'Iran e le rotte del greggio si usa `medio-oriente` e non `asia`:
+sono due quadranti diversi e per un po' sono stati confusi.
+
+### Esempi, dalle analisi già pubblicate
+
+| Testo                                                | `categories`                                                 |
+| ---------------------------------------------------- | ------------------------------------------------------------ |
+| JOLTS più debole delle attese                        | `['jolts', 'usa', 'tasso-di-interesse', 'oro']`               |
+| Controllo cross-asset su oro, petrolio e rendimenti  | `['correlazioni', 'oro', 'obbligazioni', 'tasso-di-interesse']` |
+| Nave colpita nello Stretto di Hormuz                 | `['rotte-e-approvvigionamento', 'medio-oriente', 'petrolio', 'oro']` |
+| Piano di attacchi riportato dalla stampa             | `['premio-di-rischio', 'medio-oriente', 'petrolio', 'oro']`   |
+| Intervento coordinato sullo yen                      | `['interventi-valutari', 'valute', 'asia', 'usa']`            |
+| Il Tesoro alza il fabbisogno                         | `['debito-pubblico', 'obbligazioni', 'usa', 'medio-oriente']` |
+| Reazione al dato NFP di luglio                       | `['nfp', 'usa', 'fed', 'oro']`                                |
+| IPC americano sopra le attese                        | `['variazione-ipc', 'usa', 'ipc-core', 'oro']`                |
+| Riunione BCE, tassi fermi                            | `['tasso-di-interesse', 'bce', 'europa', 'oro']`              |
 
 ### Le coppie che si confondono
 
@@ -294,32 +576,21 @@ lettore su una serie che non contiene il numero che ha appena letto.
 Il PIL americano è pubblicato **in ragione d'anno**, quello dell'area euro no:
 non confrontare i due numeri come se fossero omogenei.
 
-### `fed` e `bce` non agganciano lo storico
+### `fed` e `bce` non agganciano quasi niente
 
 Sono dichiarate solo da sette indicatori in tutto (`fed` su tassi, disoccupazione,
 PCE e PCE core annuale; `bce` su tassi, IPC e IPC core). Taggare `fed` su
 un'analisi NFP **non** la fa comparire fra gli argomenti collegati dell'NFP.
-Usale come categoria editoriale — riunioni, verbali, discorsi, proiezioni — non
-per agganciare una serie.
+Usale per quello che sono — riunioni, verbali, discorsi, proiezioni — non per
+agganciare una serie.
 
-`asia` e `geopolitica` sono le uniche due categorie senza alcuno storico dietro.
-
-### Esempi
-
-| Testo                                                | `categories`                              |
-| ---------------------------------------------------- | ----------------------------------------- |
-| Reazione al dato NFP di luglio                       | `['nfp', 'usa', 'fed']`                   |
-| IPC americano sopra le attese, core in accelerazione | `['variazione-ipc', 'usa', 'ipc-core']`   |
-| Riunione BCE, tassi fermi                            | `['tasso-di-interesse', 'bce', 'europa']` |
-| Stretto di Hormuz e premio di rischio                | `['geopolitica', 'asia']`                 |
-| Controllo cross-asset intraday su XAU/USD            | `['usa', 'tasso-di-interesse']`           |
-
-Non forzare una categoria di indicatore quando il testo non lo tratta: un
-accostamento sbagliato si nota subito.
+Non forzare una categoria di indicatore quando il testo non tratta quel dato: un
+accostamento sbagliato si nota subito, e con `series: true` promette anche uno
+storico che non c'entra.
 
 ---
 
-## 4. Scrivi l'articolo
+## 6. Scrivi l'articolo
 
 **Un'analisi, un file.** Il nome del file è lo slug, ed è lo stesso nome
 dell'indirizzo della pagina e della copia markdown: da un solo nome si trovano
@@ -358,7 +629,7 @@ articolo (`:38-46`), perché ogni articolo è una pagina a sé.
 | Campo                 | Regola                                                                                                                                                                                                                                  |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `slug`                | Dal titolo: minuscolo, senza accenti né apostrofi, parole separate da trattini, max ~60 caratteri. Unico. **È anche il nome del file `.ts` e del `.md`**: scegline uno che si legga da solo.                                            |
-| `categories`          | L'elenco deciso al passo 3, con la principale per prima.                                                                                                                                                                                |
+| `categories`          | L'elenco deciso al passo 5, con la principale per prima.                                                                                                                                                                                |
 | `title`               | Se il testo ne ha uno usabile, riprendilo sistemando maiuscole e refusi. Altrimenti scrivilo: sintetico, in italiano, senza punto finale, senza maiuscole enfatiche.                                                                    |
 | `kicker`              | `Tema · Sottotema`, per esempio `Correlazioni · Controllo cross-asset`. **Non è decorativo**: è l'ultima briciola di pane della barra superiore e il testo con cui l'indicatore operativo cita le sue fonti. Tienilo corto e specifico. |
 | `dek`                 | Due o tre righe sul fatto nuovo e perché conta. Non ripetere il titolo.                                                                                                                                                                 |
@@ -367,8 +638,9 @@ articolo (`:38-46`), perché ogni articolo è una pagina a sé.
 | `readingMinutes`      | Circa 200 parole al minuto, arrotondato per eccesso.                                                                                                                                                                                    |
 | `tags`, `instruments` | Dal testo. `instruments` compare due volte nel dettaglio: pastiglie in testata e riquadro laterale «Strumenti citati».                                                                                                                  |
 | `horizons`            | `breve` per letture intraday, `breve`+`medio` per dati macro, `lungo` solo se il testo parla davvero di anni.                                                                                                                           |
-| `certainty`           | `bassa`/`media`/`alta`: quanto è solido il **fondamento fattuale**, non l'esito atteso.                                                                                                                                                 |
+| `certainty`           | `bassa`/`media`/`alta`: quanto è solido il **fondamento fattuale**, non l'esito atteso. Vedi sotto: non è un campo da riempire per inerzia.                                                                                             |
 | `takeaways`           | 4-5 punti, uno per fatto, nell'ordine del testo. **Non lasciarlo vuoto**: `pages.spec.ts:85` pretende la stringa «In sintesi», che è resa solo se ci sono takeaway.                                                                     |
+| `sources`             | Le testate e gli enti citati nel testo, in ordine di importanza. Vedi sotto.                                                                                                                                                            |
 | `blocks`              | Vedi sotto.                                                                                                                                                                                                                             |
 
 ### Campi facoltativi
@@ -378,17 +650,77 @@ articolo (`:38-46`), perché ogni articolo è una pagina a sé.
 | `bias`          | Pastiglia in testata, sezione «Regime descritto», badge sulla scheda, colonna nell'elenco di categoria — **e** la scheda in «Impostazione descritta al momento» della pagina Orizzonti | L'analisi non compare mai in Orizzonti |
 | `certaintyNote` | Sezione con il misuratore a tre tacche                                                                                                                                                 | La sezione sparisce                    |
 | `invalidation`  | Sezione «Cosa invaliderebbe questa lettura»                                                                                                                                            | La sezione sparisce                    |
-| `nextEvent`     | Riquadro del catalizzatore — **e** vincola la durata dell'indicatore (passo 5)                                                                                                         | Nessun vincolo                         |
+| `nextEvent`     | Riquadro del catalizzatore — **e** vincola la durata dell'indicatore (passo 7)                                                                                                         | Nessun vincolo                         |
 | `updatedAt`     | **Niente.** Nessun template lo legge: è un campo morto                                                                                                                                 | —                                      |
 | `featured`      | **Niente.** La scheda grande della panoramica è semplicemente l'articolo più recente                                                                                                   | —                                      |
 
 Metti `bias` ogni volta che il testo dichiara un'inclinazione: `direction` fra
 `rialzista`, `neutrale-rialzista`, `neutrale`, `neutrale-ribassista`,
 `ribassista`; `strength` fra `bassa`, `media`, `alta`; `regime` è una riga che
-descrive il contesto.
+descrive il contesto; `horizon` è obbligatorio e va scelto con cura.
+
+### L'orizzonte del bias
+
+`bias.horizon` dice **su quale arco di tempo vale la direzione**, ed è il campo
+con cui la panoramica separa le sue tre letture.
+
+| Valore  | Arco di tempo         | Tipico di                                          |
+| ------- | --------------------- | -------------------------------------------------- |
+| `breve` | prossimi minuti o ore | controlli cross-asset, reazioni a una notizia      |
+| `medio` | prossimi giorni       | dati macro pubblicati, prese di posizione ufficiali |
+| `lungo` | prossime settimane    | riserve, debito, cambi di regime monetario         |
+
+Non è lo stesso di `horizons`, che dice **su quali orizzonti il testo ragiona**:
+un'analisi può ragionare su `['breve', 'medio']` e dichiarare un bias `breve`.
+
+Sbagliarlo ha un effetto visibile: la panoramica mostra al massimo una lettura
+per orizzonte, e un bias intraday marcato `lungo` va a occupare il posto della
+lettura di fondo, scacciandone una che valeva settimane.
+
+Nel dubbio, `breve`. La maggior parte delle analisi descrive quello che sta
+succedendo adesso, anche quando usa parole da manuale.
+
+### Le fonti
+
+`sources` è l'elenco di chi ha detto le cose che il testo riporta: `outlet` è
+obbligatorio, `title`, `url` e `at` sono facoltativi ma vanno messi quando li hai.
+Compare nella colonna laterale sotto «Fonti consultate».
+
+Mettici **solo le testate e gli enti che il testo nomina davvero**. Se il testo
+grezzo dice «secondo Reuters», la voce è Reuters; se non attribuisce niente,
+`sources` si omette. Non dedurre la fonte da quello che sembra probabile: una
+fonte inventata è peggio di una fonte assente, perché sembra verificabile.
 
 Se `invalidation` non è dichiarata esplicitamente, ricavala dalla logica del
-testo senza inventare fatti nuovi.
+testo senza inventare fatti nuovi. **Scrivila sempre**: è l'elenco che il passo 3
+tornerà a ricontrollare, e un'analisi senza invalidazione non entrerà mai nel
+registro degli esiti se non come `senza-verifica`.
+
+Ogni condizione va scritta in modo **verificabile con un numero**. «XAU/USD sotto
+i 4.070 dollari» si controlla; «se il quadro peggiora» no, e fra una settimana
+non vorrà dire niente.
+
+### La calibrazione di `certainty`
+
+Su ventidue analisi consecutive il campo valeva `alta` tredici volte, `media`
+nove, `bassa` mai. Un campo che assume due valori su tre non porta informazione:
+tanto vale non averlo.
+
+Regole, ora:
+
+- `alta` **solo** se i numeri citati vengono da fonti dichiarate e i fatti sono
+  avvenuti. Un dato pubblicato, una decisione presa, un prezzo osservato.
+- `media` se il fatto è avvenuto ma la lettura poggia su una catena di
+  conseguenze, oppure se le fonti concordano solo in parte.
+- `bassa` quando il fondamento è una notizia riportata e non confermata, una
+  smentita non verificata, un piano di cui si conosce l'esistenza ma non l'esito.
+  **Esiste e va usata**: è il caso di tutte le analisi che partono da «secondo
+  fonti».
+
+Se le ultime analisi hanno tutte `alta`, la prossima non può averla per inerzia:
+rileggi il fondamento e chiediti che cosa, di preciso, è già successo. Il
+registro degli esiti confronta questa dichiarazione con come è andata, e con un
+solo valore quel confronto non misura niente.
 
 ### I dieci blocchi
 
@@ -481,83 +813,99 @@ contestuale (quella dell'indicatore operativo).
 
 ---
 
-## 5. Aggiorna l'indicatore operativo
+## 7. Aggiorna l'indicatore operativo
 
 `MARKET_SIGNAL` in `signal.data.ts` è la sintesi delle **ultime pubblicazioni**,
-quali che siano le loro categorie.
+quali che siano le loro categorie. Dice tre cose, una per orizzonte, e la data e
+l'ora in cui è stata scritta.
 
 L'aggiornamento non è facoltativo: se lo salti, la panoramica continua a mostrare
-la lettura precedente e, scaduta, resta su «in attesa di notizie» anche se hai
-appena pubblicato. E un test lo impone (vedi sotto).
+la lettura precedente con la sua data vecchia, e un test lo impone (vedi sotto).
 
 Se hai pubblicato più analisi in una volta, l'indicatore riflette **solo la più
 recente**: è quella che descrive il mercato adesso. Le precedenti possono
 comparire nello `stance` e in `sources`, mai nella direzione.
 
-Tutti e tredici i campi sono obbligatori.
+### Non c'è più una scadenza
 
-| Campo                          | Regola                                                                                                                                                                                            |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `updatedAt`                    | **Identico come stringa** al `publishedAt` dell'analisi più recente. Il test usa `toBe`, non un confronto di istanti: `data.spec.ts:83-91`.                                                       |
-| `validityMinutes`              | Quanto dura la lettura. Deciso ogni volta, vedi sotto. Deve essere > 0.                                                                                                                           |
-| `asset`                        | Lo strumento, di norma `XAU/USD`.                                                                                                                                                                 |
-| `direction`, `strength`        | Dal bias del nuovo articolo; se non ne ha, resta il più recente disponibile.                                                                                                                      |
-| `headline`                     | Una riga: il fatto che conta adesso.                                                                                                                                                              |
-| `stance`                       | Due o tre righe che tengono insieme le ultime letture.                                                                                                                                            |
-| `favours` / `avoid`            | **Entrambi non vuoti**, è un test. Anche quando il testo dice di restare fuori: `favours` deve dirlo esplicitamente.                                                                              |
-| `invalidation`                 | La condizione che fa decadere la lettura. **Più di 10 caratteri**, è un test: una frase, non una parola.                                                                                          |
-| `confirming` / `contradicting` | Etichette brevissime con il valore: `DXY debole ≈ 100,65`.                                                                                                                                        |
-| `sources`                      | Fino a tre slug, dal più recente, possibilmente di categorie diverse. Devono esistere in archivio (`data.spec.ts:77-81`); sono i nomi dei file sotto `articles/`. A video compare il **`kicker`** dell'articolo, non il titolo. |
+C'era `validityMinutes`: la lettura si dichiarava valida un tot di minuti e allo
+scadere la panoramica passava da sola a «in attesa di notizie», anche quando il
+quadro non era cambiato di una virgola.
 
-### Quanto deve durare la lettura
+È stato tolto, e la ragione conta anche per come scrivi il resto. Nessuno sa
+davvero se una lettura vale novanta minuti o duecento: quel numero era una
+precisione che il sito non poteva mantenere, e per giunta era visibile al
+lettore. Al suo posto c'è **la data e l'ora dell'ultimo aggiornamento, scritta
+grande**. Quanto sia vecchia, e se quello che dice regga ancora, lo decide chi
+legge — che è l'unico ad avere davanti il mercato di adesso.
 
-`validityMinutes` **non è un valore fisso**: 60 è solo il punto di partenza. Il
-numero è **visibile al lettore** («valido X minuti dall'aggiornamento»), quindi
-usa valori tondi: `30`, `45`, `60`, `90`, `120`, `180`, `240`.
+Conseguenza pratica: non devi più scegliere una durata, ma devi **scrivere ogni
+lettura in modo che invecchi bene**. Una riga che dice «l'oro sale» invecchia
+male; una che dice «l'oro sale perché i rendimenti scendono, e smette se
+risalgono» resta leggibile anche il giorno dopo.
 
-| Tipo di analisi                 | Durata tipica | Perché                                           |
-| ------------------------------- | ------------- | ------------------------------------------------ |
-| Controllo intraday cross-asset  | 30–45         | Vive di variazioni che cambiano in minuti        |
-| Pubblicazione di un dato macro  | 90–120        | Il dato resta un fatto per tutta la seduta       |
-| Decisione di banca centrale     | 120–240       | Regge fino al dato o all'intervento successivo   |
-| Scheda geopolitica o di sintesi | 180–240       | Descrive un contesto, non un movimento di prezzo |
+### I campi
 
-Poi correggi guardando le ultime pubblicazioni:
+| Campo                          | Regola                                                                                                                                                                                                                        |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `updatedAt`                    | **Identico come stringa** al `publishedAt` dell'analisi più recente. Il test usa `toBe`, non un confronto di istanti.                                                                                                          |
+| `asset`                        | Lo strumento, di norma `XAU/USD`.                                                                                                                                                                                             |
+| `readings`                     | **Tre**, nell'ordine `breve`, `medio`, `lungo`. È un test: due letture invece di tre non si notano a video ma tolgono proprio quella di fondo.                                                                                 |
+| `headline`                     | Una riga: il fatto che conta adesso.                                                                                                                                                                                          |
+| `stance`                       | Due o tre righe che tengono insieme le ultime letture.                                                                                                                                                                        |
+| `favours` / `avoid`            | **Entrambi non vuoti**, è un test. Anche quando il testo dice di restare fuori: `favours` deve dirlo esplicitamente.                                                                                                           |
+| `confirming` / `contradicting` | Etichette brevissime con il valore: `DXY debole ≈ 100,65`.                                                                                                                                                                     |
+| `sources`                      | Fino a tre slug, dal più recente, possibilmente di categorie diverse. Devono esistere in archivio; sono i nomi dei file sotto `articles/`. A video compare il **`kicker`** dell'articolo, non il titolo.                        |
 
-- **Accorcia** se la direzione è cambiata più di una volta nelle ultime ore, se
-  la lettura poggia su una sola conferma, o se il testo dichiara una divergenza
-  aperta.
-- **Allunga** se i correlati sono allineati, se l'analisi conferma la precedente
-  invece di ribaltarla, o se il fatto nuovo è strutturale (un dato pubblicato,
-  una decisione presa) e non una reazione di prezzo.
+Ogni voce di `readings` ha cinque campi, tutti obbligatori:
 
-Due vincoli che vengono prima di tutto:
+| Campo          | Regola                                                                                                     |
+| -------------- | ---------------------------------------------------------------------------------------------------------- |
+| `horizon`      | `breve`, `medio` o `lungo`.                                                                                |
+| `direction`    | Una delle cinque della scala.                                                                              |
+| `strength`     | `bassa`, `media`, `alta`.                                                                                  |
+| `regime`       | Una riga sul **meccanismo**, non sul prezzo. Più di 10 caratteri, è un test.                               |
+| `invalidation` | Che cosa fa decadere **questa** lettura. Più di 10 caratteri, è un test: una frase con dentro un riferimento verificabile. |
 
-- Se l'articolo ha un `nextEvent`, **la validità non deve superare quel
-  catalizzatore**.
-- Se il testo dice per quanto vale («fino alla chiusura americana», «in attesa
-  del dato delle 14:30»), quell'indicazione vince su qualunque tabella.
+### Le tre letture non devono concordare
 
-Motiva la scelta nel resoconto finale, in mezza riga.
+È il punto di tutta la struttura. L'oro può salire nelle prossime ore e restare
+fermo nel mese: prima quelle due cose si escludevano a vicenda e bisognava
+sceglierne una, adesso stanno su due righe diverse.
 
-### Che cosa si vede quando scade
+| Orizzonte | Da dove viene                                                                                      |
+| --------- | -------------------------------------------------------------------------------------------------- |
+| `breve`   | Il bias dell'analisi appena pubblicata, se ha `horizon: 'breve'`.                                  |
+| `medio`   | La somma delle ultime sedute: dati usciti, decisioni prese, tenuta della catena causale descritta. |
+| `lungo`   | Quello che cambia lentamente: riserve, debito, rendimenti reali, regime monetario.                 |
 
-Scaduto il termine **non sparisce nulla**: headline, stance, favours, avoid,
-conferme, contraddizioni e fonti restano tutti a video, solo ingrigiti. Cambiano
-la pastiglia, il quadrante di sinistra («In attesa di notizie» più la nota che
-l'ultima lettura è scaduta), la sparizione della forza e la barra a zero.
-L'orologio condiviso batte ogni 15 secondi, quindi il passaggio avviene da solo.
+Le due letture più lunghe **non si riscrivono a ogni pubblicazione**. Se nulla è
+cambiato sul loro orizzonte, si lasciano come sono: cambiare la lettura di fondo
+perché è cambiato il prezzo di stamattina è esattamente l'errore che la
+separazione serve a evitare.
 
-### Prolungare una lettura già pubblicata
+Aggiorna `medio` quando esce un dato o viene presa una decisione. Aggiorna
+`lungo` quando cambia qualcosa di strutturale — una riunione, una revisione delle
+riserve, un movimento duraturo della parte lunga della curva — cioè raramente.
 
-Se serve tenere viva la lettura corrente senza pubblicare una nuova analisi,
-**alza `validityMinutes` e non toccare `updatedAt`**: deve restare identico al
-`publishedAt` dell'ultima analisi, è un test. Ricalcola l'ora di scadenza prima
-di rispondere — `updatedAt` più `validityMinutes`, non «un'ora da adesso».
+**Se cambi una delle due, dillo nel resoconto finale e spiega che cosa è
+cambiato.** È una modifica che il lettore non vede come tale e che vale più di
+qualunque aggiornamento intraday.
+
+### Quando aggiornare l'indicatore senza pubblicare
+
+Se il passo 4 ha deciso di **non pubblicare** — il prezzo si è mosso nella
+direzione già descritta, nessun fatto nuovo — l'indicatore si aggiorna lo stesso:
+è il modo giusto di dire «il quadro regge» senza lasciare in archivio una voce
+che si contraddice con quella di due ore prima.
+
+In quel caso `updatedAt` **resta** quello dell'ultima analisi pubblicata: è un
+test, e ha senso, perché è quel testo che l'indicatore riassume. Si aggiornano
+`confirming`, `contradicting` e semmai la forza di una lettura.
 
 ---
 
-## 6. Aggiorna i riferimenti di mercato
+## 8. Aggiorna i riferimenti di mercato
 
 In `markets.data.ts` allinea `MARKET_REFERENCES` e `MARKET_STRIP` ai valori
 citati nelle analisi più recenti.
@@ -594,7 +942,7 @@ scritti a mano; il calendario è generato dal passo 1.
 
 ---
 
-## 7. Passa in rassegna il resto del sito
+## 9. Passa in rassegna il resto del sito
 
 Quasi tutto è automatico e non va toccato: l'ordine dell'archivio, i conteggi
 della pagina Argomenti, la ricerca, gli articoli correlati, i titoli delle pagine,
@@ -604,15 +952,24 @@ Restano tre cose da valutare a ogni pubblicazione:
 
 **Il glossario** (`glossary.data.ts`). Se l'analisi introduce un termine tecnico
 che non c'è, aggiungilo: quattro campi obbligatori — `term`, `letter`,
-`definition`, `why` — più `related` facoltativo. Nessun test lo verifica e nessun
-collegamento automatico esiste fra articolo e glossario, quindi è una scelta
-editoriale: falla quando il termine è centrale per capire il testo. Le voci sono
-rese **nell'ordine di dichiarazione**, non alfabetico.
+`definition`, `why` — più `related` facoltativo.
 
-**La pagina Orizzonti**. `currentReadings` prende **tutti** gli articoli con
-`bias`, senza limite e senza taglio temporale: ogni analisi con bias aggiunge per
-sempre una scheda a «Impostazione descritta al momento». Se l'elenco comincia a
-essere lungo, segnalalo nel resoconto — non è un errore, ma va deciso.
+Il collegamento è **automatico**: il dettaglio di ogni analisi cerca i termini
+del glossario nel testo effettivo — titolo, sommario, corpo, argomenti — e li
+mostra sotto «Termini di questa analisi», con il rimando alla definizione. Una
+voce aggiunta oggi compare da sola in tutte le analisi che la citano, anche in
+quelle vecchie.
+
+Resta una scelta editoriale: falla quando il termine è centrale per capire il
+testo, non per ogni sigla. Le voci sono rese **nell'ordine di dichiarazione**,
+non alfabetico.
+
+**La pagina Orizzonti** non richiede più niente. `currentReadings` mostra al
+massimo **una lettura per orizzonte**, la più recente: prima le prendeva tutte,
+e ventidue impostazioni di giorni diversi comparivano insieme sotto un titolo che
+diceva «al momento». Le altre restano in archivio col loro esito. Non c'è nulla
+da fare a mano, ma se aggiungi un bias `lungo` sappi che scaccia da lì quello
+precedente — è voluto.
 
 **Le note dei documenti legali**. `legal.data.ts` ha un `updatedAt` scritto a mano
 per ciascuno dei tre documenti. Non dipende dalle pubblicazioni: toccalo solo se
@@ -620,7 +977,7 @@ hai davvero modificato quel testo.
 
 ---
 
-## 8. Genera i markdown delle analisi
+## 10. Genera i markdown e aggiorna il grafo
 
 A ogni analisi corrisponde un `contenuti/analisi/<slug>.md`: la stessa analisi in
 markdown, con i metadati nel frontmatter e poi il testo. Non serve al sito — non
@@ -645,10 +1002,36 @@ Guarda quel conteggio: dopo aver pubblicato una analisi devi vedere **un nuovo
 file per analisi pubblicata** e tutti gli altri invariati. Se compaiono
 «aggiornati» che non ti aspetti, hai toccato un'analisi già pubblicata — torna
 indietro e guarda che cosa (modificare articoli già pubblicati è vietato dalle
-regole editoriali del passo 4).
+regole editoriali del passo 6).
 
 Se generi prima di aver finito di scrivere, rilancialo: è idempotente e costa
 meno di un secondo.
+
+Il markdown contiene anche **l'esito**, quando c'è: registrare un esito al passo 3
+rende vecchio il markdown esattamente come lo renderebbe vecchio una correzione
+di refuso, e va rigenerato allo stesso modo.
+
+### Poi aggiorna il grafo
+
+```
+/graphify ./contenuti --update
+```
+
+`--update` riestrae **solo i file nuovi o cambiati**, quindi con una analisi in
+più costa pochi secondi invece dei dieci minuti di una ricostruzione completa.
+
+Va fatto **dopo** aver generato i markdown, non prima: il grafo legge
+`contenuti/`, e su markdown non ancora rigenerati riestrarrebbe la versione
+vecchia dell'analisi.
+
+Serve al passo 4 della **prossima** pubblicazione: se non lo aggiorni, la volta
+dopo il grafo non conosce l'analisi che hai appena scritto e la contestualizzazione
+gira su un archivio vecchio di un giorno. È l'unico passo di questa procedura il
+cui costo di essere saltato si paga la volta successiva anziché subito, ed è per
+questo che è facile dimenticarlo.
+
+`graphify-out/` è escluso da git: non compare in `git status` e non va aggiunto
+al commit.
 
 ### Perché non lo si scrive a mano
 
@@ -670,7 +1053,7 @@ corrispondono all'archivio» — e la risposta è sempre `npm run analisi`.
 
 ---
 
-## 9. Formatta, compila, prova
+## 11. Formatta, compila, prova
 
 **Questo passo non si salta mai** e va sempre eseguito prima del commit, anche
 quando la modifica sembra minima. L'ordine è questo:
@@ -710,32 +1093,44 @@ prima, 2 dopo.
 
 ### Che cosa intercettano i test
 
-Sei file, 62 test. La CI (`.github/workflows/pages.yml`) esegue **prima i test
+Sei file, 75 test. La CI (`.github/workflows/pages.yml`) esegue **prima i test
 e poi la build**: un test rosso non pubblica nulla online.
 
-Quelli che riguardano ciò che hai appena scritto:
+Quelli che riguardano ciò che hai appena scritto, per argomento:
 
-| Test                                            | Errore che lo fa fallire                                            |
-| ----------------------------------------------- | ------------------------------------------------------------------- |
-| `data.spec.ts:14`                               | due articoli con lo stesso slug                                     |
-| `data.spec.ts:19`                               | `publishedAt` nel futuro, anche di un minuto                        |
-| `data.spec.ts:28`                               | categoria inesistente, o articolo con zero categorie                |
-| `data.spec.ts:38`                               | due `anchor` uguali nello stesso articolo                           |
-| `data.spec.ts:70`                               | `updatedAt` dell'indicatore nel futuro                              |
-| `data.spec.ts:77`                               | `sources` che punta a uno slug inesistente                          |
-| `data.spec.ts:83`                               | `updatedAt` diverso dal `publishedAt` dell'ultima analisi           |
-| `data.spec.ts:93`                               | `favours` o `avoid` vuoti, `invalidation` ≤ 10 caratteri            |
-| `data.spec.ts:116`                              | meno di 50 diffusioni per un indicatore (calendario scaricato male) |
-| `data.spec.ts:151`                              | una prossima uscita già passata (calendario non rigenerato)         |
-| `data.spec.ts:161`                              | manca la prossima riunione di una delle due banche centrali         |
-| `pages.spec.ts:85`                              | articolo senza `takeaways`: manca «In sintesi»                      |
-| `pages.spec.ts` «le avvertenze non si ripetono» | un'avvertenza aggiunta o tolta                                      |
-| `analisi.spec.ts`                               | markdown mancante, di troppo o vecchio: manca `npm run analisi`     |
+| Che cosa lo fa fallire                                                     | Dove                |
+| --------------------------------------------------------------------------- | ------------------- |
+| due articoli con lo stesso slug                                             | `data.spec.ts`      |
+| `publishedAt` nel futuro, anche di un minuto                                | `data.spec.ts`      |
+| categoria inesistente, o articolo con zero categorie                        | `data.spec.ts`      |
+| **prima categoria di famiglia `aree`** — vedi passo 5                       | `data.spec.ts`      |
+| **`bias` senza `horizon`** valido                                           | `data.spec.ts`      |
+| due `anchor` uguali nello stesso articolo                                   | `data.spec.ts`      |
+| **`series` che non corrisponde a quello che il calendario dichiara**        | `data.spec.ts`      |
+| **categoria editoriale che nessuna analisi usa**                            | `data.spec.ts`      |
+| `updatedAt` dell'indicatore nel futuro, o diverso dall'ultima analisi       | `data.spec.ts`      |
+| `sources` dell'indicatore che punta a uno slug inesistente                  | `data.spec.ts`      |
+| **`readings` che non sono tre, in ordine `breve` `medio` `lungo`**          | `data.spec.ts`      |
+| **`regime` o `invalidation` di una lettura ≤ 10 caratteri**                 | `data.spec.ts`      |
+| `favours` o `avoid` vuoti                                                   | `data.spec.ts`      |
+| **esito che giudica uno slug inesistente, o lo stesso due volte**           | `data.spec.ts`      |
+| **esito che ricontrolla una condizione mai dichiarata dall'analisi**        | `data.spec.ts`      |
+| **esito che salta una condizione, senza essere `senza-verifica`**           | `data.spec.ts`      |
+| **verdetto che non corrisponde alle condizioni scattate**                   | `data.spec.ts`      |
+| **condizione ricontrollata senza `evidence`**                               | `data.spec.ts`      |
+| meno di 50 diffusioni per un indicatore (calendario scaricato male)         | `data.spec.ts`      |
+| una prossima uscita già passata, o manca una riunione di banca centrale     | `data.spec.ts`      |
+| articolo senza `takeaways`: manca «In sintesi»                              | `pages.spec.ts`     |
+| un'avvertenza aggiunta o tolta                                              | `pages.spec.ts`     |
+| markdown mancante, di troppo o vecchio: manca `npm run analisi`             | `analisi.spec.ts`   |
+
+In grassetto i controlli aggiunti con gli esiti, i tre orizzonti e la tassonomia
+editoriale: sono quelli che è più facile far scattare senza accorgersene.
 
 Due note sui comandi:
 
 - Usa **`npm run build`**, non `ng build`. Lo script incatena tre cose: il
-  controllo dei markdown del passo 8, `ng build`, e `scripts/prepare-pages.mjs`,
+  controllo dei markdown del passo 10, `ng build`, e `scripts/prepare-pages.mjs`,
   che aggiunge `404.html` (necessario perché GitHub Pages gestisca gli indirizzi
   diretti come `/analisi/uno-slug`), `.nojekyll` e la copia del `CNAME`. Comincia
   quindi stampando `contenuti/analisi/: N markdown allineati all'archivio.` e
@@ -748,7 +1143,7 @@ dopo il push. Serve a impedire di pubblicare dati rotti, non a caricare i file.
 
 ---
 
-## 10. Commit e push
+## 12. Commit e push
 
 Solo a build e test superati. Controlla prima che cosa stai per includere:
 
@@ -756,18 +1151,24 @@ Solo a build e test superati. Controlla prima che cosa stai per includere:
 git status --short
 ```
 
-| Stato | File                                             |
-| ----- | ------------------------------------------------ |
-| `??`  | `src/app/core/data/articles/<slug>.ts`, uno per analisi |
-| `??`  | `contenuti/analisi/<slug>.md`, uno per analisi    |
-| `M`   | `articles.data.ts` — import e voce nell'array     |
-| `M`   | `signal.data.ts`, `markets.data.ts`              |
-| `M`   | `calendar.series.ts`, `calendar.events.ts`       |
-| `M`   | `glossary.data.ts`, solo se hai aggiunto una voce |
+| Stato | File                                                          |
+| ----- | ------------------------------------------------------------- |
+| `??`  | `src/app/core/data/articles/<slug>.ts`, uno per analisi       |
+| `??`  | `contenuti/analisi/<slug>.md`, uno per analisi                |
+| `M`   | `articles.data.ts` — import e voce nell'array                 |
+| `M`   | `outcomes.data.ts` — gli esiti chiusi al passo 3              |
+| `M`   | `contenuti/analisi/<slug>.md` delle analisi di cui hai chiuso l'esito |
+| `M`   | `signal.data.ts`, `markets.data.ts`                           |
+| `M`   | `calendar.series.ts`, `calendar.events.ts`                    |
+| `M`   | `article.model.ts`, `site.config.ts`, `styles.scss`, solo se hai aggiunto una categoria |
+| `M`   | `glossary.data.ts`, solo se hai aggiunto una voce             |
 
 I nuovi file sono **due per analisi** e vanno in coppia: un `.ts` senza il suo
 `.md` significa che hai saltato `npm run analisi`, e in quel caso la build
-sarebbe già fallita. Se compare altro, guarda che cos'è prima di aggiungerlo.
+sarebbe già fallita.
+
+Non deve comparire `graphify-out/`: è escluso da git. Se compare altro, guarda
+che cos'è prima di aggiungerlo.
 
 ```powershell
 git add -A
@@ -775,7 +1176,8 @@ git commit -m @'
 Nuova analisi: <titolo>
 
 - <categoria principale>: sintesi in una riga.
-- Indicatore aggiornato: <direzione e messaggio>.
+- Esito di <slug precedente>: <verdetto>, <N> condizioni su <M> scattate.
+- Indicatore aggiornato: <direzione intraday e messaggio>.
 - Riferimenti di mercato allineati ai valori citati.
 - Calendario economico rigenerato: <N> diffusioni, <M> appuntamenti futuri.
 
@@ -803,7 +1205,7 @@ Il push su `master` attiva il workflow, che ricompila e pubblica: non serve altr
 
 ---
 
-## 11. Se online non si vede l'aggiornamento
+## 13. Se online non si vede l'aggiornamento
 
 Il workflow impiega uno o due minuti. Se dopo il push il sito sembra fermo,
 verifica **che cosa sta davvero servendo il dominio**:
@@ -826,21 +1228,34 @@ Riporta all'utente quale dei tre casi è, senza rifare build o commit inutili.
 
 ---
 
-## 12. Riferisci
+## 14. Riferisci
 
 Chiudi dicendo, in poche righe:
 
-- **Titolo e categorie scelte**, con mezza riga sul perché della principale.
-- **Orario di pubblicazione.**
+- **Titolo e categorie scelte**, con mezza riga sul perché della principale, e
+  se hai **aggiunto una categoria nuova**, quale e perché mancava.
+- **Orario di pubblicazione** e **orizzonte del bias**, con mezza riga sul perché
+  quell'orizzonte e non un altro.
 - **I due file creati**, con il loro slug: `articles/<slug>.ts` e
   `contenuti/analisi/<slug>.md`.
-- **Come è cambiato l'indicatore**: direzione, forza, durata scelta **con l'ora
-  di scadenza calcolata**, e perché quella durata.
+- **Che cosa ha detto il grafo**: quale analisi precedente hai trovato, quale
+  nota di `studio/` hai applicato, e se hai **cambiato qualcosa rispetto al testo
+  ricevuto** — direzione, orizzonte, forza — con la ragione. Se non hai cambiato
+  niente, dillo lo stesso: significa che il contesto conferma.
+- **Gli esiti chiusi**: quale analisi, quale verdetto, quante condizioni scattate
+  su quante, e il numero che lo dimostra.
+- **Come è cambiato l'indicatore**: la direzione per ciascuno dei tre orizzonti,
+  e quali delle due letture più lunghe hai toccato — se ne hai toccata una,
+  perché.
 - **Che cosa hai cambiato del testo dell'autore**: refusi, riformulazioni, tagli.
 - **L'esito della rigenerazione del calendario**: quante diffusioni e quanti
   appuntamenti futuri, e se il diff conteneva dati nuovi o solo il timestamp.
+- **Se il grafo è stato riaggiornato**, e quanti file ha riestratto.
 
-Gli ultimi tre punti vanno sempre esplicitati.
+Dal terzo punto in giù vanno sempre esplicitati. Se hai deciso di **non
+pubblicare** (passo 4), il resoconto è più corto ma dice le stesse cose: che cosa
+diceva già l'archivio, perché il testo non aggiungeva un fatto, e come hai
+aggiornato l'indicatore invece.
 
 Con più analisi ripeti titolo, categorie e orario per ciascuna, poi dai una volta
 sola l'esito dell'indicatore, dei riferimenti di mercato e del calendario. Se hai

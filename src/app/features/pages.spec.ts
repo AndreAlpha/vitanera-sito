@@ -13,6 +13,7 @@ import { CalendarOverview } from './calendar/calendar-overview';
 import { CalendarArea } from './calendar/calendar-area';
 import { IndicatorDetail } from './calendar/indicator-detail';
 import { CentralBanks } from './calendar/central-banks';
+import { Outcomes } from './outcomes/outcomes';
 import { Outlook } from './outlook/outlook';
 import { Methodology } from './methodology/methodology';
 import { Glossary } from './glossary/glossary';
@@ -55,8 +56,10 @@ describe('pagine', () => {
     const text = textOf(await render(Home));
     expect(text).toContain('XAU/USD');
     expect(text).toContain('Non è consulenza finanziaria');
-    // L'indicatore operativo è sempre presente, valido, scaduto o assente.
-    expect(text).toMatch(/Lettura valida|In attesa di notizie/);
+    // L'indicatore operativo è sempre presente: o dice quando è stato scritto,
+    // o dichiara di non avere niente da dire. Non ha più una scadenza da cui
+    // passare da solo a «lettura scaduta».
+    expect(text).toMatch(/Ultimo aggiornamento|In attesa di notizie/);
     expect(text).toContain('Calendario economico');
   });
 
@@ -104,6 +107,14 @@ describe('pagine', () => {
   it('dettaglio con slug inesistente', async () => {
     const text = textOf(await render(ArticleDetail, { slug: 'inesistente' }));
     expect(text).toContain('Analisi non trovata');
+  });
+
+  it('registro degli esiti', async () => {
+    const text = textOf(await render(Outcomes));
+    expect(text).toContain('Esiti');
+    // Con l'archivio degli esiti vuoto la pagina non resta bianca: dice perche'
+    // e' vuota e quante analisi restano da controllare.
+    expect(text).toContain('Ancora da controllare');
   });
 
   it('orizzonti, metodologia, glossario, 404', async () => {
@@ -155,6 +166,7 @@ describe('le avvertenze non si ripetono', () => {
     for (const [name, page] of [
       ['orizzonti', Outlook],
       ['metodologia', Methodology],
+      ['esiti', Outcomes],
     ] as [string, Type<unknown>][]) {
       const text = textOf(await render(page));
       expect(occurrences(text, FORMULA), name).toBe(1);

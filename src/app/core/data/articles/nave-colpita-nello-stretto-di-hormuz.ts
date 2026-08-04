@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const naveColpitaHormuz: Article = {
   slug: 'nave-colpita-nello-stretto-di-hormuz',
-  categories: ['geopolitica', 'asia', 'usa', 'tasso-di-interesse'],
+  categories: ['rotte-e-approvvigionamento', 'medio-oriente', 'petrolio', 'oro'],
   title: 'Nave colpita nello Stretto di Hormuz',
   kicker: 'Geopolitica · Incidente a Hormuz',
   dek:
@@ -30,6 +30,7 @@ export const naveColpitaHormuz: Article = {
       'Il premio geopolitico rientra in scena dopo essere stato quasi azzerato in una sola seduta, e il ' +
       'greggio lo conferma risalendo. Manca però il resto del quadro difensivo: le azioni asiatiche tengono, ' +
       'il decennale risale invece di scendere e il dollaro resta vicino ai minimi di due mesi.',
+    horizon: 'breve',
   },
   certainty: 'alta',
   certaintyNote:

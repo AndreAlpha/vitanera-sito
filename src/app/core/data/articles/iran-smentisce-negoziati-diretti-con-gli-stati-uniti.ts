@@ -9,7 +9,7 @@ import { AUTHOR } from '../author';
 
 export const iranSmentisceNegoziatiDiretti: Article = {
   slug: 'iran-smentisce-negoziati-diretti-con-gli-stati-uniti',
-  categories: ['geopolitica', 'asia', 'usa'],
+  categories: ['premio-di-rischio', 'medio-oriente', 'petrolio', 'oro'],
   title: 'L’Iran smentisce i negoziati diretti con gli Stati Uniti',
   kicker: 'Geopolitica · Smentita di Teheran',
   dek:
@@ -30,6 +30,7 @@ export const iranSmentisceNegoziatiDiretti: Article = {
       'Premio geopolitico che resta in parte in piedi dopo la smentita di Teheran, contro un mercato che ' +
       'continua a prezzare una soluzione diplomatica: il sostegno rifugio all’oro convive con il rischio che ' +
       'petrolio e rendimenti statunitensi rimbalzino insieme.',
+    horizon: 'breve',
   },
   certainty: 'alta',
   certaintyNote:

@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { ARTICLES } from './articles.data';
+import { OUTCOMES } from './outcomes.data';
 
 /**
  * Allineamento fra l'archivio e `contenuti/analisi/`.
@@ -17,13 +18,17 @@ const CARTELLA = join(process.cwd(), 'contenuti', 'analisi');
 /**
  * Ripete `improntaAnalisi` di `scripts/lib/render-analisi.mjs`.
  *
+ * Copre l'analisi e il suo esito, perché il markdown contiene entrambi:
+ * registrare un esito rende vecchio il markdown esattamente come lo renderebbe
+ * vecchia una correzione di refuso.
+ *
  * È duplicata e non importata perché quel file è JavaScript e sta fuori da
  * `src/`: importarlo qui vorrebbe dire allargare la compilazione dei test a
  * tutto il repository. Sono dieci righe senza dipendenze: se cambiano là,
  * cambiano anche qui, e questo test è il primo ad accorgersene.
  */
-function improntaAnalisi(article: unknown): string {
-  const testo = JSON.stringify(article);
+function improntaAnalisi(article: unknown, outcome: unknown): string {
+  const testo = JSON.stringify([article, outcome ?? null]);
   return fnv1a(testo, 0x811c9dc5) + fnv1a(testo, 0x01000193);
 }
 
@@ -56,7 +61,9 @@ describe('copie markdown delle analisi', () => {
     const vecchi: string[] = [];
     for (const article of ARTICLES) {
       const markdown = readFileSync(join(CARTELLA, `${article.slug}.md`), 'utf8');
-      if (campo(markdown, 'impronta') !== improntaAnalisi(article)) vecchi.push(article.slug);
+      const esito = OUTCOMES.find((o) => o.slug === article.slug) ?? null;
+      if (campo(markdown, 'impronta') !== improntaAnalisi(article, esito))
+        vecchi.push(article.slug);
     }
     expect(vecchi, `da rigenerare con "npm run analisi": ${vecchi.join(', ')}`).toEqual([]);
   });

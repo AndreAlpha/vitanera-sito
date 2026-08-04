@@ -7,7 +7,7 @@ pubblicata: "2026-08-01T01:12:00+02:00"
 autore: "Vitanera"
 minutiLettura: 4
 certezza: "media"
-categorie: ["geopolitica", "asia", "usa"]
+categorie: ["premio-di-rischio", "medio-oriente", "petrolio", "oro"]
 argomenti: ["Iran", "Hormuz", "Petrolio", "Premio di rischio", "Bene rifugio"]
 strumenti: ["XAU/USD", "Brent", "WTI", "DXY", "Treasury"]
 orizzonti: ["breve"]
@@ -15,13 +15,18 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale-rialzista"
   forza: "bassa"
+  orizzonte: "breve"
   regime: "Premio geopolitico in formazione su una notizia non confermata, con il petrolio già sostenuto dalle difficoltà di transito attraverso Hormuz."
 prossimoAppuntamento:
   quando: "Lunedì 3 agosto"
   titolo: "Riapertura dei mercati"
   dettaglio: "È il momento in cui si vedrà se il piano è diventato un ordine e se l’eventuale premio geopolitico regge oltre il primo impulso."
+fonti:
+  - testata: "Reuters"
+  - testata: "Axios"
+  - testata: "CBS News"
 sorgente: "src/app/core/data/articles/attacchi-energia-iraniana-piano-non-ordine.ts"
-impronta: "def452be1fe466c8"
+impronta: "04386a922ac198f4"
 ---
 
 # Attacchi all’energia iraniana: per ora un piano, non un ordine
@@ -109,6 +114,12 @@ Alta sull’importanza che la notizia avrebbe se si realizzasse, medio-bassa sul
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale-rialzista, forza bassa.
+Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 Premio geopolitico in formazione su una notizia non confermata, con il petrolio già sostenuto dalle difficoltà di transito attraverso Hormuz.
+
+## Fonti consultate
+
+- **Reuters**
+- **Axios**
+- **CBS News**

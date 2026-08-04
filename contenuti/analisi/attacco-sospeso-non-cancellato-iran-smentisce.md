@@ -7,7 +7,7 @@ pubblicata: "2026-08-02T12:46:00+02:00"
 autore: "Vitanera"
 minutiLettura: 3
 certezza: "alta"
-categorie: ["geopolitica", "asia", "usa", "fed"]
+categorie: ["premio-di-rischio", "medio-oriente", "oro", "obbligazioni"]
 argomenti: ["Iran", "Hormuz", "Rendimenti", "Premio di rischio", "Correzione"]
 strumenti: ["XAU/USD", "Petrolio", "DXY", "Treasury 30 anni"]
 orizzonti: ["breve"]
@@ -15,13 +15,16 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale"
   forza: "bassa"
+  orizzonte: "breve"
   regime: "Pausa militare dichiarata da una sola delle due parti, con premio geopolitico solo parzialmente riassorbito e rendimenti statunitensi lunghi che restano il vero freno."
 prossimoAppuntamento:
   quando: "Domenica sera"
   titolo: "Riapertura degli scambi"
   dettaglio: "Con una pausa dichiarata da una parte sola, il primo prezzo dirà quanto premio geopolitico il mercato è disposto a restituire."
+fonti:
+  - testata: "Reuters"
 sorgente: "src/app/core/data/articles/attacco-sospeso-non-cancellato-iran-smentisce.ts"
-impronta: "9c0a88fb37047b5d"
+impronta: "25f2dbf47bb81e52"
 ---
 
 # L’attacco è sospeso, non cancellato, e Teheran smentisce
@@ -111,6 +114,10 @@ Con una pausa dichiarata da una parte sola, il primo prezzo dirà quanto premio 
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale, forza bassa.
+Impostazione su XAU/USD: neutrale, forza bassa, orizzonte breve.
 
 Pausa militare dichiarata da una sola delle due parti, con premio geopolitico solo parzialmente riassorbito e rendimenti statunitensi lunghi che restano il vero freno.
+
+## Fonti consultate
+
+- **Reuters**
