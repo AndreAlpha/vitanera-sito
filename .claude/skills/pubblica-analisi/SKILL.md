@@ -1,6 +1,6 @@
 ---
 name: pubblica-analisi
-description: Pubblica una o più analisi su Vitanera partendo dal testo grezzo. Rigenera lo storico del calendario economico, decide titolo, categorie e durata della lettura, converte il testo in blocchi strutturati, aggiorna l'indicatore operativo e i riferimenti di mercato, verifica formattazione, build e test, poi fa commit e push. Usare quando l'utente fornisce il testo di un'analisi da pubblicare ("aggiungi questo articolo", "pubblica questa analisi", "pubblica queste analisi", "inserisci questi") e anche quando chiede solo di aggiornare i dati del calendario.
+description: Pubblica una o più analisi su Vitanera partendo dal testo grezzo. Rigenera lo storico del calendario economico, decide titolo, categorie e durata della lettura, converte il testo in blocchi strutturati, scrive un file TypeScript per analisi e ne genera la copia markdown, aggiorna l'indicatore operativo e i riferimenti di mercato, verifica formattazione, build e test, poi fa commit e push. Usare quando l'utente fornisce il testo di un'analisi da pubblicare ("aggiungi questo articolo", "pubblica questa analisi", "pubblica queste analisi", "inserisci questi") e anche quando chiede solo di aggiornare i dati del calendario.
 ---
 
 # Pubblicare un'analisi su Vitanera
@@ -20,11 +20,12 @@ richieste di rete: se decidi `publishedAt` prima, quando arrivi al commit quel
 valore è già invecchiato di minuti.
 
 ```
-1  conta le analisi          6  aggiorna i riferimenti di mercato
-2  rigenera il calendario    7  passa in rassegna il resto del sito
-3  leggi lo stato e l'ora    8  formatta, compila, prova
-4  scrivi gli articoli       9  commit e push
-5  aggiorna l'indicatore    10  riferisci
+1  conta le analisi          7  passa in rassegna il resto del sito
+2  rigenera il calendario    8  genera i markdown
+3  leggi lo stato e l'ora    9  formatta, compila, prova
+4  scrivi gli articoli      10  commit e push
+5  aggiorna l'indicatore    11  riferisci
+6  aggiorna i mercati
 ```
 
 ---
@@ -56,7 +57,7 @@ articolo unico si può sempre dividere dopo.
 1. **Ordina i testi dal più vecchio al più recente.** L'ordine cronologico è
    quello del contenuto, non quello in cui li hai ricevuti: un controllo che
    parla dell'apertura americana viene dopo uno che commenta il dato delle 14:30.
-2. **Scrivi tutti gli articoli**, uno per testo. Ogni articolo ha la sua `const`,
+2. **Scrivi tutti gli articoli**, uno per testo. Ogni articolo ha il suo file,
    il suo slug e le sue categorie: due analisi dello stesso giorno possono avere
    categorie del tutto diverse.
 3. **Assegna i `publishedAt` in ordine crescente**, tutti già trascorsi e tutti
@@ -71,7 +72,8 @@ articolo unico si può sempre dividere dopo.
 6. **Aggiorna i riferimenti di mercato una volta sola**, con i valori dell'analisi
    più recente; usa quelli delle precedenti solo per le voci che la più recente
    non cita.
-7. **Un solo giro di verifica e un solo commit** alla fine, non uno per articolo.
+7. **Una sola rigenerazione dei markdown, un solo giro di verifica e un solo
+   commit** alla fine, non uno per articolo.
 
 Se una delle analisi è impubblicabile — testo troncato, strumento non
 identificabile — pubblica le altre e dillo esplicitamente nel resoconto finale,
@@ -178,20 +180,27 @@ pubblicazione vera userà dati vecchi.
 
 Prima di scrivere, apri sempre:
 
-| File                                   | Perché                                  |
-| -------------------------------------- | --------------------------------------- |
-| `src/app/core/data/articles.data.ts`   | archivio e costante `AUTHOR`            |
-| `src/app/core/data/signal.data.ts`     | indicatore in panoramica, e il suo tipo |
-| `src/app/core/data/markets.data.ts`    | riferimenti numerici in panoramica      |
-| `src/app/core/models/article.model.ts` | i tipi, e l'elenco esatto degli slug    |
-| `src/app/core/config/site.config.ts`   | l'elenco autorevole delle categorie     |
-| `src/app/core/data/calendar.meta.ts`   | i 29 indicatori e le loro categorie     |
+| File                                    | Perché                                       |
+| --------------------------------------- | -------------------------------------------- |
+| `src/app/core/data/articles.data.ts`    | l'elenco: quali analisi ci sono e in che ordine |
+| `src/app/core/data/articles/` (uno solo) | lo stile di un'articolo già scritto          |
+| `src/app/core/data/signal.data.ts`      | indicatore in panoramica, e il suo tipo      |
+| `src/app/core/data/markets.data.ts`     | riferimenti numerici in panoramica           |
+| `src/app/core/models/article.model.ts`  | i tipi, e l'elenco esatto degli slug         |
+| `src/app/core/config/site.config.ts`    | l'elenco autorevole delle categorie          |
+| `src/app/core/data/calendar.meta.ts`    | i 29 indicatori e le loro categorie          |
+
+`articles.data.ts` **non contiene più testo**: ogni analisi vive in un file suo
+sotto `articles/`, e lì dentro ci sono solo gli import e l'array. Per vedere come
+è fatta un'analisi apri uno di quei file, non l'elenco — il più recente in cima
+all'array è quello che descrive lo stato attuale del mercato.
 
 L'archivio può essere **vuoto**: è lo stato in cui il sito riparte. In quel caso
-non c'è un articolo precedente da cui copiare lo stile — usa i tipi e questa
-guida — e `MARKET_SIGNAL` vale `null`, quindi l'indicatore si scrive da zero
-invece di aggiornarlo. Vale anche per `kicker`, `tags` e `instruments`: non c'è
-nulla da riusare, la prima pubblicazione fonda le convenzioni.
+la cartella `articles/` non esiste ancora, non c'è un articolo precedente da cui
+copiare lo stile — usa i tipi e questa guida — e `MARKET_SIGNAL` vale `null`,
+quindi l'indicatore si scrive da zero invece di aggiornarlo. Vale anche per
+`kicker`, `tags` e `instruments`: non c'è nulla da riusare, la prima
+pubblicazione fonda le convenzioni.
 
 Poi prendi l'ora, **adesso e non prima**:
 
@@ -312,26 +321,49 @@ accostamento sbagliato si nota subito.
 
 ## 4. Scrivi l'articolo
 
-Aggiungi un `const <nomeCamelCase>: Article = { … }` prima dell'export `ARTICLES`,
-poi metti il riferimento **in testa** all'array (l'ordinamento vero avviene per
-`publishedAt`, ma l'array si tiene dal più recente).
+**Un'analisi, un file.** Il nome del file è lo slug, ed è lo stesso nome
+dell'indirizzo della pagina e della copia markdown: da un solo nome si trovano
+tutti e tre.
 
-Con più analisi ripeti per ciascuna e tieni l'array `[ultima, penultima, …]`.
-Gli **slug** devono essere unici fra tutti gli articoli (`data.spec.ts:14-17`);
-le **ancore** solo all'interno dello stesso articolo (`:38-46`), perché ogni
-articolo è una pagina a sé.
+Servono due modifiche, in quest'ordine:
+
+1. **Crea `src/app/core/data/articles/<slug>.ts`**, con questa intestazione e poi
+   `export const <nomeCamelCase>: Article = { … }`:
+
+   ```ts
+   import type { Article } from '../../models/article.model';
+   import { AUTHOR } from '../author';
+   ```
+
+   L'import del tipo va con `import type`, quello di `AUTHOR` no: il primo sparisce
+   in compilazione, il secondo è un valore vero. `AUTHOR` **non** è più dichiarato
+   nel file dell'archivio, sta in `src/app/core/data/author.ts` e da lì si importa.
+
+2. **Aggiungi due righe a `src/app/core/data/articles.data.ts`**: l'import del
+   nuovo file, e il nome **in testa** all'array `ARTICLES`. L'ordinamento vero
+   avviene per `publishedAt`, ma l'elenco si tiene dal più recente. In quel file
+   non si scrive testo: solo import e array.
+
+Con più analisi ripeti per ciascuna e tieni l'array `[ultima, penultima, …]`,
+con gli import nello stesso ordine.
+
+Gli **slug** devono essere unici fra tutti gli articoli (`data.spec.ts:14-17`) —
+e con un file per slug un doppione si vede prima, perché sovrascriverebbe un file
+esistente: se il nome che stai per usare c'è già, cambia lo slug invece di
+sovrascrivere. Le **ancore** devono essere uniche solo all'interno dello stesso
+articolo (`:38-46`), perché ogni articolo è una pagina a sé.
 
 ### Campi obbligatori
 
 | Campo                 | Regola                                                                                                                                                                                                                                  |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `slug`                | Dal titolo: minuscolo, senza accenti né apostrofi, parole separate da trattini, max ~60 caratteri. Unico.                                                                                                                               |
+| `slug`                | Dal titolo: minuscolo, senza accenti né apostrofi, parole separate da trattini, max ~60 caratteri. Unico. **È anche il nome del file `.ts` e del `.md`**: scegline uno che si legga da solo.                                            |
 | `categories`          | L'elenco deciso al passo 3, con la principale per prima.                                                                                                                                                                                |
 | `title`               | Se il testo ne ha uno usabile, riprendilo sistemando maiuscole e refusi. Altrimenti scrivilo: sintetico, in italiano, senza punto finale, senza maiuscole enfatiche.                                                                    |
 | `kicker`              | `Tema · Sottotema`, per esempio `Correlazioni · Controllo cross-asset`. **Non è decorativo**: è l'ultima briciola di pane della barra superiore e il testo con cui l'indicatore operativo cita le sue fonti. Tienilo corto e specifico. |
 | `dek`                 | Due o tre righe sul fatto nuovo e perché conta. Non ripetere il titolo.                                                                                                                                                                 |
 | `publishedAt`         | ISO con fuso, dal passo 2. **Mai nel futuro**, mai prima dell'ultimo articolo pubblicato.                                                                                                                                               |
-| `author`              | La costante `AUTHOR`. È dichiarata in cima a `articles.data.ts`, cioè nello stesso file dell'articolo: si usa direttamente, senza import.                                                                                               |
+| `author`              | La costante `AUTHOR`, importata da `../author`. Non scrivere mai la stringa a mano.                                                                                                                                                     |
 | `readingMinutes`      | Circa 200 parole al minuto, arrotondato per eccesso.                                                                                                                                                                                    |
 | `tags`, `instruments` | Dal testo. `instruments` compare due volte nel dettaglio: pastiglie in testata e riquadro laterale «Strumenti citati».                                                                                                                  |
 | `horizons`            | `breve` per letture intraday, `breve`+`medio` per dati macro, `lungo` solo se il testo parla davvero di anni.                                                                                                                           |
@@ -475,7 +507,7 @@ Tutti e tredici i campi sono obbligatori.
 | `favours` / `avoid`            | **Entrambi non vuoti**, è un test. Anche quando il testo dice di restare fuori: `favours` deve dirlo esplicitamente.                                                                              |
 | `invalidation`                 | La condizione che fa decadere la lettura. **Più di 10 caratteri**, è un test: una frase, non una parola.                                                                                          |
 | `confirming` / `contradicting` | Etichette brevissime con il valore: `DXY debole ≈ 100,65`.                                                                                                                                        |
-| `sources`                      | Fino a tre slug, dal più recente, possibilmente di categorie diverse. Devono esistere in `articles.data.ts` (`data.spec.ts:77-81`). A video compare il **`kicker`** dell'articolo, non il titolo. |
+| `sources`                      | Fino a tre slug, dal più recente, possibilmente di categorie diverse. Devono esistere in archivio (`data.spec.ts:77-81`); sono i nomi dei file sotto `articles/`. A video compare il **`kicker`** dell'articolo, non il titolo. |
 
 ### Quanto deve durare la lettura
 
@@ -588,16 +620,71 @@ hai davvero modificato quel testo.
 
 ---
 
-## 8. Formatta, compila, prova
+## 8. Genera i markdown delle analisi
+
+A ogni analisi corrisponde un `contenuti/analisi/<slug>.md`: la stessa analisi in
+markdown, con i metadati nel frontmatter e poi il testo. Non serve al sito — non
+viene compilato, non finisce in `dist/`, nessuna pagina lo apre — ma è il formato
+con cui i testi si lavorano fuori di qui, per esempio per costruirci un grafo.
+
+**Non si scrive a mano.** Si genera dall'archivio, in un comando:
+
+```powershell
+npm run analisi
+```
+
+Scrive un file per ogni analisi, riscrive quelli cambiati e cancella quelli
+rimasti senza analisi corrispondente. Finisce con una riga di questa forma:
+
+```
+contenuti/analisi/: 23 markdown (1 nuovi, 22 invariati).
+  scritto <slug>.md
+```
+
+Guarda quel conteggio: dopo aver pubblicato una analisi devi vedere **un nuovo
+file per analisi pubblicata** e tutti gli altri invariati. Se compaiono
+«aggiornati» che non ti aspetti, hai toccato un'analisi già pubblicata — torna
+indietro e guarda che cosa (modificare articoli già pubblicati è vietato dalle
+regole editoriali del passo 4).
+
+Se generi prima di aver finito di scrivere, rilancialo: è idempotente e costa
+meno di un secondo.
+
+### Perché non lo si scrive a mano
+
+Scriverlo a mano vorrebbe dire scrivere due volte lo stesso testo, e la seconda
+copia diverge alla prima correzione di refuso. Generandolo, il markdown non può
+contraddire l'articolo — e infatti non gli è permesso: **due controlli separati
+falliscono** se i due non corrispondono.
+
+| Controllo                           | Quando scatta                                       |
+| ----------------------------------- | --------------------------------------------------- |
+| `npm run build`                     | prima di `ng build`, quindi prima di ogni deploy    |
+| `src/app/core/data/analisi.spec.ts` | a ogni `npm test`, sull'impronta di ciascun file    |
+
+Entrambi vedono anche i file di troppo: se un'analisi viene tolta dall'archivio
+senza rigenerare, il suo markdown orfano fa fallire il controllo.
+
+Il messaggio che li fa scattare è sempre lo stesso — «i markdown non
+corrispondono all'archivio» — e la risposta è sempre `npm run analisi`.
+
+---
+
+## 9. Formatta, compila, prova
 
 **Questo passo non si salta mai** e va sempre eseguito prima del commit, anche
 quando la modifica sembra minima. L'ordine è questo:
 
 ```powershell
-npx prettier --write "src/app/core/data/*.ts"
+npx prettier --write "src/app/core/data/**/*.ts"
 npm run build
 npm test -- --no-watch
 ```
+
+> **Il glob ha due asterischi.** Con `src/app/core/data/*.ts` i file delle
+> singole analisi, che stanno in `data/articles/`, non verrebbero formattati: il
+> commit passerebbe lo stesso e la formattazione resterebbe sbagliata finché
+> qualcuno non la nota.
 
 Tutti e tre devono passare, e **devi averne visto l'esito** prima di toccare
 `git`. Se uno solo fallisce, niente commit e niente push: correggi e ripeti.
@@ -606,7 +693,7 @@ Con più analisi si esegue una volta sola, alla fine.
 
 ### Perché prettier deve comprendere i file generati
 
-Il glob `src/app/core/data/*.ts` include anche `calendar.series.ts` e
+Il glob include anche `calendar.series.ts` e
 `calendar.events.ts`, ed **è giusto così**. Lo script del calendario emette
 doppi apici e indentazione a 4 spazi, mentre il repository è a apici singoli e 6
 spazi: senza questo passaggio il commit conterrebbe **settemila righe** di sola
@@ -623,7 +710,7 @@ prima, 2 dopo.
 
 ### Che cosa intercettano i test
 
-Cinque file, 59 test. La CI (`.github/workflows/pages.yml`) esegue **prima i test
+Sei file, 62 test. La CI (`.github/workflows/pages.yml`) esegue **prima i test
 e poi la build**: un test rosso non pubblica nulla online.
 
 Quelli che riguardano ciò che hai appena scritto:
@@ -643,13 +730,17 @@ Quelli che riguardano ciò che hai appena scritto:
 | `data.spec.ts:161`                              | manca la prossima riunione di una delle due banche centrali         |
 | `pages.spec.ts:85`                              | articolo senza `takeaways`: manca «In sintesi»                      |
 | `pages.spec.ts` «le avvertenze non si ripetono» | un'avvertenza aggiunta o tolta                                      |
+| `analisi.spec.ts`                               | markdown mancante, di troppo o vecchio: manca `npm run analisi`     |
 
 Due note sui comandi:
 
-- Usa **`npm run build`**, non `ng build`. Lo script incatena `ng build` e
-  `scripts/prepare-pages.mjs`, che aggiunge `404.html` (necessario perché GitHub
-  Pages gestisca gli indirizzi diretti come `/analisi/uno-slug`), `.nojekyll` e la
-  copia del `CNAME`. Finisce stampando `Pronto per GitHub Pages: …\dist\vitanera\browser (32 elementi, 404.html e .nojekyll inclusi).`
+- Usa **`npm run build`**, non `ng build`. Lo script incatena tre cose: il
+  controllo dei markdown del passo 8, `ng build`, e `scripts/prepare-pages.mjs`,
+  che aggiunge `404.html` (necessario perché GitHub Pages gestisca gli indirizzi
+  diretti come `/analisi/uno-slug`), `.nojekyll` e la copia del `CNAME`. Comincia
+  quindi stampando `contenuti/analisi/: N markdown allineati all'archivio.` e
+  finisce con `Pronto per GitHub Pages: …\dist\vitanera\browser (32 elementi, 404.html e .nojekyll inclusi).`
+  Se si ferma sulla prima riga, hai saltato `npm run analisi`.
 - Usa **`npm test -- --no-watch`**: senza quel flag il comando resta in ascolto.
 
 La build locale **non finisce online**: online ci va quella che il workflow rifà
@@ -657,7 +748,7 @@ dopo il push. Serve a impedire di pubblicare dati rotti, non a caricare i file.
 
 ---
 
-## 9. Commit e push
+## 10. Commit e push
 
 Solo a build e test superati. Controlla prima che cosa stai per includere:
 
@@ -665,9 +756,18 @@ Solo a build e test superati. Controlla prima che cosa stai per includere:
 git status --short
 ```
 
-Attesi: `articles.data.ts`, `signal.data.ts`, `markets.data.ts`,
-`calendar.series.ts`, `calendar.events.ts`, più eventualmente `glossary.data.ts`.
-Se compare altro, guarda che cos'è prima di aggiungerlo.
+| Stato | File                                             |
+| ----- | ------------------------------------------------ |
+| `??`  | `src/app/core/data/articles/<slug>.ts`, uno per analisi |
+| `??`  | `contenuti/analisi/<slug>.md`, uno per analisi    |
+| `M`   | `articles.data.ts` — import e voce nell'array     |
+| `M`   | `signal.data.ts`, `markets.data.ts`              |
+| `M`   | `calendar.series.ts`, `calendar.events.ts`       |
+| `M`   | `glossary.data.ts`, solo se hai aggiunto una voce |
+
+I nuovi file sono **due per analisi** e vanno in coppia: un `.ts` senza il suo
+`.md` significa che hai saltato `npm run analisi`, e in quel caso la build
+sarebbe già fallita. Se compare altro, guarda che cos'è prima di aggiungerlo.
 
 ```powershell
 git add -A
@@ -703,7 +803,7 @@ Il push su `master` attiva il workflow, che ricompila e pubblica: non serve altr
 
 ---
 
-## 10. Se online non si vede l'aggiornamento
+## 11. Se online non si vede l'aggiornamento
 
 Il workflow impiega uno o due minuti. Se dopo il push il sito sembra fermo,
 verifica **che cosa sta davvero servendo il dominio**:
@@ -726,12 +826,14 @@ Riporta all'utente quale dei tre casi è, senza rifare build o commit inutili.
 
 ---
 
-## 11. Riferisci
+## 12. Riferisci
 
 Chiudi dicendo, in poche righe:
 
 - **Titolo e categorie scelte**, con mezza riga sul perché della principale.
 - **Orario di pubblicazione.**
+- **I due file creati**, con il loro slug: `articles/<slug>.ts` e
+  `contenuti/analisi/<slug>.md`.
 - **Come è cambiato l'indicatore**: direzione, forza, durata scelta **con l'ora
   di scadenza calcolata**, e perché quella durata.
 - **Che cosa hai cambiato del testo dell'autore**: refusi, riformulazioni, tagli.

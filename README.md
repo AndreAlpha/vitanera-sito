@@ -16,6 +16,7 @@ npm start                   # server di sviluppo su http://localhost:4200/
 npm run build               # build di produzione in dist/vitanera/browser
 npm test -- --no-watch      # test unitari (Vitest)
 npm run calendario          # riscarica lo storico del calendario economico
+npm run analisi             # rigenera le copie markdown in contenuti/analisi/
 ```
 
 ## Pubblicazione su GitHub Pages
@@ -63,10 +64,15 @@ ricaricamento forzato con `Ctrl+F5`, oppure una finestra in incognito per averne
 ## Struttura
 
 ```
+contenuti/analisi/                 GENERATO — un markdown per analisi, per usi fuori dal sito
+scripts/                           calendario economico, markdown delle analisi, preparazione Pages
+
 src/app/
 ├─ core/
 │  ├─ config/site.config.ts        navigazione, testi legali brevi, 29 categorie e 5 famiglie
-│  ├─ data/articles.data.ts        archivio delle analisi
+│  ├─ data/articles/<slug>.ts      un file per analisi, con lo stesso nome del suo slug
+│  ├─ data/articles.data.ts        elenco delle analisi: solo import e array, nessun testo
+│  ├─ data/author.ts               la firma, unica per tutte le analisi
 │  ├─ data/calendar.meta.ts        testi redazionali degli indicatori e anagrafica di chi parla
 │  ├─ data/calendar.series.ts      GENERATO — storico dei valori
 │  ├─ data/calendar.events.ts      GENERATO — appuntamenti di Fed e BCE
@@ -156,8 +162,15 @@ grezza in `.calendar-cache/`.
 
 ## Aggiungere un’analisi
 
-1. Aprire `src/app/core/data/articles.data.ts`.
-2. Aggiungere un oggetto `Article` all’array `ARTICLES` (l’archivio parte vuoto).
+Ogni analisi è un file suo. Il nome del file è lo slug, e lo slug è anche l’indirizzo della pagina e
+il nome della copia markdown: da un solo nome si trovano tutti e tre.
+
+1. Creare `src/app/core/data/articles/<slug>.ts` con un `export const <nomeCamelCase>: Article`.
+2. Importarlo in `src/app/core/data/articles.data.ts` e metterlo in testa all’array `ARTICLES`.
+3. Eseguire `npm run analisi`, che scrive `contenuti/analisi/<slug>.md`.
+
+Il terzo passo non è facoltativo: `npm run build` si rifiuta di compilare se i markdown non
+corrispondono all’archivio, e un test lo verifica a parte.
 
 I blocchi disponibili per il corpo del testo sono: `paragraph`, `heading`, `list`, `callout`, `stats`,
 `scenarios`, `balance`, `timeline`, `quote`, `note`. L’indice laterale viene generato automaticamente dai
@@ -189,6 +202,28 @@ singola categoria in `/argomenti/<slug>`.
 
 Le categorie che corrispondono a un indicatore macroeconomico sono le stesse usate dal calendario
 economico: è il collegamento fra ciò che si legge e i numeri da cui nasce.
+
+## Le copie markdown delle analisi
+
+`contenuti/analisi/` contiene un markdown per analisi, con lo stesso nome dello slug. Sono copie
+generate da `npm run analisi` a partire dall’archivio: servono a lavorare sui testi fuori dal sito —
+un grafo di conoscenza, una ricerca, un’esportazione — senza dover leggere TypeScript. Il sito non li
+apre mai.
+
+Ogni file ha un frontmatter con slug, titolo, occhiello, sommario, data, categorie, argomenti,
+strumenti, orizzonti, impostazione e prossimo appuntamento, poi il testo dell’analisi: «In sintesi»,
+i blocchi, le condizioni di invalidazione, il grado di certezza e il regime descritto.
+
+**Non si modificano a mano**: la prima rigenerazione riscriverebbe tutto. Il testo si cambia nel
+file dell’analisi sotto `src/app/core/data/articles/`, poi si rilancia `npm run analisi`.
+
+Due controlli impediscono che restino indietro, e valgono anche per i markdown di troppo rimasti
+dopo la rimozione di un’analisi:
+
+| Dove                               | Quando scatta                                          |
+| ---------------------------------- | ------------------------------------------------------ |
+| `npm run build`                    | prima di `ng build`, così non si pubblica disallineati  |
+| `src/app/core/data/analisi.spec.ts` | a ogni `npm test`, confrontando l’impronta di ogni file |
 
 ## Aggiornare l’indicatore operativo
 
