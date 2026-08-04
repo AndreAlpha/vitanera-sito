@@ -45,6 +45,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     why: 'Un numero elevato di dissensi segnala una divisione interna e rende meno prevedibili le decisioni successive.',
   },
   {
+    term: 'JOLTS',
+    letter: 'J',
+    definition:
+      'Rilevazione mensile statunitense su posti di lavoro vacanti, assunzioni e dimissioni, pubblicata dal Bureau of Labor Statistics.',
+    why: 'Misura la domanda di lavoro prima che si veda nelle buste paga: un numero forte alimenta l’attesa di tassi più alti e pesa sull’oro attraverso i rendimenti.',
+    related: ['Fed funds', 'Treasury'],
+  },
+  {
     term: 'PCE',
     letter: 'P',
     definition:
@@ -72,6 +80,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     definition: 'Rendimento nominale di un titolo al netto dell’inflazione attesa.',
     why: 'È spesso considerato il costo opportunità di detenere oro, che non produce cedole né dividendi.',
     related: ['Treasury', 'XAU/USD'],
+  },
+  {
+    term: 'Costo-opportunità',
+    letter: 'C',
+    definition:
+      'Il rendimento a cui si rinuncia scegliendo un impiego invece di un altro. Per l’oro è quanto avrebbe reso la stessa somma investita in titoli di Stato.',
+    why: 'L’oro non paga cedola: quando i rendimenti salgono, tenerlo costa di più in termini relativi. È il motivo per cui i tassi in rialzo lo frenano anche mentre il rischio geopolitico cresce.',
+    related: ['Rendimento reale', 'Treasury'],
   },
   {
     term: 'Treasury',
