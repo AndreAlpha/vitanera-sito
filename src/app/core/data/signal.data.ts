@@ -41,45 +41,45 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-04T15:10:00+02:00',
-  // Decide il catalizzatore, non la tabella: il JOLTS delle 16:00 è il test
-  // dichiarato della lettura, e la validità non può superarlo. Pubblicata alle
-  // 15:10, scade alle 15:55. Coincide comunque con la fascia 30-45 di un
-  // controllo intraday, che è la natura di questa inversione di prezzo.
-  validityMinutes: 45,
+  updatedAt: '2026-08-04T16:30:00+02:00',
+  // Un dato pubblicato regge la seduta: fascia 90-120. Si prende il massimo
+  // perché i correlati sono allineati per la prima volta in due giorni — oro,
+  // dollaro e rendimenti confermano insieme. Non oltre, perché il testo
+  // qualifica il bias come intraday e la direzione si è mossa due volte oggi.
+  validityMinutes: 120,
   asset: 'XAU/USD',
-  direction: 'neutrale-rialzista',
-  strength: 'bassa',
-  headline: 'Bessent apre a un accordo su Hormuz e il petrolio inverte di colpo',
+  direction: 'rialzista',
+  strength: 'media',
+  headline: 'Offerte di lavoro sotto le attese, e stavolta i tre canali confermano insieme',
   stance:
-    'Brent e WTI passano dal recupero a un calo di circa il 4%, a 80,66 e 76,76 dollari, dopo che il ' +
-    'segretario al Tesoro ha detto che un’intesa per riaprire lo stretto potrebbe arrivare oggi o mercoledì; ' +
-    'il Qatar riferisce di una bozza in circolazione con Oman e Pakistan mediatori. Per l’oro si allenta il ' +
-    'canale che lo stava frenando — greggio, inflazione attesa, rendimenti — ma la stessa distensione toglie ' +
-    'domanda di rifugio. Nessun accordo è confermato e i transiti restano limitati.',
+    'Le offerte di lavoro di giugno scendono a 7,359 milioni contro 7,440 attesi, con maggio rivisto al ' +
+    'ribasso e il tasso di posti vacanti dal 4,6% al 4,4%; assunzioni e licenziamenti restano però stabili, ' +
+    'quindi è raffreddamento graduale e non crisi. La reazione è coerente: oro verso 4.080-4.085 dollari, ' +
+    'decennale dal 4,70% verso il 4,64%, DXY sotto quota 100 a 99,89. È la prima volta in due giorni che le ' +
+    'tre gambe si muovono insieme invece di annullarsi, e attenua il segnale restrittivo dell’ISM.',
   favours: [
-    'Distinguere i due canali: il greggio più basso aiuta via rendimenti, la distensione toglie rifugio',
-    'Misurare la distanza fra un’intesa detta possibile e uno stretto che torna davvero a funzionare',
+    'Dare peso alla contemporaneità delle conferme più che all’entità del dato, che è modesta',
+    'Leggere il quadro come industria che corre e lavoro che no: due richieste diverse per la Fed',
   ],
   avoid: [
-    'Trattare le dichiarazioni come un accordo: la controparte iraniana finora ha sempre smentito',
-    'Portare questa lettura oltre il JOLTS delle 16:00, che può ribaltarne il presupposto',
+    'Trasformare una singola rilevazione mensile in una tendenza del mercato del lavoro',
+    'Ignorare che assunzioni a 5,3 milioni e licenziamenti stabili non descrivono un’occupazione in crisi',
   ],
   invalidation:
-    'Il fallimento delle trattative, una nuova smentita netta dell’Iran, ulteriori attacchi alle navi o un forte rimbalzo del petrolio; oppure un JOLTS molto forte, che farebbe risalire dollaro e rendimenti cancellando il beneficio del greggio più basso.',
+    'XAU/USD che non riesce a mantenersi sopra i 4.070 dollari circa, il decennale che torna sopra il 4,70%, il DXY nuovamente sopra quota 100, oppure nuovi sviluppi diplomatici concreti che riducano fortemente la domanda di bene rifugio.',
   confirming: [
-    'Brent ≈ 80,66 $, circa −4%',
-    'WTI ≈ 76,76 $',
-    'Bozza di accordo riferita dal Qatar',
+    'Offerte di lavoro 7,359 mln contro 7,440 attese',
+    'Decennale dal 4,70% al 4,64% circa',
+    'DXY ≈ 99,89, sotto quota 100',
   ],
   contradicting: [
-    'Nessun accordo confermato',
-    'Transiti a Hormuz ancora limitati',
-    'Meno domanda di rifugio se la distensione è vera',
+    'Assunzioni stabili a 5,3 mln, licenziamenti fermi',
+    'ISM 55,6 ancora sul tavolo',
+    'Una sola rilevazione mensile',
   ],
   sources: [
+    'jolts-piu-debole-delle-attese-oro-su-rendimenti-giu',
     'petrolio-inverte-bruscamente-bessent-apre-su-hormuz',
-    'rischio-hormuz-si-paga-in-petrolio-e-rendimenti-non-in-oro',
     'rendimenti-a-30-anni-di-nuovo-sui-massimi-dal-2007',
   ],
 };
