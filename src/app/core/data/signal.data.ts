@@ -41,47 +41,46 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-04T18:25:00+02:00',
-  // Scheda geopolitica, fascia 180-240: si prende il minimo. L'analisi conferma
-  // la precedente invece di ribaltarla — la direzione è ferma da due ore dopo
-  // una giornata di capovolgimenti — ma il testo dichiara un sostegno «non
-  // pulito», con lo stesso scenario che aiuta l'oro da un lato e lo penalizza
-  // dall'altro. Scade alle 21:25, prima della chiusura americana.
-  validityMinutes: 180,
+  updatedAt: '2026-08-04T20:05:00+02:00',
+  // Base 30-45 di un controllo cross-asset, portata a 90 da tre ragioni della
+  // regola: i correlati sono allineati, è la terza conferma consecutiva della
+  // stessa direzione, e il movimento è durato invece di esaurirsi dopo il dato.
+  // Scade alle 21:35, poco prima della chiusura americana.
+  validityMinutes: 90,
   asset: 'XAU/USD',
   direction: 'rialzista',
-  strength: 'media',
-  headline: 'I termini della trattativa su Hormuz sono aperti, e il petrolio non lo prezza',
+  strength: 'alta',
+  headline: 'L’oro tiene il rialzo del dopo-JOLTS, e la spinta arriva dai tassi',
   stance:
-    'L’Iran chiede di mantenere il controllo sul traffico in entrata nello stretto e di poter intervenire su ' +
-    'quello in uscita, con l’Oman a gestire le autorizzazioni: ha attenuato la richiesta di controllo totale, ' +
-    'ma le divergenze restano e i termini operativi non sono concordati. Brent e WTI continuano intanto a ' +
-    'scendere verso 79,8 e 76 dollari sulla scommessa nella mediazione. Il quadro macro del pomeriggio — ' +
-    'JOLTS debole, dollaro e rendimenti giù — regge, e ora si aggiunge un rischio che il greggio non sconta.',
+    'XAU/USD sale verso i 4.092 dollari e il future Comex chiude a 4.095,40 con +1,53%: non è stata una ' +
+    'fiammata post-dato, il movimento ha retto tutta la seduta. Con lui salgono argento, platino e palladio, ' +
+    'mentre il Brent perde il 3,9% a 80,47 e il decennale arretra verso il 4,66%. La catena è coerente — ' +
+    'greggio giù, inflazione attesa giù, rendimenti giù, costo-opportunità del metallo giù — e dice che a ' +
+    'sostenere l’oro sono i tassi, non il rifugio. Hormuz resta un’aspettativa, non un accordo.',
   favours: [
-    'Considerare il ribasso del greggio più fragile di quanto il prezzo suggerisca, ora che i termini si conoscono',
-    'Tenere distinte le due facce di un blocco dei negoziati: rifugio a favore, rendimenti contro',
+    'Guardare ai rendimenti per capire quanto dura: è quello il canale, non la geopolitica',
+    'Dare peso al fatto che il movimento sia durato invece di esaurirsi nei minuti dopo il dato',
   ],
   avoid: [
-    'Leggere l’attenuazione della richiesta iraniana come un accordo in dirittura d’arrivo',
-    'Dare per pulito un sostegno che lo stesso scenario può ribaltare passando dai rendimenti',
+    'Considerare acquisita la svolta monetaria: resta circa il 57% di probabilità di rialzo a settembre',
+    'Trattare l’area dei 4.100 dollari come un obiettivo invece che come il test immediato',
   ],
   invalidation:
-    'Un accordo ufficiale e verificabile sulla riapertura dello stretto, una ripresa stabile dei transiti, oppure un petrolio che resta sotto gli 80 dollari senza rimbalzare.',
+    'XAU/USD sotto i 4.070 dollari, il decennale nuovamente sopra il 4,70%, un forte rimbalzo del petrolio, oppure dati ADP e payroll nettamente superiori alle attese.',
   confirming: [
-    'Termini operativi non ancora concordati',
-    'Divergenze aperte sulla gestione dello stretto',
-    'JOLTS debole, dollaro e rendimenti in calo',
+    'XAU/USD ≈ 4.092 $, Comex 4.095,40 $ (+1,53%)',
+    'Brent 80,47 $, −3,9%',
+    'Decennale ≈ 4,66%',
   ],
   contradicting: [
-    'Brent ≈ 79,8 $, ancora in forte calo',
-    'Richiesta di controllo totale attenuata',
-    'Mediazione di Qatar, Oman e Pakistan in corso',
+    'Rialzo Fed a settembre ancora al 57%',
+    'Hormuz non regolarmente operativo',
+    'Area 4.100 $ ancora da superare',
   ],
   sources: [
+    'oro-estende-il-rialzo-il-canale-e-quello-dei-tassi',
     'iran-chiede-il-controllo-sugli-ingressi-a-hormuz',
     'jolts-piu-debole-delle-attese-oro-su-rendimenti-giu',
-    'petrolio-inverte-bruscamente-bessent-apre-su-hormuz',
   ],
 };
 

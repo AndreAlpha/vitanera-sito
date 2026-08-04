@@ -19,11 +19,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'XAU/USD',
     name: 'Oro spot',
-    value: '4.080-4.085',
-    change: 'parte alta dell’intervallo recente',
+    value: '≈ 4.092',
+    change: 'circa +1%, Comex 4.095,40 $ (+1,53%)',
     tone: 'gold',
     icon: 'coin',
-    note: 'Livelli approssimati citati nell’analisi, non quotazioni. Il rialzo dopo il JOLTS è accompagnato da rendimenti in calo e dollaro più debole: la conferma che mancava nelle sedute precedenti.',
+    note: 'Livelli citati nell’analisi, non quotazioni in tempo reale. Il rialzo ha retto tutta la seduta invece di esaurirsi dopo il dato, e ha coinvolto anche argento, platino e palladio. L’area 4.100 è il test immediato.',
   },
   {
     symbol: 'HORMUZ',
@@ -47,10 +47,10 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     symbol: 'FED FUNDS',
     name: 'Tasso ufficiale della Federal Reserve',
     value: '3,50%-3,75%',
-    change: 'rialzo a settembre ≈ 65% di probabilità',
+    change: 'rialzo a settembre ≈ 57% di probabilità',
     tone: 'warn',
     icon: 'bank',
-    note: 'La probabilità è una lettura di mercato, rilevata prima del JOLTS: offerte di lavoro più deboli riducono la necessità di un rialzo ravvicinato e attenuano il segnale restrittivo dell’ISM.',
+    note: 'Scesa dal 65% di stamattina dopo il JOLTS, ma resta sopra la metà: la svolta monetaria non è affatto acquisita, e le attese sono molto sensibili ai prossimi ADP e payroll.',
   },
   {
     symbol: 'JOLTS',
@@ -73,11 +73,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'US10Y',
     name: 'Treasury a 10 anni',
-    value: '≈ 4,64%',
-    change: 'sceso dall’area del 4,70%',
+    value: '≈ 4,66%',
+    change: 'arretrato dall’area del 4,70%',
     tone: 'bull',
     icon: 'percent',
-    note: 'È il canale da cui l’oro trae il beneficio maggiore, e dopo il JOLTS ha finalmente girato dalla parte giusta. Il 4,70% resta la soglia: tornarci sopra invaliderebbe la lettura.',
+    note: 'È il canale da cui arriva la spinta di questa seduta, più della domanda rifugio. Il 4,70% resta la soglia: tornarci sopra invaliderebbe la lettura.',
   },
   {
     symbol: 'US30Y',
@@ -100,11 +100,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: '≈ 79,8 $',
-    change: 'WTI ≈ 76 $, ancora in forte calo',
-    tone: 'warn',
+    value: '80,47 $',
+    change: '−3,9%, WTI 76,67 $ (−4,6%)',
+    tone: 'bull',
     icon: 'arrow-down',
-    note: 'Il ribasso poggia sulla scommessa nella mediazione di Qatar, Oman e Pakistan, ma i termini della trattativa non sono chiusi: è più vulnerabile a un’inversione di quanto il prezzo suggerisca.',
+    note: 'È il primo anello della catena che oggi sostiene l’oro: greggio giù, inflazione attesa giù, rendimenti giù. Resta però un ribasso costruito su una distensione i cui termini non sono chiusi.',
   },
   {
     symbol: 'TESORO USA',
