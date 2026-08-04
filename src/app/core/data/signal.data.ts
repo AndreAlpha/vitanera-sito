@@ -41,45 +41,46 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-04T08:45:00+02:00',
-  // Sale a 120 dai 90 della notte: il catalizzatore imminente — la riapertura
-  // asiatica — è passato e il prossimo, i dati sul lavoro, è a giorni. Non si
-  // arriva ai 180-240 di una scheda geopolitica perché l'episodio è isolato e
-  // solo una delle tre condizioni difensive si è presentata.
-  validityMinutes: 120,
+  updatedAt: '2026-08-04T11:15:00+02:00',
+  // Sale a 180: i correlati sono allineati e la lettura poggia su una
+  // condizione dichiarata e durevole — «finché i rendimenti lunghi restano
+  // così elevati» — non su un movimento di giornata. Non si arriva a 240
+  // perché la direzione si è già mossa due volte stamattina. Scade alle 14:15,
+  // prima del JOLTS delle 16:00 indicato come catalizzatore.
+  validityMinutes: 180,
   asset: 'XAU/USD',
-  direction: 'neutrale-rialzista',
+  direction: 'neutrale-ribassista',
   strength: 'bassa',
-  headline: 'Una nave colpita a Hormuz: il premio geopolitico rientra in scena, ma da solo',
+  headline: 'Il trentennale al 5,25% assorbe la domanda rifugio che Hormuz stava creando',
   stance:
-    'Il colpo su un mercantile dice che il rischio sulle rotte energetiche non era rientrato, e il greggio lo ' +
-    'conferma risalendo: Brent a 84,89 dollari, WTI a 81,11. L’oro sale verso i 4.060. Delle tre condizioni ' +
-    'che renderebbero il segnale netto ne è però arrivata una sola: le azioni asiatiche tengono, il decennale ' +
-    'risale invece di scendere e il dollaro resta vicino ai minimi di due mesi. Sui colloqui le due versioni ' +
-    'restano incompatibili, con Teheran che limita il tavolo omanita ai soli passaggi marittimi.',
+    'Il rendimento a 30 anni è risalito sui massimi dal 2007 e la parte lunga della curva prezza insieme ' +
+    'inflazione persistente, maggiore fabbisogno del Tesoro e credibilità restrittiva della Fed, con il ' +
+    'mercato che dà circa il 65% di probabilità a un rialzo a settembre. È la ragione per cui l’oro resta ' +
+    'fermo a 4.062 dollari nonostante la nave colpita a Hormuz e il greggio in recupero verso 84,8-85: chi ' +
+    'cerca protezione la trova in un titolo che paga una cedola. Dalla Fed nessuna comunicazione nuova.',
   favours: [
-    'Trattare il recupero del greggio come la conferma più solida, perché è misurabile',
-    'Pesare l’episodio per quello che è finora: isolato, senza panico sulle azioni',
+    'Guardare al canale dei rendimenti prima che a quello geopolitico: è quello che sta decidendo',
+    'Tenere la lettura legata alla condizione dichiarata, cioè finché i rendimenti lunghi restano elevati',
   ],
   avoid: [
-    'Leggere il rialzo dell’oro come inizio di un movimento rifugio pieno: manca il resto del quadro',
-    'Considerare chiusa la partita diplomatica in un senso o nell’altro, senza conferme verificabili',
+    'Aspettarsi che il rischio su Hormuz si traduca in prezzo finché la parte lunga resta su questi livelli',
+    'Leggere il 65% sul rialzo di settembre come una previsione della Fed: è una lettura di mercato',
   ],
   invalidation:
-    'Un chiarimento ufficiale che ridimensioni l’attacco, un accordo verificabile fra Stati Uniti e Iran, oppure un petrolio che torna rapidamente sui minimi nonostante l’incidente.',
+    'Un forte calo dei rendimenti dopo il JOLTS delle 16:00, un dollaro in discesa e un XAU/USD capace di superare con decisione i massimi della mattinata.',
   confirming: [
-    'Nave colpita nell’area di Hormuz',
-    'Brent 84,89 $, circa +1,3%',
-    'XAU/USD ≈ 4.060 $, circa +0,2%',
+    'Trentennale ≈ 5,25%, massimi dal 2007',
+    'Rialzo Fed a settembre ≈ 65% di probabilità',
+    'Oro fermo a 4.062 $ nonostante Hormuz',
   ],
   contradicting: [
-    'Azioni asiatiche ancora relativamente positive',
-    'Decennale leggermente risalito',
-    'DXY vicino ai minimi di due mesi',
+    'Rischio geopolitico aperto dopo la nave colpita',
+    'Brent in recupero verso 84,8-85 $',
+    'Nessuna nuova comunicazione restrittiva dalla Fed',
   ],
   sources: [
+    'rendimenti-a-30-anni-di-nuovo-sui-massimi-dal-2007',
     'nave-colpita-nello-stretto-di-hormuz',
-    'trump-alza-di-nuovo-la-minaccia-contro-teheran',
     'tesoro-alza-il-fabbisogno-iran-raffredda-la-distensione',
   ],
 };

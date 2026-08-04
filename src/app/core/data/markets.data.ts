@@ -19,11 +19,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'XAU/USD',
     name: 'Oro spot',
-    value: '≈ 4.060',
-    change: '≈ +0,2%',
+    value: '≈ 4.062',
+    change: 'leggermente positivo, senza accelerare',
     tone: 'gold',
     icon: 'coin',
-    note: 'Sostenuto dalla tensione geopolitica dopo il colpo alla nave. Livello approssimato citato nell’analisi, non una quotazione: manca però il resto del quadro difensivo, e il mercato aspetta i dati sul lavoro.',
+    note: 'Livello approssimato citato nell’analisi, non una quotazione. Il sostegno geopolitico c’è ma non si traduce in prezzo: la domanda rifugio viene assorbita dai rendimenti lunghi.',
   },
   {
     symbol: 'HORMUZ',
@@ -47,10 +47,10 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     symbol: 'FED FUNDS',
     name: 'Tasso ufficiale della Federal Reserve',
     value: '3,50%-3,75%',
-    change: 'fermo dal 29 luglio',
-    tone: 'warn',
+    change: 'rialzo a settembre ≈ 65% di probabilità',
+    tone: 'bear',
     icon: 'bank',
-    note: 'Williams ha sostenuto con convinzione la decisione di non muoversi, ma alzerebbe senza un ritorno credibile dell’inflazione al 2%.',
+    note: 'La probabilità è una lettura di mercato, non una previsione della banca centrale: dalla Fed e dalla Fed di New York non sono uscite nuove comunicazioni ufficiali rilevanti.',
   },
   {
     symbol: 'ISM',
@@ -80,6 +80,15 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     note: 'È il canale da cui l’oro trae il beneficio maggiore, e sta andando dalla parte sbagliata: sale invece di scendere, nonostante la tensione geopolitica. Sopra pesano ISM forte e maggiore offerta di titoli.',
   },
   {
+    symbol: 'US30Y',
+    name: 'Treasury a 30 anni',
+    value: '≈ 5,25%',
+    change: 'massimi dal 2007',
+    tone: 'bear',
+    icon: 'percent',
+    note: 'La parte lunga prezza insieme inflazione persistente, fabbisogno del Tesoro e credibilità restrittiva della Fed. È l’ostacolo più concreto per l’oro, perché alza il rendimento alternativo dei titoli di Stato.',
+  },
+  {
     symbol: 'DXY',
     name: 'Dollar Index',
     value: 'minimi da due mesi',
@@ -91,11 +100,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: '84,89 $',
-    change: '≈ +1,3%, WTI 81,11 $',
+    value: '84,8-85 $',
+    change: 'recupero dopo il ribasso della vigilia',
     tone: 'warn',
     icon: 'arrow-up',
-    note: 'Recupera parte del crollo della seduta precedente dopo il colpo alla nave. È la conferma più solida che il premio geopolitico non era sparito, ed è la variabile da cui dipende quasi tutto il resto.',
+    note: 'Il recupero resta legato all’assenza di progressi diplomatici verificabili con l’Iran. Conferma che il premio geopolitico esiste, anche se sull’oro non riesce a farsi pagare.',
   },
   {
     symbol: 'TESORO USA',
@@ -105,15 +114,6 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     tone: 'bear',
     icon: 'print',
     note: 'Più offerta di Treasury in arrivo. Quanto pesi sull’oro dipende dalla composizione delle emissioni, che il piano di rifinanziamento dirà mercoledì.',
-  },
-  {
-    symbol: 'INTERVENTO JPY',
-    name: 'Intervento coordinato sullo yen',
-    value: '≈ 59 mld $',
-    change: 'euro venduti, non dollari',
-    tone: 'warn',
-    icon: 'shield',
-    note: 'Importo giapponese riportato da Reuters. Secondo il Financial Times la gamba americana è stata fatta vendendo euro: sostiene lo yen senza indebolire il dollaro nel suo complesso. Dettagli ufficiali non ancora pubblicati.',
   },
 ];
 
