@@ -390,6 +390,17 @@ Quando succede davvero:
 - **Il testo tratta come confermato ciò che è riportato.** Un piano riferito
   dalla stampa non è un ordine di attacco. La distanza fra le due cose è quasi
   sempre la differenza fra rialzista e neutrale-rialzista.
+- **La notizia era già nei prezzi.** Se il movimento era in corso *prima* che la
+  notizia uscisse, non è la notizia a spiegarlo: era già scontata, e l'analisi
+  che la usa come causa sta raccontando una coincidenza. Il segno da cercare è
+  proprio questo — l'ora del movimento contro l'ora della pubblicazione. È già
+  successo con un'intervista realizzata il 31 luglio e uscita tre giorni dopo,
+  mentre l'oro saliva da prima.
+- **Il fatto è solido ma l'effetto è ambiguo.** Quando il testo stesso dice che
+  la stessa notizia spinge in due direzioni — rifugio da una parte, rendimenti
+  dall'altra — la direzione giusta è `neutrale-rialzista` o
+  `neutrale-ribassista`, non `rialzista` o `ribassista` con forza bassa. La
+  forza bassa non è il posto dove si nasconde un'ambiguità di direzione.
 
 **Quello che non puoi fare** è cambiare la direzione perché ti convince di meno.
 Serve una ragione dicibile in una riga, presa dal grafo o dal testo stesso. E la
@@ -680,6 +691,18 @@ lettura di fondo, scacciandone una che valeva settimane.
 Nel dubbio, `breve`. La maggior parte delle analisi descrive quello che sta
 succedendo adesso, anche quando usa parole da manuale.
 
+Ma **`lungo` va usato quando serve**, e serve più di quanto sembri: su ventidue
+analisi era stato usato zero volte, e la lettura di fondo della panoramica era
+rimasta senza nessuna analisi dietro. Va messo quando il soggetto è qualcosa che
+si misura su trimestri e non su sedute: riserve delle banche centrali, traiettoria
+del debito, rendimenti reali, regime monetario.
+
+> **Attenzione alle parole del testo.** Un'analisi può dire «medio periodo»
+> intendendo settimane, perché fuori di qui «medio periodo» vuol dire quello. Su
+> questa scala `medio` sono i **giorni**: un dato trimestrale che «agisce sul
+> pavimento del mercato e non sul movimento della singola seduta» è `lungo`,
+> qualunque parola usi il testo. Traduci, non copiare.
+
 ### Le fonti
 
 `sources` è l'elenco di chi ha detto le cose che il testo riporta: `outlet` è
@@ -716,6 +739,20 @@ Regole, ora:
   smentita non verificata, un piano di cui si conosce l'esistenza ma non l'esito.
   **Esiste e va usata**: è il caso di tutte le analisi che partono da «secondo
   fonti».
+
+`certainty` riguarda **i fatti, non la conclusione**. Un prezzo osservato è un
+fatto solido anche quando la lettura che se ne ricava è fragile: è per questo che
+il campo vale `alta` tredici volte su ventidue senza che nessuno stia esagerando.
+
+La fiducia nella conclusione va invece scritta in `certaintyNote`, e va scritta
+**sempre e per esteso**, nella forma che le analisi usano già:
+
+> Alta sul dato, che è pubblicato e completo; media sulla direzione dell'impatto,
+> che resta una deduzione da confrontare con i prezzi.
+
+Due livelli, non uno. Il secondo è quello che conta di più, ed è l'unico posto in
+cui viene detto: la pagina degli esiti lo cita come tale, e senza quella riga il
+lettore non ha modo di sapere quanto l'analisi creda a sé stessa.
 
 Se le ultime analisi hanno tutte `alta`, la prossima non può averla per inerzia:
 rileggi il fondamento e chiediti che cosa, di preciso, è già successo. Il

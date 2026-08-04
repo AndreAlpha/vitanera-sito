@@ -80,25 +80,34 @@ const VERDICT_ICON: Record<Verdict, string> = {
       <section class="panel" aria-labelledby="calibrazione">
         <h2 id="calibrazione" class="panel__title">Calibrazione</h2>
         <p class="panel__note">
-          Ogni analisi dichiara quanto è solido il proprio fondamento fattuale. Questo è il
-          confronto fra quella dichiarazione e come è andata: se le analisi dichiarate «alta» non
-          vanno meglio delle altre, il campo non sta misurando niente.
+          Ogni analisi dichiara qualcosa prima di sapere come andrà. Qui quelle dichiarazioni
+          vengono confrontate con l’esito. Sono <strong>due</strong> e misurano cose diverse: la
+          seconda è quella che più assomiglia a «quanto ci credo».
         </p>
-        <dl class="calib">
-          @for (row of calibration(); track row.livello) {
-            <div class="calib__row">
-              <dt class="calib__level">Certezza {{ row.livello }}</dt>
-              <dd class="calib__value">
-                @if (row.quota !== null) {
-                  <span class="tnum">{{ row.quota }}%</span> confermate
-                  <span class="calib__of tnum">({{ row.confermate }} su {{ row.verificate }})</span>
-                } @else {
-                  <span class="calib__of">nessuna verificata</span>
-                }
-              </dd>
-            </div>
-          }
-        </dl>
+
+        @for (blocco of calibration(); track blocco.chiave) {
+          <div class="calib__group">
+            <h3 class="calib__title">{{ blocco.titolo }}</h3>
+            <p class="calib__hint">{{ blocco.nota }}</p>
+            <dl class="calib">
+              @for (row of blocco.righe; track row.livello) {
+                <div class="calib__row">
+                  <dt class="calib__level">{{ row.livello }}</dt>
+                  <dd class="calib__value">
+                    @if (row.quota !== null) {
+                      <span class="tnum">{{ row.quota }}%</span> confermate
+                      <span class="calib__of tnum"
+                        >({{ row.confermate }} su {{ row.verificate }})</span
+                      >
+                    } @else {
+                      <span class="calib__of">nessuna verificata</span>
+                    }
+                  </dd>
+                </div>
+              }
+            </dl>
+          </div>
+        }
       </section>
     }
 
@@ -221,6 +230,28 @@ const VERDICT_ICON: Record<Verdict, string> = {
 
     .calib {
       margin: 0;
+    }
+
+    .calib__group + .calib__group {
+      margin-top: var(--s-5);
+    }
+
+    .calib__title {
+      margin: 0 0 var(--s-1);
+      font-size: var(--t-sm);
+      font-weight: 600;
+    }
+
+    .calib__hint {
+      margin: 0 0 var(--s-2);
+      font-size: var(--t-xs);
+      line-height: var(--lh-snug);
+      color: var(--text-soft);
+      max-width: var(--measure);
+    }
+
+    .calib__level {
+      text-transform: capitalize;
     }
 
     .calib__row {

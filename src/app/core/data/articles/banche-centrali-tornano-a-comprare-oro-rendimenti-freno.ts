@@ -29,7 +29,11 @@ export const acquistiBancheCentraliRivisti: Article = {
     regime:
       'Fondamentali bilanciati: domanda strutturale delle banche centrali e premio geopolitico da una parte, ' +
       'rendimenti statunitensi elevati e Fed senza segnali di allentamento dall’altra.',
-    horizon: 'medio',
+    // Il testo dice tre volte «medio periodo», ma parlando di acquisti
+    // trimestrali che «agiscono sul pavimento del mercato, non sul movimento
+    // della singola seduta». Sulla scala del sito — dove `medio` sono i giorni
+    // e `lungo` le settimane — quelle parole valgono `lungo`.
+    horizon: 'lungo',
   },
   certainty: 'alta',
   certaintyNote:

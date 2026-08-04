@@ -243,31 +243,64 @@ export class ContentService {
   });
 
   /**
-   * Calibrazione: per ogni grado di certezza dichiarato, come sono andate.
+   * Calibrazione: per ogni dichiarazione fatta prima, come sono andate dopo.
    *
-   * È il confronto che rende `certainty` un'affermazione verificabile invece di
-   * un'etichetta. Se le analisi dichiarate «alta» non vanno meglio di quelle
-   * dichiarate «media», il campo non sta misurando niente.
+   * Le dichiarazioni confrontate sono **due**, e tenerle separate è il punto.
+   *
+   * `certainty` non misura quanta fiducia l'analisi abbia nella propria
+   * conclusione: misura quanto sono solidi i fatti da cui parte, ed è definito
+   * così in `/metodologia`. Confrontarlo da solo con l'esito significa mettere a
+   * confronto due cose diverse — la solidità di un dato pubblicato non dice
+   * niente su dove andrà il prezzo — e produrre un numero che sembra una
+   * calibrazione senza esserlo.
+   *
+   * Ogni analisi dichiara in prosa anche il secondo livello, quello sulla
+   * lettura di mercato («alta sul dato, media sull'effetto»), ma non è un campo:
+   * l'approssimazione più vicina che il modello ha è `bias.strength`, cioè
+   * quanto i mercati guardati concordavano fra loro. Sono affiancati, ciascuno
+   * con scritto che cosa misura, invece di sceglierne uno e chiamarlo
+   * «calibrazione».
    */
   readonly calibration = computed(() => {
-    const esiti = this.outcomes();
-    const livelli: readonly Level[] = ['alta', 'media', 'bassa'];
-    return livelli
-      .map((livello) => {
-        const righe = esiti
-          .map((o) => ({ o, a: this.bySlug(o.slug) }))
-          .filter((r) => r.a?.certainty === livello);
-        const verificate = righe.filter((r) => r.o.verdict !== 'senza-verifica');
-        const confermate = righe.filter((r) => r.o.verdict === 'confermata').length;
-        return {
-          livello,
-          totale: righe.length,
-          verificate: verificate.length,
-          confermate,
-          quota: verificate.length ? Math.round((confermate / verificate.length) * 100) : null,
-        };
-      })
-      .filter((r) => r.totale > 0);
+    const esiti = this.outcomes().map((o) => ({ o, a: this.bySlug(o.slug) }));
+
+    const perLivello = (scelta: (r: (typeof esiti)[number]) => Level | undefined) => {
+      const livelli: readonly Level[] = ['alta', 'media', 'bassa'];
+      return livelli
+        .map((livello) => {
+          const righe = esiti.filter((r) => scelta(r) === livello);
+          const verificate = righe.filter((r) => r.o.verdict !== 'senza-verifica');
+          const confermate = righe.filter((r) => r.o.verdict === 'confermata').length;
+          return {
+            livello,
+            totale: righe.length,
+            verificate: verificate.length,
+            confermate,
+            quota: verificate.length ? Math.round((confermate / verificate.length) * 100) : null,
+          };
+        })
+        .filter((r) => r.totale > 0);
+    };
+
+    return [
+      {
+        chiave: 'certainty' as const,
+        titolo: 'Per solidità dei fatti dichiarata',
+        nota:
+          'Quanto erano solidi i fatti da cui partiva l’analisi: un prezzo osservato, un dato ' +
+          'pubblicato, una notizia soltanto riportata. Non dice quanta fiducia l’analisi avesse ' +
+          'nella propria conclusione — quella sta scritta in prosa, in fondo a ogni testo.',
+        righe: perLivello((r) => r.a?.certainty),
+      },
+      {
+        chiave: 'strength' as const,
+        titolo: 'Per concordanza dei segnali dichiarata',
+        nota:
+          'Quanto i mercati guardati dicevano la stessa cosa. È la forza mostrata sul badge di ' +
+          'ogni analisi, ed è la dichiarazione che più si avvicina a «quanto ci credo».',
+        righe: perLivello((r) => r.a?.bias?.strength),
+      },
+    ].filter((blocco) => blocco.righe.length > 0);
   });
 
   /** Altre analisi correlate: categorie in comune, poi tag in comune. */

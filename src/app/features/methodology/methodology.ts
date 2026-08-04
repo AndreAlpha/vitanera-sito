@@ -145,6 +145,14 @@ import { PageHeader } from '../../shared/ui/page-header';
           <span class="chip">media</span>
           <span class="chip">alta</span>
         </div>
+        <p>
+          Vale la pena dirlo per esteso, perché è la confusione più facile: un prezzo osservato e un
+          dato pubblicato sono fatti solidi anche quando la lettura che se ne ricava è fragile. Per
+          questo ogni analisi, nella sezione che chiude il testo, dichiara <strong>due</strong>
+          livelli e non uno — quanto sono solidi i fatti, e quanta fiducia merita l’effetto di
+          mercato che se ne deduce. Il secondo è quasi sempre più basso del primo, ed è il numero
+          che conta di più.
+        </p>
       </section>
     </section>
 

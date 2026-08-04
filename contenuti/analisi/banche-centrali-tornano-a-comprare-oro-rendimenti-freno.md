@@ -15,12 +15,12 @@ impostazione:
   strumento: "XAU/USD"
   direzione: "neutrale"
   forza: "bassa"
-  orizzonte: "medio"
+  orizzonte: "lungo"
   regime: "Fondamentali bilanciati: domanda strutturale delle banche centrali e premio geopolitico da una parte, rendimenti statunitensi elevati e Fed senza segnali di allentamento dall’altra."
 fonti:
   - testata: "World Gold Council"
 sorgente: "src/app/core/data/articles/banche-centrali-tornano-a-comprare-oro-rendimenti-freno.ts"
-impronta: "7f2c067f058488d9"
+impronta: "67a90396d18bc360"
 ---
 
 # Le banche centrali tornano a comprare oro, ma i rendimenti restano il freno
@@ -97,7 +97,7 @@ Il fondamento è solido: una revisione pubblicata dal World Gold Council e una s
 
 ## Regime descritto
 
-Impostazione su XAU/USD: neutrale, forza bassa, orizzonte medio.
+Impostazione su XAU/USD: neutrale, forza bassa, orizzonte lungo.
 
 Fondamentali bilanciati: domanda strutturale delle banche centrali e premio geopolitico da una parte, rendimenti statunitensi elevati e Fed senza segnali di allentamento dall’altra.
 
