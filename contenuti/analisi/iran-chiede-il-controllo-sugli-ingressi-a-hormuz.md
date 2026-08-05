@@ -19,8 +19,10 @@ impostazione:
   regime: "JOLTS debole, dollaro e rendimenti in calo continuano a sostenere l’oro, e la condizione iraniana aggiunge un rischio geopolitico che il prezzo del greggio non sta scontando. Il sostegno però non è pulito: un forte rimbalzo del petrolio aiuterebbe l’oro dal lato rifugio e lo penalizzerebbe da quello dei rendimenti."
 fonti:
   - testata: "Reuters"
+esito: "parziale"
+controllata: "2026-08-05T09:20:00+02:00"
 sorgente: "src/app/core/data/articles/iran-chiede-il-controllo-sugli-ingressi-a-hormuz.ts"
-impronta: "98353bd6490e46b0"
+impronta: "dbe3a357a7f24d21"
 ---
 
 # L’Iran chiede il controllo sugli ingressi a Hormuz
@@ -99,6 +101,20 @@ Alta sull’esistenza delle richieste iraniane, che sono riportate da Reuters e 
 Impostazione su XAU/USD: rialzista, forza media, orizzonte breve.
 
 JOLTS debole, dollaro e rendimenti in calo continuano a sostenere l’oro, e la condizione iraniana aggiunge un rischio geopolitico che il prezzo del greggio non sta scontando. Il sostegno però non è pulito: un forte rimbalzo del petrolio aiuterebbe l’oro dal lato rifugio e lo penalizzerebbe da quello dei rendimenti.
+
+## Come è andata
+
+Verdetto: **parziale**, controllata il 2026-08-05T09:20:00+02:00.
+
+Sulla diplomazia l’analisi ha visto giusto: nessun accordo, nessuna ripresa dei transiti, e il conteggio delle otto navi ha poi quantificato quanto la riapertura fosse lontana. Ha sbagliato però la conseguenza che ne traeva sul prezzo. La tesi era che un ribasso del greggio costruito su un’intesa non chiusa fosse fragile e vulnerabile a un rimbalzo; in due sedute il rimbalzo non è arrivato e il Brent è sceso ancora, dai 79,8 dollari della pubblicazione a 78,85-79.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un accordo ufficiale e verificabile sulla riapertura dello stretto. | no | Nessun accordo definitivo a quindici ore di distanza: Teheran continua a contestare la ricostruzione americana dei colloqui. |
+| Una ripresa stabile dei transiti. | no | Al contrario: il conteggio pubblicato la mattina dopo indica otto navi contro le 130-140 al giorno di prima del conflitto. |
+| Un petrolio che resta sotto gli 80 dollari senza rimbalzare. | sì | Il Brent è sceso ancora invece di rimbalzare: da 79,8 dollari a 78,85-79, con il WTI intorno a 75. |
+
+**Che cosa cambia.** Un prezzo che sconta un’aspettativa non confermata non è per questo prossimo a correggere: può continuare a scontarla a lungo. Il vincolo dice dove finirà il fiume, non quando — e su un orizzonte breve la seconda domanda è quella che conta.
 
 ## Fonti consultate
 

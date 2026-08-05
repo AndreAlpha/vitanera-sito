@@ -102,9 +102,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   stance:
     'Nello stretto sono passate otto navi, contro le 130-140 al giorno di prima del conflitto: la ' +
     'normalizzazione non è cominciata, e il petrolio che ha perso quasi il 10% in due sedute sta prezzando ' +
-    'un’intenzione e non un transito. Sopra quel ribasso poggia tutto il resto: XAU/USD è salito verso i ' +
-    '4.127 dollari con il decennale al 4,62% e la probabilità di un rialzo Fed a settembre scesa al 57-59%. ' +
-    'La direzione è confermata dai prezzi; a essere sottile è ciò su cui si appoggia.',
+    'un’intenzione e non un transito. Sopra quel ribasso poggia tutto il resto, e nella mattinata il resto ' +
+    'ha continuato a salire: XAU/USD verso i 4.175 dollari, massimo dal 7 luglio, con il decennale al 4,60% ' +
+    'e il dollaro debole. La direzione è confermata dai prezzi; a essere sottile è ciò su cui si appoggia — ' +
+    'e va detto che finora il greggio non ha dato alcun segno di volersi riprendere.',
   favours: [
     'Guardare il conteggio dei transiti prima del grafico dell’oro: è lì che si vede se la catena regge',
     'Tenere separate le posizioni dichiarate dalle navi che passano davvero',
@@ -114,14 +115,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Considerare acquisita la svolta monetaria, con il rialzo di settembre ancora dato sopra la metà',
   ],
   confirming: [
-    'XAU/USD ≈ 4.127 $, circa +1,3%',
-    'Decennale ≈ 4,62%',
-    'Rialzo Fed a settembre 57-59%, dal 67%',
+    'XAU/USD ≈ 4.175 $, massimo dal 7 luglio',
+    'Decennale ≈ 4,60%, dollaro debole',
+    'Sale tutto il comparto dei preziosi',
   ],
   contradicting: [
-    'Otto transiti contro 130-140 al giorno',
-    'Iran che nega i negoziati diretti',
-    'Brent ≈ 79,6 $ fermo sui minimi, vulnerabile a rimbalzi',
+    'Brent ≈ 78,85 $: scende ancora invece di rimbalzare',
+    'Rialzo Fed a settembre ancora dato intorno al 59%',
+    'Rifinanziamento del Tesoro alle 14:30 e ADP ancora da vedere',
   ],
   sources: [
     'hormuz-non-ha-riaperto-otto-navi-contro-130-al-giorno',

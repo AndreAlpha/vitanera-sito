@@ -28,6 +28,34 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'iran-chiede-il-controllo-sugli-ingressi-a-hormuz',
+    checkedAt: '2026-08-05T09:20:00+02:00',
+    verdict: 'parziale',
+    conditions: [
+      {
+        condition: 'Un accordo ufficiale e verificabile sulla riapertura dello stretto.',
+        triggered: false,
+        evidence:
+          'Nessun accordo definitivo a quindici ore di distanza: Teheran continua a contestare la ricostruzione americana dei colloqui.',
+      },
+      {
+        condition: 'Una ripresa stabile dei transiti.',
+        triggered: false,
+        evidence:
+          'Al contrario: il conteggio pubblicato la mattina dopo indica otto navi contro le 130-140 al giorno di prima del conflitto.',
+      },
+      {
+        condition: 'Un petrolio che resta sotto gli 80 dollari senza rimbalzare.',
+        triggered: true,
+        evidence:
+          'Il Brent è sceso ancora invece di rimbalzare: da 79,8 dollari a 78,85-79, con il WTI intorno a 75.',
+      },
+    ],
+    what: 'Sulla diplomazia l’analisi ha visto giusto: nessun accordo, nessuna ripresa dei transiti, e il conteggio delle otto navi ha poi quantificato quanto la riapertura fosse lontana. Ha sbagliato però la conseguenza che ne traeva sul prezzo. La tesi era che un ribasso del greggio costruito su un’intesa non chiusa fosse fragile e vulnerabile a un rimbalzo; in due sedute il rimbalzo non è arrivato e il Brent è sceso ancora, dai 79,8 dollari della pubblicazione a 78,85-79.',
+    lesson:
+      'Un prezzo che sconta un’aspettativa non confermata non è per questo prossimo a correggere: può continuare a scontarla a lungo. Il vincolo dice dove finirà il fiume, non quando — e su un orizzonte breve la seconda domanda è quella che conta.',
+  },
+  {
     slug: 'oro-estende-il-rialzo-il-canale-e-quello-dei-tassi',
     checkedAt: '2026-08-05T08:30:00+02:00',
     verdict: 'confermata',
