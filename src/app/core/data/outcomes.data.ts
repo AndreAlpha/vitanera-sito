@@ -28,6 +28,46 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'trump-dichiara-una-trattativa-durata-tutto-il-giorno',
+    checkedAt: '2026-08-05T13:25:00+02:00',
+    verdict: 'parziale',
+    conditions: [
+      {
+        condition: 'Una nuova smentita netta da parte iraniana.',
+        triggered: false,
+        evidence:
+          'Nessuna smentita nuova: Teheran continua a contestare parte della ricostruzione americana, e la Casa Bianca descrive ancora le trattative come positive.',
+      },
+      {
+        condition: 'Transiti fermi alle otto navi, senza risalita verso i 130-140 al giorno.',
+        triggered: true,
+        evidence:
+          'Nessun aumento riportato nelle tre ore successive: il conteggio disponibile resta quello di otto navi.',
+      },
+      {
+        condition: 'Il fallimento dichiarato dei colloqui.',
+        triggered: false,
+        evidence: 'I colloqui non sono stati dichiarati falliti da nessuna delle due parti.',
+      },
+      {
+        condition: 'Un rimbalzo del Brent sopra gli 80-82 dollari.',
+        triggered: true,
+        evidence:
+          'Il Brent è risalito a 80,87 dollari, circa +1,9%, dopo l’attacco rivendicato dagli Houthi contro una petroliera saudita nel Mar Rosso.',
+      },
+      {
+        condition:
+          'Un ADP molto superiore alle attese, o un aumento aggressivo delle emissioni Treasury a lunga scadenza.',
+        triggered: false,
+        evidence:
+          'Nessuno dei due era ancora uscito alle 13:25: l’ADP è atteso alle 14:15 e il piano di rifinanziamento alle 14:30.',
+      },
+    ],
+    what: 'Due condizioni su cinque sono scattate, e la lettura regge solo a metà. Il quadro diplomatico non si è mosso — nessuna smentita nuova, nessun fallimento dichiarato — ma il Brent è tornato sopra gli 80 dollari, a 80,87. La parte che ha ceduto è quindi quella sui prezzi, non quella sul giudizio politico.',
+    lesson:
+      'Il rimbalzo del greggio era stato scritto come soglia di invalidazione perché doveva segnalare il fallimento della distensione. È scattato per un motivo che non c’entrava: un attacco a una petroliera nel Mar Rosso, cioè su una rotta diversa da Hormuz. Una condizione espressa come livello di prezzo si verifica in un secondo ma non dice per quale causa si è mossa: quando serve misurare una tesi, meglio affiancarle una condizione che nomini il meccanismo.',
+  },
+  {
     slug: 'hormuz-non-ha-riaperto-otto-navi-contro-130-al-giorno',
     checkedAt: '2026-08-05T10:35:00+02:00',
     verdict: 'confermata',

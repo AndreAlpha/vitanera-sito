@@ -35,6 +35,15 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     note: 'È il numero che manca a tutte le dichiarazioni sui progressi diplomatici: la normalizzazione dei traffici non è cominciata, e il ribasso del greggio sconta una riapertura che nei fatti non c’è.',
   },
   {
+    symbol: 'MAR ROSSO',
+    name: 'Attacco a una petroliera vicino a Yanbu',
+    value: 'petroliera colpita',
+    change: 'rivendicato dagli Houthi',
+    tone: 'bear',
+    icon: 'alert',
+    note: 'Un secondo collo di bottiglia, su una rotta diversa e con un attore che non siede al tavolo di Hormuz: un accordo con Teheran non chiuderebbe da solo il rischio sulle rotte energetiche.',
+  },
+  {
     symbol: 'IRAN',
     name: 'Trattativa sulla riapertura dello stretto',
     value: 'quinto annuncio in tre giorni',
@@ -100,11 +109,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: '79,04 $',
-    change: 'WTI 75,19 $, ancora in calo',
+    value: '80,87 $',
+    change: 'circa +1,9%, WTI 76,67 $',
     tone: 'warn',
-    icon: 'arrow-down',
-    note: 'È il primo anello della catena che sostiene l’oro, ed è quello più sottile: scende sul quinto annuncio di distensione in tre giorni, mentre il conteggio dei transiti non si muove.',
+    icon: 'arrow-up',
+    note: 'Il ribasso si è fermato sull’attacco a una petroliera nel Mar Rosso. Sopra gli 82 dollari l’effetto inflazionistico comincerebbe a pesare sull’oro più della domanda di rifugio.',
   },
   {
     symbol: 'TESORO USA',

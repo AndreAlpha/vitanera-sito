@@ -77,30 +77,30 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-05T10:30:00+02:00',
+  updatedAt: '2026-08-05T13:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
       direction: 'neutrale-rialzista',
-      strength: 'media',
+      strength: 'bassa',
       regime:
-        'Il canale dei tassi continua a sostenere il metallo, ma la distensione che abbassa il greggio gli ' +
-        'toglie domanda di rifugio: la stessa notizia spinge nei due sensi, e dopo la corsa verso i 4.175 ' +
-        'l’inclinazione non può essere piena.',
+        'Il rifugio torna a sostenere il metallo proprio mentre lo stesso attacco, alzando il greggio, ' +
+        'minaccia il canale dei tassi che lo reggeva: i due sostegni si scambiano il posto invece di ' +
+        'sommarsi. Dollaro a 99,85 e decennale al 4,60% tengono ancora, ma su un piede solo.',
       invalidation:
-        'Un ADP molto superiore alle attese o emissioni lunghe in forte aumento, che riporterebbero il decennale sopra il 4,70%; oppure un rimbalzo del Brent sopra gli 80-82 dollari.',
+        'Un Brent sopra gli 82 dollari, che farebbe pesare l’effetto inflazionistico più della domanda di rifugio; oppure un ritorno sotto i 79, che toglierebbe anche il premio geopolitico.',
     },
     {
       horizon: 'medio',
       direction: 'neutrale-rialzista',
       strength: 'media',
       regime:
-        'La catena greggio giù, inflazione attesa giù, rendimenti giù regge, ma il suo primo anello è un ' +
-        'ribasso del petrolio che sconta una riapertura di Hormuz che nei transiti non si vede: otto navi ' +
-        'contro le 130-140 al giorno di prima del conflitto.',
+        'La catena greggio giù, inflazione attesa giù, rendimenti giù ha ora due minacce e non una: i ' +
+        'transiti a Hormuz fermi a otto navi contro 130-140, e un secondo collo di bottiglia sul Mar Rosso ' +
+        'che non dipende dai colloqui con Teheran. Un accordo su Hormuz non chiuderebbe il dossier rotte.',
       invalidation:
-        'Un conteggio dei transiti che risale verso i livelli precedenti al conflitto, un forte rimbalzo del petrolio, oppure dati ADP e payroll nettamente superiori alle attese.',
+        'Un conteggio dei transiti che risale verso i livelli precedenti al conflitto insieme alla fine degli attacchi nel Mar Rosso; oppure dati ADP e payroll nettamente superiori alle attese.',
     },
     {
       horizon: 'lungo',
@@ -113,36 +113,35 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, oppure il ritorno stabile del decennale sopra il 5%.',
     },
   ],
-  headline: 'Il quinto annuncio di distensione, e il conteggio delle navi sempre fermo a otto',
+  headline: 'Una petroliera colpita nel Mar Rosso: il rischio rotte non era solo Hormuz',
   stance:
-    'Trump dichiara una trattativa durata tutto il giorno e «molto positiva», con Hormuz che potrebbe ' +
-    'riaprire presto e una minaccia militare se Teheran si ritirasse. È il quinto annuncio in tre giorni: i ' +
-    'quattro precedenti hanno prodotto una smentita iraniana e nessuna nave in più, e i transiti restano ' +
-    'otto contro le 130-140 al giorno di prima della guerra. Il mercato ci crede lo stesso — Brent a 79,04, ' +
-    'WTI a 75,19 — e per l’oro il greggio più basso vale attraverso i tassi quello che la distensione gli ' +
-    'toglie in domanda di rifugio.',
+    'Gli Houthi rivendicano un missile contro una petroliera saudita vicino a Yanbu, e il greggio smette di ' +
+    'scendere: Brent a 80,87 con circa +1,9%, WTI a 76,67. Il punto non è la gravità dell’episodio ma dove ' +
+    'è avvenuto — un altro stretto, un altro attore, e nessuna dipendenza dai colloqui con Teheran. Per ' +
+    'l’oro il rifugio torna proprio mentre lo stesso rialzo del greggio minaccia il canale dei tassi che lo ' +
+    'sosteneva: decennale al 4,60-4,61% e dollaro a 99,85 tengono ancora, ma i due sostegni non si sommano.',
   favours: [
-    'Chiedersi quante volte, in questa stessa vicenda, un annuncio simile ha prodotto qualcosa di misurabile',
-    'Tenere i due canali distinti: la diplomazia muove il greggio, i rendimenti muovono l’oro',
+    'Tenere separati i due colli di bottiglia: un accordo su Hormuz non chiude il dossier delle rotte',
+    'Guardare gli 82 dollari di Brent come la soglia oltre cui l’inflazione pesa più del rifugio',
   ],
   avoid: [
-    'Scambiare la ricchezza di dettagli di una dichiarazione per una probabilità più alta che si avveri',
-    'Leggere un accordo come univocamente favorevole: toglierebbe il premio geopolitico proprio sui massimi',
+    'Leggere il rimbalzo del greggio come un segnale sulla trattativa: viene da tutt’altra rotta',
+    'Trattare come confermati i danni alla nave, che restano una rivendicazione non verificata',
   ],
   confirming: [
-    'Brent 79,04 $ e WTI 75,19 $, ancora in calo',
-    'Rendimenti e attese di rialzo Fed meno aggressivi',
-    'Dichiarazione presidenziale, non più del solo Tesoro',
+    'Brent 80,87 $, circa +1,9%',
+    'Decennale ancora al 4,60-4,61%',
+    'Dollar Index ≈ 99,85, sotto quota 100',
   ],
   contradicting: [
-    'Transiti fermi a otto navi contro 130-140 al giorno',
-    'L’Iran continua a negare un’intesa imminente',
+    'Attacco rivendicato, danni non verificati',
+    'Casa Bianca: trattative ancora positive',
     'ADP alle 14:15 e rifinanziamento del Tesoro alle 14:30',
   ],
   sources: [
+    'attacco-houthi-nel-mar-rosso-il-secondo-collo-di-bottiglia',
     'trump-dichiara-una-trattativa-durata-tutto-il-giorno',
     'hormuz-non-ha-riaperto-otto-navi-contro-130-al-giorno',
-    'oro-estende-il-rialzo-il-canale-e-quello-dei-tassi',
   ],
 };
 

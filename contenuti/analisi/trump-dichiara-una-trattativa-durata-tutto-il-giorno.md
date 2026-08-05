@@ -21,8 +21,10 @@ prossimoAppuntamento:
   quando: "Oggi alle 14:15 e alle 14:30"
   titolo: "ADP sul lavoro privato e rifinanziamento del Tesoro"
   dettaglio: "Sono i due appuntamenti che possono spostare il bias davvero, e agiscono sullo stesso canale: un ADP forte o un aumento delle emissioni a lunga scadenza riporterebbero in alto dollaro e rendimenti, togliendo all’oro la spinta che oggi lo sostiene."
+esito: "parziale"
+controllata: "2026-08-05T13:25:00+02:00"
 sorgente: "src/app/core/data/articles/trump-dichiara-una-trattativa-durata-tutto-il-giorno.ts"
-impronta: "77029bc31b006c45"
+impronta: "a2c55fb1a80a3b87"
 ---
 
 # Trump dichiara una trattativa durata tutto il giorno
@@ -120,3 +122,19 @@ Sono i due appuntamenti che possono spostare il bias davvero, e agiscono sullo s
 Impostazione su XAU/USD: neutrale-rialzista, forza media, orizzonte breve.
 
 Il greggio più basso continua a sostenere l’oro dal canale dei tassi, ma la stessa distensione che lo abbassa toglie domanda di bene rifugio: la notizia spinge nei due sensi insieme. Sotto, il vincolo fisico non si muove e il movimento verso i 4.175 espone a prese di profitto.
+
+## Come è andata
+
+Verdetto: **parziale**, controllata il 2026-08-05T13:25:00+02:00.
+
+Due condizioni su cinque sono scattate, e la lettura regge solo a metà. Il quadro diplomatico non si è mosso — nessuna smentita nuova, nessun fallimento dichiarato — ma il Brent è tornato sopra gli 80 dollari, a 80,87. La parte che ha ceduto è quindi quella sui prezzi, non quella sul giudizio politico.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Una nuova smentita netta da parte iraniana. | no | Nessuna smentita nuova: Teheran continua a contestare parte della ricostruzione americana, e la Casa Bianca descrive ancora le trattative come positive. |
+| Transiti fermi alle otto navi, senza risalita verso i 130-140 al giorno. | sì | Nessun aumento riportato nelle tre ore successive: il conteggio disponibile resta quello di otto navi. |
+| Il fallimento dichiarato dei colloqui. | no | I colloqui non sono stati dichiarati falliti da nessuna delle due parti. |
+| Un rimbalzo del Brent sopra gli 80-82 dollari. | sì | Il Brent è risalito a 80,87 dollari, circa +1,9%, dopo l’attacco rivendicato dagli Houthi contro una petroliera saudita nel Mar Rosso. |
+| Un ADP molto superiore alle attese, o un aumento aggressivo delle emissioni Treasury a lunga scadenza. | no | Nessuno dei due era ancora uscito alle 13:25: l’ADP è atteso alle 14:15 e il piano di rifinanziamento alle 14:30. |
+
+**Che cosa cambia.** Il rimbalzo del greggio era stato scritto come soglia di invalidazione perché doveva segnalare il fallimento della distensione. È scattato per un motivo che non c’entrava: un attacco a una petroliera nel Mar Rosso, cioè su una rotta diversa da Hormuz. Una condizione espressa come livello di prezzo si verifica in un secondo ma non dice per quale causa si è mossa: quando serve misurare una tesi, meglio affiancarle una condizione che nomini il meccanismo.
