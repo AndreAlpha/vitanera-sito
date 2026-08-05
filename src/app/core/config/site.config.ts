@@ -23,6 +23,20 @@ export const SITE = {
 export const DISCLAIMER_SHORT =
   'Contenuto a scopo informativo e didattico. Non costituisce consulenza finanziaria né raccomandazione di investimento.';
 
+/**
+ * Come nasce un'analisi: chi la pensa e chi la scrive.
+ *
+ * È una costante e non un campo dell'articolo perché vale **per tutte** le
+ * analisi allo stesso modo: se fosse un campo andrebbe ripetuto trenta volte,
+ * qualcuno prima o poi lo dimenticherebbe, e la differenza fra un'analisi con la
+ * dicitura e una senza si leggerebbe come una differenza di sostanza che non
+ * esiste. Da qui la usa `<app-authorship-notice />`, che la mette sotto la firma
+ * di ogni analisi — comprese quelle pubblicate prima che questa riga esistesse.
+ */
+export const AUTHORSHIP_NOTICE =
+  'Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — ' +
+  'struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.';
+
 /** Nota sui dati numerici, dove il sito ne mostra. */
 export const DISCLAIMER_DATA =
   'I valori riportati sono riferimenti citati nelle analisi, non quotazioni in tempo reale.';

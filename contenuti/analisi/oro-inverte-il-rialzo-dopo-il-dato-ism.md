@@ -33,6 +33,8 @@ _Correlazioni · Reazione al dato ISM_
 
 XAU/USD è passato dal rialzo iniziale a circa −0,3%, vicino ai 4.030 dollari, e con lui sono scesi argento, platino e palladio. Nello stesso pomeriggio la Bank of Korea annuncia che tornerà a comprare oro dopo dodici anni: una notizia strutturale che però non tocca la pressione di oggi.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Dopo il dato manifatturiero, XAU/USD è passato dal rialzo iniziale a circa −0,3%, vicino ai 4.030 dollari.

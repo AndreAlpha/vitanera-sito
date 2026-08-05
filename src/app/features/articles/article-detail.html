@@ -37,6 +37,8 @@
         <span><app-icon name="clock" [size]="13" />{{ a.readingMinutes }} minuti di lettura</span>
       </div>
 
+      <app-authorship-notice />
+
       <div class="hero__chips">
         @if (a.bias; as bias) {
           <app-bias-badge

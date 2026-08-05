@@ -31,6 +31,8 @@ _Debito USA · Piano di rifinanziamento_
 
 Washington prevede di indebitarsi per 739 miliardi di dollari nel terzo trimestre, 68 in più della stima di maggio, e mercoledì dirà come. Nel frattempo Teheran smentisce che esistano negoziati, proprio mentre il mercato ha fatto crollare il petrolio sull’ipotesi opposta.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Il Tesoro statunitense ha alzato la previsione di indebitamento netto del terzo trimestre a 739 miliardi di dollari, 68 miliardi in più della stima di maggio.

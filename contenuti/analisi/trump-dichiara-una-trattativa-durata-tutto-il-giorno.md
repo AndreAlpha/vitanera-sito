@@ -33,6 +33,8 @@ _Premio di rischio · Il quinto annuncio_
 
 Stavolta a parlare è il presidente in persona, e non di una possibilità ma di un negoziato già avvenuto e «molto positivo». È il quinto annuncio in tre giorni; i quattro precedenti hanno prodotto una smentita iraniana e nessuna nave in più.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Trump ha dichiarato che Stati Uniti e Iran hanno svolto una negoziazione durata tutta la giornata e che le discussioni sarebbero state «molto positive», aggiungendo che lo Stretto di Hormuz potrebbe riaprire presto.

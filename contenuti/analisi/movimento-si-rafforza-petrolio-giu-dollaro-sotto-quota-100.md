@@ -33,6 +33,8 @@ _Correlazioni · Controllo cross-asset_
 
 Il petrolio perde oltre il 6% sulle attese di un’intesa fra Stati Uniti e Iran, il Dollar Index scende sotto quota 100 e anche euro e sterlina guadagnano terreno: non è più una reazione circoscritta a USD/JPY. Per l’oro il sostegno arriva ora da tre lati insieme.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Il petrolio perde oltre il 6%, con il mercato che aumenta le scommesse su una soluzione diplomatica fra Stati Uniti e Iran.

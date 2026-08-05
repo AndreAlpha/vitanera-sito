@@ -34,6 +34,8 @@ _Rotte · Dalla dichiarazione al documento_
 
 Iran e Oman hanno concordato le coordinate geografiche di una rotta attraverso lo stretto, e una dichiarazione congiunta è in preparazione. I cinque annunci precedenti erano frasi; questo è un oggetto tecnico. Non è ancora il numero che questo archivio ha scelto di guardare, ma è la prima cosa che gli somiglia.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Il ministero degli Esteri iraniano ha annunciato che Iran e Oman hanno concordato le coordinate geografiche di una rotta marittima attraverso lo Stretto di Hormuz; una dichiarazione congiunta è in preparazione, con il testo ancora in revisione.

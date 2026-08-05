@@ -33,6 +33,8 @@ _Federal Reserve · Intervista a Williams_
 
 Il presidente della Fed di New York si aspetta ancora un rallentamento dell’inflazione fra il 2026 e il 2027 e dice di aver sostenuto con convinzione la scelta di lasciare i tassi fermi. È una posizione più morbida di quella dei tre membri del FOMC che la scorsa settimana chiedevano un rialzo immediato.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - John Williams, presidente della Fed di New York, si aspetta ancora un rallentamento dell’inflazione nella seconda metà del 2026 e nel 2027, e ha sostenuto con convinzione la scelta di lasciare i tassi al 3,50%-3,75%.

@@ -31,6 +31,8 @@ _Dati USA · ISM manifatturiero_
 
 Il dato principale è arrivato ed è una sorpresa nettamente positiva: 55,6 contro 54,0 atteso, con l’occupazione manifatturiera tornata sopra la soglia di espansione. È molto più forte di quanto apparisse dai soli componenti disponibili poco fa, e per l’oro cambia il segno della lettura.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - L’ISM Manufacturing PMI di luglio è salito a 55,6, contro 54,0 atteso e 53,3 precedente: una sorpresa nettamente positiva sulla crescita industriale statunitense.

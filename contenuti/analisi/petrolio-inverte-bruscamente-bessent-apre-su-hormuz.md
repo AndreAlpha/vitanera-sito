@@ -31,6 +31,8 @@ _Geopolitica · Ipotesi di riapertura_
 
 Brent e WTI passano dal recupero a un calo di circa il 4% dopo le parole del segretario al Tesoro statunitense: un’intesa per riaprire lo stretto potrebbe arrivare oggi o mercoledì. Per l’oro il canale che si apre è quello dell’inflazione attesa, non quello del rifugio.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Rispetto all’ultimo controllo il quadro si è capovolto: Brent e WTI sono passati dal recupero a un calo di circa il 4%, a 80,66 e 76,76 dollari.

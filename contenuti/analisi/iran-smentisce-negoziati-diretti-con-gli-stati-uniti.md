@@ -31,6 +31,8 @@ _Geopolitica · Smentita di Teheran_
 
 Il ministero degli Esteri di Teheran nega che siano in corso trattative: i colloqui mediati dall’Oman riguardano soltanto un corridoio temporaneo per le navi, e lo Stretto non sarà riaperto del tutto finché continuerà quella che l’Iran definisce aggressione americana. Il mercato stava prezzando l’esatto contrario.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Il ministero degli Esteri iraniano dichiara che al momento non sono in corso negoziati con gli Stati Uniti.

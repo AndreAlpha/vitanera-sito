@@ -27,6 +27,8 @@ _Dati USA · Offerte di lavoro_
 
 Le offerte di lavoro di giugno scendono a 7,359 milioni, sotto le attese e sotto il dato di maggio rivisto al ribasso. Per la prima volta in due giorni la reazione è coerente su tutti i fronti: oro in rialzo, rendimenti in calo, dollaro sotto quota 100.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Le offerte di lavoro statunitensi sono scese a 7,359 milioni a giugno, sotto i 7,440 milioni attesi e i 7,537 milioni di maggio, questi ultimi rivisti al ribasso.

@@ -34,6 +34,8 @@ _Valute · Struttura dell’intervento_
 
 Il coordinamento fra Stati Uniti e Giappone è confermato, ma la gamba americana dell’operazione non era in dollari: secondo il Financial Times Washington ha venduto euro. Cambia il significato dell’intervento per il dollaro, e con esso uno dei fattori rialzisti dell’oro.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Il coordinamento fra Giappone e Stati Uniti sull’acquisto di yen è confermato: su questo non ci sono più dubbi.

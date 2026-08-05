@@ -33,6 +33,8 @@ _Geopolitica · De-escalation annunciata_
 
 Nella notte fra 1 e 2 agosto Donald Trump ha annunciato di aver cancellato — non rinviato — il nuovo attacco statunitense contro l’Iran, citando progressi diplomatici e un’intesa preliminare su Hormuz e nucleare. Teheran però non ha ratificato nulla: resta una cornice negoziale, e il premio rifugio dell’oro si sgonfia su una promessa.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Donald Trump ha annunciato di aver cancellato, e non soltanto rinviato, il nuovo attacco statunitense contro l’Iran, motivandolo con i progressi diplomatici e con un’intesa preliminare.

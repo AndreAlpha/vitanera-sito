@@ -31,6 +31,8 @@ _Geopolitica · Ultimatum a Teheran_
 
 Un’ultima possibilità di accordo, altrimenti un attacco molto pesante: il presidente statunitense parla esplicitamente di possibile «decapitazione» della leadership iraniana e sostiene che i colloqui siano in corso, mentre Teheran continua a negarli. Arriva dopo il crollo del greggio di lunedì.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Trump ha dichiarato che l’Iran avrebbe un’ultima possibilità di raggiungere un accordo, minacciando in caso contrario un attacco molto pesante e parlando esplicitamente di possibile «decapitazione» della leadership iraniana.

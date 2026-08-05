@@ -35,6 +35,8 @@ _Federal Reserve · Preferenze contro vincoli_
 
 XAU/USD accelera fino a circa 4.199,8 dollari, oltre +3% e massimo dal 22 giugno, con l’argento sopra il +4%. Nel frattempo due presidenti della Fed parlano da falchi e la probabilità di un rialzo a settembre resta dove stava ieri: 57%. Il rialzo dell’oro non nasce da un cambio di attese sui tassi.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - XAU/USD ha accelerato fino a circa 4.199,8 dollari, oltre +3% nella seduta e massimo dal 22 giugno; l’argento è salito di oltre il 4%.

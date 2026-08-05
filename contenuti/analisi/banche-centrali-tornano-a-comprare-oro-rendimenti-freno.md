@@ -29,6 +29,8 @@ _Fondamentali · Controllo a tutto campo_
 
 Il World Gold Council ha rivisto al ribasso il primo trimestre e registrato un forte recupero nel secondo, con circa 289 tonnellate acquistate. Su tutto il resto — Fed, lavoro statunitense, dollaro, geopolitica — non risultano fatti nuovi: i fondamentali restano bilanciati.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Il World Gold Council ha rivisto i dati: gli acquisti delle banche centrali nel primo trimestre 2026 sono risultati molto più bassi di quanto inizialmente stimato.

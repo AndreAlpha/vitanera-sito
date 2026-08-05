@@ -31,6 +31,8 @@ _Dati USA · Primi componenti ISM_
 
 Alle 16:00 italiane sono usciti alcuni componenti del manifatturiero statunitense: prezzi pagati sopra le attese ma in discesa, nuovi ordini in aumento. Il dato ISM principale non è ancora verificabile, e dollaro e rendimenti non hanno ancora invertito la seduta.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Prezzi pagati ISM a 71,1, sopra il 70,0 atteso ma in calo dal 73,0 precedente.

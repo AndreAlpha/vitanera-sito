@@ -1,5 +1,6 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { AUTHORSHIP_NOTICE } from '../config/site.config';
 import { ARTICLES } from './articles.data';
 import { OUTCOMES } from './outcomes.data';
 
@@ -66,6 +67,31 @@ describe('copie markdown delle analisi', () => {
         vecchi.push(article.slug);
     }
     expect(vecchi, `da rigenerare con "npm run analisi": ${vecchi.join(', ')}`).toEqual([]);
+  });
+
+  it('tiene allineate le due copie della dicitura su chi pensa e chi scrive', () => {
+    // Il generatore dei markdown e' JavaScript e sta fuori da src/: non puo'
+    // importare la costante e ne tiene una copia. Due frasi che si somigliano
+    // ma non coincidono sarebbero il peggio dei due mondi, e a occhio non si
+    // distinguono: qui si confrontano carattere per carattere.
+    const generatore = readFileSync(
+      join(process.cwd(), 'scripts', 'lib', 'render-analisi.mjs'),
+      'utf8',
+    );
+    const dichiarazione = /AUTHORSHIP_NOTICE\s*=\s*([\s\S]*?);/.exec(generatore);
+    const copia = [...(dichiarazione?.[1] ?? '').matchAll(/'([^']*)'/g)].map((m) => m[1]).join('');
+    expect(copia).toBe(AUTHORSHIP_NOTICE);
+  });
+
+  it('ripete in ogni markdown la dicitura su chi pensa e chi scrive', () => {
+    // Il markdown e' la copia leggibile dell'analisi, e una copia che tace su
+    // come e' stata scritta non e' una copia fedele. Il testo e' duplicato in
+    // scripts/lib/render-analisi.mjs, che non puo' importare da src/: il
+    // confronto con la costante autorevole sta qui.
+    for (const article of ARTICLES) {
+      const markdown = readFileSync(join(CARTELLA, `${article.slug}.md`), 'utf8');
+      expect(markdown, article.slug).toContain(AUTHORSHIP_NOTICE);
+    }
   });
 
   it('riporta nel frontmatter i dati che identificano l’analisi', () => {

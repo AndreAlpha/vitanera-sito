@@ -31,6 +31,8 @@ _Geopolitica · Termini della trattativa_
 
 Emergono i termini operativi della trattativa, e non sono chiusi: Teheran vuole mantenere il controllo sul traffico in entrata e poter intervenire su quello in uscita. L’ottimismo che ha fatto crollare il greggio poggia su un’intesa che nei dettagli non esiste ancora.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Secondo Reuters l’Iran chiede di mantenere il controllo sul traffico navale in entrata nello Stretto di Hormuz e di essere informato sui movimenti in uscita, con la possibilità di intervenire.

@@ -36,6 +36,8 @@ _Rotte · Il fronte che mancava_
 
 Gli Houthi rivendicano un missile contro una petroliera saudita vicino a Yanbu, e il greggio smette di scendere. Per quattro giorni «rischio sulle rotte» ha voluto dire Hormuz: questo è un altro stretto, un altro attore, e non dipende da come finiscono i colloqui con Teheran.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Gli Houthi hanno dichiarato di aver colpito con un missile una petroliera saudita vicino al porto di Yanbu, sul Mar Rosso.

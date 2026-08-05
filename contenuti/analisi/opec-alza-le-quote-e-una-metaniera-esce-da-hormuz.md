@@ -33,6 +33,8 @@ _Geopolitica · Premio di rischio sul petrolio_
 
 Due novità nella stessa direzione: un aumento delle quote produttive di circa 188.000 barili al giorno da settembre e il primo transito di una metaniera fuori da Hormuz dall’11 luglio. Entrambe riducono il premio di rischio sul petrolio, ma per l’oro l’effetto è meno lineare di quanto sembri.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - OPEC+ ha concordato un aumento delle quote produttive di circa 188.000 barili al giorno da settembre 2026, completando il ritiro progressivo di una parte dei tagli volontari.

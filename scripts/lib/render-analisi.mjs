@@ -51,6 +51,18 @@ function fnv1a(testo, seme) {
   return h.toString(16).padStart(8, '0');
 }
 
+/**
+ * Chi pensa l'analisi e chi la scrive.
+ *
+ * Ripete `AUTHORSHIP_NOTICE` di `src/app/core/config/site.config.ts`, che questo
+ * file non puo importare perche e JavaScript e sta fuori da `src/`. Se cambia
+ * la', cambia anche qui: il markdown e la copia leggibile dell'analisi, e una
+ * copia che tace su come e stata scritta non e una copia fedele.
+ */
+const AUTHORSHIP_NOTICE =
+  'Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — ' +
+  'struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.';
+
 /* -------------------------------------------------------------------------- */
 /* Frontmatter                                                                 */
 /* -------------------------------------------------------------------------- */
@@ -249,6 +261,8 @@ export function renderAnalisi(article, outcome = null) {
     `_${article.kicker}_`,
     '',
     article.dek,
+    '',
+    `> ${AUTHORSHIP_NOTICE}`,
   ];
 
   if (article.takeaways?.length) {

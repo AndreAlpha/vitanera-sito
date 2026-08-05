@@ -35,6 +35,8 @@ _Lavoro e debito · Il canale che non risponde_
 
 Quarantaquattromila posti privati contro settantamila attesi, e un piano di rifinanziamento che non allunga le scadenze: due notizie favorevoli all’oro nello stesso pomeriggio. Il rendimento decennale è sceso, poi è tornato a 4,62%, cioè dov’era prima. È quell’assenza di movimento la cosa da spiegare.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - A luglio il settore privato statunitense ha creato 44.000 posti contro i 70.000 attesi, con giugno rivisto da 98.000 a 95.000: è il ritmo più debole degli ultimi sei mesi, ma i licenziamenti restano contenuti.

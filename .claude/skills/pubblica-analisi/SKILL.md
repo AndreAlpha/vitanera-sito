@@ -824,6 +824,37 @@ compila e non produce nulla. Per un elenco con un segno usa `callout` (che ha
   giudizio è dell'autore.
 - Modificare articoli già pubblicati per farli tornare con l'esito.
 
+### La dicitura su chi pensa e chi scrive: non toccarla
+
+Sotto la firma di ogni analisi compare questa riga:
+
+> Il giudizio, i dati e le conclusioni sono dell'autore del sito. La stesura del
+> testo — struttura, riscrittura e titoli — è realizzata con un modello
+> linguistico su sua indicazione.
+
+**È automatica.** Vive in `AUTHORSHIP_NOTICE` (`site.config.ts`), la mette
+`<app-authorship-notice />` nella testata dell'articolo, e il generatore la
+ricopia nel markdown. Vale per tutte le analisi allo stesso modo, comprese
+quelle pubblicate prima che esistesse.
+
+Quindi:
+
+- **Non scriverla nel testo** dell'analisi, in nessuna forma. Ci sarebbe due
+  volte, e due test la contano: uno sulla pagina, uno sul markdown.
+- **Non aggiungere un campo** all'articolo per dirla. Un campo vale solo per le
+  analisi in cui qualcuno si è ricordato di compilarlo, e la differenza fra
+  averlo e non averlo si legge come una differenza di sostanza che non esiste.
+- **Non riformularla** per farla suonare meglio in un articolo particolare: è la
+  stessa frase ovunque, ed è questo che la rende credibile.
+
+Se il testo va cambiato davvero, si cambia in **due posti** — la costante in
+`site.config.ts` e la copia in `scripts/lib/render-analisi.mjs`, che non può
+importare da `src/`. Un test confronta le due e fallisce se divergono.
+
+L'unica cosa che resta da fare a mano è **non contraddirla**: se il testo grezzo
+attribuisce a qualcun altro un'analisi o un dato, quella attribuzione va tenuta
+nel testo. La dicitura parla di chi ha scritto l'articolo, non delle fonti.
+
 ### Le avvertenze: non toglierne e non aggiungerne
 
 Questa regola è cambiata, e conta.

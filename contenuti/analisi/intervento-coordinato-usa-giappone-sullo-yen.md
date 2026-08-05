@@ -33,6 +33,8 @@ _Valute · Intervento coordinato_
 
 Reuters riferisce del primo intervento congiunto dal 2011 a sostegno dello yen, sceso ai minimi da circa quarant’anni. Per l’oro cambia il segno del dollaro, e la struttura scelta — liquidità dalla Fed invece di vendite di Treasury — evita che i rendimenti salgano ancora.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Secondo Reuters, Giappone e Stati Uniti hanno effettuato un intervento coordinato sul mercato valutario a sostegno dello yen, sceso ai minimi da circa quarant’anni: sarebbe il primo intervento congiunto di questo tipo dal 2011.

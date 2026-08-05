@@ -35,6 +35,8 @@ _Rotte · Il conteggio dei transiti_
 
 Per la prima volta c’è un numero sul traffico nello stretto, e dice che la normalizzazione non è cominciata. Il petrolio che scende da due sedute sta prezzando un accordo che nei transiti non si vede: è su quel ribasso che poggia il rialzo dell’oro.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Nello Stretto di Hormuz sono transitate soltanto otto navi, contro le circa 130-140 al giorno di prima del conflitto: la normalizzazione dei traffici non è avvenuta.

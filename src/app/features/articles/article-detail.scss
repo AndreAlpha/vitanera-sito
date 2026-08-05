@@ -112,6 +112,13 @@
   color: var(--text-faint);
 }
 
+/* La dicitura su chi pensa l'analisi e chi la scrive sta sotto la firma, dove
+   si guarda per capire di chi si sta leggendo il giudizio. Ha il respiro di una
+   riga di servizio: non deve competere con il sommario che sta sopra. */
+app-authorship-notice {
+  margin-top: var(--s-3);
+}
+
 .hero__meta > span {
   display: inline-flex;
   align-items: center;

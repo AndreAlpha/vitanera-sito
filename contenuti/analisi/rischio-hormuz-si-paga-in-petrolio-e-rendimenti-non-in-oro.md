@@ -31,6 +31,8 @@ _Correlazioni · Cambio di reazione_
 
 Il Brent amplia il recupero fino a 86,04 dollari e il decennale statunitense torna al 4,705%, mentre l’oro resta quasi fermo a 4.053. Il premio geopolitico continua a esistere, ma si sta scaricando sull’energia e sui tassi invece che sul metallo.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Il Brent ha ampliato il recupero fino a circa +2,7%, a 86,04 dollari, mentre il WTI è salito di circa +2,1%, a 82,06.

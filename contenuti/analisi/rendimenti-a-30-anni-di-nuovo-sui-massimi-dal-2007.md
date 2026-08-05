@@ -31,6 +31,8 @@ _Tassi USA · Parte lunga della curva_
 
 Il trentennale statunitense è risalito intorno al 5,25%, area che non si vedeva dal 2007. È la ragione per cui l’oro resta fermo poco sopra i 4.062 dollari nonostante Hormuz: il mercato obbligazionario sta assorbendo buona parte della domanda rifugio.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Il rendimento del Treasury statunitense a 30 anni è risalito intorno al 5,25%, area più alta dal 2007, e il movimento riguarda soprattutto la parte lunga della curva.

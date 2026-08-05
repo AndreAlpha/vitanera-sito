@@ -44,6 +44,46 @@ import { PageHeader } from '../../shared/ui/page-header';
       </p>
     </section>
 
+    <!-- Chi scrive ------------------------------------------------------------- -->
+    <section class="block">
+      <div class="sec-head">
+        <h2>Chi pensa le analisi e chi le scrive</h2>
+      </div>
+
+      <p class="lead">
+        Le due cose sono separate, e vale la pena dirlo per esteso invece di lasciarlo intuire.
+      </p>
+
+      <ul class="limits">
+        <li>
+          <h3><app-icon name="compass" [size]="14" />L’analisi è dell’autore del sito</h3>
+          <p>
+            Quali fatti contano, come si collegano fra loro, quale direzione ne esce, quanto ci si
+            crede e che cosa la renderebbe sbagliata: sono decisioni di chi firma. Anche gli errori
+            lo sono.
+          </p>
+        </li>
+        <li>
+          <h3>
+            <app-icon name="spark" [size]="14" />La stesura è fatta con un modello linguistico
+          </h3>
+          <p>
+            Il testo grezzo viene riorganizzato in struttura, paragrafi e titoli con l’aiuto di un
+            modello linguistico, su indicazione dell’autore. Il modello mette in ordine e riscrive:
+            non decide la direzione, non aggiunge numeri e non cambia una conclusione.
+          </p>
+        </li>
+        <li>
+          <h3><app-icon name="check" [size]="14" />Perché è scritto su ogni analisi</h3>
+          <p>
+            La stessa riga compare sotto la firma di ogni testo, comprese le analisi pubblicate
+            prima che questa pagina esistesse. Non è un campo che si compila articolo per articolo:
+            è fissa, così non può capitare che manchi proprio dove sarebbe servita.
+          </p>
+        </li>
+      </ul>
+    </section>
+
     <!-- Come si forma un giudizio --------------------------------------------- -->
     <section class="block">
       <div class="sec-head">

@@ -174,6 +174,12 @@ il nome della copia markdown: da un solo nome si trovano tutti e tre.
 La prima categoria non può appartenere alla famiglia `aree`: è un test, e serve a evitare che ogni
 analisi americana prenda la stessa tinta e annunci «USA» invece del fatto di cui parla.
 
+Sotto la firma di ogni analisi compare, automaticamente, la riga che distingue chi pensa l’analisi da
+chi la scrive: il giudizio è dell’autore, la stesura del testo è realizzata con un modello
+linguistico. Vive in `AUTHORSHIP_NOTICE` (`site.config.ts`), la rende `<app-authorship-notice />` e
+il generatore la ricopia nel markdown — quindi vale anche per le analisi pubblicate prima che
+esistesse, e **non va scritta nel corpo del testo**. Due test contano che compaia una volta sola.
+
 Il terzo passo non è facoltativo: `npm run build` si rifiuta di compilare se i markdown non
 corrispondono all’archivio, e un test lo verifica a parte.
 

@@ -35,6 +35,8 @@ _Correlazioni · Conferma cross-asset_
 
 XAU/USD arriva verso i 4.092 dollari e il future Comex chiude a 4.095,40 con un rialzo dell’1,53%: non è stata una fiammata post-dato. Il petrolio giù di quasi il 4% e il decennale al 4,66% dicono da dove arriva davvero la spinta.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - XAU/USD ha esteso il rialzo fino a circa 4.092 dollari, guadagnando circa l’1%, e il future Comex ha chiuso a 4.095,40 dollari con un rialzo dell’1,53%.

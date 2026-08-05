@@ -33,6 +33,8 @@ _Geopolitica · Correzione della lettura_
 
 La ricostruzione più affidabile di Reuters ridimensiona l’annuncio: l’azione militare è rinviata per lasciare spazio a un accordo, non cancellata, e l’opzione resta aperta. L’Iran nega di aver chiesto una pausa e definisce fuorviante la versione statunitense. Il bias torna neutrale.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Secondo la ricostruzione di Reuters, Trump non ha cancellato definitivamente l’attacco: ha detto che per ora sospenderà o rinvierà l’azione militare per lasciare spazio a un possibile accordo rapido.

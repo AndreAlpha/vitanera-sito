@@ -31,6 +31,8 @@ _Geopolitica · Incidente a Hormuz_
 
 Un mercantile è stato colpito da un proiettile mentre resta totale incertezza sui presunti colloqui fra Stati Uniti e Iran. Il greggio recupera parte del crollo e l’oro sale verso i 4.060 dollari: il rischio sulle rotte energetiche non era rientrato.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Una nave mercantile è stata colpita da un proiettile nell’area dello Stretto di Hormuz.

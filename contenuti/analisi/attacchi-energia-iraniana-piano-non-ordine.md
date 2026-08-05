@@ -35,6 +35,8 @@ _Geopolitica · Rischio di offerta_
 
 Reuters e Axios riferiscono che Stati Uniti e Israele valutano una campagna contro le infrastrutture energetiche iraniane, forse già nel fine settimana. Manca però il via libera definitivo, e la distanza fra un piano riportato dalla stampa e un ordine di attacco è ciò che tiene la lettura sul neutrale.
 
+> Il giudizio, i dati e le conclusioni sono dell’autore del sito. La stesura del testo — struttura, riscrittura e titoli — è realizzata con un modello linguistico su sua indicazione.
+
 ## In sintesi
 
 - Reuters, riprendendo un’indiscrezione di CBS News, riferisce che Stati Uniti e Israele stanno pianificando una campagna di attacchi contro infrastrutture energetiche iraniane, potenzialmente già durante il fine settimana.

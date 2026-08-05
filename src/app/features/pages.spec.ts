@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { ARTICLES } from '../core/data/articles.data';
 import { LEGAL_DOCUMENTS } from '../core/data/legal.data';
-import { CATEGORIES } from '../core/config/site.config';
+import { AUTHORSHIP_NOTICE, CATEGORIES } from '../core/config/site.config';
 import { CALENDAR_SECTIONS } from '../core/data/calendar.data';
 import { MARKET_SIGNAL } from '../core/data/signal.data';
 import { Home } from './home/home';
@@ -120,6 +120,17 @@ describe('pagine', () => {
       expect(text).toContain('In sintesi');
       // Una sola avvertenza, in chiusura: prima ne portava cinque.
       expect(occurrences(text, 'Non costituisce consulenza finanziaria')).toBe(1);
+    }
+  });
+
+  it('dice su ogni analisi chi la pensa e chi la scrive, una volta sola', async () => {
+    // E' una costante resa da <app-authorship-notice />, non un campo: se fosse
+    // un campo varrebbe solo per le analisi in cui qualcuno si e' ricordato di
+    // scriverlo, e la differenza fra averlo e non averlo si leggerebbe come una
+    // differenza di sostanza che non esiste.
+    for (const article of ARTICLES) {
+      const text = textOf(await render(ArticleDetail, { slug: article.slug }));
+      expect(occurrences(text, AUTHORSHIP_NOTICE), article.slug).toBe(1);
     }
   });
 
