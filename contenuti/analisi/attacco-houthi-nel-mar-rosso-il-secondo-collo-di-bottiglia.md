@@ -24,8 +24,10 @@ prossimoAppuntamento:
 fonti:
   - testata: "Reuters"
   - testata: "Federal Reserve"
+esito: "confermata"
+controllata: "2026-08-05T15:20:00+02:00"
 sorgente: "src/app/core/data/articles/attacco-houthi-nel-mar-rosso-il-secondo-collo-di-bottiglia.ts"
-impronta: "2e5f385d4157c1db"
+impronta: "172690c2a3534f14"
 ---
 
 # Attacco nel Mar Rosso: il secondo collo di bottiglia
@@ -127,6 +129,22 @@ Restano i due appuntamenti che possono spostare il canale dei tassi, ed è quell
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 Il rischio geopolitico torna a sostenere il metallo proprio mentre la stessa notizia, alzando il greggio, minaccia il canale dei tassi che lo reggeva. I due sostegni si scambiano il posto e in parte si annullano: dollaro debole e rendimenti bassi tengono ancora, ma su un piede solo.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-05T15:20:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, ma il conteggio va letto per quello che è: due ore sono poche, e la tesi centrale — il Mar Rosso come collo di bottiglia separato da Hormuz — non ha ancora avuto modo di essere messa alla prova. Quello che si può dire è che il premio geopolitico non si è sgonfiato: nel pomeriggio sono usciti un ADP debole e un piano del Tesoro benigno, due notizie che avrebbero potuto spostare l’attenzione altrove, e il greggio non le ha seguite.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Una smentita dell’attacco, o danni alla nave irrilevanti. | no | Nessuna smentita nelle due ore successive e nessuna verifica indipendente dei danni: la rivendicazione resta in piedi esattamente com’era, cioè non confermata e non smentita. |
+| La mancata prosecuzione degli attacchi nei giorni successivi. | no | Non giudicabile a due ore di distanza: la condizione misura i giorni successivi, che non sono ancora trascorsi. Registrata come non scattata perché non lo è, non perché sia stata verificata. |
+| Un Brent nuovamente sotto i 79 dollari. | no | Nessun ritorno sotto quel livello riportato. Il greggio non ha reagito né all’ADP né al piano di rifinanziamento del Tesoro, e resta mosso da Iran, Hormuz e Houthi: il premio geopolitico non si è sgonfiato. |
+| Un accordo verificabile sulla riapertura di Hormuz. | no | Nessun accordo annunciato nel pomeriggio. |
+| Nella direzione opposta: altri attacchi alle rotte saudite o un Brent sopra gli 82 dollari, che alzerebbero il rischio di risalita dei rendimenti. | no | Nessun nuovo attacco riportato e nessun superamento degli 82 dollari: il rischio di risalita dei rendimenti per via del greggio non si è materializzato. |
+
+**Che cosa cambia.** Una delle cinque condizioni chiedeva di guardare «i giorni successivi», mentre l’analisi si dichiarava di orizzonte breve. Una condizione che matura dopo la lettura che dovrebbe invalidare non serve a niente al momento del controllo: o si accorcia, o si accetta che quell’analisi vada ricontrollata due volte, a scadenze diverse.
 
 ## Fonti consultate
 

@@ -81,7 +81,8 @@ export type EditorialCategorySlug =
   | 'debito-pubblico'
   // Dati americani che il calendario non copre
   | 'ism'
-  | 'jolts';
+  | 'jolts'
+  | 'adp';
 
 /**
  * Categorie dell'archivio: un'analisi può appartenere a più categorie

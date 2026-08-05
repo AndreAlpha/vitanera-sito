@@ -345,6 +345,17 @@ export const CATEGORIES: readonly Category[] = [
 
   /* ------------------------------------------------------------- Lavoro -- */
   {
+    slug: 'adp',
+    name: 'Occupazione privata (ADP)',
+    short: 'ADP',
+    family: 'lavoro',
+    series: false,
+    icon: 'users',
+    tagline: 'Buste paga private, due giorni prima dell’NFP',
+    description:
+      'Stima mensile di una società di elaborazione paghe sui posti creati nel settore privato. Non è nel calendario di questo sito e non è il dato ufficiale: esce due giorni prima dell’NFP e lo anticipa in modo discontinuo, il che la rende utile per misurare quanto il mercato è disposto a credere a un dato prima della conferma.',
+  },
+  {
     slug: 'jolts',
     name: 'Offerte di lavoro (JOLTS)',
     short: 'JOLTS',

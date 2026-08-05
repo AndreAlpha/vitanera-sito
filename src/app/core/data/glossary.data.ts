@@ -118,6 +118,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     why: 'Può mantenere elevati i rendimenti a lunga scadenza anche quando le aspettative sui tassi a breve scendono.',
   },
   {
+    term: 'Rifinanziamento trimestrale',
+    letter: 'R',
+    definition:
+      'Annuncio con cui il Tesoro statunitense dice non quanto si indebiterà, ma con quali titoli: dimensione di ogni asta e ripartizione fra le scadenze.',
+    why: 'È la parte che i rendimenti guardano davvero. Lo stesso fabbisogno pesa in modo molto diverso sulla parte lunga della curva a seconda che venga coperto con titoli a tre mesi o a trent’anni, e solo il secondo caso alza il rendimento alternativo che l’oro deve battere.',
+    related: ['Treasury', 'Curva dei rendimenti', 'Premio per il rischio fiscale'],
+  },
+  {
     term: 'Premio di rischio geopolitico',
     letter: 'P',
     definition:

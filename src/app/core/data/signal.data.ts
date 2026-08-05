@@ -77,7 +77,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-05T13:20:00+02:00',
+  updatedAt: '2026-08-05T15:25:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -85,63 +85,65 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'Il rifugio torna a sostenere il metallo proprio mentre lo stesso attacco, alzando il greggio, ' +
-        'minaccia il canale dei tassi che lo reggeva: i due sostegni si scambiano il posto invece di ' +
-        'sommarsi. Dollaro a 99,85 e decennale al 4,60% tengono ancora, ma su un piede solo.',
+        'Due notizie favorevoli al metallo nello stesso pomeriggio — ADP a 44.000 contro 70.000 attesi e aste ' +
+        'lunghe invariate — e il decennale è tornato a 4,62%, cioè dove stava a metà giornata. Finché il canale ' +
+        'dei tassi non si muove, il sostegno resta dichiarato e non pagato.',
       invalidation:
-        'Un Brent sopra gli 82 dollari, che farebbe pesare l’effetto inflazionistico più della domanda di rifugio; oppure un ritorno sotto i 79, che toglierebbe anche il premio geopolitico.',
+        'Il rendimento del decennale sopra il 4,70%, oppure un Dollar Index in deciso recupero sopra quota 100; nella direzione opposta, una discesa netta del decennale che darebbe finalmente corpo alla lettura.',
     },
     {
       horizon: 'medio',
       direction: 'neutrale-rialzista',
       strength: 'media',
       regime:
-        'La catena greggio giù, inflazione attesa giù, rendimenti giù ha ora due minacce e non una: i ' +
-        'transiti a Hormuz fermi a otto navi contro 130-140, e un secondo collo di bottiglia sul Mar Rosso ' +
-        'che non dipende dai colloqui con Teheran. Un accordo su Hormuz non chiuderebbe il dossier rotte.',
+        'Il Tesoro finanzia i 68 miliardi di fabbisogno in più senza toccare le aste a dieci e trent’anni: lo ' +
+        'shock di offerta che frenava l’oro è rinviato di diversi trimestri. Restano aperti i due colli di ' +
+        'bottiglia sulle rotte, Hormuz e Mar Rosso, che tengono in piedi il premio geopolitico sul greggio.',
       invalidation:
-        'Un conteggio dei transiti che risale verso i livelli precedenti al conflitto insieme alla fine degli attacchi nel Mar Rosso; oppure dati ADP e payroll nettamente superiori alle attese.',
+        'Un rapporto occupazionale di venerdì nettamente sopra le attese di circa 80.000 posti, o salari orari in riaccelerazione; oppure un XAU/USD incapace di tenere l’area 4.150-4.170.',
     },
     {
       horizon: 'lungo',
       direction: 'neutrale',
       strength: 'bassa',
       regime:
-        'Gli acquisti delle banche centrali sostengono da sotto, ma i rendimenti reali restano alti e ' +
-        'un rialzo Fed a settembre è ancora dato al 57%.',
+        'Gli acquisti delle banche centrali sostengono da sotto e la parte lunga della curva ha ora una ' +
+        'variabile in meno, perché il Tesoro si è impegnato a non ingrossare le aste per diversi trimestri. ' +
+        'Restano gli altri due freni: rendimenti reali alti e un rialzo Fed a settembre ancora dato al 57%.',
       invalidation:
         'Una svolta monetaria confermata dalle riunioni, oppure il ritorno stabile del decennale sopra il 5%.',
     },
   ],
-  headline: 'Una petroliera colpita nel Mar Rosso: il rischio rotte non era solo Hormuz',
+  headline: 'Due notizie favorevoli all’oro, e il decennale resta dov’era',
   stance:
-    'Gli Houthi rivendicano un missile contro una petroliera saudita vicino a Yanbu, e il greggio smette di ' +
-    'scendere: Brent a 80,87 con circa +1,9%, WTI a 76,67. Il punto non è la gravità dell’episodio ma dove ' +
-    'è avvenuto — un altro stretto, un altro attore, e nessuna dipendenza dai colloqui con Teheran. Per ' +
-    'l’oro il rifugio torna proprio mentre lo stesso rialzo del greggio minaccia il canale dei tassi che lo ' +
-    'sosteneva: decennale al 4,60-4,61% e dollaro a 99,85 tengono ancora, ma i due sostegni non si sommano.',
+    'Il settore privato americano ha creato 44.000 posti a luglio contro i 70.000 attesi, e un quarto d’ora ' +
+    'dopo il Tesoro ha annunciato aste di Treasury nominali invariate per almeno diversi trimestri: è la ' +
+    'risposta benigna alla domanda che l’archivio aveva posto due giorni fa sui 739 miliardi di fabbisogno. ' +
+    'Entrambe le notizie giocano a favore del metallo, ma il rendimento decennale è sceso e poi risalito a ' +
+    '4,62%, cioè al livello di metà giornata. Il sostegno di fondo migliora; il canale che dovrebbe ' +
+    'trasmetterlo, per ora, non risponde.',
   favours: [
-    'Tenere separati i due colli di bottiglia: un accordo su Hormuz non chiude il dossier delle rotte',
-    'Guardare gli 82 dollari di Brent come la soglia oltre cui l’inflazione pesa più del rifugio',
+    'Distinguere il fabbisogno del Tesoro dalle scadenze su cui viene finanziato: è la seconda a muovere i rendimenti',
+    'Aspettare il rapporto occupazionale di venerdì, che separa «già nei prezzi» da «il mercato non crede all’ADP»',
   ],
   avoid: [
-    'Leggere il rimbalzo del greggio come un segnale sulla trattativa: viene da tutt’altra rotta',
-    'Trattare come confermati i danni alla nave, che restano una rivendicazione non verificata',
+    'Trattare l’ADP come il dato ufficiale sull’occupazione: anticipa l’NFP in modo discontinuo',
+    'Leggere l’immobilità del decennale come conferma della lettura rialzista: è esattamente ciò che non torna',
   ],
   confirming: [
-    'Brent 80,87 $, circa +1,9%',
-    'Decennale ancora al 4,60-4,61%',
-    'Dollar Index ≈ 99,85, sotto quota 100',
+    'ADP 44.000 contro 70.000 attesi',
+    'Aste nominali invariate per diversi trimestri',
+    'Riacquisti del Tesoro fino a 38 mld $',
   ],
   contradicting: [
-    'Attacco rivendicato, danni non verificati',
-    'Casa Bianca: trattative ancora positive',
-    'ADP alle 14:15 e rifinanziamento del Tesoro alle 14:30',
+    'Decennale tornato a 4,62%, come a metà giornata',
+    'Licenziamenti ancora contenuti',
+    'Il dato ufficiale sul lavoro esce solo venerdì',
   ],
   sources: [
+    'adp-debole-e-tesoro-fermo-ma-il-decennale-non-si-muove',
     'attacco-houthi-nel-mar-rosso-il-secondo-collo-di-bottiglia',
-    'trump-dichiara-una-trattativa-durata-tutto-il-giorno',
-    'hormuz-non-ha-riaperto-otto-navi-contro-130-al-giorno',
+    'rendimenti-a-30-anni-di-nuovo-sui-massimi-dal-2007',
   ],
 };
 

@@ -28,6 +28,46 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'attacco-houthi-nel-mar-rosso-il-secondo-collo-di-bottiglia',
+    checkedAt: '2026-08-05T15:20:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition: 'Una smentita dell’attacco, o danni alla nave irrilevanti.',
+        triggered: false,
+        evidence:
+          'Nessuna smentita nelle due ore successive e nessuna verifica indipendente dei danni: la rivendicazione resta in piedi esattamente com’era, cioè non confermata e non smentita.',
+      },
+      {
+        condition: 'La mancata prosecuzione degli attacchi nei giorni successivi.',
+        triggered: false,
+        evidence:
+          'Non giudicabile a due ore di distanza: la condizione misura i giorni successivi, che non sono ancora trascorsi. Registrata come non scattata perché non lo è, non perché sia stata verificata.',
+      },
+      {
+        condition: 'Un Brent nuovamente sotto i 79 dollari.',
+        triggered: false,
+        evidence:
+          'Nessun ritorno sotto quel livello riportato. Il greggio non ha reagito né all’ADP né al piano di rifinanziamento del Tesoro, e resta mosso da Iran, Hormuz e Houthi: il premio geopolitico non si è sgonfiato.',
+      },
+      {
+        condition: 'Un accordo verificabile sulla riapertura di Hormuz.',
+        triggered: false,
+        evidence: 'Nessun accordo annunciato nel pomeriggio.',
+      },
+      {
+        condition:
+          'Nella direzione opposta: altri attacchi alle rotte saudite o un Brent sopra gli 82 dollari, che alzerebbero il rischio di risalita dei rendimenti.',
+        triggered: false,
+        evidence:
+          'Nessun nuovo attacco riportato e nessun superamento degli 82 dollari: il rischio di risalita dei rendimenti per via del greggio non si è materializzato.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, ma il conteggio va letto per quello che è: due ore sono poche, e la tesi centrale — il Mar Rosso come collo di bottiglia separato da Hormuz — non ha ancora avuto modo di essere messa alla prova. Quello che si può dire è che il premio geopolitico non si è sgonfiato: nel pomeriggio sono usciti un ADP debole e un piano del Tesoro benigno, due notizie che avrebbero potuto spostare l’attenzione altrove, e il greggio non le ha seguite.',
+    lesson:
+      'Una delle cinque condizioni chiedeva di guardare «i giorni successivi», mentre l’analisi si dichiarava di orizzonte breve. Una condizione che matura dopo la lettura che dovrebbe invalidare non serve a niente al momento del controllo: o si accorcia, o si accetta che quell’analisi vada ricontrollata due volte, a scadenze diverse.',
+  },
+  {
     slug: 'trump-dichiara-una-trattativa-durata-tutto-il-giorno',
     checkedAt: '2026-08-05T13:25:00+02:00',
     verdict: 'parziale',
