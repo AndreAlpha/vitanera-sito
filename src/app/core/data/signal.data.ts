@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-05T19:15:00+02:00',
+  updatedAt: '2026-08-05T23:10:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,24 +187,25 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'media',
       regime:
-        'Il metallo tiene sopra i 4.250 dollari dopo un più 4%, ma il canale che lo giustificava ha smesso di ' +
-        'aiutare: il decennale è al 4,64%, quarta lettura consecutiva in salita nella stessa giornata, e il ' +
-        'quinquennale è tornato al 4,35%. Prezzo esteso e sostegno che si gira: le due cose insieme non fanno ' +
-        'una lettura rialzista piena.',
+        'Il metallo tiene intorno a 4.253 dollari dopo un massimo a 4.265 e un rialzo superiore al 4%, e nelle ' +
+        'ultime ore il canale che lo giustificava ha ripreso a collaborare: il decennale è sceso al 4,63%, prima ' +
+        'discesa dopo quattro letture consecutive in salita, e il dollaro resta a 99,75. Contro restano ' +
+        'l’estensione del movimento e un biennale che ha cominciato a salire.',
       invalidation:
-        'Una perdita rapida dei 4.200 dollari accompagnata dal decennale sopra il 4,70%; prima ancora, un decennale sopra il 4,68% con l’oro ancora sopra i 4.250, che segnalerebbe il logoramento senza aspettare la rottura.',
+        'Una perdita rapida dei 4.200 dollari accompagnata dal decennale sopra il 4,70%; prima ancora, un decennale che torna sopra il 4,68% con l’oro ancora sopra i 4.250, che segnalerebbe il logoramento senza aspettare la rottura.',
     },
     {
       horizon: 'medio',
       direction: 'neutrale-rialzista',
       strength: 'media',
       regime:
-        'Iran e Oman hanno concordato le coordinate di una rotta a Hormuz: il primo annuncio in quattro giorni ' +
-        'che produce un oggetto tecnico invece di una frase, ma i quattro punti che decidono se una nave passa ' +
-        'restano aperti e il conteggio dei transiti è fermo. Una riapertura toglierebbe premio inflazionistico ' +
-        'al greggio e insieme domanda di rifugio all’oro: aiuta dai tassi, toglie dal rifugio.',
+        'Sei prese di posizione restrittive della Fed in pochi giorni, l’ultima delle quali è una governatrice che ' +
+        'nell’ultima riunione aveva votato per lasciare i tassi fermi, e la probabilità di un rialzo a settembre ' +
+        'resta al 57%, sotto il 67% di qualche giorno fa. Finché quel numero non si muove la retorica restrittiva ' +
+        'è un rischio e non un cambio di regime; il petrolio in calo, che Cook stessa indica come prima via ' +
+        'd’uscita dal rialzo, lavora nella stessa direzione.',
       invalidation:
-        'Un conteggio dei transiti ancora fermo alle otto navi quarantotto ore dopo la dichiarazione congiunta, oppure un blocco americano esplicito; dall’altro lato, un rapporto occupazionale di venerdì nettamente sopra le attese di circa 80.000 posti.',
+        'Una probabilità di rialzo a settembre che risale al 67% da cui era partita — con il 62% come primo segno che si sta muovendo —, il biennale sopra il 4,25% o un Dollar Index sopra l’area 100-100,20; sul metallo, XAU/USD sotto i 4.160 dollari.',
     },
     {
       horizon: 'lungo',
@@ -218,30 +219,31 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, oppure il ritorno stabile del decennale sopra il 5%.',
     },
   ],
-  headline: 'Coordinate concordate a Hormuz, e il decennale che risale un punto alla volta',
+  headline: 'Una governatrice della Fed apre a un rialzo, e il 57% non si muove',
   stance:
-    'Iran e Oman hanno concordato le coordinate geografiche di una rotta attraverso lo stretto, con una ' +
-    'dichiarazione congiunta in preparazione: è il sesto annuncio in quattro giorni ma il primo che produce un ' +
-    'documento invece di una frase, e il greggio scende sotto gli 80 dollari anche grazie a 2,5 milioni di barili ' +
-    'in più nelle scorte americane. Sull’altro fronte il decennale è salito al 4,64%, quarta lettura consecutiva ' +
-    'in aumento: l’oro tiene sopra i 4.250 ma senza più il canale dei tassi a spingerlo.',
+    'Lisa Cook, che nell’ultima riunione aveva votato per lasciare i tassi fermi, si dice pronta a sostenere un ' +
+    'rialzo se l’inflazione non riprende a scendere: è la sesta presa di posizione restrittiva in pochi giorni e ' +
+    'l’unica che contenga un cambio di posizione, non una ripetizione. La probabilità di un rialzo a settembre ' +
+    'resta però al 57%, sotto il 67% di qualche giorno fa. L’unico rendimento che l’ha registrata è il biennale, ' +
+    'risalito verso il 4,21%, mentre il decennale è sceso al 4,63% e il dollaro è rimasto debole: l’oro tiene ' +
+    'intorno a 4.253 dollari.',
   favours: [
-    'Alzare la probabilità di riapertura per via delle coordinate, ma continuare a misurarla sul conteggio dei transiti',
-    'Distinguere i due effetti di una riapertura sull’oro: aiuta dai tassi, toglie dal rifugio',
+    'Misurare la svolta restrittiva sulla probabilità di rialzo a settembre, non sul numero degli interventi pubblici',
+    'Guardare il biennale invece del decennale quando la notizia riguarda la decisione di settembre',
   ],
   avoid: [
-    'Inseguire il metallo sopra i 4.250: il canale che giustificava la corsa ha smesso di collaborare',
-    'Leggere le coordinate come una riapertura: dei quattro punti che decidono se una nave passa, nessuno è risolto',
+    'Leggere l’apertura di Cook come un rialzo deciso: lei stessa elenca tre condizioni che lo eviterebbero',
+    'Inseguire il metallo sopra i 4.250 dopo un più 4%, con la parte breve della curva che ha cominciato a salire',
   ],
   confirming: [
-    'Brent 79,34 $, di nuovo sotto gli 80',
-    'Scorte USA +2,5 mln barili, aumento inatteso',
-    'XAU/USD sopra i 4.250 dollari',
+    'Rialzo Fed a settembre fermo al 57%',
+    'Decennale sceso al 4,63%, prima discesa dopo quattro salite',
+    'DXY debole ≈ 99,75',
   ],
   contradicting: [
-    'Decennale al 4,64%, quarta salita di fila',
-    'Quinquennale tornato al 4,35%',
-    'Transiti fermi e dichiarazione congiunta senza data',
+    'Biennale risalito verso il 4,21%',
+    'Cook, che aveva votato per fermarsi, apre al rialzo',
+    'Oro esteso: più 4% e massimo a 4.265',
   ],
   constraints: [
     {
@@ -262,12 +264,15 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       value: 'ADP 44.000',
       baseline: 'attese 70.000, con JOLTS a 7,359 milioni contro 7,440',
       against:
-        'Schmid e Kashkari dicono che la politica non è abbastanza restrittiva. Sono dichiarazioni di che ' +
-        'cosa vorrebbero fare, e in ventiquattro ore non hanno spostato di un punto quello che il mercato ' +
-        'prezza che saranno costretti a fare.',
+        'Sei prese di posizione restrittive in pochi giorni: i tre membri del FOMC che chiedevano un rialzo ' +
+        'immediato, poi Schmid e Kashkari, e ora la governatrice Cook, che nell’ultima riunione aveva votato ' +
+        'per fermarsi e adesso si dice pronta a votare un rialzo. È la preferenza dichiarata più credibile ' +
+        'possibile — un voto che si sposta, non un discorso — e non ha spostato di un punto quello che il ' +
+        'mercato prezza che saranno costretti a fare.',
       watch:
-        'La probabilità di un rialzo a settembre, ferma al 57%, e il rapporto occupazionale di venerdì: ' +
-        'nettamente sopra le attese di circa 80.000 posti allenterebbe il vincolo.',
+        'La probabilità di un rialzo a settembre, ferma al 57% e sotto il 67% di qualche giorno fa, e il ' +
+        'rapporto occupazionale di venerdì: nettamente sopra le attese di circa 80.000 posti allenterebbe il ' +
+        'vincolo.',
       state: 'fermo',
     },
     {
@@ -285,9 +290,41 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   ],
   thresholds: [
     {
+      label: 'Rialzo Fed a settembre',
+      now: 57,
+      display: '57%',
+      marks: [
+        {
+          at: 62,
+          display: '62%',
+          kind: 'logora',
+          note: 'metà strada verso il livello di partenza: il primo segno che le parole dei falchi hanno cominciato a spostare il numero',
+        },
+        {
+          at: 67,
+          display: '67%',
+          kind: 'invalida',
+          note: 'il ritorno al livello di qualche giorno fa: la lettura poggia sul fatto che quel numero non si muova, e a quel punto si sarebbe mosso di dieci punti',
+        },
+      ],
+    },
+    {
+      label: 'Treasury a 2 anni',
+      now: 4.21,
+      display: '4,21%',
+      marks: [
+        {
+          at: 4.25,
+          display: '4,25%',
+          kind: 'invalida',
+          note: 'è la scadenza in cui un rialzo di settembre si prezzerebbe per primo: oltre qui la lettura sui giorni decade',
+        },
+      ],
+    },
+    {
       label: 'Treasury a 10 anni',
-      now: 4.64,
-      display: '4,64%',
+      now: 4.63,
+      display: '4,63%',
       marks: [
         {
           at: 4.68,
@@ -305,34 +342,27 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4259,
-      display: '≈ 4.259 $',
+      now: 4253,
+      display: '≈ 4.253 $',
       marks: [
+        {
+          at: 4160,
+          display: '4.160 $',
+          kind: 'invalida',
+          note: 'il supporto tecnico indicato dalla fonte citata: sotto di lì decade anche la lettura sui giorni',
+        },
         {
           at: 4200,
           display: '4.200 $',
-          kind: 'invalida',
+          kind: 'logora',
           note: 'una perdita rapida di questa soglia, accompagnata dal decennale sopra il 4,70%',
-        },
-      ],
-    },
-    {
-      label: 'Brent',
-      now: 79.34,
-      display: '79,34 $',
-      marks: [
-        {
-          at: 82,
-          display: '82 $',
-          kind: 'invalida',
-          note: 'sopra questo livello l’effetto inflazionistico torna a pesare più della domanda di rifugio',
         },
       ],
     },
   ],
   sources: [
+    'cook-si-dice-pronta-a-un-rialzo-si-muove-solo-il-biennale',
     'coordinate-concordate-a-hormuz-il-sesto-annuncio-e-diverso',
-    'oro-sfiora-4200-ma-le-attese-sulla-fed-non-si-muovono',
     'adp-debole-e-tesoro-fermo-ma-il-decennale-non-si-muove',
   ],
 };

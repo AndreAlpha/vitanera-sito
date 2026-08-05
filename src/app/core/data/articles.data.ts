@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { cookProntaAUnRialzo } from './articles/cook-si-dice-pronta-a-un-rialzo-si-muove-solo-il-biennale';
 import { coordinateHormuzSestoAnnuncio } from './articles/coordinate-concordate-a-hormuz-il-sesto-annuncio-e-diverso';
 import { oroSfiora4200 } from './articles/oro-sfiora-4200-ma-le-attese-sulla-fed-non-si-muovono';
 import { adpDeboleTesoroFermo } from './articles/adp-debole-e-tesoro-fermo-ma-il-decennale-non-si-muove';
@@ -54,6 +55,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  cookProntaAUnRialzo,
   coordinateHormuzSestoAnnuncio,
   oroSfiora4200,
   adpDeboleTesoroFermo,

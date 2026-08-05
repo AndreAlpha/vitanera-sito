@@ -24,8 +24,10 @@ prossimoAppuntamento:
 fonti:
   - testata: "Reuters"
   - testata: "MarketWatch"
+esito: "confermata"
+controllata: "2026-08-05T23:05:00+02:00"
 sorgente: "src/app/core/data/articles/coordinate-concordate-a-hormuz-il-sesto-annuncio-e-diverso.ts"
-impronta: "9a601676b7d54920"
+impronta: "4302a11e82f3e088"
 ---
 
 # Coordinate concordate a Hormuz: il sesto annuncio è diverso
@@ -132,6 +134,23 @@ L’assenza di una data è essa stessa un’informazione: le coordinate sono con
 Impostazione su XAU/USD: neutrale-rialzista, forza media, orizzonte medio.
 
 Una riapertura credibile di Hormuz taglia il premio inflazionistico sul greggio, e per questa via aiuta l’oro attraverso i tassi; ma toglie anche la domanda di rifugio che lo sostiene per via diretta. I due effetti tirano in senso opposto e nessuno dei due è ancora quantificabile, perché il conteggio dei transiti non si è mosso.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-05T23:05:00+02:00.
+
+Nessuna delle sei condizioni è scattata. La parte diplomatica non si è mossa in nessuna delle due direzioni — nessuna dichiarazione congiunta, nessun blocco americano — mentre la parte sui prezzi ha girato a favore: il decennale è sceso dal 4,64% al 4,63% e l’oro ha tenuto intorno a 4.253 dollari dopo un massimo a 4.265, con il dollaro ancora debole a 99,75. L’elemento contrario su cui poggiava metà della lettura, cioè il canale dei tassi che si stava girando, è rientrato nelle quattro ore successive.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un conteggio dei transiti ancora fermo alle otto navi quarantotto ore dopo la dichiarazione congiunta. | no | Non ancora giudicabile: la dichiarazione congiunta non è stata emessa, quindi le quarantotto ore non hanno cominciato a decorrere. Registrata come non scattata perché non lo è, non perché sia stata verificata. |
+| La dichiarazione congiunta che non arriva, o un testo che non contiene la rotta concordata. | no | Nessun testo pubblicato nelle quattro ore successive, e nessuna notizia che l’intesa sia stata ritirata: l’intenzione dichiarata resta in piedi esattamente com’era. |
+| Un blocco americano esplicito all’intesa. | no | Nessuna presa di posizione americana sull’intesa nella serata: l’unico intervento statunitense della serata è quello della governatrice Cook, e riguarda i tassi. |
+| Nuovi attacchi alle rotte marittime, o un Brent nuovamente sopra gli 82 dollari. | no | Nessun nuovo attacco riportato e nessun ritorno sopra gli 82 dollari: il greggio resta descritto in distensione, tanto che il suo calo compare fra le condizioni che la Fed indica per evitare un rialzo. |
+| Sul metallo: una perdita rapida dei 4.200 dollari accompagnata dal decennale sopra il 4,70%. | no | Nessuna delle due metà: XAU/USD è intorno a 4.253 dollari dopo un massimo vicino a 4.265, e il decennale è al 4,63%, sette punti base sotto la soglia. |
+| Prima di quella soglia: un decennale sopra il 4,68% mentre l’oro resta sopra i 4.250. Non ucciderebbe la lettura, ma segnalerebbe che si sta logorando, ed è la soglia che l’analisi precedente non aveva. | no | Il decennale è sceso al 4,63% dal 4,64%, interrompendo la serie di quattro letture consecutive in aumento: la soglia di logoramento non solo non è stata raggiunta, la direzione che doveva intercettare si è invertita. |
+
+**Che cosa cambia.** La soglia di logoramento aggiunta a questa analisi ha funzionato come strumento — ha guardato dove la lettura si indeboliva invece che dove moriva — ma era sulla scadenza sbagliata. Tutte e sei le condizioni misuravano il decennale, e il decennale è sceso; l’unico rendimento che si è mosso in risposta al fatto nuovo della serata è il biennale, che nessuna condizione nominava. Quando la tesi riguarda le decisioni di una banca centrale, la condizione va messa sulla scadenza in cui quella decisione si prezzerebbe per prima, non su quella che si cita più spesso.
 
 ## Fonti consultate
 
