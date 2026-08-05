@@ -32,5 +32,14 @@
     "prettier": "^3.8.1",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
-  }
+  },
+  "description": "Sito in Angular 21 dedicato a macroeconomia, banche centrali, geopolitica e XAU/USD.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreAlpha/vitanera-sito.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AndreAlpha/vitanera-sito/issues"
+  },
+  "homepage": "https://github.com/AndreAlpha/vitanera-sito#readme"
 }

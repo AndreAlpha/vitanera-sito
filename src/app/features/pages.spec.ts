@@ -5,6 +5,7 @@ import { ARTICLES } from '../core/data/articles.data';
 import { LEGAL_DOCUMENTS } from '../core/data/legal.data';
 import { CATEGORIES } from '../core/config/site.config';
 import { CALENDAR_SECTIONS } from '../core/data/calendar.data';
+import { MARKET_SIGNAL } from '../core/data/signal.data';
 import { Home } from './home/home';
 import { ArticleList } from './articles/article-list';
 import { ArticleDetail } from './articles/article-detail';
@@ -61,6 +62,24 @@ describe('pagine', () => {
     // passare da solo a «lettura scaduta».
     expect(text).toMatch(/Ultimo aggiornamento|In attesa di notizie/);
     expect(text).toContain('Calendario economico');
+  });
+
+  it('la scheda dell’indicatore dice da dove viene la lettura e quanto manca a smentirla', async () => {
+    if (!MARKET_SIGNAL) {
+      return;
+    }
+    // Le tre sezioni in fondo alla scheda si costruiscono da sorgenti diverse —
+    // l'archivio, `constraints`, `thresholds` — e una che sparisce non si nota:
+    // resta un riquadro un po' più corto, che è esattamente com'era prima.
+    const text = textOf(await render(Home));
+    expect(text).toContain('Storico dell’impostazione');
+    expect(text).toContain('Vincoli da tenere sott’occhio');
+    expect(text).toContain('Distanza dalle soglie');
+    // Ogni vincolo porta a video il proprio numero materiale, che è la metà del
+    // quadro che le dichiarazioni non spostano.
+    for (const c of MARKET_SIGNAL.constraints) {
+      expect(text).toContain(c.value);
+    }
   });
 
   it('archivio e ogni categoria', async () => {

@@ -169,6 +169,52 @@ describe('indicatore operativo', () => {
     expect(MARKET_SIGNAL.favours.length).toBeGreaterThan(0);
     expect(MARKET_SIGNAL.avoid.length).toBeGreaterThan(0);
   });
+
+  it('quando è presente dichiara almeno un vincolo e almeno una soglia', () => {
+    if (!MARKET_SIGNAL) {
+      return;
+    }
+    // Sono due array e un array vuoto compila: senza questo controllo le due
+    // sezioni in fondo alla scheda sparirebbero senza che nulla lo segnali, e
+    // la panoramica tornerebbe ad avere mezzo riquadro vuoto.
+    expect(MARKET_SIGNAL.constraints.length).toBeGreaterThan(0);
+    expect(MARKET_SIGNAL.thresholds.length).toBeGreaterThan(0);
+  });
+
+  it('quando è presente ogni vincolo dice contro che cosa regge e dove si misura', () => {
+    for (const c of MARKET_SIGNAL?.constraints ?? []) {
+      // Un vincolo senza la preferenza che contraddice è solo un numero, e senza
+      // il flusso dati che lo misura non è verificabile da nessuno.
+      expect(c.against.length).toBeGreaterThan(10);
+      expect(c.watch.length).toBeGreaterThan(10);
+      expect(c.value.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('quando è presente ogni soglia ha una tacca che invalida', () => {
+    for (const t of MARKET_SIGNAL?.thresholds ?? []) {
+      // Una scala con sole tacche `logora` disegna un pallino che non si avvicina
+      // a niente: la fascia oltre cui la lettura decade non verrebbe tracciata.
+      expect(t.marks.some((m) => m.kind === 'invalida')).toBe(true);
+      for (const mark of t.marks) {
+        expect(Number.isFinite(mark.at)).toBe(true);
+        expect(mark.note.length).toBeGreaterThan(10);
+      }
+    }
+  });
+
+  it('quando è presente nessuna soglia coincide col valore corrente', () => {
+    for (const t of MARKET_SIGNAL?.thresholds ?? []) {
+      // Il verso di una soglia — sopra o sotto — non è dichiarato: si ricava da
+      // dove sta il valore corrente, e per questo una soglia «già superata» è
+      // indistinguibile da una nell'altro verso. Quello che si può controllare è
+      // il caso degenere: valore esattamente sulla tacca, che disegna una fascia
+      // di larghezza zero e descrive una lettura che avrebbe già dovuto decadere.
+      for (const mark of t.marks) {
+        expect(mark.at).not.toBe(t.now);
+      }
+    }
+  });
 });
 
 describe('esiti delle analisi', () => {

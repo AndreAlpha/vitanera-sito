@@ -19,6 +19,101 @@ export interface SignalReading {
 }
 
 /**
+ * Stato di un vincolo materiale.
+ *
+ * `fermo` è il caso normale e quello che interessa: il numero non si è mosso
+ * nonostante tutto quello che è stato dichiarato intorno. `si-allenta` è quando
+ * comincia a muoversi ma non abbastanza da non vincolare più. `sciolto` è quando
+ * ha smesso di vincolare — e va detto, perché un vincolo che si scioglie cambia
+ * la lettura quanto uno che regge.
+ */
+export type ConstraintState = 'fermo' | 'si-allenta' | 'sciolto';
+
+/**
+ * Un vincolo materiale, con accanto la preferenza dichiarata che lo contraddice.
+ *
+ * È il quadro descritto in `contenuti/studio/quadro-dei-vincoli.md`: le
+ * preferenze sono opzionali e soggette ai vincoli, i vincoli non sono opzionali
+ * né soggetti alle preferenze. Tradotto in questa scheda: da un lato quello che
+ * viene dichiarato — annunci, intese, posizioni ufficiali — dall'altro il numero
+ * materiale che quelle dichiarazioni non hanno spostato.
+ *
+ * Non è un doppione delle soglie di `SignalThreshold`. Una soglia dice quando
+ * **questa lettura** muore; un vincolo dice che cosa tiene fermo il quadro a
+ * prescindere da quello che si racconta, ed è la cosa che sopravvive a tre
+ * cambi di impostazione intraday.
+ *
+ * Il caso che ha fatto nascere il campo: sei annunci di distensione su Hormuz in
+ * quattro giorni, e un conteggio dei transiti fermo a otto navi contro le 130-140
+ * al giorno di prima del conflitto. Erano frasi, e le frasi non spostano un
+ * vincolo materiale.
+ */
+export interface SignalConstraint {
+  /** Che cosa vincola: un fatto, non una posizione dichiarata. */
+  readonly label: string;
+  /** Il numero materiale adesso. Corto: sta accanto all'etichetta. */
+  readonly value: string;
+  /** Il termine di paragone che rende leggibile il valore, se serve. */
+  readonly baseline?: string;
+  /**
+   * La preferenza dichiarata che dice il contrario. È l'altra metà del quadro:
+   * senza, resta un numero e non si vede più perché è diagnostico.
+   */
+  readonly against: string;
+  /**
+   * Il flusso dati su cui si misura, e che cosa lo scioglierebbe. Deve essere
+   * verificabile con un numero e una data, come le condizioni di invalidazione.
+   */
+  readonly watch: string;
+  readonly state: ConstraintState;
+}
+
+/** Che cosa fa una soglia quando viene raggiunta. */
+export type ThresholdKind = 'logora' | 'invalida';
+
+/**
+ * Una tacca su una scala: il livello, e che cosa succede quando ci si arriva.
+ *
+ * `logora` esiste per una ragione precisa, scritta nel registro degli esiti: la
+ * lettura del 5 agosto fissava l'invalidazione al 4,70% e il decennale è passato
+ * da 4,60% a 4,64% in sei ore, in salita a ogni controllo, mentre il registro
+ * continuava a segnare «non scattata». Una soglia va messa anche dove la lettura
+ * comincia a logorarsi, non solo dove finisce.
+ */
+export interface ThresholdMark {
+  readonly at: number;
+  /** Il livello come va scritto a video: `4,70%`, `4.200 $`. */
+  readonly display: string;
+  readonly kind: ThresholdKind;
+  /** Che cosa comporta, in mezza riga. */
+  readonly note: string;
+}
+
+/**
+ * Quanto manca perché una lettura sia sbagliata, su una scala.
+ *
+ * Le condizioni di invalidazione sono già scritte in prosa in ogni `reading`,
+ * ma «il decennale sopra il 4,70%» accanto a «il decennale è al 4,64%» non dice
+ * a colpo d'occhio che mancano sei punti base. Qui i due numeri stanno sulla
+ * stessa scala e la distanza si vede.
+ *
+ * La scala non si dichiara: si ricava dal valore corrente e dalle tacche, con un
+ * margine ai lati. Un minimo e un massimo scritti a mano sarebbero due numeri in
+ * più da tenere allineati a ogni pubblicazione, e sbagliarli sposterebbe il
+ * pallino senza che nulla lo segnali.
+ */
+export interface SignalThreshold {
+  /** Che cosa si sta guardando: `Treasury a 10 anni`, `XAU/USD`. */
+  readonly label: string;
+  /** Il valore corrente, per la posizione sulla scala. */
+  readonly now: number;
+  /** Lo stesso valore come va scritto a video. */
+  readonly display: string;
+  /** Le tacche, in ordine crescente. Almeno una. */
+  readonly marks: readonly ThresholdMark[];
+}
+
+/**
  * Indicatore operativo sull'oro mostrato in panoramica.
  *
  * Sintetizza le ultime pubblicazioni in tre letture, una per orizzonte. Va
@@ -67,6 +162,13 @@ export interface OperationalSignal {
   readonly avoid: readonly string[];
   readonly confirming: readonly string[];
   readonly contradicting: readonly string[];
+  /**
+   * I vincoli materiali sotto la lettura, con la preferenza che ciascuno
+   * contraddice. Cambiano molto più lentamente di tutto il resto della scheda.
+   */
+  readonly constraints: readonly SignalConstraint[];
+  /** Le soglie dichiarate dalle letture, messe su una scala. */
+  readonly thresholds: readonly SignalThreshold[];
   /** Slug delle analisi da cui deriva la lettura. */
   readonly sources: readonly string[];
 }
@@ -140,6 +242,93 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Decennale al 4,64%, quarta salita di fila',
     'Quinquennale tornato al 4,35%',
     'Transiti fermi e dichiarazione congiunta senza data',
+  ],
+  constraints: [
+    {
+      label: 'Transiti nello Stretto di Hormuz',
+      value: 'otto navi',
+      baseline: 'contro 130-140 al giorno prima del conflitto',
+      against:
+        'Sei annunci di distensione in quattro giorni: l’apertura di Bessent, la smentita iraniana, la ' +
+        'minaccia rilanciata, la richiesta di controllo sugli ingressi, la trattativa «durata tutto il ' +
+        'giorno» e ora le coordinate concordate con l’Oman.',
+      watch:
+        'Il conteggio dei transiti quarantotto ore dopo la dichiarazione congiunta. Finché non risale, la ' +
+        'riapertura è un’intenzione e non un fatto.',
+      state: 'fermo',
+    },
+    {
+      label: 'Mercato del lavoro statunitense che rallenta',
+      value: 'ADP 44.000',
+      baseline: 'attese 70.000, con JOLTS a 7,359 milioni contro 7,440',
+      against:
+        'Schmid e Kashkari dicono che la politica non è abbastanza restrittiva. Sono dichiarazioni di che ' +
+        'cosa vorrebbero fare, e in ventiquattro ore non hanno spostato di un punto quello che il mercato ' +
+        'prezza che saranno costretti a fare.',
+      watch:
+        'La probabilità di un rialzo a settembre, ferma al 57%, e il rapporto occupazionale di venerdì: ' +
+        'nettamente sopra le attese di circa 80.000 posti allenterebbe il vincolo.',
+      state: 'fermo',
+    },
+    {
+      label: 'Emissioni del Tesoro a lunga scadenza',
+      value: '125 mld $',
+      baseline: 'aste invariate per diversi trimestri',
+      against:
+        'Un fabbisogno cresciuto di 68 miliardi faceva attendere aste più grosse proprio sulle scadenze ' +
+        'lunghe, ed era una delle tre gambe che tenevano il trentennale sui massimi dal 2007.',
+      watch:
+        'Il prossimo rifinanziamento trimestrale. Fino ad allora lo shock di offerta che frenava l’oro è ' +
+        'rinviato, e alla parte lunga della curva resta una variabile in meno.',
+      state: 'sciolto',
+    },
+  ],
+  thresholds: [
+    {
+      label: 'Treasury a 10 anni',
+      now: 4.64,
+      display: '4,64%',
+      marks: [
+        {
+          at: 4.68,
+          display: '4,68%',
+          kind: 'logora',
+          note: 'con l’oro ancora sopra i 4.250 segnala il logoramento, senza aspettare la rottura',
+        },
+        {
+          at: 4.7,
+          display: '4,70%',
+          kind: 'invalida',
+          note: 'insieme alla perdita dei 4.200 dollari fa decadere la lettura intraday',
+        },
+      ],
+    },
+    {
+      label: 'XAU/USD',
+      now: 4259,
+      display: '≈ 4.259 $',
+      marks: [
+        {
+          at: 4200,
+          display: '4.200 $',
+          kind: 'invalida',
+          note: 'una perdita rapida di questa soglia, accompagnata dal decennale sopra il 4,70%',
+        },
+      ],
+    },
+    {
+      label: 'Brent',
+      now: 79.34,
+      display: '79,34 $',
+      marks: [
+        {
+          at: 82,
+          display: '82 $',
+          kind: 'invalida',
+          note: 'sopra questo livello l’effetto inflazionistico torna a pesare più della domanda di rifugio',
+        },
+      ],
+    },
   ],
   sources: [
     'coordinate-concordate-a-hormuz-il-sesto-annuncio-e-diverso',

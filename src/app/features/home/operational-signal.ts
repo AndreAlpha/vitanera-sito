@@ -12,6 +12,9 @@ import { BiasDirection } from '../../core/models/article.model';
 import { ContentService, formatDateTime } from '../../core/services/content.service';
 import { Icon } from '../../shared/ui/icon';
 import { Timestamp } from '../../shared/ui/timestamp';
+import { ConstraintList } from './constraint-list';
+import { StanceHistory } from './stance-history';
+import { ThresholdTrack } from './threshold-track';
 
 /** Freccia che accompagna una direzione. */
 function directionIcon(direction: BiasDirection): string {
@@ -38,6 +41,19 @@ function directionIcon(direction: BiasDirection): string {
  * riquadro in stato di attesa, così la panoramica non resta con un vuoto al
  * posto dell'indicatore.
  *
+ * Sotto le pastiglie stanno tre sezioni che rispondono a tre domande che il
+ * testo lasciava implicite — da dove viene la lettura, che cosa tiene fermo il
+ * quadro, quanto manca perché sia sbagliata:
+ *
+ * | Sezione                    | Da dove viene           | Si aggiorna              |
+ * | -------------------------- | ----------------------- | ------------------------ |
+ * | Storico dell'impostazione  | il `bias` delle analisi | da sé, a ogni pubblicazione |
+ * | Vincoli da tenere sott'occhio | `MARKET_SIGNAL.constraints` | a mano, di rado     |
+ * | Distanza dalle soglie      | `MARKET_SIGNAL.thresholds`  | a mano, ogni volta  |
+ *
+ * Occupano la metà bassa della colonna di destra, che restava vuota perché la
+ * colonna delle tre letture è lunga il doppio di quella del contenuto.
+ *
  * È l'informazione più importante della panoramica, e per questo era anche la
  * più rumorosa: fondo in due sfumature, ombra, piastrelle dorate sotto le
  * icone, un pallino che pulsava all'infinito. Resta un riquadro come gli altri,
@@ -47,7 +63,7 @@ function directionIcon(direction: BiasDirection): string {
 @Component({
   selector: 'app-operational-signal',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, Icon, Timestamp],
+  imports: [RouterLink, Icon, Timestamp, StanceHistory, ConstraintList, ThresholdTrack],
   template: `
     <section class="card sig" [class.sig--live]="signal !== null" aria-live="polite">
       @if (signal; as s) {
@@ -151,8 +167,26 @@ function directionIcon(direction: BiasDirection): string {
                 }
               </span>
             </div>
+
+            <!-- Da dove viene questa lettura, e quanto manca perché sia
+                 sbagliata. Stanno qui e non a tutta larghezza perché è questa
+                 colonna a finire presto: quella delle tre letture è lunga il
+                 doppio, e sotto le pastiglie restava mezzo riquadro vuoto. -->
+            <div class="panels">
+              <app-stance-history />
+              <app-threshold-track [thresholds]="s.thresholds" />
+            </div>
           </div>
         </div>
+
+        <!-- I vincoli prendono invece tutta la larghezza, per due ragioni. Sono
+             fatti a due facce — il numero materiale e la dichiarazione che dice
+             il contrario — e affiancarle in una colonna da 800 pixel le
+             schiaccia. E cambiano molto più lentamente di tutto il resto della
+             scheda: sono la cosa che resta quando l'impostazione intraday è già
+             girata tre volte, e chiudere con loro invece che con una pastiglia
+             dice anche questo. -->
+        <app-constraint-list [constraints]="s.constraints" />
 
         <footer class="sig__foot">
           @if (sourceArticles().length) {
@@ -544,6 +578,36 @@ function directionIcon(direction: BiasDirection): string {
       gap: var(--s-2);
     }
 
+    /* --- Storico, soglie e vincoli ---------------------------------------------
+       Si separano con un filetto e non con un riquadro proprio: sono la stessa
+       scheda, non tre schede.
+
+       La ripartizione fra colonna e fascia non è estetica, è una misura. La
+       colonna delle tre letture è alta circa 1.150 pixel e quella del contenuto
+       ne riempiva 400: erano 750 pixel di vuoto. Storico e soglie ne occupano
+       circa 860, e le due colonne finiscono quasi insieme. Mettendoci dentro
+       anche i vincoli si arrivava a 1.620 e il vuoto si spostava soltanto —
+       1.047 pixel, dall'altra parte.
+       -------------------------------------------------------------------------- */
+
+    .panels {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-6);
+      margin-top: var(--s-6);
+    }
+
+    .panels > * + * {
+      padding-top: var(--s-6);
+      border-top: 1px solid var(--line);
+    }
+
+    app-constraint-list {
+      display: block;
+      padding: var(--s-card);
+      border-top: 1px solid var(--line);
+    }
+
     /* --- Attesa ---------------------------------------------------------------- */
 
     .waiting {
@@ -643,7 +707,8 @@ function directionIcon(direction: BiasDirection): string {
       .gauge,
       .detail,
       .waiting,
-      .sig__foot {
+      .sig__foot,
+      app-constraint-list {
         padding-left: var(--s-4);
         padding-right: var(--s-4);
       }
