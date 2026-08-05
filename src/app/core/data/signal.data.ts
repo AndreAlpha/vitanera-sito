@@ -77,19 +77,19 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-05T15:25:00+02:00',
+  updatedAt: '2026-08-05T17:30:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'neutrale-rialzista',
-      strength: 'bassa',
+      direction: 'rialzista',
+      strength: 'media',
       regime:
-        'Due notizie favorevoli al metallo nello stesso pomeriggio — ADP a 44.000 contro 70.000 attesi e aste ' +
-        'lunghe invariate — e il decennale è tornato a 4,62%, cioè dove stava a metà giornata. Finché il canale ' +
-        'dei tassi non si muove, il sostegno resta dichiarato e non pagato.',
+        'Il movimento è ampio — oro a 4.199,8 con oltre +3%, argento sopra il +4% — ma la probabilità di un rialzo ' +
+        'Fed a settembre resta al 57%, la stessa di ieri e la stessa dopo due interventi restrittivi. Sale il ' +
+        'prezzo senza che si riprezzi il meccanismo: è un rialzo di flusso e di dollaro debole, non di attese.',
       invalidation:
-        'Il rendimento del decennale sopra il 4,70%, oppure un Dollar Index in deciso recupero sopra quota 100; nella direzione opposta, una discesa netta del decennale che darebbe finalmente corpo alla lettura.',
+        'Un ritorno stabile sotto i 4.170-4.175 dollari, il decennale sopra il 4,70% o un Dollar Index sopra quota 100; oppure, in senso opposto, una probabilità di rialzo sotto il 50%, che smentirebbe proprio la lettura del flusso.',
     },
     {
       horizon: 'medio',
@@ -97,8 +97,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       strength: 'media',
       regime:
         'Il Tesoro finanzia i 68 miliardi di fabbisogno in più senza toccare le aste a dieci e trent’anni: lo ' +
-        'shock di offerta che frenava l’oro è rinviato di diversi trimestri. Restano aperti i due colli di ' +
-        'bottiglia sulle rotte, Hormuz e Mar Rosso, che tengono in piedi il premio geopolitico sul greggio.',
+        'shock di offerta che frenava l’oro è rinviato di diversi trimestri. In direzione contraria il fronte dei ' +
+        'falchi si allarga — Schmid e Kashkari dopo i tre del FOMC — senza però spostare di un punto il prezzo ' +
+        'che il mercato dà al rialzo di settembre. Restano aperti i due colli di bottiglia sulle rotte.',
       invalidation:
         'Un rapporto occupazionale di venerdì nettamente sopra le attese di circa 80.000 posti, o salari orari in riaccelerazione; oppure un XAU/USD incapace di tenere l’area 4.150-4.170.',
     },
@@ -114,36 +115,36 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, oppure il ritorno stabile del decennale sopra il 5%.',
     },
   ],
-  headline: 'Due notizie favorevoli all’oro, e il decennale resta dov’era',
+  headline: 'L’oro sfiora 4.200, ma la probabilità di rialzo resta ferma al 57%',
   stance:
-    'Il settore privato americano ha creato 44.000 posti a luglio contro i 70.000 attesi, e un quarto d’ora ' +
-    'dopo il Tesoro ha annunciato aste di Treasury nominali invariate per almeno diversi trimestri: è la ' +
-    'risposta benigna alla domanda che l’archivio aveva posto due giorni fa sui 739 miliardi di fabbisogno. ' +
-    'Entrambe le notizie giocano a favore del metallo, ma il rendimento decennale è sceso e poi risalito a ' +
-    '4,62%, cioè al livello di metà giornata. Il sostegno di fondo migliora; il canale che dovrebbe ' +
-    'trasmetterlo, per ora, non risponde.',
+    'XAU/USD ha accelerato fino a circa 4.199,8 dollari, oltre +3% e massimo dal 22 giugno, con l’argento sopra ' +
+    'il +4%: dollaro debole e rendimenti vicini ai minimi della settimana. Nello stesso pomeriggio Schmid e ' +
+    'Kashkari hanno chiesto una Fed più restrittiva, e la probabilità che il mercato attribuisce a un rialzo di ' +
+    'settembre è rimasta al 57%, dov’era ieri. In ventiquattro ore quel numero ha assorbito un JOLTS fiacco, un ' +
+    'ADP molto sotto le attese e due interventi da falco senza spostarsi: il rialzo dell’oro non nasce da una ' +
+    'riprezzatura della Fed, e va trattato per quello che è.',
   favours: [
-    'Distinguere il fabbisogno del Tesoro dalle scadenze su cui viene finanziato: è la seconda a muovere i rendimenti',
-    'Aspettare il rapporto occupazionale di venerdì, che separa «già nei prezzi» da «il mercato non crede all’ADP»',
+    'Guardare il 57% e non le dichiarazioni: le preferenze dei singoli membri non sono ancora diventate un prezzo',
+    'Considerare l’ampiezza del movimento, argento compreso, come indizio di flusso più che di riprezzatura',
   ],
   avoid: [
-    'Trattare l’ADP come il dato ufficiale sull’occupazione: anticipa l’NFP in modo discontinuo',
-    'Leggere l’immobilità del decennale come conferma della lettura rialzista: è esattamente ciò che non torna',
+    'Leggere il più 3% come conferma della catena sui tassi: quella catena oggi non ha prodotto nulla',
+    'Trattare i 4.200 come una soglia in sé: è una cifra tonda dove si accumulano ordini, non un livello che tiene',
   ],
   confirming: [
-    'ADP 44.000 contro 70.000 attesi',
-    'Aste nominali invariate per diversi trimestri',
-    'Riacquisti del Tesoro fino a 38 mld $',
+    'XAU/USD ≈ 4.199,8 $, oltre +3%',
+    'Argento oltre +4%: sale tutto il comparto',
+    'Decennale vicino ai minimi della settimana',
   ],
   contradicting: [
-    'Decennale tornato a 4,62%, come a metà giornata',
-    'Licenziamenti ancora contenuti',
-    'Il dato ufficiale sul lavoro esce solo venerdì',
+    'Rialzo Fed a settembre fermo al 57%',
+    'Schmid e Kashkari chiedono di stringere',
+    'Brent ancora sopra gli 80 dollari',
   ],
   sources: [
+    'oro-sfiora-4200-ma-le-attese-sulla-fed-non-si-muovono',
     'adp-debole-e-tesoro-fermo-ma-il-decennale-non-si-muove',
     'attacco-houthi-nel-mar-rosso-il-secondo-collo-di-bottiglia',
-    'rendimenti-a-30-anni-di-nuovo-sui-massimi-dal-2007',
   ],
 };
 
