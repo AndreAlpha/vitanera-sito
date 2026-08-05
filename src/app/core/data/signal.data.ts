@@ -77,19 +77,19 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-05T08:35:00+02:00',
-  checkedAt: '2026-08-05T09:20:00+02:00',
+  updatedAt: '2026-08-05T10:30:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'rialzista',
+      direction: 'neutrale-rialzista',
       strength: 'media',
       regime:
-        'Il canale dei tassi funziona e si misura: decennale al 4,62%, dollaro debole, oro sopra i 4.100 ' +
-        'con tutto il comparto dei preziosi. La forza scende di un gradino perché si è visto su che cosa poggia.',
+        'Il canale dei tassi continua a sostenere il metallo, ma la distensione che abbassa il greggio gli ' +
+        'toglie domanda di rifugio: la stessa notizia spinge nei due sensi, e dopo la corsa verso i 4.175 ' +
+        'l’inclinazione non può essere piena.',
       invalidation:
-        'XAU/USD che perde rapidamente i 4.100 dollari, oppure il decennale nuovamente sopra il 4,70%.',
+        'Un ADP molto superiore alle attese o emissioni lunghe in forte aumento, che riporterebbero il decennale sopra il 4,70%; oppure un rimbalzo del Brent sopra gli 80-82 dollari.',
     },
     {
       horizon: 'medio',
@@ -113,37 +113,36 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, oppure il ritorno stabile del decennale sopra il 5%.',
     },
   ],
-  headline:
-    'Otto navi contro centotrenta: il ribasso del greggio sconta una riapertura che non c’è',
+  headline: 'Il quinto annuncio di distensione, e il conteggio delle navi sempre fermo a otto',
   stance:
-    'Nello stretto sono passate otto navi, contro le 130-140 al giorno di prima del conflitto: la ' +
-    'normalizzazione non è cominciata, e il petrolio che ha perso quasi il 10% in due sedute sta prezzando ' +
-    'un’intenzione e non un transito. Sopra quel ribasso poggia tutto il resto, e nella mattinata il resto ' +
-    'ha continuato a salire: XAU/USD verso i 4.175 dollari, massimo dal 7 luglio, con il decennale al 4,60% ' +
-    'e il dollaro debole. La direzione è confermata dai prezzi; a essere sottile è ciò su cui si appoggia — ' +
-    'e va detto che finora il greggio non ha dato alcun segno di volersi riprendere.',
+    'Trump dichiara una trattativa durata tutto il giorno e «molto positiva», con Hormuz che potrebbe ' +
+    'riaprire presto e una minaccia militare se Teheran si ritirasse. È il quinto annuncio in tre giorni: i ' +
+    'quattro precedenti hanno prodotto una smentita iraniana e nessuna nave in più, e i transiti restano ' +
+    'otto contro le 130-140 al giorno di prima della guerra. Il mercato ci crede lo stesso — Brent a 79,04, ' +
+    'WTI a 75,19 — e per l’oro il greggio più basso vale attraverso i tassi quello che la distensione gli ' +
+    'toglie in domanda di rifugio.',
   favours: [
-    'Guardare il conteggio dei transiti prima del grafico dell’oro: è lì che si vede se la catena regge',
-    'Tenere separate le posizioni dichiarate dalle navi che passano davvero',
+    'Chiedersi quante volte, in questa stessa vicenda, un annuncio simile ha prodotto qualcosa di misurabile',
+    'Tenere i due canali distinti: la diplomazia muove il greggio, i rendimenti muovono l’oro',
   ],
   avoid: [
-    'Leggere i 4.100 dollari come un supporto: contano perché ci si accumulano gli ordini, non da soli',
-    'Considerare acquisita la svolta monetaria, con il rialzo di settembre ancora dato sopra la metà',
+    'Scambiare la ricchezza di dettagli di una dichiarazione per una probabilità più alta che si avveri',
+    'Leggere un accordo come univocamente favorevole: toglierebbe il premio geopolitico proprio sui massimi',
   ],
   confirming: [
-    'XAU/USD ≈ 4.175 $, massimo dal 7 luglio',
-    'Decennale ≈ 4,60%, dollaro debole',
-    'Sale tutto il comparto dei preziosi',
+    'Brent 79,04 $ e WTI 75,19 $, ancora in calo',
+    'Rendimenti e attese di rialzo Fed meno aggressivi',
+    'Dichiarazione presidenziale, non più del solo Tesoro',
   ],
   contradicting: [
-    'Brent ≈ 78,85 $: scende ancora invece di rimbalzare',
-    'Rialzo Fed a settembre ancora dato intorno al 59%',
-    'Rifinanziamento del Tesoro alle 14:30 e ADP ancora da vedere',
+    'Transiti fermi a otto navi contro 130-140 al giorno',
+    'L’Iran continua a negare un’intesa imminente',
+    'ADP alle 14:15 e rifinanziamento del Tesoro alle 14:30',
   ],
   sources: [
+    'trump-dichiara-una-trattativa-durata-tutto-il-giorno',
     'hormuz-non-ha-riaperto-otto-navi-contro-130-al-giorno',
     'oro-estende-il-rialzo-il-canale-e-quello-dei-tassi',
-    'iran-chiede-il-controllo-sugli-ingressi-a-hormuz',
   ],
 };
 

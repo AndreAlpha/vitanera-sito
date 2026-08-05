@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { trattativaDurataTuttoIlGiorno } from './articles/trump-dichiara-una-trattativa-durata-tutto-il-giorno';
 import { hormuzOttoNavi } from './articles/hormuz-non-ha-riaperto-otto-navi-contro-130-al-giorno';
 import { oroEstendeCanaleTassi } from './articles/oro-estende-il-rialzo-il-canale-e-quello-dei-tassi';
 import { iranControlloIngressiHormuz } from './articles/iran-chiede-il-controllo-sugli-ingressi-a-hormuz';
@@ -49,6 +50,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  trattativaDurataTuttoIlGiorno,
   hormuzOttoNavi,
   oroEstendeCanaleTassi,
   iranControlloIngressiHormuz,

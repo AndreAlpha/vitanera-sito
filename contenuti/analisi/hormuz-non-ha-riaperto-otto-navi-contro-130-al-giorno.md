@@ -23,8 +23,10 @@ prossimoAppuntamento:
   dettaglio: "Sono il test del canale che oggi sostiene l’oro. Numeri nettamente superiori alle attese riporterebbero in alto rendimenti e dollaro, e toglierebbero al metallo la spinta che arriva dai tassi."
 fonti:
   - testata: "Reuters"
+esito: "confermata"
+controllata: "2026-08-05T10:35:00+02:00"
 sorgente: "src/app/core/data/articles/hormuz-non-ha-riaperto-otto-navi-contro-130-al-giorno.ts"
-impronta: "2c0121962a26a1a0"
+impronta: "3a1d2165c9baedd3"
 ---
 
 # Hormuz non ha riaperto: otto navi contro 130-140 al giorno
@@ -125,6 +127,20 @@ Sono il test del canale che oggi sostiene l’oro. Numeri nettamente superiori a
 Impostazione su XAU/USD: rialzista, forza media, orizzonte breve.
 
 La catena che sostiene l’oro — greggio giù, inflazione attesa giù, rendimenti giù — funziona e si vede sui prezzi. Poggia però su un ribasso del petrolio costruito sull’attesa di una riapertura che il conteggio dei transiti smentisce: direzione confermata, appoggio più sottile di quanto sembri.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-05T10:35:00+02:00.
+
+Nessuna delle cinque condizioni è scattata. Il vincolo su cui poggiava la lettura — otto navi contro 130-140 al giorno — non si è mosso di una unità in due ore, mentre sul fronte delle dichiarazioni la distensione ha fatto un altro passo avanti: è esattamente l’asimmetria che l’analisi descriveva. Il greggio ha continuato a scendere e i rendimenti ad allentarsi, quindi anche il canale dei tassi ha retto.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un conteggio dei transiti che risale verso i livelli precedenti al conflitto. | no | Il conteggio è fermo: due ore dopo restano otto navi contro le circa 130-140 al giorno di prima della guerra. |
+| Un accordo ufficiale e verificabile sulla riapertura dello stretto. | no | Nessun accordo firmato: Trump dichiara una trattativa «molto positiva», ma l’Iran continua a negare un’intesa imminente. |
+| Un forte rimbalzo del petrolio, che riporterebbe in alto inflazione attesa e rendimenti. | no | Il greggio è sceso ancora invece di rimbalzare: Brent a 79,04 dollari da 79,6, WTI a 75,19 da 75,9. |
+| Il rendimento del decennale nuovamente sopra il 4,70%. | no | Rendimenti e attese di rialzo Fed si sono ulteriormente ammorbiditi rispetto al 4,60-4,62% della mattina. |
+| Un dato ADP nettamente superiore alle attese. | no | L’ADP esce alle 14:15 di oggi: non era ancora pubblicato al momento del controllo. |
 
 ## Fonti consultate
 

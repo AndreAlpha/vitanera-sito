@@ -37,11 +37,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'IRAN',
     name: 'Trattativa sulla riapertura dello stretto',
-    value: 'progressi contro smentite',
-    change: 'nessun negoziato diretto, dice Teheran',
+    value: 'quinto annuncio in tre giorni',
+    change: 'quattro precedenti, zero navi in più',
     tone: 'warn',
     icon: 'alert',
-    note: 'Il Qatar parla ancora di progressi diplomatici, l’Iran continua a negare negoziati diretti con Washington. Fra le due versioni, il conteggio dei transiti dà ragione alla seconda.',
+    note: 'Ora è il presidente a dichiarare una trattativa già avvenuta e «molto positiva». L’Iran continua a negare un’intesa imminente, e il conteggio dei transiti non si è mosso dopo nessuno degli annunci precedenti.',
   },
   {
     symbol: 'FED FUNDS',
@@ -100,11 +100,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: '≈ 79,6 $',
-    change: 'WTI ≈ 75,9 $, stabilizzati senza rimbalzo',
+    value: '79,04 $',
+    change: 'WTI 75,19 $, ancora in calo',
     tone: 'warn',
-    icon: 'arrow-flat',
-    note: 'È il primo anello della catena che sostiene l’oro, ed è quello più sottile: quasi −10% in due sedute su una riapertura di Hormuz che il conteggio dei transiti smentisce.',
+    icon: 'arrow-down',
+    note: 'È il primo anello della catena che sostiene l’oro, ed è quello più sottile: scende sul quinto annuncio di distensione in tre giorni, mentre il conteggio dei transiti non si muove.',
   },
   {
     symbol: 'TESORO USA',

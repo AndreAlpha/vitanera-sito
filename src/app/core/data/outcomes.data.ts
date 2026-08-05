@@ -28,6 +28,45 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'hormuz-non-ha-riaperto-otto-navi-contro-130-al-giorno',
+    checkedAt: '2026-08-05T10:35:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition: 'Un conteggio dei transiti che risale verso i livelli precedenti al conflitto.',
+        triggered: false,
+        evidence:
+          'Il conteggio è fermo: due ore dopo restano otto navi contro le circa 130-140 al giorno di prima della guerra.',
+      },
+      {
+        condition: 'Un accordo ufficiale e verificabile sulla riapertura dello stretto.',
+        triggered: false,
+        evidence:
+          'Nessun accordo firmato: Trump dichiara una trattativa «molto positiva», ma l’Iran continua a negare un’intesa imminente.',
+      },
+      {
+        condition:
+          'Un forte rimbalzo del petrolio, che riporterebbe in alto inflazione attesa e rendimenti.',
+        triggered: false,
+        evidence:
+          'Il greggio è sceso ancora invece di rimbalzare: Brent a 79,04 dollari da 79,6, WTI a 75,19 da 75,9.',
+      },
+      {
+        condition: 'Il rendimento del decennale nuovamente sopra il 4,70%.',
+        triggered: false,
+        evidence:
+          'Rendimenti e attese di rialzo Fed si sono ulteriormente ammorbiditi rispetto al 4,60-4,62% della mattina.',
+      },
+      {
+        condition: 'Un dato ADP nettamente superiore alle attese.',
+        triggered: false,
+        evidence:
+          'L’ADP esce alle 14:15 di oggi: non era ancora pubblicato al momento del controllo.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata. Il vincolo su cui poggiava la lettura — otto navi contro 130-140 al giorno — non si è mosso di una unità in due ore, mentre sul fronte delle dichiarazioni la distensione ha fatto un altro passo avanti: è esattamente l’asimmetria che l’analisi descriveva. Il greggio ha continuato a scendere e i rendimenti ad allentarsi, quindi anche il canale dei tassi ha retto.',
+  },
+  {
     slug: 'iran-chiede-il-controllo-sugli-ingressi-a-hormuz',
     checkedAt: '2026-08-05T09:20:00+02:00',
     verdict: 'parziale',
