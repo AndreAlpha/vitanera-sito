@@ -78,6 +78,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-05T17:30:00+02:00',
+  checkedAt: '2026-08-05T18:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -85,11 +86,12 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'rialzista',
       strength: 'media',
       regime:
-        'Il movimento è ampio — oro a 4.199,8 con oltre +3%, argento sopra il +4% — ma la probabilità di un rialzo ' +
-        'Fed a settembre resta al 57%, la stessa di ieri e la stessa dopo due interventi restrittivi. Sale il ' +
-        'prezzo senza che si riprezzi il meccanismo: è un rialzo di flusso e di dollaro debole, non di attese.',
+        'Il rialzo è proseguito fino a circa 4.259 dollari, oltre +4% in una seduta, e continua a coinvolgere ' +
+        'anche l’argento. Nel frattempo il decennale è al 4,63% e le attese sulla Fed non si sono riprezzate: ' +
+        'la corsa si allunga senza che il meccanismo che dovrebbe spiegarla dia segno di essersi mosso. Resta un ' +
+        'rialzo di flusso e di dollaro debole, e ogni dollaro in più lo rende più esteso, non più solido.',
       invalidation:
-        'Un ritorno stabile sotto i 4.170-4.175 dollari, il decennale sopra il 4,70% o un Dollar Index sopra quota 100; oppure, in senso opposto, una probabilità di rialzo sotto il 50%, che smentirebbe proprio la lettura del flusso.',
+        'Un ritorno rapido sotto i 4.200-4.210 dollari, il decennale sopra il 4,70% o un Dollar Index in deciso recupero sopra quota 100; oppure, in senso opposto, una probabilità di rialzo sotto il 50%, che smentirebbe proprio la lettura del flusso.',
     },
     {
       horizon: 'medio',
@@ -115,31 +117,31 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, oppure il ritorno stabile del decennale sopra il 5%.',
     },
   ],
-  headline: 'L’oro sfiora 4.200, ma la probabilità di rialzo resta ferma al 57%',
+  headline: 'L’oro estende oltre 4.250, e il meccanismo che dovrebbe spiegarlo resta fermo',
   stance:
-    'XAU/USD ha accelerato fino a circa 4.199,8 dollari, oltre +3% e massimo dal 22 giugno, con l’argento sopra ' +
-    'il +4%: dollaro debole e rendimenti vicini ai minimi della settimana. Nello stesso pomeriggio Schmid e ' +
-    'Kashkari hanno chiesto una Fed più restrittiva, e la probabilità che il mercato attribuisce a un rialzo di ' +
-    'settembre è rimasta al 57%, dov’era ieri. In ventiquattro ore quel numero ha assorbito un JOLTS fiacco, un ' +
-    'ADP molto sotto le attese e due interventi da falco senza spostarsi: il rialzo dell’oro non nasce da una ' +
-    'riprezzatura della Fed, e va trattato per quello che è.',
+    'Al controllo delle 18:20 il rialzo è proseguito fino a circa 4.259 dollari, oltre +4% nella seduta, con ' +
+    'l’argento che continua a seguire: dollaro meno sostenuto e decennale al 4,63%. Non è arrivato nessun fatto ' +
+    'nuovo — nessun dato macro, nessun comunicato della Fed, nessuna riapertura verificabile di Hormuz — e le ' +
+    'attese su un rialzo di settembre non si sono riprezzate. La lettura pubblicata alle 17:30 regge quindi ' +
+    'proprio nella sua parte scomoda: il prezzo sale, il meccanismo no, e dopo un più 4% l’estensione conta più ' +
+    'della conferma.',
   favours: [
-    'Guardare il 57% e non le dichiarazioni: le preferenze dei singoli membri non sono ancora diventate un prezzo',
-    'Considerare l’ampiezza del movimento, argento compreso, come indizio di flusso più che di riprezzatura',
+    'Distinguere l’ampiezza del movimento dalla sua solidità: sale tutto il comparto, ma nessuna attesa si è mossa',
+    'Aspettare il rapporto occupazionale di venerdì, che è l’unico appuntamento in grado di riprezzare la Fed',
   ],
   avoid: [
-    'Leggere il più 3% come conferma della catena sui tassi: quella catena oggi non ha prodotto nulla',
-    'Trattare i 4.200 come una soglia in sé: è una cifra tonda dove si accumulano ordini, non un livello che tiene',
+    'Leggere il più 4% come conferma della catena sui tassi: il decennale è dove stava a metà giornata',
+    'Trattare l’estensione come forza: dopo una corsa di questa ampiezza il rischio di rientro cresce, non cala',
   ],
   confirming: [
-    'XAU/USD ≈ 4.199,8 $, oltre +3%',
-    'Argento oltre +4%: sale tutto il comparto',
-    'Decennale vicino ai minimi della settimana',
+    'XAU/USD ≈ 4.259 $, oltre +4%',
+    'Sale anche l’argento: movimento di comparto',
+    'Dollaro meno sostenuto',
   ],
   contradicting: [
-    'Rialzo Fed a settembre fermo al 57%',
-    'Schmid e Kashkari chiedono di stringere',
-    'Brent ancora sopra gli 80 dollari',
+    'Decennale al 4,63%, fermo da metà giornata',
+    'Attese sulla Fed senza riprezzatura',
+    'Nessun fatto nuovo dalle 17:30',
   ],
   sources: [
     'oro-sfiora-4200-ma-le-attese-sulla-fed-non-si-muovono',
