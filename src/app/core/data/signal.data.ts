@@ -62,27 +62,29 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-04T20:05:00+02:00',
+  updatedAt: '2026-08-05T08:35:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
       direction: 'rialzista',
-      strength: 'alta',
+      strength: 'media',
       regime:
-        'Il movimento del dopo-JOLTS ha retto tutta la seduta invece di esaurirsi nei minuti successivi ' +
-        'al dato, e i tre correlati dicono la stessa cosa.',
-      invalidation: 'XAU/USD sotto i 4.070 dollari, oppure il decennale nuovamente sopra il 4,70%.',
+        'Il canale dei tassi funziona e si misura: decennale al 4,62%, dollaro debole, oro sopra i 4.100 ' +
+        'con tutto il comparto dei preziosi. La forza scende di un gradino perché si è visto su che cosa poggia.',
+      invalidation:
+        'XAU/USD che perde rapidamente i 4.100 dollari, oppure il decennale nuovamente sopra il 4,70%.',
     },
     {
       horizon: 'medio',
       direction: 'neutrale-rialzista',
       strength: 'media',
       regime:
-        'La catena greggio giù, inflazione attesa giù, rendimenti giù regge finché Hormuz resta chiuso a ' +
-        'metà: è un equilibrio, non una tendenza.',
+        'La catena greggio giù, inflazione attesa giù, rendimenti giù regge, ma il suo primo anello è un ' +
+        'ribasso del petrolio che sconta una riapertura di Hormuz che nei transiti non si vede: otto navi ' +
+        'contro le 130-140 al giorno di prima del conflitto.',
       invalidation:
-        'Un forte rimbalzo del petrolio, oppure dati ADP e payroll nettamente superiori alle attese.',
+        'Un conteggio dei transiti che risale verso i livelli precedenti al conflitto, un forte rimbalzo del petrolio, oppure dati ADP e payroll nettamente superiori alle attese.',
     },
     {
       horizon: 'lungo',
@@ -95,35 +97,36 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, oppure il ritorno stabile del decennale sopra il 5%.',
     },
   ],
-  headline: 'L’oro tiene il rialzo del dopo-JOLTS, e la spinta arriva dai tassi',
+  headline:
+    'Otto navi contro centotrenta: il ribasso del greggio sconta una riapertura che non c’è',
   stance:
-    'XAU/USD sale verso i 4.092 dollari e il future Comex chiude a 4.095,40 con +1,53%: non è stata una ' +
-    'fiammata post-dato, il movimento ha retto tutta la seduta. Con lui salgono argento, platino e palladio, ' +
-    'mentre il Brent perde il 3,9% a 80,47 e il decennale arretra verso il 4,66%. La catena è coerente — ' +
-    'greggio giù, inflazione attesa giù, rendimenti giù, costo-opportunità del metallo giù — e dice che a ' +
-    'sostenere l’oro sono i tassi, non il rifugio. Hormuz resta un’aspettativa, non un accordo.',
+    'Nello stretto sono passate otto navi, contro le 130-140 al giorno di prima del conflitto: la ' +
+    'normalizzazione non è cominciata, e il petrolio che ha perso quasi il 10% in due sedute sta prezzando ' +
+    'un’intenzione e non un transito. Sopra quel ribasso poggia tutto il resto: XAU/USD è salito verso i ' +
+    '4.127 dollari con il decennale al 4,62% e la probabilità di un rialzo Fed a settembre scesa al 57-59%. ' +
+    'La direzione è confermata dai prezzi; a essere sottile è ciò su cui si appoggia.',
   favours: [
-    'Guardare ai rendimenti per capire quanto dura: è quello il canale, non la geopolitica',
-    'Dare peso al fatto che il movimento sia durato invece di esaurirsi nei minuti dopo il dato',
+    'Guardare il conteggio dei transiti prima del grafico dell’oro: è lì che si vede se la catena regge',
+    'Tenere separate le posizioni dichiarate dalle navi che passano davvero',
   ],
   avoid: [
-    'Considerare acquisita la svolta monetaria: resta circa il 57% di probabilità di rialzo a settembre',
-    'Trattare l’area dei 4.100 dollari come un obiettivo invece che come il test immediato',
+    'Leggere i 4.100 dollari come un supporto: contano perché ci si accumulano gli ordini, non da soli',
+    'Considerare acquisita la svolta monetaria, con il rialzo di settembre ancora dato sopra la metà',
   ],
   confirming: [
-    'XAU/USD ≈ 4.092 $, Comex 4.095,40 $ (+1,53%)',
-    'Brent 80,47 $, −3,9%',
-    'Decennale ≈ 4,66%',
+    'XAU/USD ≈ 4.127 $, circa +1,3%',
+    'Decennale ≈ 4,62%',
+    'Rialzo Fed a settembre 57-59%, dal 67%',
   ],
   contradicting: [
-    'Rialzo Fed a settembre ancora al 57%',
-    'Hormuz non regolarmente operativo',
-    'Area 4.100 $ ancora da superare',
+    'Otto transiti contro 130-140 al giorno',
+    'Iran che nega i negoziati diretti',
+    'Brent ≈ 79,6 $ fermo sui minimi, vulnerabile a rimbalzi',
   ],
   sources: [
+    'hormuz-non-ha-riaperto-otto-navi-contro-130-al-giorno',
     'oro-estende-il-rialzo-il-canale-e-quello-dei-tassi',
     'iran-chiede-il-controllo-sugli-ingressi-a-hormuz',
-    'jolts-piu-debole-delle-attese-oro-su-rendimenti-giu',
   ],
 };
 

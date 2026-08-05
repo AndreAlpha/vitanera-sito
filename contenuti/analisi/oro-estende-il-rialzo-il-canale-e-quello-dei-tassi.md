@@ -23,8 +23,10 @@ prossimoAppuntamento:
   dettaglio: "Le aspettative sulla Fed restano molto sensibili a questi due dati. Numeri nettamente superiori alle attese riporterebbero in alto rendimenti e dollaro, togliendo all’oro il canale che oggi lo sta sostenendo."
 fonti:
   - testata: "Reuters"
+esito: "confermata"
+controllata: "2026-08-05T08:30:00+02:00"
 sorgente: "src/app/core/data/articles/oro-estende-il-rialzo-il-canale-e-quello-dei-tassi.ts"
-impronta: "878d1394e2063732"
+impronta: "18bad6e766ae10f1"
 ---
 
 # L’oro estende il rialzo, e il canale è quello dei tassi
@@ -110,6 +112,19 @@ Le aspettative sulla Fed restano molto sensibili a questi due dati. Numeri netta
 Impostazione su XAU/USD: rialzista, forza alta, orizzonte breve.
 
 Catena coerente e verificata sui prezzi: petrolio in forte calo, minore pressione inflazionistica, rendimenti più bassi, minore costo-opportunità del metallo. Si aggiunge il raffreddamento graduale del lavoro indicato dal JOLTS. La spinta arriva dai tassi più che dalla domanda rifugio.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-05T08:30:00+02:00.
+
+Le quattro condizioni hanno retto tutte. La catena descritta — greggio giù, rendimenti giù, oro su — ha continuato a funzionare per un’altra sessione: l’oro ha superato i 4.100 dollari che l’analisi indicava come test immediato, il decennale è arretrato di altri quattro punti base e il dollaro è rimasto debole. La probabilità di un rialzo Fed a settembre è scesa verso il 57-59%.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| XAU/USD sotto i 4.070 dollari. | no | Nessun ritorno sotto quel livello: dai 4.092 dollari della pubblicazione il metallo è salito fino a circa 4.127. |
+| Il rendimento del decennale nuovamente sopra il 4,70%. | no | Il decennale è sceso ancora, dal 4,66% verso il 4,62%. |
+| Un forte rimbalzo del petrolio. | no | Il greggio si è stabilizzato senza rimbalzare: Brent intorno a 79,6 dollari da 80,47, WTI vicino a 75,9 da 76,67. |
+| Dati ADP o payroll nettamente superiori alle attese. | no | Nessuno dei due era ancora stato pubblicato al momento del controllo. |
 
 ## Fonti consultate
 

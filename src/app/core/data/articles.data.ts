@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { hormuzOttoNavi } from './articles/hormuz-non-ha-riaperto-otto-navi-contro-130-al-giorno';
 import { oroEstendeCanaleTassi } from './articles/oro-estende-il-rialzo-il-canale-e-quello-dei-tassi';
 import { iranControlloIngressiHormuz } from './articles/iran-chiede-il-controllo-sugli-ingressi-a-hormuz';
 import { joltsPiuDeboleDelleAttese } from './articles/jolts-piu-debole-delle-attese-oro-su-rendimenti-giu';
@@ -48,6 +49,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  hormuzOttoNavi,
   oroEstendeCanaleTassi,
   iranControlloIngressiHormuz,
   joltsPiuDeboleDelleAttese,
