@@ -77,33 +77,32 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-05T17:30:00+02:00',
-  checkedAt: '2026-08-05T18:20:00+02:00',
+  updatedAt: '2026-08-05T19:15:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'rialzista',
+      direction: 'neutrale-rialzista',
       strength: 'media',
       regime:
-        'Il rialzo è proseguito fino a circa 4.259 dollari, oltre +4% in una seduta, e continua a coinvolgere ' +
-        'anche l’argento. Nel frattempo il decennale è al 4,63% e le attese sulla Fed non si sono riprezzate: ' +
-        'la corsa si allunga senza che il meccanismo che dovrebbe spiegarla dia segno di essersi mosso. Resta un ' +
-        'rialzo di flusso e di dollaro debole, e ogni dollaro in più lo rende più esteso, non più solido.',
+        'Il metallo tiene sopra i 4.250 dollari dopo un più 4%, ma il canale che lo giustificava ha smesso di ' +
+        'aiutare: il decennale è al 4,64%, quarta lettura consecutiva in salita nella stessa giornata, e il ' +
+        'quinquennale è tornato al 4,35%. Prezzo esteso e sostegno che si gira: le due cose insieme non fanno ' +
+        'una lettura rialzista piena.',
       invalidation:
-        'Un ritorno rapido sotto i 4.200-4.210 dollari, il decennale sopra il 4,70% o un Dollar Index in deciso recupero sopra quota 100; oppure, in senso opposto, una probabilità di rialzo sotto il 50%, che smentirebbe proprio la lettura del flusso.',
+        'Una perdita rapida dei 4.200 dollari accompagnata dal decennale sopra il 4,70%; prima ancora, un decennale sopra il 4,68% con l’oro ancora sopra i 4.250, che segnalerebbe il logoramento senza aspettare la rottura.',
     },
     {
       horizon: 'medio',
       direction: 'neutrale-rialzista',
       strength: 'media',
       regime:
-        'Il Tesoro finanzia i 68 miliardi di fabbisogno in più senza toccare le aste a dieci e trent’anni: lo ' +
-        'shock di offerta che frenava l’oro è rinviato di diversi trimestri. In direzione contraria il fronte dei ' +
-        'falchi si allarga — Schmid e Kashkari dopo i tre del FOMC — senza però spostare di un punto il prezzo ' +
-        'che il mercato dà al rialzo di settembre. Restano aperti i due colli di bottiglia sulle rotte.',
+        'Iran e Oman hanno concordato le coordinate di una rotta a Hormuz: il primo annuncio in quattro giorni ' +
+        'che produce un oggetto tecnico invece di una frase, ma i quattro punti che decidono se una nave passa ' +
+        'restano aperti e il conteggio dei transiti è fermo. Una riapertura toglierebbe premio inflazionistico ' +
+        'al greggio e insieme domanda di rifugio all’oro: aiuta dai tassi, toglie dal rifugio.',
       invalidation:
-        'Un rapporto occupazionale di venerdì nettamente sopra le attese di circa 80.000 posti, o salari orari in riaccelerazione; oppure un XAU/USD incapace di tenere l’area 4.150-4.170.',
+        'Un conteggio dei transiti ancora fermo alle otto navi quarantotto ore dopo la dichiarazione congiunta, oppure un blocco americano esplicito; dall’altro lato, un rapporto occupazionale di venerdì nettamente sopra le attese di circa 80.000 posti.',
     },
     {
       horizon: 'lungo',
@@ -117,36 +116,35 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, oppure il ritorno stabile del decennale sopra il 5%.',
     },
   ],
-  headline: 'L’oro estende oltre 4.250, e il meccanismo che dovrebbe spiegarlo resta fermo',
+  headline: 'Coordinate concordate a Hormuz, e il decennale che risale un punto alla volta',
   stance:
-    'Al controllo delle 18:20 il rialzo è proseguito fino a circa 4.259 dollari, oltre +4% nella seduta, con ' +
-    'l’argento che continua a seguire: dollaro meno sostenuto e decennale al 4,63%. Non è arrivato nessun fatto ' +
-    'nuovo — nessun dato macro, nessun comunicato della Fed, nessuna riapertura verificabile di Hormuz — e le ' +
-    'attese su un rialzo di settembre non si sono riprezzate. La lettura pubblicata alle 17:30 regge quindi ' +
-    'proprio nella sua parte scomoda: il prezzo sale, il meccanismo no, e dopo un più 4% l’estensione conta più ' +
-    'della conferma.',
+    'Iran e Oman hanno concordato le coordinate geografiche di una rotta attraverso lo stretto, con una ' +
+    'dichiarazione congiunta in preparazione: è il sesto annuncio in quattro giorni ma il primo che produce un ' +
+    'documento invece di una frase, e il greggio scende sotto gli 80 dollari anche grazie a 2,5 milioni di barili ' +
+    'in più nelle scorte americane. Sull’altro fronte il decennale è salito al 4,64%, quarta lettura consecutiva ' +
+    'in aumento: l’oro tiene sopra i 4.250 ma senza più il canale dei tassi a spingerlo.',
   favours: [
-    'Distinguere l’ampiezza del movimento dalla sua solidità: sale tutto il comparto, ma nessuna attesa si è mossa',
-    'Aspettare il rapporto occupazionale di venerdì, che è l’unico appuntamento in grado di riprezzare la Fed',
+    'Alzare la probabilità di riapertura per via delle coordinate, ma continuare a misurarla sul conteggio dei transiti',
+    'Distinguere i due effetti di una riapertura sull’oro: aiuta dai tassi, toglie dal rifugio',
   ],
   avoid: [
-    'Leggere il più 4% come conferma della catena sui tassi: il decennale è dove stava a metà giornata',
-    'Trattare l’estensione come forza: dopo una corsa di questa ampiezza il rischio di rientro cresce, non cala',
+    'Inseguire il metallo sopra i 4.250: il canale che giustificava la corsa ha smesso di collaborare',
+    'Leggere le coordinate come una riapertura: dei quattro punti che decidono se una nave passa, nessuno è risolto',
   ],
   confirming: [
-    'XAU/USD ≈ 4.259 $, oltre +4%',
-    'Sale anche l’argento: movimento di comparto',
-    'Dollaro meno sostenuto',
+    'Brent 79,34 $, di nuovo sotto gli 80',
+    'Scorte USA +2,5 mln barili, aumento inatteso',
+    'XAU/USD sopra i 4.250 dollari',
   ],
   contradicting: [
-    'Decennale al 4,63%, fermo da metà giornata',
-    'Attese sulla Fed senza riprezzatura',
-    'Nessun fatto nuovo dalle 17:30',
+    'Decennale al 4,64%, quarta salita di fila',
+    'Quinquennale tornato al 4,35%',
+    'Transiti fermi e dichiarazione congiunta senza data',
   ],
   sources: [
+    'coordinate-concordate-a-hormuz-il-sesto-annuncio-e-diverso',
     'oro-sfiora-4200-ma-le-attese-sulla-fed-non-si-muovono',
     'adp-debole-e-tesoro-fermo-ma-il-decennale-non-si-muove',
-    'attacco-houthi-nel-mar-rosso-il-secondo-collo-di-bottiglia',
   ],
 };
 

@@ -28,6 +28,47 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'oro-sfiora-4200-ma-le-attese-sulla-fed-non-si-muovono',
+    checkedAt: '2026-08-05T19:10:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition: 'Un ritorno stabile sotto i 4.170-4.175 dollari.',
+        triggered: false,
+        evidence:
+          'Nessun ritorno: il metallo ha esteso oltre i 4.250 dollari e resta descritto come sostenuto sopra l’area 4.200-4.210.',
+      },
+      {
+        condition: 'Il rendimento del decennale in forte recupero, sopra il 4,70%.',
+        triggered: false,
+        evidence:
+          'Il decennale è risalito al 4,64% e il quinquennale è tornato intorno al 4,35%: un recupero c’è, ma resta sei punti base sotto la soglia dichiarata.',
+      },
+      {
+        condition: 'Un Dollar Index in inversione rialzista sopra quota 100.',
+        triggered: false,
+        evidence:
+          'Nessuna inversione: il dollaro resta descritto come vulnerabile, senza recupero sopra la soglia.',
+      },
+      {
+        condition: 'Dati sul lavoro e salari di venerdì molto più forti delle attese.',
+        triggered: false,
+        evidence:
+          'Non giudicabile: il rapporto occupazionale esce venerdì e al momento del controllo non era ancora pubblicato.',
+      },
+      {
+        condition:
+          'Nella direzione opposta: una probabilità di rialzo a settembre che scende nettamente sotto il 50%. Confermerebbe la direzione ma smentirebbe questa lettura, che poggia proprio sul fatto che quel numero non si muove.',
+        triggered: false,
+        evidence:
+          'Nessuna riprezzatura riportata: le attese sul rialzo di settembre restano dove erano, ed è quanto la lettura sosteneva.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e la parte scomoda della lettura ha avuto la sua prima conferma vera. La tesi era che il rialzo non stesse riprezzando il proprio meccanismo: in due ore il metallo è salito ancora, oltre i 4.250, mentre il decennale invece di scendere è passato dal 4,62% al 4,64% e il quinquennale è tornato al 4,35%. Lo scarto fra prezzo e canale dei tassi si è quindi allargato, non chiuso.',
+    lesson:
+      'La condizione sui rendimenti era fissata al 4,70%, cioè al livello in cui la lettura muore. Il decennale è andato da 4,60-4,61% a 4,64% in sei ore, in salita a ogni controllo, e il registro non se ne accorge: segna «non scattata» mentre il canale su cui poggia tutta l’analisi si sta girando contro. Una soglia va messa anche dove la lettura comincia a logorarsi, non solo dove finisce, altrimenti l’esito registra «confermata» per tutto il tempo in cui la tesi si stava indebolendo.',
+  },
+  {
     slug: 'attacco-houthi-nel-mar-rosso-il-secondo-collo-di-bottiglia',
     checkedAt: '2026-08-05T15:20:00+02:00',
     verdict: 'confermata',

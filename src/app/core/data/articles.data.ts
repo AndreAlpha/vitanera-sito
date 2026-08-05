@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { coordinateHormuzSestoAnnuncio } from './articles/coordinate-concordate-a-hormuz-il-sesto-annuncio-e-diverso';
 import { oroSfiora4200 } from './articles/oro-sfiora-4200-ma-le-attese-sulla-fed-non-si-muovono';
 import { adpDeboleTesoroFermo } from './articles/adp-debole-e-tesoro-fermo-ma-il-decennale-non-si-muove';
 import { attaccoMarRosso } from './articles/attacco-houthi-nel-mar-rosso-il-secondo-collo-di-bottiglia';
@@ -53,6 +54,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  coordinateHormuzSestoAnnuncio,
   oroSfiora4200,
   adpDeboleTesoroFermo,
   attaccoMarRosso,
