@@ -114,6 +114,21 @@ describe('indicatore operativo', () => {
     }
   });
 
+  it('quando è stato riverificato, la riverifica non precede l’analisi né è futura', () => {
+    // `checkedAt` esiste perché `updatedAt` è inchiodato al `publishedAt`
+    // dell'ultima analisi: senza, una riverifica senza pubblicazione lascerebbe
+    // la panoramica a dichiarare un'ora vecchia accanto a numeri nuovi. Ma una
+    // riverifica precedente all'analisi che riassume non vuol dire niente, e una
+    // futura è lo stesso errore di `updatedAt` in avanti.
+    if (!MARKET_SIGNAL?.checkedAt) {
+      return;
+    }
+    expect(Date.parse(MARKET_SIGNAL.checkedAt)).toBeGreaterThanOrEqual(
+      Date.parse(MARKET_SIGNAL.updatedAt),
+    );
+    expect(Date.parse(MARKET_SIGNAL.checkedAt)).toBeLessThanOrEqual(Date.now());
+  });
+
   it('quando è presente cita analisi che esistono davvero', () => {
     for (const slug of MARKET_SIGNAL?.sources ?? []) {
       expect(ARTICLES.some((a) => a.slug === slug)).toBe(true);

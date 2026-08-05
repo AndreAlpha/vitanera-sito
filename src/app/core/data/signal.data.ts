@@ -43,6 +43,21 @@ export interface OperationalSignal {
    * ricopiato.
    */
   readonly updatedAt: string;
+  /**
+   * Quando le conferme e le contraddizioni sono state ricontrollate l'ultima
+   * volta, se è successo dopo la pubblicazione dell'analisi.
+   *
+   * Serve perché `updatedAt` fa due mestieri e ne può fare uno solo: dice **quale
+   * analisi** l'indicatore riassume, ed è vincolato a coincidere con il suo
+   * `publishedAt`. Quando il quadro viene riverificato senza pubblicare nulla —
+   * il prezzo si è mosso nella direzione già descritta, nessun fatto nuovo — quel
+   * campo non si può muovere, e senza questo la panoramica direbbe di essere
+   * ferma a ore prima mentre i numeri accanto sono di adesso.
+   *
+   * Si omette quando coincide con `updatedAt`: una riga in più che ripete la
+   * stessa ora è rumore.
+   */
+  readonly checkedAt?: string;
   readonly asset: string;
   /** Le tre letture, in ordine di orizzonte crescente. */
   readonly readings: readonly SignalReading[];
@@ -63,6 +78,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-05T08:35:00+02:00',
+  checkedAt: '2026-08-05T09:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {

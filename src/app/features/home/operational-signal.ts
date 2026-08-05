@@ -67,6 +67,15 @@ function directionIcon(direction: BiasDirection): string {
             <span class="stamp__ago">
               <app-timestamp [iso]="s.updatedAt" />
             </span>
+            <!-- Seconda riga solo quando il quadro è stato riverificato dopo la
+                 pubblicazione. Senza, la scheda direbbe di essere ferma alle 8:35
+                 con accanto numeri delle 9:20: la data grande dice quale analisi
+                 riassume, questa dice fino a quando è stata ricontrollata. -->
+            @if (checkedLabel) {
+              <span class="stamp__checked">
+                Conferme ricontrollate alle <span class="tnum">{{ checkedLabel }}</span>
+              </span>
+            }
           </span>
         </header>
 
@@ -272,6 +281,14 @@ function directionIcon(direction: BiasDirection): string {
     .stamp__ago {
       font-size: var(--t-xs);
       color: var(--text-soft);
+    }
+
+    /* Più piccola e più smorta della data: è un dettaglio di servizio, non
+       un'informazione che compete con l'ora dell'analisi. */
+    .stamp__checked {
+      margin-top: var(--s-1);
+      font-size: var(--t-micro);
+      color: var(--text-faint);
     }
 
     /* --- Le tre letture ------------------------------------------------------- */
@@ -661,6 +678,17 @@ export class OperationalSignalCard {
    * chiusura americana. Il tempo trascorso resta accanto, in piccolo.
    */
   protected readonly updatedLabel = this.signal ? formatDateTime(this.signal.updatedAt) : '';
+
+  /**
+   * Ora dell'ultima riverifica, vuota quando non ce n'è stata una successiva.
+   *
+   * Il confronto è fra istanti e non fra stringhe: `checkedAt` uguale a
+   * `updatedAt` non deve produrre una riga che ripete la stessa ora.
+   */
+  protected readonly checkedLabel =
+    this.signal?.checkedAt && Date.parse(this.signal.checkedAt) > Date.parse(this.signal.updatedAt)
+      ? formatDateTime(this.signal.checkedAt)
+      : '';
 
   /** Le tre letture, già risolte in etichette pronte da mostrare. */
   protected readonly readings = (this.signal?.readings ?? []).map((r) => ({

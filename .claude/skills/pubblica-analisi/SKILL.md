@@ -1050,12 +1050,47 @@ di refuso, e va rigenerato allo stesso modo.
 
 ### Poi aggiorna il grafo
 
-```
-/graphify ./contenuti --update
-```
+**Si invoca la skill `graphify`, non l'eseguibile.** Non è una sfumatura: sono
+due strade diverse e una delle due non funziona.
+
+| Cosa | Come | Serve una chiave? |
+| ---- | ---- | ----------------- |
+| `query`, `path`, `explain` | l'eseguibile `graphify` da terminale | no: leggono `graph.json`, già costruito |
+| costruire o aggiornare il grafo | **la skill**, con argomenti `./contenuti --update` | no: l'estrazione la fa la sessione |
+
+Per l'aggiornamento invoca la skill `graphify` passandole `./contenuti --update`.
+
+> **Non lanciare `graphify ./contenuti --update` da terminale.** Il binario da
+> solo non ha un modello con cui leggere i documenti e si ferma con
+> `error: no LLM API key found (82 doc/paper/image file(s) need semantic
+> extraction)`. Non è un limite dell'ambiente e **non serve procurarsi una
+> chiave**: il file della skill dice testualmente «graphify needs no API key.
+> Never ask the user for one, and never block on one» — senza `GEMINI_API_KEY`
+> l'estrazione semantica la fa la sessione stessa dispacciando dei subagent. Se
+> ti ritrovi a chiedere una chiave o a dichiarare il passo impossibile, hai
+> lanciato il binario al posto della skill. È già successo.
 
 `--update` riestrae **solo i file nuovi o cambiati**, quindi con una analisi in
-più costa pochi secondi invece dei dieci minuti di una ricostruzione completa.
+più costa un agente e pochi secondi invece dei minuti di una ricostruzione
+completa. Ha un prezzo — gli archi fra documenti si trovano **dentro un chunk**,
+e un chunk di tre file non vede gli altri ottanta — ma è il prezzo giusto da
+pagare.
+
+> **Non rifare il grafo da zero per «recuperare» quegli archi.** È stato
+> provato, misurato e buttato via. Una ricostruzione completa con quattro agenti
+> ha prodotto 488 nodi e 795 archi contro i 781 e 2545 del grafo aggiornato in
+> modo incrementale, e soprattutto ha fatto crollare i collegamenti fra archivio
+> e note di metodo **da 193 a 1**: proprio quelli su cui si regge la seconda
+> domanda del passo 4.
+>
+> La causa non era il numero di agenti ma **come erano divisi i chunk**: le
+> ventitré analisi in un chunk e le note di metodo negli altri tre, così nessun
+> agente ha mai visto un'analisi e una nota insieme, e un arco fra le due non
+> poteva nascere. Se una ricostruzione completa serve davvero, i chunk vanno
+> composti **misti** — ogni chunk con qualche analisi e qualche nota di studio —
+> altrimenti si ottiene un grafo più povero di quello che si voleva sostituire.
+> E prima di scrivere, si confronta: nodi, archi, e quanti archi collegano file
+> di cartelle diverse.
 
 Va fatto **dopo** aver generato i markdown, non prima: il grafo legge
 `contenuti/`, e su markdown non ancora rigenerati riestrarrebbe la versione
