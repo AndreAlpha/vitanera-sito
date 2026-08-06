@@ -180,6 +180,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-06T17:15:00+02:00',
+  checkedAt: '2026-08-06T18:40:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -243,13 +244,13 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   ],
   confirming: [
     'Meno de-escalation: domanda di rifugio sostenuta',
-    'Rialzo Fed a settembre ancora intorno al 57%',
+    'Rialzo Fed a settembre fermo al 56,9%',
     'Nessun accordo operativo accettato da Washington',
   ],
   contradicting: [
-    'Petrolio in recupero sui dubbi sull’accordo',
-    'Decennale verso il 4,64% per via energetica',
-    'Transiti fermi a otto navi dal 5 agosto',
+    'Brent a 82,74 $: la soglia di invalidazione è superata',
+    'Decennale al 4,67%, con il biennale a 4,25%',
+    'Dollar Index a 99,86, massimo di giornata 99,90',
   ],
   constraints: [
     {
@@ -297,25 +298,26 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Premio di rischio sul greggio che non si forma',
-      value: 'Brent 80,99 $',
-      baseline: 'da 79,08 di ieri mattina, con un massimo di giornata a 81,40',
+      value: 'Brent 82,74 $',
+      baseline: 'da 79,45 di chiusura ieri, con un massimo di giornata a 82,91',
       against:
         'In quattro giorni: una minaccia americana a Teheran, un piano di attacchi contro l’energia iraniana, ' +
         'una smentita, un missile houthi contro una petroliera saudita e una ritorsione iraniana annunciata ' +
         'agli impianti energetici del Golfo. A ognuna di queste il prezzo aveva reagito meno della precedente; ' +
         'quello che lo ha mosso, alla fine, è stata l’assenza di una conferma sull’intesa Iran-Oman.',
       watch:
-        'Gli 82 dollari di Brent. La tacca di logoramento a 80 è stata superata in ventiquattro ore: il premio ' +
-        'ha ricominciato a essere pagato, e sopra gli 82 l’effetto inflazionistico torna a pesare sull’oro più ' +
-        'del rifugio.',
-      state: 'si-allenta',
+        'Gli 82 dollari di Brent sono stati superati alle 18:22 del 6 agosto, dopo la tacca di logoramento a 80 ' +
+        'passata il giorno prima: il premio non solo si è formato, ha oltrepassato il livello oltre il quale ' +
+        'l’effetto inflazionistico torna a pesare sull’oro più del rifugio. Il vincolo ha smesso di vincolare, e ' +
+        'da qui la domanda non è più se il premio si paghi ma quanto duri.',
+      state: 'sciolto',
     },
   ],
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 57,
-      display: '≈ 57%',
+      now: 56.9,
+      display: '56,9%',
       marks: [
         {
           at: 62,
@@ -333,8 +335,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 80.34,
-      display: '80,34 $',
+      now: 82.74,
+      display: '82,74 $',
       marks: [
         {
           at: 82,
@@ -346,8 +348,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.642,
-      display: '4,64%',
+      now: 4.673,
+      display: '4,67%',
       marks: [
         {
           at: 4.68,
@@ -365,8 +367,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4260,
-      display: '≈ 4.260 $',
+      now: 4293.5,
+      display: '4.293,50 $',
       marks: [
         {
           at: 4160,
