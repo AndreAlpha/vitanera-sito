@@ -241,14 +241,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Attribuire al solo testo iraniano il movimento di oro, dollaro e biennale: la settimana era già stata mossa in senso opposto dalle dichiarazioni di Washington',
   ],
   confirming: [
-    'Brent 82,52 $: soglia superata, massimo 83,00',
-    'Decennale 4,67% e biennale 4,245%, saliti insieme',
-    'Commissioni in rial contro l’intesa senza pedaggi',
+    'Brent 82,37 $: soglia superata, massimo 83,00',
+    'Decennale 4,675%, a mezzo centesimo dalla tacca',
+    'Rialzo Fed entro dicembre dato all’83,9%',
   ],
   contradicting: [
-    'Bozza in esame, non approvata: nessuna norma',
-    'Transiti fermi a otto navi dal 5 agosto',
-    'Oro a un massimo di 4.363,60 $, calo di solo 0,16%',
+    'Rialzo a settembre sceso al 54,9% da 56,9%',
+    'XAU/USD spot piatto a 4.246,96, chiusura 4.247,02',
+    'Bozza iraniana in esame, e transiti ancora a otto navi',
   ],
   constraints: [
     {
@@ -296,7 +296,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Premio di rischio sul greggio che non si forma',
-      value: 'Brent 82,52 $',
+      value: 'Brent 82,37 $',
       baseline: 'da 79,45 di chiusura ieri, con un massimo di giornata a 83,00',
       against:
         'In quattro giorni: una minaccia americana a Teheran, un piano di attacchi contro l’energia iraniana, ' +
@@ -314,8 +314,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 56.9,
-      display: '56,9%',
+      now: 54.9,
+      display: '54,9%',
       marks: [
         {
           at: 62,
@@ -333,8 +333,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 82.52,
-      display: '82,52 $',
+      now: 82.37,
+      display: '82,37 $',
       marks: [
         {
           at: 82,
@@ -346,8 +346,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.673,
-      display: '4,67%',
+      now: 4.675,
+      display: '4,675%',
       marks: [
         {
           at: 4.68,
@@ -365,8 +365,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4298.5,
-      display: '4.298,50 $',
+      now: 4246.96,
+      display: '4.246,96 $',
       marks: [
         {
           at: 4160,

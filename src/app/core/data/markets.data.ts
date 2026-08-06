@@ -19,11 +19,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'XAU/USD',
     name: 'Oro spot',
-    value: '4.298,50 $',
-    change: 'meno 0,16%, dopo un massimo a 4.363,60',
+    value: '4.246,96 $',
+    change: 'piatto, da una chiusura di 4.247,02',
     tone: 'warn',
     icon: 'coin',
-    note: 'Rilevazione delle 18:38 del 6 agosto, non una quotazione in tempo reale. Per quattro giorni era salito rifiutando le notizie che avrebbero dovuto muoverlo; oggi scende mentre petrolio, rendimenti e dollaro salgono insieme, che è la prima volta in cinque giorni che i tre canali puntano tutti nella stessa direzione. Il calo resta piccolo e nessun supporto dichiarato è stato toccato: l’area 4.200 logora la lettura, i 4.160 la invalidano.',
+    note: 'Quotazione spot delle 20:14 del 6 agosto, non in tempo reale. Attenzione alla serie: le analisi di oggi citano il contratto future, che scambia una sessantina di dollari sopra lo spot per effetto del riporto — 4.305,90 contro 4.246,96 alla stessa ora. Le soglie di questa scheda sono sullo spot, che è il metro dichiarato. Con l’oro fermo mentre petrolio e rendimenti salgono, la distanza dall’area 4.200 che logora la lettura è di 47 dollari, non di un centinaio.',
   },
   {
     symbol: 'SUSSIDI',
@@ -92,10 +92,10 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     symbol: 'FED FUNDS',
     name: 'Tasso ufficiale della Federal Reserve',
     value: '3,50%-3,75%',
-    change: 'rialzo a settembre fermo al 56,9%',
+    change: 'settembre al 54,9%, dicembre all’83,9%',
     tone: 'bear',
     icon: 'bank',
-    note: 'Per quattro giorni questa cifra aveva assorbito un JOLTS più fiacco, un ADP molto sotto le attese e sei prese di posizione restrittive senza spostarsi. La settima la muove di 2,3 punti, e la differenza è che arriva dal presidente della Fed: la preferenza di chi decide l’ordine del giorno viene prezzata, quella di chi non lo decide no. Resta comunque sotto il 57% di partenza.',
+    note: 'Il movimento di 2,3 punti prodotto dall’indiscrezione su Warsh è stato restituito per intero: da 56,7% a 56,9% e ora a 54,9%, cioè sotto il livello da cui era partito. Sulla riunione del 9 dicembre invece il rialzo è dato all’83,9%, sommando le fasce sopra quella corrente. Il mercato non sta scommettendo che la Fed non alzi: sta spostando più avanti il momento in cui lo farà, ed è una cosa diversa da quella che il numero di settembre da solo racconta.',
   },
   {
     symbol: 'PCE',
@@ -136,7 +136,7 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'US10Y',
     name: 'Treasury a 10 anni',
-    value: '4,673%',
+    value: '4,675%',
     change: 'massimo 4,679%, da 4,617 di chiusura',
     tone: 'bear',
     icon: 'arrow-up',
@@ -163,7 +163,7 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: '82,52 $',
+    value: '82,37 $',
     change: 'massimo 83,00, da una chiusura di 79,45',
     tone: 'bear',
     icon: 'arrow-up',
