@@ -1237,14 +1237,37 @@ Due note sui comandi:
 - Usa **`npm run build`**, non `ng build`. Lo script incatena tre cose: il
   controllo dei markdown del passo 10, `ng build`, e `scripts/prepare-pages.mjs`,
   che aggiunge `404.html` (necessario perché GitHub Pages gestisca gli indirizzi
-  diretti come `/analisi/uno-slug`), `.nojekyll` e la copia del `CNAME`. Comincia
-  quindi stampando `contenuti/analisi/: N markdown allineati all'archivio.` e
-  finisce con `Pronto per GitHub Pages: …\dist\vitanera\browser (32 elementi, 404.html e .nojekyll inclusi).`
+  diretti come `/analisi/uno-slug`), `.nojekyll`, la copia del `CNAME` e
+  `_redirects`, che serve solo alla pubblicazione d'emergenza su Cloudflare e che
+  GitHub ignora. Comincia quindi stampando
+  `contenuti/analisi/: N markdown allineati all'archivio.` e finisce con
+  `Pronto per la pubblicazione: …\dist\vitanera\browser (35 elementi; …).`
   Se si ferma sulla prima riga, hai saltato `npm run analisi`.
 - Usa **`npm test -- --no-watch`**: senza quel flag il comando resta in ascolto.
 
 La build locale **non finisce online**: online ci va quella che il workflow rifà
 dopo il push. Serve a impedire di pubblicare dati rotti, non a caricare i file.
+
+### Se il push passa ma il deploy non parte
+
+Succede, e non è un problema del repository: il 6 agosto 2026 Actions e Pages sono
+stati in guasto grave per un pomeriggio intero, con i run annullati dalla
+piattaforma prima di eseguire un passo e l'API dei run che rispondeva `500`.
+
+In quel caso **l'analisi è pubblicata lo stesso**: sta nel repository, i test sono
+verdi, e quello che manca è solo la copia online. Non riscrivere niente, non
+ripubblicare, e soprattutto **non rilanciare il workflow più volte** — con
+`cancel-in-progress: true` ogni nuovo tentativo annulla il deploy precedente
+ancora in coda, ed è così che un rallentamento diventa una serie di fallimenti.
+
+Se il sito deve essere aggiornato subito, esiste la via che non passa da GitHub:
+
+```powershell
+npm run pubblica-ora
+```
+
+Test, build e caricamento diretto su Cloudflare Pages. È descritta nel README, alla
+sezione «Quando GitHub è giù».
 
 ---
 

@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "calendario": "node scripts/build-calendar.mjs",
-    "analisi": "node scripts/build-analisi-md.mjs"
+    "analisi": "node scripts/build-analisi-md.mjs",
+    "pubblica-ora": "ng test --no-watch && npm run build && wrangler pages deploy dist/vitanera/browser --project-name=vitanera --commit-dirty=true"
   },
   "private": true,
   "packageManager": "npm@11.4.2",
@@ -31,7 +32,8 @@
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",
     "typescript": "~5.9.2",
-    "vitest": "^4.0.8"
+    "vitest": "^4.0.8",
+    "wrangler": "^4.119.0"
   },
   "description": "Sito in Angular 21 dedicato a macroeconomia, banche centrali, geopolitica e XAU/USD.",
   "repository": {

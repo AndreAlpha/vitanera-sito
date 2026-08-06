@@ -31,6 +31,8 @@ direttamente pubblicabile:
   mostrerebbe la pagina di errore di GitHub invece della pagina richiesta.
 - **`.nojekyll`** — impedisce a Jekyll di rielaborare l’output.
 - **`CNAME`** — ricopiato nell’output per non perdere il dominio personalizzato.
+- **`_redirects`** — lo legge solo Cloudflare, e serve alla via d’emergenza descritta più sotto.
+  GitHub lo ignora.
 
 La pubblicazione è automatica: il workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml)
 installa le dipendenze, esegue i test, compila e pubblica `dist/vitanera/browser` a ogni push su
@@ -47,6 +49,58 @@ l’indirizzo restituisce un errore invece di mostrare il README — un sintomo 
 
 L’output non viene versionato: `dist/` resta in `.gitignore` e il sito viene ricompilato dal
 workflow a ogni push.
+
+## Quando GitHub è giù: `npm run pubblica-ora`
+
+Il 6 agosto 2026 GitHub ha avuto un guasto grave e simultaneo di **Actions** e **Pages** durato
+tutto il pomeriggio: i run venivano annullati dalla piattaforma prima di eseguire un solo passo, i
+log non venivano nemmeno conservati (`404, the specified blob does not exist`) e l’API che crea i
+run rispondeva `500`. Cinque pubblicazioni sono rimaste nel repository senza poter arrivare online.
+
+Il punto è che **non serviva GitHub per aggiornare il sito**: `dist/vitanera/browser` è una cartella
+statica di poco più di un megabyte, già pronta sul disco. GitHub veniva usato solo come nastro
+trasportatore, e quel giorno il nastro si è rotto.
+
+```powershell
+npm run pubblica-ora
+```
+
+Esegue i test, ricompila, e carica la cartella direttamente su **Cloudflare Pages** con `wrangler`.
+Non tocca GitHub: né Actions, né Pages, né le loro API. Sono pochi secondi.
+
+**Preparazione, una volta sola.** Serve l’autenticazione a Cloudflare, che apre il browser:
+
+```powershell
+npx wrangler login
+```
+
+Il dominio è già su Cloudflare (`keira.ns.cloudflare.com`), quindi non c’è propagazione DNS da
+attendere in nessuna direzione.
+
+### Che cosa fa e che cosa non fa
+
+Il comando pubblica su **`vitanera.pages.dev`**, non su `vitanera.it`. È voluto: l’apex continua a
+puntare a GitHub Pages, e finché è così i due canali non si disturbano a vicenda. In emergenza si
+ottiene subito una copia aggiornata e consultabile del sito; se il guasto dura, si sposta anche il
+dominio dal pannello Cloudflare — _Workers & Pages → vitanera → Custom domains_ — e si rimette
+com’era quando GitHub torna.
+
+| | Canale normale | `npm run pubblica-ora` |
+| --- | --- | --- |
+| Che cosa lo attiva | push su `master` | un comando a mano |
+| Da dove compila | runner GitHub | la tua macchina |
+| Dipende da GitHub | sì, interamente | no |
+| Indirizzo | `vitanera.it` | `vitanera.pages.dev` |
+| Indirizzi diretti | `HTTP 404` con la pagina giusta | `HTTP 200`, grazie a `_redirects` |
+
+L’ultima riga non è un dettaglio: su GitHub Pages ogni percorso che non sia un file — `/archivio`,
+`/analisi/uno-slug` — risponde `404` con dentro lo scheletro dell’applicazione, perché l’unico
+meccanismo disponibile è il ripiego su `404.html`. Il browser non se ne accorge, un motore di
+ricerca sì.
+
+> **Non è un modo per saltare i controlli.** Lo script esegue `ng test --no-watch` prima di
+> compilare, esattamente come la CI: se un test è rosso non pubblica. La via d’emergenza cambia
+> **chi** trasporta i file, non **che cosa** viene verificato prima di trasportarli.
 
 ### Se il browser mostra una pagina vecchia
 
