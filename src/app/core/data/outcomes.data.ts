@@ -28,6 +28,57 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'adp-debole-e-tesoro-fermo-ma-il-decennale-non-si-muove',
+    checkedAt: '2026-08-06T15:30:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un NFP di venerdì nettamente sopra le attese di circa 80.000 posti, o una disoccupazione sotto il 4,2%.',
+        triggered: false,
+        evidence:
+          'Il dato non esiste ancora: il rapporto occupazionale esce domani, venerdì 7 agosto alle 14:30. ' +
+          'Registrata come non scattata perché il numero non è stato pubblicato, non perché sia stato verificato.',
+      },
+      {
+        condition: 'Salari orari in riaccelerazione nello stesso rapporto.',
+        triggered: false,
+        evidence:
+          'Stesso rapporto, stessa ragione: non pubblicato al momento del controllo. Le due condizioni ' +
+          'maturano ventitré ore dopo questa verifica.',
+      },
+      {
+        condition: 'Il rendimento del decennale sopra il 4,70%.',
+        triggered: false,
+        evidence:
+          'Il decennale non ha mai avvicinato quel livello nella finestra: chiusura del 5 agosto a 4,617% e, ' +
+          'il 6 agosto, escursione fra 4,609% e 4,653% con 4,642% alle 15:27 (Investing.com). Il massimo ' +
+          'osservato resta 4,7 punti base sotto la soglia. Del 5 agosto dopo le 15:25 non c’è un’escursione ' +
+          'puntuale sulle fonti raggiungibili: il giudizio poggia sulla chiusura di quel giorno e sull’intera ' +
+          'seduta successiva.',
+      },
+      {
+        condition: 'Un Dollar Index in deciso recupero sopra quota 100.',
+        triggered: false,
+        evidence:
+          'Nessun recupero: il 6 agosto il Dollar Index si muove fra 99,510 e 99,692, chiusura precedente ' +
+          '99,546 e 99,660 alle 15:28 (Investing.com). Il massimo della finestra resta 31 centesimi sotto ' +
+          'quota 100, e il dollaro non ha comprato nemmeno il dato sui sussidi migliore delle attese.',
+      },
+      {
+        condition: 'XAU/USD incapace di tenere l’area 4.150-4.170.',
+        triggered: false,
+        evidence:
+          'Il metallo non si è mai avvicinato a quell’area: il 6 agosto oscilla fra 4.230,89 e 4.304,15, con ' +
+          '4.243,69 alle 15:26 e chiusura precedente a 4.247,02 (Investing.com). Il minimo della finestra è ' +
+          'sessanta dollari sopra il bordo alto dell’area di tenuta.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, ma il verdetto va letto per quello che dice davvero: tre condizioni su cinque hanno retto con una lettura puntuale, e due non sono state giudicate perché il dato che le decide esce domani. La tesi centrale era che due notizie favorevoli all’oro non stessero passando dal canale dei tassi. In ventiquattro ore quel canale ha continuato a non trasmettere, e anzi si è mosso nel verso opposto: dal 4,617% di chiusura del 5 agosto il decennale è salito a 4,642%, mentre l’oro guadagnava comunque terreno fino ai 4.243,69 dollari e il Brent risaliva da 79,45 a 80,99. La lettura regge quindi su tutte le soglie dichiarate, ma la domanda che l’analisi si era posta — se il mercato avesse già scontato il rallentamento o stesse solo scartando l’ADP — resta esattamente dove era: la separa il rapporto di domani, non questo controllo.',
+    lesson:
+      'È il primo esito chiuso con le fonti aperte invece che con quello che si sapeva al momento, e cambia una conclusione precedente. Il controllo del 6 agosto sull’analisi di Cook aveva concluso che le condizioni espresse come livelli di prezzo sono fragili, perché tre su quattro non avevano una lettura puntuale. Qui i livelli di prezzo sono tre su cinque e li ha avuti tutti e tre. Non erano quindi le condizioni a essere mal poste: era la verifica a essere fatta senza andare a cercare i numeri. Quello che resta davvero non verificabile è un’altra cosa, e nessuna fonte lo risolve: una condizione ancorata a un dato che esce dopo il controllo — qui due su cinque, appese al rapporto occupazionale di domani — non si giudica per definizione, e su un orizzonte di giorni va messa solo sapendo che l’analisi andrà ricontrollata due volte.',
+  },
+  {
     slug: 'iran-minaccia-gli-impianti-del-golfo-il-greggio-scende',
     checkedAt: '2026-08-06T14:50:00+02:00',
     verdict: 'confermata',

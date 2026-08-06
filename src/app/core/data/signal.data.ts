@@ -180,6 +180,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-06T14:55:00+02:00',
+  checkedAt: '2026-08-06T15:30:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -243,12 +244,12 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   confirming: [
     'Produttività +1,4% contro costo del lavoro +1,3%',
     'Sussidi continuativi in aumento a 1,801 mln',
-    'XAU/USD stabile intorno a 4.258 $',
+    'XAU/USD intorno a 4.244 $',
   ],
   contradicting: [
-    'Brent di nuovo sopra gli 80 $, WTI verso 76',
+    'Brent a 80,99 $, massimo di giornata 81,40',
     'Sussidi iniziali 199.000, sotto le attese',
-    'Intesa Iran-Oman ancora senza conferma definitiva',
+    'Intesa Iran-Oman: dichiarazione congiunta non ancora emessa',
   ],
   constraints: [
     {
@@ -294,8 +295,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Premio di rischio sul greggio che non si forma',
-      value: 'Brent sopra 80 $',
-      baseline: 'da 79,08 di ieri mattina, WTI verso i 76',
+      value: 'Brent 80,99 $',
+      baseline: 'da 79,08 di ieri mattina, con un massimo di giornata a 81,40',
       against:
         'In quattro giorni: una minaccia americana a Teheran, un piano di attacchi contro l’energia iraniana, ' +
         'una smentita, un missile houthi contro una petroliera saudita e una ritorsione iraniana annunciata ' +
@@ -311,8 +312,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 57,
-      display: '57%',
+      now: 57.4,
+      display: '57,4%',
       marks: [
         {
           at: 62,
@@ -330,8 +331,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 80.1,
-      display: 'sopra 80 $',
+      now: 80.99,
+      display: '80,99 $',
       marks: [
         {
           at: 82,
@@ -343,7 +344,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.64,
+      now: 4.642,
       display: '4,64%',
       marks: [
         {
@@ -362,8 +363,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4258,
-      display: '≈ 4.258 $',
+      now: 4244,
+      display: '≈ 4.244 $',
       marks: [
         {
           at: 4160,
