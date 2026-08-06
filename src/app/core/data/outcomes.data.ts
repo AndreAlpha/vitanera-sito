@@ -28,6 +28,49 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'iran-minaccia-gli-impianti-del-golfo-il-greggio-scende',
+    checkedAt: '2026-08-06T14:50:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un Brent sopra gli 82 dollari: è la soglia oltre la quale la spinta inflazionistica pesa sull’oro più della domanda di rifugio, ed è quella che questo archivio usa da quattro giorni.',
+        triggered: false,
+        evidence:
+          'Il Brent è risalito sopra gli 80 dollari, con il WTI vicino a 76, ma non ha raggiunto gli 82. La soglia di logoramento fissata insieme a questa, a 80 dollari, è invece stata superata in poco più di ventiquattro ore.',
+      },
+      {
+        condition:
+          'Un attacco effettivo contro impianti energetici del Golfo, o una conferma saudita dei danni alle petroliere rivendicati dagli Houthi: farebbe della minaccia un fatto, e questa lettura poggia sul fatto che non lo sia.',
+        triggered: false,
+        evidence:
+          'Nessun attacco riportato contro gli impianti del Golfo e nessuna conferma saudita dei danni: la minaccia iraniana resta una ricostruzione condizionata a un attacco americano che non è avvenuto.',
+      },
+      {
+        condition:
+          'Un conteggio dei transiti a Hormuz che risale sopra le otto navi, oppure una dichiarazione congiunta che chiude i quattro punti aperti: toglierebbe il premio di rischio invece di limitarsi a non pagarlo.',
+        triggered: false,
+        evidence:
+          'Al contrario: manca ancora la conferma definitiva dell’intesa Iran-Oman, ed è proprio questa assenza la ragione con cui il rialzo del greggio viene spiegato. Nessun aggiornamento sul conteggio dei transiti.',
+      },
+      {
+        condition:
+          'Il rendimento del decennale sopra il 4,70%, o un Dollar Index sopra l’area 100-100,20.',
+        triggered: false,
+        evidence:
+          'Il decennale è passato da circa 4,65% a 4,64% dopo i dati del pomeriggio, sei punti base sotto la soglia. Nessuna lettura puntuale del Dollar Index, che però non ha comprato un dato sui sussidi migliore delle attese.',
+      },
+      {
+        condition:
+          'Dati statunitensi abbastanza forti da riportare la probabilità di un rialzo Fed a settembre sopra il 67% da cui era partita.',
+        triggered: false,
+        evidence:
+          'I due dati usciti nel pomeriggio vanno in direzioni opposte — sussidi iniziali sotto le attese, richieste continuative in aumento e produttività sopra il costo del lavoro per unità — e il mercato non li ha prezzati: un punto base sul decennale e future azionari invariati.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, ma il conteggio non dice tutto. La lettura sosteneva che il premio di rischio non venisse pagato, e in poco più di ventiquattro ore il Brent è tornato dai 79,08 dollari a sopra gli 80: la tacca di logoramento fissata insieme alle condizioni è stata superata, quella di invalidazione a 82 no. È la prima volta che quella distinzione produce qualcosa di osservabile — la tesi regge alla lettera mentre il meccanismo su cui poggia comincia a girarsi — ed è la ragione per cui la forza della lettura successiva scende da media a bassa senza che la direzione cambi.',
+  },
+  {
     slug: 'cook-si-dice-pronta-a-un-rialzo-si-muove-solo-il-biennale',
     checkedAt: '2026-08-06T08:35:00+02:00',
     verdict: 'confermata',

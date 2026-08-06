@@ -179,18 +179,19 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-06T08:40:00+02:00',
+  updatedAt: '2026-08-06T14:55:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
       direction: 'neutrale-rialzista',
-      strength: 'media',
+      strength: 'bassa',
       regime:
-        'Il canale che regge il metallo continua a collaborare: il Brent è sceso a 79,08 dollari e il WTI a ' +
-        '74,69, con le scorte statunitensi in aumento di 2,5 milioni di barili, e da lì passano inflazione ' +
-        'attesa, rendimenti e dollaro. Contro restano l’estensione del movimento dopo un più 4% e il fatto che ' +
-        'un attacco vero agli impianti del Golfo ribalterebbe il segno del greggio in poche ore.',
+        'Il primo anello della catena che reggeva il metallo si è girato: il Brent è tornato sopra gli 80 ' +
+        'dollari e il WTI verso i 76, perché la conferma dell’intesa Iran-Oman continua a non arrivare. È la ' +
+        'tacca di logoramento fissata ieri mattina, superata in ventiquattro ore. I due dati statunitensi del ' +
+        'pomeriggio si compensano e il mercato li ha lasciati passare con un punto base di reazione: fino al ' +
+        'rapporto occupazionale non c’è una spinta nuova in nessuna delle due direzioni.',
       invalidation:
         'Una perdita rapida dei 4.200 dollari accompagnata dal decennale sopra il 4,70%; prima ancora, un decennale che torna sopra il 4,68% con l’oro ancora sopra i 4.250, che segnalerebbe il logoramento senza aspettare la rottura.',
     },
@@ -213,38 +214,41 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale',
       strength: 'bassa',
       regime:
-        'Gli acquisti delle banche centrali sostengono da sotto e la parte lunga della curva ha ora una ' +
-        'variabile in meno, perché il Tesoro si è impegnato a non ingrossare le aste per diversi trimestri. ' +
-        'Restano gli altri due freni: rendimenti reali alti e un rialzo Fed a settembre ancora dato al 57%.',
+        'Gli acquisti delle banche centrali sostengono da sotto e la parte lunga della curva ha una variabile ' +
+        'in meno, perché il Tesoro si è impegnato a non ingrossare le aste per diversi trimestri. Se ne ' +
+        'aggiunge una seconda: la produttività statunitense è cresciuta dell’1,4% annualizzato contro un costo ' +
+        'del lavoro per unità prodotta all’1,3%, e finché la prima cresce più del secondo la pressione ' +
+        'salariale viene assorbita invece che trasmessa ai prezzi — è la base contabile che manca al timore ' +
+        'della Fed di un’inflazione che si radica nei salari. Resta l’unico freno vero: rendimenti reali alti ' +
+        'con un rialzo a settembre ancora dato al 57%.',
       invalidation:
-        'Una svolta monetaria confermata dalle riunioni, oppure il ritorno stabile del decennale sopra il 5%.',
+        'Una svolta monetaria confermata dalle riunioni, il ritorno stabile del decennale sopra il 5%, oppure una revisione che riporti la produttività sotto la crescita del costo del lavoro per unità.',
     },
   ],
-  headline: 'L’Iran minaccia gli impianti del Golfo, e il Brent scende a 79,08',
+  headline: 'Due dati passano con un punto base di reazione, il Brent torna sopra gli 80',
   stance:
-    'Teheran ha avvertito i Paesi del Golfo che risponderebbe a un nuovo attacco americano colpendo le loro ' +
-    'infrastrutture energetiche: è la minaccia più diretta arrivata finora, ed era lo scenario che questo ' +
-    'archivio aveva descritto come deduzione il 2 agosto. Il greggio, nel frattempo, è sceso — Brent 79,08 ' +
-    'dollari, sotto i 79,34 di ieri sera e gli 80,87 dell’attacco nel Mar Rosso. È la terza notizia di rischio ' +
-    'in tre giorni che il prezzo non paga, dopo i sei annunci su Hormuz con zero navi in più e le sei voci ' +
-    'restrittive della Fed con il 57% fermo.',
+    'Sussidi iniziali a 199.000 sotto le attese e produttività all’1,4% contro un costo del lavoro per unità ' +
+    'all’1,3%: due rilevazioni leggibili che si compensano, e il decennale si è mosso da 4,65% a 4,64%. Il ' +
+    'mercato non le sta ignorando, sta aspettando il rapporto occupazionale di domani. Nel frattempo il Brent è ' +
+    'tornato sopra gli 80 dollari — la tacca di logoramento fissata ieri mattina — perché la conferma ' +
+    'dell’intesa Iran-Oman non arriva: la forza della lettura intraday scende, la direzione no.',
   favours: [
-    'Misurare quanto il mercato è disposto a pagare una minaccia, invece di quanto la minaccia è grave',
-    'Tenere gli 82 dollari di Brent come la soglia che ribalta il segno del greggio sull’oro',
+    'Aspettare il rapporto occupazionale invece di leggere una direzione in un punto base di movimento',
+    'Guardare il Brent fra gli 80 e gli 82 dollari: è la fascia in cui il sostegno dell’oro si logora senza rompersi',
   ],
   avoid: [
-    'Comprare l’oro sulla gravità dell’avvertimento iraniano: è ricostruito da fonti anonime e condizionato a un attacco che non c’è stato',
-    'Leggere il ribasso del greggio come una riapertura di Hormuz: dei quattro punti aperti nessuno è chiuso e i transiti sono fermi a otto navi',
+    'Leggere i sussidi a 199.000 come un segnale sul dollaro: il dato è arrivato migliore delle attese e il dollaro non lo ha comprato',
+    'Trattare una lettura trimestrale di produttività come una tendenza: è fra le serie più volatili e più riviste del quadro americano',
   ],
   confirming: [
-    'Brent 79,08 $, sotto i 79,34 di ieri sera',
-    'Scorte USA +2,5 mln barili',
-    'Rialzo Fed a settembre fermo al 57%',
+    'Produttività +1,4% contro costo del lavoro +1,3%',
+    'Sussidi continuativi in aumento a 1,801 mln',
+    'XAU/USD stabile intorno a 4.258 $',
   ],
   contradicting: [
-    'Ritorsione iraniana annunciata agli impianti del Golfo',
-    'Attacchi houthi rivendicati anche nel Golfo di Aden',
-    'Accordo su Hormuz non operativo: quattro punti aperti',
+    'Brent di nuovo sopra gli 80 $, WTI verso 76',
+    'Sussidi iniziali 199.000, sotto le attese',
+    'Intesa Iran-Oman ancora senza conferma definitiva',
   ],
   constraints: [
     {
@@ -290,17 +294,18 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Premio di rischio sul greggio che non si forma',
-      value: 'Brent 79,08 $',
-      baseline: 'contro 79,34 di ieri sera e 80,87 dopo il missile nel Mar Rosso',
+      value: 'Brent sopra 80 $',
+      baseline: 'da 79,08 di ieri mattina, WTI verso i 76',
       against:
         'In quattro giorni: una minaccia americana a Teheran, un piano di attacchi contro l’energia iraniana, ' +
-        'una smentita, un missile houthi contro una petroliera saudita e ora una ritorsione iraniana annunciata ' +
-        'agli impianti energetici del Golfo. Ogni notizia è più grave della precedente e il prezzo reagisce ' +
-        'ogni volta di meno.',
+        'una smentita, un missile houthi contro una petroliera saudita e una ritorsione iraniana annunciata ' +
+        'agli impianti energetici del Golfo. A ognuna di queste il prezzo aveva reagito meno della precedente; ' +
+        'quello che lo ha mosso, alla fine, è stata l’assenza di una conferma sull’intesa Iran-Oman.',
       watch:
-        'Gli 82 dollari di Brent, e prima ancora il ritorno sopra gli 80: sono i livelli oltre i quali il ' +
-        'premio ricomincia a essere pagato e l’effetto inflazionistico torna a pesare sull’oro più del rifugio.',
-      state: 'fermo',
+        'Gli 82 dollari di Brent. La tacca di logoramento a 80 è stata superata in ventiquattro ore: il premio ' +
+        'ha ricominciato a essere pagato, e sopra gli 82 l’effetto inflazionistico torna a pesare sull’oro più ' +
+        'del rifugio.',
+      state: 'si-allenta',
     },
   ],
   thresholds: [
@@ -325,15 +330,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 79.08,
-      display: '79,08 $',
+      now: 80.1,
+      display: 'sopra 80 $',
       marks: [
-        {
-          at: 80,
-          display: '80 $',
-          kind: 'logora',
-          note: 'il ritorno sopra questa soglia direbbe che il premio di rischio ricomincia a essere pagato',
-        },
         {
           at: 82,
           display: '82 $',
@@ -344,8 +343,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.63,
-      display: '4,63%',
+      now: 4.64,
+      display: '4,64%',
       marks: [
         {
           at: 4.68,
@@ -363,8 +362,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4253,
-      display: '≈ 4.253 $',
+      now: 4258,
+      display: '≈ 4.258 $',
       marks: [
         {
           at: 4160,
@@ -382,9 +381,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'sussidi-e-produttivita-un-punto-base-di-reazione',
     'iran-minaccia-gli-impianti-del-golfo-il-greggio-scende',
     'cook-si-dice-pronta-a-un-rialzo-si-muove-solo-il-biennale',
-    'coordinate-concordate-a-hormuz-il-sesto-annuncio-e-diverso',
   ],
 };
 

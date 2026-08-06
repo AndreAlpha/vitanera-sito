@@ -82,7 +82,8 @@ export type EditorialCategorySlug =
   // Dati americani che il calendario non copre
   | 'ism'
   | 'jolts'
-  | 'adp';
+  | 'adp'
+  | 'produttivita';
 
 /**
  * Categorie dell'archivio: un'analisi può appartenere a più categorie

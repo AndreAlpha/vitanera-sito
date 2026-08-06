@@ -23,8 +23,10 @@ prossimoAppuntamento:
   dettaglio: "È il dato che decide l’altro canale, quello dei tassi, ed è l’unico appuntamento in calendario capace di togliere all’oro il sostegno che oggi lo regge. La minaccia iraniana agisce sul premio di rischio e non ha una data; il rapporto di domani ce l’ha, ed è per questo che il rischio più concreto per questa lettura nei prossimi due giorni non arriva dal Golfo."
 fonti:
   - testata: "Reuters"
+esito: "confermata"
+controllata: "2026-08-06T14:50:00+02:00"
 sorgente: "src/app/core/data/articles/iran-minaccia-gli-impianti-del-golfo-il-greggio-scende.ts"
-impronta: "744d05983bba5cfe"
+impronta: "6e57df5063b577a6"
 ---
 
 # L’Iran minaccia gli impianti del Golfo, il greggio scende lo stesso
@@ -145,6 +147,20 @@ Bassa, ed è la prima volta che questo archivio usa questo livello. Il fatto cen
 Impostazione su XAU/USD: neutrale-rialzista, forza media, orizzonte medio.
 
 La trattativa su Hormuz continua a spingere giù greggio, dollaro e rendimenti, e per quella via sostiene il metallo; la minaccia iraniana sugli impianti del Golfo impedisce però al premio geopolitico di sgonfiarsi del tutto. Le due forze non si sommano e non si annullano: tengono l’oro sostenuto e insieme lo espongono a un’inversione rapida, perché un attacco vero lo farebbe salire per rifugio e poi scendere per rendimenti.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-06T14:50:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, ma il conteggio non dice tutto. La lettura sosteneva che il premio di rischio non venisse pagato, e in poco più di ventiquattro ore il Brent è tornato dai 79,08 dollari a sopra gli 80: la tacca di logoramento fissata insieme alle condizioni è stata superata, quella di invalidazione a 82 no. È la prima volta che quella distinzione produce qualcosa di osservabile — la tesi regge alla lettera mentre il meccanismo su cui poggia comincia a girarsi — ed è la ragione per cui la forza della lettura successiva scende da media a bassa senza che la direzione cambi.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un Brent sopra gli 82 dollari: è la soglia oltre la quale la spinta inflazionistica pesa sull’oro più della domanda di rifugio, ed è quella che questo archivio usa da quattro giorni. | no | Il Brent è risalito sopra gli 80 dollari, con il WTI vicino a 76, ma non ha raggiunto gli 82. La soglia di logoramento fissata insieme a questa, a 80 dollari, è invece stata superata in poco più di ventiquattro ore. |
+| Un attacco effettivo contro impianti energetici del Golfo, o una conferma saudita dei danni alle petroliere rivendicati dagli Houthi: farebbe della minaccia un fatto, e questa lettura poggia sul fatto che non lo sia. | no | Nessun attacco riportato contro gli impianti del Golfo e nessuna conferma saudita dei danni: la minaccia iraniana resta una ricostruzione condizionata a un attacco americano che non è avvenuto. |
+| Un conteggio dei transiti a Hormuz che risale sopra le otto navi, oppure una dichiarazione congiunta che chiude i quattro punti aperti: toglierebbe il premio di rischio invece di limitarsi a non pagarlo. | no | Al contrario: manca ancora la conferma definitiva dell’intesa Iran-Oman, ed è proprio questa assenza la ragione con cui il rialzo del greggio viene spiegato. Nessun aggiornamento sul conteggio dei transiti. |
+| Il rendimento del decennale sopra il 4,70%, o un Dollar Index sopra l’area 100-100,20. | no | Il decennale è passato da circa 4,65% a 4,64% dopo i dati del pomeriggio, sei punti base sotto la soglia. Nessuna lettura puntuale del Dollar Index, che però non ha comprato un dato sui sussidi migliore delle attese. |
+| Dati statunitensi abbastanza forti da riportare la probabilità di un rialzo Fed a settembre sopra il 67% da cui era partita. | no | I due dati usciti nel pomeriggio vanno in direzioni opposte — sussidi iniziali sotto le attese, richieste continuative in aumento e produttività sopra il costo del lavoro per unità — e il mercato non li ha prezzati: un punto base sul decennale e future azionari invariati. |
 
 ## Fonti consultate
 

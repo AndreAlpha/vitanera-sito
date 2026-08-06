@@ -11,7 +11,7 @@
  */
 import { Cadence, Release, Stage } from '../models/calendar.model';
 
-export const CALENDAR_GENERATED_AT = '2026-08-06T06:47Z';
+export const CALENDAR_GENERATED_AT = '2026-08-06T13:02Z';
 
 type Row = readonly [
   at: string,
@@ -284,6 +284,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
   'usa/richieste-iniziali-sussidi': {
     cadence: 'settimanale',
     releases: r([
+      ['2026-08-06T12:30Z', 'settimana al 1 agosto 2026', 202, 199, 198],
       ['2026-07-30T12:30Z', 'settimana al 25 luglio 2026', 200, 197, 188],
       ['2026-07-23T12:30Z', 'settimana al 18 luglio 2026', 212, 187, 209],
       ['2026-07-16T12:30Z', 'settimana al 11 luglio 2026', 217, 208, 216],
@@ -403,14 +404,13 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2024-05-09T12:30Z', 'settimana al 4 maggio 2024', 210, 231, 209],
       ['2024-05-02T12:30Z', 'settimana al 27 aprile 2024', 212, 208, 208],
       ['2024-04-25T12:30Z', 'settimana al 20 aprile 2024', 214, 207, 212],
-      ['2024-04-18T12:30Z', 'settimana al 13 aprile 2024', 215, 212, 212],
     ]),
     next: {
-      at: '2026-08-06T12:30Z',
-      period: 'settimana al 1 agosto 2026',
-      forecast: 202,
+      at: '2026-08-13T12:30Z',
+      period: 'settimana al 8 agosto 2026',
+      forecast: null,
       actual: null,
-      previous: 197,
+      previous: 199,
     },
   },
   'usa/nfp': {
@@ -750,7 +750,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
     next: {
       at: '2026-08-12T12:30Z',
       period: 'luglio 2026',
-      forecast: null,
+      forecast: 3.4,
       actual: null,
       previous: 3.5,
     },
@@ -882,7 +882,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
     next: {
       at: '2026-08-12T12:30Z',
       period: 'luglio 2026',
-      forecast: null,
+      forecast: 2.5,
       actual: null,
       previous: 2.6,
     },
@@ -1014,7 +1014,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
     next: {
       at: '2026-08-12T12:30Z',
       period: 'luglio 2026',
-      forecast: null,
+      forecast: 0.2,
       actual: null,
       previous: 0,
     },
@@ -1675,7 +1675,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
     next: {
       at: '2026-08-13T12:30Z',
       period: 'luglio 2026',
-      forecast: null,
+      forecast: 0.1,
       actual: null,
       previous: -0.3,
     },
@@ -1807,7 +1807,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
     next: {
       at: '2026-08-13T12:30Z',
       period: 'luglio 2026',
-      forecast: null,
+      forecast: 0.2,
       actual: null,
       previous: 0.2,
     },
@@ -3644,6 +3644,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
   'euro/indice-vendite-dettaglio': {
     cadence: 'mensile',
     releases: r([
+      ['2026-08-06T09:00Z', 'giugno 2026', 1, 0.7, 1.9],
       ['2026-07-06T09:00Z', 'maggio 2026', 1.6, 1.6, 0.9],
       ['2026-06-04T09:00Z', 'aprile 2026', 0.3, 1, 2.1],
       ['2026-05-07T09:00Z', 'marzo 2026', 1, 1.2, 1.3],
@@ -3763,14 +3764,13 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2016-11-07T10:00Z', 'settembre 2016', 1.6, 1.1, 1.2],
       ['2016-10-05T09:00Z', 'agosto 2016', 1.5, 0.6, 1.8],
       ['2016-09-05T09:00Z', 'luglio 2016', 1.9, 2.9, 1.7],
-      ['2016-08-03T09:00Z', 'giugno 2016', 1.7, 1.6, 1.6],
     ]),
     next: {
-      at: '2026-08-06T09:00Z',
-      period: 'giugno 2026',
-      forecast: 1,
+      at: '2026-09-04T09:00Z',
+      period: 'luglio 2026',
+      forecast: null,
       actual: null,
-      previous: 1.6,
+      previous: 0.7,
     },
   },
 };
