@@ -142,6 +142,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     related: ['Premio di rischio geopolitico', 'Stretto di Hormuz', 'Invalidazione'],
   },
   {
+    term: 'Gioco a due livelli',
+    letter: 'G',
+    definition:
+      'Un negoziato internazionale si svolge su due tavoli insieme: quello con la controparte estera e quello interno, dove servono i voti per ratificare quello che si è concordato.',
+    why: 'Spiega perché le posizioni massimaliste esibite durante una trattativa dicono poco su come finirà: servono spesso ad allargare il margine di manovra in patria, non a chiudere la porta all’estero. Per chi guarda i prezzi è un antidoto: un documento intransigente muove il greggio subito, ma non è una misura di quanto sia lontano l’accordo.',
+    related: ['Vincolo materiale', 'Stretto di Hormuz', 'Premio di rischio geopolitico'],
+  },
+  {
     term: 'Brent',
     letter: 'B',
     definition:

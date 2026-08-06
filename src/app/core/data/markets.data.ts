@@ -19,8 +19,8 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'XAU/USD',
     name: 'Oro spot',
-    value: '4.293,50 $',
-    change: 'meno 0,27%, dopo un massimo a 4.363,60',
+    value: '4.298,50 $',
+    change: 'meno 0,16%, dopo un massimo a 4.363,60',
     tone: 'warn',
     icon: 'coin',
     note: 'Rilevazione delle 18:38 del 6 agosto, non una quotazione in tempo reale. Per quattro giorni era salito rifiutando le notizie che avrebbero dovuto muoverlo; oggi scende mentre petrolio, rendimenti e dollaro salgono insieme, che è la prima volta in cinque giorni che i tre canali puntano tutti nella stessa direzione. Il calo resta piccolo e nessun supporto dichiarato è stato toccato: l’area 4.200 logora la lettura, i 4.160 la invalidano.',
@@ -81,12 +81,12 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   },
   {
     symbol: 'IRAN',
-    name: 'Intesa tecnica Iran-Oman sulla rotta',
-    value: 'gestione delle rotte',
-    change: 'non la riapertura, secondo Teheran',
+    name: 'Bozza iraniana sulla gestione dello Stretto',
+    value: 'multe fino al 20%',
+    change: 'divieto a navi USA e israeliane, commissioni in rial',
     tone: 'bear',
     icon: 'map',
-    note: 'Le coordinate concordate erano state lette come il primo passo verso la riapertura; un esponente della commissione Sicurezza nazionale del Parlamento iraniano dice ora che il tavolo riguarda la gestione delle rotte e della navigazione. I quattro punti restano aperti — controllo degli ingressi, ispezione delle navi in uscita, commissioni sul traffico e rimozione del blocco statunitense dei porti — e un accordo accettato da Washington non c’è.',
+    note: 'Pubblicata dall’agenzia di stato Fars e descritta come bozza iniziale, in esame e non approvata. Prevede anche l’esclusione dei Paesi che hanno danneggiato l’Iran finché il danno non è risarcito. Le commissioni di servizio in rial contraddicono la ricostruzione dell’intesa Iran-Oman, che escludeva pedaggi: sui costi di transito, uno dei quattro punti aperti, le due carte dicono il contrario l’una dell’altra. Arriva dal Parlamento mentre a trattare è l’esecutivo, ed è la configurazione in cui una posizione massimalista dice poco sull’esito.',
   },
   {
     symbol: 'FED FUNDS',
@@ -163,11 +163,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: '82,74 $',
-    change: 'massimo 82,91, da una chiusura di 79,45',
+    value: '82,52 $',
+    change: 'massimo 83,00, da una chiusura di 79,45',
     tone: 'bear',
     icon: 'arrow-up',
-    note: 'La soglia di invalidazione dichiarata il 5 agosto è stata superata: sopra gli 82 dollari l’effetto inflazionistico pesa sull’oro più della domanda di rifugio. Conta più di dove è arrivato: è salito del 4% contro scorte statunitensi in aumento, listini Aramco tagliati per l’Asia e un’intesa Iran-Oman su una rotta temporanea, cioè contro tre notizie che avrebbero dovuto farlo scendere. Il vincolo dei quattro giorni precedenti — il premio di rischio non si forma — si è sciolto.',
+    note: 'La soglia di invalidazione dichiarata il 5 agosto è stata superata: sopra gli 82 dollari l’effetto inflazionistico pesa sull’oro più della domanda di rifugio. L’innesco ha un nome: la bozza iraniana sulla gestione dello Stretto pubblicata dall’agenzia Fars, dopo una settimana in cui il greggio era sceso di circa l’8% sulle dichiarazioni americane che davano l’accordo per vicino. Il premio si paga di nuovo, ma poggia su un testo non approvato.',
   },
   {
     symbol: 'GOLFO',

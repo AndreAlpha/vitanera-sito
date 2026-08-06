@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-06T18:47:00+02:00',
+  updatedAt: '2026-08-06T19:40:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -188,24 +188,24 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       strength: 'bassa',
       regime:
         'La somma delle due spinte ha smesso di essere vicina a zero. Petrolio, rendimenti e dollaro salgono ' +
-        'nella stessa ora — Brent 82,74, decennale 4,67%, biennale 4,245%, Dollar Index 99,86 — e il metallo ' +
-        'scende dopo aver toccato 4.363,60: la domanda di rifugio c’è ancora ma non compensa più il costo-' +
-        'opportunità. La forza resta bassa perché il calo è dello 0,27% e nessun supporto è stato toccato.',
+        'insieme — Brent 82,52, decennale 4,67%, biennale 4,245%, Dollar Index 99,86 — e il metallo scende dopo ' +
+        'aver toccato 4.363,60: la domanda di rifugio c’è ancora ma non compensa più il costo-opportunità. ' +
+        'L’innesco è la bozza iraniana su Hormuz pubblicata da Fars, che ha riportato il premio sul greggio.',
       invalidation:
         'Un ritorno dell’oro sopra il massimo di giornata di 4.363,60 dollari mentre il Brent resta sopra gli 82, che direbbe che il rifugio vince comunque; oppure un Brent di nuovo sotto gli 80, che toglie la premessa.',
     },
     {
       horizon: 'medio',
       direction: 'neutrale-ribassista',
-      strength: 'media',
+      strength: 'bassa',
       regime:
-        'Il greggio ha superato il livello oltre il quale alimenta inflazione attesa e rendimenti più di quanto ' +
-        'alimenti la domanda di rifugio, e lo ha fatto contro tre notizie che avrebbero dovuto farlo scendere: ' +
-        'scorte statunitensi in aumento, listini Aramco tagliati per l’Asia e un’intesa Iran-Oman su una rotta ' +
-        'temporanea. Finché resta lì, il canale dei tassi lavora contro il metallo su un orizzonte di giorni, ' +
-        'che è il tempo in cui quel canale trasmette.',
+        'Il canale che pesa resta quello del greggio: sopra gli 82 dollari il Brent alimenta inflazione attesa e ' +
+        'rendimenti più di quanto alimenti la domanda di rifugio. La direzione non cambia, la forza scende da ' +
+        'media a bassa perché adesso si conosce l’innesco di quel movimento — una bozza parlamentare iraniana ' +
+        'pubblicata durante un negoziato — ed è il tipo di documento che dice poco su come andrà a finire. Il ' +
+        'metro materiale, il conteggio dei transiti, è ancora fermo a otto navi.',
       invalidation:
-        'Un Brent che torna sotto gli 80 dollari, che toglie la premessa; un rapporto occupazionale nettamente sotto le attese di circa 80.000 posti, che riporterebbe i rendimenti al ribasso; oppure un decennale sotto il 4,60% con un Dollar Index sotto 99,50. Prima di tutte queste, un oro che risale sopra i 4.320 mentre il Brent resta sopra gli 82.',
+        'Un Brent che torna sotto gli 80 dollari, che toglie la premessa; l’approvazione o il ritiro della bozza iraniana, che la trasformerebbe in norma o in nulla; un rapporto occupazionale nettamente sotto le attese di circa 80.000 posti; oppure un conteggio dei transiti sopra le otto navi. Prima di tutte queste, un oro che risale sopra i 4.320 mentre il Brent resta sopra gli 82.',
     },
     {
       horizon: 'lungo',
@@ -223,31 +223,32 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, il ritorno stabile del decennale sopra il 5%, oppure una revisione che riporti la produttività sotto la crescita del costo del lavoro per unità.',
     },
   ],
-  headline: 'Il Brent supera gli 82 dollari e la soglia dichiarata cade',
+  headline: 'La bozza iraniana su Hormuz dà un nome al rialzo del greggio',
   stance:
-    'Il Brent è a 82,74 dollari con un massimo di giornata a 82,91, da una chiusura di 79,45: è la soglia che ' +
-    'questo archivio aveva scritto il 5 agosto come punto oltre il quale l’effetto inflazionistico del greggio ' +
-    'pesa sull’oro più della domanda di rifugio, ripetuta poi in tre analisi e messa come tacca di ' +
-    'invalidazione qui. Conta più di dove è arrivata: è salita contro scorte statunitensi in aumento, listini ' +
-    'Aramco tagliati per l’Asia e un’intesa Iran-Oman su una rotta temporanea. Il vincolo dei quattro giorni ' +
-    'precedenti — il premio di rischio non si forma — si è sciolto; quello sui transiti, fermo a otto navi, no.',
+    'L’agenzia di stato Fars ha pubblicato la bozza iniziale del piano iraniano per la gestione dello Stretto: ' +
+    'divieto di transito alle navi statunitensi e israeliane, multe fino al 20% del valore del carico, ' +
+    'commissioni di servizio in rial. È l’innesco del balzo che ha portato il Brent oltre gli 82 dollari, la ' +
+    'soglia dichiarata qui il 5 agosto, dopo una settimana di ribassi costruiti sulle dichiarazioni americane. ' +
+    'Le commissioni contraddicono la ricostruzione dell’intesa Iran-Oman, che escludeva pedaggi. Il testo però ' +
+    'è una bozza in esame, arriva dal Parlamento mentre a trattare è l’esecutivo, e il conteggio dei transiti è ' +
+    'ancora a otto navi.',
   favours: [
-    'Applicare la soglia che si era dichiarata quando il prezzo era a 79 dollari, invece di discuterla adesso che è stata superata',
-    'Distinguere i due vincoli invece di sommarli: quello sul prezzo ha ceduto, quello sul traffico è intatto',
+    'Applicare all’Iran la stessa disciplina applicata per cinque giorni agli annunci americani: un documento non è una nave che passa, né una che non passa',
+    'Guardare quale delle due carte sui costi di transito verrà smentita: è il punto in cui le due versioni sono incompatibili',
   ],
   avoid: [
-    'Leggere il rincaro come una rottura del negoziato: l’intesa sulla rotta temporanea è riportata, e i punti aperti restano quattro',
-    'Trattare l’assenza di conferma saudita su un attacco come un indizio che non sia avvenuto: Riad per prassi non commenta',
+    'Leggere una bozza massimalista pubblicata durante un negoziato come la misura di quanto sia lontano l’accordo: serve anche a rendere ratificabile un accordo più modesto',
+    'Attribuire al solo testo iraniano il movimento di oro, dollaro e biennale: la settimana era già stata mossa in senso opposto dalle dichiarazioni di Washington',
   ],
   confirming: [
-    'Brent 82,74 $: soglia di invalidazione superata',
+    'Brent 82,52 $: soglia superata, massimo 83,00',
     'Decennale 4,67% e biennale 4,245%, saliti insieme',
-    'Oro a 4.293,50 $, in calo dello 0,27%',
+    'Commissioni in rial contro l’intesa senza pedaggi',
   ],
   contradicting: [
-    'Oro comunque a un massimo di 4.363,60 $ in giornata',
-    'Rialzo Fed a settembre fermo al 56,9%',
-    'Transiti a otto navi ed esplosioni nello Stretto',
+    'Bozza in esame, non approvata: nessuna norma',
+    'Transiti fermi a otto navi dal 5 agosto',
+    'Oro a un massimo di 4.363,60 $, calo di solo 0,16%',
   ],
   constraints: [
     {
@@ -295,18 +296,18 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Premio di rischio sul greggio che non si forma',
-      value: 'Brent 82,74 $',
-      baseline: 'da 79,45 di chiusura ieri, con un massimo di giornata a 82,91',
+      value: 'Brent 82,52 $',
+      baseline: 'da 79,45 di chiusura ieri, con un massimo di giornata a 83,00',
       against:
         'In quattro giorni: una minaccia americana a Teheran, un piano di attacchi contro l’energia iraniana, ' +
         'una smentita, un missile houthi contro una petroliera saudita e una ritorsione iraniana annunciata ' +
         'agli impianti energetici del Golfo. A ognuna di queste il prezzo aveva reagito meno della precedente; ' +
         'quello che lo ha mosso, alla fine, è stata l’assenza di una conferma sull’intesa Iran-Oman.',
       watch:
-        'Gli 82 dollari di Brent sono stati superati alle 18:22 del 6 agosto, dopo la tacca di logoramento a 80 ' +
-        'passata il giorno prima: il premio non solo si è formato, ha oltrepassato il livello oltre il quale ' +
-        'l’effetto inflazionistico torna a pesare sull’oro più del rifugio. Il vincolo ha smesso di vincolare, e ' +
-        'da qui la domanda non è più se il premio si paghi ma quanto duri.',
+        'Gli 82 dollari di Brent sono stati superati il 6 agosto, dopo la tacca di logoramento a 80 passata il ' +
+        'giorno prima, e adesso si conosce l’innesco: la pubblicazione della bozza iraniana sulla gestione dello ' +
+        'Stretto. Il vincolo ha smesso di vincolare, ma su una base fragile — un testo non approvato — e da qui ' +
+        'la domanda non è se il premio si paghi, è quanto duri senza che alla bozza segua una norma.',
       state: 'sciolto',
     },
   ],
@@ -332,8 +333,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 82.74,
-      display: '82,74 $',
+      now: 82.52,
+      display: '82,52 $',
       marks: [
         {
           at: 82,
@@ -364,8 +365,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4293.5,
-      display: '4.293,50 $',
+      now: 4298.5,
+      display: '4.298,50 $',
       marks: [
         {
           at: 4160,
@@ -383,8 +384,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'iran-pubblica-la-bozza-su-hormuz-il-rialzo-ha-un-nome',
     'il-brent-supera-gli-82-dollari-la-soglia-e-caduta',
-    'teheran-i-colloqui-con-oman-non-sono-la-riapertura',
     'warsh-apre-a-un-rialzo-e-il-numero-fermo-si-muove',
   ],
 };
