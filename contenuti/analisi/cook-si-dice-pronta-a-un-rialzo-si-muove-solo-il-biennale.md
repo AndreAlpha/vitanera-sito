@@ -24,8 +24,10 @@ prossimoAppuntamento:
 fonti:
   - testata: "Federal Reserve"
   - testata: "Reuters"
+esito: "confermata"
+controllata: "2026-08-06T08:35:00+02:00"
 sorgente: "src/app/core/data/articles/cook-si-dice-pronta-a-un-rialzo-si-muove-solo-il-biennale.ts"
-impronta: "87770a20e76f79f6"
+impronta: "64cf2f1c0093955a"
 ---
 
 # Cook si dice pronta a un rialzo, si muove solo il biennale
@@ -146,6 +148,22 @@ Cook ha detto che i rischi sui prezzi sono ormai superiori a quelli sul lavoro. 
 Impostazione su XAU/USD: neutrale-rialzista, forza media, orizzonte medio.
 
 Una governatrice della Fed dichiara di essere disposta a votare un rialzo, ed è la voce restrittiva più pesante arrivata finora perché è l’unica che sia anche un cambio della propria posizione. Il prezzo che dovrebbe registrarla — la probabilità di un rialzo a settembre — resta al 57%, e il decennale scende di un punto base. Si è mosso il biennale, cioè la scadenza dove un rialzo si vedrebbe per primo: il mercato l’ha sentita, ma non abbastanza da riprezzare la decisione.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-06T08:35:00+02:00.
+
+Nessuna delle cinque condizioni è scattata. La tesi era che sei prese di posizione restrittive non avessero spostato il prezzo della decisione di settembre, e nelle nove ore successive quel prezzo non si è mosso: nessuna riprezzatura riportata, dollaro e rendimenti ancora spinti al ribasso dalla trattativa su Hormuz. Il biennale, la scadenza su cui l’analisi aveva deliberatamente spostato la soglia, non ha proseguito la risalita oltre il 4,21% da cui era partito.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Una probabilità di rialzo a settembre che risale al 67% da cui era partita: è la condizione principale, perché la lettura poggia proprio sul fatto che quel numero non si muova. Il 62%, a metà strada, è la soglia che segnala il logoramento prima della rottura. | no | Nessuna riprezzatura riportata nelle nove ore successive. Il controllo della mattina dopo tratta ancora una Fed più restrittiva come rischio futuro — «dati USA forti capaci di riportare il mercato verso una Fed più restrittiva» — e non come cosa avvenuta: se il numero si fosse mosso, sarebbe un fatto e non un rischio. |
+| Il biennale in ulteriore accelerazione, sopra il 4,25%. | no | Nessuna accelerazione riportata: i rendimenti sono descritti come spinti verso il basso dai negoziati su Hormuz. Non c’è però una lettura puntuale del biennale, quindi la condizione è registrata come non scattata sulla direzione, non su un numero. |
+| Il rendimento del decennale sopra il 4,70%. | no | Nessun recupero: i rendimenti statunitensi restano descritti in calo, e il decennale veniva dal 4,63% della sera prima, sette punti base sotto la soglia. |
+| Un Dollar Index sopra l’area 100-100,20. | no | Nessun recupero del dollaro: resta descritto come spinto al ribasso dalla distensione diplomatica, e veniva da 99,75. |
+| XAU/USD sotto i 4.160 dollari, il supporto tecnico indicato dalla fonte citata. | no | Nessuna discesa verso quel livello: il metallo è descritto ancora sostenuto dalla catena petrolio-rendimenti-dollaro, e veniva dai 4.253 dollari della sera prima. |
+
+**Che cosa cambia.** Quattro condizioni su cinque erano livelli di prezzo, e al momento del controllo tre di quei livelli non avevano una lettura puntuale: si sono potute giudicare solo sulla direzione descritta. Una condizione è verificabile quanto il flusso di dati che ci sarà al momento di verificarla, e qui quel flusso è il controllo successivo. Conviene quindi ancorare almeno una condizione a qualcosa che il testo dopo citerà quasi certamente — il livello del greggio, un attacco avvenuto o no, il conteggio dei transiti — invece che a numeri che potrebbero non essere riportati.
 
 ## Fonti consultate
 

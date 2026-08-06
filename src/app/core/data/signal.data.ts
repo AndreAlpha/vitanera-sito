@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-05T23:10:00+02:00',
+  updatedAt: '2026-08-06T08:40:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,10 +187,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'media',
       regime:
-        'Il metallo tiene intorno a 4.253 dollari dopo un massimo a 4.265 e un rialzo superiore al 4%, e nelle ' +
-        'ultime ore il canale che lo giustificava ha ripreso a collaborare: il decennale è sceso al 4,63%, prima ' +
-        'discesa dopo quattro letture consecutive in salita, e il dollaro resta a 99,75. Contro restano ' +
-        'l’estensione del movimento e un biennale che ha cominciato a salire.',
+        'Il canale che regge il metallo continua a collaborare: il Brent è sceso a 79,08 dollari e il WTI a ' +
+        '74,69, con le scorte statunitensi in aumento di 2,5 milioni di barili, e da lì passano inflazione ' +
+        'attesa, rendimenti e dollaro. Contro restano l’estensione del movimento dopo un più 4% e il fatto che ' +
+        'un attacco vero agli impianti del Golfo ribalterebbe il segno del greggio in poche ore.',
       invalidation:
         'Una perdita rapida dei 4.200 dollari accompagnata dal decennale sopra il 4,70%; prima ancora, un decennale che torna sopra il 4,68% con l’oro ancora sopra i 4.250, che segnalerebbe il logoramento senza aspettare la rottura.',
     },
@@ -199,13 +199,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'media',
       regime:
-        'Sei prese di posizione restrittive della Fed in pochi giorni, l’ultima delle quali è una governatrice che ' +
-        'nell’ultima riunione aveva votato per lasciare i tassi fermi, e la probabilità di un rialzo a settembre ' +
-        'resta al 57%, sotto il 67% di qualche giorno fa. Finché quel numero non si muove la retorica restrittiva ' +
-        'è un rischio e non un cambio di regime; il petrolio in calo, che Cook stessa indica come prima via ' +
-        'd’uscita dal rialzo, lavora nella stessa direzione.',
+        'La stessa asimmetria si ripete in due domini diversi: sei prese di posizione restrittive della Fed e ' +
+        'una probabilità di rialzo a settembre ferma al 57%, e adesso una minaccia iraniana esplicita agli ' +
+        'impianti energetici del Golfo con il Brent che scende invece di salire. Quello che viene dichiarato ha ' +
+        'smesso di spostare quello che viene prezzato, e finché è così il metallo resta sostenuto dal canale dei ' +
+        'tassi con un pavimento geopolitico sotto. Il rischio non è la direzione, è la sequenza: un attacco vero ' +
+        'farebbe salire l’oro per rifugio e poi scendere per rendimenti.',
       invalidation:
-        'Una probabilità di rialzo a settembre che risale al 67% da cui era partita — con il 62% come primo segno che si sta muovendo —, il biennale sopra il 4,25% o un Dollar Index sopra l’area 100-100,20; sul metallo, XAU/USD sotto i 4.160 dollari.',
+        'Un Brent sopra gli 82 dollari, o un attacco effettivo contro gli impianti del Golfo che trasformi la minaccia in un fatto; una probabilità di rialzo a settembre che risale al 67% da cui era partita, con il 62% come primo segno che si sta muovendo; il decennale sopra il 4,70% o un Dollar Index sopra l’area 100-100,20.',
     },
     {
       horizon: 'lungo',
@@ -219,31 +220,31 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, oppure il ritorno stabile del decennale sopra il 5%.',
     },
   ],
-  headline: 'Una governatrice della Fed apre a un rialzo, e il 57% non si muove',
+  headline: 'L’Iran minaccia gli impianti del Golfo, e il Brent scende a 79,08',
   stance:
-    'Lisa Cook, che nell’ultima riunione aveva votato per lasciare i tassi fermi, si dice pronta a sostenere un ' +
-    'rialzo se l’inflazione non riprende a scendere: è la sesta presa di posizione restrittiva in pochi giorni e ' +
-    'l’unica che contenga un cambio di posizione, non una ripetizione. La probabilità di un rialzo a settembre ' +
-    'resta però al 57%, sotto il 67% di qualche giorno fa. L’unico rendimento che l’ha registrata è il biennale, ' +
-    'risalito verso il 4,21%, mentre il decennale è sceso al 4,63% e il dollaro è rimasto debole: l’oro tiene ' +
-    'intorno a 4.253 dollari.',
+    'Teheran ha avvertito i Paesi del Golfo che risponderebbe a un nuovo attacco americano colpendo le loro ' +
+    'infrastrutture energetiche: è la minaccia più diretta arrivata finora, ed era lo scenario che questo ' +
+    'archivio aveva descritto come deduzione il 2 agosto. Il greggio, nel frattempo, è sceso — Brent 79,08 ' +
+    'dollari, sotto i 79,34 di ieri sera e gli 80,87 dell’attacco nel Mar Rosso. È la terza notizia di rischio ' +
+    'in tre giorni che il prezzo non paga, dopo i sei annunci su Hormuz con zero navi in più e le sei voci ' +
+    'restrittive della Fed con il 57% fermo.',
   favours: [
-    'Misurare la svolta restrittiva sulla probabilità di rialzo a settembre, non sul numero degli interventi pubblici',
-    'Guardare il biennale invece del decennale quando la notizia riguarda la decisione di settembre',
+    'Misurare quanto il mercato è disposto a pagare una minaccia, invece di quanto la minaccia è grave',
+    'Tenere gli 82 dollari di Brent come la soglia che ribalta il segno del greggio sull’oro',
   ],
   avoid: [
-    'Leggere l’apertura di Cook come un rialzo deciso: lei stessa elenca tre condizioni che lo eviterebbero',
-    'Inseguire il metallo sopra i 4.250 dopo un più 4%, con la parte breve della curva che ha cominciato a salire',
+    'Comprare l’oro sulla gravità dell’avvertimento iraniano: è ricostruito da fonti anonime e condizionato a un attacco che non c’è stato',
+    'Leggere il ribasso del greggio come una riapertura di Hormuz: dei quattro punti aperti nessuno è chiuso e i transiti sono fermi a otto navi',
   ],
   confirming: [
+    'Brent 79,08 $, sotto i 79,34 di ieri sera',
+    'Scorte USA +2,5 mln barili',
     'Rialzo Fed a settembre fermo al 57%',
-    'Decennale sceso al 4,63%, prima discesa dopo quattro salite',
-    'DXY debole ≈ 99,75',
   ],
   contradicting: [
-    'Biennale risalito verso il 4,21%',
-    'Cook, che aveva votato per fermarsi, apre al rialzo',
-    'Oro esteso: più 4% e massimo a 4.265',
+    'Ritorsione iraniana annunciata agli impianti del Golfo',
+    'Attacchi houthi rivendicati anche nel Golfo di Aden',
+    'Accordo su Hormuz non operativo: quattro punti aperti',
   ],
   constraints: [
     {
@@ -287,6 +288,20 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'rinviato, e alla parte lunga della curva resta una variabile in meno.',
       state: 'sciolto',
     },
+    {
+      label: 'Premio di rischio sul greggio che non si forma',
+      value: 'Brent 79,08 $',
+      baseline: 'contro 79,34 di ieri sera e 80,87 dopo il missile nel Mar Rosso',
+      against:
+        'In quattro giorni: una minaccia americana a Teheran, un piano di attacchi contro l’energia iraniana, ' +
+        'una smentita, un missile houthi contro una petroliera saudita e ora una ritorsione iraniana annunciata ' +
+        'agli impianti energetici del Golfo. Ogni notizia è più grave della precedente e il prezzo reagisce ' +
+        'ogni volta di meno.',
+      watch:
+        'Gli 82 dollari di Brent, e prima ancora il ritorno sopra gli 80: sono i livelli oltre i quali il ' +
+        'premio ricomincia a essere pagato e l’effetto inflazionistico torna a pesare sull’oro più del rifugio.',
+      state: 'fermo',
+    },
   ],
   thresholds: [
     {
@@ -309,15 +324,21 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       ],
     },
     {
-      label: 'Treasury a 2 anni',
-      now: 4.21,
-      display: '4,21%',
+      label: 'Brent',
+      now: 79.08,
+      display: '79,08 $',
       marks: [
         {
-          at: 4.25,
-          display: '4,25%',
+          at: 80,
+          display: '80 $',
+          kind: 'logora',
+          note: 'il ritorno sopra questa soglia direbbe che il premio di rischio ricomincia a essere pagato',
+        },
+        {
+          at: 82,
+          display: '82 $',
           kind: 'invalida',
-          note: 'è la scadenza in cui un rialzo di settembre si prezzerebbe per primo: oltre qui la lettura sui giorni decade',
+          note: 'sopra questo livello l’effetto inflazionistico torna a pesare più della domanda di rifugio',
         },
       ],
     },
@@ -361,9 +382,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'iran-minaccia-gli-impianti-del-golfo-il-greggio-scende',
     'cook-si-dice-pronta-a-un-rialzo-si-muove-solo-il-biennale',
     'coordinate-concordate-a-hormuz-il-sesto-annuncio-e-diverso',
-    'adp-debole-e-tesoro-fermo-ma-il-decennale-non-si-muove',
   ],
 };
 

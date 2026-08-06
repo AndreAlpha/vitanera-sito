@@ -28,6 +28,48 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'cook-si-dice-pronta-a-un-rialzo-si-muove-solo-il-biennale',
+    checkedAt: '2026-08-06T08:35:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Una probabilità di rialzo a settembre che risale al 67% da cui era partita: è la condizione principale, perché la lettura poggia proprio sul fatto che quel numero non si muova. Il 62%, a metà strada, è la soglia che segnala il logoramento prima della rottura.',
+        triggered: false,
+        evidence:
+          'Nessuna riprezzatura riportata nelle nove ore successive. Il controllo della mattina dopo tratta ancora una Fed più restrittiva come rischio futuro — «dati USA forti capaci di riportare il mercato verso una Fed più restrittiva» — e non come cosa avvenuta: se il numero si fosse mosso, sarebbe un fatto e non un rischio.',
+      },
+      {
+        condition: 'Il biennale in ulteriore accelerazione, sopra il 4,25%.',
+        triggered: false,
+        evidence:
+          'Nessuna accelerazione riportata: i rendimenti sono descritti come spinti verso il basso dai negoziati su Hormuz. Non c’è però una lettura puntuale del biennale, quindi la condizione è registrata come non scattata sulla direzione, non su un numero.',
+      },
+      {
+        condition: 'Il rendimento del decennale sopra il 4,70%.',
+        triggered: false,
+        evidence:
+          'Nessun recupero: i rendimenti statunitensi restano descritti in calo, e il decennale veniva dal 4,63% della sera prima, sette punti base sotto la soglia.',
+      },
+      {
+        condition: 'Un Dollar Index sopra l’area 100-100,20.',
+        triggered: false,
+        evidence:
+          'Nessun recupero del dollaro: resta descritto come spinto al ribasso dalla distensione diplomatica, e veniva da 99,75.',
+      },
+      {
+        condition:
+          'XAU/USD sotto i 4.160 dollari, il supporto tecnico indicato dalla fonte citata.',
+        triggered: false,
+        evidence:
+          'Nessuna discesa verso quel livello: il metallo è descritto ancora sostenuto dalla catena petrolio-rendimenti-dollaro, e veniva dai 4.253 dollari della sera prima.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata. La tesi era che sei prese di posizione restrittive non avessero spostato il prezzo della decisione di settembre, e nelle nove ore successive quel prezzo non si è mosso: nessuna riprezzatura riportata, dollaro e rendimenti ancora spinti al ribasso dalla trattativa su Hormuz. Il biennale, la scadenza su cui l’analisi aveva deliberatamente spostato la soglia, non ha proseguito la risalita oltre il 4,21% da cui era partito.',
+    lesson:
+      'Quattro condizioni su cinque erano livelli di prezzo, e al momento del controllo tre di quei livelli non avevano una lettura puntuale: si sono potute giudicare solo sulla direzione descritta. Una condizione è verificabile quanto il flusso di dati che ci sarà al momento di verificarla, e qui quel flusso è il controllo successivo. Conviene quindi ancorare almeno una condizione a qualcosa che il testo dopo citerà quasi certamente — il livello del greggio, un attacco avvenuto o no, il conteggio dei transiti — invece che a numeri che potrebbero non essere riportati.',
+  },
+  {
     slug: 'coordinate-concordate-a-hormuz-il-sesto-annuncio-e-diverso',
     checkedAt: '2026-08-05T23:05:00+02:00',
     verdict: 'confermata',
