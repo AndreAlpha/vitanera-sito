@@ -65,10 +65,10 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     symbol: 'HORMUZ',
     name: 'Stretto di Hormuz, transiti',
     value: 'otto navi',
-    change: 'contro 130-140 al giorno prima del conflitto',
+    change: 'fermo dal 5 agosto, contro 130-140 al giorno',
     tone: 'bear',
     icon: 'map',
-    note: 'È il numero che manca a tutte le dichiarazioni sui progressi diplomatici: la normalizzazione dei traffici non è cominciata, e il ribasso del greggio sconta una riapertura che nei fatti non c’è.',
+    note: 'È il numero che manca a tutte le dichiarazioni sui progressi diplomatici, ed è il metro che questo archivio ha scelto il 5 agosto e non ha più cambiato. In cinque giorni sette annunci non lo hanno mosso di una unità, e il settimo ridimensiona i precedenti: un indicatore che sta fermo è quello che impedisce di aggiornare sei volte nella direzione sbagliata.',
   },
   {
     symbol: 'MAR ROSSO',
@@ -82,11 +82,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'IRAN',
     name: 'Intesa tecnica Iran-Oman sulla rotta',
-    value: 'coordinate concordate',
-    change: 'sesto annuncio, il primo con un documento',
-    tone: 'warn',
+    value: 'gestione delle rotte',
+    change: 'non la riapertura, secondo Teheran',
+    tone: 'bear',
     icon: 'map',
-    note: 'I cinque precedenti erano dichiarazioni di intenti e non avevano mosso una nave. Questo produce un oggetto tecnico, ma l’accordo non è ancora operativo e i quattro punti aperti si sono precisati: controllo iraniano degli ingressi, ispezione delle navi in uscita, commissioni sul traffico e rimozione del blocco statunitense dei porti iraniani.',
+    note: 'Le coordinate concordate erano state lette come il primo passo verso la riapertura; un esponente della commissione Sicurezza nazionale del Parlamento iraniano dice ora che il tavolo riguarda la gestione delle rotte e della navigazione. I quattro punti restano aperti — controllo degli ingressi, ispezione delle navi in uscita, commissioni sul traffico e rimozione del blocco statunitense dei porti — e un accordo accettato da Washington non c’è.',
   },
   {
     symbol: 'FED FUNDS',

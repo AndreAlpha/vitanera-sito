@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-06T16:30:00+02:00',
+  updatedAt: '2026-08-06T17:15:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,11 +187,11 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'Il canale dei tassi si è girato una seconda volta in due giorni: dopo il Brent tornato sopra gli 80 ' +
-        'dollari, un’indiscrezione sul presidente della Fed ha portato il biennale verso il 4,22% e il ' +
-        'decennale verso il 4,64%. Il metallo però non ha seguito — è vicino a 4.260 dollari, sopra i 4.244 di ' +
-        'metà pomeriggio — e un prezzo che rifiuta la notizia che dovrebbe muoverlo dice che chi voleva vendere ' +
-        'sulla Fed ha già venduto.',
+        'Due notizie in un pomeriggio che spingono in verso opposto sullo stesso strumento: un’indiscrezione ' +
+        'restrittiva sul presidente della Fed, che alza rendimenti e attese, e un ridimensionamento iraniano ' +
+        'della trattativa su Hormuz, che alza la domanda di rifugio ma anche il greggio. La somma è più vicina ' +
+        'a zero di quanto sembri leggendole una alla volta, ed è la ragione per cui la forza resta bassa senza ' +
+        'che la direzione cambi.',
       invalidation:
         'Una perdita rapida dei 4.200 dollari accompagnata dal decennale sopra il 4,70%; prima ancora, un decennale che torna sopra il 4,68% con l’oro ancora sopra i 4.250, che segnalerebbe il logoramento senza aspettare la rottura.',
     },
@@ -200,14 +200,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'Per una settimana le prese di posizione restrittive della Fed non avevano spostato la probabilità di ' +
-        'un rialzo a settembre. La settima la sposta — da 54,4% a 56,7% — e la differenza è chi parla: non un ' +
-        'presidente regionale né un governatore, ma chi decide l’ordine del giorno. Il quadro non cade, si ' +
-        'restringe: il mercato ignora le preferenze di chi non controlla il calendario e prezza quelle di chi ' +
-        'lo controlla. Il margine sotto la lettura si accorcia, ma il numero resta ancora sotto il 57% da cui ' +
-        'era partito.',
+        'Teheran dice che il tavolo con l’Oman riguarda la gestione delle rotte e non la riapertura dello ' +
+        'Stretto: l’oggetto tecnico su cui questo archivio aveva alzato la probabilità il 5 agosto non è quello ' +
+        'che sembrava, e l’aggiornamento va rifatto al contrario. Meno de-escalation significa più rifugio, ma ' +
+        'anche più greggio, e il greggio è il canale da cui l’oro ha preso i colpi delle ultime ventiquattro ' +
+        'ore: il rifugio agisce in ore, i tassi in giorni, e su questo orizzonte la seconda spinta è più grande ' +
+        'della prima.',
       invalidation:
-        'Una probabilità di rialzo a settembre sopra il 62%, che è la tacca di logoramento, e sopra il 67% quella che la uccide; il biennale oltre il 4,25%, il decennale stabilmente sopra l’area 4,65-4,70%, o un Dollar Index che recupera insieme ai rendimenti sopra quota 100-100,20.',
+        'Un Brent sopra gli 82 dollari, o petrolio, Dollar Index e rendimenti che salgono insieme — decennale sopra il 4,70% e DXY oltre l’area 100-100,20; dall’altro lato una dichiarazione congiunta che contenga la riapertura, o un conteggio dei transiti sopra le otto navi. Sul fronte Fed, una probabilità di rialzo a settembre sopra il 62%.',
     },
     {
       horizon: 'lungo',
@@ -225,30 +225,31 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, il ritorno stabile del decennale sopra il 5%, oppure una revisione che riporti la produttività sotto la crescita del costo del lavoro per unità.',
     },
   ],
-  headline: 'Warsh apre a un rialzo di settembre, e il numero fermo si muove di 2,3 punti',
+  headline: 'Teheran ridimensiona il tavolo con l’Oman, e il conteggio resta a otto navi',
   stance:
-    'Il Financial Times riferisce che il presidente della Fed sarebbe disposto ad alzare i tassi già a settembre ' +
-    'se CPI e PPI restassero alti. È la settima presa di posizione restrittiva in una settimana e la prima dopo ' +
-    'la quale la probabilità di rialzo si muove: da 54,4% a 56,7%, con il biennale verso il 4,22%. La differenza ' +
-    'non è che cosa viene detto ma chi lo dice, ed è la calibrazione che mancava al quadro. L’oro però non ha ' +
-    'seguito: resta vicino a 4.260 dollari, sopra i 4.244 di metà pomeriggio.',
+    'Un parlamentare iraniano della commissione Sicurezza nazionale dice che i colloqui con l’Oman riguardano la ' +
+    'gestione delle rotte, non la riapertura dello Stretto: l’oggetto tecnico su cui il 5 agosto la probabilità ' +
+    'di riapertura era stata alzata viene ridimensionato da chi lo aveva prodotto. Costa poco tornare indietro, ' +
+    'perché il passo era piccolo e il metro non era stato spostato — il conteggio dei transiti è ancora a otto ' +
+    'navi. Nella stessa giornata un’indiscrezione restrittiva sul presidente della Fed spinge in verso opposto: ' +
+    'la somma delle due lascia direzione e forza dove erano.',
   favours: [
-    'Distinguere le preferenze di chi controlla l’ordine del giorno da quelle di chi lo subisce: solo le prime vengono prezzate',
-    'Tenere il 62% sulla probabilità di rialzo come la tacca che conta, invece di reagire al primo movimento',
+    'Misurare la riapertura sul conteggio delle navi e non sul numero degli annunci: è il metro che non è cambiato in cinque giorni',
+    'Aggiornare anche al ribasso quando la prova va nell’altro verso, e con la stessa ampiezza con cui si era saliti',
   ],
   avoid: [
-    'Trattare l’indiscrezione come una decisione: la Federal Reserve non ha pubblicato nulla di Warsh, e l’ultima comunicazione ufficiale resta il discorso di Cook',
-    'Leggere 2,3 punti come una riprezzatura: il numero è tornato indietro verso il 57% da cui era partito, non oltre',
+    'Leggere il ridimensionamento come una rottura del negoziato: Iran e Oman lavorano a un corridoio temporaneo, e i punti aperti restano quattro',
+    'Attribuire a questa dichiarazione i movimenti di oro, dollaro e biennale: nella stessa giornata sono usciti due dati statunitensi e un’indiscrezione sulla Fed',
   ],
   confirming: [
-    'XAU/USD ≈ 4.260 $, non segue la riprezzatura',
-    'Produttività +1,4% contro costo del lavoro +1,3%',
-    'Rialzo a settembre 56,7%, ancora sotto il 57% di partenza',
+    'Meno de-escalation: domanda di rifugio sostenuta',
+    'Rialzo Fed a settembre ancora intorno al 57%',
+    'Nessun accordo operativo accettato da Washington',
   ],
   contradicting: [
-    'Biennale verso il 4,22%, circa +4 punti base',
-    'Decennale risalito verso il 4,64%',
-    'Brent 80,34 $: intesa su Hormuz non definitiva',
+    'Petrolio in recupero sui dubbi sull’accordo',
+    'Decennale verso il 4,64% per via energetica',
+    'Transiti fermi a otto navi dal 5 agosto',
   ],
   constraints: [
     {
@@ -256,12 +257,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       value: 'otto navi',
       baseline: 'contro 130-140 al giorno prima del conflitto',
       against:
-        'Sei annunci di distensione in quattro giorni: l’apertura di Bessent, la smentita iraniana, la ' +
+        'Sei annunci di distensione in quattro giorni — l’apertura di Bessent, la smentita iraniana, la ' +
         'minaccia rilanciata, la richiesta di controllo sugli ingressi, la trattativa «durata tutto il ' +
-        'giorno» e ora le coordinate concordate con l’Oman.',
+        'giorno» e le coordinate concordate con l’Oman — e adesso il settimo, che è il primo a smontare i ' +
+        'precedenti: Teheran dice che quel tavolo riguarda la gestione delle rotte, non la riapertura.',
       watch:
-        'Il conteggio dei transiti quarantotto ore dopo la dichiarazione congiunta. Finché non risale, la ' +
-        'riapertura è un’intenzione e non un fatto.',
+        'Il conteggio dei transiti, fermo a otto navi dal 5 agosto e mai aggiornato da allora. Finché non ' +
+        'risale, la riapertura è un’intenzione e non un fatto — e adesso nemmeno l’intenzione è più quella ' +
+        'che si era capita.',
       state: 'fermo',
     },
     {
@@ -311,8 +314,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 56.7,
-      display: '56,7%',
+      now: 57,
+      display: '≈ 57%',
       marks: [
         {
           at: 62,
@@ -338,19 +341,6 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           display: '82 $',
           kind: 'invalida',
           note: 'sopra questo livello l’effetto inflazionistico torna a pesare più della domanda di rifugio',
-        },
-      ],
-    },
-    {
-      label: 'Treasury a 2 anni',
-      now: 4.22,
-      display: '≈ 4,22%',
-      marks: [
-        {
-          at: 4.25,
-          display: '4,25%',
-          kind: 'invalida',
-          note: 'è la scadenza in cui una decisione di settembre si prezza per prima: oltre qui la lettura sui giorni decade',
         },
       ],
     },
@@ -394,9 +384,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'teheran-i-colloqui-con-oman-non-sono-la-riapertura',
     'warsh-apre-a-un-rialzo-e-il-numero-fermo-si-muove',
     'sussidi-e-produttivita-un-punto-base-di-reazione',
-    'iran-minaccia-gli-impianti-del-golfo-il-greggio-scende',
   ],
 };
 

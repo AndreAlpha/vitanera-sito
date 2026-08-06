@@ -27,8 +27,10 @@ fonti:
   - testata: "Reuters"
   - testata: "Trading Economics"
   - testata: "Federal Reserve"
+esito: "confermata"
+controllata: "2026-08-06T17:10:00+02:00"
 sorgente: "src/app/core/data/articles/warsh-apre-a-un-rialzo-e-il-numero-fermo-si-muove.ts"
-impronta: "497b1f38c0b0d9fe"
+impronta: "65557647990d35a1"
 ---
 
 # Warsh apre a un rialzo, e il numero fermo si muove
@@ -138,6 +140,20 @@ La condizione che Warsh pone riguarda CPI e PPI, che escono più avanti; il rapp
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte medio.
 
 Per una settimana le prese di posizione restrittive della Fed non avevano spostato il prezzo della decisione di settembre. Questa lo sposta, e la differenza è chi parla: non un presidente regionale né un governatore, ma chi decide l’ordine del giorno. Il movimento resta però piccolo — 2,3 punti, e il numero resta sotto il 57% da cui era partito — e l’oro non lo ha seguito. La direzione non cambia, il margine sotto di essa si assottiglia.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-06T17:10:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e la parte scomoda della lettura ha retto. La tesi era che il movimento di 2,3 punti fosse reale ma piccolo, e che cambiare direzione a più di cinque punti dalla tacca dichiarata sarebbe stato rinnegare una soglia scritta il giorno prima. Nelle ore successive quel numero ha smesso di salire — resta intorno al 57% — mentre il decennale si è fermato al 4,64%. Il canale dei tassi si è girato due volte in una giornata senza mai superare nessuna delle soglie dichiarate: è il caso in cui la disciplina delle tacche fa quello per cui esiste, cioè impedire tre cambi di lettura in un pomeriggio.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Una probabilità di rialzo a settembre che sale sopra il 62%: è la tacca oltre la quale questa lettura si logora, ed è la prima volta in quattro giorni che quel numero si muove verso di essa. | no | Il numero è descritto intorno al 57%, in aumento rispetto al giorno precedente ma ancora sotto i livelli della settimana scorsa: ha smesso di salire dopo i 56,7% dell’indiscrezione e resta più di cinque punti sotto la tacca. |
+| Il biennale che resta sopra il 4,22% e prosegue oltre il 4,25%. | no | Nessuna lettura puntuale disponibile: il controllo successivo dichiara esplicitamente di non avere una rilevazione affidabile al minuto sul biennale e di non voler attribuire movimenti a una singola notizia. Registrata come non scattata perché nulla indica il superamento, non perché sia stata verificata. |
+| Il decennale stabilmente sopra l’area 4,65-4,70%. | no | Il decennale è risalito verso il 4,64%, cioè al bordo inferiore dell’area e senza stabilizzarsi sopra: un punto base sotto il primo dei due livelli. |
+| Un Dollar Index che recupera insieme ai rendimenti, sopra l’area 100-100,20. | no | Nessuna lettura puntuale del Dollar Index, per la stessa ragione dichiarata sul biennale. Nessun recupero sopra quota 100 riportato da alcuna fonte nella finestra. |
+| Nella direzione opposta: CPI e PPI contenuti, o un rapporto occupazionale di domani che confermi un marcato indebolimento del lavoro. Confermerebbero la direzione ma toglierebbero senso a questa lettura, che poggia proprio sul fatto che il quadro sia diviso. | no | Nessuno dei tre dati è uscito: CPI e PPI sono più avanti nel calendario e il rapporto occupazionale esce domani alle 14:30. |
 
 ## Fonti consultate
 
