@@ -134,6 +134,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     related: ['Bene rifugio', 'Stretto di Hormuz'],
   },
   {
+    term: 'Vincolo materiale',
+    letter: 'V',
+    definition:
+      'Un fatto misurabile che limita quello che i decisori possono fare, a prescindere da quello che dichiarano di voler fare: un conteggio di navi, un livello di prezzo, un fabbisogno di finanziamento.',
+    why: 'Le preferenze sono opzionali e si piegano ai vincoli, i vincoli no. È la ragione per cui qui la riapertura di uno stretto si misura sui transiti e non sugli annunci — e per cui, quando un vincolo si scioglie, va detto con la stessa nettezza con cui lo si era usato mentre reggeva.',
+    related: ['Premio di rischio geopolitico', 'Stretto di Hormuz', 'Invalidazione'],
+  },
+  {
     term: 'Brent',
     letter: 'B',
     definition:

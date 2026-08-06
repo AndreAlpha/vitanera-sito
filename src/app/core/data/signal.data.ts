@@ -179,36 +179,33 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-06T17:15:00+02:00',
-  checkedAt: '2026-08-06T18:40:00+02:00',
+  updatedAt: '2026-08-06T18:47:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'neutrale-rialzista',
+      direction: 'neutrale-ribassista',
       strength: 'bassa',
       regime:
-        'Due notizie in un pomeriggio che spingono in verso opposto sullo stesso strumento: un’indiscrezione ' +
-        'restrittiva sul presidente della Fed, che alza rendimenti e attese, e un ridimensionamento iraniano ' +
-        'della trattativa su Hormuz, che alza la domanda di rifugio ma anche il greggio. La somma è più vicina ' +
-        'a zero di quanto sembri leggendole una alla volta, ed è la ragione per cui la forza resta bassa senza ' +
-        'che la direzione cambi.',
+        'La somma delle due spinte ha smesso di essere vicina a zero. Petrolio, rendimenti e dollaro salgono ' +
+        'nella stessa ora — Brent 82,74, decennale 4,67%, biennale 4,245%, Dollar Index 99,86 — e il metallo ' +
+        'scende dopo aver toccato 4.363,60: la domanda di rifugio c’è ancora ma non compensa più il costo-' +
+        'opportunità. La forza resta bassa perché il calo è dello 0,27% e nessun supporto è stato toccato.',
       invalidation:
-        'Una perdita rapida dei 4.200 dollari accompagnata dal decennale sopra il 4,70%; prima ancora, un decennale che torna sopra il 4,68% con l’oro ancora sopra i 4.250, che segnalerebbe il logoramento senza aspettare la rottura.',
+        'Un ritorno dell’oro sopra il massimo di giornata di 4.363,60 dollari mentre il Brent resta sopra gli 82, che direbbe che il rifugio vince comunque; oppure un Brent di nuovo sotto gli 80, che toglie la premessa.',
     },
     {
       horizon: 'medio',
-      direction: 'neutrale-rialzista',
-      strength: 'bassa',
+      direction: 'neutrale-ribassista',
+      strength: 'media',
       regime:
-        'Teheran dice che il tavolo con l’Oman riguarda la gestione delle rotte e non la riapertura dello ' +
-        'Stretto: l’oggetto tecnico su cui questo archivio aveva alzato la probabilità il 5 agosto non è quello ' +
-        'che sembrava, e l’aggiornamento va rifatto al contrario. Meno de-escalation significa più rifugio, ma ' +
-        'anche più greggio, e il greggio è il canale da cui l’oro ha preso i colpi delle ultime ventiquattro ' +
-        'ore: il rifugio agisce in ore, i tassi in giorni, e su questo orizzonte la seconda spinta è più grande ' +
-        'della prima.',
+        'Il greggio ha superato il livello oltre il quale alimenta inflazione attesa e rendimenti più di quanto ' +
+        'alimenti la domanda di rifugio, e lo ha fatto contro tre notizie che avrebbero dovuto farlo scendere: ' +
+        'scorte statunitensi in aumento, listini Aramco tagliati per l’Asia e un’intesa Iran-Oman su una rotta ' +
+        'temporanea. Finché resta lì, il canale dei tassi lavora contro il metallo su un orizzonte di giorni, ' +
+        'che è il tempo in cui quel canale trasmette.',
       invalidation:
-        'Un Brent sopra gli 82 dollari, o petrolio, Dollar Index e rendimenti che salgono insieme — decennale sopra il 4,70% e DXY oltre l’area 100-100,20; dall’altro lato una dichiarazione congiunta che contenga la riapertura, o un conteggio dei transiti sopra le otto navi. Sul fronte Fed, una probabilità di rialzo a settembre sopra il 62%.',
+        'Un Brent che torna sotto gli 80 dollari, che toglie la premessa; un rapporto occupazionale nettamente sotto le attese di circa 80.000 posti, che riporterebbe i rendimenti al ribasso; oppure un decennale sotto il 4,60% con un Dollar Index sotto 99,50. Prima di tutte queste, un oro che risale sopra i 4.320 mentre il Brent resta sopra gli 82.',
     },
     {
       horizon: 'lungo',
@@ -226,31 +223,31 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, il ritorno stabile del decennale sopra il 5%, oppure una revisione che riporti la produttività sotto la crescita del costo del lavoro per unità.',
     },
   ],
-  headline: 'Teheran ridimensiona il tavolo con l’Oman, e il conteggio resta a otto navi',
+  headline: 'Il Brent supera gli 82 dollari e la soglia dichiarata cade',
   stance:
-    'Un parlamentare iraniano della commissione Sicurezza nazionale dice che i colloqui con l’Oman riguardano la ' +
-    'gestione delle rotte, non la riapertura dello Stretto: l’oggetto tecnico su cui il 5 agosto la probabilità ' +
-    'di riapertura era stata alzata viene ridimensionato da chi lo aveva prodotto. Costa poco tornare indietro, ' +
-    'perché il passo era piccolo e il metro non era stato spostato — il conteggio dei transiti è ancora a otto ' +
-    'navi. Nella stessa giornata un’indiscrezione restrittiva sul presidente della Fed spinge in verso opposto: ' +
-    'la somma delle due lascia direzione e forza dove erano.',
+    'Il Brent è a 82,74 dollari con un massimo di giornata a 82,91, da una chiusura di 79,45: è la soglia che ' +
+    'questo archivio aveva scritto il 5 agosto come punto oltre il quale l’effetto inflazionistico del greggio ' +
+    'pesa sull’oro più della domanda di rifugio, ripetuta poi in tre analisi e messa come tacca di ' +
+    'invalidazione qui. Conta più di dove è arrivata: è salita contro scorte statunitensi in aumento, listini ' +
+    'Aramco tagliati per l’Asia e un’intesa Iran-Oman su una rotta temporanea. Il vincolo dei quattro giorni ' +
+    'precedenti — il premio di rischio non si forma — si è sciolto; quello sui transiti, fermo a otto navi, no.',
   favours: [
-    'Misurare la riapertura sul conteggio delle navi e non sul numero degli annunci: è il metro che non è cambiato in cinque giorni',
-    'Aggiornare anche al ribasso quando la prova va nell’altro verso, e con la stessa ampiezza con cui si era saliti',
+    'Applicare la soglia che si era dichiarata quando il prezzo era a 79 dollari, invece di discuterla adesso che è stata superata',
+    'Distinguere i due vincoli invece di sommarli: quello sul prezzo ha ceduto, quello sul traffico è intatto',
   ],
   avoid: [
-    'Leggere il ridimensionamento come una rottura del negoziato: Iran e Oman lavorano a un corridoio temporaneo, e i punti aperti restano quattro',
-    'Attribuire a questa dichiarazione i movimenti di oro, dollaro e biennale: nella stessa giornata sono usciti due dati statunitensi e un’indiscrezione sulla Fed',
+    'Leggere il rincaro come una rottura del negoziato: l’intesa sulla rotta temporanea è riportata, e i punti aperti restano quattro',
+    'Trattare l’assenza di conferma saudita su un attacco come un indizio che non sia avvenuto: Riad per prassi non commenta',
   ],
   confirming: [
-    'Meno de-escalation: domanda di rifugio sostenuta',
-    'Rialzo Fed a settembre fermo al 56,9%',
-    'Nessun accordo operativo accettato da Washington',
+    'Brent 82,74 $: soglia di invalidazione superata',
+    'Decennale 4,67% e biennale 4,245%, saliti insieme',
+    'Oro a 4.293,50 $, in calo dello 0,27%',
   ],
   contradicting: [
-    'Brent a 82,74 $: la soglia di invalidazione è superata',
-    'Decennale al 4,67%, con il biennale a 4,25%',
-    'Dollar Index a 99,86, massimo di giornata 99,90',
+    'Oro comunque a un massimo di 4.363,60 $ in giornata',
+    'Rialzo Fed a settembre fermo al 56,9%',
+    'Transiti a otto navi ed esplosioni nello Stretto',
   ],
   constraints: [
     {
@@ -386,9 +383,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'il-brent-supera-gli-82-dollari-la-soglia-e-caduta',
     'teheran-i-colloqui-con-oman-non-sono-la-riapertura',
     'warsh-apre-a-un-rialzo-e-il-numero-fermo-si-muove',
-    'sussidi-e-produttivita-un-punto-base-di-reazione',
   ],
 };
 

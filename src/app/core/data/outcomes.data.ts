@@ -28,6 +28,67 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'teheran-i-colloqui-con-oman-non-sono-la-riapertura',
+    checkedAt: '2026-08-06T18:45:00+02:00',
+    verdict: 'parziale',
+    conditions: [
+      {
+        condition:
+          'Una dichiarazione congiunta Iran-Oman che contenga la riapertura dello Stretto, e non soltanto la gestione delle rotte.',
+        triggered: false,
+        evidence:
+          'Nessuna dichiarazione congiunta emessa. L’annuncio era atteso per mercoledì 5 agosto secondo la ' +
+          'ricostruzione americana, e a due giorni di distanza il testo risulta ancora «in revisione e in fase ' +
+          'finale di stesura»: l’intesa riportata il 6 agosto da Al Hadath e Al Arabiya, ripresa da Xinhua, ' +
+          'attende l’approvazione del Consiglio supremo di sicurezza nazionale iraniano. Riguarda inoltre una ' +
+          'rotta temporanea di sessanta giorni, non la riapertura.',
+      },
+      {
+        condition:
+          'Un conteggio dei transiti che risale sopra le otto navi: è la condizione che questo archivio ha dichiarato per prima e non ha mai cambiato.',
+        triggered: false,
+        evidence:
+          'Il conteggio sul metro di questo archivio non è stato aggiornato dal 5 agosto. Le due rilevazioni ' +
+          'indipendenti disponibili misurano cose diverse e nessuna delle due mostra una risalita: PortWatch, ' +
+          'via straits.live aggiornato alle 16:34 UTC del 6 agosto, dà due transiti il 2 agosto contro una base ' +
+          'di 73 al giorno; Lloyd’s List Intelligence dà 84 transiti nella settimana al 2 agosto. Entrambe si ' +
+          'fermano prima della finestra.',
+      },
+      {
+        condition:
+          'La rimozione del blocco statunitense dei porti iraniani, che è la condizione posta da Teheran e l’unica delle quattro che si può leggere con una data.',
+        triggered: false,
+        evidence:
+          'Nessuna rimozione annunciata. Il blocco resta la condizione che Teheran pone e che non compare fra i ' +
+          'punti dell’intesa riportata: quella riguarda rotte, sminamento e assenza di pedaggi.',
+      },
+      {
+        condition:
+          'Un Brent sopra gli 82 dollari: è la parte della lettura che cede per prima, perché a quel punto l’effetto inflazionistico pesa più del sostegno da rifugio.',
+        triggered: true,
+        evidence:
+          'Scattata un’ora e sette minuti dopo la pubblicazione. Il Brent è a 82,74 dollari alle 18:22 del ' +
+          '6 agosto (Investing.com) e a 82,61 con un rialzo del 3,98% alla stessa ora (TradingEconomics), con ' +
+          'un massimo di giornata a 82,91 da una chiusura di 79,45. È la parte della lettura che l’analisi ' +
+          'stessa indicava come quella che cede per prima, ed è ceduta per prima.',
+      },
+      {
+        condition:
+          'Nella direzione opposta: petrolio, Dollar Index e rendimenti che salgono insieme — decennale sopra il 4,70% e DXY sopra l’area 100-100,20. Confermerebbe il peggioramento del quadro geopolitico e toglierebbe comunque all’oro il sostegno su cui questa lettura poggia.',
+        triggered: false,
+        evidence:
+          'I tre salgono davvero insieme, ma nessuno dei due livelli dichiarati è stato raggiunto: il decennale ' +
+          'è al 4,673% con un massimo di giornata a 4,679% — un millesimo sotto la tacca di logoramento e ' +
+          'ventisette centesimi di punto base sotto la soglia — e il Dollar Index è a 99,860 con un massimo a ' +
+          '99,900, dieci centesimi sotto quota 100 (Investing.com, 18:39). La condizione è scritta sui livelli ' +
+          'e sui livelli non è scattata.',
+      },
+    ],
+    what: 'Una condizione su cinque è scattata, ed è quella che l’analisi aveva indicato come la prima a cedere. La lettura sosteneva che il ridimensionamento iraniano sostenesse l’oro per via del rifugio ma lo colpisse più forte per via del greggio, e che la seconda spinta fosse la più grande: in un’ora e sette minuti il Brent è passato dagli 80 e rotti dollari a 82,74, cioè oltre la soglia che l’analisi stessa aveva dichiarato come punto di cedimento. La parte diplomatica ha retto in pieno — nessuna dichiarazione congiunta, transiti non aggiornati, blocco dei porti al suo posto — e la parte sui prezzi ha ceduto esattamente dove era scritto che avrebbe ceduto.',
+    lesson:
+      'È il primo caso in cui una condizione di invalidazione scatta mentre l’analisi che la dichiarava è ancora la più recente in archivio, e mostra a che cosa serva davvero distinguere la soglia che logora da quella che uccide. Le altre quattro condizioni misuravano fatti diplomatici che su un orizzonte di ore non potevano muoversi: la sola verificabile in fretta era il livello del greggio, ed è quella che ha deciso. Quando una lettura poggia su due canali con tempi diversi — il rifugio in ore, i tassi in giorni — la condizione che conta è quella sul canale veloce, e va scritta sapendo che sarà l’unica a poter rispondere prima del controllo successivo.',
+  },
+  {
     slug: 'warsh-apre-a-un-rialzo-e-il-numero-fermo-si-muove',
     checkedAt: '2026-08-06T17:10:00+02:00',
     verdict: 'confermata',

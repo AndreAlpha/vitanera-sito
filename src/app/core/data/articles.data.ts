@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { brentSupera82 } from './articles/il-brent-supera-gli-82-dollari-la-soglia-e-caduta';
 import { teheranColloquiNonRiapertura } from './articles/teheran-i-colloqui-con-oman-non-sono-la-riapertura';
 import { warshApreAUnRialzo } from './articles/warsh-apre-a-un-rialzo-e-il-numero-fermo-si-muove';
 import { sussidiEProduttivita } from './articles/sussidi-e-produttivita-un-punto-base-di-reazione';
@@ -59,6 +60,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  brentSupera82,
   teheranColloquiNonRiapertura,
   warshApreAUnRialzo,
   sussidiEProduttivita,
