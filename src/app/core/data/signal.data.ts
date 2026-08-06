@@ -180,6 +180,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-06T21:55:00+02:00',
+  checkedAt: '2026-08-06T22:50:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -240,14 +241,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dare per strutturale un ostacolo che una deroga americana può togliere in un giorno: è contrattuale, non geologico',
   ],
   confirming: [
-    'Brent 82,80 $ in chiusura, massimo di giornata 83,47',
-    'Copertura di guerra che decade a chi paga il pedaggio',
-    'Rialzo Fed entro dicembre dato all’83,9%',
+    'Brent 83,60 $ a fine seduta, massimo di giornata 83,78',
+    'Decennale 4,681%: tacca di logoramento superata',
+    'Rialzo Fed entro dicembre dato all’84,0%',
   ],
   contradicting: [
-    'Rialzo a settembre sceso al 54,9% da 56,9%',
-    'Oro spot a 4.239,42 $: meno 0,18% con il greggio a +4,22%',
-    'Una deroga alle sanzioni scioglierebbe il nodo in un giorno',
+    'Rialzo a settembre risalito solo al 55,1%',
+    'Oro spot fermo a 4.239,37 $, meno 0,18% in giornata',
+    'Dollar Index 99,832: quota 100 non toccata in tutto il giorno',
   ],
   constraints: [
     {
@@ -311,8 +312,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Premio di rischio sul greggio che non si forma',
-      value: 'Brent 82,37 $',
-      baseline: 'da 79,45 di chiusura ieri, con un massimo di giornata a 83,00',
+      value: 'Brent 83,60 $',
+      baseline: 'da 79,45 di chiusura ieri, con un massimo di giornata a 83,78',
       against:
         'In quattro giorni: una minaccia americana a Teheran, un piano di attacchi contro l’energia iraniana, ' +
         'una smentita, un missile houthi contro una petroliera saudita e una ritorsione iraniana annunciata ' +
@@ -329,8 +330,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 54.9,
-      display: '54,9%',
+      now: 55.1,
+      display: '55,1%',
       marks: [
         {
           at: 62,
@@ -348,8 +349,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 82.8,
-      display: '82,80 $',
+      now: 83.6,
+      display: '83,60 $',
       marks: [
         {
           at: 82,
@@ -361,8 +362,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.675,
-      display: '4,675%',
+      now: 4.681,
+      display: '4,681%',
       marks: [
         {
           at: 4.68,
@@ -380,8 +381,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4239.42,
-      display: '4.239,42 $',
+      now: 4239.37,
+      display: '4.239,37 $',
       marks: [
         {
           at: 4160,
