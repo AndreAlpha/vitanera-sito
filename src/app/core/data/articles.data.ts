@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { warshApreAUnRialzo } from './articles/warsh-apre-a-un-rialzo-e-il-numero-fermo-si-muove';
 import { sussidiEProduttivita } from './articles/sussidi-e-produttivita-un-punto-base-di-reazione';
 import { iranMinacciaImpiantiGolfo } from './articles/iran-minaccia-gli-impianti-del-golfo-il-greggio-scende';
 import { cookProntaAUnRialzo } from './articles/cook-si-dice-pronta-a-un-rialzo-si-muove-solo-il-biennale';
@@ -57,6 +58,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  warshApreAUnRialzo,
   sussidiEProduttivita,
   iranMinacciaImpiantiGolfo,
   cookProntaAUnRialzo,

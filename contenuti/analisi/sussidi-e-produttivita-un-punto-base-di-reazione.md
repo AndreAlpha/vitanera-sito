@@ -21,8 +21,10 @@ prossimoAppuntamento:
   quando: "Domani alle 14:30"
   titolo: "Rapporto occupazionale statunitense"
   dettaglio: "È il dato che questo archivio indica come decisivo da tre pubblicazioni consecutive, e la reazione di oggi è il mercato che dice la stessa cosa. Attese intorno a 80.000 posti complessivi. La domanda utile non sarà se il numero è forte o debole, ma se il prezzo resta dove il numero lo spinge: quello che oggi non si è potuto misurare, perché il prezzo non si è mosso affatto, domani sarà leggibile."
+esito: "confermata"
+controllata: "2026-08-06T16:25:00+02:00"
 sorgente: "src/app/core/data/articles/sussidi-e-produttivita-un-punto-base-di-reazione.ts"
-impronta: "46dd780b6c9b198d"
+impronta: "621a618c744ca5ba"
 ---
 
 # Sussidi e produttività: un punto base di reazione
@@ -138,3 +140,17 @@ Alta sui fatti: sono due rilevazioni pubblicate, con attese dichiarate e revisio
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 I due dati si compensano — meno licenziamenti da una parte, produttività forte e costo del lavoro contenuto dall’altra — e il mercato li ha lasciati passare in attesa del rapporto occupazionale. La forza scende però da media a bassa per una ragione precisa: il Brent è tornato sopra gli 80 dollari, che è la soglia di logoramento fissata ieri mattina, e con il greggio che risale la catena che sosteneva il metallo comincia a lavorare al contrario.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-06T16:25:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e la tesi centrale ha avuto una conferma di un tipo che non era previsto. La lettura diceva che il mercato non stava ignorando i dati ma ne stava aspettando un altro, e che un punto base di movimento non era leggibile in nessuna direzione. Poche ore dopo è bastata un’indiscrezione sul presidente della Fed per muovere il biennale di quattro punti base e la probabilità di un rialzo a settembre di 2,3 punti: il mercato era fermo perché quei dati non erano la sua domanda, non perché fosse immobile.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un rapporto occupazionale di domani nettamente sopra le attese di circa 80.000 posti, o salari orari in riaccelerazione nello stesso rapporto. | no | Non ancora giudicabile: il rapporto esce domani alle 14:30 e al momento del controllo non era pubblicato. Registrata come non scattata perché non lo è, non perché sia stata verificata. |
+| Un Brent sopra gli 82 dollari: sopra quel livello l’effetto inflazionistico del greggio pesa più della domanda di rifugio. | no | Il Brent è a 80,34 dollari, in calo dagli 80,99 del controllo delle 15:30 e dal massimo di giornata a 81,40: si è avvicinato agli 82 senza toccarli, e poi è rientrato. |
+| Il rendimento del decennale sopra il 4,70%, o un Dollar Index sopra l’area 100-100,20. | no | Il decennale è risalito verso il 4,64% dopo la notizia su Warsh, sei punti base sotto la soglia. Nessun recupero del dollaro sopra quota 100 riportato. |
+| XAU/USD sotto i 4.200 dollari. | no | Nessuna discesa: il metallo è vicino a 4.260 dollari, sopra i 4.244 del controllo delle 15:30 e ancora positivo nella giornata. |
+| Prima di tutte queste: un decennale che torna sopra il 4,68% con l’oro ancora sopra i 4.250, che segnalerebbe il logoramento senza aspettare la rottura. | no | Il decennale si è fermato al 4,64%: quattro punti base sotto la tacca di logoramento, nonostante il recupero seguito alla notizia sul presidente della Fed. |

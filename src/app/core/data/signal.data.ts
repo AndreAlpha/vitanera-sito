@@ -179,8 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-06T14:55:00+02:00',
-  checkedAt: '2026-08-06T15:30:00+02:00',
+  updatedAt: '2026-08-06T16:30:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -188,27 +187,27 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'Il primo anello della catena che reggeva il metallo si è girato: il Brent è tornato sopra gli 80 ' +
-        'dollari e il WTI verso i 76, perché la conferma dell’intesa Iran-Oman continua a non arrivare. È la ' +
-        'tacca di logoramento fissata ieri mattina, superata in ventiquattro ore. I due dati statunitensi del ' +
-        'pomeriggio si compensano e il mercato li ha lasciati passare con un punto base di reazione: fino al ' +
-        'rapporto occupazionale non c’è una spinta nuova in nessuna delle due direzioni.',
+        'Il canale dei tassi si è girato una seconda volta in due giorni: dopo il Brent tornato sopra gli 80 ' +
+        'dollari, un’indiscrezione sul presidente della Fed ha portato il biennale verso il 4,22% e il ' +
+        'decennale verso il 4,64%. Il metallo però non ha seguito — è vicino a 4.260 dollari, sopra i 4.244 di ' +
+        'metà pomeriggio — e un prezzo che rifiuta la notizia che dovrebbe muoverlo dice che chi voleva vendere ' +
+        'sulla Fed ha già venduto.',
       invalidation:
         'Una perdita rapida dei 4.200 dollari accompagnata dal decennale sopra il 4,70%; prima ancora, un decennale che torna sopra il 4,68% con l’oro ancora sopra i 4.250, che segnalerebbe il logoramento senza aspettare la rottura.',
     },
     {
       horizon: 'medio',
       direction: 'neutrale-rialzista',
-      strength: 'media',
+      strength: 'bassa',
       regime:
-        'La stessa asimmetria si ripete in due domini diversi: sei prese di posizione restrittive della Fed e ' +
-        'una probabilità di rialzo a settembre ferma al 57%, e adesso una minaccia iraniana esplicita agli ' +
-        'impianti energetici del Golfo con il Brent che scende invece di salire. Quello che viene dichiarato ha ' +
-        'smesso di spostare quello che viene prezzato, e finché è così il metallo resta sostenuto dal canale dei ' +
-        'tassi con un pavimento geopolitico sotto. Il rischio non è la direzione, è la sequenza: un attacco vero ' +
-        'farebbe salire l’oro per rifugio e poi scendere per rendimenti.',
+        'Per una settimana le prese di posizione restrittive della Fed non avevano spostato la probabilità di ' +
+        'un rialzo a settembre. La settima la sposta — da 54,4% a 56,7% — e la differenza è chi parla: non un ' +
+        'presidente regionale né un governatore, ma chi decide l’ordine del giorno. Il quadro non cade, si ' +
+        'restringe: il mercato ignora le preferenze di chi non controlla il calendario e prezza quelle di chi ' +
+        'lo controlla. Il margine sotto la lettura si accorcia, ma il numero resta ancora sotto il 57% da cui ' +
+        'era partito.',
       invalidation:
-        'Un Brent sopra gli 82 dollari, o un attacco effettivo contro gli impianti del Golfo che trasformi la minaccia in un fatto; una probabilità di rialzo a settembre che risale al 67% da cui era partita, con il 62% come primo segno che si sta muovendo; il decennale sopra il 4,70% o un Dollar Index sopra l’area 100-100,20.',
+        'Una probabilità di rialzo a settembre sopra il 62%, che è la tacca di logoramento, e sopra il 67% quella che la uccide; il biennale oltre il 4,25%, il decennale stabilmente sopra l’area 4,65-4,70%, o un Dollar Index che recupera insieme ai rendimenti sopra quota 100-100,20.',
     },
     {
       horizon: 'lungo',
@@ -221,35 +220,35 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'del lavoro per unità prodotta all’1,3%, e finché la prima cresce più del secondo la pressione ' +
         'salariale viene assorbita invece che trasmessa ai prezzi — è la base contabile che manca al timore ' +
         'della Fed di un’inflazione che si radica nei salari. Resta l’unico freno vero: rendimenti reali alti ' +
-        'con un rialzo a settembre ancora dato al 57%.',
+        'con un rialzo a settembre ancora dato poco sotto il 57%.',
       invalidation:
         'Una svolta monetaria confermata dalle riunioni, il ritorno stabile del decennale sopra il 5%, oppure una revisione che riporti la produttività sotto la crescita del costo del lavoro per unità.',
     },
   ],
-  headline: 'Due dati passano con un punto base di reazione, il Brent torna sopra gli 80',
+  headline: 'Warsh apre a un rialzo di settembre, e il numero fermo si muove di 2,3 punti',
   stance:
-    'Sussidi iniziali a 199.000 sotto le attese e produttività all’1,4% contro un costo del lavoro per unità ' +
-    'all’1,3%: due rilevazioni leggibili che si compensano, e il decennale si è mosso da 4,65% a 4,64%. Il ' +
-    'mercato non le sta ignorando, sta aspettando il rapporto occupazionale di domani. Nel frattempo il Brent è ' +
-    'tornato sopra gli 80 dollari — la tacca di logoramento fissata ieri mattina — perché la conferma ' +
-    'dell’intesa Iran-Oman non arriva: la forza della lettura intraday scende, la direzione no.',
+    'Il Financial Times riferisce che il presidente della Fed sarebbe disposto ad alzare i tassi già a settembre ' +
+    'se CPI e PPI restassero alti. È la settima presa di posizione restrittiva in una settimana e la prima dopo ' +
+    'la quale la probabilità di rialzo si muove: da 54,4% a 56,7%, con il biennale verso il 4,22%. La differenza ' +
+    'non è che cosa viene detto ma chi lo dice, ed è la calibrazione che mancava al quadro. L’oro però non ha ' +
+    'seguito: resta vicino a 4.260 dollari, sopra i 4.244 di metà pomeriggio.',
   favours: [
-    'Aspettare il rapporto occupazionale invece di leggere una direzione in un punto base di movimento',
-    'Guardare il Brent fra gli 80 e gli 82 dollari: è la fascia in cui il sostegno dell’oro si logora senza rompersi',
+    'Distinguere le preferenze di chi controlla l’ordine del giorno da quelle di chi lo subisce: solo le prime vengono prezzate',
+    'Tenere il 62% sulla probabilità di rialzo come la tacca che conta, invece di reagire al primo movimento',
   ],
   avoid: [
-    'Leggere i sussidi a 199.000 come un segnale sul dollaro: il dato è arrivato migliore delle attese e il dollaro non lo ha comprato',
-    'Trattare una lettura trimestrale di produttività come una tendenza: è fra le serie più volatili e più riviste del quadro americano',
+    'Trattare l’indiscrezione come una decisione: la Federal Reserve non ha pubblicato nulla di Warsh, e l’ultima comunicazione ufficiale resta il discorso di Cook',
+    'Leggere 2,3 punti come una riprezzatura: il numero è tornato indietro verso il 57% da cui era partito, non oltre',
   ],
   confirming: [
+    'XAU/USD ≈ 4.260 $, non segue la riprezzatura',
     'Produttività +1,4% contro costo del lavoro +1,3%',
-    'Sussidi continuativi in aumento a 1,801 mln',
-    'XAU/USD intorno a 4.244 $',
+    'Rialzo a settembre 56,7%, ancora sotto il 57% di partenza',
   ],
   contradicting: [
-    'Brent a 80,99 $, massimo di giornata 81,40',
-    'Sussidi iniziali 199.000, sotto le attese',
-    'Intesa Iran-Oman: dichiarazione congiunta non ancora emessa',
+    'Biennale verso il 4,22%, circa +4 punti base',
+    'Decennale risalito verso il 4,64%',
+    'Brent 80,34 $: intesa su Hormuz non definitiva',
   ],
   constraints: [
     {
@@ -270,16 +269,16 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       value: 'ADP 44.000',
       baseline: 'attese 70.000, con JOLTS a 7,359 milioni contro 7,440',
       against:
-        'Sei prese di posizione restrittive in pochi giorni: i tre membri del FOMC che chiedevano un rialzo ' +
-        'immediato, poi Schmid e Kashkari, e ora la governatrice Cook, che nell’ultima riunione aveva votato ' +
-        'per fermarsi e adesso si dice pronta a votare un rialzo. È la preferenza dichiarata più credibile ' +
-        'possibile — un voto che si sposta, non un discorso — e non ha spostato di un punto quello che il ' +
-        'mercato prezza che saranno costretti a fare.',
+        'Sette prese di posizione restrittive in una settimana: i tre membri del FOMC che chiedevano un rialzo ' +
+        'immediato, poi Schmid e Kashkari, poi la governatrice Cook, e ora il presidente Warsh secondo una ' +
+        'ricostruzione del Financial Times. Le prime sei non avevano spostato di un punto quello che il ' +
+        'mercato prezza; la settima lo ha spostato di 2,3 punti, e la differenza è che il presidente decide ' +
+        'l’ordine del giorno. La preferenza di chi controlla il calendario è essa stessa un vincolo.',
       watch:
-        'La probabilità di un rialzo a settembre, ferma al 57% e sotto il 67% di qualche giorno fa, e il ' +
-        'rapporto occupazionale di venerdì: nettamente sopra le attese di circa 80.000 posti allenterebbe il ' +
-        'vincolo.',
-      state: 'fermo',
+        'La probabilità di un rialzo a settembre, risalita a 56,7% da 54,4% ma ancora sotto il 57% di quattro ' +
+        'giorni fa, e il rapporto occupazionale di domani: nettamente sopra le attese di circa 80.000 posti ' +
+        'allenterebbe il vincolo, nettamente sotto lo rimetterebbe al suo posto.',
+      state: 'si-allenta',
     },
     {
       label: 'Emissioni del Tesoro a lunga scadenza',
@@ -312,14 +311,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 57.4,
-      display: '57,4%',
+      now: 56.7,
+      display: '56,7%',
       marks: [
         {
           at: 62,
           display: '62%',
           kind: 'logora',
-          note: 'metà strada verso il livello di partenza: il primo segno che le parole dei falchi hanno cominciato a spostare il numero',
+          note: 'il primo segno che le parole dei falchi spostano il numero oltre il punto di partenza, e non solo verso di esso',
         },
         {
           at: 67,
@@ -331,14 +330,27 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 80.99,
-      display: '80,99 $',
+      now: 80.34,
+      display: '80,34 $',
       marks: [
         {
           at: 82,
           display: '82 $',
           kind: 'invalida',
           note: 'sopra questo livello l’effetto inflazionistico torna a pesare più della domanda di rifugio',
+        },
+      ],
+    },
+    {
+      label: 'Treasury a 2 anni',
+      now: 4.22,
+      display: '≈ 4,22%',
+      marks: [
+        {
+          at: 4.25,
+          display: '4,25%',
+          kind: 'invalida',
+          note: 'è la scadenza in cui una decisione di settembre si prezza per prima: oltre qui la lettura sui giorni decade',
         },
       ],
     },
@@ -363,8 +375,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4244,
-      display: '≈ 4.244 $',
+      now: 4260,
+      display: '≈ 4.260 $',
       marks: [
         {
           at: 4160,
@@ -382,9 +394,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'warsh-apre-a-un-rialzo-e-il-numero-fermo-si-muove',
     'sussidi-e-produttivita-un-punto-base-di-reazione',
     'iran-minaccia-gli-impianti-del-golfo-il-greggio-scende',
-    'cook-si-dice-pronta-a-un-rialzo-si-muove-solo-il-biennale',
   ],
 };
 
