@@ -150,6 +150,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     related: ['Vincolo materiale', 'Stretto di Hormuz', 'Premio di rischio geopolitico'],
   },
   {
+    term: 'Copertura contro il rischio di guerra',
+    letter: 'C',
+    definition:
+      'Assicurazione che copre una nave e il suo carico per danni da conflitti, mine, attacchi e sequestri. Nelle aree a rischio è la condizione senza la quale un armatore non manda una nave, e le sue clausole vengono riscritte in fretta quando cambia la situazione.',
+    why: 'È il punto in cui la geopolitica diventa un vincolo materiale sul traffico e quindi sul prezzo del greggio. Una clausola che toglie la copertura a chi paga un pedaggio può bloccare una rotta più efficacemente di una dichiarazione politica, e nessun comunicato governativo la rimuove.',
+    related: ['Stretto di Hormuz', 'Vincolo materiale', 'Premio di rischio geopolitico'],
+  },
+  {
     term: 'Brent',
     letter: 'B',
     definition:

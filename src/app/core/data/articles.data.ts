@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { hormuzPedaggioAssicurazione } from './articles/hormuz-il-pedaggio-che-nessuno-puo-pagare';
 import { iranBozzaHormuz } from './articles/iran-pubblica-la-bozza-su-hormuz-il-rialzo-ha-un-nome';
 import { brentSupera82 } from './articles/il-brent-supera-gli-82-dollari-la-soglia-e-caduta';
 import { teheranColloquiNonRiapertura } from './articles/teheran-i-colloqui-con-oman-non-sono-la-riapertura';
@@ -61,6 +62,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  hormuzPedaggioAssicurazione,
   iranBozzaHormuz,
   brentSupera82,
   teheranColloquiNonRiapertura,

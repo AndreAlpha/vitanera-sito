@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-06T19:40:00+02:00',
+  updatedAt: '2026-08-06T21:55:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -197,15 +197,15 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     {
       horizon: 'medio',
       direction: 'neutrale-ribassista',
-      strength: 'bassa',
+      strength: 'media',
       regime:
-        'Il canale che pesa resta quello del greggio: sopra gli 82 dollari il Brent alimenta inflazione attesa e ' +
-        'rendimenti più di quanto alimenti la domanda di rifugio. La direzione non cambia, la forza scende da ' +
-        'media a bassa perché adesso si conosce l’innesco di quel movimento — una bozza parlamentare iraniana ' +
-        'pubblicata durante un negoziato — ed è il tipo di documento che dice poco su come andrà a finire. Il ' +
-        'metro materiale, il conteggio dei transiti, è ancora fermo a otto navi.',
+        'Il canale che pesa resta quello del greggio, ma adesso ha una causa che non si scioglie con una ' +
+        'dichiarazione: l’intesa su Hormuz non è praticabile perché l’ente che incasserebbe le commissioni è ' +
+        'sotto sanzioni e una clausola assicurativa toglie la copertura di guerra a chi le paga. Finché il ' +
+        'transito non si normalizza il greggio resta alto, e da lì passano inflazione attesa e rendimenti. La ' +
+        'forza torna da bassa a media perché la base non è più una bozza parlamentare ma un vincolo contrattuale.',
       invalidation:
-        'Un Brent che torna sotto gli 80 dollari, che toglie la premessa; l’approvazione o il ritiro della bozza iraniana, che la trasformerebbe in norma o in nulla; un rapporto occupazionale nettamente sotto le attese di circa 80.000 posti; oppure un conteggio dei transiti sopra le otto navi. Prima di tutte queste, un oro che risale sopra i 4.320 mentre il Brent resta sopra gli 82.',
+        'Un Brent che torna sotto gli 80 dollari, che toglie la premessa; una deroga statunitense alle sanzioni sull’Autorità dello Stretto o il ritiro della clausola assicurativa, che scioglierebbero il nodo operativo; un conteggio dei transiti sopra le otto navi; oppure un rapporto occupazionale nettamente sotto le attese di circa 80.000 posti. Prima di tutte queste, un oro spot che risale sopra i 4.300 mentre il Brent resta sopra gli 82.',
     },
     {
       horizon: 'lungo',
@@ -223,34 +223,49 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, il ritorno stabile del decennale sopra il 5%, oppure una revisione che riporti la produttività sotto la crescita del costo del lavoro per unità.',
     },
   ],
-  headline: 'La bozza iraniana su Hormuz dà un nome al rialzo del greggio',
+  headline: 'A Hormuz il pedaggio non è pagabile: sanzioni da una parte, assicurazioni dall’altra',
   stance:
-    'L’agenzia di stato Fars ha pubblicato la bozza iniziale del piano iraniano per la gestione dello Stretto: ' +
-    'divieto di transito alle navi statunitensi e israeliane, multe fino al 20% del valore del carico, ' +
-    'commissioni di servizio in rial. È l’innesco del balzo che ha portato il Brent oltre gli 82 dollari, la ' +
-    'soglia dichiarata qui il 5 agosto, dopo una settimana di ribassi costruiti sulle dichiarazioni americane. ' +
-    'Le commissioni contraddicono la ricostruzione dell’intesa Iran-Oman, che escludeva pedaggi. Il testo però ' +
-    'è una bozza in esame, arriva dal Parlamento mentre a trattare è l’esecutivo, e il conteggio dei transiti è ' +
-    'ancora a otto navi.',
+    'Quattro fonti dell’industria marittima dicono a Reuters che l’intesa in discussione non è praticabile, e ' +
+    'per ragioni operative prima che politiche: l’Autorità dello Stretto del Golfo Persico, costituita ' +
+    'dall’Iran a maggio, è sotto sanzioni statunitensi, e da fine luglio una clausola del Lloyd’s Market ' +
+    'Association fa decadere la copertura di guerra alle navi che pagano pedaggi. Sulle cifre le parti sono ' +
+    'lontane — Iran 5-7% del carico, Oman circa 3%, Washington nessun pedaggio. È la prima spiegazione ' +
+    'meccanica del conteggio fermo a otto navi, e distingue un accordo annunciato da un accordo utilizzabile.',
   favours: [
-    'Applicare all’Iran la stessa disciplina applicata per cinque giorni agli annunci americani: un documento non è una nave che passa, né una che non passa',
-    'Guardare quale delle due carte sui costi di transito verrà smentita: è il punto in cui le due versioni sono incompatibili',
+    'Separare l’accordo annunciato dall’accordo utilizzabile: solo il secondo sposta il conteggio dei transiti, e richiede due atti tecnici con una firma sopra',
+    'Trattare una clausola del mercato assicurativo come un vincolo materiale al pari di una mina: non si scioglie con un comunicato',
   ],
   avoid: [
-    'Leggere una bozza massimalista pubblicata durante un negoziato come la misura di quanto sia lontano l’accordo: serve anche a rendere ratificabile un accordo più modesto',
-    'Attribuire al solo testo iraniano il movimento di oro, dollaro e biennale: la settimana era già stata mossa in senso opposto dalle dichiarazioni di Washington',
+    'Leggere un annuncio diplomatico su Hormuz come il ritorno del traffico: senza deroga alle sanzioni e senza copertura, le navi non si muovono comunque',
+    'Dare per strutturale un ostacolo che una deroga americana può togliere in un giorno: è contrattuale, non geologico',
   ],
   confirming: [
-    'Brent 82,37 $: soglia superata, massimo 83,00',
-    'Decennale 4,675%, a mezzo centesimo dalla tacca',
+    'Brent 82,80 $ in chiusura, massimo di giornata 83,47',
+    'Copertura di guerra che decade a chi paga il pedaggio',
     'Rialzo Fed entro dicembre dato all’83,9%',
   ],
   contradicting: [
     'Rialzo a settembre sceso al 54,9% da 56,9%',
-    'XAU/USD spot piatto a 4.246,96, chiusura 4.247,02',
-    'Bozza iraniana in esame, e transiti ancora a otto navi',
+    'Oro spot a 4.239,42 $: meno 0,18% con il greggio a +4,22%',
+    'Una deroga alle sanzioni scioglierebbe il nodo in un giorno',
   ],
   constraints: [
+    {
+      label: 'Transito assicurabile nello Stretto di Hormuz',
+      value: 'copertura che decade',
+      baseline: 'clausola del Lloyd’s Market Association, fine luglio',
+      against:
+        'Un’intesa Iran-Oman descritta come vicina da Washington per una settimana, e un pacchetto di ' +
+        'commissioni su cui le tre parti restano lontanissime: l’Iran chiede il 5-7% del valore del carico, ' +
+        'l’Oman discute di circa il 3%, gli Stati Uniti non ne vogliono nessuna. A luglio il consiglio ' +
+        'dell’Organizzazione marittima internazionale aveva chiesto che il passaggio resti libero da pedaggi.',
+      watch:
+        'Due atti tecnici, entrambi con una firma sopra: una deroga statunitense alle sanzioni sull’Autorità ' +
+        'dello Stretto del Golfo Persico, e il ritiro o la modifica della clausola che fa decadere la copertura ' +
+        'contro il rischio di guerra a chi paga. Finché restano dove sono, un accordo annunciato non è un ' +
+        'accordo utilizzabile e le navi non si muovono.',
+      state: 'fermo',
+    },
     {
       label: 'Transiti nello Stretto di Hormuz',
       value: 'otto navi',
@@ -333,8 +348,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 82.37,
-      display: '82,37 $',
+      now: 82.8,
+      display: '82,80 $',
       marks: [
         {
           at: 82,
@@ -365,8 +380,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4246.96,
-      display: '4.246,96 $',
+      now: 4239.42,
+      display: '4.239,42 $',
       marks: [
         {
           at: 4160,
@@ -384,8 +399,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'hormuz-il-pedaggio-che-nessuno-puo-pagare',
     'iran-pubblica-la-bozza-su-hormuz-il-rialzo-ha-un-nome',
-    'il-brent-supera-gli-82-dollari-la-soglia-e-caduta',
     'warsh-apre-a-un-rialzo-e-il-numero-fermo-si-muove',
   ],
 };

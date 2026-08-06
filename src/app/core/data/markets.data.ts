@@ -17,10 +17,19 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'ASSICURAZIONI',
+    name: 'Copertura di guerra sul transito a Hormuz',
+    value: 'decade se si paga',
+    change: 'clausola del Lloyd’s Market Association, fine luglio',
+    tone: 'bear',
+    icon: 'shield',
+    note: 'È il vincolo che spiega meccanicamente le otto navi. L’ente iraniano che incasserebbe le commissioni — l’Autorità dello Stretto del Golfo Persico, costituita a maggio — è sotto sanzioni statunitensi, e la clausola introdotta a fine luglio fa decadere la copertura contro il rischio di guerra alle navi che pagano pedaggi o oneri di transito. Una fonte assicurativa citata da Reuters lo chiama un comma 22: se paghi non sei assicurato, se non paghi non passi.',
+  },
+  {
     symbol: 'XAU/USD',
     name: 'Oro spot',
-    value: '4.246,96 $',
-    change: 'piatto, da una chiusura di 4.247,02',
+    value: '4.239,42 $',
+    change: 'meno 0,18%, da una chiusura di 4.247,02',
     tone: 'warn',
     icon: 'coin',
     note: 'Quotazione spot delle 20:14 del 6 agosto, non in tempo reale. Attenzione alla serie: le analisi di oggi citano il contratto future, che scambia una sessantina di dollari sopra lo spot per effetto del riporto — 4.305,90 contro 4.246,96 alla stessa ora. Le soglie di questa scheda sono sullo spot, che è il metro dichiarato. Con l’oro fermo mentre petrolio e rendimenti salgono, la distanza dall’area 4.200 che logora la lettura è di 47 dollari, non di un centinaio.',
@@ -163,8 +172,8 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: '82,37 $',
-    change: 'massimo 83,00, da una chiusura di 79,45',
+    value: '82,80 $',
+    change: 'più 4,22%, massimo 83,47, da una chiusura di 79,45',
     tone: 'bear',
     icon: 'arrow-up',
     note: 'La soglia di invalidazione dichiarata il 5 agosto è stata superata: sopra gli 82 dollari l’effetto inflazionistico pesa sull’oro più della domanda di rifugio. L’innesco ha un nome: la bozza iraniana sulla gestione dello Stretto pubblicata dall’agenzia Fars, dopo una settimana in cui il greggio era sceso di circa l’8% sulle dichiarazioni americane che davano l’accordo per vicino. Il premio si paga di nuovo, ma poggia su un testo non approvato.',
