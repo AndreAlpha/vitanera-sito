@@ -179,8 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-07T18:20:00+02:00',
-  checkedAt: '2026-08-07T19:20:00+02:00',
+  updatedAt: '2026-08-07T21:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -218,49 +217,49 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     {
       horizon: 'lungo',
       direction: 'neutrale-rialzista',
-      strength: 'bassa',
+      strength: 'media',
       regime:
-        'Le quattro gambe di prima reggono — acquisti delle banche centrali, aste del Tesoro che non crescono, ' +
-        'produttività all’1,4% contro un costo del lavoro per unità all’1,3%, e i prezzi minimi sul polisilicio ' +
-        'dal 4 dicembre — e adesso c’è il numero che le tiene insieme. L’indagine di luglio della Federal ' +
-        'Reserve di New York dà l’inflazione attesa a un anno al 3,6% dal 3,7%, ma a tre anni ferma al 3,3% e a ' +
-        'cinque al 3,0%, dopo un mese in cui erano salite. Aspettative appiccicose sopra l’obiettivo tagliano ' +
-        'in due direzioni sullo stesso metallo: sostengono la domanda di copertura e insieme tengono in vita il ' +
-        'caso per tassi alti, che è il costo di tenerlo. In questo regime la seconda metà pesa più della prima, ' +
-        'ed è la ragione per cui la lettura di fondo non passa a rialzista dietro un dato debole sul lavoro.',
+        'La gamba della domanda strutturale ha smesso di essere un’affermazione ed è tornata a essere un ' +
+        'numero: la banca centrale cinese ha aggiunto 640.000 once a luglio, quasi venti tonnellate, il ' +
+        'ventunesimo mese di fila e il maggior acquisto da ottobre 2023, con il ritmo che accelera da marzo. ' +
+        'Attorno, tre atti americani nella stessa giornata allargano la portata dello stesso strumento — dazi ' +
+        'secondari votati dal Senato, sanzioni sui binari di pagamento iraniani, e il passaggio procedurale che ' +
+        'la Corte Suprema aveva indicato per rimuovere una governatrice della Fed. Contro tutto questo restano ' +
+        'le aspettative di inflazione ferme al 3,3% e al 3,0% su tre e cinque anni, che tengono in vita il caso ' +
+        'per tassi alti: è la ragione per cui la lettura non passa a rialzista.',
       invalidation:
-        'Aspettative a tre e cinque anni che scendono nell’indagine di agosto, in uscita all’inizio di settembre; una svolta monetaria confermata dalle riunioni; il ritorno stabile del decennale sopra il 5%; una revisione che riporti la produttività sotto la crescita del costo del lavoro per unità; oppure la revoca dei dazi sul polisilicio prima del 4 dicembre.',
+        'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; oppure la revoca dei dazi sul polisilicio prima del 4 dicembre.',
     },
   ],
-  headline: 'A un anno le attese scendono, a cinque anni no',
+  headline: 'Venti tonnellate a luglio, ventunesimo mese di fila',
   stance:
-    'L’indagine di luglio della Federal Reserve di New York dà l’inflazione attesa a un anno al 3,6% dal 3,7%, ' +
-    'ma a tre anni resta 3,3% e a cinque 3,0%, entrambe invariate dopo un mese in cui erano salite. È la parte ' +
-    'ferma a contare: nessuno allenta la politica monetaria mentre il pubblico dichiara di non credere ' +
-    'all’obiettivo. Nella stessa indagine le attese sui prezzi della benzina a un anno restano elevate, e una ' +
-    'ragione c’è — al terminale del Caspian Pipeline Consortium sul Mar Nero quattro petroliere sono state ' +
-    'colpite da droni in quattro giorni e i caricamenti sono di nuovo fermi dal 5 agosto. Sul giorno l’oro ' +
-    'resta forte a 4.346,88; sui mesi il quadro è più diviso di quanto la giornata suggerisca.',
+    'I dati ufficiali cinesi portano le riserve auree a 76,08 milioni di once da 75,44: 640.000 once comprate ' +
+    'in luglio, quasi venti tonnellate, il maggior acquisto da ottobre 2023 e il ventunesimo mese consecutivo, ' +
+    'con il ritmo che accelera da marzo. Nella stessa giornata il Senato approva 86 a 11 dazi fino al 100% sui ' +
+    'maggiori acquirenti di energia russa, il Tesoro sanziona due borse di criptovalute usate da entità ' +
+    'iraniane, e la Casa Bianca compie il passaggio che la Corte Suprema aveva indicato per rimuovere una ' +
+    'governatrice della Fed. Gli acquisti di luglio non sono una reazione a tutto questo — li precedono — ma ' +
+    'sono tre ragioni in più perché la serie continui.',
   favours: [
-    'Separare l’aspettativa a un anno, che segue la benzina e l’inflazione appena passata, da quella a cinque, che dice se il pubblico crede all’obiettivo dichiarato',
-    'Distinguere chi annuncia un’intenzione da chi dichiara un costo che sta già pagando: ADNOC sulle proprie navi, il Kazakistan sui propri caricamenti',
-    'Guardare gli 84 dollari di Brent come una soglia a due facce: sotto sostengono il metallo, sopra ricominciano ad alimentare i rendimenti contro di lui',
+    'Guardare il ritmo degli acquisti e non solo il totale: 160.000 once a marzo e 640.000 a luglio dicono più dei ventuno mesi consecutivi',
+    'Tenere separate le due scale: sulla giornata comanda il rapporto occupazionale, su settimane e mesi comanda chi compra e a quali condizioni',
+    'Distinguere un provvedimento votato da una camera da una legge: la differenza è la Camera dei rappresentanti, e non è una formalità',
   ],
   avoid: [
-    'Leggere ogni numero della giornata come conferma della conclusione del mattino: l’indagine di oggi ha una parte favorevole e due che non lo sono',
-    'Trarre una tendenza da una rilevazione mensile ferma: l’indagine di agosto esce fra un mese ed è la prima condizione dichiarata',
+    'Leggere gli acquisti di luglio come una reazione ai voti di oggi: li precedono di settimane, e chiamarla causa sarebbe raccontare una coincidenza di calendario',
+    'Dare per scontato che dazi secondari sull’energia aiutino l’oro: il loro canale principale è il prezzo del greggio, che sopra gli 84 dollari lavora contro il metallo',
   ],
   confirming: [
-    'Inflazione attesa a un anno al 3,6% da 3,7%: il primo calo dopo un mese di rialzo',
-    'Oro spot 4.336,51 $ alle 19:21, più 2,26% sulla giornata',
+    'Riserve auree cinesi a 76,08 mln di once da 75,44: quasi venti tonnellate in luglio',
+    'Ventunesimo mese consecutivo di acquisti, con il ritmo in aumento da marzo',
+    'Oro spot 4.341,88 $ alle 21:06, più 2,39% sulla giornata',
     'Rialzo Fed a settembre al 43,7% e Dollar Index 99,435, entrambi sotto le soglie',
-    'Caricamenti al terminale CPC fermi dal 5 agosto: circa 730.000 barili al giorno',
   ],
   contradicting: [
-    'Nessun nuovo massimo dalle 15:00: la punta resta 4.371,89 e l’oro è 35 dollari sotto',
+    'Il provvedimento sulle sanzioni ha passato il solo Senato: non è legge',
+    'Nessun nuovo massimo dalle 15:00: la punta resta 4.371,89',
     'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
     'Il decennale a 4,655% è a un punto base e mezzo dalla chiusura di ieri',
-    'Il biennale a 4,208% ha restituito più di metà del calo dal minimo di 4,158%',
     'L’indice dei prezzi di mercoledì è atteso al 3,4% annuo',
   ],
   constraints: [
@@ -401,8 +400,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4336.51,
-      display: '4.336,51 $',
+      now: 4341.88,
+      display: '4.341,88 $',
       marks: [
         {
           at: 4300,
@@ -414,8 +413,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'washington-allarga-la-mano-pechino-compra-venti-tonnellate',
     'le-aspettative-a-un-anno-scendono-quelle-a-cinque-anni-no',
-    'quindici-navi-colpite-e-il-greggio-riparte',
     'meno-23-mila-posti-e-il-rialzo-di-settembre-passa-in-minoranza',
   ],
 };

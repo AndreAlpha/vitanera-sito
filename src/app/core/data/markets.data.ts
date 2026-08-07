@@ -17,6 +17,24 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'RISERVE CN',
+    name: 'Riserve auree della banca centrale cinese, fine luglio',
+    value: '76,08 mln oz',
+    change: 'da 75,44: più 640.000 once, quasi venti tonnellate',
+    tone: 'gold',
+    icon: 'archive',
+    note: 'Ventunesimo mese consecutivo di acquisti e maggior incremento mensile da ottobre 2023, quando furono 740.000 once. Il dato che conta più del totale è il ritmo: a marzo la banca centrale aveva aggiunto 160.000 once, e da allora la cifra è cresciuta ogni mese fino a quadruplicare. Il valore delle riserve sale a 306,35 miliardi di dollari da 303,72. Sono acquisti di luglio, quindi precedono i fatti del 7 agosto e non ne sono una reazione: quello che gli eventi di oggi cambiano è la probabilità che la serie continui, non la sua causa.',
+  },
+  {
+    symbol: 'SANZIONI',
+    name: 'Provvedimento del Senato su Russia e Iran',
+    value: '86 a 11',
+    change: 'approvato dal solo Senato, deve passare alla Camera',
+    tone: 'warn',
+    icon: 'scale',
+    note: 'Il provvedimento intitolato al senatore Lindsey Graham, morto di recente, autorizza dazi fino al 100% sulle importazioni dai cinque maggiori acquirenti di petrolio e gas russi e fino al 500% sulle merci russe che entrano negli Stati Uniti; estende inoltre l’Iran Sanctions Act del 1996 e colpisce la flotta ombra russa. Era fermo da tempo ed è passato quasi all’unanimità. Per l’oro taglia in due direzioni: aumenta il rischio geopolitico e commerciale, ma il suo canale principale sarebbe il prezzo dell’energia, che sopra gli 84 dollari di Brent lavora contro il metallo attraverso i rendimenti.',
+  },
+  {
     symbol: 'ATTESE',
     name: 'Inflazione attesa dalle famiglie, indagine New York Fed di luglio',
     value: '3,6% · 3,3% · 3,0%',
@@ -73,11 +91,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'XAU/USD',
     name: 'Oro spot',
-    value: '4.336,51 $',
-    change: 'più 2,26%, massimo 4.371,89, da 4.240,69 di chiusura',
+    value: '4.341,88 $',
+    change: 'più 2,39%, massimo 4.371,89, da 4.240,69 di chiusura',
     tone: 'bull',
     icon: 'coin',
-    note: 'Quotazione spot delle 19:21 del 7 agosto, non in tempo reale. Il metallo tiene la maggior parte del movimento del rapporto occupazionale, ma il massimo di giornata è ancora quello delle 15:00: in quattro ore non è stato più avvicinato, e da lì il prezzo è sceso di trentacinque dollari. Attenzione alla serie, perché oggi è la terza volta che confonde: il contratto future scambia una sessantina di dollari sopra lo spot, quindi un future a 4.414 corrisponde a uno spot intorno a 4.354, e i «4.400» che si leggono in giro non sono un livello che questa scheda abbia mai visto. Tutte le soglie qui sono sullo spot.',
+    note: 'Quotazione spot delle 21:06 del 7 agosto, non in tempo reale. Il metallo chiude la settimana tenendo la maggior parte del movimento del rapporto occupazionale, ma il massimo di giornata resta quello delle 15:00: in sei ore non è stato più avvicinato. Attenzione alla serie, perché oggi ha confuso più volte: il contratto future scambia una sessantina di dollari sopra lo spot, quindi un future a 4.414 corrisponde a uno spot intorno a 4.354, e i «4.400» che si leggono in giro non sono un livello che questa scheda abbia mai visto. Tutte le soglie qui sono sullo spot.',
   },
   {
     symbol: 'SUSSIDI',

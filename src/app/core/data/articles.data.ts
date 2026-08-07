@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { washingtonPechinoVentiTonnellate } from './articles/washington-allarga-la-mano-pechino-compra-venti-tonnellate';
 import { aspettativeUnAnnoCinqueAnni } from './articles/le-aspettative-a-un-anno-scendono-quelle-a-cinque-anni-no';
 import { adnocQuindiciNavi } from './articles/quindici-navi-colpite-e-il-greggio-riparte';
 import { nfpLuglioRialzoInMinoranza } from './articles/meno-23-mila-posti-e-il-rialzo-di-settembre-passa-in-minoranza';
@@ -68,6 +69,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  washingtonPechinoVentiTonnellate,
   aspettativeUnAnnoCinqueAnni,
   adnocQuindiciNavi,
   nfpLuglioRialzoInMinoranza,
