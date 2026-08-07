@@ -561,6 +561,17 @@ export const CATEGORIES: readonly Category[] = [
       'Rilevazione trimestrale su quanto viene prodotto per ora lavorata e su quanto costa quell’ora a parità di prodotto. Non è nel calendario di questo sito, ma è il canale per cui i salari possono salire senza finire nei prezzi: quando la produttività cresce più del costo del lavoro per unità, la pressione salariale viene assorbita invece che trasmessa, e viene a mancare la ragione principale per cui una banca centrale alza i tassi.',
   },
   {
+    slug: 'aspettative-di-inflazione',
+    name: 'Aspettative di inflazione delle famiglie',
+    short: 'Aspettative',
+    family: 'prezzi',
+    series: false,
+    icon: 'gauge',
+    tagline: 'Quanta inflazione la gente si aspetta, non quanta ce n’è',
+    description:
+      'Indagini mensili su quanta inflazione le famiglie si aspettano fra uno, tre e cinque anni — la principale è la Survey of Consumer Expectations della Federal Reserve di New York, che non è nel calendario di questo sito. Conta per l’oro perché una banca centrale non combatte l’inflazione passata ma quella attesa: finché le aspettative a tre e cinque anni restano lontane dall’obiettivo, il caso per tassi alti sopravvive a qualunque singolo dato debole, e con esso il costo di tenere un’attività che non paga cedole.',
+  },
+  {
     slug: 'fiducia-consumatori',
     name: 'Rapporto sulla fiducia dei consumatori',
     short: 'Fiducia',

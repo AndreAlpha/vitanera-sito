@@ -84,7 +84,8 @@ export type EditorialCategorySlug =
   | 'ism'
   | 'jolts'
   | 'adp'
-  | 'produttivita';
+  | 'produttivita'
+  | 'aspettative-di-inflazione';
 
 /**
  * Categorie dell'archivio: un'analisi può appartenere a più categorie

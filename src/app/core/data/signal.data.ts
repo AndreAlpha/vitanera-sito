@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-07T17:25:00+02:00',
+  updatedAt: '2026-08-07T18:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,12 +187,12 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'rialzista',
       strength: 'media',
       regime:
-        'I due canali hanno smesso di dividersi e adesso spingono insieme, ed è una notizia peggiore di quanto ' +
-        'sembri. L’oro è a 4.354,98 dollari, più 2,70%, ma il Brent è risalito a 83,33 con più 1,02% dopo essere ' +
-        'stato a 81,66 e meno 1,01% alle 14:57: la divergenza che alle 15:05 dimostrava che a muovere il metallo ' +
-        'fossero i tassi non c’è più. Restano due sostegni parziali al posto di uno solido — il biennale a ' +
-        '4,202% ha restituito metà del calo, e il premio di rischio è quello che in questa settimana si è ' +
-        'formato e sgonfiato tre volte.',
+        'L’oro tiene la maggior parte del movimento del dato — 4.346,88 dollari, più 2,50%, contro un massimo ' +
+        'di 4.371,89 — ma tutto il resto lo sta restituendo. Il Brent è a 83,65 con più 1,41%, cioè a ' +
+        'trentacinque centesimi dalla tacca degli 84 oltre la quale ricomincia a spingere i rendimenti contro ' +
+        'il metallo; il biennale è risalito a 4,208% dal minimo di 4,158%; il decennale a 4,655% è a un punto ' +
+        'base e mezzo dalla chiusura di ieri. La direzione regge perché nessuna soglia dichiarata è stata ' +
+        'toccata, non perché il quadro sia migliorato.',
       invalidation:
         'Un Brent che rientra sotto gli 82 dollari entro la seduta, che direbbe che la dichiarazione di ADNOC è stata letta come rumore; un oro spot che rientra sotto i 4.300 dollari; oppure una probabilità di rialzo a settembre che risale sopra il 50%.',
     },
@@ -216,45 +216,47 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'Le tre gambe di prima reggono: acquisti delle banche centrali sotto il prezzo, aste del Tesoro che non ' +
-        'crescono per diversi trimestri, e una produttività statunitense all’1,4% annualizzato contro un costo ' +
-        'del lavoro per unità all’1,3%, che assorbe la pressione salariale invece di trasmetterla. Se ne ' +
-        'aggiunge una quarta, ed è di segno diverso: i prezzi minimi all’importazione sul polisilicio, in vigore ' +
-        'dal 4 dicembre, sono un’inflazione decisa per atto e non dalla domanda, che la produttività non può ' +
-        'assorbire perché non passa dai salari. Il freno resta lo stesso — rendimenti reali alti — ma ora ' +
-        'dipende da come la Fed tratterà un rincaro che non ha creato lei.',
+        'Le quattro gambe di prima reggono — acquisti delle banche centrali, aste del Tesoro che non crescono, ' +
+        'produttività all’1,4% contro un costo del lavoro per unità all’1,3%, e i prezzi minimi sul polisilicio ' +
+        'dal 4 dicembre — e adesso c’è il numero che le tiene insieme. L’indagine di luglio della Federal ' +
+        'Reserve di New York dà l’inflazione attesa a un anno al 3,6% dal 3,7%, ma a tre anni ferma al 3,3% e a ' +
+        'cinque al 3,0%, dopo un mese in cui erano salite. Aspettative appiccicose sopra l’obiettivo tagliano ' +
+        'in due direzioni sullo stesso metallo: sostengono la domanda di copertura e insieme tengono in vita il ' +
+        'caso per tassi alti, che è il costo di tenerlo. In questo regime la seconda metà pesa più della prima, ' +
+        'ed è la ragione per cui la lettura di fondo non passa a rialzista dietro un dato debole sul lavoro.',
       invalidation:
-        'Una svolta monetaria confermata dalle riunioni, il ritorno stabile del decennale sopra il 5%, una revisione che riporti la produttività sotto la crescita del costo del lavoro per unità, oppure la revoca dei dazi sul polisilicio prima del 4 dicembre — o prezzi di mercato che restano sopra i pavimenti fissati, nel qual caso il provvedimento non vincola nulla.',
+        'Aspettative a tre e cinque anni che scendono nell’indagine di agosto, in uscita all’inizio di settembre; una svolta monetaria confermata dalle riunioni; il ritorno stabile del decennale sopra il 5%; una revisione che riporti la produttività sotto la crescita del costo del lavoro per unità; oppure la revoca dei dazi sul polisilicio prima del 4 dicembre.',
     },
   ],
-  headline: 'ADNOC: quindici navi colpite, e il greggio gira',
+  headline: 'A un anno le attese scendono, a cinque anni no',
   stance:
-    'ADNOC dichiara che quindici sue navi sono state colpite da missili o droni nello Stretto di Hormuz ' +
-    'dall’inizio del conflitto, tre soltanto questa settimana, con un morto e venti feriti, e che gli attacchi ' +
-    'stanno avendo un impatto significativo sulle operazioni. Il Brent è passato da meno 1,01% a più 1,02% in ' +
-    'poco più di due ore, a 83,33 dollari. Per sei giorni il premio di rischio non si era formato contro sei ' +
-    'annunci diplomatici: si forma adesso, contro un’azienda che dichiara quanto le sta costando. L’oro resta ' +
-    'a 4.354,98, più 2,70%, ma la divergenza che alle 15:05 spiegava quel rialzo si è chiusa.',
+    'L’indagine di luglio della Federal Reserve di New York dà l’inflazione attesa a un anno al 3,6% dal 3,7%, ' +
+    'ma a tre anni resta 3,3% e a cinque 3,0%, entrambe invariate dopo un mese in cui erano salite. È la parte ' +
+    'ferma a contare: nessuno allenta la politica monetaria mentre il pubblico dichiara di non credere ' +
+    'all’obiettivo. Nella stessa indagine le attese sui prezzi della benzina a un anno restano elevate, e una ' +
+    'ragione c’è — al terminale del Caspian Pipeline Consortium sul Mar Nero quattro petroliere sono state ' +
+    'colpite da droni in quattro giorni e i caricamenti sono di nuovo fermi dal 5 agosto. Sul giorno l’oro ' +
+    'resta forte a 4.346,88; sui mesi il quadro è più diviso di quanto la giornata suggerisca.',
   favours: [
-    'Distinguere chi dichiara un’intenzione da chi dichiara un costo che sta già pagando: la seconda è la specie di prova che questo archivio pesa di più',
-    'Tenere separate le due gambe del rialzo, perché hanno vite diverse: il canale dei tassi scade mercoledì con l’indice dei prezzi, il premio di rischio si sgonfia quando le notizie smettono',
+    'Separare l’aspettativa a un anno, che segue la benzina e l’inflazione appena passata, da quella a cinque, che dice se il pubblico crede all’obiettivo dichiarato',
+    'Distinguere chi annuncia un’intenzione da chi dichiara un costo che sta già pagando: ADNOC sulle proprie navi, il Kazakistan sui propri caricamenti',
     'Guardare gli 84 dollari di Brent come una soglia a due facce: sotto sostengono il metallo, sopra ricominciano ad alimentare i rendimenti contro di lui',
   ],
   avoid: [
-    'Leggere il greggio in salita come una notizia favorevole all’oro senza guardare il livello: è vero fino a 84 dollari e falso oltre, ed è la regola dichiarata il 5 agosto',
-    'Trattare come intatto il ragionamento delle 15:05: la conclusione regge, la prova su cui poggiava no',
+    'Leggere ogni numero della giornata come conferma della conclusione del mattino: l’indagine di oggi ha una parte favorevole e due che non lo sono',
+    'Trarre una tendenza da una rilevazione mensile ferma: l’indagine di agosto esce fra un mese ed è la prima condizione dichiarata',
   ],
   confirming: [
-    'Quindici navi ADNOC colpite, tre questa settimana, un morto e venti feriti',
-    'Brent 83,33 $, più 1,02%: il premio si forma su un fatto materiale e non su un annuncio',
-    'Oro spot 4.354,98 $, più 2,70%, massimo di giornata 4.371,89',
+    'Inflazione attesa a un anno al 3,6% da 3,7%: il primo calo dopo un mese di rialzo',
+    'Oro spot 4.346,88 $, più 2,50%, massimo di giornata 4.371,89',
     'Rialzo Fed a settembre al 43,7% e Dollar Index 99,435, entrambi sotto le soglie',
+    'Caricamenti al terminale CPC fermi dal 5 agosto: circa 730.000 barili al giorno',
   ],
   contradicting: [
-    'La divergenza fra oro e greggio si è chiusa: la prova delle 15:05 non vale più',
-    'Il biennale a 4,202% ha restituito metà del calo dal minimo di 4,158%',
-    'Sopra gli 84 dollari il Brent torna a lavorare contro il metallo: mancano 67 centesimi',
-    'Il premio di rischio si è formato e sgonfiato tre volte in quarantotto ore',
+    'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
+    'Il decennale a 4,655% è a un punto base e mezzo dalla chiusura di ieri',
+    'Il biennale a 4,208% ha restituito più di metà del calo dal minimo di 4,158%',
+    'Brent a 83,65 $: trentacinque centesimi sotto la tacca degli 84',
     'L’indice dei prezzi di mercoledì è atteso al 3,4% annuo',
   ],
   constraints: [
@@ -357,8 +359,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 83.33,
-      display: '83,33 $',
+      now: 83.65,
+      display: '83,65 $',
       marks: [
         {
           at: 82,
@@ -376,8 +378,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.642,
-      display: '4,642%',
+      now: 4.655,
+      display: '4,655%',
       marks: [
         {
           at: 4.68,
@@ -395,8 +397,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4354.98,
-      display: '4.354,98 $',
+      now: 4346.88,
+      display: '4.346,88 $',
       marks: [
         {
           at: 4300,
@@ -408,9 +410,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'le-aspettative-a-un-anno-scendono-quelle-a-cinque-anni-no',
     'quindici-navi-colpite-e-il-greggio-riparte',
     'meno-23-mila-posti-e-il-rialzo-di-settembre-passa-in-minoranza',
-    'un-dazio-con-il-prezzo-minimo-e-la-data-prima-della-fed',
   ],
 };
 

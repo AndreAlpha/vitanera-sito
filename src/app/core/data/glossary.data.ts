@@ -134,6 +134,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     related: ['Bene rifugio', 'Stretto di Hormuz'],
   },
   {
+    term: 'Aspettative di inflazione',
+    letter: 'A',
+    definition:
+      'Quanta inflazione famiglie e mercati dichiarano di attendersi fra uno, tre o cinque anni. Si misurano con indagini — la principale è la Survey of Consumer Expectations della Federal Reserve di New York — e non vanno confuse con l’inflazione già avvenuta, che è un altro numero e racconta un’altra cosa.',
+    why: 'Una banca centrale non combatte l’inflazione passata ma quella attesa: se il pubblico smette di credere all’obiettivo, i prezzi e i salari si adeguano a quella convinzione e l’obiettivo diventa più caro da raggiungere. Per l’oro contano soprattutto gli orizzonti lunghi, e tagliano in due direzioni: aspettative alte sostengono la domanda di copertura e insieme tengono in vita il caso per tassi alti, che è il costo di tenere un metallo che non paga cedole.',
+    related: ['Costo-opportunità', 'Rendimento reale', 'Invalidazione'],
+  },
+  {
     term: 'Vincolo materiale',
     letter: 'V',
     definition:
