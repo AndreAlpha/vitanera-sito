@@ -180,7 +180,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-06T21:55:00+02:00',
-  checkedAt: '2026-08-06T22:50:00+02:00',
+  checkedAt: '2026-08-07T08:55:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -198,7 +198,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     {
       horizon: 'medio',
       direction: 'neutrale-ribassista',
-      strength: 'media',
+      strength: 'bassa',
       regime:
         'Il canale che pesa resta quello del greggio, ma adesso ha una causa che non si scioglie con una ' +
         'dichiarazione: l’intesa su Hormuz non è praticabile perché l’ente che incasserebbe le commissioni è ' +
@@ -241,14 +241,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dare per strutturale un ostacolo che una deroga americana può togliere in un giorno: è contrattuale, non geologico',
   ],
   confirming: [
-    'Brent 83,60 $ a fine seduta, massimo di giornata 83,78',
-    'Decennale 4,681%: tacca di logoramento superata',
-    'Rialzo Fed entro dicembre dato all’84,0%',
+    'Brent 83,44 $, con un massimo stamattina a 84,40',
+    'Decennale a 4,690% nel massimo, sopra la tacca del 4,68%',
+    'Rialzo Fed entro dicembre ancora all’82,7%',
   ],
   contradicting: [
-    'Rialzo a settembre risalito solo al 55,1%',
-    'Oro spot fermo a 4.239,37 $, meno 0,18% in giornata',
-    'Dollar Index 99,832: quota 100 non toccata in tutto il giorno',
+    'Oro spot 4.298,16 $, più 1,36%: sale con il greggio',
+    'Massimo di 4.298,88 $, a 1,12 dalla tacca dei 4.300',
+    'Biennale fermo a 4,243% e Dollar Index a 99,835',
   ],
   constraints: [
     {
@@ -312,8 +312,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Premio di rischio sul greggio che non si forma',
-      value: 'Brent 83,60 $',
-      baseline: 'da 79,45 di chiusura ieri, con un massimo di giornata a 83,78',
+      value: 'Brent 83,44 $',
+      baseline: 'da 82,49 di chiusura, con un massimo stamattina a 84,40',
       against:
         'In quattro giorni: una minaccia americana a Teheran, un piano di attacchi contro l’energia iraniana, ' +
         'una smentita, un missile houthi contro una petroliera saudita e una ritorsione iraniana annunciata ' +
@@ -349,8 +349,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 83.6,
-      display: '83,60 $',
+      now: 83.44,
+      display: '83,44 $',
       marks: [
         {
           at: 82,
@@ -362,8 +362,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.681,
-      display: '4,681%',
+      now: 4.677,
+      display: '4,677%',
       marks: [
         {
           at: 4.68,
@@ -381,8 +381,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4239.37,
-      display: '4.239,37 $',
+      now: 4298.16,
+      display: '4.298,16 $',
       marks: [
         {
           at: 4160,
