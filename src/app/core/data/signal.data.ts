@@ -180,22 +180,24 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-07T21:20:00+02:00',
+  checkedAt: '2026-08-07T23:25:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
       direction: 'rialzista',
-      strength: 'media',
+      strength: 'bassa',
       regime:
         'L’oro tiene la maggior parte del movimento del dato — 4.346,88 dollari, più 2,50%, contro un massimo ' +
         'di 4.371,89 — ma tutto il resto lo sta restituendo. Il Brent è a 83,65 con più 1,41%, cioè a ' +
         'trentacinque centesimi dalla tacca degli 84 oltre la quale ricomincia a spingere i rendimenti contro ' +
         'il metallo; il biennale è risalito a 4,208% dal minimo di 4,158%; il decennale a 4,655% è a un punto ' +
         'base e mezzo dalla chiusura di ieri. La direzione regge perché nessuna soglia dichiarata è stata ' +
-        'toccata, non perché il quadro sia migliorato. Ricontrollato alle 19:20: il massimo di giornata è ' +
-        'ancora 4.371,89, lo stesso delle 15:00, e l’oro spot è sceso a 4.336,51. Dopo il primo balzo il ' +
-        'metallo non ha più fatto un nuovo massimo in quattro ore, ed è l’informazione che manca a chi guarda ' +
-        'soltanto il segno della giornata.',
+        'toccata, non perché il quadro sia migliorato. A mercati chiusi il conto è questo: l’oro finisce a ' +
+        '4.342,18, più 2,39%, quasi trenta dollari sotto il massimo delle 15:00 e senza averlo più avvicinato; ' +
+        'il Brent chiude a 82,21, meno 0,34%, cioè negativo sulla giornata e ventuno centesimi sopra la tacca ' +
+        'che invalida questa lettura. Il metallo entra nel fine settimana con la direzione intatta e con ' +
+        'entrambe le gambe più sottili di quanto fossero alle 17:25.',
       invalidation:
         'Un Brent che rientra sotto gli 82 dollari entro la seduta, che direbbe che la dichiarazione di ADNOC è stata letta come rumore; un oro spot che rientra sotto i 4.300 dollari; oppure una probabilità di rialzo a settembre che risale sopra il 50%.',
     },
@@ -252,15 +254,15 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   confirming: [
     'Riserve auree cinesi a 76,08 mln di once da 75,44: quasi venti tonnellate in luglio',
     'Ventunesimo mese consecutivo di acquisti, con il ritmo in aumento da marzo',
-    'Oro spot 4.341,88 $ alle 21:06, più 2,39% sulla giornata',
+    'Oro in chiusura a 4.342,18 $, più 2,39%: la settimana si chiude sopra i 4.300',
     'Rialzo Fed a settembre al 43,7% e Dollar Index 99,435, entrambi sotto le soglie',
   ],
   contradicting: [
+    'Il Brent chiude a 82,21 $, meno 0,34%: il premio formato sull’annuncio di ADNOC è rientrato tutto',
+    'Ventuno centesimi separano quella chiusura dalla tacca che invalida la lettura intraday',
     'Il provvedimento sulle sanzioni ha passato il solo Senato: non è legge',
     'Nessun nuovo massimo dalle 15:00: la punta resta 4.371,89',
     'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
-    'Il decennale a 4,655% è a un punto base e mezzo dalla chiusura di ieri',
-    'L’indice dei prezzi di mercoledì è atteso al 3,4% annuo',
   ],
   constraints: [
     {
@@ -284,10 +286,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       value: '33 navi in quattro giorni',
       baseline: 'contro 50 la settimana prima e 130-140 al giorno prima del conflitto',
       against:
-        'Sei annunci di distensione in quattro giorni — l’apertura di Bessent, la smentita iraniana, la ' +
+        'Sette annunci di distensione in quattro giorni — l’apertura di Bessent, la smentita iraniana, la ' +
         'minaccia rilanciata, la richiesta di controllo sugli ingressi, la trattativa «durata tutto il ' +
-        'giorno» e le coordinate concordate con l’Oman — e adesso il settimo, che è il primo a smontare i ' +
-        'precedenti: Teheran dice che quel tavolo riguarda la gestione delle rotte, non la riapertura.',
+        'giorno», le coordinate concordate con l’Oman e infine Teheran che dice che quel tavolo riguarda la ' +
+        'gestione delle rotte e non la riapertura. L’ottavo, del 7 agosto, non scioglie il nodo ma lo ' +
+        'ridisegna dai due lati: un funzionario americano dice che Washington sosterrà solo un’intesa ' +
+        'temporanea senza impedimenti e senza pedaggi, mentre Teheran ripete che la riapertura è subordinata ' +
+        'alla rimozione del blocco navale e alla fine degli attacchi. Le due condizioni si escludono a vicenda ' +
+        'esattamente come cinque giorni fa.',
       watch:
         'Il conteggio ha finalmente un numero fresco, e va nella direzione opposta alla riapertura: 33 navi da ' +
         'lunedì a giovedì contro 50 nella settimana precedente, con quattro transiti giovedì 6 agosto — fra cui ' +
@@ -328,8 +334,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Premio di rischio sul greggio che non si forma',
-      value: 'Brent 83,33 $',
-      baseline: 'più 1,02%, dopo il meno 1,01% delle 14:57',
+      value: 'Brent 82,21 $ in chiusura',
+      baseline: 'meno 0,34%, dopo un massimo di 84,40 e un minimo di 81,52',
       against:
         'In quattro giorni: una minaccia americana a Teheran, un piano di attacchi contro l’energia iraniana, ' +
         'una smentita, un missile houthi contro una petroliera saudita e una ritorsione iraniana annunciata ' +
@@ -337,12 +343,12 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'quello che lo ha mosso, alla fine, è stata l’assenza di una conferma sull’intesa Iran-Oman.',
       watch:
         'In quarantotto ore il premio si è formato sopra gli 82 dollari su una bozza parlamentare iraniana, si ' +
-        'è sgonfiato fino a 81,52 sui segnali di distensione, e si è riformato a 83,33 sulla dichiarazione di ' +
-        'ADNOC. La terza volta è l’unica con un fatto materiale dietro invece di un documento, ed è la ' +
-        'differenza che conta. Ma un vincolo che si scioglie e si riforma tre volte in due giorni non vincola ' +
-        'più niente: descrive un prezzo che oscilla. I due numeri da guardare sono gli 82 dollari, sotto i ' +
-        'quali il premio è di nuovo sgonfio, e gli 84, sopra i quali smette di sostenere il metallo e ' +
-        'ricomincia ad alimentare i rendimenti contro di lui.',
+        'è sgonfiato a 81,52 sui segnali di distensione, si è riformato a 83,65 sulla dichiarazione di ADNOC — ' +
+        'quindici navi colpite, un morto, venti feriti — ed è rientrato di nuovo entro la chiusura, a 82,21 ' +
+        'con il segno meno. Quattro movimenti in due giorni, e l’ultimo cancella un fatto materiale nel giro ' +
+        'di sei ore: non è un vincolo che si scioglie, è un prezzo che oscilla intorno a una soglia. I due ' +
+        'numeri restano gli 82 dollari, che la chiusura sfiora da ventuno centesimi, e gli 84, sopra i quali ' +
+        'il greggio smette di sostenere il metallo e ricomincia ad alimentare i rendimenti contro di lui.',
       state: 'sciolto',
     },
   ],
@@ -362,8 +368,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 83.27,
-      display: '83,27 $',
+      now: 82.21,
+      display: '82,21 $',
       marks: [
         {
           at: 82,
@@ -400,8 +406,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4341.88,
-      display: '4.341,88 $',
+      now: 4342.18,
+      display: '4.342,18 $',
       marks: [
         {
           at: 4300,

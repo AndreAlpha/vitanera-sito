@@ -91,11 +91,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'XAU/USD',
     name: 'Oro spot',
-    value: '4.341,88 $',
-    change: 'più 2,39%, massimo 4.371,89, da 4.240,69 di chiusura',
+    value: '4.342,18 $',
+    change: 'chiusura, più 2,39%, fra 4.229,88 e 4.371,89',
     tone: 'bull',
     icon: 'coin',
-    note: 'Quotazione spot delle 21:06 del 7 agosto, non in tempo reale. Il metallo chiude la settimana tenendo la maggior parte del movimento del rapporto occupazionale, ma il massimo di giornata resta quello delle 15:00: in sei ore non è stato più avvicinato. Attenzione alla serie, perché oggi ha confuso più volte: il contratto future scambia una sessantina di dollari sopra lo spot, quindi un future a 4.414 corrisponde a uno spot intorno a 4.354, e i «4.400» che si leggono in giro non sono un livello che questa scheda abbia mai visto. Tutte le soglie qui sono sullo spot.',
+    note: 'Chiusura spot del 7 agosto. Il metallo porta a casa quasi tutto il movimento del rapporto occupazionale — 101 dollari sulla giornata, su una escursione di 142 — ma il massimo resta quello delle 15:00 e in otto ore non è stato più avvicinato: è un balzo, non ancora una tendenza. Attenzione alla serie, perché oggi ha confuso più volte: il contratto future scambia una sessantina di dollari sopra lo spot, quindi un future a 4.414 corrisponde a uno spot intorno a 4.354, e i «4.400» che si leggono in giro non sono un livello che questa scheda abbia mai visto. Tutte le soglie qui sono sullo spot.',
   },
   {
     symbol: 'SUSSIDI',
@@ -235,11 +235,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: '83,27 $',
-    change: 'più 0,95%, dal minimo di 81,52 e da 82,49 di chiusura',
+    value: '82,21 $',
+    change: 'chiusura, meno 0,34%, fra 81,52 e 84,40',
     tone: 'warn',
-    icon: 'arrow-up',
-    note: 'Nel primo pomeriggio il greggio era sceso fino a 81,52 mentre i mercati valutavano segnali di distensione fra Iran e Paesi del Golfo, e quella discesa era la prova che alle 14:56 qualificava il rialzo dell’oro come un fatto di tassi e non di rischio. Alle 17:15 è a 83,33, più 1,02%: due punti percentuali di inversione in poco più di due ore, dopo che ADNOC ha dichiarato quindici navi colpite. Il premio si è riformato per la terza volta in quarantotto ore, ma stavolta su un fatto materiale invece che su un documento. Sopra gli 84 dollari cambia di segno per l’oro: torna ad alimentare i rendimenti più della domanda di rifugio.',
+    icon: 'arrow-down',
+    note: 'La giornata del greggio riassume la settimana meglio di qualunque commento. Massimo a 84,40 in mattinata; minimo a 81,52 nel primo pomeriggio, sui segnali di distensione fra Iran e Paesi del Golfo; ritorno a 83,65 dopo che ADNOC ha dichiarato quindici navi colpite, un morto e venti feriti; chiusura a 82,21 con il segno meno. Il premio di rischio si è formato e sgonfiato quattro volte in due giorni, e l’ultima ha cancellato in sei ore l’effetto di un danno operativo dichiarato da chi lo subisce. La chiusura sta ventuno centesimi sopra gli 82 dollari, che è la tacca di invalidazione scritta alle 17:25.',
   },
   {
     symbol: 'GOLFO',
