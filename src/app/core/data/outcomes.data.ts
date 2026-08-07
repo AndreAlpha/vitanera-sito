@@ -181,7 +181,8 @@ export const OUTCOMES: readonly Outcome[] = [
           'tolto di mezzo mentre l’oro saliva per un’altra ragione.',
       },
       {
-        condition: 'Il rendimento del decennale che torna sotto il 4,60%, o un Dollar Index che scende sotto 99,50.',
+        condition:
+          'Il rendimento del decennale che torna sotto il 4,60%, o un Dollar Index che scende sotto 99,50.',
         triggered: true,
         evidence:
           'Scattata sulla seconda metà. Il Dollar Index è a 99,345 alle 14:56 del 7 agosto, con un minimo di ' +

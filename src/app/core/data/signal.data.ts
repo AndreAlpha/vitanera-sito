@@ -180,19 +180,23 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-07T15:05:00+02:00',
+  checkedAt: '2026-08-07T16:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
       direction: 'rialzista',
-      strength: 'media',
+      strength: 'bassa',
       regime:
         'Il canale dei tassi ha cambiato lato in mezz’ora. Il rapporto occupazionale dà meno 23.000 posti ' +
         'contro attese di circa 80.000, con 103.000 tolti a maggio e giugno, e tutta la curva breve si è mossa ' +
         'insieme: biennale a 4,162% da 4,245%, decennale a 4,616%, Dollar Index a 99,345 sotto la soglia di ' +
         '99,50 dichiarata ieri sera. L’oro spot è a 4.360,97 con un massimo di 4.371,89. La prova che sia il ' +
         'canale dei tassi e non il rifugio è che nella stessa ora il Brent scende dell’1,01% a 81,66: il metallo ' +
-        'sale mentre il premio geopolitico si sgonfia.',
+        'sale mentre il premio geopolitico si sgonfia. Ricontrollato alle 16:20 la direzione regge e la forza ' +
+        'no: l’oro ha restituito 37 dollari dal massimo, il biennale è risalito di 3,3 punti base dal minimo e ' +
+        'il Brent è tornato sopra gli 82. Nessuna delle tre soglie dichiarate è stata toccata, ma si sono ' +
+        'avvicinate tutte e tre insieme, e la prova per divergenza è la prima cosa che si è consumata.',
       invalidation:
         'Un oro spot che rientra sotto i 4.300 dollari, che cancellerebbe l’intero movimento del dato; una probabilità di rialzo a settembre che risale sopra il 50%, cioè che torna a essere lo scenario più probabile; oppure un decennale che torna sopra il 4,70% con l’oro ancora sopra i 4.300.',
     },
@@ -246,15 +250,16 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   ],
   confirming: [
     'Meno 23.000 posti contro attese di circa 80.000, e 103.000 tolti ai due mesi precedenti',
-    'Rialzo Fed a settembre al 41,7% da 55,1%, sotto la metà',
-    'Biennale 4,162% da 4,245% e Dollar Index 99,345, sotto la soglia di 99,50',
-    'Oro a 4.360,97 $ mentre il Brent scende a 81,66: i due prezzi divergono',
+    'Rialzo Fed a settembre al 43,7%: risalito da 41,7% ma ancora sotto la metà',
+    'Oro spot 4.334,72 $ alle 16:06, più 2,22%: tre quarti del movimento del dato tengono',
+    'Dollar Index 99,430 e biennale 4,191%, entrambi sotto i livelli di ieri',
   ],
   contradicting: [
+    'L’oro ha restituito 37 dollari dal massimo di 4.371,89',
+    'Brent di nuovo a 82,52 $, sopra la soglia e positivo sulla giornata',
+    'Biennale risalito di 3,3 punti base dal minimo di 4,158%',
     'La disoccupazione scende al 4,1%, meglio delle attese del 4,2%',
-    'Il dato è già nel prezzo: 120 dollari in mezz’ora',
     'L’indice dei prezzi di mercoledì è atteso al 3,4% annuo',
-    'Il premio geopolitico si sgonfia proprio mentre il metallo poggia tutto sul canale dei tassi',
   ],
   constraints: [
     {
@@ -320,28 +325,28 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Premio di rischio sul greggio che non si forma',
-      value: 'Brent 81,66 $',
-      baseline: 'meno 1,01%, dal massimo di 84,40 e contro 79,45 di due giorni fa',
+      value: 'Brent 82,52 $',
+      baseline: 'risalito dal minimo di 81,52, di nuovo positivo sulla giornata',
       against:
         'In quattro giorni: una minaccia americana a Teheran, un piano di attacchi contro l’energia iraniana, ' +
         'una smentita, un missile houthi contro una petroliera saudita e una ritorsione iraniana annunciata ' +
         'agli impianti energetici del Golfo. A ognuna di queste il prezzo aveva reagito meno della precedente; ' +
         'quello che lo ha mosso, alla fine, è stata l’assenza di una conferma sull’intesa Iran-Oman.',
       watch:
-        'Il premio si è formato il 6 agosto sopra gli 82 dollari, ha toccato 84,40 e adesso si sta sgonfiando: ' +
-        '81,66, meno 1,01%, con un minimo di 81,52. La base era quella che l’analisi aveva indicato come ' +
-        'fragile — una bozza parlamentare iraniana che dopo un giorno è ancora «una proposta iniziale» in ' +
-        'commissione — e il rientro lo conferma. Da qui il numero da guardare è il ritorno sopra gli 84 ' +
-        'dollari: sarebbe il segno che il rischio regionale torna a prezzarsi, e che a muovere l’oro non sono ' +
-        'più soltanto i tassi.',
+        'Il premio si è formato il 6 agosto sopra gli 82 dollari, ha toccato 84,40, è sceso fino a 81,52 sulla ' +
+        'scia dei segnali di distensione fra Iran e Paesi del Golfo, e alle 16:20 è già tornato a 82,52, ' +
+        'positivo sulla giornata. Lo sgonfiamento è durato meno di due ore: è la stessa fragilità che ' +
+        'l’analisi del 6 agosto attribuiva alla base del premio, applicata stavolta al suo rientro. Da qui il ' +
+        'numero da guardare resta il ritorno sopra gli 84 dollari, che direbbe che il rischio regionale torna ' +
+        'a prezzarsi e che a muovere l’oro non sono più soltanto i tassi.',
       state: 'sciolto',
     },
   ],
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 41.7,
-      display: '41,7%',
+      now: 43.7,
+      display: '43,7%',
       marks: [
         {
           at: 50,
@@ -353,8 +358,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.616,
-      display: '4,616%',
+      now: 4.642,
+      display: '4,642%',
       marks: [
         {
           at: 4.68,
@@ -372,8 +377,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4360.97,
-      display: '4.360,97 $',
+      now: 4334.72,
+      display: '4.334,72 $',
       marks: [
         {
           at: 4300,

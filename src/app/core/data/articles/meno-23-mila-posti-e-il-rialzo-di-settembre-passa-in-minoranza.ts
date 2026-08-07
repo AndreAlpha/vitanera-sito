@@ -20,7 +20,13 @@ export const nfpLuglioRialzoInMinoranza: Article = {
   publishedAt: '2026-08-07T15:05:00+02:00',
   author: AUTHOR,
   readingMinutes: 7,
-  tags: ['Rapporto occupazionale', 'Revisioni', 'Partecipazione', 'Soglia dichiarata', 'Canale dei tassi'],
+  tags: [
+    'Rapporto occupazionale',
+    'Revisioni',
+    'Partecipazione',
+    'Soglia dichiarata',
+    'Canale dei tassi',
+  ],
   instruments: ['XAU/USD', 'Treasury', 'DXY', 'Brent'],
   horizons: ['breve', 'medio'],
   bias: {
