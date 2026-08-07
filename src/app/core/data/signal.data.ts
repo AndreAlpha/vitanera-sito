@@ -179,8 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-07T21:20:00+02:00',
-  checkedAt: '2026-08-07T23:25:00+02:00',
+  updatedAt: '2026-08-08T00:25:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -196,8 +195,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'toccata, non perché il quadro sia migliorato. A mercati chiusi il conto è questo: l’oro finisce a ' +
         '4.342,18, più 2,39%, quasi trenta dollari sotto il massimo delle 15:00 e senza averlo più avvicinato; ' +
         'il Brent chiude a 82,21, meno 0,34%, cioè negativo sulla giornata e ventuno centesimi sopra la tacca ' +
-        'che invalida questa lettura. Il metallo entra nel fine settimana con la direzione intatta e con ' +
-        'entrambe le gambe più sottili di quanto fossero alle 17:25.',
+        'che invalida questa lettura. Da qui non c’è più un prezzo fino a lunedì, e nel frattempo lo Yemen è ' +
+        'peggiorato: il primo scambio della settimana dirà se quell’escalation vale un premio, ed è la ' +
+        'domanda più informativa che il fine settimana lasci aperta.',
       invalidation:
         'Un Brent che rientra sotto gli 82 dollari entro la seduta, che direbbe che la dichiarazione di ADNOC è stata letta come rumore; un oro spot che rientra sotto i 4.300 dollari; oppure una probabilità di rialzo a settembre che risale sopra il 50%.',
     },
@@ -206,13 +206,13 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'rialzista',
       strength: 'media',
       regime:
-        'Il vincolo sul mercato del lavoro si è sciolto — meno 23.000 posti e 103.000 tolti ai due mesi ' +
-        'precedenti — e la probabilità di un rialzo a settembre è passata dall’altra parte della metà, al 43,7% ' +
-        'da 55,1%. Sopra ci si è aggiunto un premio di rischio con un fatto materiale dietro: ADNOC dichiara ' +
-        'quindici navi colpite nello Stretto di Hormuz dall’inizio del conflitto, tre questa settimana, con un ' +
-        'morto e venti feriti. È il primo produttore del Golfo che quantifica un danno operativo invece di ' +
-        'annunciare un’intenzione, e vale più di sei comunicati. Ma sopra gli 84 dollari quello stesso premio ' +
-        'smette di sostenere il metallo e ricomincia ad alimentare i rendimenti contro di lui.',
+        'Il motore resta il rapporto occupazionale: meno 23.000 posti, 103.000 tolti ai due mesi precedenti, e ' +
+        'la probabilità di un rialzo a settembre passata dall’altra parte della metà, al 43,7% da 55,1%. Il ' +
+        'quadro geopolitico peggiora su un terzo teatro — missili Houthi su campi per sfollati a Marib, trenta ' +
+        'militari uccisi il giorno prima, e l’inviato ONU che parla del rischio più alto di conflitto su larga ' +
+        'scala dalla tregua del 2022 — ma non alza il grado della lettura, e la ragione è misurata: questa ' +
+        'settimana il premio di rischio si è formato e sgonfiato quattro volte in quarantotto ore, e venerdì ' +
+        'ha chiuso in negativo lo stesso giorno in cui ADNOC ha dichiarato quindici navi colpite.',
       invalidation:
         'Un indice dei prezzi mercoledì 12 agosto sopra le attese del 3,4% annuo, o un dato di fondo sopra il 2,5%, che con il greggio di nuovo in salita rimetterebbe il rialzo di settembre sul tavolo; una probabilità di rialzo a settembre di nuovo sopra il 50%; oppure un oro spot che rientra sotto i 4.300 dollari. Prima di tutte queste, un Brent sopra gli 84 dollari con il biennale che risale sopra il 4,25%.',
     },
@@ -233,35 +233,35 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; oppure la revoca dei dazi sul polisilicio prima del 4 dicembre.',
     },
   ],
-  headline: 'Venti tonnellate a luglio, ventunesimo mese di fila',
+  headline: 'Marib sotto i missili, e il primo prezzo è lunedì',
   stance:
-    'I dati ufficiali cinesi portano le riserve auree a 76,08 milioni di once da 75,44: 640.000 once comprate ' +
-    'in luglio, quasi venti tonnellate, il maggior acquisto da ottobre 2023 e il ventunesimo mese consecutivo, ' +
-    'con il ritmo che accelera da marzo. Nella stessa giornata il Senato approva 86 a 11 dazi fino al 100% sui ' +
-    'maggiori acquirenti di energia russa, il Tesoro sanziona due borse di criptovalute usate da entità ' +
-    'iraniane, e la Casa Bianca compie il passaggio che la Corte Suprema aveva indicato per rimuovere una ' +
-    'governatrice della Fed. Gli acquisti di luglio non sono una reazione a tutto questo — li precedono — ma ' +
-    'sono tre ragioni in più perché la serie continui.',
+    'La settimana si chiude con l’oro a 4.342,18 dollari, più 2,39%, e con il Brent a 82,21, in negativo. Poi, ' +
+    'a mercati già fermi, lo Yemen è peggiorato: missili balistici e droni Houthi su campi per sfollati a ' +
+    'Marib — due morti e quattordici feriti — un giorno dopo trenta militari governativi uccisi fra Marib e ' +
+    'Hadramawt, e l’inviato ONU Hans Grundberg che parla del rischio più alto di conflitto su larga scala ' +
+    'dalla tregua dell’aprile 2022. Gli Houthi rivendicano dicendo di aver colpito schieramenti sauditi dopo ' +
+    'aver rilevato un ammassamento militare; venerdì mattina un alto funzionario saudita si aspettava attacchi ' +
+    'coordinati. Nessuno dei due prezzi ha potuto rispondere: il primo che potrà è quello di lunedì.',
   favours: [
-    'Guardare il ritmo degli acquisti e non solo il totale: 160.000 once a marzo e 640.000 a luglio dicono più dei ventuno mesi consecutivi',
-    'Tenere separate le due scale: sulla giornata comanda il rapporto occupazionale, su settimane e mesi comanda chi compra e a quali condizioni',
-    'Distinguere un provvedimento votato da una camera da una legge: la differenza è la Camera dei rappresentanti, e non è una formalità',
+    'Aspettare lunedì invece di dedurre: un’escalation arrivata a mercati chiusi non ha ancora incontrato un prezzo, e il primo scambio vale più di qualunque ragionamento fatto stanotte',
+    'Leggere le due rivendicazioni insieme: ciascuna parte dice di reagire ai preparativi dell’altra, ed è la configurazione in cui l’escalation prosegue senza che nessuno l’abbia scelta',
+    'Guardare il ritmo degli acquisti cinesi e non solo il totale: 160.000 once a marzo e 640.000 a luglio dicono più dei ventuno mesi consecutivi',
   ],
   avoid: [
-    'Leggere gli acquisti di luglio come una reazione ai voti di oggi: li precedono di settimane, e chiamarla causa sarebbe raccontare una coincidenza di calendario',
-    'Dare per scontato che dazi secondari sull’energia aiutino l’oro: il loro canale principale è il prezzo del greggio, che sopra gli 84 dollari lavora contro il metallo',
+    'Alzare il grado del segnale per un fronte in più: il premio di rischio si è formato e sgonfiato quattro volte in quarantotto ore, l’ultima in sei ore',
+    'Collegare gli attacchi al patto firmato alla Mecca: quello più letale è del giorno prima della firma, e le date non lo permettono',
   ],
   confirming: [
-    'Riserve auree cinesi a 76,08 mln di once da 75,44: quasi venti tonnellate in luglio',
-    'Ventunesimo mese consecutivo di acquisti, con il ritmo in aumento da marzo',
     'Oro in chiusura a 4.342,18 $, più 2,39%: la settimana si chiude sopra i 4.300',
+    'Riserve auree cinesi a 76,08 mln di once: quasi venti tonnellate in luglio, ventunesimo mese',
+    'Rischio di conflitto in Yemen al livello più alto dalla tregua dell’aprile 2022, secondo l’ONU',
     'Rialzo Fed a settembre al 43,7% e Dollar Index 99,435, entrambi sotto le soglie',
   ],
   contradicting: [
     'Il Brent chiude a 82,21 $, meno 0,34%: il premio formato sull’annuncio di ADNOC è rientrato tutto',
     'Ventuno centesimi separano quella chiusura dalla tacca che invalida la lettura intraday',
-    'Il provvedimento sulle sanzioni ha passato il solo Senato: non è legge',
-    'Nessun nuovo massimo dalle 15:00: la punta resta 4.371,89',
+    'Lo Yemen è in guerra da undici anni: un peggioramento non è un cambio di stato del mondo',
+    'Nessun nuovo massimo dalle 15:00 di venerdì: la punta resta 4.371,89',
     'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
   ],
   constraints: [
@@ -419,8 +419,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'marib-sotto-i-missili-e-il-rischio-piu-alto-dal-2022',
     'washington-allarga-la-mano-pechino-compra-venti-tonnellate',
-    'le-aspettative-a-un-anno-scendono-quelle-a-cinque-anni-no',
     'meno-23-mila-posti-e-il-rialzo-di-settembre-passa-in-minoranza',
   ],
 };

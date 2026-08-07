@@ -17,6 +17,15 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'YEMEN',
+    name: 'Escalation in Yemen e valutazione delle Nazioni Unite',
+    value: 'rischio più alto dal 2022',
+    change: 'due morti e quattordici feriti a Marib; trenta militari il giorno prima',
+    tone: 'bear',
+    icon: 'alert',
+    note: 'Missili balistici e droni Houthi su campi per sfollati e quartieri residenziali di Marib il 7 agosto, un giorno dopo gli attacchi ai campi militari fra Marib e Hadramawt. L’inviato speciale delle Nazioni Unite Hans Grundberg dice che quegli attacchi, presi insieme ai rinnovati assalti al naviglio nel Mar Rosso e nel Golfo di Aden, lasciano lo Yemen al rischio più alto di conflitto su larga scala dalla tregua dell’aprile 2022. Gli Houthi rivendicano dicendo di aver colpito schieramenti sauditi dopo aver rilevato un ammassamento militare: la stessa escalation descritta dai due lati opposti. Tutto questo è arrivato a mercati chiusi, quindi il primo prezzo che può reagire è quello di lunedì.',
+  },
+  {
     symbol: 'RISERVE CN',
     name: 'Riserve auree della banca centrale cinese, fine luglio',
     value: '76,08 mln oz',
