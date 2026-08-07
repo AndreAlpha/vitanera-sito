@@ -79,6 +79,7 @@ export type EditorialCategorySlug =
   | 'interventi-valutari'
   | 'riserve-auree'
   | 'debito-pubblico'
+  | 'dazi-e-commercio'
   // Dati americani che il calendario non copre
   | 'ism'
   | 'jolts'

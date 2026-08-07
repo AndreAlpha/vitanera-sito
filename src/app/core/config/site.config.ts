@@ -324,6 +324,17 @@ export const CATEGORIES: readonly Category[] = [
       'Colli di bottiglia del commercio marittimo e decisioni sull’offerta di greggio. Quando il transito si complica, il prezzo si muove prima che cambi qualunque dato macro.',
   },
   {
+    slug: 'dazi-e-commercio',
+    name: 'Dazi e commercio',
+    short: 'Dazi',
+    family: 'temi',
+    series: false,
+    icon: 'scale',
+    tagline: 'Barriere decise per legge, non dal mercato',
+    description:
+      'Dazi, prezzi minimi all’importazione e restrizioni commerciali. Contano per l’oro perché producono un’inflazione amministrata, che la crescita della produttività non può assorbire e che la banca centrale deve decidere se guardare o combattere.',
+  },
+  {
     slug: 'interventi-valutari',
     name: 'Interventi valutari',
     short: 'Interventi',

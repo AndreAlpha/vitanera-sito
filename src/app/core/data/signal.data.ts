@@ -179,8 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-06T21:55:00+02:00',
-  checkedAt: '2026-08-07T08:55:00+02:00',
+  updatedAt: '2026-08-07T09:15:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -210,45 +209,45 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       horizon: 'lungo',
-      direction: 'neutrale',
+      direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'Gli acquisti delle banche centrali sostengono da sotto e la parte lunga della curva ha una variabile ' +
-        'in meno, perché il Tesoro si è impegnato a non ingrossare le aste per diversi trimestri. Se ne ' +
-        'aggiunge una seconda: la produttività statunitense è cresciuta dell’1,4% annualizzato contro un costo ' +
-        'del lavoro per unità prodotta all’1,3%, e finché la prima cresce più del secondo la pressione ' +
-        'salariale viene assorbita invece che trasmessa ai prezzi — è la base contabile che manca al timore ' +
-        'della Fed di un’inflazione che si radica nei salari. Resta l’unico freno vero: rendimenti reali alti ' +
-        'con un rialzo a settembre ancora dato poco sotto il 57%.',
+        'Le tre gambe di prima reggono: acquisti delle banche centrali sotto il prezzo, aste del Tesoro che non ' +
+        'crescono per diversi trimestri, e una produttività statunitense all’1,4% annualizzato contro un costo ' +
+        'del lavoro per unità all’1,3%, che assorbe la pressione salariale invece di trasmetterla. Se ne ' +
+        'aggiunge una quarta, ed è di segno diverso: i prezzi minimi all’importazione sul polisilicio, in vigore ' +
+        'dal 4 dicembre, sono un’inflazione decisa per atto e non dalla domanda, che la produttività non può ' +
+        'assorbire perché non passa dai salari. Il freno resta lo stesso — rendimenti reali alti — ma ora ' +
+        'dipende da come la Fed tratterà un rincaro che non ha creato lei.',
       invalidation:
-        'Una svolta monetaria confermata dalle riunioni, il ritorno stabile del decennale sopra il 5%, oppure una revisione che riporti la produttività sotto la crescita del costo del lavoro per unità.',
+        'Una svolta monetaria confermata dalle riunioni, il ritorno stabile del decennale sopra il 5%, una revisione che riporti la produttività sotto la crescita del costo del lavoro per unità, oppure la revoca dei dazi sul polisilicio prima del 4 dicembre — o prezzi di mercato che restano sopra i pavimenti fissati, nel qual caso il provvedimento non vincola nulla.',
     },
   ],
-  headline: 'A Hormuz il pedaggio non è pagabile: sanzioni da una parte, assicurazioni dall’altra',
+  headline: 'Un dazio con il prezzo minimo, in vigore cinque giorni prima della Fed',
   stance:
-    'Quattro fonti dell’industria marittima dicono a Reuters che l’intesa in discussione non è praticabile, e ' +
-    'per ragioni operative prima che politiche: l’Autorità dello Stretto del Golfo Persico, costituita ' +
-    'dall’Iran a maggio, è sotto sanzioni statunitensi, e da fine luglio una clausola del Lloyd’s Market ' +
-    'Association fa decadere la copertura di guerra alle navi che pagano pedaggi. Sulle cifre le parti sono ' +
-    'lontane — Iran 5-7% del carico, Oman circa 3%, Washington nessun pedaggio. È la prima spiegazione ' +
-    'meccanica del conteggio fermo a otto navi, e distingue un accordo annunciato da un accordo utilizzabile.',
+    'La Casa Bianca ha firmato il 6 agosto una proclamazione sul polisilicio: dazio del 15% su tutta la filiera ' +
+    'e, soprattutto, prezzi minimi all’importazione — 21 dollari al chilo sul polisilicio, 100 su lingotti e ' +
+    'wafer, 0,22 e 0,38 dollari per watt su celle e moduli. Entra in vigore il 4 dicembre, cinque giorni prima ' +
+    'della riunione su cui il mercato prezza un rialzo all’82,7%. Non muove l’oro oggi, e la giornata la decide ' +
+    'il rapporto occupazionale delle 14:30: cambia però la composizione dell’inflazione che la Fed dovrà ' +
+    'giudicare, perché un pavimento fissato per legge non passa dai salari e nessuna produttività lo assorbe.',
   favours: [
-    'Separare l’accordo annunciato dall’accordo utilizzabile: solo il secondo sposta il conteggio dei transiti, e richiede due atti tecnici con una firma sopra',
-    'Trattare una clausola del mercato assicurativo come un vincolo materiale al pari di una mina: non si scioglie con un comunicato',
+    'Distinguere il livello atteso dell’inflazione dalla sua composizione: è la seconda a decidere se una banca centrale può permettersi di guardare oltre un rincaro',
+    'Misurare questo provvedimento su un solo numero, il prezzo di mercato della filiera contro i pavimenti fissati: sopra è un annuncio, sotto è un rincaro obbligatorio',
   ],
   avoid: [
-    'Leggere un annuncio diplomatico su Hormuz come il ritorno del traffico: senza deroga alle sanzioni e senza copertura, le navi non si muovono comunque',
-    'Dare per strutturale un ostacolo che una deroga americana può togliere in un giorno: è contrattuale, non geologico',
+    'Gonfiare un dazio settoriale in un cambio di regime dei prezzi: vale pochi decimi su un indice generale, e la data è fra quattro mesi',
+    'Leggerlo come una misura contro la Cina: si applica a prescindere dall’origine, ed è proprio questo a renderlo più difficile da smontare con un negoziato',
   ],
   confirming: [
-    'Brent 83,44 $, con un massimo stamattina a 84,40',
-    'Decennale a 4,690% nel massimo, sopra la tacca del 4,68%',
+    'Prezzi minimi all’importazione in vigore dal 4 dicembre',
+    'Oro spot 4.290,68 $, più 1,18%: sale con il greggio',
     'Rialzo Fed entro dicembre ancora all’82,7%',
   ],
   contradicting: [
-    'Oro spot 4.298,16 $, più 1,36%: sale con il greggio',
-    'Massimo di 4.298,88 $, a 1,12 dalla tacca dei 4.300',
-    'Biennale fermo a 4,243% e Dollar Index a 99,835',
+    'Dazio settoriale: pochi decimi su un indice generale',
+    'Brent 83,44 $ e decennale 4,677%, ancora contrari al metallo',
+    'Massimo di 4.298,88 $, mai arrivato ai 4.300 dichiarati',
   ],
   constraints: [
     {
@@ -381,8 +380,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4298.16,
-      display: '4.298,16 $',
+      now: 4290.68,
+      display: '4.290,68 $',
       marks: [
         {
           at: 4160,
@@ -400,8 +399,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'un-dazio-con-il-prezzo-minimo-e-la-data-prima-della-fed',
     'hormuz-il-pedaggio-che-nessuno-puo-pagare',
-    'iran-pubblica-la-bozza-su-hormuz-il-rialzo-ha-un-nome',
     'warsh-apre-a-un-rialzo-e-il-numero-fermo-si-muove',
   ],
 };

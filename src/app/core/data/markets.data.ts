@@ -17,6 +17,15 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'POLISILICIO',
+    name: 'Dazi e prezzi minimi sul polisilicio',
+    value: '21 $/kg',
+    change: 'più un dazio del 15%, in vigore dal 4 dicembre',
+    tone: 'warn',
+    icon: 'scale',
+    note: 'Proclamazione firmata il 6 agosto con la Section 232. Oltre al prezzo minimo sul polisilicio ci sono 100 dollari al chilo su lingotti e wafer e 0,22 e 0,38 dollari per watt su celle e moduli. La parte che conta non è la percentuale ma il pavimento: un dazio segue il prezzo di mercato al ribasso, un prezzo minimo no. La quota statunitense della capacità produttiva mondiale è passata dal 50% del 2005 a meno del 2% nel 2024.',
+  },
+  {
     symbol: 'ASSICURAZIONI',
     name: 'Copertura di guerra sul transito a Hormuz',
     value: 'decade se si paga',
@@ -28,8 +37,8 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'XAU/USD',
     name: 'Oro spot',
-    value: '4.298,16 $',
-    change: 'più 1,36%, da una chiusura di 4.240,69',
+    value: '4.290,68 $',
+    change: 'più 1,18%, da una chiusura di 4.240,69',
     tone: 'warn',
     icon: 'coin',
     note: 'Quotazione spot delle 08:58 del 7 agosto, non in tempo reale. Attenzione alla serie: le analisi del 6 agosto citano il contratto future, che scambia una sessantina di dollari sopra lo spot per effetto del riporto; le soglie di questa scheda sono sullo spot, che è il metro dichiarato. Il metallo sale mentre il greggio sale con lui, che è il contrario di quanto la lettura in corso descrive: il massimo di 4.298,88 si è fermato a 1,12 dollari dai 4.300 indicati ieri sera come segnale che il rifugio torna in vantaggio.',

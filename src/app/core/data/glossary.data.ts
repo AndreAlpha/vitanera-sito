@@ -158,6 +158,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     related: ['Stretto di Hormuz', 'Vincolo materiale', 'Premio di rischio geopolitico'],
   },
   {
+    term: 'Prezzo minimo all’importazione',
+    letter: 'P',
+    definition:
+      'Soglia sotto la quale una merce non può entrare in un Paese, fissata da un atto amministrativo. È cosa diversa da un dazio: il dazio è una percentuale che segue il prezzo di mercato anche quando scende, il prezzo minimo è un pavimento che non si muove.',
+    why: 'Produce un rincaro che non nasce dalla domanda e non passa dai salari, quindi la crescita della produttività non lo assorbe. Per l’oro conta perché mette la banca centrale davanti a una scelta — guardare oltre lo shock di offerta o combatterlo — e nei due casi i rendimenti reali vanno in direzioni opposte.',
+    related: ['Vincolo materiale', 'Rendimento reale', 'Costo-opportunità'],
+  },
+  {
     term: 'Brent',
     letter: 'B',
     definition:
