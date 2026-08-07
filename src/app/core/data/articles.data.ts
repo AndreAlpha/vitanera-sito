@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { nfpLuglioRialzoInMinoranza } from './articles/meno-23-mila-posti-e-il-rialzo-di-settembre-passa-in-minoranza';
 import { pattoMeccaClausola } from './articles/un-attacco-a-uno-e-un-attacco-a-tutti-il-patto-e-firmato';
 import { pattoGeddaRifugio } from './articles/un-patto-a-gedda-e-il-rifugio-torna-in-vantaggio';
 import { dazioPrezzoMinimoPolisilicio } from './articles/un-dazio-con-il-prezzo-minimo-e-la-data-prima-della-fed';
@@ -65,6 +66,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  nfpLuglioRialzoInMinoranza,
   pattoMeccaClausola,
   pattoGeddaRifugio,
   dazioPrezzoMinimoPolisilicio,

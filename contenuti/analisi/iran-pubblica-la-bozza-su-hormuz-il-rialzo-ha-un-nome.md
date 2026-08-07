@@ -27,8 +27,10 @@ fonti:
   - testata: "CNBC"
   - testata: "Investing.com"
   - testata: "Al Jazeera"
+esito: "parziale"
+controllata: "2026-08-07T14:50:00+02:00"
 sorgente: "src/app/core/data/articles/iran-pubblica-la-bozza-su-hormuz-il-rialzo-ha-un-nome.ts"
-impronta: "eb5957c6ab3a4d20"
+impronta: "8bd149101a8be006"
 ---
 
 # L’Iran pubblica la bozza su Hormuz: il rialzo del greggio ha un nome
@@ -136,6 +138,20 @@ La bozza iraniana non ha una data: passerà o non passerà in commissione quando
 Impostazione su XAU/USD: neutrale-ribassista, forza bassa, orizzonte medio.
 
 Il canale che pesa resta quello del greggio: sopra gli 82 dollari il Brent alimenta inflazione attesa e rendimenti più di quanto alimenti la domanda di rifugio, e l’oro scende mentre petrolio, tassi e dollaro salgono insieme. La direzione non cambia rispetto a un’ora fa, la forza sì: adesso si sa che quel movimento poggia su una bozza parlamentare pubblicata durante un negoziato, cioè sul tipo di documento che dice poco su come andrà a finire.
+
+## Come è andata
+
+Verdetto: **parziale**, controllata il 2026-08-07T14:50:00+02:00.
+
+Quattro condizioni su cinque hanno retto, e sono tutte quelle sulla vicenda iraniana: la bozza non è stata né approvata né ritirata, la dichiarazione congiunta con l’Oman non è arrivata, il Brent non è tornato sotto gli 80. Su questo la lettura ha avuto ragione per intero, e aveva ragione anche sul modo di scontare il documento — un testo che dopo un giorno è ancora «una proposta iniziale» in commissione è il tipo di carta che il metodo usato qui classifica come poco diagnostico. Il conteggio dei transiti, per la prima volta aggiornato con un dato fresco, dà 33 navi in quattro giorni contro 50 nella settimana prima: si muove nella direzione che la lettura descriveva, e più in fretta. A cedere è la conseguenza sull’oro. La tacca di logoramento è scattata alle 14:20, e alle 14:30 il rapporto occupazionale ha spazzato via il canale attraverso cui il greggio arrivava al metallo: l’oro è passato da 4.293 a 4.371 dollari mentre il Brent scendeva. La diagnosi sul greggio era giusta, la deduzione sull’oro no.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un conteggio dei transiti che risale sopra le otto navi: è la condizione che questo archivio ha dichiarato per prima e non ha mai cambiato, ed è l’unica che misura il passaggio invece di descriverlo. | no | Non è risalito: è sceso, e per la prima volta da tre giorni con un numero fresco. Il 7 agosto Reuters — letta su US News — conta 33 navi da lunedì a giovedì contro 50 nella settimana precedente, e quattro transiti giovedì 6, fra cui la superpetroliera Nissos Kea con circa due milioni di barili di greggio Basrah caricati in Iraq. Quattro al giorno è la metà degli otto della soglia, contro le oltre cento al giorno di prima della guerra. |
+| L’approvazione del testo da parte del Parlamento iraniano, che lo trasformerebbe da posizione negoziale in norma, oppure il suo ritiro dall’ordine del giorno. | no | Né l’una né l’altro: il testo è ancora dov’era. Il 7 agosto Press TV lo dà in esame alla commissione Sicurezza nazionale e politica estera, e un membro dell’ufficio di presidenza precisa che «è una proposta iniziale discussa in commissione e non è ancora la relazione finale della commissione»; il Parlamento ha invitato esperti a mandare osservazioni prima della stesura definitiva. È esattamente la condizione di sospensione che l’analisi aveva descritto. |
+| Un Brent che torna sotto gli 80 dollari: direbbe che il premio riaperto oggi si è già sgonfiato, e con esso la ragione di questa lettura. | no | Mai sceso sotto quel livello nella finestra. Dopo la pubblicazione il Brent ha toccato 84,40 il 7 agosto e il minimo della giornata è 81,52; alle 14:57 è a 81,66, meno 1,01% (Investing.com). Il premio si è ridotto ma non si è sgonfiato: resta un dollaro e mezzo sopra la soglia. |
+| Una dichiarazione congiunta Iran-Oman che escluda esplicitamente commissioni di transito: mostrerebbe che la bozza era posizionamento interno e non la posizione del tavolo. | no | Nessuna dichiarazione congiunta. Teheran definisce l’intesa con l’Oman «in fase finale», e il punto che resta aperto è il consenso statunitense; il pacchetto riportato resta impraticabile per le sanzioni e per le clausole assicurative sui pagamenti. Il testo annunciato per il 5 agosto non è stato emesso nemmeno due giorni dopo. |
+| Prima di tutte queste, e senza aspettare la rottura: un Brent che resta sopra gli 82 dollari mentre l’oro risale sopra i 4.320, che segnalerebbe che il legame fra greggio e metallo si sta allentando. | sì | Scattata alle 14:20 del 7 agosto, con entrambe le metà misurate nello stesso momento: l’oro spot ha segnato un massimo di 4.327,70 dollari mentre il Brent era a 82,03, cioè ancora sopra la soglia (Investing.com). Dieci minuti dopo il rapporto occupazionale ha rotto il legame del tutto, ma la tacca di logoramento aveva già segnalato che si stava allentando prima che il dato uscisse. |
 
 ## Fonti consultate
 

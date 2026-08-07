@@ -179,35 +179,37 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-07T14:20:00+02:00',
+  updatedAt: '2026-08-07T15:05:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'neutrale-rialzista',
+      direction: 'rialzista',
       strength: 'media',
       regime:
-        'I quattro canali hanno smesso di contraddirsi: l’oro sale a 4.312,33 con un massimo di 4.327,70, il ' +
-        'greggio è rientrato a 82,03 dal massimo di 84,40, il decennale è sceso a 4,664% e il dollaro a 99,752. ' +
-        'Non è più il rifugio che vince contro il canale energetico, come alle 10:35: adesso nessuno dei due ' +
-        'canali lavora contro il metallo. È una configurazione più pulita, e ha una scadenza dichiarata alle ' +
-        '14:30.',
+        'Il canale dei tassi ha cambiato lato in mezz’ora. Il rapporto occupazionale dà meno 23.000 posti ' +
+        'contro attese di circa 80.000, con 103.000 tolti a maggio e giugno, e tutta la curva breve si è mossa ' +
+        'insieme: biennale a 4,162% da 4,245%, decennale a 4,616%, Dollar Index a 99,345 sotto la soglia di ' +
+        '99,50 dichiarata ieri sera. L’oro spot è a 4.360,97 con un massimo di 4.371,89. La prova che sia il ' +
+        'canale dei tassi e non il rifugio è che nella stessa ora il Brent scende dell’1,01% a 81,66: il metallo ' +
+        'sale mentre il premio geopolitico si sgonfia.',
       invalidation:
-        'Un oro spot che rientra sotto i 4.300 dollari, che ributterebbe indietro la soglia superata stamattina; un rapporto occupazionale nettamente sopra le attese di circa 80.000 posti con salari in accelerazione; oppure un decennale che torna sopra il 4,70%.',
+        'Un oro spot che rientra sotto i 4.300 dollari, che cancellerebbe l’intero movimento del dato; una probabilità di rialzo a settembre che risale sopra il 50%, cioè che torna a essere lo scenario più probabile; oppure un decennale che torna sopra il 4,70% con l’oro ancora sopra i 4.300.',
     },
     {
       horizon: 'medio',
-      direction: 'neutrale-rialzista',
-      strength: 'bassa',
+      direction: 'rialzista',
+      strength: 'media',
       regime:
-        'Il premio geopolitico ha smesso di essere una serie di annunci e ha preso una forma scritta: la ' +
-        'clausola di difesa collettiva firmata alla Mecca da Arabia Saudita, Turchia e Pakistan non si ritira ' +
-        'come si ritira un comunicato, e il nodo su Hormuz resta dov’era — sanzioni, clausola assicurativa, ' +
-        'transiti a otto navi. Manca però la parte che conta per davvero, gli obblighi militari, che il ' +
-        'comunicato non indica: è una promessa senza procedura, e finché resta tale il premio è di quelli che ' +
-        'si prezzano ma non si misurano.',
+        'Il vincolo sul mercato del lavoro si è sciolto, e con esso l’ipotesi che reggeva il rialzo di ' +
+        'settembre: la probabilità è passata dal 55,1% al 41,7%, cioè dall’altra parte della metà, e a dicembre ' +
+        'dall’82,7% al 73,8%. Non è una sfumatura di probabilità, è il cambio del caso base. I salari ' +
+        'decelerano su entrambe le letture — più 0,1% sul mese, più 3,2% sull’anno — e tolgono alla banca ' +
+        'centrale l’argomento inflazionistico, non solo la scusa. Il premio geopolitico non è sparito ma è ' +
+        'passato in secondo piano: i transiti a Hormuz restano 33 in quattro giorni contro 50 la settimana ' +
+        'prima, e la clausola firmata alla Mecca resta sul tavolo senza obblighi militari.',
       invalidation:
-        'Un testo attuativo che limiti l’impegno alla consultazione senza automatismi; un oro spot che rientra sotto i 4.300 dollari; un Brent che torna sotto gli 80, che direbbe che l’energia non prezza più il rischio regionale; oppure un rapporto occupazionale nettamente sopra le attese di circa 80.000 posti. Prima di tutte queste, un decennale sopra il 4,70% con l’oro ancora sopra i 4.300.',
+        'Un indice dei prezzi mercoledì 12 agosto sopra le attese del 3,4% annuo, o un dato di fondo sopra il 2,5%, che restituirebbe alla Fed la ragione che il lavoro le ha appena tolto; una probabilità di rialzo a settembre di nuovo sopra il 50%; oppure un oro spot che rientra sotto i 4.300 dollari. Prima di tutte queste, un Brent che torna sopra gli 84 dollari mentre l’oro sale con lui: toglierebbe la prova che a muovere il metallo siano i tassi e non il rischio.',
     },
     {
       horizon: 'lungo',
@@ -225,31 +227,34 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, il ritorno stabile del decennale sopra il 5%, una revisione che riporti la produttività sotto la crescita del costo del lavoro per unità, oppure la revoca dei dazi sul polisilicio prima del 4 dicembre — o prezzi di mercato che restano sopra i pavimenti fissati, nel qual caso il provvedimento non vincola nulla.',
     },
   ],
-  headline: 'Alla Mecca la clausola c’è, gli obblighi militari no',
+  headline: 'Il rialzo di settembre passa in minoranza: 41,7%',
   stance:
-    'Arabia Saudita, Turchia e Pakistan hanno firmato alla Mecca un accordo che dichiara l’attacco a uno come ' +
-    'attacco a tutti. Stamattina questo archivio aveva scritto che la differenza fra un impegno operativo e una ' +
-    'cornice di consultazione era tutta: la risposta è che il testo ha la forma del primo e, per ora, il ' +
-    'contenuto del secondo — nessuna specifica sugli obblighi militari. Il negoziato durava da quasi un anno, ' +
-    'quindi non è una reazione a questa settimana. Sui prezzi l’oro è a 4.312,33 con un massimo di 4.327,70 ' +
-    'mentre il greggio rientra a 82,03: la giornata però la decide il rapporto occupazionale delle 14:30.',
+    'Il rapporto occupazionale di luglio dà meno 23.000 posti contro attese di circa 80.000, con maggio e ' +
+    'giugno rivisti al ribasso di 103.000 in tutto. La probabilità di un rialzo a settembre è scesa dal 55,1% ' +
+    'al 41,7%: per la prima volta il caso base è che la Fed resti ferma. L’oro spot è a 4.360,97 dollari, più ' +
+    '2,84%, ma il fatto che conta è un altro — nella stessa ora il Brent scende dell’1,01% a 81,66. Il metallo ' +
+    'sale mentre il premio geopolitico si sgonfia, ed è la firma di un movimento sui tassi e non sul rifugio. ' +
+    'Questo dato era stato indicato come decisivo da quattro analisi, tutte scritte prima di conoscerlo.',
   favours: [
-    'Distinguere la promessa dalla procedura: una clausola di difesa collettiva vincola politicamente, ma senza obblighi scritti non produce comportamenti prevedibili',
-    'Tenere separate le due scadenze: il patto conta sui giorni e sulle settimane, il rapporto occupazionale conta sul quarto d’ora',
+    'Leggere la divergenza fra oro e greggio come la prova di quale canale stia lavorando: se salissero insieme sarebbe rifugio, e durerebbe quanto la tensione',
+    'Guardare le revisioni prima del numero di copertina: 103.000 posti tolti a maggio e giugno pesano più dei 23.000 persi a luglio',
+    'Leggere il calo della disoccupazione al 4,1% insieme alla partecipazione al 61,4%: il tasso migliora perché la forza lavoro si svuota, non perché qualcuno viene assunto',
   ],
   avoid: [
-    'Leggere la firma come una reazione all’escalation: la trattativa durava da quasi un anno, gli eventi l’hanno accelerata e non generata',
-    'Costruire una lettura che pretenda di sopravvivere al dato delle 14:30 senza averlo visto: questa nasce con una scadenza dichiarata',
+    'Trattare il movimento come ancora da fare: 120 dollari sono arrivati in mezz’ora, e chi legge lo fa con il rialzo già avvenuto',
+    'Dare per chiusa la partita sulla Fed prima dell’indice dei prezzi di mercoledì: un dato sopra le attese le restituisce la ragione che il lavoro le ha appena tolto',
   ],
   confirming: [
-    'Clausola di difesa collettiva firmata, non più annunciata',
-    'Oro spot 4.312,33 $, massimo di giornata 4.327,70',
-    'Decennale 4,664% e Dollar Index 99,752, entrambi in calo',
+    'Meno 23.000 posti contro attese di circa 80.000, e 103.000 tolti ai due mesi precedenti',
+    'Rialzo Fed a settembre al 41,7% da 55,1%, sotto la metà',
+    'Biennale 4,162% da 4,245% e Dollar Index 99,345, sotto la soglia di 99,50',
+    'Oro a 4.360,97 $ mentre il Brent scende a 81,66: i due prezzi divergono',
   ],
   contradicting: [
-    'Nessun obbligo militare specifico nel comunicato',
-    'Brent rientrato a 82,03 $ dal massimo di 84,40',
-    'Il rapporto occupazionale esce fra pochi minuti',
+    'La disoccupazione scende al 4,1%, meglio delle attese del 4,2%',
+    'Il dato è già nel prezzo: 120 dollari in mezz’ora',
+    'L’indice dei prezzi di mercoledì è atteso al 3,4% annuo',
+    'Il premio geopolitico si sgonfia proprio mentre il metallo poggia tutto sul canale dei tassi',
   ],
   constraints: [
     {
@@ -270,34 +275,36 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Transiti nello Stretto di Hormuz',
-      value: 'otto navi',
-      baseline: 'contro 130-140 al giorno prima del conflitto',
+      value: '33 navi in quattro giorni',
+      baseline: 'contro 50 la settimana prima e 130-140 al giorno prima del conflitto',
       against:
         'Sei annunci di distensione in quattro giorni — l’apertura di Bessent, la smentita iraniana, la ' +
         'minaccia rilanciata, la richiesta di controllo sugli ingressi, la trattativa «durata tutto il ' +
         'giorno» e le coordinate concordate con l’Oman — e adesso il settimo, che è il primo a smontare i ' +
         'precedenti: Teheran dice che quel tavolo riguarda la gestione delle rotte, non la riapertura.',
       watch:
-        'Il conteggio dei transiti, fermo a otto navi dal 5 agosto e mai aggiornato da allora. Finché non ' +
-        'risale, la riapertura è un’intenzione e non un fatto — e adesso nemmeno l’intenzione è più quella ' +
-        'che si era capita.',
+        'Il conteggio ha finalmente un numero fresco, e va nella direzione opposta alla riapertura: 33 navi da ' +
+        'lunedì a giovedì contro 50 nella settimana precedente, con quattro transiti giovedì 6 agosto — fra cui ' +
+        'la superpetroliera Nissos Kea con circa due milioni di barili caricati in Iraq. Quattro al giorno è ' +
+        'la metà della soglia di otto che questo archivio segue dal 5 agosto. Il traffico non risale: cala.',
       state: 'fermo',
     },
     {
       label: 'Mercato del lavoro statunitense che rallenta',
-      value: 'ADP 44.000',
-      baseline: 'attese 70.000, con JOLTS a 7,359 milioni contro 7,440',
+      value: 'meno 23.000 posti',
+      baseline: 'attese circa 80.000; maggio e giugno rivisti per 103.000 in meno',
       against:
         'Sette prese di posizione restrittive in una settimana: i tre membri del FOMC che chiedevano un rialzo ' +
-        'immediato, poi Schmid e Kashkari, poi la governatrice Cook, e ora il presidente Warsh secondo una ' +
-        'ricostruzione del Financial Times. Le prime sei non avevano spostato di un punto quello che il ' +
-        'mercato prezza; la settima lo ha spostato di 2,3 punti, e la differenza è che il presidente decide ' +
-        'l’ordine del giorno. La preferenza di chi controlla il calendario è essa stessa un vincolo.',
+        'immediato, poi Schmid e Kashkari, poi la governatrice Cook, e infine il presidente Warsh secondo una ' +
+        'ricostruzione del Financial Times. Nessuna delle sette era riuscita a spostare il numero oltre il 57%. ' +
+        'Un solo dato lo ha portato al 41,7%: la preferenza di chi decide l’ordine del giorno vale meno di una ' +
+        'diffusione statistica, ed è la dimostrazione più netta che questo archivio abbia raccolto.',
       watch:
-        'La probabilità di un rialzo a settembre, risalita a 56,7% da 54,4% ma ancora sotto il 57% di quattro ' +
-        'giorni fa, e il rapporto occupazionale di domani: nettamente sopra le attese di circa 80.000 posti ' +
-        'allenterebbe il vincolo, nettamente sotto lo rimetterebbe al suo posto.',
-      state: 'si-allenta',
+        'Non rallenta più: si contrae. I posti di luglio sono meno 23.000 contro attese di circa 80.000, la ' +
+        'partecipazione scende al 61,4% — minimo da oltre cinque anni — e i salari decelerano a più 3,2% ' +
+        'annuo. Il vincolo è sciolto, e a rimetterlo in piedi può essere solo l’indice dei prezzi di mercoledì ' +
+        '12 agosto: sopra il 3,4% annuo la Fed si ritrova con un motivo per alzare che il lavoro non le dà più.',
+      state: 'sciolto',
     },
     {
       label: 'Emissioni del Tesoro a lunga scadenza',
@@ -313,97 +320,74 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Premio di rischio sul greggio che non si forma',
-      value: 'Brent 81,99 $',
-      baseline: 'rientrato dal massimo di 84,40, contro 79,45 di due giorni fa',
+      value: 'Brent 81,66 $',
+      baseline: 'meno 1,01%, dal massimo di 84,40 e contro 79,45 di due giorni fa',
       against:
         'In quattro giorni: una minaccia americana a Teheran, un piano di attacchi contro l’energia iraniana, ' +
         'una smentita, un missile houthi contro una petroliera saudita e una ritorsione iraniana annunciata ' +
         'agli impianti energetici del Golfo. A ognuna di queste il prezzo aveva reagito meno della precedente; ' +
         'quello che lo ha mosso, alla fine, è stata l’assenza di una conferma sull’intesa Iran-Oman.',
       watch:
-        'Gli 82 dollari di Brent sono stati superati il 6 agosto, dopo la tacca di logoramento a 80 passata il ' +
-        'giorno prima, e adesso si conosce l’innesco: la pubblicazione della bozza iraniana sulla gestione dello ' +
-        'Stretto. Il vincolo ha smesso di vincolare, ma su una base fragile — un testo non approvato — e da qui ' +
-        'la domanda non è se il premio si paghi, è quanto duri senza che alla bozza segua una norma.',
+        'Il premio si è formato il 6 agosto sopra gli 82 dollari, ha toccato 84,40 e adesso si sta sgonfiando: ' +
+        '81,66, meno 1,01%, con un minimo di 81,52. La base era quella che l’analisi aveva indicato come ' +
+        'fragile — una bozza parlamentare iraniana che dopo un giorno è ancora «una proposta iniziale» in ' +
+        'commissione — e il rientro lo conferma. Da qui il numero da guardare è il ritorno sopra gli 84 ' +
+        'dollari: sarebbe il segno che il rischio regionale torna a prezzarsi, e che a muovere l’oro non sono ' +
+        'più soltanto i tassi.',
       state: 'sciolto',
     },
   ],
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 55.1,
-      display: '55,1%',
+      now: 41.7,
+      display: '41,7%',
       marks: [
         {
-          at: 62,
-          display: '62%',
-          kind: 'logora',
-          note: 'il primo segno che le parole dei falchi spostano il numero oltre il punto di partenza, e non solo verso di esso',
-        },
-        {
-          at: 67,
-          display: '67%',
+          at: 50,
+          display: '50%',
           kind: 'invalida',
-          note: 'il ritorno al livello di qualche giorno fa: la lettura poggia sul fatto che quel numero non si muova, e a quel punto si sarebbe mosso di dieci punti',
-        },
-      ],
-    },
-    {
-      label: 'Brent',
-      now: 82.03,
-      display: '82,03 $',
-      marks: [
-        {
-          at: 82,
-          display: '82 $',
-          kind: 'invalida',
-          note: 'sopra questo livello l’effetto inflazionistico torna a pesare più della domanda di rifugio',
+          note: 'sopra la metà il rialzo torna a essere lo scenario più probabile, ed è l’unica gamba su cui questa lettura poggia',
         },
       ],
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.664,
-      display: '4,664%',
+      now: 4.616,
+      display: '4,616%',
       marks: [
         {
           at: 4.68,
           display: '4,68%',
           kind: 'logora',
-          note: 'con l’oro ancora sopra i 4.250 segnala il logoramento, senza aspettare la rottura',
+          note: 'la tacca sfiorata stamattina con un massimo di 4,690%: segnala il logoramento senza aspettare la rottura',
         },
         {
           at: 4.7,
           display: '4,70%',
           kind: 'invalida',
-          note: 'insieme alla perdita dei 4.200 dollari fa decadere la lettura intraday',
+          note: 'con l’oro ancora sopra i 4.300 direbbe che il mercato obbligazionario ha già smesso di credere al dato di oggi',
         },
       ],
     },
     {
       label: 'XAU/USD',
-      now: 4312.33,
-      display: '4.312,33 $',
+      now: 4360.97,
+      display: '4.360,97 $',
       marks: [
         {
-          at: 4160,
-          display: '4.160 $',
+          at: 4300,
+          display: '4.300 $',
           kind: 'invalida',
-          note: 'il supporto tecnico indicato dalla fonte citata: sotto di lì decade anche la lettura sui giorni',
-        },
-        {
-          at: 4200,
-          display: '4.200 $',
-          kind: 'logora',
-          note: 'una perdita rapida di questa soglia, accompagnata dal decennale sopra il 4,70%',
+          note: 'sotto questo livello il movimento del rapporto occupazionale è cancellato per intero, e con esso la ragione della lettura',
         },
       ],
     },
   ],
   sources: [
+    'meno-23-mila-posti-e-il-rialzo-di-settembre-passa-in-minoranza',
     'un-attacco-a-uno-e-un-attacco-a-tutti-il-patto-e-firmato',
     'un-dazio-con-il-prezzo-minimo-e-la-data-prima-della-fed',
-    'hormuz-il-pedaggio-che-nessuno-puo-pagare',
   ],
 };
 
