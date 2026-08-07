@@ -180,12 +180,13 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-07T10:35:00+02:00',
+  checkedAt: '2026-08-07T12:15:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
       direction: 'neutrale-rialzista',
-      strength: 'bassa',
+      strength: 'media',
       regime:
         'I due canali si sono separati: il Brent resta sopra gli 82 dollari e il metallo sale lo stesso, spot a ' +
         '4.304,72 con un massimo di 4.316,57. La domanda di rifugio ha ripreso il sopravvento sul costo-' +
@@ -242,14 +243,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dare per acquisito il giro di stamattina: dura da due ore, e alle 14:30 esce il dato che le analisi aperte hanno indicato come decisivo',
   ],
   confirming: [
-    'Oro spot 4.304,72 $: soglia dei 4.300 superata',
-    'Brent 83,14 $ con minimo 82,96: mai sotto gli 82',
-    'Dollar Index 99,835: quota 100 non toccata in due sedute',
+    'Oro spot 4.309,29 $, massimo di giornata 4.320,24',
+    'Decennale sceso a 4,660%, sotto la tacca del 4,68%',
+    'Dollar Index 99,802: quota 100 non toccata in due sedute',
   ],
   contradicting: [
-    'Decennale a 4,690% nel massimo, sopra la tacca del 4,68%',
+    'Brent rientrato a 81,99 $: la premessa delle 10:35 è cambiata',
     'Termini del patto di Gedda non resi pubblici',
-    'Il giro dura da due ore, e alle 14:30 esce il rapporto',
+    'Alle 14:30 esce il rapporto occupazionale',
   ],
   constraints: [
     {
@@ -313,8 +314,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Premio di rischio sul greggio che non si forma',
-      value: 'Brent 83,44 $',
-      baseline: 'da 82,49 di chiusura, con un massimo stamattina a 84,40',
+      value: 'Brent 81,99 $',
+      baseline: 'rientrato dal massimo di 84,40, contro 79,45 di due giorni fa',
       against:
         'In quattro giorni: una minaccia americana a Teheran, un piano di attacchi contro l’energia iraniana, ' +
         'una smentita, un missile houthi contro una petroliera saudita e una ritorsione iraniana annunciata ' +
@@ -350,8 +351,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 83.14,
-      display: '83,14 $',
+      now: 81.99,
+      display: '81,99 $',
       marks: [
         {
           at: 82,
@@ -363,8 +364,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.677,
-      display: '4,677%',
+      now: 4.66,
+      display: '4,660%',
       marks: [
         {
           at: 4.68,
@@ -382,8 +383,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4304.72,
-      display: '4.304,72 $',
+      now: 4309.29,
+      display: '4.309,29 $',
       marks: [
         {
           at: 4160,
