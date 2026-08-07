@@ -179,8 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-07T10:35:00+02:00',
-  checkedAt: '2026-08-07T12:15:00+02:00',
+  updatedAt: '2026-08-07T14:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -188,27 +187,27 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'media',
       regime:
-        'I due canali si sono separati: il Brent resta sopra gli 82 dollari e il metallo sale lo stesso, spot a ' +
-        '4.304,72 con un massimo di 4.316,57. La domanda di rifugio ha ripreso il sopravvento sul costo-' +
-        'opportunità mentre il canale energetico spingeva ancora nella direzione opposta, ed è la condizione ' +
-        'che l’archivio aveva dichiarato ieri sera per riconoscere il momento. La forza resta bassa: la ' +
-        'separazione dura da due ore.',
+        'I quattro canali hanno smesso di contraddirsi: l’oro sale a 4.312,33 con un massimo di 4.327,70, il ' +
+        'greggio è rientrato a 82,03 dal massimo di 84,40, il decennale è sceso a 4,664% e il dollaro a 99,752. ' +
+        'Non è più il rifugio che vince contro il canale energetico, come alle 10:35: adesso nessuno dei due ' +
+        'canali lavora contro il metallo. È una configurazione più pulita, e ha una scadenza dichiarata alle ' +
+        '14:30.',
       invalidation:
-        'Un oro spot che rientra sotto i 4.300 dollari, che ributterebbe indietro la soglia appena superata; un Brent sotto gli 80, che toglie la premessa; oppure un rapporto occupazionale nettamente sopra le attese di circa 80.000 posti con salari in accelerazione.',
+        'Un oro spot che rientra sotto i 4.300 dollari, che ributterebbe indietro la soglia superata stamattina; un rapporto occupazionale nettamente sopra le attese di circa 80.000 posti con salari in accelerazione; oppure un decennale che torna sopra il 4,70%.',
     },
     {
       horizon: 'medio',
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'Il nodo su Hormuz non si è sciolto — sanzioni sull’ente che incasserebbe i pedaggi, clausola ' +
-        'assicurativa che toglie la copertura a chi paga, transiti fermi a otto navi — e continua a tenere ' +
-        'alto il greggio. Quello che è cambiato è dove finisce quella tensione: fino a ieri arrivava all’oro ' +
-        'come costo-opportunità attraverso i rendimenti, da stamattina arriva come domanda di rifugio. La ' +
-        'direzione si gira sulla soglia dichiarata, non sull’impressione; la forza resta bassa perché il ' +
-        'canale dei tassi non si è spento.',
+        'Il premio geopolitico ha smesso di essere una serie di annunci e ha preso una forma scritta: la ' +
+        'clausola di difesa collettiva firmata alla Mecca da Arabia Saudita, Turchia e Pakistan non si ritira ' +
+        'come si ritira un comunicato, e il nodo su Hormuz resta dov’era — sanzioni, clausola assicurativa, ' +
+        'transiti a otto navi. Manca però la parte che conta per davvero, gli obblighi militari, che il ' +
+        'comunicato non indica: è una promessa senza procedura, e finché resta tale il premio è di quelli che ' +
+        'si prezzano ma non si misurano.',
       invalidation:
-        'Un oro spot che rientra sotto i 4.300 dollari con il Brent ancora sopra gli 82; un Brent che torna sotto gli 80, che toglie il premio su cui poggia metà della lettura; un rapporto occupazionale nettamente sopra le attese di circa 80.000 posti con salari in accelerazione. Prima di tutte queste, un decennale sopra il 4,70% con l’oro ancora sopra i 4.300, che direbbe che i tassi stanno riprendendo il sopravvento senza che il metallo abbia ceduto.',
+        'Un testo attuativo che limiti l’impegno alla consultazione senza automatismi; un oro spot che rientra sotto i 4.300 dollari; un Brent che torna sotto gli 80, che direbbe che l’energia non prezza più il rischio regionale; oppure un rapporto occupazionale nettamente sopra le attese di circa 80.000 posti. Prima di tutte queste, un decennale sopra il 4,70% con l’oro ancora sopra i 4.300.',
     },
     {
       horizon: 'lungo',
@@ -226,31 +225,31 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, il ritorno stabile del decennale sopra il 5%, una revisione che riporti la produttività sotto la crescita del costo del lavoro per unità, oppure la revoca dei dazi sul polisilicio prima del 4 dicembre — o prezzi di mercato che restano sopra i pavimenti fissati, nel qual caso il provvedimento non vincola nulla.',
     },
   ],
-  headline: 'L’oro passa i 4.300 con il greggio sopra gli 82: il rifugio torna in vantaggio',
+  headline: 'Alla Mecca la clausola c’è, gli obblighi militari no',
   stance:
-    'Ieri sera questo archivio aveva scritto la condizione per riconoscere il momento in cui il rifugio riprende ' +
-    'il sopravvento sul costo-opportunità: un Brent sopra gli 82 dollari e l’oro spot sopra i 4.300. Stamattina ' +
-    'sono vere insieme — metallo a 4.304,72 con un massimo di 4.316,57, greggio a 83,14 con un minimo di 82,96 ' +
-    '— e la direzione si gira. Nella stessa mattina Arabia Saudita, Turchia e Pakistan firmano a Gedda un ' +
-    'accordo di difesa che estende un patto del 2025, con i termini non resi pubblici: è il contesto, non la ' +
-    'causa. Alle 08:58 la soglia distava un dollaro e dodici e la lettura non era stata cambiata.',
+    'Arabia Saudita, Turchia e Pakistan hanno firmato alla Mecca un accordo che dichiara l’attacco a uno come ' +
+    'attacco a tutti. Stamattina questo archivio aveva scritto che la differenza fra un impegno operativo e una ' +
+    'cornice di consultazione era tutta: la risposta è che il testo ha la forma del primo e, per ora, il ' +
+    'contenuto del secondo — nessuna specifica sugli obblighi militari. Il negoziato durava da quasi un anno, ' +
+    'quindi non è una reazione a questa settimana. Sui prezzi l’oro è a 4.312,33 con un massimo di 4.327,70 ' +
+    'mentre il greggio rientra a 82,03: la giornata però la decide il rapporto occupazionale delle 14:30.',
   favours: [
-    'Applicare la tacca dichiarata nei due versi: alle 08:58 ha impedito di cambiare lettura per un dollaro, alle 10:38 ha imposto di cambiarla',
-    'Separare il contesto dalla causa: il patto di Gedda dice come Riad prezza il rischio, il superamento dei 4.300 dice che cosa fa il mercato',
+    'Distinguere la promessa dalla procedura: una clausola di difesa collettiva vincola politicamente, ma senza obblighi scritti non produce comportamenti prevedibili',
+    'Tenere separate le due scadenze: il patto conta sui giorni e sulle settimane, il rapporto occupazionale conta sul quarto d’ora',
   ],
   avoid: [
-    'Trattare un accordo di cui non si conoscono i termini come un fatto operativo: finché non si legge il testo, non si sa se sia un impegno o una cornice',
-    'Dare per acquisito il giro di stamattina: dura da due ore, e alle 14:30 esce il dato che le analisi aperte hanno indicato come decisivo',
+    'Leggere la firma come una reazione all’escalation: la trattativa durava da quasi un anno, gli eventi l’hanno accelerata e non generata',
+    'Costruire una lettura che pretenda di sopravvivere al dato delle 14:30 senza averlo visto: questa nasce con una scadenza dichiarata',
   ],
   confirming: [
-    'Oro spot 4.309,29 $, massimo di giornata 4.320,24',
-    'Decennale sceso a 4,660%, sotto la tacca del 4,68%',
-    'Dollar Index 99,802: quota 100 non toccata in due sedute',
+    'Clausola di difesa collettiva firmata, non più annunciata',
+    'Oro spot 4.312,33 $, massimo di giornata 4.327,70',
+    'Decennale 4,664% e Dollar Index 99,752, entrambi in calo',
   ],
   contradicting: [
-    'Brent rientrato a 81,99 $: la premessa delle 10:35 è cambiata',
-    'Termini del patto di Gedda non resi pubblici',
-    'Alle 14:30 esce il rapporto occupazionale',
+    'Nessun obbligo militare specifico nel comunicato',
+    'Brent rientrato a 82,03 $ dal massimo di 84,40',
+    'Il rapporto occupazionale esce fra pochi minuti',
   ],
   constraints: [
     {
@@ -351,8 +350,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 81.99,
-      display: '81,99 $',
+      now: 82.03,
+      display: '82,03 $',
       marks: [
         {
           at: 82,
@@ -364,8 +363,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.66,
-      display: '4,660%',
+      now: 4.664,
+      display: '4,664%',
       marks: [
         {
           at: 4.68,
@@ -383,8 +382,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4309.29,
-      display: '4.309,29 $',
+      now: 4312.33,
+      display: '4.312,33 $',
       marks: [
         {
           at: 4160,
@@ -402,7 +401,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
-    'un-patto-a-gedda-e-il-rifugio-torna-in-vantaggio',
+    'un-attacco-a-uno-e-un-attacco-a-tutti-il-patto-e-firmato',
     'un-dazio-con-il-prezzo-minimo-e-la-data-prima-della-fed',
     'hormuz-il-pedaggio-che-nessuno-puo-pagare',
   ],
