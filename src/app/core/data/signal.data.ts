@@ -179,33 +179,35 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-07T09:15:00+02:00',
+  updatedAt: '2026-08-07T10:35:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'neutrale-ribassista',
+      direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'La somma delle due spinte ha smesso di essere vicina a zero. Petrolio, rendimenti e dollaro salgono ' +
-        'insieme — Brent 82,52, decennale 4,67%, biennale 4,245%, Dollar Index 99,86 — e il metallo scende dopo ' +
-        'aver toccato 4.363,60: la domanda di rifugio c’è ancora ma non compensa più il costo-opportunità. ' +
-        'L’innesco è la bozza iraniana su Hormuz pubblicata da Fars, che ha riportato il premio sul greggio.',
+        'I due canali si sono separati: il Brent resta sopra gli 82 dollari e il metallo sale lo stesso, spot a ' +
+        '4.304,72 con un massimo di 4.316,57. La domanda di rifugio ha ripreso il sopravvento sul costo-' +
+        'opportunità mentre il canale energetico spingeva ancora nella direzione opposta, ed è la condizione ' +
+        'che l’archivio aveva dichiarato ieri sera per riconoscere il momento. La forza resta bassa: la ' +
+        'separazione dura da due ore.',
       invalidation:
-        'Un ritorno dell’oro sopra il massimo di giornata di 4.363,60 dollari mentre il Brent resta sopra gli 82, che direbbe che il rifugio vince comunque; oppure un Brent di nuovo sotto gli 80, che toglie la premessa.',
+        'Un oro spot che rientra sotto i 4.300 dollari, che ributterebbe indietro la soglia appena superata; un Brent sotto gli 80, che toglie la premessa; oppure un rapporto occupazionale nettamente sopra le attese di circa 80.000 posti con salari in accelerazione.',
     },
     {
       horizon: 'medio',
-      direction: 'neutrale-ribassista',
+      direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'Il canale che pesa resta quello del greggio, ma adesso ha una causa che non si scioglie con una ' +
-        'dichiarazione: l’intesa su Hormuz non è praticabile perché l’ente che incasserebbe le commissioni è ' +
-        'sotto sanzioni e una clausola assicurativa toglie la copertura di guerra a chi le paga. Finché il ' +
-        'transito non si normalizza il greggio resta alto, e da lì passano inflazione attesa e rendimenti. La ' +
-        'forza torna da bassa a media perché la base non è più una bozza parlamentare ma un vincolo contrattuale.',
+        'Il nodo su Hormuz non si è sciolto — sanzioni sull’ente che incasserebbe i pedaggi, clausola ' +
+        'assicurativa che toglie la copertura a chi paga, transiti fermi a otto navi — e continua a tenere ' +
+        'alto il greggio. Quello che è cambiato è dove finisce quella tensione: fino a ieri arrivava all’oro ' +
+        'come costo-opportunità attraverso i rendimenti, da stamattina arriva come domanda di rifugio. La ' +
+        'direzione si gira sulla soglia dichiarata, non sull’impressione; la forza resta bassa perché il ' +
+        'canale dei tassi non si è spento.',
       invalidation:
-        'Un Brent che torna sotto gli 80 dollari, che toglie la premessa; una deroga statunitense alle sanzioni sull’Autorità dello Stretto o il ritiro della clausola assicurativa, che scioglierebbero il nodo operativo; un conteggio dei transiti sopra le otto navi; oppure un rapporto occupazionale nettamente sotto le attese di circa 80.000 posti. Prima di tutte queste, un oro spot che risale sopra i 4.300 mentre il Brent resta sopra gli 82.',
+        'Un oro spot che rientra sotto i 4.300 dollari con il Brent ancora sopra gli 82; un Brent che torna sotto gli 80, che toglie il premio su cui poggia metà della lettura; un rapporto occupazionale nettamente sopra le attese di circa 80.000 posti con salari in accelerazione. Prima di tutte queste, un decennale sopra il 4,70% con l’oro ancora sopra i 4.300, che direbbe che i tassi stanno riprendendo il sopravvento senza che il metallo abbia ceduto.',
     },
     {
       horizon: 'lungo',
@@ -223,31 +225,31 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, il ritorno stabile del decennale sopra il 5%, una revisione che riporti la produttività sotto la crescita del costo del lavoro per unità, oppure la revoca dei dazi sul polisilicio prima del 4 dicembre — o prezzi di mercato che restano sopra i pavimenti fissati, nel qual caso il provvedimento non vincola nulla.',
     },
   ],
-  headline: 'Un dazio con il prezzo minimo, in vigore cinque giorni prima della Fed',
+  headline: 'L’oro passa i 4.300 con il greggio sopra gli 82: il rifugio torna in vantaggio',
   stance:
-    'La Casa Bianca ha firmato il 6 agosto una proclamazione sul polisilicio: dazio del 15% su tutta la filiera ' +
-    'e, soprattutto, prezzi minimi all’importazione — 21 dollari al chilo sul polisilicio, 100 su lingotti e ' +
-    'wafer, 0,22 e 0,38 dollari per watt su celle e moduli. Entra in vigore il 4 dicembre, cinque giorni prima ' +
-    'della riunione su cui il mercato prezza un rialzo all’82,7%. Non muove l’oro oggi, e la giornata la decide ' +
-    'il rapporto occupazionale delle 14:30: cambia però la composizione dell’inflazione che la Fed dovrà ' +
-    'giudicare, perché un pavimento fissato per legge non passa dai salari e nessuna produttività lo assorbe.',
+    'Ieri sera questo archivio aveva scritto la condizione per riconoscere il momento in cui il rifugio riprende ' +
+    'il sopravvento sul costo-opportunità: un Brent sopra gli 82 dollari e l’oro spot sopra i 4.300. Stamattina ' +
+    'sono vere insieme — metallo a 4.304,72 con un massimo di 4.316,57, greggio a 83,14 con un minimo di 82,96 ' +
+    '— e la direzione si gira. Nella stessa mattina Arabia Saudita, Turchia e Pakistan firmano a Gedda un ' +
+    'accordo di difesa che estende un patto del 2025, con i termini non resi pubblici: è il contesto, non la ' +
+    'causa. Alle 08:58 la soglia distava un dollaro e dodici e la lettura non era stata cambiata.',
   favours: [
-    'Distinguere il livello atteso dell’inflazione dalla sua composizione: è la seconda a decidere se una banca centrale può permettersi di guardare oltre un rincaro',
-    'Misurare questo provvedimento su un solo numero, il prezzo di mercato della filiera contro i pavimenti fissati: sopra è un annuncio, sotto è un rincaro obbligatorio',
+    'Applicare la tacca dichiarata nei due versi: alle 08:58 ha impedito di cambiare lettura per un dollaro, alle 10:38 ha imposto di cambiarla',
+    'Separare il contesto dalla causa: il patto di Gedda dice come Riad prezza il rischio, il superamento dei 4.300 dice che cosa fa il mercato',
   ],
   avoid: [
-    'Gonfiare un dazio settoriale in un cambio di regime dei prezzi: vale pochi decimi su un indice generale, e la data è fra quattro mesi',
-    'Leggerlo come una misura contro la Cina: si applica a prescindere dall’origine, ed è proprio questo a renderlo più difficile da smontare con un negoziato',
+    'Trattare un accordo di cui non si conoscono i termini come un fatto operativo: finché non si legge il testo, non si sa se sia un impegno o una cornice',
+    'Dare per acquisito il giro di stamattina: dura da due ore, e alle 14:30 esce il dato che le analisi aperte hanno indicato come decisivo',
   ],
   confirming: [
-    'Prezzi minimi all’importazione in vigore dal 4 dicembre',
-    'Oro spot 4.290,68 $, più 1,18%: sale con il greggio',
-    'Rialzo Fed entro dicembre ancora all’82,7%',
+    'Oro spot 4.304,72 $: soglia dei 4.300 superata',
+    'Brent 83,14 $ con minimo 82,96: mai sotto gli 82',
+    'Dollar Index 99,835: quota 100 non toccata in due sedute',
   ],
   contradicting: [
-    'Dazio settoriale: pochi decimi su un indice generale',
-    'Brent 83,44 $ e decennale 4,677%, ancora contrari al metallo',
-    'Massimo di 4.298,88 $, mai arrivato ai 4.300 dichiarati',
+    'Decennale a 4,690% nel massimo, sopra la tacca del 4,68%',
+    'Termini del patto di Gedda non resi pubblici',
+    'Il giro dura da due ore, e alle 14:30 esce il rapporto',
   ],
   constraints: [
     {
@@ -348,8 +350,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 83.44,
-      display: '83,44 $',
+      now: 83.14,
+      display: '83,14 $',
       marks: [
         {
           at: 82,
@@ -380,8 +382,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4290.68,
-      display: '4.290,68 $',
+      now: 4304.72,
+      display: '4.304,72 $',
       marks: [
         {
           at: 4160,
@@ -399,9 +401,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'un-patto-a-gedda-e-il-rifugio-torna-in-vantaggio',
     'un-dazio-con-il-prezzo-minimo-e-la-data-prima-della-fed',
     'hormuz-il-pedaggio-che-nessuno-puo-pagare',
-    'warsh-apre-a-un-rialzo-e-il-numero-fermo-si-muove',
   ],
 };
 

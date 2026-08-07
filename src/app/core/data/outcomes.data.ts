@@ -28,6 +28,63 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'hormuz-il-pedaggio-che-nessuno-puo-pagare',
+    checkedAt: '2026-08-07T10:30:00+02:00',
+    verdict: 'parziale',
+    conditions: [
+      {
+        condition:
+          'Un conteggio dei transiti che risale sopra le otto navi: è la condizione che questo archivio ha dichiarato per prima e non ha mai cambiato, ed è l’unica che misura il passaggio invece di descriverlo.',
+        triggered: false,
+        evidence:
+          'Il conteggio non è stato aggiornato: resta quello di otto navi del 5 agosto. Il tracker ' +
+          'indipendente basato su PortWatch, consultato alle 22:50 del 6 agosto, era fermo a due transiti ' +
+          'del 2 agosto contro una base di 73 al giorno, e al giorno 159 di chiusura dello Stretto.',
+      },
+      {
+        condition:
+          'Una deroga statunitense esplicita alle sanzioni sull’Autorità dello Stretto del Golfo Persico, oppure il ritiro della clausola del Lloyd’s Market Association: toglierebbero il comma 22 su cui questa lettura poggia.',
+        triggered: false,
+        evidence:
+          'Nessuna deroga e nessun ritiro. Al contrario, la verifica del 6 agosto ha trovato che il quadro ' +
+          'sanzionatorio è più esteso di quanto l’analisi sapesse: il 29 luglio il Tesoro statunitense aveva ' +
+          'già designato due entità iraniane che gestiscono l’«assicurazione» obbligatoria per il transito.',
+      },
+      {
+        condition:
+          'Un’intesa che azzeri le commissioni, portando la richiesta iraniana dal 5-7% a nessun pedaggio, in linea con quanto chiedono Washington e l’Organizzazione marittima internazionale.',
+        triggered: false,
+        evidence:
+          'Nessuna intesa sulle commissioni. La dichiarazione congiunta Iran-Oman risulta ancora «in revisione ' +
+          'e in fase finale di stesura» secondo il portavoce degli Esteri iraniano, con la condizione aggiunta ' +
+          'che nessuna terza parte ostacoli il processo.',
+      },
+      {
+        condition:
+          'Un Brent che torna sotto gli 80 dollari: direbbe che il mercato non crede al blocco operativo, e toglierebbe la premessa sul canale energetico.',
+        triggered: false,
+        evidence:
+          'Il Brent non è mai tornato sotto quel livello nella finestra: dopo la pubblicazione ha chiuso il ' +
+          '6 agosto a 83,60 con un massimo a 83,78, e il 7 agosto oscilla fra 82,96 e 84,40, con 83,14 alle ' +
+          '10:27 (Investing.com). Il minimo della finestra resta quasi tre dollari sopra la soglia.',
+      },
+      {
+        condition:
+          'Prima di tutte queste, e senza aspettare la rottura: un Brent che resta sopra gli 82 dollari mentre l’oro spot risale sopra i 4.300, che segnalerebbe il rifugio di nuovo in vantaggio sul costo-opportunità.',
+        triggered: true,
+        evidence:
+          'Scattata la mattina del 7 agosto, ed entrambe le metà con un numero. XAU/USD spot è a 4.304,72 ' +
+          'dollari alle 10:38 con un massimo di giornata a 4.316,57, da una chiusura di 4.240,69; il Brent ' +
+          'nello stesso momento è a 83,14, con un minimo di giornata a 82,96 che non è mai sceso sotto gli 82 ' +
+          '(Investing.com). Alle 08:58 il massimo era 4.298,88, cioè un dollaro e dodici sotto la soglia: il ' +
+          'controllo di quell’ora aveva registrato la condizione come non scattata, ed è scattata due ore dopo.',
+      },
+    ],
+    what: 'Una condizione su cinque è scattata, ed è quella scritta per accorgersi del logoramento prima della rottura. La lettura sosteneva che il greggio alto lavorasse contro l’oro attraverso i rendimenti, e che il nodo su Hormuz — sanzioni più clausola assicurativa — tenesse alto il greggio: la seconda metà ha retto per intero, perché nessuno dei tre fatti diplomatici si è mosso e il Brent non è mai sceso sotto gli 82. La prima metà no. Con il greggio a 83,14 l’oro spot è passato da 4.240 a 4.304 in una mattina, cioè il rifugio ha ripreso il sopravvento sul costo-opportunità mentre il canale energetico spingeva ancora nella direzione opposta. La tesi sul perché lo Stretto non riapre resta in piedi; quella su che cosa ne consegua per il metallo si sta consumando.',
+    lesson:
+      'La soglia di logoramento ha fatto per la prima volta il suo mestiere in tempo reale e in tutte e due le direzioni. Alle 08:58 del 7 agosto l’oro aveva segnato 4.298,88, un dollaro e dodici sotto la cifra dichiarata, e il controllo di quell’ora ha rifiutato di cambiare lettura: due ore dopo la soglia è stata superata e la lettura è cambiata. È la prova che serviva sul fatto che una tacca scritta prima vale in entrambi i versi — impedisce di cambiare idea troppo presto tanto quanto obbliga a cambiarla quando il numero arriva. Resta un difetto noto e non risolto: le condizioni sull’oro delle due analisi precedenti sono scritte su livelli del contratto future, che scambia una sessantina di dollari sopra lo spot, mentre le soglie dell’indicatore sono sullo spot. Finché le due serie convivono nell’archivio, giudicare quelle condizioni richiede di decidere ogni volta quale numero valga.',
+  },
+  {
     slug: 'teheran-i-colloqui-con-oman-non-sono-la-riapertura',
     checkedAt: '2026-08-06T18:45:00+02:00',
     verdict: 'parziale',

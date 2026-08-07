@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { pattoGeddaRifugio } from './articles/un-patto-a-gedda-e-il-rifugio-torna-in-vantaggio';
 import { dazioPrezzoMinimoPolisilicio } from './articles/un-dazio-con-il-prezzo-minimo-e-la-data-prima-della-fed';
 import { hormuzPedaggioAssicurazione } from './articles/hormuz-il-pedaggio-che-nessuno-puo-pagare';
 import { iranBozzaHormuz } from './articles/iran-pubblica-la-bozza-su-hormuz-il-rialzo-ha-un-nome';
@@ -63,6 +64,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  pattoGeddaRifugio,
   dazioPrezzoMinimoPolisilicio,
   hormuzPedaggioAssicurazione,
   iranBozzaHormuz,
