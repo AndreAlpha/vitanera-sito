@@ -17,6 +17,15 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'ADNOC',
+    name: 'Navi ADNOC colpite nello Stretto di Hormuz',
+    value: 'quindici',
+    change: 'tre questa settimana, un morto e venti feriti',
+    tone: 'bear',
+    icon: 'alert',
+    note: 'Dichiarazione della compagnia petrolifera statale di Abu Dhabi del 7 agosto, riportata da Gulf News: quindici navi colpite da missili o droni dall’inizio del conflitto, impatto significativo sulle operazioni, misure di protezione per personale e mezzi. È la prima volta che un produttore del Golfo quantifica un danno operativo invece di annunciare un’intenzione, ed è la ragione per cui vale più dei sei annunci diplomatici che in quattro giorni non avevano mosso il prezzo. I numeri sono quelli forniti dall’azienda e non risultano da una verifica indipendente. Dallo Stretto passa circa un quinto del consumo mondiale di petrolio.',
+  },
+  {
     symbol: 'NFP',
     name: 'Posti di lavoro non agricoli, luglio',
     value: '−23.000',
@@ -46,11 +55,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'XAU/USD',
     name: 'Oro spot',
-    value: '4.334,72 $',
-    change: 'più 2,22%, massimo 4.371,89, da 4.240,69 di chiusura',
+    value: '4.354,98 $',
+    change: 'più 2,70%, massimo 4.371,89, da 4.240,69 di chiusura',
     tone: 'bull',
     icon: 'coin',
-    note: 'Quotazione spot delle 16:06 del 7 agosto, non in tempo reale. Il rapporto occupazionale aveva portato il metallo a 4.371,89; da lì ne sono stati restituiti 37, e restano tre quarti del movimento. Il dettaglio che conta è che il rientro arriva insieme a quello del biennale e del Brent: la divergenza fra oro e greggio, che alle 14:56 era la prova che a muovere il metallo fossero i tassi, si è ridotta in poco più di un’ora. Attenzione alla serie: il contratto future scambia una sessantina di dollari più in alto, e le soglie di questa scheda sono sullo spot.',
+    note: 'Quotazione spot delle 17:20 del 7 agosto, non in tempo reale. Il metallo ha ripreso quasi tutto il rientro di metà pomeriggio e resta a diciassette dollari dal massimo di giornata. Quello che è cambiato non è il prezzo ma la ragione: alle 14:56 saliva mentre il greggio scendeva, e quella divergenza era la prova che a muoverlo fossero i tassi; adesso sale insieme al greggio, e la prova non c’è più. Attenzione alla serie: il contratto future scambia una sessantina di dollari più in alto, e le soglie di questa scheda sono sullo spot.',
   },
   {
     symbol: 'SUSSIDI',
@@ -154,11 +163,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'US2Y',
     name: 'Treasury a 2 anni',
-    value: '4,191%',
-    change: 'meno 5,4 punti base, risalito di 3,3 dal minimo di 4,158%',
+    value: '4,202%',
+    change: 'meno 4,3 punti base, risalito di 4,4 dal minimo di 4,158%',
     tone: 'bull',
     icon: 'arrow-down',
-    note: 'È la scadenza dove si prezza per prima una decisione di settembre, ed è quella da guardare per sapere se la lettura del dato regge. Dopo il rapporto era sceso a 4,158%, meno 8,7 punti base; alle 16:00 è a 4,191%, cioè ne ha restituiti 3,3 in un’ora. Resta ben sotto il 4,245% di ieri, quindi il movimento non è annullato, ma la direzione della correzione è la stessa del dollaro, del decennale e della probabilità di rialzo: quattro misure che si erano mosse insieme al ribasso stanno rientrando insieme.',
+    note: 'È la scadenza dove si prezza per prima una decisione di settembre, ed è quella da guardare per sapere se la lettura del dato regge. Dopo il rapporto era sceso a 4,158%, meno 8,7 punti base; alle 17:18 è a 4,202%, cioè ne ha restituiti 4,4, poco meno di metà. Resta sotto il 4,245% di ieri, quindi il movimento non è annullato, ma è la gamba che si sta consumando più in fretta, e il 4,25% è il livello oltre il quale il canale dei tassi torna a lavorare contro il metallo.',
   },
   {
     symbol: 'US10Y',
@@ -181,8 +190,8 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'DXY',
     name: 'Dollar Index',
-    value: '99,430',
-    change: 'meno 0,38%, minimo di giornata 99,280, da 99,808',
+    value: '99,435',
+    change: 'meno 0,37%, minimo di giornata 99,280, da 99,808',
     tone: 'bull',
     icon: 'arrow-down',
     note: 'Per due sedute il dollaro era stato la gamba che non si muoveva: quota 100 mai toccata, ma nemmeno un cedimento. Dopo il rapporto occupazionale si è mosso, e ha attraversato la soglia di 99,50 che una condizione dichiarata ieri sera indicava come una delle due metà di un’invalidazione. È la terza conferma indipendente dello stesso movimento, dopo la curva breve e la probabilità di rialzo: quando dollaro, biennale e prezzi a termine si muovono insieme nella stessa direzione, il canale è quello monetario e non quello del rischio.',
@@ -190,11 +199,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: '82,52 $',
-    change: 'più 0,04%, risalito dal minimo di 81,52',
+    value: '83,33 $',
+    change: 'più 1,02%, dal minimo di 81,52 e da 82,49 di chiusura',
     tone: 'warn',
     icon: 'arrow-up',
-    note: 'Nel primo pomeriggio il greggio era sceso fino a 81,52 mentre i mercati valutavano segnali di distensione fra Iran e Paesi del Golfo, e quella discesa era la prova che alle 14:56 qualificava il rialzo dell’oro come un fatto di tassi e non di rischio. Alle 16:20 è già rientrata: 82,52 dollari, sopra la soglia e positivo sulla giornata. Lo sgonfiamento del premio è durato meno di due ore, il che dice qualcosa sia sul premio sia sulla distensione — nessuno dei due nodi materiali si è mosso, e i dubbi su commissioni, sanzioni e coperture assicurative restano quelli del 6 agosto.',
+    note: 'Nel primo pomeriggio il greggio era sceso fino a 81,52 mentre i mercati valutavano segnali di distensione fra Iran e Paesi del Golfo, e quella discesa era la prova che alle 14:56 qualificava il rialzo dell’oro come un fatto di tassi e non di rischio. Alle 17:15 è a 83,33, più 1,02%: due punti percentuali di inversione in poco più di due ore, dopo che ADNOC ha dichiarato quindici navi colpite. Il premio si è riformato per la terza volta in quarantotto ore, ma stavolta su un fatto materiale invece che su un documento. Sopra gli 84 dollari cambia di segno per l’oro: torna ad alimentare i rendimenti più della domanda di rifugio.',
   },
   {
     symbol: 'GOLFO',

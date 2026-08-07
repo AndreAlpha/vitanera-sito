@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { adnocQuindiciNavi } from './articles/quindici-navi-colpite-e-il-greggio-riparte';
 import { nfpLuglioRialzoInMinoranza } from './articles/meno-23-mila-posti-e-il-rialzo-di-settembre-passa-in-minoranza';
 import { pattoMeccaClausola } from './articles/un-attacco-a-uno-e-un-attacco-a-tutti-il-patto-e-firmato';
 import { pattoGeddaRifugio } from './articles/un-patto-a-gedda-e-il-rifugio-torna-in-vantaggio';
@@ -66,6 +67,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  adnocQuindiciNavi,
   nfpLuglioRialzoInMinoranza,
   pattoMeccaClausola,
   pattoGeddaRifugio,

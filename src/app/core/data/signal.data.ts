@@ -179,41 +179,37 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-07T15:05:00+02:00',
-  checkedAt: '2026-08-07T16:20:00+02:00',
+  updatedAt: '2026-08-07T17:25:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
       direction: 'rialzista',
-      strength: 'bassa',
+      strength: 'media',
       regime:
-        'Il canale dei tassi ha cambiato lato in mezz’ora. Il rapporto occupazionale dà meno 23.000 posti ' +
-        'contro attese di circa 80.000, con 103.000 tolti a maggio e giugno, e tutta la curva breve si è mossa ' +
-        'insieme: biennale a 4,162% da 4,245%, decennale a 4,616%, Dollar Index a 99,345 sotto la soglia di ' +
-        '99,50 dichiarata ieri sera. L’oro spot è a 4.360,97 con un massimo di 4.371,89. La prova che sia il ' +
-        'canale dei tassi e non il rifugio è che nella stessa ora il Brent scende dell’1,01% a 81,66: il metallo ' +
-        'sale mentre il premio geopolitico si sgonfia. Ricontrollato alle 16:20 la direzione regge e la forza ' +
-        'no: l’oro ha restituito 37 dollari dal massimo, il biennale è risalito di 3,3 punti base dal minimo e ' +
-        'il Brent è tornato sopra gli 82. Nessuna delle tre soglie dichiarate è stata toccata, ma si sono ' +
-        'avvicinate tutte e tre insieme, e la prova per divergenza è la prima cosa che si è consumata.',
+        'I due canali hanno smesso di dividersi e adesso spingono insieme, ed è una notizia peggiore di quanto ' +
+        'sembri. L’oro è a 4.354,98 dollari, più 2,70%, ma il Brent è risalito a 83,33 con più 1,02% dopo essere ' +
+        'stato a 81,66 e meno 1,01% alle 14:57: la divergenza che alle 15:05 dimostrava che a muovere il metallo ' +
+        'fossero i tassi non c’è più. Restano due sostegni parziali al posto di uno solido — il biennale a ' +
+        '4,202% ha restituito metà del calo, e il premio di rischio è quello che in questa settimana si è ' +
+        'formato e sgonfiato tre volte.',
       invalidation:
-        'Un oro spot che rientra sotto i 4.300 dollari, che cancellerebbe l’intero movimento del dato; una probabilità di rialzo a settembre che risale sopra il 50%, cioè che torna a essere lo scenario più probabile; oppure un decennale che torna sopra il 4,70% con l’oro ancora sopra i 4.300.',
+        'Un Brent che rientra sotto gli 82 dollari entro la seduta, che direbbe che la dichiarazione di ADNOC è stata letta come rumore; un oro spot che rientra sotto i 4.300 dollari; oppure una probabilità di rialzo a settembre che risale sopra il 50%.',
     },
     {
       horizon: 'medio',
       direction: 'rialzista',
       strength: 'media',
       regime:
-        'Il vincolo sul mercato del lavoro si è sciolto, e con esso l’ipotesi che reggeva il rialzo di ' +
-        'settembre: la probabilità è passata dal 55,1% al 41,7%, cioè dall’altra parte della metà, e a dicembre ' +
-        'dall’82,7% al 73,8%. Non è una sfumatura di probabilità, è il cambio del caso base. I salari ' +
-        'decelerano su entrambe le letture — più 0,1% sul mese, più 3,2% sull’anno — e tolgono alla banca ' +
-        'centrale l’argomento inflazionistico, non solo la scusa. Il premio geopolitico non è sparito ma è ' +
-        'passato in secondo piano: i transiti a Hormuz restano 33 in quattro giorni contro 50 la settimana ' +
-        'prima, e la clausola firmata alla Mecca resta sul tavolo senza obblighi militari.',
+        'Il vincolo sul mercato del lavoro si è sciolto — meno 23.000 posti e 103.000 tolti ai due mesi ' +
+        'precedenti — e la probabilità di un rialzo a settembre è passata dall’altra parte della metà, al 43,7% ' +
+        'da 55,1%. Sopra ci si è aggiunto un premio di rischio con un fatto materiale dietro: ADNOC dichiara ' +
+        'quindici navi colpite nello Stretto di Hormuz dall’inizio del conflitto, tre questa settimana, con un ' +
+        'morto e venti feriti. È il primo produttore del Golfo che quantifica un danno operativo invece di ' +
+        'annunciare un’intenzione, e vale più di sei comunicati. Ma sopra gli 84 dollari quello stesso premio ' +
+        'smette di sostenere il metallo e ricomincia ad alimentare i rendimenti contro di lui.',
       invalidation:
-        'Un indice dei prezzi mercoledì 12 agosto sopra le attese del 3,4% annuo, o un dato di fondo sopra il 2,5%, che restituirebbe alla Fed la ragione che il lavoro le ha appena tolto; una probabilità di rialzo a settembre di nuovo sopra il 50%; oppure un oro spot che rientra sotto i 4.300 dollari. Prima di tutte queste, un Brent che torna sopra gli 84 dollari mentre l’oro sale con lui: toglierebbe la prova che a muovere il metallo siano i tassi e non il rischio.',
+        'Un indice dei prezzi mercoledì 12 agosto sopra le attese del 3,4% annuo, o un dato di fondo sopra il 2,5%, che con il greggio di nuovo in salita rimetterebbe il rialzo di settembre sul tavolo; una probabilità di rialzo a settembre di nuovo sopra il 50%; oppure un oro spot che rientra sotto i 4.300 dollari. Prima di tutte queste, un Brent sopra gli 84 dollari con il biennale che risale sopra il 4,25%.',
     },
     {
       horizon: 'lungo',
@@ -231,34 +227,34 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una svolta monetaria confermata dalle riunioni, il ritorno stabile del decennale sopra il 5%, una revisione che riporti la produttività sotto la crescita del costo del lavoro per unità, oppure la revoca dei dazi sul polisilicio prima del 4 dicembre — o prezzi di mercato che restano sopra i pavimenti fissati, nel qual caso il provvedimento non vincola nulla.',
     },
   ],
-  headline: 'Il rialzo di settembre passa in minoranza: 41,7%',
+  headline: 'ADNOC: quindici navi colpite, e il greggio gira',
   stance:
-    'Il rapporto occupazionale di luglio dà meno 23.000 posti contro attese di circa 80.000, con maggio e ' +
-    'giugno rivisti al ribasso di 103.000 in tutto. La probabilità di un rialzo a settembre è scesa dal 55,1% ' +
-    'al 41,7%: per la prima volta il caso base è che la Fed resti ferma. L’oro spot è a 4.360,97 dollari, più ' +
-    '2,84%, ma il fatto che conta è un altro — nella stessa ora il Brent scende dell’1,01% a 81,66. Il metallo ' +
-    'sale mentre il premio geopolitico si sgonfia, ed è la firma di un movimento sui tassi e non sul rifugio. ' +
-    'Questo dato era stato indicato come decisivo da quattro analisi, tutte scritte prima di conoscerlo.',
+    'ADNOC dichiara che quindici sue navi sono state colpite da missili o droni nello Stretto di Hormuz ' +
+    'dall’inizio del conflitto, tre soltanto questa settimana, con un morto e venti feriti, e che gli attacchi ' +
+    'stanno avendo un impatto significativo sulle operazioni. Il Brent è passato da meno 1,01% a più 1,02% in ' +
+    'poco più di due ore, a 83,33 dollari. Per sei giorni il premio di rischio non si era formato contro sei ' +
+    'annunci diplomatici: si forma adesso, contro un’azienda che dichiara quanto le sta costando. L’oro resta ' +
+    'a 4.354,98, più 2,70%, ma la divergenza che alle 15:05 spiegava quel rialzo si è chiusa.',
   favours: [
-    'Leggere la divergenza fra oro e greggio come la prova di quale canale stia lavorando: se salissero insieme sarebbe rifugio, e durerebbe quanto la tensione',
-    'Guardare le revisioni prima del numero di copertina: 103.000 posti tolti a maggio e giugno pesano più dei 23.000 persi a luglio',
-    'Leggere il calo della disoccupazione al 4,1% insieme alla partecipazione al 61,4%: il tasso migliora perché la forza lavoro si svuota, non perché qualcuno viene assunto',
+    'Distinguere chi dichiara un’intenzione da chi dichiara un costo che sta già pagando: la seconda è la specie di prova che questo archivio pesa di più',
+    'Tenere separate le due gambe del rialzo, perché hanno vite diverse: il canale dei tassi scade mercoledì con l’indice dei prezzi, il premio di rischio si sgonfia quando le notizie smettono',
+    'Guardare gli 84 dollari di Brent come una soglia a due facce: sotto sostengono il metallo, sopra ricominciano ad alimentare i rendimenti contro di lui',
   ],
   avoid: [
-    'Trattare il movimento come ancora da fare: 120 dollari sono arrivati in mezz’ora, e chi legge lo fa con il rialzo già avvenuto',
-    'Dare per chiusa la partita sulla Fed prima dell’indice dei prezzi di mercoledì: un dato sopra le attese le restituisce la ragione che il lavoro le ha appena tolto',
+    'Leggere il greggio in salita come una notizia favorevole all’oro senza guardare il livello: è vero fino a 84 dollari e falso oltre, ed è la regola dichiarata il 5 agosto',
+    'Trattare come intatto il ragionamento delle 15:05: la conclusione regge, la prova su cui poggiava no',
   ],
   confirming: [
-    'Meno 23.000 posti contro attese di circa 80.000, e 103.000 tolti ai due mesi precedenti',
-    'Rialzo Fed a settembre al 43,7%: risalito da 41,7% ma ancora sotto la metà',
-    'Oro spot 4.334,72 $ alle 16:06, più 2,22%: tre quarti del movimento del dato tengono',
-    'Dollar Index 99,430 e biennale 4,191%, entrambi sotto i livelli di ieri',
+    'Quindici navi ADNOC colpite, tre questa settimana, un morto e venti feriti',
+    'Brent 83,33 $, più 1,02%: il premio si forma su un fatto materiale e non su un annuncio',
+    'Oro spot 4.354,98 $, più 2,70%, massimo di giornata 4.371,89',
+    'Rialzo Fed a settembre al 43,7% e Dollar Index 99,435, entrambi sotto le soglie',
   ],
   contradicting: [
-    'L’oro ha restituito 37 dollari dal massimo di 4.371,89',
-    'Brent di nuovo a 82,52 $, sopra la soglia e positivo sulla giornata',
-    'Biennale risalito di 3,3 punti base dal minimo di 4,158%',
-    'La disoccupazione scende al 4,1%, meglio delle attese del 4,2%',
+    'La divergenza fra oro e greggio si è chiusa: la prova delle 15:05 non vale più',
+    'Il biennale a 4,202% ha restituito metà del calo dal minimo di 4,158%',
+    'Sopra gli 84 dollari il Brent torna a lavorare contro il metallo: mancano 67 centesimi',
+    'Il premio di rischio si è formato e sgonfiato tre volte in quarantotto ore',
     'L’indice dei prezzi di mercoledì è atteso al 3,4% annuo',
   ],
   constraints: [
@@ -291,7 +287,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Il conteggio ha finalmente un numero fresco, e va nella direzione opposta alla riapertura: 33 navi da ' +
         'lunedì a giovedì contro 50 nella settimana precedente, con quattro transiti giovedì 6 agosto — fra cui ' +
         'la superpetroliera Nissos Kea con circa due milioni di barili caricati in Iraq. Quattro al giorno è ' +
-        'la metà della soglia di otto che questo archivio segue dal 5 agosto. Il traffico non risale: cala.',
+        'la metà della soglia di otto che questo archivio segue dal 5 agosto. Il traffico non risale: cala. ' +
+        'Adesso si sa anche perché, e non è più una deduzione: ADNOC dichiara quindici proprie navi colpite da ' +
+        'missili o droni dall’inizio del conflitto, tre soltanto questa settimana, con un morto e venti feriti.',
       state: 'fermo',
     },
     {
@@ -325,20 +323,21 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Premio di rischio sul greggio che non si forma',
-      value: 'Brent 82,52 $',
-      baseline: 'risalito dal minimo di 81,52, di nuovo positivo sulla giornata',
+      value: 'Brent 83,33 $',
+      baseline: 'più 1,02%, dopo il meno 1,01% delle 14:57',
       against:
         'In quattro giorni: una minaccia americana a Teheran, un piano di attacchi contro l’energia iraniana, ' +
         'una smentita, un missile houthi contro una petroliera saudita e una ritorsione iraniana annunciata ' +
         'agli impianti energetici del Golfo. A ognuna di queste il prezzo aveva reagito meno della precedente; ' +
         'quello che lo ha mosso, alla fine, è stata l’assenza di una conferma sull’intesa Iran-Oman.',
       watch:
-        'Il premio si è formato il 6 agosto sopra gli 82 dollari, ha toccato 84,40, è sceso fino a 81,52 sulla ' +
-        'scia dei segnali di distensione fra Iran e Paesi del Golfo, e alle 16:20 è già tornato a 82,52, ' +
-        'positivo sulla giornata. Lo sgonfiamento è durato meno di due ore: è la stessa fragilità che ' +
-        'l’analisi del 6 agosto attribuiva alla base del premio, applicata stavolta al suo rientro. Da qui il ' +
-        'numero da guardare resta il ritorno sopra gli 84 dollari, che direbbe che il rischio regionale torna ' +
-        'a prezzarsi e che a muovere l’oro non sono più soltanto i tassi.',
+        'In quarantotto ore il premio si è formato sopra gli 82 dollari su una bozza parlamentare iraniana, si ' +
+        'è sgonfiato fino a 81,52 sui segnali di distensione, e si è riformato a 83,33 sulla dichiarazione di ' +
+        'ADNOC. La terza volta è l’unica con un fatto materiale dietro invece di un documento, ed è la ' +
+        'differenza che conta. Ma un vincolo che si scioglie e si riforma tre volte in due giorni non vincola ' +
+        'più niente: descrive un prezzo che oscilla. I due numeri da guardare sono gli 82 dollari, sotto i ' +
+        'quali il premio è di nuovo sgonfio, e gli 84, sopra i quali smette di sostenere il metallo e ' +
+        'ricomincia ad alimentare i rendimenti contro di lui.',
       state: 'sciolto',
     },
   ],
@@ -353,6 +352,25 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           display: '50%',
           kind: 'invalida',
           note: 'sopra la metà il rialzo torna a essere lo scenario più probabile, ed è l’unica gamba su cui questa lettura poggia',
+        },
+      ],
+    },
+    {
+      label: 'Brent',
+      now: 83.33,
+      display: '83,33 $',
+      marks: [
+        {
+          at: 82,
+          display: '82 $',
+          kind: 'invalida',
+          note: 'sotto questo livello il premio si è sgonfiato per la settima volta in sette giorni, e la lettura perde la gamba geopolitica',
+        },
+        {
+          at: 84,
+          display: '84 $',
+          kind: 'logora',
+          note: 'sopra questo livello il greggio smette di sostenere il metallo e ricomincia ad alimentare i rendimenti contro di lui',
         },
       ],
     },
@@ -377,8 +395,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4334.72,
-      display: '4.334,72 $',
+      now: 4354.98,
+      display: '4.354,98 $',
       marks: [
         {
           at: 4300,
@@ -390,8 +408,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'quindici-navi-colpite-e-il-greggio-riparte',
     'meno-23-mila-posti-e-il-rialzo-di-settembre-passa-in-minoranza',
-    'un-attacco-a-uno-e-un-attacco-a-tutti-il-patto-e-firmato',
     'un-dazio-con-il-prezzo-minimo-e-la-data-prima-della-fed',
   ],
 };
