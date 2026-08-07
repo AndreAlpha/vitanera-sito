@@ -180,6 +180,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-07T18:20:00+02:00',
+  checkedAt: '2026-08-07T19:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -192,7 +193,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'trentacinque centesimi dalla tacca degli 84 oltre la quale ricomincia a spingere i rendimenti contro ' +
         'il metallo; il biennale è risalito a 4,208% dal minimo di 4,158%; il decennale a 4,655% è a un punto ' +
         'base e mezzo dalla chiusura di ieri. La direzione regge perché nessuna soglia dichiarata è stata ' +
-        'toccata, non perché il quadro sia migliorato.',
+        'toccata, non perché il quadro sia migliorato. Ricontrollato alle 19:20: il massimo di giornata è ' +
+        'ancora 4.371,89, lo stesso delle 15:00, e l’oro spot è sceso a 4.336,51. Dopo il primo balzo il ' +
+        'metallo non ha più fatto un nuovo massimo in quattro ore, ed è l’informazione che manca a chi guarda ' +
+        'soltanto il segno della giornata.',
       invalidation:
         'Un Brent che rientra sotto gli 82 dollari entro la seduta, che direbbe che la dichiarazione di ADNOC è stata letta come rumore; un oro spot che rientra sotto i 4.300 dollari; oppure una probabilità di rialzo a settembre che risale sopra il 50%.',
     },
@@ -248,15 +252,15 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   ],
   confirming: [
     'Inflazione attesa a un anno al 3,6% da 3,7%: il primo calo dopo un mese di rialzo',
-    'Oro spot 4.346,88 $, più 2,50%, massimo di giornata 4.371,89',
+    'Oro spot 4.336,51 $ alle 19:21, più 2,26% sulla giornata',
     'Rialzo Fed a settembre al 43,7% e Dollar Index 99,435, entrambi sotto le soglie',
     'Caricamenti al terminale CPC fermi dal 5 agosto: circa 730.000 barili al giorno',
   ],
   contradicting: [
+    'Nessun nuovo massimo dalle 15:00: la punta resta 4.371,89 e l’oro è 35 dollari sotto',
     'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
     'Il decennale a 4,655% è a un punto base e mezzo dalla chiusura di ieri',
     'Il biennale a 4,208% ha restituito più di metà del calo dal minimo di 4,158%',
-    'Brent a 83,65 $: trentacinque centesimi sotto la tacca degli 84',
     'L’indice dei prezzi di mercoledì è atteso al 3,4% annuo',
   ],
   constraints: [
@@ -359,8 +363,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 83.65,
-      display: '83,65 $',
+      now: 83.27,
+      display: '83,27 $',
       marks: [
         {
           at: 82,
@@ -397,8 +401,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4346.88,
-      display: '4.346,88 $',
+      now: 4336.51,
+      display: '4.336,51 $',
       marks: [
         {
           at: 4300,

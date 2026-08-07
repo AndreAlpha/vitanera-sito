@@ -73,11 +73,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'XAU/USD',
     name: 'Oro spot',
-    value: '4.346,88 $',
-    change: 'più 2,50%, massimo 4.371,89, da 4.240,69 di chiusura',
+    value: '4.336,51 $',
+    change: 'più 2,26%, massimo 4.371,89, da 4.240,69 di chiusura',
     tone: 'bull',
     icon: 'coin',
-    note: 'Quotazione spot delle 17:51 del 7 agosto, non in tempo reale. Il metallo tiene la maggior parte del movimento del rapporto occupazionale, venticinque dollari sotto il massimo di giornata, ed è l’unica delle quattro misure che non stia restituendo: nella stessa ora il biennale è risalito a 4,208%, il decennale a 4,655% e il Brent a 83,65. Attenzione alla serie: il contratto future scambia una sessantina di dollari più in alto, e le soglie di questa scheda sono sullo spot.',
+    note: 'Quotazione spot delle 19:21 del 7 agosto, non in tempo reale. Il metallo tiene la maggior parte del movimento del rapporto occupazionale, ma il massimo di giornata è ancora quello delle 15:00: in quattro ore non è stato più avvicinato, e da lì il prezzo è sceso di trentacinque dollari. Attenzione alla serie, perché oggi è la terza volta che confonde: il contratto future scambia una sessantina di dollari sopra lo spot, quindi un future a 4.414 corrisponde a uno spot intorno a 4.354, e i «4.400» che si leggono in giro non sono un livello che questa scheda abbia mai visto. Tutte le soglie qui sono sullo spot.',
   },
   {
     symbol: 'SUSSIDI',
@@ -217,8 +217,8 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: '83,65 $',
-    change: 'più 1,41%, dal minimo di 81,52 e da 82,49 di chiusura',
+    value: '83,27 $',
+    change: 'più 0,95%, dal minimo di 81,52 e da 82,49 di chiusura',
     tone: 'warn',
     icon: 'arrow-up',
     note: 'Nel primo pomeriggio il greggio era sceso fino a 81,52 mentre i mercati valutavano segnali di distensione fra Iran e Paesi del Golfo, e quella discesa era la prova che alle 14:56 qualificava il rialzo dell’oro come un fatto di tassi e non di rischio. Alle 17:15 è a 83,33, più 1,02%: due punti percentuali di inversione in poco più di due ore, dopo che ADNOC ha dichiarato quindici navi colpite. Il premio si è riformato per la terza volta in quarantotto ore, ma stavolta su un fatto materiale invece che su un documento. Sopra gli 84 dollari cambia di segno per l’oro: torna ad alimentare i rendimenti più della domanda di rifugio.',
