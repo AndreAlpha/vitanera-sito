@@ -28,6 +28,127 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'un-attacco-a-uno-e-un-attacco-a-tutti-il-patto-e-firmato',
+    checkedAt: '2026-08-08T10:30:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un testo attuativo che limiti l’impegno alla consultazione senza automatismi: renderebbe la clausola una dichiarazione di intenti, e toglierebbe la ragione per cui questa firma conta più dell’annuncio di stamattina.',
+        triggered: false,
+        evidence:
+          'Nessun testo attuativo pubblicato nelle venti ore successive. Il testo integrale dell’accordo ' +
+          'resta non pubblico: quello che si conosce è il comunicato congiunto, che contiene la clausola di ' +
+          'difesa collettiva e nessuna specifica sugli obblighi militari. La condizione chiedeva un documento ' +
+          'che riducesse l’impegno alla consultazione, e quel documento non esiste ancora.',
+      },
+      {
+        condition:
+          'Un oro spot che torna sotto i 4.300 dollari: è la soglia dichiarata ieri sera e superata stamattina, e un rientro la rimetterebbe in discussione.',
+        triggered: false,
+        evidence:
+          'Nessun rientro. Le rilevazioni spot registrate dopo la pubblicazione salgono soltanto: 4.312,33 ' +
+          'dollari alle 14:19, massimo di giornata 4.371,89 dopo il rapporto occupazionale, chiusura del ' +
+          '7 agosto a 4.342,18 con più 2,39%. Il minimo della finestra resta la rilevazione di pubblicazione, ' +
+          'dodici dollari sopra la soglia.',
+      },
+      {
+        condition:
+          'Un rapporto occupazionale nettamente sopra le attese di circa 80.000 posti, con salari orari in accelerazione: riporterebbe il canale dei tassi davanti a quello del rifugio in un quarto d’ora, e su questo la lettura non ha difese.',
+        triggered: false,
+        evidence:
+          'Uscito dieci minuti dopo la pubblicazione, e nella direzione opposta per entrambe le metà. I posti ' +
+          'di luglio sono meno 23.000 contro attese di circa 80.000, con giugno rivisto da 57.000 a 20.000 e ' +
+          'maggio da 129.000 a 63.000; i salari decelerano a più 0,1% mensile e più 3,2% annuo contro attese ' +
+          'di più 0,3% e più 3,5%. La condizione era scritta come il rischio principale della lettura, ed è ' +
+          'l’unica che si è risolta con un dato pubblicato.',
+      },
+      {
+        condition:
+          'Un Brent che torna sotto gli 80 dollari: direbbe che il mercato dell’energia non prezza più il rischio regionale che questo patto certifica.',
+        triggered: false,
+        evidence:
+          'Mai sceso sotto quel livello. Il 7 agosto il Brent oscilla fra 81,52 e 84,40 e chiude a 82,21, meno ' +
+          '0,34%: il minimo della giornata resta un dollaro e mezzo sopra la soglia, e la chiusura ventuno ' +
+          'centesimi sopra gli 82 dollari.',
+      },
+      {
+        condition:
+          'Prima di tutte queste, e senza aspettare la rottura: un decennale sopra il 4,70% con l’oro spot ancora sopra i 4.300, che segnalerebbe i tassi di nuovo in vantaggio senza che il metallo abbia ceduto.',
+        triggered: false,
+        evidence:
+          'Il decennale non ha mai raggiunto il 4,70% nella finestra: il massimo del 7 agosto è 4,690%, ed è ' +
+          'della mattina, cioè prima di questa pubblicazione. Dopo il rapporto occupazionale è sceso a 4,601% ' +
+          'e ha chiuso a 4,655%, un punto base e mezzo sotto la chiusura precedente. La tacca di logoramento ' +
+          'era stata sfiorata prima che questa lettura esistesse, e da allora si è allontanata.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e conviene dire subito quanto costa poco questa conferma. La lettura era neutrale con inclinazione rialzista e forza bassa, e la forza bassa era dichiarata per una ragione precisa: il rapporto occupazionale usciva dieci minuti dopo e poteva cancellare tutto. È uscito, ed è andato dalla parte della lettura con un margine largo — meno 23.000 posti contro 80.000 attesi, 103.000 tolti ai due mesi precedenti, salari in decelerazione — quindi la condizione che avrebbe ucciso l’analisi si è risolta a suo favore invece di essere evitata per poco. L’oro è salito a un massimo di 4.371,89 e ha chiuso a 4.342,18, il Brent non si è mai avvicinato agli 80 dollari, il decennale ha chiuso più in basso di dov’era. La parte che resta davvero non giudicata è la sola che riguardava il patto: il testo attuativo non è stato pubblicato, e senza quello la domanda se la clausola sia un impegno o una cornice è ancora dove era alle 14:20.',
+    lesson:
+      'Quattro condizioni su cinque erano prezzi e si sono giudicate in un minuto; la quinta era subordinata alla pubblicazione di un documento, e quel documento può non uscire mai. Una condizione scritta nella forma «una volta pubblicati, se i termini si rivelassero…» non è verificabile né in un verso né nell’altro finché l’antecedente non si avvera, e nel frattempo il registro la segna come non scattata — cioè come se avesse retto, mentre in realtà non è stata messa alla prova. Quando la tesi riguarda la sostanza di un atto, la condizione va ancorata a qualcosa che accade comunque entro l’orizzonte dichiarato: una data di ratifica, un passaggio parlamentare, un’esercitazione congiunta. Altrimenti l’unica parte dell’analisi che parlava del suo soggetto è anche l’unica che l’esito non misura.',
+  },
+  {
+    slug: 'un-patto-a-gedda-e-il-rifugio-torna-in-vantaggio',
+    checkedAt: '2026-08-08T10:30:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un oro spot che torna sotto i 4.300 dollari: farebbe rientrare la soglia appena superata, e con essa la ragione per cui questa lettura esiste.',
+        triggered: false,
+        evidence:
+          'Nessun rientro sotto la soglia in tutta la finestra. Dopo i 4.304,72 dollari delle 10:38 le ' +
+          'rilevazioni spot registrate sono 4.312,33 alle 14:19, un massimo di 4.371,89 dopo il rapporto ' +
+          'occupazionale e una chiusura a 4.342,18, più 2,39%. La soglia era stata superata di quattro ' +
+          'dollari e settantadue alla pubblicazione, ed è stata lasciata alle spalle di quarantadue alla ' +
+          'chiusura.',
+      },
+      {
+        condition:
+          'Un rapporto occupazionale nettamente sopra le attese di circa 80.000 posti, con salari orari in accelerazione: riporterebbe il canale dei tassi in vantaggio su quello del rifugio nello spazio di un quarto d’ora.',
+        triggered: false,
+        evidence:
+          'Il contrario, su entrambe le metà: meno 23.000 posti contro attese di circa 80.000, primo calo da ' +
+          'mesi, con 103.000 posti tolti alle revisioni di maggio e giugno; salari a più 0,1% mensile e più ' +
+          '3,2% annuo contro attese di più 0,3% e più 3,5%. Il canale dei tassi si è mosso nella direzione ' +
+          'opposta a quella descritta dalla condizione — biennale da 4,245% a un minimo di 4,158%, Dollar ' +
+          'Index sotto 99,50 — cioè a favore del rifugio.',
+      },
+      {
+        condition:
+          'Un Brent che torna sotto gli 80 dollari: toglierebbe il premio geopolitico su cui poggia metà di questa lettura, e renderebbe il rialzo del metallo una faccenda di tassi e non di rischio.',
+        triggered: false,
+        evidence:
+          'Il Brent non è mai sceso sotto gli 80 dollari: escursione del 7 agosto fra 81,52 e 84,40, chiusura ' +
+          'a 82,21 con meno 0,34%. Il premio si è formato e sgonfiato quattro volte nella giornata senza mai ' +
+          'avvicinarsi alla soglia dichiarata.',
+      },
+      {
+        condition:
+          'Termini del patto che, una volta pubblicati, si rivelino una cornice di consultazione senza impegni operativi: ridimensionerebbero il segnale sul modo in cui Riad prezza il rischio regionale.',
+        triggered: false,
+        evidence:
+          'I termini non sono stati pubblicati: il testo integrale dell’accordo resta non pubblico. Quello ' +
+          'che è uscito nel pomeriggio è il comunicato congiunto, e va nella direzione opposta a quella della ' +
+          'condizione — contiene la clausola di difesa collettiva, cioè la formulazione più forte che un ' +
+          'accordo di sicurezza possa avere, non una cornice di consultazione. Ma non contiene alcuna ' +
+          'specifica sugli obblighi militari, quindi la metà della condizione che parlava di impegni ' +
+          'operativi resta senza risposta.',
+      },
+      {
+        condition:
+          'Prima di tutte queste, e senza aspettare la rottura: un decennale sopra il 4,70% con l’oro spot ancora sopra i 4.300. Direbbe che il canale dei tassi sta riprendendo il sopravvento senza che il metallo abbia ancora ceduto, cioè che questa lettura si sta consumando.',
+        triggered: false,
+        evidence:
+          'La tacca è stata sfiorata e poi abbandonata. Alla pubblicazione il decennale era a 4,677% con un ' +
+          'massimo di giornata a 4,690%, cioè un punto base sotto la soglia; dopo il rapporto occupazionale è ' +
+          'sceso a un minimo di 4,601% e ha chiuso a 4,655%. Il massimo dell’intera finestra resta un ' +
+          'centesimo di punto percentuale sotto il 4,70%.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e per una volta il conteggio dice quasi tutto. La tesi non era sul patto — l’analisi lo diceva esplicitamente — ma sulla soglia dei 4.300 dollari scritta la sera prima, quando l’oro stava sessanta dollari più in basso: sopra quel livello, con il Brent ancora sopra gli 82, il rifugio torna in vantaggio sul costo-opportunità. Nelle ventiquattro ore successive il metallo non è mai rientrato sotto la soglia e ha chiuso quarantadue dollari sopra, mentre le tre condizioni che avrebbero potuto ucciderla — greggio sotto gli 80, decennale sopra il 4,70%, un rapporto occupazionale forte — sono andate tutte dalla parte opposta. La quarta condizione, l’unica che riguardava il patto, non è stata giudicata: i termini non sono pubblici e quello che è uscito nel pomeriggio è un comunicato che ha la forma dell’impegno e non ne ha il contenuto.',
+  },
+  {
     slug: 'hormuz-il-pedaggio-che-nessuno-puo-pagare',
     checkedAt: '2026-08-07T10:30:00+02:00',
     verdict: 'parziale',

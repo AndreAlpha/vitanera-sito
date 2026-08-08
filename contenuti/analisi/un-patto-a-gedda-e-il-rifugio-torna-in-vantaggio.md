@@ -27,8 +27,10 @@ fonti:
   - testata: "Euronews"
   - testata: "Reuters"
   - testata: "Investing.com"
+esito: "confermata"
+controllata: "2026-08-08T10:30:00+02:00"
 sorgente: "src/app/core/data/articles/un-patto-a-gedda-e-il-rifugio-torna-in-vantaggio.ts"
-impronta: "c96d45eccf70c482"
+impronta: "def402aaffc1b3e4"
 ---
 
 # Un patto di difesa a Gedda, e il rifugio torna in vantaggio
@@ -125,6 +127,20 @@ Consenso a 80.000 posti, precedente 57.000, disoccupazione attesa al 4,2% e sala
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte medio.
 
 Per due giorni il canale energetico ha pesato sull’oro più della domanda di rifugio: greggio alto, inflazione attesa e rendimenti in salita, metallo fermo. Stamattina i due canali si sono separati — il Brent resta sopra gli 82 dollari e l’oro sale lo stesso oltre i 4.300 — ed è la soglia che questo archivio aveva dichiarato ieri sera per riconoscere il momento in cui il rifugio riprende il sopravvento. La forza resta bassa perché la conferma ha poche ore e il dato che può ribaltarla esce alle 14:30.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-08T10:30:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e per una volta il conteggio dice quasi tutto. La tesi non era sul patto — l’analisi lo diceva esplicitamente — ma sulla soglia dei 4.300 dollari scritta la sera prima, quando l’oro stava sessanta dollari più in basso: sopra quel livello, con il Brent ancora sopra gli 82, il rifugio torna in vantaggio sul costo-opportunità. Nelle ventiquattro ore successive il metallo non è mai rientrato sotto la soglia e ha chiuso quarantadue dollari sopra, mentre le tre condizioni che avrebbero potuto ucciderla — greggio sotto gli 80, decennale sopra il 4,70%, un rapporto occupazionale forte — sono andate tutte dalla parte opposta. La quarta condizione, l’unica che riguardava il patto, non è stata giudicata: i termini non sono pubblici e quello che è uscito nel pomeriggio è un comunicato che ha la forma dell’impegno e non ne ha il contenuto.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un oro spot che torna sotto i 4.300 dollari: farebbe rientrare la soglia appena superata, e con essa la ragione per cui questa lettura esiste. | no | Nessun rientro sotto la soglia in tutta la finestra. Dopo i 4.304,72 dollari delle 10:38 le rilevazioni spot registrate sono 4.312,33 alle 14:19, un massimo di 4.371,89 dopo il rapporto occupazionale e una chiusura a 4.342,18, più 2,39%. La soglia era stata superata di quattro dollari e settantadue alla pubblicazione, ed è stata lasciata alle spalle di quarantadue alla chiusura. |
+| Un rapporto occupazionale nettamente sopra le attese di circa 80.000 posti, con salari orari in accelerazione: riporterebbe il canale dei tassi in vantaggio su quello del rifugio nello spazio di un quarto d’ora. | no | Il contrario, su entrambe le metà: meno 23.000 posti contro attese di circa 80.000, primo calo da mesi, con 103.000 posti tolti alle revisioni di maggio e giugno; salari a più 0,1% mensile e più 3,2% annuo contro attese di più 0,3% e più 3,5%. Il canale dei tassi si è mosso nella direzione opposta a quella descritta dalla condizione — biennale da 4,245% a un minimo di 4,158%, Dollar Index sotto 99,50 — cioè a favore del rifugio. |
+| Un Brent che torna sotto gli 80 dollari: toglierebbe il premio geopolitico su cui poggia metà di questa lettura, e renderebbe il rialzo del metallo una faccenda di tassi e non di rischio. | no | Il Brent non è mai sceso sotto gli 80 dollari: escursione del 7 agosto fra 81,52 e 84,40, chiusura a 82,21 con meno 0,34%. Il premio si è formato e sgonfiato quattro volte nella giornata senza mai avvicinarsi alla soglia dichiarata. |
+| Termini del patto che, una volta pubblicati, si rivelino una cornice di consultazione senza impegni operativi: ridimensionerebbero il segnale sul modo in cui Riad prezza il rischio regionale. | no | I termini non sono stati pubblicati: il testo integrale dell’accordo resta non pubblico. Quello che è uscito nel pomeriggio è il comunicato congiunto, e va nella direzione opposta a quella della condizione — contiene la clausola di difesa collettiva, cioè la formulazione più forte che un accordo di sicurezza possa avere, non una cornice di consultazione. Ma non contiene alcuna specifica sugli obblighi militari, quindi la metà della condizione che parlava di impegni operativi resta senza risposta. |
+| Prima di tutte queste, e senza aspettare la rottura: un decennale sopra il 4,70% con l’oro spot ancora sopra i 4.300. Direbbe che il canale dei tassi sta riprendendo il sopravvento senza che il metallo abbia ancora ceduto, cioè che questa lettura si sta consumando. | no | La tacca è stata sfiorata e poi abbandonata. Alla pubblicazione il decennale era a 4,677% con un massimo di giornata a 4,690%, cioè un punto base sotto la soglia; dopo il rapporto occupazionale è sceso a un minimo di 4,601% e ha chiuso a 4,655%. Il massimo dell’intera finestra resta un centesimo di punto percentuale sotto il 4,70%. |
 
 ## Fonti consultate
 

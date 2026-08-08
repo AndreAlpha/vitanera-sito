@@ -180,6 +180,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-08T00:25:00+02:00',
+  checkedAt: '2026-08-08T10:30:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -256,8 +257,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Riserve auree cinesi a 76,08 mln di once: quasi venti tonnellate in luglio, ventunesimo mese',
     'Rischio di conflitto in Yemen al livello più alto dalla tregua dell’aprile 2022, secondo l’ONU',
     'Rialzo Fed a settembre al 43,7% e Dollar Index 99,435, entrambi sotto le soglie',
+    'Le due letture sul patto della Mecca chiuse confermate: dieci condizioni dichiarate, nessuna scattata',
   ],
   contradicting: [
+    'Riverifica dell’8 agosto: nessun prezzo nuovo dalla chiusura di venerdì, quindi nessuna delle tre letture è stata messa alla prova',
     'Il Brent chiude a 82,21 $, meno 0,34%: il premio formato sull’annuncio di ADNOC è rientrato tutto',
     'Ventuno centesimi separano quella chiusura dalla tacca che invalida la lettura intraday',
     'Lo Yemen è in guerra da undici anni: un peggioramento non è un cambio di stato del mondo',
