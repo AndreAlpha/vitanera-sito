@@ -17,6 +17,15 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'CONDIZIONE',
+    name: 'La condizione dichiarata per riaprire lo Stretto di Hormuz',
+    value: 'compensazione USA',
+    change: 'più l’accettazione americana delle richieste iraniane',
+    tone: 'bear',
+    icon: 'lock',
+    note: 'Detta l’8 agosto da due uffici iraniani nello stesso giorno. Il portavoce delle Guardie Rivoluzionarie Hossein Mohebbi dice che la riapertura non dipende dai negoziati con l’Oman ma dall’accettazione statunitense delle condizioni iraniane; il ministro degli Esteri Abbas Araqchi conferma che con l’Oman si è «molto vicini» a un accordo sulla rotta e aggiunge che la riapertura richiede altro, fra cui una compensazione. È il quinto punto aperto dopo controllo degli ingressi, ispezioni, costi di transito e blocco dei porti, ed è di natura diversa: gli altri quattro sono questioni tecniche che un negoziato può chiudere con una formula, questo è un risarcimento politico. Un funzionario americano si aspettava invece un accordo a breve con la revoca del blocco dei porti solo dopo il rispetto dell’intesa: le due sequenze sono l’una l’inversa dell’altra.',
+  },
+  {
     symbol: 'YEMEN',
     name: 'Escalation in Yemen e valutazione delle Nazioni Unite',
     value: 'rischio più alto dal 2022',
@@ -68,7 +77,7 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     change: 'tre questa settimana, un morto e venti feriti',
     tone: 'bear',
     icon: 'alert',
-    note: 'Dichiarazione della compagnia petrolifera statale di Abu Dhabi del 7 agosto, riportata da Gulf News: quindici navi colpite da missili o droni dall’inizio del conflitto, impatto significativo sulle operazioni, misure di protezione per personale e mezzi. È la prima volta che un produttore del Golfo quantifica un danno operativo invece di annunciare un’intenzione, ed è la ragione per cui vale più dei sei annunci diplomatici che in quattro giorni non avevano mosso il prezzo. I numeri sono quelli forniti dall’azienda e non risultano da una verifica indipendente. Dallo Stretto passa circa un quinto del consumo mondiale di petrolio.',
+    note: 'Dichiarazione della compagnia petrolifera statale di Abu Dhabi del 7 agosto, riportata da Gulf News: quindici navi colpite da missili o droni dall’inizio del conflitto, impatto significativo sulle operazioni, misure di protezione per personale e mezzi. È la prima volta che un produttore del Golfo quantifica un danno operativo invece di annunciare un’intenzione, ed è la ragione per cui vale più dei sei annunci diplomatici che in quattro giorni non avevano mosso il prezzo. I numeri sono quelli forniti dall’azienda e non risultano da una verifica indipendente. L’8 agosto il salto è nell’attribuzione: il governo degli Emirati dichiara che l’Iran ha lanciato un missile contro un’altra nave collegata alla compagnia in transito nello Stretto, senza feriti in quell’episodio, definisce pirateria gli attacchi alla navigazione e chiede la cessazione immediata delle aggressioni. Un conto è un’azienda che conta i propri danni, un altro è uno Stato che indica l’autore per nome mentre quell’autore sta trattando. Anche questa resta un’accusa e non una ricostruzione indipendente. Dallo Stretto passa circa un quinto del consumo mondiale di petrolio.',
   },
   {
     symbol: 'NFP',

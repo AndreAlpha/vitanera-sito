@@ -179,8 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-08T00:25:00+02:00',
-  checkedAt: '2026-08-08T10:30:00+02:00',
+  updatedAt: '2026-08-08T17:30:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -196,9 +195,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'toccata, non perché il quadro sia migliorato. A mercati chiusi il conto è questo: l’oro finisce a ' +
         '4.342,18, più 2,39%, quasi trenta dollari sotto il massimo delle 15:00 e senza averlo più avvicinato; ' +
         'il Brent chiude a 82,21, meno 0,34%, cioè negativo sulla giornata e ventuno centesimi sopra la tacca ' +
-        'che invalida questa lettura. Da qui non c’è più un prezzo fino a lunedì, e nel frattempo lo Yemen è ' +
-        'peggiorato: il primo scambio della settimana dirà se quell’escalation vale un premio, ed è la ' +
-        'domanda più informativa che il fine settimana lasci aperta.',
+        'che invalida questa lettura. Da qui non c’è più un prezzo fino a lunedì, e nel frattempo si è ' +
+        'accumulato parecchio: l’escalation in Yemen venerdì sera, poi tre dichiarazioni su Hormuz e ' +
+        'un’accusa emiratina di attacco missilistico contro una nave ADNOC. Il primo scambio della settimana ' +
+        'dovrà prezzare tutto insieme, ed è la domanda più informativa che il fine settimana lasci aperta.',
       invalidation:
         'Un Brent che rientra sotto gli 82 dollari entro la seduta, che direbbe che la dichiarazione di ADNOC è stata letta come rumore; un oro spot che rientra sotto i 4.300 dollari; oppure una probabilità di rialzo a settembre che risale sopra il 50%.',
     },
@@ -209,11 +209,13 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       regime:
         'Il motore resta il rapporto occupazionale: meno 23.000 posti, 103.000 tolti ai due mesi precedenti, e ' +
         'la probabilità di un rialzo a settembre passata dall’altra parte della metà, al 43,7% da 55,1%. Il ' +
-        'quadro geopolitico peggiora su un terzo teatro — missili Houthi su campi per sfollati a Marib, trenta ' +
-        'militari uccisi il giorno prima, e l’inviato ONU che parla del rischio più alto di conflitto su larga ' +
-        'scala dalla tregua del 2022 — ma non alza il grado della lettura, e la ragione è misurata: questa ' +
-        'settimana il premio di rischio si è formato e sgonfiato quattro volte in quarantotto ore, e venerdì ' +
-        'ha chiuso in negativo lo stesso giorno in cui ADNOC ha dichiarato quindici navi colpite.',
+        'quadro geopolitico non peggiora né migliora: diventa leggibile. Le Guardie Rivoluzionarie e il ' +
+        'ministro degli Esteri iraniano hanno detto lo stesso da due lati — l’intesa tecnica con l’Oman è ' +
+        'vicina, e la riapertura dello Stretto non dipende da quel tavolo ma dall’accettazione americana ' +
+        'delle condizioni iraniane, fra cui una compensazione. Una condizione con un nome è più difficile da ' +
+        'soddisfare di una vaga. Ma il grado non sale, e la ragione è misurata: il metro dichiarato è il ' +
+        'conteggio dei transiti, fermo a 33 in quattro giorni, e questa settimana il premio di rischio si è ' +
+        'formato e sgonfiato quattro volte in quarantotto ore.',
       invalidation:
         'Un indice dei prezzi mercoledì 12 agosto sopra le attese del 3,4% annuo, o un dato di fondo sopra il 2,5%, che con il greggio di nuovo in salita rimetterebbe il rialzo di settembre sul tavolo; una probabilità di rialzo a settembre di nuovo sopra il 50%; oppure un oro spot che rientra sotto i 4.300 dollari. Prima di tutte queste, un Brent sopra gli 84 dollari con il biennale che risale sopra il 4,25%.',
     },
@@ -234,37 +236,39 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; oppure la revoca dei dazi sul polisilicio prima del 4 dicembre.',
     },
   ],
-  headline: 'Marib sotto i missili, e il primo prezzo è lunedì',
+  headline: 'La riapertura di Hormuz ha una condizione, e ha un nome',
   stance:
-    'La settimana si chiude con l’oro a 4.342,18 dollari, più 2,39%, e con il Brent a 82,21, in negativo. Poi, ' +
-    'a mercati già fermi, lo Yemen è peggiorato: missili balistici e droni Houthi su campi per sfollati a ' +
-    'Marib — due morti e quattordici feriti — un giorno dopo trenta militari governativi uccisi fra Marib e ' +
-    'Hadramawt, e l’inviato ONU Hans Grundberg che parla del rischio più alto di conflitto su larga scala ' +
-    'dalla tregua dell’aprile 2022. Gli Houthi rivendicano dicendo di aver colpito schieramenti sauditi dopo ' +
-    'aver rilevato un ammassamento militare; venerdì mattina un alto funzionario saudita si aspettava attacchi ' +
-    'coordinati. Nessuno dei due prezzi ha potuto rispondere: il primo che potrà è quello di lunedì.',
+    'In una giornata a mercati chiusi hanno parlato tre attori sullo stesso argomento. Le Guardie ' +
+    'Rivoluzionarie dicono che la riapertura dello Stretto non dipende dai negoziati con l’Oman ma ' +
+    'dall’accettazione americana delle condizioni iraniane; il ministro degli Esteri Araqchi conferma che ' +
+    'con l’Oman si è «molto vicini» a un accordo sulla rotta e aggiunge che la riapertura dipende da altro, ' +
+    'fra cui una compensazione statunitense; il governo degli Emirati accusa l’Iran di aver colpito con un ' +
+    'missile una nave ADNOC in transito, senza feriti. Sommate, le tre voci non alzano la tensione: rendono ' +
+    'leggibile lo stallo, e mostrano che la condizione della riapertura non sta sul tavolo dove si tratta. ' +
+    'Prima di venerdì sera restano da prezzare anche l’escalation in Yemen e tutto questo.',
   favours: [
-    'Aspettare lunedì invece di dedurre: un’escalation arrivata a mercati chiusi non ha ancora incontrato un prezzo, e il primo scambio vale più di qualunque ragionamento fatto stanotte',
-    'Leggere le due rivendicazioni insieme: ciascuna parte dice di reagire ai preparativi dell’altra, ed è la configurazione in cui l’escalation prosegue senza che nessuno l’abbia scelta',
-    'Guardare il ritmo degli acquisti cinesi e non solo il totale: 160.000 once a marzo e 640.000 a luglio dicono più dei ventuno mesi consecutivi',
+    'Aspettare lunedì invece di dedurre: fra Yemen, tre dichiarazioni su Hormuz e un’accusa di attacco missilistico, nulla di questo ha ancora incontrato un prezzo',
+    'Leggere insieme le due voci iraniane invece di contrapporle: Guardie Rivoluzionarie e ministro degli Esteri dicono la stessa cosa da uffici diversi, ed è per questo che la conferma pesa',
+    'Distinguere l’intesa sulla rotta dalla riapertura dello Stretto: la prima è vicina per ammissione iraniana, la seconda ha una condizione politica che nessun tavolo tecnico può concedere',
   ],
   avoid: [
-    'Alzare il grado del segnale per un fronte in più: il premio di rischio si è formato e sgonfiato quattro volte in quarantotto ore, l’ultima in sei ore',
-    'Collegare gli attacchi al patto firmato alla Mecca: quello più letale è del giorno prima della firma, e le date non lo permettono',
+    'Alzare il grado del segnale per tre dichiarazioni: il metro dichiarato è il conteggio dei transiti, e resta 33 in quattro giorni come prima che parlassero',
+    'Trattare l’accusa emiratina sul missile come un fatto verificato: è la posizione di un governo, non una ricostruzione indipendente',
+    'Leggere il «molto vicini» di Araqchi come distensione: è la stessa frase che accompagna una condizione che Washington ha già respinto',
   ],
   confirming: [
+    'Per la prima volta è Teheran a confermare i progressi, e nello stesso momento a staccarne la riapertura',
+    'La condizione ha un nome: accettazione americana delle richieste iraniane più una compensazione',
+    'Gli Emirati accusano l’Iran per nome di un attacco missilistico: l’attribuzione passa da un’azienda a uno Stato',
     'Oro in chiusura a 4.342,18 $, più 2,39%: la settimana si chiude sopra i 4.300',
-    'Riserve auree cinesi a 76,08 mln di once: quasi venti tonnellate in luglio, ventunesimo mese',
-    'Rischio di conflitto in Yemen al livello più alto dalla tregua dell’aprile 2022, secondo l’ONU',
     'Rialzo Fed a settembre al 43,7% e Dollar Index 99,435, entrambi sotto le soglie',
-    'Le due letture sul patto della Mecca chiuse confermate: dieci condizioni dichiarate, nessuna scattata',
   ],
   contradicting: [
-    'Riverifica dell’8 agosto: nessun prezzo nuovo dalla chiusura di venerdì, quindi nessuna delle tre letture è stata messa alla prova',
-    'Il Brent chiude a 82,21 $, meno 0,34%: il premio formato sull’annuncio di ADNOC è rientrato tutto',
+    'Il conteggio dei transiti non si muove: 33 navi in quattro giorni prima delle dichiarazioni e dopo',
+    'Un’intesa tecnica vicina confermata da Teheran resta il primo segnale distensivo con una fonte iraniana dietro',
+    'Il Brent chiude a 82,21 $, meno 0,34%: il premio formato sull’annuncio di ADNOC è rientrato tutto in sei ore',
     'Ventuno centesimi separano quella chiusura dalla tacca che invalida la lettura intraday',
-    'Lo Yemen è in guerra da undici anni: un peggioramento non è un cambio di stato del mondo',
-    'Nessun nuovo massimo dalle 15:00 di venerdì: la punta resta 4.371,89',
+    'Nessun prezzo dalla chiusura di venerdì: nessuna delle tre letture è stata messa alla prova per due giorni',
     'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
   ],
   constraints: [
@@ -292,18 +296,23 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Sette annunci di distensione in quattro giorni — l’apertura di Bessent, la smentita iraniana, la ' +
         'minaccia rilanciata, la richiesta di controllo sugli ingressi, la trattativa «durata tutto il ' +
         'giorno», le coordinate concordate con l’Oman e infine Teheran che dice che quel tavolo riguarda la ' +
-        'gestione delle rotte e non la riapertura. L’ottavo, del 7 agosto, non scioglie il nodo ma lo ' +
-        'ridisegna dai due lati: un funzionario americano dice che Washington sosterrà solo un’intesa ' +
-        'temporanea senza impedimenti e senza pedaggi, mentre Teheran ripete che la riapertura è subordinata ' +
-        'alla rimozione del blocco navale e alla fine degli attacchi. Le due condizioni si escludono a vicenda ' +
-        'esattamente come cinque giorni fa.',
+        'gestione delle rotte e non la riapertura. L’8 agosto il nodo smette di essere vago e viene nominato: ' +
+        'le Guardie Rivoluzionarie dichiarano che la riapertura non dipende dai negoziati con l’Oman ma ' +
+        'dall’accettazione americana delle condizioni iraniane, e il ministro degli Esteri Araqchi conferma ' +
+        'che l’intesa sulla rotta è «molto vicina» aggiungendo che la riapertura richiede altro, fra cui una ' +
+        'compensazione statunitense. È il quinto punto aperto, e non somiglia agli altri quattro: quelli sono ' +
+        'questioni tecniche, questo è un risarcimento politico che nessun tavolo tecnico ha il mandato di ' +
+        'concedere.',
       watch:
         'Il conteggio ha finalmente un numero fresco, e va nella direzione opposta alla riapertura: 33 navi da ' +
         'lunedì a giovedì contro 50 nella settimana precedente, con quattro transiti giovedì 6 agosto — fra cui ' +
         'la superpetroliera Nissos Kea con circa due milioni di barili caricati in Iraq. Quattro al giorno è ' +
         'la metà della soglia di otto che questo archivio segue dal 5 agosto. Il traffico non risale: cala. ' +
         'Adesso si sa anche perché, e non è più una deduzione: ADNOC dichiara quindici proprie navi colpite da ' +
-        'missili o droni dall’inizio del conflitto, tre soltanto questa settimana, con un morto e venti feriti.',
+        'missili o droni dall’inizio del conflitto, tre soltanto questa settimana, con un morto e venti ' +
+        'feriti. L’8 agosto il governo degli Emirati accusa l’Iran per nome di aver colpito con un missile ' +
+        'un’altra nave collegata alla compagnia, senza feriti: l’attribuzione passa da un’azienda che conta i ' +
+        'propri danni a uno Stato che indica l’autore mentre quell’autore sta trattando.',
       state: 'fermo',
     },
     {
@@ -422,8 +431,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'la-riapertura-ha-un-prezzo-non-sul-tavolo-dell-oman',
     'marib-sotto-i-missili-e-il-rischio-piu-alto-dal-2022',
-    'washington-allarga-la-mano-pechino-compra-venti-tonnellate',
     'meno-23-mila-posti-e-il-rialzo-di-settembre-passa-in-minoranza',
   ],
 };

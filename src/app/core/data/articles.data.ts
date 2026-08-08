@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { riaperturaHaUnPrezzo } from './articles/la-riapertura-ha-un-prezzo-non-sul-tavolo-dell-oman';
 import { maribRischioPiuAltoDal2022 } from './articles/marib-sotto-i-missili-e-il-rischio-piu-alto-dal-2022';
 import { washingtonPechinoVentiTonnellate } from './articles/washington-allarga-la-mano-pechino-compra-venti-tonnellate';
 import { aspettativeUnAnnoCinqueAnni } from './articles/le-aspettative-a-un-anno-scendono-quelle-a-cinque-anni-no';
@@ -70,6 +71,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  riaperturaHaUnPrezzo,
   maribRischioPiuAltoDal2022,
   washingtonPechinoVentiTonnellate,
   aspettativeUnAnnoCinqueAnni,

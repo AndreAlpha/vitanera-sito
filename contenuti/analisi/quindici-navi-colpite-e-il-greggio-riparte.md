@@ -26,8 +26,10 @@ fonti:
     titolo: "Dichiarazione del 7 agosto sugli attacchi a navi e personale"
   - testata: "Gulf News"
   - testata: "Investing.com"
+esito: "confermata"
+controllata: "2026-08-08T17:25:00+02:00"
 sorgente: "src/app/core/data/articles/quindici-navi-colpite-e-il-greggio-riparte.ts"
-impronta: "516cb4a5b7f6b333"
+impronta: "8018ae9d6d44dacb"
 ---
 
 # Quindici navi colpite, e il greggio riparte
@@ -124,6 +126,22 @@ Attese al 3,4% annuo dal 3,5%, con l’indice di fondo al 2,5% dal 2,6%. Resta l
 Impostazione su XAU/USD: rialzista, forza media, orizzonte medio.
 
 La direzione non cambia, la ragione sì, e le due ragioni hanno vite diverse. Alle 15:05 questo archivio aveva scritto che l’oro saliva mentre il greggio scendeva, e che quella divergenza era la prova che a muovere il metallo fossero i tassi e non il rischio. Due ore dopo la divergenza si è chiusa: il Brent è a 83,33 dollari, più 1,02%, e sale insieme all’oro. Il canale dei tassi regge ma si è consumato — il biennale ha restituito metà del calo — e quello che ha preso il suo posto è un premio di rischio, che questo archivio ha visto sgonfiarsi cinque volte in una settimana.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-08T17:25:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, ma il verdetto va letto con due riserve dichiarate. La prima: la condizione principale ha retto per ventuno centesimi. La lettura sosteneva che quindici navi colpite dichiarate da chi le possiede fossero un fatto materiale capace di reggere dove sei annunci diplomatici avevano fallito, e la prova richiesta era che il Brent non tornasse sotto gli 82 entro la seduta. Non ci è tornato, ma ha chiuso in negativo sulla giornata dopo essere risalito a 83,65 sulla notizia: il premio si è formato e riassorbito nel giro di sei ore, cioè si è comportato esattamente come i sei annunci che la lettura riteneva diversi. La tesi regge alla lettera e il meccanismo su cui poggia si è già consumato. La seconda riserva: una condizione su cinque, quella sull’indice dei prezzi, matura mercoledì e non è stata giudicata. Quello che ha retto senza margini di lettura è l’altra gamba, quella monetaria — l’oro a 4.342,18 in chiusura e la probabilità di rialzo ferma al 43,7% — che però non era la gamba di cui questa analisi parlava.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un Brent che rientra sotto gli 82 dollari entro la seduta: direbbe che il mercato ha letto la dichiarazione di ADNOC come rumore, e che il premio si è già sgonfiato per la settima volta in sette giorni. | no | Non scattata, e per ventuno centesimi. La seduta si è chiusa e il Brent ha chiuso a 82,21 dollari, meno 0,34%: dal momento della pubblicazione, con il greggio a 83,65, il prezzo è sceso per tutta la sera senza mai passare sotto la soglia. Il minimo di giornata, 81,52, è del primo pomeriggio, cioè di prima che questa lettura esistesse. |
+| Un oro spot che rientra sotto i 4.300 dollari, che cancellerebbe il movimento del rapporto occupazionale e con esso l’altra gamba di questa lettura. | no | Nessun rientro: l’oro spot ha chiuso il 7 agosto a 4.342,18 dollari, più 2,39%, quarantadue dollari sopra la soglia. Il massimo delle 15:00, 4.371,89, non è più stato avvicinato, ma nemmeno il livello di invalidazione è mai stato messo in discussione. |
+| Una probabilità di rialzo a settembre che risale sopra il 50%, cioè che torna a essere lo scenario più probabile. | no | Il numero è rimasto in minoranza: 43,7% alle 15:55 del 7 agosto, dopo essere sceso al 41,7% dal 55,1% delle 14:20. Ne ha restituiti due dei tredici e mezzo persi, e resta sei punti e tre decimi sotto la metà. |
+| Un indice dei prezzi mercoledì 12 agosto sopra le attese del 3,4% annuo, o un dato di fondo sopra il 2,5%: con il greggio di nuovo in salita, sarebbe la combinazione che rimette il rialzo di settembre sul tavolo. | no | Non giudicabile: il dato esce mercoledì 12 agosto e al momento del controllo non era pubblicato. Registrata come non scattata perché non lo è, non perché sia stata verificata. |
+| Prima di tutte queste, e senza aspettare la rottura: un Brent sopra gli 84 dollari con il biennale che risale sopra il 4,25%. Sarebbe il premio energetico che smette di sostenere il metallo e ricomincia ad alimentare i rendimenti contro di lui, che è la regola dichiarata da questo archivio il 5 agosto e mai cambiata. | no | Nessuna delle due metà. Il Brent non ha superato gli 84 dollari dopo la pubblicazione — il massimo di 84,40 è della mattinata — e ha chiuso a 82,21; il biennale ha chiuso a 4,208%, quattro decimi di punto base sotto la tacca del 4,25%. |
+
+**Che cosa cambia.** È il terzo esito consecutivo in cui la condizione decisiva si decide su meno di un dollaro, e qui il margine è di ventuno centesimi su una soglia di 82. Il registro segna «confermata» tre volte mentre le letture passavano tutte a filo, e questo dice qualcosa sulla soglia e non sulle letture: una tacca posta dove il prezzo sta già oscillando misura il rumore, non la tesi. Gli 82 dollari erano nati il 5 agosto come il livello oltre il quale l’effetto inflazionistico supera il sostegno da rifugio, e in tre giorni il Brent ci è passato sopra e sotto sette volte. Una soglia attraversata di continuo va sostituita da una condizione sul comportamento — quante volte il premio si forma e rientra, e in quante ore — perché è quella la cosa che questa settimana ha misurato davvero.
 
 ## Fonti consultate
 

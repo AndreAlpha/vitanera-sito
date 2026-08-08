@@ -28,6 +28,61 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'quindici-navi-colpite-e-il-greggio-riparte',
+    checkedAt: '2026-08-08T17:25:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un Brent che rientra sotto gli 82 dollari entro la seduta: direbbe che il mercato ha letto la dichiarazione di ADNOC come rumore, e che il premio si è già sgonfiato per la settima volta in sette giorni.',
+        triggered: false,
+        evidence:
+          'Non scattata, e per ventuno centesimi. La seduta si è chiusa e il Brent ha chiuso a 82,21 dollari, ' +
+          'meno 0,34%: dal momento della pubblicazione, con il greggio a 83,65, il prezzo è sceso per tutta la ' +
+          'sera senza mai passare sotto la soglia. Il minimo di giornata, 81,52, è del primo pomeriggio, cioè ' +
+          'di prima che questa lettura esistesse.',
+      },
+      {
+        condition:
+          'Un oro spot che rientra sotto i 4.300 dollari, che cancellerebbe il movimento del rapporto occupazionale e con esso l’altra gamba di questa lettura.',
+        triggered: false,
+        evidence:
+          'Nessun rientro: l’oro spot ha chiuso il 7 agosto a 4.342,18 dollari, più 2,39%, quarantadue ' +
+          'dollari sopra la soglia. Il massimo delle 15:00, 4.371,89, non è più stato avvicinato, ma nemmeno ' +
+          'il livello di invalidazione è mai stato messo in discussione.',
+      },
+      {
+        condition:
+          'Una probabilità di rialzo a settembre che risale sopra il 50%, cioè che torna a essere lo scenario più probabile.',
+        triggered: false,
+        evidence:
+          'Il numero è rimasto in minoranza: 43,7% alle 15:55 del 7 agosto, dopo essere sceso al 41,7% dal ' +
+          '55,1% delle 14:20. Ne ha restituiti due dei tredici e mezzo persi, e resta sei punti e tre decimi ' +
+          'sotto la metà.',
+      },
+      {
+        condition:
+          'Un indice dei prezzi mercoledì 12 agosto sopra le attese del 3,4% annuo, o un dato di fondo sopra il 2,5%: con il greggio di nuovo in salita, sarebbe la combinazione che rimette il rialzo di settembre sul tavolo.',
+        triggered: false,
+        evidence:
+          'Non giudicabile: il dato esce mercoledì 12 agosto e al momento del controllo non era pubblicato. ' +
+          'Registrata come non scattata perché non lo è, non perché sia stata verificata.',
+      },
+      {
+        condition:
+          'Prima di tutte queste, e senza aspettare la rottura: un Brent sopra gli 84 dollari con il biennale che risale sopra il 4,25%. Sarebbe il premio energetico che smette di sostenere il metallo e ricomincia ad alimentare i rendimenti contro di lui, che è la regola dichiarata da questo archivio il 5 agosto e mai cambiata.',
+        triggered: false,
+        evidence:
+          'Nessuna delle due metà. Il Brent non ha superato gli 84 dollari dopo la pubblicazione — il massimo ' +
+          'di 84,40 è della mattinata — e ha chiuso a 82,21; il biennale ha chiuso a 4,208%, quattro decimi di ' +
+          'punto base sotto la tacca del 4,25%.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, ma il verdetto va letto con due riserve dichiarate. La prima: la condizione principale ha retto per ventuno centesimi. La lettura sosteneva che quindici navi colpite dichiarate da chi le possiede fossero un fatto materiale capace di reggere dove sei annunci diplomatici avevano fallito, e la prova richiesta era che il Brent non tornasse sotto gli 82 entro la seduta. Non ci è tornato, ma ha chiuso in negativo sulla giornata dopo essere risalito a 83,65 sulla notizia: il premio si è formato e riassorbito nel giro di sei ore, cioè si è comportato esattamente come i sei annunci che la lettura riteneva diversi. La tesi regge alla lettera e il meccanismo su cui poggia si è già consumato. La seconda riserva: una condizione su cinque, quella sull’indice dei prezzi, matura mercoledì e non è stata giudicata. Quello che ha retto senza margini di lettura è l’altra gamba, quella monetaria — l’oro a 4.342,18 in chiusura e la probabilità di rialzo ferma al 43,7% — che però non era la gamba di cui questa analisi parlava.',
+    lesson:
+      'È il terzo esito consecutivo in cui la condizione decisiva si decide su meno di un dollaro, e qui il margine è di ventuno centesimi su una soglia di 82. Il registro segna «confermata» tre volte mentre le letture passavano tutte a filo, e questo dice qualcosa sulla soglia e non sulle letture: una tacca posta dove il prezzo sta già oscillando misura il rumore, non la tesi. Gli 82 dollari erano nati il 5 agosto come il livello oltre il quale l’effetto inflazionistico supera il sostegno da rifugio, e in tre giorni il Brent ci è passato sopra e sotto sette volte. Una soglia attraversata di continuo va sostituita da una condizione sul comportamento — quante volte il premio si forma e rientra, e in quante ore — perché è quella la cosa che questa settimana ha misurato davvero.',
+  },
+  {
     slug: 'un-attacco-a-uno-e-un-attacco-a-tutti-il-patto-e-firmato',
     checkedAt: '2026-08-08T10:30:00+02:00',
     verdict: 'confermata',
