@@ -30,8 +30,10 @@ fonti:
   - testata: "Barron’s"
     titolo: "Consenso a 95.000 posti"
   - testata: "Investing.com"
+esito: "confermata"
+controllata: "2026-08-09T02:20:00+02:00"
 sorgente: "src/app/core/data/articles/meno-23-mila-posti-e-il-rialzo-di-settembre-passa-in-minoranza.ts"
-impronta: "ad71c7faa4ff9b6c"
+impronta: "94fab003a7bc9d05"
 ---
 
 # Meno 23 mila posti, e il rialzo di settembre passa in minoranza
@@ -142,6 +144,22 @@ Attese al 3,4% annuo dal 3,5%, con l’indice di fondo al 2,5% dal 2,6% e una va
 Impostazione su XAU/USD: rialzista, forza media, orizzonte medio.
 
 Il canale dei tassi ha cambiato lato. Per una settimana ha lavorato contro il metallo — greggio alto, inflazione attesa, rendimenti in salita — e da oggi lavora con lui: meno 23.000 posti, 103.000 tolti ai due mesi precedenti, salari in decelerazione e la probabilità di un rialzo a settembre scesa sotto la metà. La prova che sia questo il canale, e non il rifugio, è che l’oro sale mentre il Brent scende: il premio geopolitico si sta sgonfiando e il metallo guadagna lo stesso. La forza è media e non alta perché il dato è già nel prezzo e mercoledì esce l’indice dei prezzi.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-09T02:20:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e la tesi centrale ha avuto la conferma che chiedeva. L’analisi sosteneva che a muovere l’oro fossero i tassi e non il rischio geopolitico, e nella stessa seduta il metallo ha chiuso a 4.342,18 dollari, più 2,39%, mentre il Brent chiudeva a 82,21 con il segno meno: le due gambe si sono separate esattamente nel verso descritto. La probabilità di un rialzo a settembre è rimasta in minoranza al 43,7% e il decennale ha chiuso più in basso di dov’era. Va però detto quanto poco di questo verdetto sia stato guadagnato nei due giorni successivi: la finestra dichiarata era di giorni, ma i giorni trascorsi sono stati un sabato e una domenica, e ogni numero citato qui è della sola seduta del 7 agosto. La condizione che l’analisi stessa chiamava decisiva — l’indice dei prezzi — è ancora interamente davanti.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un indice dei prezzi di mercoledì 12 agosto sopra le attese del 3,4% annuo, o un dato core sopra il 2,5%: rimetterebbe il rialzo sul tavolo e toglierebbe a questa lettura la sua unica gamba. | no | Non giudicabile: il dato esce mercoledì 12 agosto e al momento del controllo non era pubblicato. È la condizione che l’analisi stessa indicava come decisiva, e resta interamente davanti. Registrata come non scattata perché non lo è, non perché sia stata verificata. |
+| Una probabilità di rialzo a settembre che risale sopra il 50%, cioè che torna a essere lo scenario più probabile: è il numero su cui questa lettura è costruita, e la metà è la linea che oggi è stata attraversata. | no | Il numero è rimasto in minoranza per tutta la finestra: 43,7% alle 15:55 del 7 agosto, dopo il minimo del 41,7% toccato subito dopo il dato e contro il 55,1% delle 14:20. Da allora non esiste una riprezzatura, perché i mercati dei tassi sono rimasti chiusi: la linea della metà non è stata riattraversata e non ha nemmeno avuto occasione di esserlo. |
+| Un oro spot che rientra sotto i 4.300 dollari, che cancellerebbe l’intero movimento di oggi e riporterebbe il prezzo dove era prima del dato. | no | Nessun rientro: l’oro spot ha chiuso il 7 agosto a 4.342,18 dollari, più 2,39%, quarantadue sopra la soglia, e da allora non c’è stato un altro prezzo. Il movimento del rapporto occupazionale è stato conservato per intero fino alla chiusura, pur senza mai riavvicinare il massimo di 4.371,89 segnato alle 15:00. |
+| Un decennale che torna sopra il 4,70% mentre l’oro resta sopra i 4.300: direbbe che il mercato obbligazionario ha già smesso di credere alla lettura di oggi sul rapporto occupazionale. | no | Il decennale non ha più avvicinato quel livello dopo la pubblicazione: sceso a un minimo di 4,601% subito dopo il dato, ha chiuso a 4,655%, cioè quattro decimi e mezzo di punto percentuale sotto la soglia. Il massimo di 4,690% del 7 agosto è della mattinata, cioè di prima che questa lettura esistesse. |
+| Prima di tutte queste, e senza aspettare la rottura: un Brent che torna sopra gli 84 dollari mentre l’oro sale con lui. Toglierebbe la prova su cui poggia il titolo di questa analisi — che a muovere il metallo siano i tassi e non il rischio — e riporterebbe il quadro a quello ambiguo di ieri. | no | Il Brent non è tornato sopra gli 84 dollari dopo la pubblicazione: è risalito a 83,65 sulla dichiarazione di ADNOC e ha chiuso a 82,21, meno 0,34%. Il massimo di 84,40 è della mattinata. La prova su cui poggia il titolo ha quindi retto: nella seduta il metallo è salito mentre il greggio chiudeva in negativo, che è la separazione fra il canale dei tassi e quello del rischio che l’analisi sosteneva. |
+
+**Che cosa cambia.** È il terzo esito consecutivo chiuso sui dati di una sola giornata, e la ragione non è la fretta: è che l’orizzonte è stato contato in giorni di calendario mentre il mercato conta in sedute. Un’analisi pubblicata di venerdì pomeriggio con orizzonte «giorni» arriva al lunedì avendo avuto un’ora e mezza di contrattazioni per essere smentita, non due giorni. Il registro non se ne accorge, perché confronta `checkedAt` con `publishedAt` e vede quarantotto ore. Le condizioni ancorate a un prezzo vanno quindi datate in sedute — «entro la chiusura di lunedì», non «entro un paio di giorni» — altrimenti un fine settimana regala a ogni lettura di venerdì una conferma che nessun prezzo ha messo alla prova.
 
 ## Fonti consultate
 

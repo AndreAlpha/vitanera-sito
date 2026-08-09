@@ -17,6 +17,24 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'JAZAN',
+    name: 'Raffineria Aramco di Jazan, costa saudita del Mar Rosso',
+    value: '≈ 400.000 barili/giorno',
+    change: 'incendio confermato, rivendicato dagli Houthi',
+    tone: 'bear',
+    icon: 'factory',
+    note: 'Nelle prime ore di domenica 9 agosto un incendio è scoppiato in un impianto della raffineria, a poca distanza dal confine con lo Yemen. Il ministero dell’Energia saudita dichiara che è stato spento e che non ci sono feriti; il portavoce militare houthi Yahya Saree rivendica di averlo colpito con un drone, ma Riyadh non ha confermato l’attribuzione. Tre affermazioni di peso diverso, da tenere separate: l’incendio è un fatto, la rivendicazione è una dichiarazione, il nesso non è verificato. È il secondo stop in due settimane sullo stesso sito, dopo l’attacco del 27 luglio che aveva danneggiato il complesso IGCC e l’area dei serbatoi. Conta perché la costa del Mar Rosso è la via con cui Riyadh aggira Hormuz: colpirla non aggiunge un fronte, toglie l’alternativa a quello che c’è già.',
+  },
+  {
+    symbol: 'CINA PREZZI',
+    name: 'Inflazione cinese di luglio, consumo e produzione',
+    value: '+0,5% · +3,5%',
+    change: 'attese +0,8% e +3,8%; precedenti +1,0% e +4,1%',
+    tone: 'neutral',
+    icon: 'percent',
+    note: 'Diffusioni ufficiali di luglio. L’indice al consumo rallenta allo 0,5% annuo con il dato di fondo allo 0,9% e una variazione mensile negativa dello 0,1%; i prezzi alla produzione salgono del 3,5%, il ritmo più basso da tre mesi. Entrambi sotto le attese: domanda interna ancora debole e meno pressione inflazionistica in uscita dalla seconda economia del mondo. Per l’oro l’effetto immediato è piccolo, perché non tocca le aspettative sulla Fed, ma va letto accanto agli acquisti della banca centrale cinese: un Paese che compra oro a ritmo crescente e ha inflazione bassa ha più spazio per continuare, non meno.',
+  },
+  {
     symbol: 'CONDIZIONE',
     name: 'La condizione dichiarata per riaprire lo Stretto di Hormuz',
     value: 'compensazione USA',
@@ -262,11 +280,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'GOLFO',
     name: 'Patto di difesa della Mecca',
-    value: 'attacco a uno, attacco a tutti',
-    change: 'firmato, ma senza obblighi militari specifici',
+    value: 'equivalente all’Articolo 5',
+    change: 'secondo Ankara, ma nessun documento attuativo',
     tone: 'warn',
     icon: 'shield',
-    note: 'Firmato alla Mecca — non a Gedda, come indicavano le prime fonti — da bin Salman, Erdogan e Sharif. Il testo contiene la clausola di difesa collettiva, il comunicato non contiene alcuna specifica sugli obblighi militari, non abroga le intese esistenti ed è dichiarato aperto ad altri Paesi della regione. Il negoziato durava da quasi un anno: non è una reazione a questa settimana, è una trattativa lunga che l’escalation ha accelerato. Un alto funzionario saudita si aspetta attacchi coordinati imminenti da milizie irachene e Houthi.',
+    note: 'Firmato alla Mecca — non a Gedda, come indicavano le prime fonti — da bin Salman, Erdogan e Sharif. Il testo contiene la clausola di difesa collettiva, il comunicato non contiene alcuna specifica sugli obblighi militari, non abroga le intese esistenti ed è dichiarato aperto ad altri Paesi della regione. Il negoziato durava da quasi un anno: non è una reazione a questa settimana, è una trattativa lunga che l’escalation ha accelerato. Il 9 agosto il ministro degli Esteri turco Hakan Fidan precisa che dal punto di vista tecnico la clausola è equivalente all’Articolo 5 della NATO, e che l’accordo non è diretto contro l’Iran ma serve come deterrenza regionale. La precisazione alza la solennità dell’impegno senza aggiungere un obbligo: l’Articolo 5 impegna ciascuna parte ad agire con i mezzi che ritiene necessari, ed è la formula di difesa collettiva meno automatica che si potesse scegliere. Da tenere d’occhio due sviluppi che varrebbero più della definizione, ma che restano intenzioni: l’Egitto indicato come possibile futuro membro e l’interesse turco a contribuire alla sicurezza delle rotte del Mar Rosso contro gli attacchi Houthi.',
   },
   {
     symbol: 'TESORO USA',

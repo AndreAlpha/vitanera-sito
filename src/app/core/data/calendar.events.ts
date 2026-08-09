@@ -11,7 +11,7 @@
  */
 import { CalendarArea, CentralBankKind } from '../models/calendar.model';
 
-export const EVENTS_GENERATED_AT = '2026-08-08T15:39Z';
+export const EVENTS_GENERATED_AT = '2026-08-09T12:57Z';
 
 export type EventRow = readonly [
   at: string,
@@ -23,7 +23,6 @@ export type EventRow = readonly [
 ];
 
 export const EVENT_ROWS: readonly EventRow[] = [
-  ['2026-08-08T16:45Z', 'usa', 'discorso', 'Bowman', false, 'Fed Bowman Speech'],
   ['2026-08-13T12:15Z', 'usa', 'discorso', 'Hammack', false, 'Fed Hammack Speech'],
   ['2026-08-13T12:40Z', 'usa', 'discorso', 'Barkin', false, 'Fed Barkin Speech'],
   ['2026-08-19T18:00Z', 'usa', 'verbali', null, false, 'FOMC Minutes'],
@@ -50,6 +49,7 @@ export const EVENT_ROWS: readonly EventRow[] = [
   ['2027-10-27T18:30Z', 'usa', 'conferenza', null, true, 'Fed Press Conference'],
   ['2027-12-08T19:00Z', 'usa', 'decisione', null, false, 'Fed Interest Rate Decision'],
   ['2027-12-08T19:30Z', 'usa', 'conferenza', null, true, 'Fed Press Conference'],
+  ['2026-08-08T16:45Z', 'usa', 'discorso', 'Bowman', false, 'Fed Bowman Speech'],
   ['2026-08-07T14:00Z', 'usa', 'discorso', 'Barkin', false, 'Fed Barkin Speech'],
   ['2026-08-06T21:30Z', 'usa', 'discorso', 'Musalem', false, 'Fed Musalem Speech'],
   ['2026-08-05T20:05Z', 'usa', 'discorso', 'Cook', false, 'Fed Cook Speech'],
@@ -73,7 +73,6 @@ export const EVENT_ROWS: readonly EventRow[] = [
   ['2026-07-09T13:00Z', 'usa', 'discorso', 'Williams', false, 'Fed Williams Speech'],
   ['2026-07-08T18:00Z', 'usa', 'verbali', null, false, 'FOMC Minutes'],
   ['2026-07-06T15:00Z', 'usa', 'discorso', 'Waller', false, 'Fed Waller Speech'],
-  ['2026-07-01T13:00Z', 'usa', 'discorso', 'Warsh', true, 'Fed Chair Warsh Speech'],
   ['2026-09-10T12:15Z', 'euro', 'decisione', null, false, 'ECB Interest Rate Decision'],
   ['2026-09-10T12:45Z', 'euro', 'conferenza', null, true, 'ECB Press Conference'],
   ['2026-10-29T13:15Z', 'euro', 'decisione', null, false, 'ECB Interest Rate Decision'],

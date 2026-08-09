@@ -275,4 +275,12 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
       'Misura dell’ampiezza e della rapidità delle oscillazioni di prezzo in un dato periodo.',
     why: 'Una volatilità elevata amplifica sia i guadagni sia le perdite e rende meno affidabile qualsiasi lettura direzionale.',
   },
+  {
+    term: 'Difesa collettiva',
+    letter: 'D',
+    definition:
+      'Clausola di un patto di sicurezza per cui un attacco armato contro uno dei firmatari è considerato un attacco contro tutti. La formula più nota è l’Articolo 5 del trattato atlantico, che però impegna ciascuna parte ad agire con i mezzi che essa stessa ritiene necessari: vincola politicamente senza stabilire un automatismo militare.',
+    why: 'Per l’oro conta la distanza fra la solennità della formula e l’esistenza di una procedura. Una clausola senza comando integrato, esercitazioni e forze stazionate alza il premio di rischio percepito molto meno di quanto suggerisca il suo testo, e una deterrenza che funzionasse davvero lo ridurrebbe invece di alzarlo.',
+    related: ['Premio di rischio', 'Invalidazione'],
+  },
 ];

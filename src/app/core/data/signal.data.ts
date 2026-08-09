@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-08T17:30:00+02:00',
+  updatedAt: '2026-08-09T14:45:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -196,9 +196,11 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         '4.342,18, più 2,39%, quasi trenta dollari sotto il massimo delle 15:00 e senza averlo più avvicinato; ' +
         'il Brent chiude a 82,21, meno 0,34%, cioè negativo sulla giornata e ventuno centesimi sopra la tacca ' +
         'che invalida questa lettura. Da qui non c’è più un prezzo fino a lunedì, e nel frattempo si è ' +
-        'accumulato parecchio: l’escalation in Yemen venerdì sera, poi tre dichiarazioni su Hormuz e ' +
-        'un’accusa emiratina di attacco missilistico contro una nave ADNOC. Il primo scambio della settimana ' +
-        'dovrà prezzare tutto insieme, ed è la domanda più informativa che il fine settimana lasci aperta.',
+        'accumulato parecchio: l’escalation in Yemen venerdì sera, tre dichiarazioni su Hormuz, un’accusa ' +
+        'emiratina di attacco missilistico e infine l’incendio nella raffineria di Jazan, rivendicato dagli ' +
+        'Houthi. Il primo scambio della settimana dovrà prezzare tutto insieme, e la domanda più informativa ' +
+        'è la più stretta: se quindici navi colpite sono rientrate in sei ore, che cosa fa un impianto da ' +
+        '400.000 barili al giorno andato a fuoco.',
       invalidation:
         'Un Brent che rientra sotto gli 82 dollari entro la seduta, che direbbe che la dichiarazione di ADNOC è stata letta come rumore; un oro spot che rientra sotto i 4.300 dollari; oppure una probabilità di rialzo a settembre che risale sopra il 50%.',
     },
@@ -209,13 +211,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       regime:
         'Il motore resta il rapporto occupazionale: meno 23.000 posti, 103.000 tolti ai due mesi precedenti, e ' +
         'la probabilità di un rialzo a settembre passata dall’altra parte della metà, al 43,7% da 55,1%. Il ' +
-        'quadro geopolitico non peggiora né migliora: diventa leggibile. Le Guardie Rivoluzionarie e il ' +
-        'ministro degli Esteri iraniano hanno detto lo stesso da due lati — l’intesa tecnica con l’Oman è ' +
-        'vicina, e la riapertura dello Stretto non dipende da quel tavolo ma dall’accettazione americana ' +
-        'delle condizioni iraniane, fra cui una compensazione. Una condizione con un nome è più difficile da ' +
-        'soddisfare di una vaga. Ma il grado non sale, e la ragione è misurata: il metro dichiarato è il ' +
-        'conteggio dei transiti, fermo a 33 in quattro giorni, e questa settimana il premio di rischio si è ' +
-        'formato e sgonfiato quattro volte in quarantotto ore.',
+        'quadro geopolitico cambia di natura più che di grado. Per una settimana si contavano dichiarazioni; ' +
+        'domenica c’è un fatto con una capacità e una data — un incendio nella raffineria Aramco di Jazan, ' +
+        'circa 400.000 barili al giorno, confermato dal ministero dell’Energia saudita e rivendicato dagli ' +
+        'Houthi con un drone, il secondo stop in due settimane sullo stesso sito. Il bersaglio non è più il ' +
+        'traffico ma l’infrastruttura che serve ad aggirare Hormuz. Il grado però non sale, per due ragioni ' +
+        'dichiarate: il danno riferito è contenuto, con incendio spento e nessun ferito, e Riyadh non ha ' +
+        'confermato l’attribuzione. Sul fronte diplomatico Araqchi aggiunge che fra Iran e Stati Uniti non ' +
+        'esiste alcun negoziato diretto, solo messaggi tramite intermediari.',
       invalidation:
         'Un indice dei prezzi mercoledì 12 agosto sopra le attese del 3,4% annuo, o un dato di fondo sopra il 2,5%, che con il greggio di nuovo in salita rimetterebbe il rialzo di settembre sul tavolo; una probabilità di rialzo a settembre di nuovo sopra il 50%; oppure un oro spot che rientra sotto i 4.300 dollari. Prima di tutte queste, un Brent sopra gli 84 dollari con il biennale che risale sopra il 4,25%.',
     },
@@ -229,46 +232,49 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'ventunesimo mese di fila e il maggior acquisto da ottobre 2023, con il ritmo che accelera da marzo. ' +
         'Attorno, tre atti americani nella stessa giornata allargano la portata dello stesso strumento — dazi ' +
         'secondari votati dal Senato, sanzioni sui binari di pagamento iraniani, e il passaggio procedurale che ' +
-        'la Corte Suprema aveva indicato per rimuovere una governatrice della Fed. Contro tutto questo restano ' +
-        'le aspettative di inflazione ferme al 3,3% e al 3,0% su tre e cinque anni, che tengono in vita il caso ' +
-        'per tassi alti: è la ragione per cui la lettura non passa a rialzista.',
+        'la Corte Suprema aveva indicato per rimuovere una governatrice della Fed. Si aggiunge ora una seconda ' +
+        'gamba lenta, di natura diversa: la struttura di sicurezza regionale si formalizza, con Ankara che ' +
+        'dichiara la clausola della Mecca tecnicamente equivalente all’Articolo 5, l’Egitto indicato come ' +
+        'possibile futuro membro e un interesse turco per le rotte del Mar Rosso. Alza il pavimento del premio ' +
+        'geopolitico, ma in modo ambiguo: una deterrenza che riesce toglie premio invece di darlo. Contro ' +
+        'tutto questo restano le aspettative di inflazione ferme al 3,3% e al 3,0% su tre e cinque anni, che ' +
+        'tengono in vita il caso per tassi alti: è la ragione per cui la lettura non passa a rialzista.',
       invalidation:
-        'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; oppure la revoca dei dazi sul polisilicio prima del 4 dicembre.',
+        'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'La riapertura di Hormuz ha una condizione, e ha un nome',
+  headline: 'Jazan va a fuoco, e il bersaglio non è più il traffico',
   stance:
-    'In una giornata a mercati chiusi hanno parlato tre attori sullo stesso argomento. Le Guardie ' +
-    'Rivoluzionarie dicono che la riapertura dello Stretto non dipende dai negoziati con l’Oman ma ' +
-    'dall’accettazione americana delle condizioni iraniane; il ministro degli Esteri Araqchi conferma che ' +
-    'con l’Oman si è «molto vicini» a un accordo sulla rotta e aggiunge che la riapertura dipende da altro, ' +
-    'fra cui una compensazione statunitense; il governo degli Emirati accusa l’Iran di aver colpito con un ' +
-    'missile una nave ADNOC in transito, senza feriti. Sommate, le tre voci non alzano la tensione: rendono ' +
-    'leggibile lo stallo, e mostrano che la condizione della riapertura non sta sul tavolo dove si tratta. ' +
-    'Prima di venerdì sera restano da prezzare anche l’escalation in Yemen e tutto questo.',
+    'Domenica un incendio ha colpito un impianto della raffineria Aramco di Jazan, sulla costa saudita del ' +
+    'Mar Rosso: il ministero dell’Energia conferma il rogo, spento e senza feriti, e il portavoce militare ' +
+    'houthi Yahya Saree rivendica di averlo colpito con un drone. Riyadh non ha confermato l’attribuzione. ' +
+    'È il primo fatto materiale dopo una settimana di annunci, e sposta il bersaglio dalle navi ' +
+    'all’infrastruttura fissa — quella che serve proprio ad aggirare Hormuz, dove intanto Araqchi dichiara ' +
+    'che non esiste alcun negoziato diretto con Washington. Nella stessa giornata l’inflazione cinese di ' +
+    'luglio rallenta più delle attese su entrambi i lati.',
   favours: [
-    'Aspettare lunedì invece di dedurre: fra Yemen, tre dichiarazioni su Hormuz e un’accusa di attacco missilistico, nulla di questo ha ancora incontrato un prezzo',
-    'Leggere insieme le due voci iraniane invece di contrapporle: Guardie Rivoluzionarie e ministro degli Esteri dicono la stessa cosa da uffici diversi, ed è per questo che la conferma pesa',
-    'Distinguere l’intesa sulla rotta dalla riapertura dello Stretto: la prima è vicina per ammissione iraniana, la seconda ha una condizione politica che nessun tavolo tecnico può concedere',
+    'Tenere due metri invece di uno: quante navi passano da Hormuz, e quanta capacità resta in piedi sulla costa che serve a non passarci',
+    'Separare le tre affermazioni su Jazan: l’incendio è confermato dal ministero saudita, la rivendicazione è degli Houthi, l’attribuzione causale non è verificata',
+    'Aspettare il primo prezzo di lunedì con una domanda stretta: se quindici navi colpite sono rientrate in sei ore, quanto vale un impianto fermato',
   ],
   avoid: [
-    'Alzare il grado del segnale per tre dichiarazioni: il metro dichiarato è il conteggio dei transiti, e resta 33 in quattro giorni come prima che parlassero',
-    'Trattare l’accusa emiratina sul missile come un fatto verificato: è la posizione di un governo, non una ricostruzione indipendente',
-    'Leggere il «molto vicini» di Araqchi come distensione: è la stessa frase che accompagna una condizione che Washington ha già respinto',
+    'Trattare la rivendicazione houthi come un’attribuzione accertata: senza conferma saudita resta un incendio in una zona di guerra',
+    'Leggere Jazan come un secondo fronte accanto a Hormuz: è la via di fuga da Hormuz, quindi toglie un’alternativa invece di aggiungere un rischio separato',
+    'Alzare il grado su un danno che chi lo subisce dichiara contenuto: incendio spento, nessun ferito, nessun impatto materiale complessivo secondo Aramco',
   ],
   confirming: [
-    'Per la prima volta è Teheran a confermare i progressi, e nello stesso momento a staccarne la riapertura',
-    'La condizione ha un nome: accettazione americana delle richieste iraniane più una compensazione',
-    'Gli Emirati accusano l’Iran per nome di un attacco missilistico: l’attribuzione passa da un’azienda a uno Stato',
-    'Oro in chiusura a 4.342,18 $, più 2,39%: la settimana si chiude sopra i 4.300',
+    'Primo fatto materiale della settimana: un impianto da circa 400.000 barili al giorno fermato da un incendio',
+    'Secondo stop in due settimane sullo stesso sito: Jazan era già ferma dal 27 luglio dopo un attacco houthi',
+    'Araqchi dichiara che non esiste alcun negoziato diretto Iran-Stati Uniti: la distensione rapida esce dallo scenario centrale',
+    'Inflazione cinese di luglio sotto le attese su entrambi i lati: più 0,5% al consumo e più 3,5% alla produzione',
     'Rialzo Fed a settembre al 43,7% e Dollar Index 99,435, entrambi sotto le soglie',
   ],
   contradicting: [
-    'Il conteggio dei transiti non si muove: 33 navi in quattro giorni prima delle dichiarazioni e dopo',
-    'Un’intesa tecnica vicina confermata da Teheran resta il primo segnale distensivo con una fonte iraniana dietro',
-    'Il Brent chiude a 82,21 $, meno 0,34%: il premio formato sull’annuncio di ADNOC è rientrato tutto in sei ore',
-    'Ventuno centesimi separano quella chiusura dalla tacca che invalida la lettura intraday',
-    'Nessun prezzo dalla chiusura di venerdì: nessuna delle tre letture è stata messa alla prova per due giorni',
+    'Riyadh non conferma l’attribuzione: manca l’anello fra il drone rivendicato e l’incendio confermato',
+    'Il danno riferito è contenuto — incendio spento, nessun ferito — e Aramco parla di interruzioni senza impatto materiale complessivo',
+    'Il conteggio dei transiti non si muove: 33 navi in quattro giorni, come prima di tutte le dichiarazioni',
+    'Venerdì il premio si è sgonfiato in sei ore su quindici navi colpite dichiarate da chi le possiede',
+    'Nessun prezzo dalla chiusura di venerdì: quattro giorni di notizie arriveranno insieme su un solo scambio',
     'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
   ],
   constraints: [
@@ -314,6 +320,25 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'un’altra nave collegata alla compagnia, senza feriti: l’attribuzione passa da un’azienda che conta i ' +
         'propri danni a uno Stato che indica l’autore mentre quell’autore sta trattando.',
       state: 'fermo',
+    },
+    {
+      label: 'Capacità saudita sulla costa del Mar Rosso',
+      value: 'Jazan ferma due volte in due settimane',
+      baseline: 'circa 400.000 barili al giorno di raffinazione',
+      against:
+        'È il vincolo che l’archivio non stava misurando, ed è nato da una lettura incompleta scritta qui il ' +
+        '5 agosto: il Mar Rosso era stato descritto come «un altro stretto, un altro attore», cioè come un ' +
+        'fronte indipendente da Hormuz. Indipendente lo è sul piano diplomatico, perché chi colpisce non ' +
+        'siede al tavolo di Teheran, ma non lo è sul piano materiale: quella costa è il modo con cui il ' +
+        'greggio attraversa la penisola ed evita lo Stretto. I due colli di bottiglia sono in serie, non in ' +
+        'parallelo.',
+      watch:
+        'Due numeri, e nessuno dei due è il conteggio dei transiti. Primo: se e quando Jazan dichiara il ' +
+        'ripristino della piena capacità, dopo lo stop del 27 luglio e l’incendio del 9 agosto rivendicato ' +
+        'dagli Houthi. Secondo: se la campagna si estende a Yanbu o alla rotta est-ovest, che è il resto ' +
+        'della stessa via di fuga. Aramco dichiara per ora interruzioni produttive senza impatto materiale ' +
+        'complessivo, e finché quella formula regge il vincolo non stringe davvero.',
+      state: 'si-allenta',
     },
     {
       label: 'Mercato del lavoro statunitense che rallenta',
@@ -431,8 +456,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
-    'la-riapertura-ha-un-prezzo-non-sul-tavolo-dell-oman',
-    'marib-sotto-i-missili-e-il-rischio-piu-alto-dal-2022',
+    'un-drone-su-jazan-e-la-via-di-fuga-da-hormuz',
+    'la-clausola-ha-un-modello-e-il-modello-non-obbliga',
     'meno-23-mila-posti-e-il-rialzo-di-settembre-passa-in-minoranza',
   ],
 };

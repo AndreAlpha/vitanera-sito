@@ -22,6 +22,8 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { droneSuJazan } from './articles/un-drone-su-jazan-e-la-via-di-fuga-da-hormuz';
+import { clausolaHaUnModello } from './articles/la-clausola-ha-un-modello-e-il-modello-non-obbliga';
 import { riaperturaHaUnPrezzo } from './articles/la-riapertura-ha-un-prezzo-non-sul-tavolo-dell-oman';
 import { maribRischioPiuAltoDal2022 } from './articles/marib-sotto-i-missili-e-il-rischio-piu-alto-dal-2022';
 import { washingtonPechinoVentiTonnellate } from './articles/washington-allarga-la-mano-pechino-compra-venti-tonnellate';
@@ -71,6 +73,8 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  droneSuJazan,
+  clausolaHaUnModello,
   riaperturaHaUnPrezzo,
   maribRischioPiuAltoDal2022,
   washingtonPechinoVentiTonnellate,
