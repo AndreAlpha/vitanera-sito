@@ -17,6 +17,15 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'MOCHA',
+    name: 'Porto yemenita di Mocha, Mar Rosso meridionale',
+    value: 'almeno sette morti',
+    change: 'gravi danni alle infrastrutture portuali',
+    tone: 'bear',
+    icon: 'alert',
+    note: 'Missili e droni houthi sul porto nella stessa giornata dell’attacco alla raffineria di Jazan, secondo Reuters e AP. Due infrastrutture fisse colpite in poche ore: il cambio di bersaglio dalle navi agli impianti smette di essere un episodio isolato. Il confronto fra i due episodi va però tenuto esplicito, perché si ordina al contrario dell’istinto: quello con sette morti è un porto commerciale yemenita dentro una guerra civile che dura da undici anni e non esporta greggio; quello senza feriti è un impianto da circa 400.000 barili al giorno. Il primo è molto più grave, il secondo molto più rilevante per il prezzo del petrolio, e le due scale non comunicano. Mocha porta nel quadro Bab el-Mandeb, l’imbocco meridionale della stessa rotta che a nord arriva a Yanbu e Jazan: è un’informazione sulla capacità di chi colpisce, non ancora un danno all’offerta.',
+  },
+  {
     symbol: 'JAZAN',
     name: 'Raffineria Aramco di Jazan, costa saudita del Mar Rosso',
     value: '≈ 400.000 barili/giorno',

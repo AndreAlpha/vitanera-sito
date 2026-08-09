@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-09T14:45:00+02:00',
+  updatedAt: '2026-08-09T16:10:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -197,10 +197,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'il Brent chiude a 82,21, meno 0,34%, cioè negativo sulla giornata e ventuno centesimi sopra la tacca ' +
         'che invalida questa lettura. Da qui non c’è più un prezzo fino a lunedì, e nel frattempo si è ' +
         'accumulato parecchio: l’escalation in Yemen venerdì sera, tre dichiarazioni su Hormuz, un’accusa ' +
-        'emiratina di attacco missilistico e infine l’incendio nella raffineria di Jazan, rivendicato dagli ' +
-        'Houthi. Il primo scambio della settimana dovrà prezzare tutto insieme, e la domanda più informativa ' +
-        'è la più stretta: se quindici navi colpite sono rientrate in sei ore, che cosa fa un impianto da ' +
-        '400.000 barili al giorno andato a fuoco.',
+        'emiratina di attacco missilistico e infine due infrastrutture colpite nella stessa domenica: la ' +
+        'raffineria di Jazan e il porto yemenita di Mocha, con almeno sette morti. Il primo scambio della ' +
+        'settimana dovrà prezzare tutto insieme, e la domanda più informativa è la più stretta: se quindici ' +
+        'navi colpite sono rientrate in sei ore, che cosa fanno due impianti fissi in un giorno solo.',
       invalidation:
         'Un Brent che rientra sotto gli 82 dollari entro la seduta, che direbbe che la dichiarazione di ADNOC è stata letta come rumore; un oro spot che rientra sotto i 4.300 dollari; oppure una probabilità di rialzo a settembre che risale sopra il 50%.',
     },
@@ -214,11 +214,13 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'quadro geopolitico cambia di natura più che di grado. Per una settimana si contavano dichiarazioni; ' +
         'domenica c’è un fatto con una capacità e una data — un incendio nella raffineria Aramco di Jazan, ' +
         'circa 400.000 barili al giorno, confermato dal ministero dell’Energia saudita e rivendicato dagli ' +
-        'Houthi con un drone, il secondo stop in due settimane sullo stesso sito. Il bersaglio non è più il ' +
-        'traffico ma l’infrastruttura che serve ad aggirare Hormuz. Il grado però non sale, per due ragioni ' +
-        'dichiarate: il danno riferito è contenuto, con incendio spento e nessun ferito, e Riyadh non ha ' +
-        'confermato l’attribuzione. Sul fronte diplomatico Araqchi aggiunge che fra Iran e Stati Uniti non ' +
-        'esiste alcun negoziato diretto, solo messaggi tramite intermediari.',
+        'Houthi con un drone, il secondo stop in due settimane sullo stesso sito. Poche ore dopo un secondo ' +
+        'obiettivo fisso: il porto yemenita di Mocha, con almeno sette morti. Due infrastrutture in un ' +
+        'giorno fanno del cambio di bersaglio un modo di operare e non un episodio. Il grado però non sale, ' +
+        'per ragioni dichiarate: a Jazan il danno riferito è contenuto e Riyadh non conferma l’attribuzione, ' +
+        'mentre Mocha è un porto commerciale dentro una guerra civile di undici anni e non toglie barili ' +
+        'all’offerta. Il premio si aggiorna di quanto vale la cosa, non di quanto la cosa colpisce. Sul ' +
+        'fronte diplomatico Araqchi aggiunge che fra Iran e Stati Uniti non esiste alcun negoziato diretto.',
       invalidation:
         'Un indice dei prezzi mercoledì 12 agosto sopra le attese del 3,4% annuo, o un dato di fondo sopra il 2,5%, che con il greggio di nuovo in salita rimetterebbe il rialzo di settembre sul tavolo; una probabilità di rialzo a settembre di nuovo sopra il 50%; oppure un oro spot che rientra sotto i 4.300 dollari. Prima di tutte queste, un Brent sopra gli 84 dollari con il biennale che risale sopra il 4,25%.',
     },
@@ -243,38 +245,38 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'Jazan va a fuoco, e il bersaglio non è più il traffico',
+  headline: 'Due infrastrutture in un giorno, e solo una tocca i barili',
   stance:
-    'Domenica un incendio ha colpito un impianto della raffineria Aramco di Jazan, sulla costa saudita del ' +
-    'Mar Rosso: il ministero dell’Energia conferma il rogo, spento e senza feriti, e il portavoce militare ' +
-    'houthi Yahya Saree rivendica di averlo colpito con un drone. Riyadh non ha confermato l’attribuzione. ' +
-    'È il primo fatto materiale dopo una settimana di annunci, e sposta il bersaglio dalle navi ' +
-    'all’infrastruttura fissa — quella che serve proprio ad aggirare Hormuz, dove intanto Araqchi dichiara ' +
-    'che non esiste alcun negoziato diretto con Washington. Nella stessa giornata l’inflazione cinese di ' +
-    'luglio rallenta più delle attese su entrambi i lati.',
+    'Domenica gli Houthi hanno colpito due obiettivi fissi. Il primo è la raffineria Aramco di Jazan, circa ' +
+    '400.000 barili al giorno sulla costa che serve ad aggirare Hormuz: incendio confermato dal ministero ' +
+    'dell’Energia saudita, spento e senza feriti, rivendicato con un drone ma senza attribuzione confermata ' +
+    'da Riyadh. Il secondo è il porto yemenita di Mocha, con almeno sette morti e gravi danni alle banchine ' +
+    'secondo Reuters e AP. Due infrastrutture in poche ore fanno del cambio di bersaglio un modo di ' +
+    'operare; ma l’episodio letale non esporta greggio e quello che tocca l’offerta non ha fatto vittime. ' +
+    'Su Hormuz nulla si muove, e Araqchi ripete che con Washington non c’è alcun negoziato diretto.',
   favours: [
+    'Dire quale scala si sta misurando: qui si misura l’offerta di greggio, non la gravità di un attacco, e le due cose oggi si ordinano al contrario',
     'Tenere due metri invece di uno: quante navi passano da Hormuz, e quanta capacità resta in piedi sulla costa che serve a non passarci',
-    'Separare le tre affermazioni su Jazan: l’incendio è confermato dal ministero saudita, la rivendicazione è degli Houthi, l’attribuzione causale non è verificata',
-    'Aspettare il primo prezzo di lunedì con una domanda stretta: se quindici navi colpite sono rientrate in sei ore, quanto vale un impianto fermato',
+    'Aspettare il primo prezzo di lunedì con una domanda stretta: se quindici navi colpite sono rientrate in sei ore, quanto vale una giornata con due impianti fissi',
   ],
   avoid: [
-    'Trattare la rivendicazione houthi come un’attribuzione accertata: senza conferma saudita resta un incendio in una zona di guerra',
-    'Leggere Jazan come un secondo fronte accanto a Hormuz: è la via di fuga da Hormuz, quindi toglie un’alternativa invece di aggiungere un rischio separato',
-    'Alzare il grado su un danno che chi lo subisce dichiara contenuto: incendio spento, nessun ferito, nessun impatto materiale complessivo secondo Aramco',
+    'Sommare gli episodi: un premio di rischio si forma su quanto cambia l’offerta attesa, non sul numero di attacchi in un giorno',
+    'Alzare il grado per la gravità di Mocha: è un porto commerciale yemenita dentro una guerra civile di undici anni, e non toglie barili al mercato',
+    'Trattare la rivendicazione houthi su Jazan come un’attribuzione accertata: senza conferma saudita resta un incendio in una zona di guerra',
   ],
   confirming: [
-    'Primo fatto materiale della settimana: un impianto da circa 400.000 barili al giorno fermato da un incendio',
-    'Secondo stop in due settimane sullo stesso sito: Jazan era già ferma dal 27 luglio dopo un attacco houthi',
-    'Araqchi dichiara che non esiste alcun negoziato diretto Iran-Stati Uniti: la distensione rapida esce dallo scenario centrale',
-    'Inflazione cinese di luglio sotto le attese su entrambi i lati: più 0,5% al consumo e più 3,5% alla produzione',
+    'Due infrastrutture fisse colpite in poche ore: il cambio di bersaglio dalle navi agli impianti è un modo di operare, non un episodio',
+    'La capacità di colpire copre entrambe le estremità della rotta del Mar Rosso, da Bab el-Mandeb a Jazan',
+    'Secondo stop in due settimane su Jazan, già ferma dal 27 luglio dopo un precedente attacco',
+    'Araqchi conferma che non esiste alcun negoziato diretto Iran-Stati Uniti: la distensione rapida esce dallo scenario centrale',
     'Rialzo Fed a settembre al 43,7% e Dollar Index 99,435, entrambi sotto le soglie',
   ],
   contradicting: [
-    'Riyadh non conferma l’attribuzione: manca l’anello fra il drone rivendicato e l’incendio confermato',
-    'Il danno riferito è contenuto — incendio spento, nessun ferito — e Aramco parla di interruzioni senza impatto materiale complessivo',
-    'Il conteggio dei transiti non si muove: 33 navi in quattro giorni, come prima di tutte le dichiarazioni',
+    'L’episodio letale della giornata non tocca l’offerta: Mocha è un porto commerciale, non un terminale di esportazione',
+    'L’episodio che tocca l’offerta ha danno dichiarato contenuto e attribuzione non confermata da Riyadh',
+    'Lo Yemen è in guerra da undici anni: un’escalation dentro uno stato noto non riprezza il rischio come un fatto nuovo',
+    'Il conteggio dei transiti non si muove: 33 navi in quattro giorni, come prima di tutto questo',
     'Venerdì il premio si è sgonfiato in sei ore su quindici navi colpite dichiarate da chi le possiede',
-    'Nessun prezzo dalla chiusura di venerdì: quattro giorni di notizie arriveranno insieme su un solo scambio',
     'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
   ],
   constraints: [
@@ -337,7 +339,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'ripristino della piena capacità, dopo lo stop del 27 luglio e l’incendio del 9 agosto rivendicato ' +
         'dagli Houthi. Secondo: se la campagna si estende a Yanbu o alla rotta est-ovest, che è il resto ' +
         'della stessa via di fuga. Aramco dichiara per ora interruzioni produttive senza impatto materiale ' +
-        'complessivo, e finché quella formula regge il vincolo non stringe davvero.',
+        'complessivo, e finché quella formula regge il vincolo non stringe davvero. L’attacco al porto di ' +
+        'Mocha, nello stesso giorno, allarga il quadro fino a Bab el-Mandeb — l’altra estremità della ' +
+        'rotta — ma non entra in questo conto: è un porto commerciale yemenita e non esporta greggio.',
       state: 'si-allenta',
     },
     {
@@ -456,8 +460,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'due-infrastrutture-in-un-giorno-solo-una-ha-un-prezzo',
     'un-drone-su-jazan-e-la-via-di-fuga-da-hormuz',
-    'la-clausola-ha-un-modello-e-il-modello-non-obbliga',
     'meno-23-mila-posti-e-il-rialzo-di-settembre-passa-in-minoranza',
   ],
 };

@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { dueInfrastruttureUnPrezzo } from './articles/due-infrastrutture-in-un-giorno-solo-una-ha-un-prezzo';
 import { droneSuJazan } from './articles/un-drone-su-jazan-e-la-via-di-fuga-da-hormuz';
 import { clausolaHaUnModello } from './articles/la-clausola-ha-un-modello-e-il-modello-non-obbliga';
 import { riaperturaHaUnPrezzo } from './articles/la-riapertura-ha-un-prezzo-non-sul-tavolo-dell-oman';
@@ -73,6 +74,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  dueInfrastruttureUnPrezzo,
   droneSuJazan,
   clausolaHaUnModello,
   riaperturaHaUnPrezzo,
