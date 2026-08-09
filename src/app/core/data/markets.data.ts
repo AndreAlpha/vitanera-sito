@@ -17,6 +17,24 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'BORSE GOLFO',
+    name: 'Chiusura domenicale dei mercati azionari del Golfo',
+    value: '+0,1% · −0,1%',
+    change: 'indice saudita e indice del Qatar, 9 agosto',
+    tone: 'bear',
+    icon: 'chart',
+    note: 'Sono le uniche borse aperte di domenica, perché la settimana del Golfo va da domenica a giovedì, ed è la ragione per cui questa voce conta più della sua ampiezza: mentre Londra e New York erano chiuse, hanno scambiato i mercati degli operatori materialmente più esposti a Jazan, a Mocha e allo Stretto di Hormuz. Hanno chiuso praticamente fermi, in attesa dichiarata di chiarezza sull’accordo Oman-Iran. Dopo due infrastrutture colpite nello stesso giorno, gli investitori regionali non hanno prezzato alcun nuovo shock. Va preso per quello che è: un indice azionario di un Paese esportatore non è il prezzo del greggio, ha i suoi flussi e i suoi titoli bancari, quindi è una risposta parziale alla domanda di ieri e non la chiusura del conto. Ma è un numero, è datato, e viene dal quadrante giusto.',
+  },
+  {
+    symbol: 'COREA DEL NORD',
+    name: 'Militari nordcoreani in Russia, secondo Kiev',
+    value: '30.000-50.000',
+    change: 'contro la precedente stima ucraina di circa 30.000',
+    tone: 'warn',
+    icon: 'users',
+    note: 'Dichiarazione di Volodymyr Zelensky riportata da Reuters: sarebbe stata presa la decisione di dispiegare fino a 50.000 militari nordcoreani in Russia, e sarebbero stati ritrovati missili nordcoreani sul territorio ucraino. Reuters aggiunge due riserve che ne cambiano il peso: la fonte dell’intelligence non è stata resa pubblica, e né Pyongyang né Seul hanno fornito conferme immediate. Il precedente conta più della cifra: circa 14.000 militari erano già stati inviati nella regione russa di Kursk secondo le valutazioni citate dalla stessa agenzia, con un’unità missilistica in fase di dispiegamento nella Russia occidentale. Non è un fronte che si apre ma un fronte che si allarga, e la differenza è tutta nell’orizzonte: alza lentamente il pavimento del premio geopolitico, non muove il primo prezzo del lunedì. Perché diventi un driver servirebbe una conferma indipendente, un impiego diretto su larga scala in Ucraina, oppure una risposta militare o diplomatica significativa di Corea del Sud, NATO o Stati Uniti.',
+  },
+  {
     symbol: 'MOCHA',
     name: 'Porto yemenita di Mocha, Mar Rosso meridionale',
     value: 'almeno sette morti',

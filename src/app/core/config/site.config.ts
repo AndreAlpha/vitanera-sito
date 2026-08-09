@@ -207,6 +207,17 @@ export const CATEGORIES: readonly Category[] = [
     description:
       'Il quadrante da cui passa la maggior parte del petrolio scambiato via mare. Le sue crisi arrivano ai mercati prima attraverso l’energia e le rotte, poi attraverso l’inflazione attesa e i rendimenti.',
   },
+  {
+    slug: 'russia-ucraina',
+    name: 'Russia e Ucraina',
+    short: 'Russia-Ucraina',
+    family: 'aree',
+    series: false,
+    icon: 'compass',
+    tagline: 'Il fronte orientale e chi ci entra',
+    description:
+      'La guerra che ha rimesso in circolo sanzioni, energia e riserve. Per l’oro conta soprattutto per due canali lenti: chi altro entra nel conflitto, e quali binari di pagamento vengono chiusi.',
+  },
 
   /* ---------------------------------------------------- Banche centrali -- */
   {

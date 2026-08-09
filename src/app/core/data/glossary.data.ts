@@ -150,6 +150,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     related: ['Premio di rischio geopolitico', 'Stretto di Hormuz', 'Invalidazione'],
   },
   {
+    term: 'Evento discreto',
+    letter: 'E',
+    definition:
+      'Uno shock geopolitico improvviso e non programmato — un attacco, un’uccisione mirata, la chiusura di uno stretto — da tenere distinto sia dal ciclo dei dodici-diciotto mesi, fatto di elezioni e scadenze, sia dalle tendenze strutturali che si misurano in anni.',
+    why: 'Le tre categorie si prezzano su orizzonti diversi, e scambiarle è l’errore più costoso nella lettura di una notizia. Un evento discreto si prezza in ore e va giudicato contro i vincoli materiali che impediscono all’escalation di andare oltre; una tendenza strutturale non lascia traccia sul primo scambio del giorno dopo. Un titolo di apertura fa sembrare la seconda la prima, ed è così che si costruisce un premio di rischio su qualcosa che il mercato ha già davanti da mesi.',
+    related: ['Vincolo materiale', 'Premio di rischio geopolitico', 'Regime di mercato'],
+  },
+  {
     term: 'Gioco a due livelli',
     letter: 'G',
     definition:

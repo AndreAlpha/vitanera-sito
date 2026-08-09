@@ -67,6 +67,7 @@ export type EditorialCategorySlug =
   // Aree non coperte dal calendario
   | 'asia'
   | 'medio-oriente'
+  | 'russia-ucraina'
   // Mercati: lo strumento di cui l'analisi parla
   | 'oro'
   | 'petrolio'

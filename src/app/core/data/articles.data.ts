@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { cinquantamilaSoldatiUnDecimoDiPunto } from './articles/cinquantamila-soldati-dichiarati-e-un-decimo-di-punto-nel-golfo';
 import { dueInfrastruttureUnPrezzo } from './articles/due-infrastrutture-in-un-giorno-solo-una-ha-un-prezzo';
 import { droneSuJazan } from './articles/un-drone-su-jazan-e-la-via-di-fuga-da-hormuz';
 import { clausolaHaUnModello } from './articles/la-clausola-ha-un-modello-e-il-modello-non-obbliga';
@@ -74,6 +75,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  cinquantamilaSoldatiUnDecimoDiPunto,
   dueInfrastruttureUnPrezzo,
   droneSuJazan,
   clausolaHaUnModello,

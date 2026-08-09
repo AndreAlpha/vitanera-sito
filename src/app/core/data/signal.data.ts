@@ -179,30 +179,28 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-09T16:10:00+02:00',
+  updatedAt: '2026-08-09T18:05:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'rialzista',
+      direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'L’oro tiene la maggior parte del movimento del dato — 4.346,88 dollari, più 2,50%, contro un massimo ' +
-        'di 4.371,89 — ma tutto il resto lo sta restituendo. Il Brent è a 83,65 con più 1,41%, cioè a ' +
-        'trentacinque centesimi dalla tacca degli 84 oltre la quale ricomincia a spingere i rendimenti contro ' +
-        'il metallo; il biennale è risalito a 4,208% dal minimo di 4,158%; il decennale a 4,655% è a un punto ' +
-        'base e mezzo dalla chiusura di ieri. La direzione regge perché nessuna soglia dichiarata è stata ' +
-        'toccata, non perché il quadro sia migliorato. A mercati chiusi il conto è questo: l’oro finisce a ' +
-        '4.342,18, più 2,39%, quasi trenta dollari sotto il massimo delle 15:00 e senza averlo più avvicinato; ' +
-        'il Brent chiude a 82,21, meno 0,34%, cioè negativo sulla giornata e ventuno centesimi sopra la tacca ' +
-        'che invalida questa lettura. Da qui non c’è più un prezzo fino a lunedì, e nel frattempo si è ' +
-        'accumulato parecchio: l’escalation in Yemen venerdì sera, tre dichiarazioni su Hormuz, un’accusa ' +
-        'emiratina di attacco missilistico e infine due infrastrutture colpite nella stessa domenica: la ' +
-        'raffineria di Jazan e il porto yemenita di Mocha, con almeno sette morti. Il primo scambio della ' +
-        'settimana dovrà prezzare tutto insieme, e la domanda più informativa è la più stretta: se quindici ' +
-        'navi colpite sono rientrate in sei ore, che cosa fanno due impianti fissi in un giorno solo.',
+        'Il fine settimana non era senza prezzo, e la correzione vale più della direzione. Le borse del Golfo ' +
+        'lavorano da domenica a giovedì: mentre tutto il resto era chiuso, Riad e Doha hanno scambiato, e sono ' +
+        'i mercati degli operatori materialmente più esposti a Jazan, a Mocha e a Hormuz. Hanno chiuso quasi ' +
+        'ferme — indice saudita più 0,1%, Qatar meno 0,1% — dichiaratamente in attesa di chiarezza ' +
+        'sull’accordo Oman-Iran. La domanda posta questo pomeriggio ha quindi una risposta parziale e in ' +
+        'anticipo: due infrastrutture colpite in un giorno non hanno prodotto alcuna riprezzatura nel ' +
+        'quadrante più vicino ai fatti. Vale meno del primo scambio sul Brent, perché un indice azionario di ' +
+        'un Paese esportatore non è il prezzo del greggio, ma è un numero datato e viene dal posto giusto. ' +
+        'Nella stessa giornata Zelensky ha dichiarato che sarebbe stato deciso il dispiegamento di 30.000-50.000 ' +
+        'militari nordcoreani in Russia, contro i circa 30.000 stimati prima: allarga il quadro, ma non tocca ' +
+        'né i barili né i rendimenti e non ha conferma da Pyongyang né da Seul. L’inclinazione resta al rialzo ' +
+        'per la sola gamba monetaria, non per quella geopolitica, che oggi ha avuto un prezzo e non lo ha usato.',
       invalidation:
-        'Un Brent che rientra sotto gli 82 dollari entro la seduta, che direbbe che la dichiarazione di ADNOC è stata letta come rumore; un oro spot che rientra sotto i 4.300 dollari; oppure una probabilità di rialzo a settembre che risale sopra il 50%.',
+        'Un indice saudita che nella prossima seduta si muove di più dell’1% in una delle due direzioni, che direbbe che la chiusura piatta di domenica era attesa e non indifferenza; un Brent che apre lunedì sotto gli 82 dollari o sopra gli 84 con il biennale sopra il 4,25%; oppure un oro spot che rientra sotto i 4.300 dollari.',
     },
     {
       horizon: 'medio',
@@ -245,38 +243,38 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'Due infrastrutture in un giorno, e solo una tocca i barili',
+  headline: 'Il solo prezzo aperto oggi è nel Golfo, e non si è mosso',
   stance:
-    'Domenica gli Houthi hanno colpito due obiettivi fissi. Il primo è la raffineria Aramco di Jazan, circa ' +
-    '400.000 barili al giorno sulla costa che serve ad aggirare Hormuz: incendio confermato dal ministero ' +
-    'dell’Energia saudita, spento e senza feriti, rivendicato con un drone ma senza attribuzione confermata ' +
-    'da Riyadh. Il secondo è il porto yemenita di Mocha, con almeno sette morti e gravi danni alle banchine ' +
-    'secondo Reuters e AP. Due infrastrutture in poche ore fanno del cambio di bersaglio un modo di ' +
-    'operare; ma l’episodio letale non esporta greggio e quello che tocca l’offerta non ha fatto vittime. ' +
-    'Su Hormuz nulla si muove, e Araqchi ripete che con Washington non c’è alcun negoziato diretto.',
+    'Due cose nella stessa giornata, di natura diversa. La prima è una dichiarazione: Zelensky sostiene che ' +
+    'sia stato deciso il dispiegamento di 30.000-50.000 militari nordcoreani in Russia, contro i circa 30.000 ' +
+    'stimati prima, con missili nordcoreani ritrovati in Ucraina. Reuters precisa che la fonte ' +
+    'dell’intelligence non è stata resa pubblica e che Pyongyang e Seul non hanno confermato. La seconda è un ' +
+    'prezzo: le borse del Golfo, le uniche aperte di domenica, hanno chiuso a più 0,1% e meno 0,1% in attesa ' +
+    'di chiarezza sull’accordo Oman-Iran. Dopo Jazan e Mocha, il quadrante più esposto non ha riprezzato ' +
+    'niente. Il prossimo appuntamento capace di spostare il quadro resta l’indice dei prezzi di mercoledì.',
   favours: [
-    'Dire quale scala si sta misurando: qui si misura l’offerta di greggio, non la gravità di un attacco, e le due cose oggi si ordinano al contrario',
-    'Tenere due metri invece di uno: quante navi passano da Hormuz, e quanta capacità resta in piedi sulla costa che serve a non passarci',
-    'Aspettare il primo prezzo di lunedì con una domanda stretta: se quindici navi colpite sono rientrate in sei ore, quanto vale una giornata con due impianti fissi',
+    'Contare la domenica del Golfo come una seduta: è un numero datato, nel quadrante giusto, e per due giorni questo archivio lo ha dato per perso',
+    'Tenere separate le due notizie di oggi: una è una dichiarazione di una parte in guerra, l’altra è una chiusura di borsa, e solo la seconda è un dato',
+    'Aspettare il primo prezzo completo di lunedì su Brent, oro e biennale prima di chiudere il conto delle due infrastrutture colpite',
   ],
   avoid: [
-    'Sommare gli episodi: un premio di rischio si forma su quanto cambia l’offerta attesa, non sul numero di attacchi in un giorno',
-    'Alzare il grado per la gravità di Mocha: è un porto commerciale yemenita dentro una guerra civile di undici anni, e non toglie barili al mercato',
-    'Trattare la rivendicazione houthi su Jazan come un’attribuzione accertata: senza conferma saudita resta un incendio in una zona di guerra',
+    'Alzare il premio sulla notizia ucraina: 14.000 militari erano già stati inviati a Kursk, e una stima che passa da 30.000 a 50.000 è una revisione, non un evento',
+    'Trattare l’indice saudita come se fosse il greggio: è un mercato azionario con i suoi flussi, e vale una conferma parziale e nulla di più',
+    'Prendere il numero dei 50.000 per un dato: è una stima di intelligence di cui non è stata resa pubblica la fonte, e su cui Pyongyang e Seul tacciono',
   ],
   confirming: [
-    'Due infrastrutture fisse colpite in poche ore: il cambio di bersaglio dalle navi agli impianti è un modo di operare, non un episodio',
-    'La capacità di colpire copre entrambe le estremità della rotta del Mar Rosso, da Bab el-Mandeb a Jazan',
-    'Secondo stop in due settimane su Jazan, già ferma dal 27 luglio dopo un precedente attacco',
-    'Araqchi conferma che non esiste alcun negoziato diretto Iran-Stati Uniti: la distensione rapida esce dallo scenario centrale',
-    'Rialzo Fed a settembre al 43,7% e Dollar Index 99,435, entrambi sotto le soglie',
+    'La gamba monetaria non è stata toccata dal fine settimana: meno 23.000 posti e rialzo Fed a settembre al 43,7%, entrambi dove erano venerdì',
+    'Su Hormuz nulla si muove: il Golfo chiude in attesa di chiarezza sull’accordo Oman-Iran, che è lo stallo descritto ieri',
+    'Il conteggio dei transiti resta a 33 navi in quattro giorni, quattro al giorno contro una soglia di otto',
+    'L’internazionalizzazione della guerra fra Russia e Ucraina alza lentamente il pavimento del premio geopolitico, accanto alle sanzioni sui binari di pagamento',
+    'Dollar Index 99,435, sotto la soglia di quota 100',
   ],
   contradicting: [
-    'L’episodio letale della giornata non tocca l’offerta: Mocha è un porto commerciale, non un terminale di esportazione',
-    'L’episodio che tocca l’offerta ha danno dichiarato contenuto e attribuzione non confermata da Riyadh',
-    'Lo Yemen è in guerra da undici anni: un’escalation dentro uno stato noto non riprezza il rischio come un fatto nuovo',
-    'Il conteggio dei transiti non si muove: 33 navi in quattro giorni, come prima di tutto questo',
+    'Il solo prezzo osservato dopo i due attacchi è piatto, e viene dai mercati più esposti: indice saudita più 0,1%, Qatar meno 0,1%',
+    'La dichiarazione sui militari nordcoreani non tocca né i barili né i rendimenti: nessun canale la porta al primo prezzo di lunedì',
+    'Nessuna conferma indipendente del dispiegamento da Pyongyang, da Seul o da terzi, e fonte dell’intelligence non resa pubblica',
     'Venerdì il premio si è sgonfiato in sei ore su quindici navi colpite dichiarate da chi le possiede',
+    'Il prossimo appuntamento capace di spostare il quadro è macroeconomico e non geopolitico: l’indice dei prezzi di mercoledì 12 agosto',
     'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
   ],
   constraints: [
@@ -389,7 +387,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'con il segno meno. Quattro movimenti in due giorni, e l’ultimo cancella un fatto materiale nel giro ' +
         'di sei ore: non è un vincolo che si scioglie, è un prezzo che oscilla intorno a una soglia. I due ' +
         'numeri restano gli 82 dollari, che la chiusura sfiora da ventuno centesimi, e gli 84, sopra i quali ' +
-        'il greggio smette di sostenere il metallo e ricomincia ad alimentare i rendimenti contro di lui.',
+        'il greggio smette di sostenere il metallo e ricomincia ad alimentare i rendimenti contro di lui. ' +
+        'Domenica 9 agosto arriva un indizio in più, e non dal greggio: le borse del Golfo, le uniche aperte, ' +
+        'chiudono a più 0,1% e meno 0,1% dopo due infrastrutture colpite in un giorno. Non è il Brent, ma è il ' +
+        'quadrante più esposto, e non ha riprezzato niente.',
       state: 'sciolto',
     },
   ],
@@ -460,8 +461,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'cinquantamila-soldati-dichiarati-e-un-decimo-di-punto-nel-golfo',
     'due-infrastrutture-in-un-giorno-solo-una-ha-un-prezzo',
-    'un-drone-su-jazan-e-la-via-di-fuga-da-hormuz',
     'meno-23-mila-posti-e-il-rialzo-di-settembre-passa-in-minoranza',
   ],
 };
