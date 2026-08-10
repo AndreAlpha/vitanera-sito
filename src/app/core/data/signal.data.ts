@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-09T18:05:00+02:00',
+  updatedAt: '2026-08-10T11:00:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,40 +187,39 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'Il fine settimana non era senza prezzo, e la correzione vale più della direzione. Le borse del Golfo ' +
-        'lavorano da domenica a giovedì: mentre tutto il resto era chiuso, Riad e Doha hanno scambiato, e sono ' +
-        'i mercati degli operatori materialmente più esposti a Jazan, a Mocha e a Hormuz. Hanno chiuso quasi ' +
-        'ferme — indice saudita più 0,1%, Qatar meno 0,1% — dichiaratamente in attesa di chiarezza ' +
-        'sull’accordo Oman-Iran. La domanda posta questo pomeriggio ha quindi una risposta parziale e in ' +
-        'anticipo: due infrastrutture colpite in un giorno non hanno prodotto alcuna riprezzatura nel ' +
-        'quadrante più vicino ai fatti. Vale meno del primo scambio sul Brent, perché un indice azionario di ' +
-        'un Paese esportatore non è il prezzo del greggio, ma è un numero datato e viene dal posto giusto. ' +
-        'Nella stessa giornata Zelensky ha dichiarato che sarebbe stato deciso il dispiegamento di 30.000-50.000 ' +
-        'militari nordcoreani in Russia, contro i circa 30.000 stimati prima: allarga il quadro, ma non tocca ' +
-        'né i barili né i rendimenti e non ha conferma da Pyongyang né da Seul. L’inclinazione resta al rialzo ' +
-        'per la sola gamba monetaria, non per quella geopolitica, che oggi ha avuto un prezzo e non lo ha usato.',
+        'La riapertura di lunedì separa i due canali con una nettezza che finora era stata solo dedotta. Il ' +
+        'greggio prezza Hormuz — Brent a 84,79 all’apertura, più 1,44%, poi 84,38 in mattinata — e il metallo ' +
+        'non lo segue: dai 4.340-4.350 dell’apertura scende a 4.322,28 alle quattro del mattino e risale a ' +
+        '4.330,46, cioè conserva il balzo di venerdì senza estenderlo di un dollaro. Il numero che spiega il ' +
+        'premio non è un prezzo: venerdì dallo Stretto sono transitate due navi, contro la soglia di otto al ' +
+        'giorno seguita da questo archivio e le 33 in quattro giorni della settimana prima. Quello che rende ' +
+        'la mattina informativa è però il contorno, che sarebbe favorevole: decennale in discesa al 4,637%, ' +
+        'biennale fermo a 4,206%, Dollar Index a 99,6 vicino al minimo da due mesi, rialzo di settembre al ' +
+        '44% contro il 67% di una settimana fa. Manca del tutto la coppia che affonda l’oro — dollaro forte e ' +
+        'rendimenti in salita — e l’oro scende lo stesso dello 0,3%. Non è un’inversione, è un metallo che ' +
+        'non usa un aiuto che ha: per questo la forza resta bassa invece di salire.',
       invalidation:
-        'Un indice saudita che nella prossima seduta si muove di più dell’1% in una delle due direzioni, che direbbe che la chiusura piatta di domenica era attesa e non indifferenza; un Brent che apre lunedì sotto gli 82 dollari o sopra gli 84 con il biennale sopra il 4,25%; oppure un oro spot che rientra sotto i 4.300 dollari.',
+        'Un oro spot che rompe stabilmente sotto i 4.300 dollari con il Dollar Index sopra 100 e il biennale sopra il 4,25%; un Brent che accelera oltre gli 88 dollari sulla serie citata dalle agenzie con il decennale che rompe il 4,70%; oppure, in senso opposto, un oro sopra i massimi di venerdì a circa 4.372 dollari con il Dollar Index sotto 99,4, che direbbe che il metallo stava aspettando e non ignorando.',
     },
     {
       horizon: 'medio',
       direction: 'rialzista',
       strength: 'media',
       regime:
-        'Il motore resta il rapporto occupazionale: meno 23.000 posti, 103.000 tolti ai due mesi precedenti, e ' +
-        'la probabilità di un rialzo a settembre passata dall’altra parte della metà, al 43,7% da 55,1%. Il ' +
-        'quadro geopolitico cambia di natura più che di grado. Per una settimana si contavano dichiarazioni; ' +
-        'domenica c’è un fatto con una capacità e una data — un incendio nella raffineria Aramco di Jazan, ' +
-        'circa 400.000 barili al giorno, confermato dal ministero dell’Energia saudita e rivendicato dagli ' +
-        'Houthi con un drone, il secondo stop in due settimane sullo stesso sito. Poche ore dopo un secondo ' +
-        'obiettivo fisso: il porto yemenita di Mocha, con almeno sette morti. Due infrastrutture in un ' +
-        'giorno fanno del cambio di bersaglio un modo di operare e non un episodio. Il grado però non sale, ' +
-        'per ragioni dichiarate: a Jazan il danno riferito è contenuto e Riyadh non conferma l’attribuzione, ' +
-        'mentre Mocha è un porto commerciale dentro una guerra civile di undici anni e non toglie barili ' +
-        'all’offerta. Il premio si aggiorna di quanto vale la cosa, non di quanto la cosa colpisce. Sul ' +
-        'fronte diplomatico Araqchi aggiunge che fra Iran e Stati Uniti non esiste alcun negoziato diretto.',
+        'Il motore resta il rapporto occupazionale — meno 23.000 posti, 103.000 tolti ai due mesi precedenti — ' +
+        'e il numero che lo misura tiene: la probabilità di un rialzo a settembre è al 44%, contro il 67% di ' +
+        'una settimana fa. Sul canale geopolitico la settimana ha chiarito la natura più che il grado: due ' +
+        'infrastrutture colpite domenica e una seconda ondata su Mocha in serata hanno prodotto un premio ' +
+        'sull’energia e non sul rifugio, che è la separazione descritta lunedì mattina. Si aggiungono due ' +
+        'cose nuove su questo orizzonte. La prima è il riassunto delle opinioni della Banca del Giappone, ' +
+        'più restrittivo della decisione che lo aveva preceduto: il ritmo dei rialzi «potrebbe essere più ' +
+        'rapido di quanto il mercato si aspetti», e fra le fonti di pressione sui prezzi il documento cita ' +
+        'espressamente il petrolio e il Medio Oriente. Taglia in due direzioni — sostiene lo yen e indebolisce ' +
+        'il dollaro, ma allunga l’elenco delle banche centrali che temono ancora l’inflazione. La seconda è ' +
+        'l’offerta: fra martedì e giovedì arrivano 125 miliardi di titoli del Tesoro, 58 a tre anni, 42 a ' +
+        'dieci e 25 a trenta, e aste deboli spingono i rendimenti dalla parte sbagliata.',
       invalidation:
-        'Un indice dei prezzi mercoledì 12 agosto sopra le attese del 3,4% annuo, o un dato di fondo sopra il 2,5%, che con il greggio di nuovo in salita rimetterebbe il rialzo di settembre sul tavolo; una probabilità di rialzo a settembre di nuovo sopra il 50%; oppure un oro spot che rientra sotto i 4.300 dollari. Prima di tutte queste, un Brent sopra gli 84 dollari con il biennale che risale sopra il 4,25%.',
+        'Un indice dei prezzi mercoledì 12 agosto sopra le attese del 3,4% annuo, o un dato di fondo sopra il 2,5% annuo o sopra più 0,2% mensile, che con il greggio sopra gli 83 dollari rimetterebbe il rialzo di settembre sul tavolo; una probabilità di rialzo a settembre di nuovo sopra il 50%; un’asta a dieci o trenta anni che va male con il decennale sopra il 4,70%; oppure un oro spot che rientra sotto i 4.300 dollari. Prima di tutte queste, un Brent sopra gli 84 dollari sulla serie di questo archivio con il biennale che risale sopra il 4,25%.',
     },
     {
       horizon: 'lungo',
@@ -243,38 +242,38 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'Il solo prezzo aperto oggi è nel Golfo, e non si è mosso',
+  headline: 'Il greggio prezza Hormuz, il metallo no',
   stance:
-    'Due cose nella stessa giornata, di natura diversa. La prima è una dichiarazione: Zelensky sostiene che ' +
-    'sia stato deciso il dispiegamento di 30.000-50.000 militari nordcoreani in Russia, contro i circa 30.000 ' +
-    'stimati prima, con missili nordcoreani ritrovati in Ucraina. Reuters precisa che la fonte ' +
-    'dell’intelligence non è stata resa pubblica e che Pyongyang e Seul non hanno confermato. La seconda è un ' +
-    'prezzo: le borse del Golfo, le uniche aperte di domenica, hanno chiuso a più 0,1% e meno 0,1% in attesa ' +
-    'di chiarezza sull’accordo Oman-Iran. Dopo Jazan e Mocha, il quadrante più esposto non ha riprezzato ' +
-    'niente. Il prossimo appuntamento capace di spostare il quadro resta l’indice dei prezzi di mercoledì.',
+    'La prima seduta della settimana separa i due canali in chiaro: il Brent apre a 84,79 dollari, più ' +
+    '1,44% sull’incertezza dello Stretto, mentre l’oro scende dello 0,3% a 4.330,46 dopo un minimo di ' +
+    '4.322,28. Il numero che spiega il premio non è un prezzo — venerdì da Hormuz sono transitate due navi, ' +
+    'contro una soglia di otto al giorno — e la seconda dichiarazione di Bessent sullo Stretto in sei giorni ' +
+    'non ha mosso il greggio al ribasso come aveva fatto la prima. Il contorno monetario sarebbe favorevole ' +
+    'e il metallo non lo usa: decennale al 4,637%, biennale a 4,206%, dollaro vicino al minimo da due mesi. ' +
+    'Tutto si decide mercoledì con l’indice dei prezzi.',
   favours: [
-    'Contare la domenica del Golfo come una seduta: è un numero datato, nel quadrante giusto, e per due giorni questo archivio lo ha dato per perso',
-    'Tenere separate le due notizie di oggi: una è una dichiarazione di una parte in guerra, l’altra è una chiusura di borsa, e solo la seconda è un dato',
-    'Aspettare il primo prezzo completo di lunedì su Brent, oro e biennale prima di chiudere il conto delle due infrastrutture colpite',
+    'Guardare la distanza fra i due strumenti invece della direzione di ciascuno: la stessa notizia muove il greggio dell’1,4% e il metallo di nulla, ed è quello il dato',
+    'Contare le navi: due transiti venerdì contro una soglia di otto al giorno è la sola misura della vicenda che non dipenda da chi la racconta',
+    'Verificare su quale serie del Brent si sta leggendo una soglia: fra le due in circolazione ballano più di un dollaro, e le tacche di questo archivio stanno su quella che venerdì ha chiuso a 82,21',
   ],
   avoid: [
-    'Alzare il premio sulla notizia ucraina: 14.000 militari erano già stati inviati a Kursk, e una stima che passa da 30.000 a 50.000 è una revisione, non un evento',
-    'Trattare l’indice saudita come se fosse il greggio: è un mercato azionario con i suoi flussi, e vale una conferma parziale e nulla di più',
-    'Prendere il numero dei 50.000 per un dato: è una stima di intelligence di cui non è stata resa pubblica la fonte, e su cui Pyongyang e Seul tacciono',
+    'Leggere il calo dell’oro come un’inversione: manca la coppia che lo affonda davvero, cioè dollaro forte e rendimenti in salita, ed entrambi vanno nell’altro verso',
+    'Pagare per una dichiarazione distensiva ripetuta: la prima di Bessent sullo Stretto valse meno 4% sul Brent, la seconda vale più 1%',
+    'Trattare il premio energetico come un alleato stabile del metallo: oltre una certa soglia torna a essere inflazione attesa, e da lì rendimenti contro',
   ],
   confirming: [
-    'La gamba monetaria non è stata toccata dal fine settimana: meno 23.000 posti e rialzo Fed a settembre al 43,7%, entrambi dove erano venerdì',
-    'Su Hormuz nulla si muove: il Golfo chiude in attesa di chiarezza sull’accordo Oman-Iran, che è lo stallo descritto ieri',
-    'Il conteggio dei transiti resta a 33 navi in quattro giorni, quattro al giorno contro una soglia di otto',
-    'L’internazionalizzazione della guerra fra Russia e Ucraina alza lentamente il pavimento del premio geopolitico, accanto alle sanzioni sui binari di pagamento',
-    'Dollar Index 99,435, sotto la soglia di quota 100',
+    'Il contorno monetario migliora: decennale in discesa al 4,637%, biennale fermo a 4,206%, Dollar Index a 99,6 vicino al minimo da due mesi',
+    'Rialzo Fed a settembre al 44% contro il 67% di una settimana fa: il caso base resta una Fed ferma',
+    'Il vincolo materiale peggiora nella direzione che sostiene il premio: due transiti venerdì contro una soglia di otto al giorno',
+    'La Banca del Giappone apre a un ritmo di rialzi più rapido delle attese, il che sostiene lo yen e indebolisce il dollaro',
+    'Il balzo del 2,4% di venerdì è stato conservato per intero: la correzione si è fermata ventidue dollari sopra i 4.300',
   ],
   contradicting: [
-    'Il solo prezzo osservato dopo i due attacchi è piatto, e viene dai mercati più esposti: indice saudita più 0,1%, Qatar meno 0,1%',
-    'La dichiarazione sui militari nordcoreani non tocca né i barili né i rendimenti: nessun canale la porta al primo prezzo di lunedì',
-    'Nessuna conferma indipendente del dispiegamento da Pyongyang, da Seul o da terzi, e fonte dell’intelligence non resa pubblica',
-    'Venerdì il premio si è sgonfiato in sei ore su quindici navi colpite dichiarate da chi le possiede',
-    'Il prossimo appuntamento capace di spostare il quadro è macroeconomico e non geopolitico: l’indice dei prezzi di mercoledì 12 agosto',
+    'Il metallo non usa un contorno che gli è favorevole: con dollaro debole e rendimenti in calo scende dello 0,3%',
+    'Il canale geopolitico arriva all’energia e non al rifugio: Brent più 1,4% all’apertura, oro fermo',
+    'Il premio energetico che cresce è la strada per cui l’inflazione attesa torna a salire, e da lì i rendimenti contro il metallo',
+    '125 miliardi di titoli del Tesoro fra martedì e giovedì: aste deboli spingono i rendimenti in alto',
+    'Lo stesso verbale giapponese allunga l’elenco delle banche centrali che dichiarano di temere ancora l’inflazione',
     'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
   ],
   constraints: [
@@ -296,8 +295,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Transiti nello Stretto di Hormuz',
-      value: '33 navi in quattro giorni',
-      baseline: 'contro 50 la settimana prima e 130-140 al giorno prima del conflitto',
+      value: 'due navi venerdì',
+      baseline: 'contro una soglia di otto al giorno e 130-140 prima del conflitto',
       against:
         'Sette annunci di distensione in quattro giorni — l’apertura di Bessent, la smentita iraniana, la ' +
         'minaccia rilanciata, la richiesta di controllo sugli ingressi, la trattativa «durata tutto il ' +
@@ -310,10 +309,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'questioni tecniche, questo è un risarcimento politico che nessun tavolo tecnico ha il mandato di ' +
         'concedere.',
       watch:
-        'Il conteggio ha finalmente un numero fresco, e va nella direzione opposta alla riapertura: 33 navi da ' +
-        'lunedì a giovedì contro 50 nella settimana precedente, con quattro transiti giovedì 6 agosto — fra cui ' +
-        'la superpetroliera Nissos Kea con circa due milioni di barili caricati in Iraq. Quattro al giorno è ' +
-        'la metà della soglia di otto che questo archivio segue dal 5 agosto. Il traffico non risale: cala. ' +
+        'Il conteggio non risale: si quarta. Venerdì 7 agosto dallo Stretto sono transitate due navi secondo ' +
+        'Reuters, contro le 33 da lunedì a giovedì della stessa settimana e le 50 di quella precedente. Due ' +
+        'in un giorno è un quarto della soglia di otto che questo archivio segue dal 5 agosto, e le 130-140 ' +
+        'di prima del conflitto sono ormai un altro mondo. Nella stessa mattina il segretario al Tesoro ' +
+        'Bessent sostiene che lo Stretto potrebbe diventare progressivamente meno importante per gli Stati ' +
+        'Uniti, con parte del greggio deviata su condotte terrestri: il mercato non compra la lettura e il ' +
+        'Brent sale dell’1%. Sei giorni prima una sua dichiarazione sullo stesso tema aveva fatto scendere il ' +
+        'greggio del 4%. ' +
         'Adesso si sa anche perché, e non è più una deduzione: ADNOC dichiara quindici proprie navi colpite da ' +
         'missili o droni dall’inizio del conflitto, tre soltanto questa settimana, con un morto e venti ' +
         'feriti. L’8 agosto il governo degli Emirati accusa l’Iran per nome di aver colpito con un missile ' +
@@ -397,8 +400,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 43.7,
-      display: '43,7%',
+      now: 44,
+      display: '44%',
       marks: [
         {
           at: 50,
@@ -410,14 +413,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 82.21,
-      display: '82,21 $',
+      now: 83.03,
+      display: '≈ 83 $',
       marks: [
         {
           at: 82,
           display: '82 $',
           kind: 'invalida',
-          note: 'sotto questo livello il premio si è sgonfiato per la settima volta in sette giorni, e la lettura perde la gamba geopolitica',
+          note: 'sotto questo livello il premio geopolitico si sgonfia e la lettura perde la sua gamba energetica',
         },
         {
           at: 84,
@@ -428,28 +431,41 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       ],
     },
     {
+      label: 'Treasury a 2 anni',
+      now: 4.206,
+      display: '4,206%',
+      marks: [
+        {
+          at: 4.25,
+          display: '4,25%',
+          kind: 'invalida',
+          note: 'è la seconda metà della regola del 5 agosto: sopra questo livello, con il Brent oltre gli 84, il canale dei tassi torna a lavorare contro il metallo e la lettura decade',
+        },
+      ],
+    },
+    {
       label: 'Treasury a 10 anni',
-      now: 4.655,
-      display: '4,655%',
+      now: 4.637,
+      display: '4,637%',
       marks: [
         {
           at: 4.68,
           display: '4,68%',
           kind: 'logora',
-          note: 'la tacca sfiorata stamattina con un massimo di 4,690%: segnala il logoramento senza aspettare la rottura',
+          note: 'la tacca da cui il decennale si è allontanato lunedì: segnala il logoramento senza aspettare la rottura',
         },
         {
           at: 4.7,
           display: '4,70%',
           kind: 'invalida',
-          note: 'con l’oro ancora sopra i 4.300 direbbe che il mercato obbligazionario ha già smesso di credere al dato di oggi',
+          note: 'con l’oro ancora sopra i 4.300 direbbe che il mercato obbligazionario ha smesso di credere al rapporto occupazionale',
         },
       ],
     },
     {
       label: 'XAU/USD',
-      now: 4342.18,
-      display: '4.342,18 $',
+      now: 4330.46,
+      display: '4.330,46 $',
       marks: [
         {
           at: 4300,
@@ -457,13 +473,19 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           kind: 'invalida',
           note: 'sotto questo livello il movimento del rapporto occupazionale è cancellato per intero, e con esso la ragione della lettura',
         },
+        {
+          at: 4372,
+          display: '4.372 $',
+          kind: 'logora',
+          note: 'i massimi di venerdì: superarli con il dollaro sotto 99,4 direbbe che il metallo stava aspettando e non ignorando, e la forza bassa andrebbe alzata',
+        },
       ],
     },
   ],
   sources: [
-    'cinquantamila-soldati-dichiarati-e-un-decimo-di-punto-nel-golfo',
-    'due-infrastrutture-in-un-giorno-solo-una-ha-un-prezzo',
-    'meno-23-mila-posti-e-il-rialzo-di-settembre-passa-in-minoranza',
+    'il-petrolio-prezza-hormuz-l-oro-no',
+    'la-boj-apre-a-un-ritmo-piu-rapido-e-nomina-il-medio-oriente',
+    'washington-abbassa-il-tono-e-mocha-viene-colpita-di-nuovo',
   ],
 };
 

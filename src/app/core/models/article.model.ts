@@ -68,6 +68,8 @@ export type EditorialCategorySlug =
   | 'asia'
   | 'medio-oriente'
   | 'russia-ucraina'
+  // Banche centrali fuori dal calendario
+  | 'banche-centrali-estere'
   // Mercati: lo strumento di cui l'analisi parla
   | 'oro'
   | 'petrolio'

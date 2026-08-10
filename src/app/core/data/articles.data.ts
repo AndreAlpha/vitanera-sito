@@ -22,6 +22,9 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { petrolioPrezzaHormuzOroNo } from './articles/il-petrolio-prezza-hormuz-l-oro-no';
+import { bojRitmoPiuRapido } from './articles/la-boj-apre-a-un-ritmo-piu-rapido-e-nomina-il-medio-oriente';
+import { washingtonAbbassaIlTono } from './articles/washington-abbassa-il-tono-e-mocha-viene-colpita-di-nuovo';
 import { cinquantamilaSoldatiUnDecimoDiPunto } from './articles/cinquantamila-soldati-dichiarati-e-un-decimo-di-punto-nel-golfo';
 import { dueInfrastruttureUnPrezzo } from './articles/due-infrastrutture-in-un-giorno-solo-una-ha-un-prezzo';
 import { droneSuJazan } from './articles/un-drone-su-jazan-e-la-via-di-fuga-da-hormuz';
@@ -75,6 +78,9 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  petrolioPrezzaHormuzOroNo,
+  bojRitmoPiuRapido,
+  washingtonAbbassaIlTono,
   cinquantamilaSoldatiUnDecimoDiPunto,
   dueInfrastruttureUnPrezzo,
   droneSuJazan,

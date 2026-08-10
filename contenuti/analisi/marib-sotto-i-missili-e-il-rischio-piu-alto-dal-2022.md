@@ -28,8 +28,10 @@ fonti:
   - testata: "NBC News"
   - testata: "Middle East Monitor"
   - testata: "Investing.com"
+esito: "confermata"
+controllata: "2026-08-10T10:45:00+02:00"
 sorgente: "src/app/core/data/articles/marib-sotto-i-missili-e-il-rischio-piu-alto-dal-2022.ts"
-impronta: "b3c0b21aac0f96ec"
+impronta: "4509c7c4c48572f2"
 ---
 
 # Marib sotto i missili, e il rischio più alto dal 2022
@@ -124,6 +126,20 @@ Tutto quello che è successo venerdì sera in Yemen non ha ancora incontrato un 
 Impostazione su XAU/USD: rialzista, forza media, orizzonte medio.
 
 Il quadro geopolitico peggiora su un fronte che finora l’archivio aveva guardato solo dal mare, e il peggioramento ha adesso un timbro istituzionale: l’inviato delle Nazioni Unite lega esplicitamente gli attacchi a terra ai rinnovati assalti al naviglio commerciale nel Mar Rosso e nel Golfo di Aden. La lettura resta rialzista con la stessa forza di prima e non sale, per una ragione misurata in questa stessa settimana: il premio di rischio si è formato e sgonfiato quattro volte in quarantotto ore, e venerdì ha chiuso in negativo il giorno in cui un produttore del Golfo ha dichiarato quindici navi colpite. Un fronte in più non alza il grado di un segnale che il mercato smette di prezzare in sei ore.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-10T10:45:00+02:00.
+
+Nessuna delle cinque condizioni è scattata. L’analisi sosteneva che l’escalation yemenita fosse un peggioramento dentro uno stato già noto e non un cambio di stato, e che il metro fosse il premio sul greggio: quel premio si è formato, con il Brent più 1,4% all’apertura di lunedì, mentre l’oro restava fermo. La lettura ha quindi avuto ragione sul canale e non sul grado — l’escalation è proseguita per due giorni, con Jazan, Mocha e una seconda ondata sullo stesso porto, senza mai alzare il segnale sull’oro. Resta interamente davanti la sola condizione che l’analisi indicava come capace di cambiare il quadro, l’indice dei prezzi di mercoledì.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un Brent che lunedì apre e resta sotto gli 82 dollari: direbbe che nemmeno un’escalation con questo timbro produce un premio, e che il canale geopolitico è chiuso a prescindere dai fatti. | no | Nettamente non scattata, ed è la condizione che l’analisi aveva scritto meglio, perché datava se stessa all’apertura di lunedì. Il Brent ha aperto a 84,79 dollari, più 1,44%, e in mattinata europea è a 84,38: sulla serie di questo archivio corrispondono a circa 83, comunque sopra la soglia in entrambe le letture. Il canale geopolitico non è chiuso: produce un premio, e lo produce sull’energia. |
+| Un oro spot che rientra sotto i 4.300 dollari, cancellando il movimento del rapporto occupazionale insieme a qualunque premio di rischio. | no | Non scattata: minimo a 4.322,28 dollari alle quattro del mattino, ventidue sopra la soglia, e risalita a 4.330,46. Il movimento del rapporto occupazionale è stato conservato in tutte le rilevazioni della sessione. |
+| Un annuncio di tregua o un ritorno al tavolo negoziale sotto egida delle Nazioni Unite entro la settimana: toglierebbe la premessa di questa lettura nel modo più diretto possibile. | no | Non solo non scattata: nella finestra è successo l’opposto, e due volte. Domenica gli Houthi hanno colpito la raffineria di Jazan e il porto di Mocha, e in serata Reuters ha riferito una seconda ondata di missili e droni sullo stesso porto. Nessun annuncio di tregua e nessun ritorno al tavolo. |
+| Un indice dei prezzi mercoledì 12 agosto sopra le attese del 3,4% annuo: riporterebbe il comando al canale dei tassi, dove un’escalation regionale conta molto meno. | no | Non giudicabile: il dato esce mercoledì 12 agosto e al momento del controllo non è pubblicato. Registrata come non scattata perché non lo è, non perché sia stata verificata. È la stessa condizione che resta aperta su quattro analisi consecutive di questo archivio. |
+| Prima di tutte queste, e senza aspettare la rottura: un Brent sopra gli 84 dollari con il biennale che risale sopra il 4,25%. A quel punto il premio energetico prodotto dall’escalation smetterebbe di sostenere il metallo e ricomincerebbe ad alimentare i rendimenti contro di lui, che è la regola dichiarata da questo archivio il 5 agosto. | no | Non scattata, ma è la condizione che si è avvicinata di più ed è giusto dirlo. Il biennale è a 4,206%, quattro punti base sotto la sua metà della soglia, e non l’ha mai avvicinata. Sul greggio, sulla serie usata da questo archivio il Brent vale circa 83 dollari e resta sotto gli 84; sulla serie citata dalle agenzie lunedì lo ha superato all’apertura. La condizione richiede entrambe le gambe e la seconda non si è mossa, ma la prima metà è ormai a ridosso. |
 
 ## Fonti consultate
 

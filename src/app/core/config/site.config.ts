@@ -243,6 +243,17 @@ export const CATEGORIES: readonly Category[] = [
       'Riunioni di politica monetaria del Consiglio direttivo, conferenze stampa, bollettini economici e interventi dei membri del Comitato esecutivo.',
   },
   {
+    slug: 'banche-centrali-estere',
+    name: 'Altre banche centrali',
+    short: 'Altre BC',
+    family: 'banche-centrali',
+    series: false,
+    icon: 'bank',
+    tagline: 'Banca del Giappone, Cina, Svizzera, Regno Unito',
+    description:
+      'Le banche centrali che non sono la Fed né la Bce, e che il calendario non copre. Per l’oro contano da due lati: fissano l’altra metà del differenziale di tasso, e quindi muovono il dollaro contro cui il metallo è quotato; e sono loro, non la Fed, a comprarne le riserve.',
+  },
+  {
     slug: 'tasso-di-interesse',
     name: 'Tasso di interesse',
     short: 'Tassi',

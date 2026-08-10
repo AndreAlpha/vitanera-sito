@@ -158,6 +158,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     related: ['Vincolo materiale', 'Premio di rischio geopolitico', 'Regime di mercato'],
   },
   {
+    term: 'Desensibilizzazione',
+    letter: 'D',
+    definition:
+      'La tendenza di un mercato a reagire sempre meno alla ripetizione della stessa notizia. La prima minaccia sposta il prezzo, la quinta quasi no: la reazione a un evento non ha un prezzo costante nel tempo, e il costo di continuare a comportarsi come se fosse la prima volta cresce fino a diventare insostenibile.',
+    why: 'Serve a non leggere un mancato movimento come indifferenza o come errore del mercato: spesso è solo il quinto annuncio dello stesso tenore. Vale nei due sensi, ed è la parte che si dimentica — un mercato desensibilizzato smette di pagare per l’escalation annunciata ma anche per la distensione annunciata, e continua a prezzare soltanto le cose materiali. Il rovescio è che una desensibilizzazione spinta lascia scoperti se la minaccia si realizza davvero.',
+    related: ['Premio di rischio geopolitico', 'Vincolo materiale', 'Evento discreto'],
+  },
+  {
     term: 'Gioco a due livelli',
     letter: 'G',
     definition:
