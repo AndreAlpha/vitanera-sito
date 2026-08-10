@@ -73,11 +73,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'JAZAN',
     name: 'Raffineria Aramco di Jazan, costa saudita del Mar Rosso',
-    value: '≈ 400.000 barili/giorno',
-    change: 'incendio confermato, rivendicato dagli Houthi',
+    value: 'ripartenza ritardata',
+    change: '≈ 400.000 barili/giorno; incendio confermato, rivendicato dagli Houthi',
     tone: 'bear',
     icon: 'factory',
-    note: 'Nelle prime ore di domenica 9 agosto un incendio è scoppiato in un impianto della raffineria, a poca distanza dal confine con lo Yemen. Il ministero dell’Energia saudita dichiara che è stato spento e che non ci sono feriti; il portavoce militare houthi Yahya Saree rivendica di averlo colpito con un drone, ma Riyadh non ha confermato l’attribuzione. Tre affermazioni di peso diverso, da tenere separate: l’incendio è un fatto, la rivendicazione è una dichiarazione, il nesso non è verificato. È il secondo stop in due settimane sullo stesso sito, dopo l’attacco del 27 luglio che aveva danneggiato il complesso IGCC e l’area dei serbatoi. Conta perché la costa del Mar Rosso è la via con cui Riyadh aggira Hormuz: colpirla non aggiunge un fronte, toglie l’alternativa a quello che c’è già.',
+    note: 'Nelle prime ore di domenica 9 agosto un incendio è scoppiato in un impianto della raffineria, a poca distanza dal confine con lo Yemen. Il ministero dell’Energia saudita dichiara che è stato spento e che non ci sono feriti; il portavoce militare houthi Yahya Saree rivendica di averlo colpito con un drone, ma Riyadh non ha confermato l’attribuzione. È il secondo stop in due settimane sullo stesso sito, dopo l’attacco del 27 luglio che aveva danneggiato il complesso IGCC e l’area dei serbatoi. La domanda che questo archivio aveva lasciato aperta era una sola, e stava scritta come condizione il 9 agosto: se l’impianto avesse dichiarato il ripristino della piena capacità entro la settimana, l’episodio non avrebbe prodotto un danno operativo. La risposta è arrivata il 10 agosto in serata, e va nell’altro verso — Reuters riferisce che l’attacco ha contribuito a ritardare la ripartenza. L’episodio passa quindi dalla categoria degli attacchi rivendicati senza conseguenze misurabili a quella dei danni all’offerta, e spiega perché un premio energetico che per otto giorni si sgonfiava entro la seduta adesso resta. Conta perché la costa del Mar Rosso è la via con cui Riyadh aggira Hormuz: colpirla non aggiunge un fronte, toglie l’alternativa a quello che c’è già.',
   },
   {
     symbol: 'CINA PREZZI',
@@ -254,10 +254,10 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     symbol: 'FED FUNDS',
     name: 'Tasso ufficiale della Federal Reserve',
     value: '3,50%-3,75%',
-    change: 'rialzo di settembre al 48-50%; almeno un rialzo entro dicembre all’81%',
-    tone: 'warn',
+    change: 'rialzo di settembre al 52%, sopra la metà per la prima volta dal 7 agosto',
+    tone: 'bear',
     icon: 'bank',
-    note: 'Il numero regge il fine settimana e poi si muove in serata. Dopo il rapporto occupazionale era passato dal 55,1% delle 14:20 al 41,7%, risalendo al 43,7% in chiusura e restando intorno al 44% per tutta la giornata di lunedì; nella rilevazione serale sale al 48-50%, con l’81% attribuito ad almeno un rialzo entro dicembre. È la gamba su cui poggia tutta la lettura rialzista, e la metà è la linea oltre la quale il rialzo torna a essere lo scenario più probabile: siamo a ridosso. Una cautela però va detta, perché è il motivo per cui questa scheda non alza il segnale: cinque punti di riprezzatura sul percorso dei tassi dovrebbero muovere anche la scadenza a due anni, e il biennale è rimasto a circa 4,22%. Due misure della stessa cosa che non concordano non sono un segnale finché non concordano. Resta un’aspettativa ricavata dai contratti a termine, non una decisione della Federal Reserve.',
+    note: 'La soglia è caduta. Dopo il rapporto occupazionale il numero era passato dal 55,1% delle 14:20 al 41,7%, risalendo al 43,7% in chiusura e restando intorno al 44% per tutta la giornata di lunedì; in serata è arrivato al 48-50% e infine a circa il 52%. La metà è la linea che questo archivio aveva dichiarato il 7 agosto come condizione di invalidazione della lettura sui giorni — «una probabilità di rialzo a settembre che risale sopra il 50%, cioè che torna a essere lo scenario più probabile» — ed è stata registrata come non scattata a ogni controllo successivo. Adesso lo è: il caso base non è più una Fed ferma, e la direzione sui giorni scende a neutrale per questo e non per un prezzo. Una cautela resta, ed è la ragione per cui non scende oltre: otto punti di riprezzatura del percorso dei tassi dovrebbero muovere anche la scadenza a due anni, e il biennale è fermo a circa 4,22% da lunedì mattina. Due misure dello stesso percorso che non concordano non sono un segnale finché non concordano. Resta un’aspettativa ricavata dai contratti a termine, non una decisione della Federal Reserve, e l’indice dei prezzi di mercoledì può ribaltarla in mezz’ora.',
   },
   {
     symbol: 'PCE',
@@ -325,11 +325,12 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: '86,11 $',
-    change: 'più 3,1%; sulla serie di questo archivio, circa 84,7',
+    value: '87,40-87,72 $',
+    change:
+      'più 4% secondo Reuters, più 5% secondo il WSJ; circa 86 sulla serie di questo archivio',
     tone: 'bear',
     icon: 'arrow-up',
-    note: 'Lunedì 10 agosto il premio si forma e per la prima volta in una settimana non si sgonfia entro la seduta: apertura a 84,79 dollari con più 1,44%, 84,38 in mattinata europea, verso gli 85 nel primo pomeriggio e 86,11 nel tardo pomeriggio, più 3,1%. Il motore indicato da Reuters resta l’incertezza sulla riapertura dello Stretto — l’Iran parla di progressi tecnici con l’Oman ma subordina la riapertura vera a condizioni poste agli Stati Uniti — e il numero che lo spiega è il conteggio dei transiti, sceso a due navi venerdì. Serve la conversione fra le due serie: queste quotazioni implicano una chiusura di venerdì intorno a 83,55, mentre la serie usata da questo archivio dal 5 agosto ha chiuso a 82,21, ed è su quella che sono fissate le tacche degli 80, 82 e 84 dollari. Applicando la stessa variazione percentuale il Brent di questa scheda vale circa 84,7: la tacca degli 84 è stata superata per la prima volta in cinque giorni, con settanta centesimi di margine che stanno dentro l’errore del metodo. È caduta però una gamba sola della regola del 5 agosto: l’altra chiede un biennale sopra il 4,25%, e il biennale non si è mosso.',
+    note: 'Il premio si forma e per la prima volta in una settimana non si sgonfia entro la seduta, e poi allunga: apertura di lunedì a 84,79 dollari, 86,11 nel tardo pomeriggio, e in serata verso gli 87,40 con oltre il 4% secondo Reuters — il Wall Street Journal lo dà a 87,72 con più 5% a fine giornata, e la differenza fra le due letture vale più di un terzo di dollaro. Il WTI segue a 81,80, o 82,13 secondo la stessa fonte. Due motori, e stavolta il secondo è materiale: l’Iran e gli Stati Uniti avanzano richieste incompatibili sullo Stretto, e Reuters riferisce che l’attacco con droni alla raffineria Aramco di Jazan ha contribuito a ritardare la ripartenza dell’impianto — il danno operativo che il 9 agosto era ancora una domanda aperta in questo archivio. Serve la conversione fra le serie: queste quotazioni implicano una chiusura di venerdì intorno a 83,55, mentre la serie usata qui dal 5 agosto ha chiuso a 82,21, ed è su quella che sono fissate le tacche degli 80, 82 e 84 dollari. Applicando la stessa variazione il Brent di questa scheda vale circa 86: due dollari sopra la tacca. Resta caduta una gamba sola della regola del 5 agosto — l’altra chiede un biennale sopra il 4,25%, e il biennale non si è mosso.',
   },
   {
     symbol: 'GOLFO',

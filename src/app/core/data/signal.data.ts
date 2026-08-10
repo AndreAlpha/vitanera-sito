@@ -179,8 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-10T17:15:00+02:00',
-  checkedAt: '2026-08-10T20:15:00+02:00',
+  updatedAt: '2026-08-10T23:50:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -188,39 +187,36 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale',
       strength: 'bassa',
       regime:
-        'La regola dichiarata il 5 agosto chiede due gambe insieme e ne è caduta una sola. Il Brent arriva a ' +
-        '86,11 dollari con più 3,1% — circa 84,7 sulla serie usata qui — e supera la tacca degli 84 per la ' +
-        'prima volta in cinque giorni; il biennale resta a circa 4,22%, tre punti base sotto la sua e ' +
-        'perfino un filo sotto il 4,228% di tre ore fa. A muoversi è il decennale, fino a un massimo di ' +
-        '4,696%: la curva si irripidisce invece di traslare. La distinzione decide la lettura. Se il ' +
-        'mercato temesse una Fed costretta a restare restrittiva dal greggio si muoverebbe prima la ' +
-        'scadenza a due anni, che è dove una decisione di settembre si prezza per prima; quella non si ' +
-        'muove e la probabilità di rialzo resta fra il 44% e il 46%. Quello che sale è il premio richiesto ' +
-        'per detenere carta lunga, che pesa sul mese e non sulla giornata. L’oro assorbe un greggio più ' +
-        'caro di un dollaro e mezzo e resta a 4.335 dollari: il canale che gli fa male in fretta, per ora, ' +
-        'è chiuso.',
+        'La regola dichiarata il 5 agosto chiede due gambe insieme e ne resta caduta una sola. Il Brent ' +
+        'allunga verso gli 88 dollari — circa 86 sulla serie usata qui — e sta ormai due dollari sopra la ' +
+        'tacca degli 84; il biennale resta invece a circa 4,22%, tre punti base sotto la sua, dove era ' +
+        'lunedì mattina. È la scadenza dove una decisione di settembre si prezza per prima, e non si è ' +
+        'mossa nemmeno mentre il decennale toccava il 4,703% e la probabilità di rialzo guadagnava otto ' +
+        'punti. Finché quella gamba manca, il premio energetico resta un problema di offerta di greggio e ' +
+        'non un problema per il metallo, e il canale che gli fa male in fretta resta chiuso. Va però detto ' +
+        'che l’ultima rilevazione disponibile dell’oro — 4.356,79 dollari, più 0,4% — precede il ' +
+        'movimento del greggio di stasera: che cosa abbia fatto dopo, per ora non si sa.',
       invalidation:
         'Un biennale che supera il 4,25% mentre il Brent resta sopra gli 84 dollari sulla serie di questo archivio: sono le due gambe insieme, ed è il solo scenario in cui il premio energetico smette di essere neutro per il metallo. Oppure un decennale stabilmente sopra il 4,70% con il Dollar Index sopra 100; oppure un oro spot sotto i 4.300 dollari, che cancellerebbe il movimento del rapporto occupazionale.',
     },
     {
       horizon: 'medio',
-      direction: 'rialzista',
-      strength: 'media',
+      direction: 'neutrale',
+      strength: 'bassa',
       regime:
-        'Il motore resta il rapporto occupazionale — meno 23.000 posti, 103.000 tolti ai due mesi precedenti — ' +
-        'e il numero che lo misura tiene: la probabilità di un rialzo a settembre è al 44%, contro il 67% di ' +
-        'una settimana fa. Sul canale geopolitico la settimana ha chiarito la natura più che il grado: due ' +
-        'infrastrutture colpite domenica e una seconda ondata su Mocha in serata hanno prodotto un premio ' +
-        'sull’energia e non sul rifugio, che è la separazione descritta lunedì mattina. Si aggiungono due ' +
-        'cose nuove su questo orizzonte. La prima è il riassunto delle opinioni della Banca del Giappone, ' +
-        'più restrittivo della decisione che lo aveva preceduto: il ritmo dei rialzi «potrebbe essere più ' +
-        'rapido di quanto il mercato si aspetti», e fra le fonti di pressione sui prezzi il documento cita ' +
-        'espressamente il petrolio e il Medio Oriente. Taglia in due direzioni — sostiene lo yen e indebolisce ' +
-        'il dollaro, ma allunga l’elenco delle banche centrali che temono ancora l’inflazione. La seconda è ' +
-        'l’offerta: fra martedì e giovedì arrivano 125 miliardi di titoli del Tesoro, 58 a tre anni, 42 a ' +
-        'dieci e 25 a trenta, e aste deboli spingono i rendimenti dalla parte sbagliata.',
+        'La gamba è caduta, ed era una sola. Dal 7 agosto questa lettura poggiava sul rapporto occupazionale ' +
+        '— meno 23.000 posti, 103.000 tolti ai due mesi precedenti — tradotto in un numero: la probabilità ' +
+        'di un rialzo a settembre passata in minoranza. La condizione che l’avrebbe smontata era scritta ' +
+        'allora, «una probabilità di rialzo a settembre che risale sopra il 50%», ed è stata registrata come ' +
+        'non scattata a ogni controllo: 43,7%, poi 44%, poi 48-50%. Stasera i futures la danno al 52%, con ' +
+        'il Brent che allunga verso gli 88 dollari e Jazan che non riparte. Il caso base non è più una Fed ' +
+        'ferma, quindi la direzione scende a neutrale — per la soglia, non per un prezzo. Non scende oltre ' +
+        'per due ragioni: il biennale non conferma nulla, fermo a circa 4,22% mentre quel numero ha ' +
+        'guadagnato otto punti, e mercoledì l’indice dei prezzi può ribaltarlo in mezz’ora come già fece il ' +
+        '7 agosto nel verso opposto. Sullo sfondo restano il verbale restrittivo della Banca del Giappone e ' +
+        '125 miliardi di titoli del Tesoro fra martedì e giovedì.',
       invalidation:
-        'Un indice dei prezzi mercoledì 12 agosto sopra le attese del 3,4% annuo, o un dato di fondo sopra il 2,5% annuo o sopra più 0,2% mensile, che con il greggio sopra gli 83 dollari rimetterebbe il rialzo di settembre sul tavolo; una probabilità di rialzo a settembre di nuovo sopra il 50%; un’asta a dieci o trenta anni che va male con il decennale sopra il 4,70%; oppure un oro spot che rientra sotto i 4.300 dollari. Prima di tutte queste, un Brent sopra gli 84 dollari sulla serie di questo archivio con il biennale che risale sopra il 4,25%.',
+        'Una probabilità di rialzo a settembre che rientra sotto il 50% dopo l’indice dei prezzi di mercoledì, che rimetterebbe in piedi la gamba caduta; un biennale che sale sopra il 4,25% confermando la riprezzatura, che invece porterebbe la direzione sotto il neutrale; un oro spot che rompe i massimi di venerdì a circa 4.372 dollari con il Dollar Index sotto 99,4; oppure un Brent che rientra sotto gli 84 dollari sulla serie di questo archivio insieme a un annuncio verificabile sulla riapertura dello Stretto.',
     },
     {
       horizon: 'lungo',
@@ -247,37 +243,37 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'Il Brent passa gli 84, il biennale resta fermo',
+  headline: 'Il rialzo di settembre torna in maggioranza, al 52%',
   stance:
-    'Una gamba su due. Il Brent arriva a 86,11 dollari con più 3,1%, circa 84,7 sulla serie di questo ' +
-    'archivio, e supera per la prima volta in cinque giorni la tacca degli 84; il biennale resta a circa ' +
-    '4,22%, tre punti base sotto la sua. A salire è il decennale, fino a 4,696%, cioè la parte lunga e non ' +
-    'quella dove si prezza una decisione di settembre — la curva si irripidisce invece di traslare, e la ' +
-    'probabilità di rialzo resta fra il 44% e il 46%. Non è il percorso dei tassi che viene riprezzato, è ' +
-    'il premio per detenere carta lunga. L’oro assorbe e resta a 4.335 dollari. Sullo sfondo, tre settimane ' +
-    'date alla governatrice Cook per rispondere sulle contestazioni ai mutui.',
+    'La soglia dichiarata il 7 agosto è stata riattraversata, questa volta in salita: i futures danno il ' +
+    'rialzo di settembre al 52%, contro il 44% dopo il rapporto occupazionale e il 48-50% del controllo ' +
+    'precedente. Era la condizione scritta come invalidazione della lettura sui giorni, ed è scattata: il ' +
+    'caso base non è più una Fed ferma. Il motore è il greggio, che allunga verso gli 88 dollari mentre ' +
+    'Reuters riferisce che l’attacco a Jazan ha ritardato la ripartenza dell’impianto — il danno operativo ' +
+    'che il 9 agosto era ancora una domanda aperta. Contro tutto questo il biennale non si muove, fermo a ' +
+    'circa 4,22%: due misure dello stesso percorso che non concordano. Mercoledì l’indice dei prezzi.',
   favours: [
-    'Guardare quale scadenza si muove, non di quanto: un decennale che sale con il biennale fermo è premio a termine, non riprezzatura della Fed, e i due pesano sull’oro su orizzonti diversi',
-    'Tenere le condizioni con la congiunzione: un premio energetico senza risposta della curva breve si è esaurito otto volte in otto giorni',
-    'Verificare su quale serie del Brent si sta leggendo una soglia: fra le due in circolazione ballano più di un dollaro, e le tacche di questo archivio stanno su quella che venerdì ha chiuso a 82,21',
+    'Onorare una soglia che scatta anche quando è scomoda: la metà era scritta il 7 agosto ed è stata registrata come non scattata quattro volte, quindi vale anche adesso che è stata superata di due punti',
+    'Guardare quale scadenza si muove, non di quanto: finché il biennale resta a 4,22% la riprezzatura della Fed non è confermata dalla curva che la prezzerebbe per prima',
+    'Distinguere un premio energetico da annuncio e uno da danno: Jazan che non riparte toglie barili, e vive più a lungo di sette annunci di distensione',
   ],
   avoid: [
-    'Leggere il superamento degli 84 come lo scatto della regola: la regola ne chiede due, e la seconda è a tre punti base',
-    'Chiamare inversione un oro fermo: con il greggio più caro di un dollaro e mezzo e il decennale alla tacca di logoramento, restare a 4.335 è resistenza e non cedimento',
-    'Alzare il segnale sulla vicenda Cook: le notizie sulla composizione del Board appartengono alla classe che in dieci giorni ha spostato la probabilità di settembre zero volte su sette',
+    'Misurare la tenuta dell’oro contro un movimento che il suo ultimo prezzo non ha visto: 4.356,79 dollari è la rilevazione del controllo precedente e precede il greggio di stasera',
+    'Trattare il 52% come un livello: quel numero si è mosso di tredici punti in un senso e di dieci nell’altro in quattro giorni, su una decisione che nessuno ha preso',
+    'Leggere il Brent oltre gli 84 come lo scatto della regola del 5 agosto: ne chiede due, e la seconda è ferma a tre punti base di distanza',
   ],
   confirming: [
-    'Controllo delle 20:15: l’oro risale a 4.356,79 dollari con più 0,4% proprio mentre il decennale tocca il 4,703% e il dollaro sale — assorbe il colpo peggiore della giornata e guadagna',
-    'Il biennale non si muove: circa 4,22%, tre punti base sotto la soglia, mentre la parte lunga faceva tutto il lavoro',
-    'Il Dollar Index sale a 99,76 ma resta sotto quota 100: manca la seconda gamba della condizione sul decennale',
-    'Il massimo di venerdì a 4.371,63 dollari, il più alto dal 17 giugno, è tornato a meno di quindici dollari',
+    'Il biennale non conferma la riprezzatura: circa 4,22%, dove era lunedì mattina, mentre la probabilità di rialzo guadagnava otto punti',
+    'Il Dollar Index resta sotto quota 100 a circa 99,80: è la seconda gamba, mancante, di tutte le condizioni scritte su di lui',
+    'L’ultima rilevazione disponibile dell’oro è più 0,4% a 4.356,79 dollari, cinquantasette sopra il livello che invaliderebbe la lettura',
+    'Un premio energetico che nasce da un danno all’offerta ha una vita più lunga di uno che nasce da un annuncio, e alimenta anche la domanda di copertura',
     'La domanda ufficiale cinese resta la gamba lenta sotto il metallo: 76,08 milioni di once a fine luglio, ventunesimo mese consecutivo di acquisti',
   ],
   contradicting: [
-    'La prima gamba della regola del 5 agosto è caduta: Brent a circa 84,7 sulla serie di questo archivio, sopra la tacca degli 84 per la prima volta',
-    'Il decennale ha raggiunto il livello dichiarato come campanello d’allarme: circa 4,70%, con un massimo intraday di 4,703% dal 4,658% precedente',
-    'Il rialzo di settembre si riprezza al 48-50% dal 44%, e almeno un rialzo entro dicembre sale all’81%: è la gamba su cui poggia tutta la lettura rialzista',
-    'Quella riprezzatura però non è confermata dal biennale, fermo a 4,22%: due misure della stessa cosa che dicono cose diverse, e nessuna delle due è un segnale finché non concordano',
+    'Il rialzo di settembre torna sopra la metà al 52%: è la condizione dichiarata il 7 agosto, ed è la gamba su cui poggiava tutta la lettura sui giorni',
+    'Il Brent allunga verso gli 88 dollari, circa 86 sulla serie di questo archivio, cioè due sopra la tacca degli 84',
+    'Jazan non riparte: Reuters riferisce che l’attacco ha ritardato la ripartenza, e il danno operativo che mancava adesso è riferito',
+    'Il decennale ha già testato il 4,70% con un massimo di 4,703%, e il Dollar Index sale a 99,80',
     '125 miliardi di titoli del Tesoro fra martedì e giovedì, su una parte lunga che sta già chiedendo più premio',
     'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
   ],
@@ -405,21 +401,21 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 48,
-      display: '48-50%',
+      now: 52,
+      display: '≈ 52%',
       marks: [
         {
           at: 50,
           display: '50%',
           kind: 'invalida',
-          note: 'sopra la metà il rialzo torna a essere lo scenario più probabile, ed è l’unica gamba su cui questa lettura poggia',
+          note: 'superata in salita la sera del 10 agosto: il rialzo torna a essere lo scenario più probabile, ed era l’unica gamba su cui la lettura sui giorni poggiava',
         },
       ],
     },
     {
       label: 'Brent',
-      now: 84.7,
-      display: '≈ 84,7 $',
+      now: 86,
+      display: '≈ 86 $',
       marks: [
         {
           at: 82,
@@ -488,9 +484,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'il-rialzo-di-settembre-torna-in-maggioranza',
     'il-brent-passa-gli-84-il-biennale-resta-fermo',
     'tre-settimane-per-lisa-cook-e-il-numero-non-si-muove',
-    'la-boj-apre-a-un-ritmo-piu-rapido-e-nomina-il-medio-oriente',
   ],
 };
 
