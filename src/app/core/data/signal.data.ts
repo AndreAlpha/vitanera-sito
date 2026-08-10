@@ -180,6 +180,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-10T17:15:00+02:00',
+  checkedAt: '2026-08-10T20:15:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -266,17 +267,17 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Alzare il segnale sulla vicenda Cook: le notizie sulla composizione del Board appartengono alla classe che in dieci giorni ha spostato la probabilità di settembre zero volte su sette',
   ],
   confirming: [
-    'Il biennale non si muove: circa 4,22%, tre punti base sotto la soglia e sotto il 4,228% di tre ore fa',
-    'Rialzo Fed a settembre fermo fra il 44% e il 46%: il percorso dei tassi ufficiali non è stato riprezzato dal greggio',
-    'L’oro assorbe un Brent più caro di un dollaro e mezzo e un decennale a 4,696% restando a 4.335, trentacinque sopra la soglia dei 4.300',
-    'Il Dollar Index è più forte ma non risulta sopra quota 100',
-    'Il consenso Reuters sull’indice dei prezzi annuo resta a 3,4%, sceso dal 3,5%',
+    'Controllo delle 20:15: l’oro risale a 4.356,79 dollari con più 0,4% proprio mentre il decennale tocca il 4,703% e il dollaro sale — assorbe il colpo peggiore della giornata e guadagna',
+    'Il biennale non si muove: circa 4,22%, tre punti base sotto la soglia, mentre la parte lunga faceva tutto il lavoro',
+    'Il Dollar Index sale a 99,76 ma resta sotto quota 100: manca la seconda gamba della condizione sul decennale',
+    'Il massimo di venerdì a 4.371,63 dollari, il più alto dal 17 giugno, è tornato a meno di quindici dollari',
+    'La domanda ufficiale cinese resta la gamba lenta sotto il metallo: 76,08 milioni di once a fine luglio, ventunesimo mese consecutivo di acquisti',
   ],
   contradicting: [
     'La prima gamba della regola del 5 agosto è caduta: Brent a circa 84,7 sulla serie di questo archivio, sopra la tacca degli 84 per la prima volta',
-    'Il decennale tocca 4,696%: è alla tacca di logoramento del 4,68% e a quattro millesimi da quella che invalida la lettura',
-    'Un premio a termine più alto alza il pavimento dei rendimenti lunghi, e quello è il costo di detenere un’attività che non paga cedole',
-    'Il vincolo materiale non si allenta: traffico a Hormuz ancora molto limitato, e l’Iran subordina la riapertura a condizioni poste agli Stati Uniti',
+    'Il decennale ha raggiunto il livello dichiarato come campanello d’allarme: circa 4,70%, con un massimo intraday di 4,703% dal 4,658% precedente',
+    'Il rialzo di settembre si riprezza al 48-50% dal 44%, e almeno un rialzo entro dicembre sale all’81%: è la gamba su cui poggia tutta la lettura rialzista',
+    'Quella riprezzatura però non è confermata dal biennale, fermo a 4,22%: due misure della stessa cosa che dicono cose diverse, e nessuna delle due è un segnale finché non concordano',
     '125 miliardi di titoli del Tesoro fra martedì e giovedì, su una parte lunga che sta già chiedendo più premio',
     'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
   ],
@@ -404,8 +405,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 44,
-      display: '44-46%',
+      now: 48,
+      display: '48-50%',
       marks: [
         {
           at: 50,
@@ -449,27 +450,27 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.682,
-      display: '≈ 4,68%',
+      now: 4.698,
+      display: '≈ 4,70%',
       marks: [
         {
           at: 4.68,
           display: '4,68%',
           kind: 'logora',
-          note: 'raggiunta nel pomeriggio del 10 agosto, con un massimo intraday di 4,696%: segnala il logoramento senza aspettare la rottura',
+          note: 'superata nel pomeriggio del 10 agosto: segnalava il logoramento senza aspettare la rottura, e il logoramento è arrivato',
         },
         {
           at: 4.7,
           display: '4,70%',
           kind: 'invalida',
-          note: 'con l’oro ancora sopra i 4.300 direbbe che il mercato obbligazionario ha smesso di credere al rapporto occupazionale',
+          note: 'raggiunta in serata con un massimo di 4,703%, ma senza la seconda gamba: la condizione chiede anche un Dollar Index sopra 100, e resta a 99,76',
         },
       ],
     },
     {
       label: 'XAU/USD',
-      now: 4335,
-      display: '≈ 4.335 $',
+      now: 4356.79,
+      display: '4.356,79 $',
       marks: [
         {
           at: 4300,

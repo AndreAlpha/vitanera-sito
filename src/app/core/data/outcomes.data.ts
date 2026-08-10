@@ -28,6 +28,64 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'il-brent-passa-gli-84-il-biennale-resta-fermo',
+    checkedAt: '2026-08-10T20:15:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un biennale che supera il 4,25% mentre il Brent resta sopra gli 84 dollari sulla serie di questo archivio: sono le due gambe insieme, ed è il solo scenario in cui il premio energetico smette di essere neutro per il metallo.',
+        triggered: false,
+        evidence:
+          'Il Brent resta sopra la sua gamba — 86,11 dollari, circa 84,7 sulla serie di questo archivio — ' +
+          'ma il biennale non si è mosso: circa 4,22% nelle ultime rilevazioni, tre punti base sotto il ' +
+          '4,25%. In tre ore, con il decennale salito fino al 4,703%, la scadenza breve è rimasta ferma ' +
+          'dov’era. La congiunzione ha retto per la seconda volta nella stessa giornata.',
+      },
+      {
+        condition:
+          'Un decennale che chiude stabilmente sopra il 4,70% con il Dollar Index sopra 100: sarebbe la conferma che l’irripidimento non è un episodio e che il costo di detenzione è salito davvero.',
+        triggered: false,
+        evidence:
+          'È la condizione che si è avvicinata di più, e per una gamba sola. Il decennale ha raggiunto ' +
+          'circa il 4,70% con un massimo intraday di 4,703%, dal 4,658% precedente: il livello è stato ' +
+          'toccato. Manca però tutto il resto della condizione — non c’è una chiusura stabile sopra quel ' +
+          'livello, e il Dollar Index è a 99,76, cioè sotto quota 100. Anche qui la congiunzione ha fatto ' +
+          'il lavoro per cui era stata scritta.',
+      },
+      {
+        condition:
+          'Un oro spot sotto i 4.300 dollari: cancellerebbe il movimento del rapporto occupazionale e renderebbe sbagliata la lettura dell’assorbimento descritta qui.',
+        triggered: false,
+        evidence:
+          'Non solo non scattata: l’oro è andato nella direzione opposta. Alle 19:15 lo spot è risalito a ' +
+          '4.356,79 dollari, più 0,4%, dopo essere rimasto per buona parte della giornata fra i 4.330 e i ' +
+          '4.335. Sono cinquantasette dollari sopra la soglia, e il massimo di venerdì a 4.371,63 — il più ' +
+          'alto dal 17 giugno — è tornato a meno di quindici dollari.',
+      },
+      {
+        condition:
+          'Un Brent che rientra sotto gli 84 dollari sulla serie di questo archivio, cioè sotto gli 85,4 su quella citata dalle agenzie: direbbe che il superamento di oggi è stato l’ottavo premio formato e riassorbito in otto giorni, e toglierebbe la premessa.',
+        triggered: false,
+        evidence:
+          'Il Brent è rimasto a 86,11 dollari, più 3,06%, e il WTI a 80,73 con più 3,26%: nessun rientro. ' +
+          'Per la prima volta in otto giorni un premio energetico formato in giornata non si è sgonfiato ' +
+          'entro la seduta, e l’Iran continua a subordinare la riapertura dello Stretto a concessioni ' +
+          'statunitensi.',
+      },
+      {
+        condition:
+          'Un indice dei prezzi statunitense mercoledì 12 agosto sopra il 3,4% annuo sul dato principale, o sopra più 0,2% mensile su quello di fondo: sposterebbe il movimento dalla parte lunga a quella breve, che è esattamente la differenza descritta in questa analisi.',
+        triggered: false,
+        evidence:
+          'Non giudicabile: il dato esce mercoledì 12 agosto alle 14:30 italiane e al momento del ' +
+          'controllo non è pubblicato. È la condizione che l’analisi indicava come decisiva, e resta ' +
+          'interamente davanti.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e la tesi ha avuto la prova più severa possibile nel giro di tre ore. L’analisi sosteneva che il metallo stesse assorbendo perché il canale veloce — la curva breve, dove si prezza una decisione di settembre — era chiuso, mentre a muoversi era soltanto il premio a termine sulla parte lunga. Nelle tre ore successive il decennale è arrivato fino al 4,703%, cioè esattamente al livello che questo archivio aveva indicato come campanello d’allarme, e l’oro invece di cedere è salito a 4.356,79 dollari con più 0,4%. Il biennale, nel frattempo, non si è mosso di un punto base. Va però registrata un’incoerenza che l’analisi non aveva previsto e che merita un occhio: nella stessa finestra la probabilità di un rialzo a settembre ricavata dai futures è passata da circa il 44% a circa il 48-50%, con l’81% per almeno un rialzo entro dicembre. Cinque punti di riprezzatura sul percorso dei tassi senza che la scadenza a due anni si muova sono due misure della stessa cosa che dicono cose diverse, e finché non concordano nessuna delle due è un segnale.',
+  },
+  {
     slug: 'il-petrolio-arriva-ai-tassi-e-mancano-due-punti-base',
     checkedAt: '2026-08-10T17:10:00+02:00',
     verdict: 'confermata',
