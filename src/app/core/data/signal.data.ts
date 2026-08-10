@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-10T15:40:00+02:00',
+  updatedAt: '2026-08-10T17:15:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,19 +187,19 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale',
       strength: 'bassa',
       regime:
-        'La separazione descritta stamattina è durata quattro ore. Alle 11 il greggio saliva e i rendimenti ' +
-        'no; nel pomeriggio il Brent torna verso gli 85 dollari con circa più 2% e il biennale si muove con ' +
-        'lui, da 4,204% a 4,228%, mentre il Dollar Index sale a 99,70 e il decennale a 4,664%. È la prima ' +
-        'volta dal rapporto occupazionale che greggio, dollaro e le due scadenze del Treasury si muovono ' +
-        'nella stessa ora e tutte contro il metallo, che cede lo 0,2% a 4.333 dollari. La regola dichiarata ' +
-        'il 5 agosto chiede due gambe insieme, Brent sopra gli 84 e biennale sopra il 4,25%: sulla serie ' +
-        'usata qui il greggio vale circa 83,85 e il biennale 4,228%, cioè mancano quindici centesimi a una e ' +
-        'due punti base all’altra, ed è la prima volta che si avvicinano insieme. La direzione passa a ' +
-        'neutrale non perché l’oro debba scendere, ma perché l’unica cosa che la teneva inclinata al rialzo ' +
-        'era un contorno monetario favorevole che è appena scomparso. Le ampiezze restano minime e il ' +
-        'dollaro è ancora sotto 100: è un canale che si apre, non una tendenza che comincia.',
+        'La regola dichiarata il 5 agosto chiede due gambe insieme e ne è caduta una sola. Il Brent arriva a ' +
+        '86,11 dollari con più 3,1% — circa 84,7 sulla serie usata qui — e supera la tacca degli 84 per la ' +
+        'prima volta in cinque giorni; il biennale resta a circa 4,22%, tre punti base sotto la sua e ' +
+        'perfino un filo sotto il 4,228% di tre ore fa. A muoversi è il decennale, fino a un massimo di ' +
+        '4,696%: la curva si irripidisce invece di traslare. La distinzione decide la lettura. Se il ' +
+        'mercato temesse una Fed costretta a restare restrittiva dal greggio si muoverebbe prima la ' +
+        'scadenza a due anni, che è dove una decisione di settembre si prezza per prima; quella non si ' +
+        'muove e la probabilità di rialzo resta fra il 44% e il 46%. Quello che sale è il premio richiesto ' +
+        'per detenere carta lunga, che pesa sul mese e non sulla giornata. L’oro assorbe un greggio più ' +
+        'caro di un dollaro e mezzo e resta a 4.335 dollari: il canale che gli fa male in fretta, per ora, ' +
+        'è chiuso.',
       invalidation:
-        'Un biennale sopra il 4,25% con il Brent sopra gli 84 dollari sulla serie di questo archivio, cioè entrambe le gambe della regola del 5 agosto per la prima volta insieme; un Dollar Index sopra 100 con l’oro sotto i 4.300; oppure, in senso opposto, un oro sopra i massimi di venerdì a circa 4.372 dollari con il biennale che rientra sotto il 4,21%, che direbbe che l’aggancio di oggi era rumore di poche ore.',
+        'Un biennale che supera il 4,25% mentre il Brent resta sopra gli 84 dollari sulla serie di questo archivio: sono le due gambe insieme, ed è il solo scenario in cui il premio energetico smette di essere neutro per il metallo. Oppure un decennale stabilmente sopra il 4,70% con il Dollar Index sopra 100; oppure un oro spot sotto i 4.300 dollari, che cancellerebbe il movimento del rapporto occupazionale.',
     },
     {
       horizon: 'medio',
@@ -246,39 +246,38 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'Il petrolio arriva ai tassi, e mancano due punti base',
+  headline: 'Il Brent passa gli 84, il biennale resta fermo',
   stance:
-    'Nel pomeriggio il canale che mancava si apre: il Brent torna verso gli 85 dollari con circa più 2% e ' +
-    'questa volta il biennale si muove con lui, da 4,204% a 4,228%, mentre il Dollar Index sale a 99,70 e il ' +
-    'decennale a 4,664%. L’oro cede lo 0,2% a 4.333. È la prima volta dal rapporto occupazionale che le ' +
-    'quattro gambe si muovono insieme contro il metallo. Sulla serie di questo archivio il greggio vale ' +
-    'circa 83,85 e il biennale 4,228%: mancano quindici centesimi e due punti base alle due tacche della ' +
-    'regola del 5 agosto, che per la prima volta si avvicinano insieme. Sullo sfondo, tre settimane date ' +
-    'alla governatrice Cook per rispondere sulle contestazioni ai mutui: una scadenza vera su una vicenda ' +
-    'che finora il mercato dei tassi non ha mai prezzato.',
+    'Una gamba su due. Il Brent arriva a 86,11 dollari con più 3,1%, circa 84,7 sulla serie di questo ' +
+    'archivio, e supera per la prima volta in cinque giorni la tacca degli 84; il biennale resta a circa ' +
+    '4,22%, tre punti base sotto la sua. A salire è il decennale, fino a 4,696%, cioè la parte lunga e non ' +
+    'quella dove si prezza una decisione di settembre — la curva si irripidisce invece di traslare, e la ' +
+    'probabilità di rialzo resta fra il 44% e il 46%. Non è il percorso dei tassi che viene riprezzato, è ' +
+    'il premio per detenere carta lunga. L’oro assorbe e resta a 4.335 dollari. Sullo sfondo, tre settimane ' +
+    'date alla governatrice Cook per rispondere sulle contestazioni ai mutui.',
   favours: [
-    'Contare i segni invece delle ampiezze quando le ampiezze sono piccole: due punti base non dicono nulla, quattro strumenti che girano nella stessa ora sì',
-    'Tenere separate le due letture: quella intraday si azzera perché ha perso la sua unica gamba, quella dei giorni resta dov’è perché il rapporto occupazionale non è stato toccato',
+    'Guardare quale scadenza si muove, non di quanto: un decennale che sale con il biennale fermo è premio a termine, non riprezzatura della Fed, e i due pesano sull’oro su orizzonti diversi',
+    'Tenere le condizioni con la congiunzione: un premio energetico senza risposta della curva breve si è esaurito otto volte in otto giorni',
     'Verificare su quale serie del Brent si sta leggendo una soglia: fra le due in circolazione ballano più di un dollaro, e le tacche di questo archivio stanno su quella che venerdì ha chiuso a 82,21',
   ],
   avoid: [
-    'Chiamare inversione un meno 0,2%: il dollaro è ancora sotto 100 e vicino al minimo da due mesi, e il rialzo di settembre è fermo al 44%',
-    'Alzare il segnale sulla vicenda Cook: le notizie sulla composizione del Board appartengono alla classe che in dieci giorni ha spostato quel numero zero volte su sette',
-    'Trattare le due gambe della regola come alternative: un premio energetico senza risposta dei tassi si è già esaurito sette volte in sette giorni',
+    'Leggere il superamento degli 84 come lo scatto della regola: la regola ne chiede due, e la seconda è a tre punti base',
+    'Chiamare inversione un oro fermo: con il greggio più caro di un dollaro e mezzo e il decennale alla tacca di logoramento, restare a 4.335 è resistenza e non cedimento',
+    'Alzare il segnale sulla vicenda Cook: le notizie sulla composizione del Board appartengono alla classe che in dieci giorni ha spostato la probabilità di settembre zero volte su sette',
   ],
   confirming: [
-    'Il Dollar Index resta sotto 100 e vicino al minimo da due mesi: la fuga verso il dollaro non c’è',
-    'Rialzo Fed a settembre fermo al 44%, contro il 67% di una settimana fa: il caso base resta una Fed ferma',
-    'Il consenso Reuters sull’indice dei prezzi annuo scende a 3,4% da 3,5%: il mercato si attende meno inflazione, non di più',
-    'Il vincolo materiale non si allenta: traffico a Hormuz ancora molto limitato, e l’Iran ribadisce che l’accordo tecnico con l’Oman non è la riapertura',
-    'Il metallo cede solo lo 0,2% e resta trentatré dollari sopra i 4.300',
+    'Il biennale non si muove: circa 4,22%, tre punti base sotto la soglia e sotto il 4,228% di tre ore fa',
+    'Rialzo Fed a settembre fermo fra il 44% e il 46%: il percorso dei tassi ufficiali non è stato riprezzato dal greggio',
+    'L’oro assorbe un Brent più caro di un dollaro e mezzo e un decennale a 4,696% restando a 4.335, trentacinque sopra la soglia dei 4.300',
+    'Il Dollar Index è più forte ma non risulta sopra quota 100',
+    'Il consenso Reuters sull’indice dei prezzi annuo resta a 3,4%, sceso dal 3,5%',
   ],
   contradicting: [
-    'Per la prima volta dal rapporto occupazionale greggio, dollaro, biennale e decennale si muovono insieme contro il metallo',
-    'Il biennale passa da 4,204% a 4,228%: il premio energetico comincia ad arrivare alla curva breve, che è il canale dichiarato',
-    'Entrambe le gambe della regola del 5 agosto sono a ridosso: quindici centesimi sul Brent, due punti base sul biennale',
-    'Il contorno favorevole della mattina — dollaro debole e rendimenti in calo — è scomparso in quattro ore, e l’oro non ne aveva approfittato nemmeno quando c’era',
-    'Un consenso più basso abbassa l’asticella: con 3,4% invece di 3,5%, mercoledì un dato in linea di ieri risulterebbe sopra le attese',
+    'La prima gamba della regola del 5 agosto è caduta: Brent a circa 84,7 sulla serie di questo archivio, sopra la tacca degli 84 per la prima volta',
+    'Il decennale tocca 4,696%: è alla tacca di logoramento del 4,68% e a quattro millesimi da quella che invalida la lettura',
+    'Un premio a termine più alto alza il pavimento dei rendimenti lunghi, e quello è il costo di detenere un’attività che non paga cedole',
+    'Il vincolo materiale non si allenta: traffico a Hormuz ancora molto limitato, e l’Iran subordina la riapertura a condizioni poste agli Stati Uniti',
+    '125 miliardi di titoli del Tesoro fra martedì e giovedì, su una parte lunga che sta già chiedendo più premio',
     'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
   ],
   constraints: [
@@ -406,7 +405,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     {
       label: 'Rialzo Fed a settembre',
       now: 44,
-      display: '44%',
+      display: '44-46%',
       marks: [
         {
           at: 50,
@@ -418,8 +417,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 83.85,
-      display: '≈ 83,85 $',
+      now: 84.7,
+      display: '≈ 84,7 $',
       marks: [
         {
           at: 82,
@@ -437,8 +436,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.228,
-      display: '4,228%',
+      now: 4.22,
+      display: '≈ 4,22%',
       marks: [
         {
           at: 4.25,
@@ -450,14 +449,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.664,
-      display: '4,664%',
+      now: 4.682,
+      display: '≈ 4,68%',
       marks: [
         {
           at: 4.68,
           display: '4,68%',
           kind: 'logora',
-          note: 'la tacca da cui il decennale si è allontanato lunedì: segnala il logoramento senza aspettare la rottura',
+          note: 'raggiunta nel pomeriggio del 10 agosto, con un massimo intraday di 4,696%: segnala il logoramento senza aspettare la rottura',
         },
         {
           at: 4.7,
@@ -469,8 +468,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4333,
-      display: '≈ 4.333 $',
+      now: 4335,
+      display: '≈ 4.335 $',
       marks: [
         {
           at: 4300,
@@ -488,7 +487,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
-    'il-petrolio-arriva-ai-tassi-e-mancano-due-punti-base',
+    'il-brent-passa-gli-84-il-biennale-resta-fermo',
     'tre-settimane-per-lisa-cook-e-il-numero-non-si-muove',
     'la-boj-apre-a-un-ritmo-piu-rapido-e-nomina-il-medio-oriente',
   ],

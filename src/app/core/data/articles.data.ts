@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { brentPassaGli84 } from './articles/il-brent-passa-gli-84-il-biennale-resta-fermo';
 import { petrolioArrivaAiTassi } from './articles/il-petrolio-arriva-ai-tassi-e-mancano-due-punti-base';
 import { treSettimanePerLisaCook } from './articles/tre-settimane-per-lisa-cook-e-il-numero-non-si-muove';
 import { petrolioPrezzaHormuzOroNo } from './articles/il-petrolio-prezza-hormuz-l-oro-no';
@@ -80,6 +81,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  brentPassaGli84,
   petrolioArrivaAiTassi,
   treSettimanePerLisaCook,
   petrolioPrezzaHormuzOroNo,

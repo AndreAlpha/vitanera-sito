@@ -25,8 +25,10 @@ fonti:
   - testata: "Reuters"
   - testata: "Bureau of Labor Statistics"
     titolo: "Calendario delle diffusioni"
+esito: "confermata"
+controllata: "2026-08-10T17:10:00+02:00"
 sorgente: "src/app/core/data/articles/il-petrolio-arriva-ai-tassi-e-mancano-due-punti-base.ts"
-impronta: "c0c7dbe07b898696"
+impronta: "37ab9533f34892b5"
 ---
 
 # Il petrolio arriva ai tassi, e mancano due punti base
@@ -129,6 +131,22 @@ Il consenso Reuters sul dato annuo principale è sceso a 3,4% dal 3,5% precedent
 Impostazione su XAU/USD: neutrale, forza bassa, orizzonte breve.
 
 Per la prima volta dal rapporto occupazionale le quattro gambe si muovono insieme contro il metallo. Il Brent torna verso gli 85 dollari con circa più 2%, il Dollar Index sale a 99,70 con più 0,2%, il biennale passa da 4,204% a 4,228% e il decennale a 4,664%: è il canale che questo archivio aveva dichiarato come il modo in cui la vicenda di Hormuz si sarebbe girata contro l’oro, ed è la prima volta che si vede. L’inclinazione rialzista intraday poggiava per intero sul contorno monetario favorevole — dollaro debole, rendimenti in calo — e quel contorno è appena scomparso. Non è un’inversione, e le dimensioni contano: il biennale si è mosso di due punti base e mezzo, il dollaro resta sotto 100 e vicino al minimo da due mesi, e il rialzo di settembre è ancora al 44%. Ma i segni sono girati tutti insieme, e la direzione di breve non ha più nulla che la sostenga fino all’indice dei prezzi di mercoledì.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-10T17:10:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, ma il valore di questo esito non è nel verdetto: è che l’analisi aveva classificato in anticipo i due rami possibili e in tre ore si è realizzato quello che aveva descritto. Il testo diceva che se il Brent avesse superato gli 84 con il biennale fermo sotto il 4,25% il quadro non sarebbe cambiato, perché è il premio di rischio che sale e si esaurisce; e che solo la salita congiunta avrebbe trasformato il petrolio da problema geopolitico a problema di inflazione. Il Brent è arrivato a 86,11 dollari, circa 84,7 sulla serie di questo archivio, superando la tacca per la prima volta in cinque giorni; il biennale è rimasto a 4,22%. A muoversi è stato il decennale, fino a 4,696%, cioè la parte lunga e non quella dove si prezza una decisione di settembre. La previsione condizionale ha funzionato meglio della previsione di direzione, ed è il primo caso in questo registro in cui si può dirlo con dei numeri.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un biennale sopra il 4,25% con il Brent sopra gli 84 dollari sulla serie di questo archivio: sono le due gambe della regola del 5 agosto, e sarebbe la prima volta che scattano insieme. A quel punto il premio energetico avrebbe smesso di essere neutro per il metallo. | no | È scattata una gamba su due, e la condizione ne chiede due. Il Brent è salito a 86,11 dollari con più 3,1%, che sulla serie di questo archivio vale circa 84,7: la tacca degli 84 è stata superata per la prima volta dal 5 agosto. Il biennale però è a circa 4,22%, tre punti base sotto il 4,25% richiesto, e sta perfino un filo più in basso del 4,228% rilevato al momento della pubblicazione. La congiunzione ha fatto il lavoro per cui era stata scritta. |
+| Un Dollar Index che supera quota 100 con l’oro spot sotto i 4.300 dollari: chiuderebbe il canale monetario che finora ha tenuto in piedi la correzione come consolidamento invece che come riprezzatura. | no | Nessuna delle due gambe. Il dollaro è descritto come moderatamente più forte ma non risulta alcuna rilevazione sopra quota 100, e l’oro è a circa 4.335 dollari, trentacinque sopra la soglia. Il canale monetario resta aperto. |
+| Un oro che torna sopra i massimi di venerdì, circa 4.372 dollari, con il biennale che rientra sotto il 4,21%: direbbe che l’aggancio descritto qui era un rumore di poche ore e che la separazione di stamattina reggeva. | no | Non scattata, ma è la condizione che si è avvicinata dal lato inatteso: il biennale è sceso verso il 4,22%, cioè a un punto base dalla seconda gamba, mentre l’oro è rimasto a 4.335 e non ha avvicinato i massimi. L’aggancio fra greggio e curva breve descritto nell’analisi si è quindi allentato invece di rafforzarsi, ma senza che il metallo ne approfittasse. |
+| Un Brent che rientra sotto gli 82 dollari sulla serie citata dalle agenzie insieme a un conteggio dei transiti sopra le otto navi al giorno: sarebbe la de-escalation vera, e toglierebbe il primo anello della catena descritta qui. | no | Andata nella direzione opposta su entrambe le gambe: il Brent è salito a 86,11 dollari invece di scendere sotto 82, e il traffico attraverso lo Stretto resta molto limitato, con l’Iran che continua a subordinare la riapertura a condizioni poste agli Stati Uniti. |
+| Un indice dei prezzi statunitense mercoledì 12 agosto sopra il 3,4% annuo sul dato principale, o sopra più 0,2% mensile su quello di fondo: renderebbe questa analisi irrilevante prima ancora che sbagliata, perché il comando tornerebbe al canale americano e la catena energetica diventerebbe un dettaglio. | no | Non giudicabile: il dato esce mercoledì 12 agosto e al momento del controllo non è pubblicato. Il consenso Reuters sul dato annuo principale resta intorno al 3,4%, sceso dal 3,5%. |
+
+**Che cosa cambia.** Una condizione scritta con una congiunzione vale più di due condizioni separate, e questo esito lo dimostra invece di sostenerlo. Se la regola del 5 agosto avesse elencato «Brent sopra 84» e «biennale sopra 4,25%» come due voci indipendenti, oggi il registro segnerebbe «parziale» e la lettura risulterebbe metà sbagliata; scritta come una condizione sola con due gambe, dice la cosa giusta — che il premio energetico da solo non basta, ed è precisamente quanto si è visto otto volte in otto giorni. Quando due fatti contano solo insieme, vanno scritti in una condizione sola.
 
 ## Fonti consultate
 
