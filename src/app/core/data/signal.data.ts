@@ -179,27 +179,27 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-10T11:00:00+02:00',
+  updatedAt: '2026-08-10T15:40:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'neutrale-rialzista',
+      direction: 'neutrale',
       strength: 'bassa',
       regime:
-        'La riapertura di lunedì separa i due canali con una nettezza che finora era stata solo dedotta. Il ' +
-        'greggio prezza Hormuz — Brent a 84,79 all’apertura, più 1,44%, poi 84,38 in mattinata — e il metallo ' +
-        'non lo segue: dai 4.340-4.350 dell’apertura scende a 4.322,28 alle quattro del mattino e risale a ' +
-        '4.330,46, cioè conserva il balzo di venerdì senza estenderlo di un dollaro. Il numero che spiega il ' +
-        'premio non è un prezzo: venerdì dallo Stretto sono transitate due navi, contro la soglia di otto al ' +
-        'giorno seguita da questo archivio e le 33 in quattro giorni della settimana prima. Quello che rende ' +
-        'la mattina informativa è però il contorno, che sarebbe favorevole: decennale in discesa al 4,637%, ' +
-        'biennale fermo a 4,206%, Dollar Index a 99,6 vicino al minimo da due mesi, rialzo di settembre al ' +
-        '44% contro il 67% di una settimana fa. Manca del tutto la coppia che affonda l’oro — dollaro forte e ' +
-        'rendimenti in salita — e l’oro scende lo stesso dello 0,3%. Non è un’inversione, è un metallo che ' +
-        'non usa un aiuto che ha: per questo la forza resta bassa invece di salire.',
+        'La separazione descritta stamattina è durata quattro ore. Alle 11 il greggio saliva e i rendimenti ' +
+        'no; nel pomeriggio il Brent torna verso gli 85 dollari con circa più 2% e il biennale si muove con ' +
+        'lui, da 4,204% a 4,228%, mentre il Dollar Index sale a 99,70 e il decennale a 4,664%. È la prima ' +
+        'volta dal rapporto occupazionale che greggio, dollaro e le due scadenze del Treasury si muovono ' +
+        'nella stessa ora e tutte contro il metallo, che cede lo 0,2% a 4.333 dollari. La regola dichiarata ' +
+        'il 5 agosto chiede due gambe insieme, Brent sopra gli 84 e biennale sopra il 4,25%: sulla serie ' +
+        'usata qui il greggio vale circa 83,85 e il biennale 4,228%, cioè mancano quindici centesimi a una e ' +
+        'due punti base all’altra, ed è la prima volta che si avvicinano insieme. La direzione passa a ' +
+        'neutrale non perché l’oro debba scendere, ma perché l’unica cosa che la teneva inclinata al rialzo ' +
+        'era un contorno monetario favorevole che è appena scomparso. Le ampiezze restano minime e il ' +
+        'dollaro è ancora sotto 100: è un canale che si apre, non una tendenza che comincia.',
       invalidation:
-        'Un oro spot che rompe stabilmente sotto i 4.300 dollari con il Dollar Index sopra 100 e il biennale sopra il 4,25%; un Brent che accelera oltre gli 88 dollari sulla serie citata dalle agenzie con il decennale che rompe il 4,70%; oppure, in senso opposto, un oro sopra i massimi di venerdì a circa 4.372 dollari con il Dollar Index sotto 99,4, che direbbe che il metallo stava aspettando e non ignorando.',
+        'Un biennale sopra il 4,25% con il Brent sopra gli 84 dollari sulla serie di questo archivio, cioè entrambe le gambe della regola del 5 agosto per la prima volta insieme; un Dollar Index sopra 100 con l’oro sotto i 4.300; oppure, in senso opposto, un oro sopra i massimi di venerdì a circa 4.372 dollari con il biennale che rientra sotto il 4,21%, che direbbe che l’aggancio di oggi era rumore di poche ore.',
     },
     {
       horizon: 'medio',
@@ -231,7 +231,11 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'ventunesimo mese di fila e il maggior acquisto da ottobre 2023, con il ritmo che accelera da marzo. ' +
         'Attorno, tre atti americani nella stessa giornata allargano la portata dello stesso strumento — dazi ' +
         'secondari votati dal Senato, sanzioni sui binari di pagamento iraniani, e il passaggio procedurale che ' +
-        'la Corte Suprema aveva indicato per rimuovere una governatrice della Fed. Si aggiunge ora una seconda ' +
+        'la Corte Suprema aveva indicato per rimuovere una governatrice della Fed. Quest’ultimo ha ora una ' +
+        'data: il 10 agosto alla governatrice Cook sono state date tre settimane per rispondere alle ' +
+        'contestazioni sui mutui, e il termine scade prima della riunione del 16 settembre. Cambia poco nel ' +
+        'segno e molto nella verificabilità — fino a ieri era uno sfondo permanente, adesso è una condizione ' +
+        'con una scadenza. Si aggiunge ora una seconda ' +
         'gamba lenta, di natura diversa: la struttura di sicurezza regionale si formalizza, con Ankara che ' +
         'dichiara la clausola della Mecca tecnicamente equivalente all’Articolo 5, l’Egitto indicato come ' +
         'possibile futuro membro e un interesse turco per le rotte del Mar Rosso. Alza il pavimento del premio ' +
@@ -239,41 +243,42 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'tutto questo restano le aspettative di inflazione ferme al 3,3% e al 3,0% su tre e cinque anni, che ' +
         'tengono in vita il caso per tassi alti: è la ragione per cui la lettura non passa a rialzista.',
       invalidation:
-        'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
+        'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'Il greggio prezza Hormuz, il metallo no',
+  headline: 'Il petrolio arriva ai tassi, e mancano due punti base',
   stance:
-    'La prima seduta della settimana separa i due canali in chiaro: il Brent apre a 84,79 dollari, più ' +
-    '1,44% sull’incertezza dello Stretto, mentre l’oro scende dello 0,3% a 4.330,46 dopo un minimo di ' +
-    '4.322,28. Il numero che spiega il premio non è un prezzo — venerdì da Hormuz sono transitate due navi, ' +
-    'contro una soglia di otto al giorno — e la seconda dichiarazione di Bessent sullo Stretto in sei giorni ' +
-    'non ha mosso il greggio al ribasso come aveva fatto la prima. Il contorno monetario sarebbe favorevole ' +
-    'e il metallo non lo usa: decennale al 4,637%, biennale a 4,206%, dollaro vicino al minimo da due mesi. ' +
-    'Tutto si decide mercoledì con l’indice dei prezzi.',
+    'Nel pomeriggio il canale che mancava si apre: il Brent torna verso gli 85 dollari con circa più 2% e ' +
+    'questa volta il biennale si muove con lui, da 4,204% a 4,228%, mentre il Dollar Index sale a 99,70 e il ' +
+    'decennale a 4,664%. L’oro cede lo 0,2% a 4.333. È la prima volta dal rapporto occupazionale che le ' +
+    'quattro gambe si muovono insieme contro il metallo. Sulla serie di questo archivio il greggio vale ' +
+    'circa 83,85 e il biennale 4,228%: mancano quindici centesimi e due punti base alle due tacche della ' +
+    'regola del 5 agosto, che per la prima volta si avvicinano insieme. Sullo sfondo, tre settimane date ' +
+    'alla governatrice Cook per rispondere sulle contestazioni ai mutui: una scadenza vera su una vicenda ' +
+    'che finora il mercato dei tassi non ha mai prezzato.',
   favours: [
-    'Guardare la distanza fra i due strumenti invece della direzione di ciascuno: la stessa notizia muove il greggio dell’1,4% e il metallo di nulla, ed è quello il dato',
-    'Contare le navi: due transiti venerdì contro una soglia di otto al giorno è la sola misura della vicenda che non dipenda da chi la racconta',
+    'Contare i segni invece delle ampiezze quando le ampiezze sono piccole: due punti base non dicono nulla, quattro strumenti che girano nella stessa ora sì',
+    'Tenere separate le due letture: quella intraday si azzera perché ha perso la sua unica gamba, quella dei giorni resta dov’è perché il rapporto occupazionale non è stato toccato',
     'Verificare su quale serie del Brent si sta leggendo una soglia: fra le due in circolazione ballano più di un dollaro, e le tacche di questo archivio stanno su quella che venerdì ha chiuso a 82,21',
   ],
   avoid: [
-    'Leggere il calo dell’oro come un’inversione: manca la coppia che lo affonda davvero, cioè dollaro forte e rendimenti in salita, ed entrambi vanno nell’altro verso',
-    'Pagare per una dichiarazione distensiva ripetuta: la prima di Bessent sullo Stretto valse meno 4% sul Brent, la seconda vale più 1%',
-    'Trattare il premio energetico come un alleato stabile del metallo: oltre una certa soglia torna a essere inflazione attesa, e da lì rendimenti contro',
+    'Chiamare inversione un meno 0,2%: il dollaro è ancora sotto 100 e vicino al minimo da due mesi, e il rialzo di settembre è fermo al 44%',
+    'Alzare il segnale sulla vicenda Cook: le notizie sulla composizione del Board appartengono alla classe che in dieci giorni ha spostato quel numero zero volte su sette',
+    'Trattare le due gambe della regola come alternative: un premio energetico senza risposta dei tassi si è già esaurito sette volte in sette giorni',
   ],
   confirming: [
-    'Il contorno monetario migliora: decennale in discesa al 4,637%, biennale fermo a 4,206%, Dollar Index a 99,6 vicino al minimo da due mesi',
-    'Rialzo Fed a settembre al 44% contro il 67% di una settimana fa: il caso base resta una Fed ferma',
-    'Il vincolo materiale peggiora nella direzione che sostiene il premio: due transiti venerdì contro una soglia di otto al giorno',
-    'La Banca del Giappone apre a un ritmo di rialzi più rapido delle attese, il che sostiene lo yen e indebolisce il dollaro',
-    'Il balzo del 2,4% di venerdì è stato conservato per intero: la correzione si è fermata ventidue dollari sopra i 4.300',
+    'Il Dollar Index resta sotto 100 e vicino al minimo da due mesi: la fuga verso il dollaro non c’è',
+    'Rialzo Fed a settembre fermo al 44%, contro il 67% di una settimana fa: il caso base resta una Fed ferma',
+    'Il consenso Reuters sull’indice dei prezzi annuo scende a 3,4% da 3,5%: il mercato si attende meno inflazione, non di più',
+    'Il vincolo materiale non si allenta: traffico a Hormuz ancora molto limitato, e l’Iran ribadisce che l’accordo tecnico con l’Oman non è la riapertura',
+    'Il metallo cede solo lo 0,2% e resta trentatré dollari sopra i 4.300',
   ],
   contradicting: [
-    'Il metallo non usa un contorno che gli è favorevole: con dollaro debole e rendimenti in calo scende dello 0,3%',
-    'Il canale geopolitico arriva all’energia e non al rifugio: Brent più 1,4% all’apertura, oro fermo',
-    'Il premio energetico che cresce è la strada per cui l’inflazione attesa torna a salire, e da lì i rendimenti contro il metallo',
-    '125 miliardi di titoli del Tesoro fra martedì e giovedì: aste deboli spingono i rendimenti in alto',
-    'Lo stesso verbale giapponese allunga l’elenco delle banche centrali che dichiarano di temere ancora l’inflazione',
+    'Per la prima volta dal rapporto occupazionale greggio, dollaro, biennale e decennale si muovono insieme contro il metallo',
+    'Il biennale passa da 4,204% a 4,228%: il premio energetico comincia ad arrivare alla curva breve, che è il canale dichiarato',
+    'Entrambe le gambe della regola del 5 agosto sono a ridosso: quindici centesimi sul Brent, due punti base sul biennale',
+    'Il contorno favorevole della mattina — dollaro debole e rendimenti in calo — è scomparso in quattro ore, e l’oro non ne aveva approfittato nemmeno quando c’era',
+    'Un consenso più basso abbassa l’asticella: con 3,4% invece di 3,5%, mercoledì un dato in linea di ieri risulterebbe sopra le attese',
     'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
   ],
   constraints: [
@@ -413,8 +418,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 83.03,
-      display: '≈ 83 $',
+      now: 83.85,
+      display: '≈ 83,85 $',
       marks: [
         {
           at: 82,
@@ -432,8 +437,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.206,
-      display: '4,206%',
+      now: 4.228,
+      display: '4,228%',
       marks: [
         {
           at: 4.25,
@@ -445,8 +450,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.637,
-      display: '4,637%',
+      now: 4.664,
+      display: '4,664%',
       marks: [
         {
           at: 4.68,
@@ -464,8 +469,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4330.46,
-      display: '4.330,46 $',
+      now: 4333,
+      display: '≈ 4.333 $',
       marks: [
         {
           at: 4300,
@@ -483,9 +488,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
-    'il-petrolio-prezza-hormuz-l-oro-no',
+    'il-petrolio-arriva-ai-tassi-e-mancano-due-punti-base',
+    'tre-settimane-per-lisa-cook-e-il-numero-non-si-muove',
     'la-boj-apre-a-un-ritmo-piu-rapido-e-nomina-il-medio-oriente',
-    'washington-abbassa-il-tono-e-mocha-viene-colpita-di-nuovo',
   ],
 };
 

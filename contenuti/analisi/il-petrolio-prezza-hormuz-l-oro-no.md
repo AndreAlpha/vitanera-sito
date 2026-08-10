@@ -26,8 +26,10 @@ fonti:
   - testata: "Financial Times"
   - testata: "Bureau of Labor Statistics"
     titolo: "Calendario delle diffusioni"
+esito: "confermata"
+controllata: "2026-08-10T15:30:00+02:00"
 sorgente: "src/app/core/data/articles/il-petrolio-prezza-hormuz-l-oro-no.ts"
-impronta: "8aa69e75785e5f53"
+impronta: "0e8f0e6567a780f3"
 ---
 
 # Il petrolio prezza Hormuz, l’oro no
@@ -146,6 +148,22 @@ Il consenso riportato da Reuters è più 0,1% mensile sul dato principale e più
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 La riapertura separa i due canali con una nettezza che finora era stata solo dedotta. Il greggio prezza lo Stretto — più 1,4% all’apertura, e il traffico che venerdì è sceso a due navi dice perché — mentre l’oro non lo segue: consolida il balzo di venerdì, scende a 4.322,28 e risale a 4.330,46, senza mai avvicinare i massimi. Il mercato sta trattando Hormuz come un rischio energetico e non come una corsa al rifugio. Attorno, la gamba monetaria migliora invece di peggiorare: il decennale scende al 4,637%, il dollaro resta vicino al minimo da due mesi e il rialzo di settembre è al 44% contro il 67% di una settimana fa. È la combinazione che di solito sostiene il metallo, e il metallo non la sta usando: è questo, non il calo dello 0,3%, il motivo per cui la direzione non sale di grado.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-10T15:30:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e la lettura ha retto alla lettera. Ma la tesi centrale — che il canale geopolitico arrivi all’energia e non ai tassi — ha cominciato a girarsi nel giro di quattro ore, ed è la cosa più informativa di questo esito. L’analisi diceva che il greggio in salita era neutro per l’oro finché non trascinava i rendimenti, e indicava proprio quel trascinamento come il rischio principale: nel pomeriggio il Brent è tornato verso gli 85 dollari e il biennale è passato da 4,204% a 4,228%, con il Dollar Index a 99,70 e il decennale a 4,664%. Le condizioni erano scritte su livelli lontani — 4.300 sull’oro, 88 sul Brent, 4,70% sul decennale — e nessuno di quei livelli è stato avvicinato; il meccanismo, però, ha cominciato a cambiare molto prima. Un’analisi può essere confermata dalle proprie soglie e superata dal proprio contenuto nella stessa giornata.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un oro spot che rompe stabilmente sotto i 4.300 dollari mentre il Dollar Index risale sopra 100 e il biennale supera il 4,25%: sarebbe il deterioramento vero, cioè la correzione che smette di essere presa di profitto e diventa riprezzatura del canale monetario. | no | Nessuna delle tre gambe. L’oro è a circa 4.333 dollari, trentatré sopra la soglia; il Dollar Index a 99,70, sotto quota 100; il biennale a 4,228%, due punti base sotto il 4,25%. Tutte e tre si sono però mosse nella direzione della condizione nel pomeriggio, il che è diverso da essere lontane. |
+| Un Brent che accelera oltre gli 88 dollari sulla serie citata oggi, con il decennale che rompe il 4,70%: sarebbe la prova che il premio energetico ha smesso di sostenere il metallo e ha ricominciato ad alimentare i rendimenti contro di lui, che è il rischio principale segnalato in questa analisi. | no | Non scattata su nessuna delle due gambe: il Brent è tornato intorno agli 85 dollari sulla serie citata, tre sotto la soglia degli 88, e il decennale è a 4,664%, quattro punti base sotto il 4,70%. Il rischio segnalato dall’analisi ha però cominciato a manifestarsi in forma più lieve, sul biennale invece che sul decennale. |
+| Un conteggio dei transiti che risale sopra le otto navi al giorno con il Brent che rientra sotto gli 80: sarebbe la de-escalation vera, e toglierebbe insieme la gamba energetica e la premessa di questa lettura. | no | Nessuna delle due: il traffico attraverso lo Stretto resta descritto come molto limitato, l’ultimo conteggio noto è di due navi venerdì, e il Brent è salito invece che sceso. L’Iran ripete che l’accordo tecnico con l’Oman è nelle fasi finali ma che la riapertura vera richiede concessioni statunitensi su sanzioni e minacce militari. |
+| Un oro che supera i massimi di venerdì, circa 4.372 dollari, con il Dollar Index sotto 99,4 e i rendimenti in nuovo calo: renderebbe sbagliata la scelta di lasciare la forza bassa, perché direbbe che il metallo stava solo aspettando e non ignorando. | no | Non scattata, e la giornata è andata dall’altra parte su tutte e tre le gambe: l’oro è sceso a 4.333 invece di salire sopra 4.372, il Dollar Index è risalito a 99,70 invece di scendere sotto 99,4, e i rendimenti sono saliti invece di calare. La scelta della forza bassa ha retto nel modo più netto possibile. |
+| Un indice dei prezzi statunitense mercoledì 12 agosto sopra le attese — sopra il 3,4% annuo sul dato principale o sopra il 2,5% su quello di fondo, oppure sopra più 0,2% mensile di fondo: riporterebbe il comando al canale dei tassi, dove la separazione descritta qui conta molto meno. | no | Non giudicabile: il dato esce mercoledì 12 agosto e al momento del controllo non è pubblicato. Va però registrata una novità che riguarda proprio la soglia: il consenso Reuters sul dato annuo principale è sceso a 3,4% dal 3,5% precedente, quindi la stessa condizione è oggi più facile da soddisfare di quando è stata scritta. |
+
+**Che cosa cambia.** Le condizioni vanno messe anche sul meccanismo, non solo sui livelli. Questa lettura si reggeva su una separazione fra due canali, e nessuna delle cinque condizioni chiedeva che quella separazione restasse: chiedevano tutte che un prezzo raggiungesse una soglia. Il risultato è un esito «confermata» su un’analisi il cui argomento centrale era già in discussione quattro ore dopo. Quando la tesi è una relazione fra due strumenti, almeno una condizione deve essere scritta su quella relazione — «il biennale che si muove insieme al greggio per due sedute» — e non soltanto sui punti di rottura di ciascuno.
 
 ## Fonti consultate
 

@@ -22,6 +22,8 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { petrolioArrivaAiTassi } from './articles/il-petrolio-arriva-ai-tassi-e-mancano-due-punti-base';
+import { treSettimanePerLisaCook } from './articles/tre-settimane-per-lisa-cook-e-il-numero-non-si-muove';
 import { petrolioPrezzaHormuzOroNo } from './articles/il-petrolio-prezza-hormuz-l-oro-no';
 import { bojRitmoPiuRapido } from './articles/la-boj-apre-a-un-ritmo-piu-rapido-e-nomina-il-medio-oriente';
 import { washingtonAbbassaIlTono } from './articles/washington-abbassa-il-tono-e-mocha-viene-colpita-di-nuovo';
@@ -78,6 +80,8 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  petrolioArrivaAiTassi,
+  treSettimanePerLisaCook,
   petrolioPrezzaHormuzOroNo,
   bojRitmoPiuRapido,
   washingtonAbbassaIlTono,

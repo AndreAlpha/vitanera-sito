@@ -28,6 +28,234 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'il-petrolio-prezza-hormuz-l-oro-no',
+    checkedAt: '2026-08-10T15:30:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un oro spot che rompe stabilmente sotto i 4.300 dollari mentre il Dollar Index risale sopra 100 e il biennale supera il 4,25%: sarebbe il deterioramento vero, cioè la correzione che smette di essere presa di profitto e diventa riprezzatura del canale monetario.',
+        triggered: false,
+        evidence:
+          'Nessuna delle tre gambe. L’oro è a circa 4.333 dollari, trentatré sopra la soglia; il Dollar ' +
+          'Index a 99,70, sotto quota 100; il biennale a 4,228%, due punti base sotto il 4,25%. Tutte e ' +
+          'tre si sono però mosse nella direzione della condizione nel pomeriggio, il che è diverso da ' +
+          'essere lontane.',
+      },
+      {
+        condition:
+          'Un Brent che accelera oltre gli 88 dollari sulla serie citata oggi, con il decennale che rompe il 4,70%: sarebbe la prova che il premio energetico ha smesso di sostenere il metallo e ha ricominciato ad alimentare i rendimenti contro di lui, che è il rischio principale segnalato in questa analisi.',
+        triggered: false,
+        evidence:
+          'Non scattata su nessuna delle due gambe: il Brent è tornato intorno agli 85 dollari sulla serie ' +
+          'citata, tre sotto la soglia degli 88, e il decennale è a 4,664%, quattro punti base sotto il ' +
+          '4,70%. Il rischio segnalato dall’analisi ha però cominciato a manifestarsi in forma più lieve, ' +
+          'sul biennale invece che sul decennale.',
+      },
+      {
+        condition:
+          'Un conteggio dei transiti che risale sopra le otto navi al giorno con il Brent che rientra sotto gli 80: sarebbe la de-escalation vera, e toglierebbe insieme la gamba energetica e la premessa di questa lettura.',
+        triggered: false,
+        evidence:
+          'Nessuna delle due: il traffico attraverso lo Stretto resta descritto come molto limitato, ' +
+          'l’ultimo conteggio noto è di due navi venerdì, e il Brent è salito invece che sceso. L’Iran ' +
+          'ripete che l’accordo tecnico con l’Oman è nelle fasi finali ma che la riapertura vera richiede ' +
+          'concessioni statunitensi su sanzioni e minacce militari.',
+      },
+      {
+        condition:
+          'Un oro che supera i massimi di venerdì, circa 4.372 dollari, con il Dollar Index sotto 99,4 e i rendimenti in nuovo calo: renderebbe sbagliata la scelta di lasciare la forza bassa, perché direbbe che il metallo stava solo aspettando e non ignorando.',
+        triggered: false,
+        evidence:
+          'Non scattata, e la giornata è andata dall’altra parte su tutte e tre le gambe: l’oro è sceso a ' +
+          '4.333 invece di salire sopra 4.372, il Dollar Index è risalito a 99,70 invece di scendere sotto ' +
+          '99,4, e i rendimenti sono saliti invece di calare. La scelta della forza bassa ha retto nel modo ' +
+          'più netto possibile.',
+      },
+      {
+        condition:
+          'Un indice dei prezzi statunitense mercoledì 12 agosto sopra le attese — sopra il 3,4% annuo sul dato principale o sopra il 2,5% su quello di fondo, oppure sopra più 0,2% mensile di fondo: riporterebbe il comando al canale dei tassi, dove la separazione descritta qui conta molto meno.',
+        triggered: false,
+        evidence:
+          'Non giudicabile: il dato esce mercoledì 12 agosto e al momento del controllo non è pubblicato. ' +
+          'Va però registrata una novità che riguarda proprio la soglia: il consenso Reuters sul dato ' +
+          'annuo principale è sceso a 3,4% dal 3,5% precedente, quindi la stessa condizione è oggi più ' +
+          'facile da soddisfare di quando è stata scritta.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e la lettura ha retto alla lettera. Ma la tesi centrale — che il canale geopolitico arrivi all’energia e non ai tassi — ha cominciato a girarsi nel giro di quattro ore, ed è la cosa più informativa di questo esito. L’analisi diceva che il greggio in salita era neutro per l’oro finché non trascinava i rendimenti, e indicava proprio quel trascinamento come il rischio principale: nel pomeriggio il Brent è tornato verso gli 85 dollari e il biennale è passato da 4,204% a 4,228%, con il Dollar Index a 99,70 e il decennale a 4,664%. Le condizioni erano scritte su livelli lontani — 4.300 sull’oro, 88 sul Brent, 4,70% sul decennale — e nessuno di quei livelli è stato avvicinato; il meccanismo, però, ha cominciato a cambiare molto prima. Un’analisi può essere confermata dalle proprie soglie e superata dal proprio contenuto nella stessa giornata.',
+    lesson:
+      'Le condizioni vanno messe anche sul meccanismo, non solo sui livelli. Questa lettura si reggeva su una separazione fra due canali, e nessuna delle cinque condizioni chiedeva che quella separazione restasse: chiedevano tutte che un prezzo raggiungesse una soglia. Il risultato è un esito «confermata» su un’analisi il cui argomento centrale era già in discussione quattro ore dopo. Quando la tesi è una relazione fra due strumenti, almeno una condizione deve essere scritta su quella relazione — «il biennale che si muove insieme al greggio per due sedute» — e non soltanto sui punti di rottura di ciascuno.',
+  },
+  {
+    slug: 'washington-abbassa-il-tono-e-mocha-viene-colpita-di-nuovo',
+    checkedAt: '2026-08-10T15:30:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un ritorno americano alla minaccia esplicita — un ultimatum, una data, un dispiegamento annunciato — che cancellerebbe in un giorno la componente distensiva descritta qui, esattamente come il 3 agosto una minaccia aveva cancellato una distensione della settimana prima.',
+        triggered: false,
+        evidence:
+          'Non scattata sul fronte iraniano, che è quello a cui la condizione si riferisce: nessun ' +
+          'ultimatum, nessuna data, nessun dispiegamento annunciato verso Teheran. La linea descritta ' +
+          'come deliberatamente contenuta è rimasta tale per l’intera giornata. Un ultimatum con una data ' +
+          'è invece arrivato, ma su un altro fronte e verso un altro destinatario: le tre settimane date ' +
+          'alla governatrice Cook. Non è ciò che la condizione chiedeva e non viene contato qui.',
+      },
+      {
+        condition:
+          'Un attacco houthi che passa dal porto alle navi commerciali o alle petroliere in transito a Bab el-Mandeb: sposterebbe l’episodio dalla categoria in cui questa lettura lo mette, cioè quella che non tocca l’offerta di greggio.',
+        triggered: false,
+        evidence:
+          'Nessun attacco a navi commerciali o petroliere in transito riportato nelle sedici ore ' +
+          'successive. Gli obiettivi sono rimasti a terra, che è la categoria in cui questa lettura aveva ' +
+          'collocato l’episodio.',
+      },
+      {
+        condition:
+          'Una risposta militare dichiarata di Arabia Saudita, Turchia o Pakistan sotto il patto della Mecca: è la prima occasione in cui quella clausola potrebbe essere invocata, e il suo uso varrebbe più di qualunque tono dichiarato a Washington.',
+        triggered: false,
+        evidence:
+          'Nessuna invocazione della clausola e nessuna risposta militare dichiarata da alcuno dei tre ' +
+          'firmatari. Il patto resta quello che questo archivio aveva descritto il 9 agosto: una cornice ' +
+          'senza documento attuativo e senza automatismo.',
+      },
+      {
+        condition:
+          'Un Brent che apre lunedì e resta sotto gli 82 dollari: direbbe che il mercato ha letto la serata come distensiva nel suo insieme, e che il peso dato qui a Mocha e a Gaza era eccessivo.',
+        triggered: false,
+        evidence:
+          'Nettamente non scattata, ed è la condizione meglio datata delle cinque. Il Brent ha aperto a ' +
+          '84,79 dollari con più 1,44% ed è tornato verso gli 85 nel pomeriggio: non è mai stato vicino ' +
+          'agli 82 in nessun momento della seduta. Il mercato non ha letto la serata come distensiva.',
+      },
+      {
+        condition:
+          'Prima di tutte queste, e senza aspettare la rottura: un Brent sopra gli 84 dollari con il biennale che risale sopra il 4,25%. È la regola dichiarata da questo archivio il 5 agosto e mai cambiata — oltre quella soglia il premio energetico smette di sostenere il metallo e ricomincia ad alimentare i rendimenti contro di lui.',
+        triggered: false,
+        evidence:
+          'Non scattata, ma è la volta che ci è andata più vicino da quando la regola esiste. Sulla serie ' +
+          'usata da questo archivio il Brent vale circa 83,85 dollari, quindici centesimi sotto la prima ' +
+          'gamba; il biennale è a 4,228%, due punti base sotto la seconda. Per la prima volta entrambe si ' +
+          'avvicinano nella stessa seduta, e la condizione resta non scattata per un margine che sta ' +
+          'dentro l’errore di conversione fra le due serie del Brent.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata. La lettura sosteneva che le tre notizie della domenica sera si annullassero e che nessuna fosse un fatto materiale: il primo prezzo lo ha confermato nel modo più diretto, perché il Brent ha aperto a 84,79 e non ha mai avvicinato gli 82 che avrebbero detto il contrario. Ha però confermato anche l’altra metà, quella scomoda: il greggio è salito per Hormuz e non per Mocha né per il tono di Washington, cioè per il vincolo materiale e non per le tre notizie di cui l’analisi parlava. Quanto alla quinta condizione, è la volta in cui il margine si è ridotto di più da quando la regola del 5 agosto esiste — quindici centesimi su una gamba e due punti base sull’altra.',
+  },
+  {
+    slug: 'due-infrastrutture-in-un-giorno-solo-una-ha-un-prezzo',
+    checkedAt: '2026-08-10T15:30:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un Brent che apre lunedì e chiude sotto gli 82 dollari: direbbe che due infrastrutture colpite in un giorno non producono alcun premio, e che il canale geopolitico è chiuso a prescindere dai fatti.',
+        triggered: false,
+        evidence:
+          'Il Brent ha aperto a 84,79 dollari con più 1,44% e nel pomeriggio è tornato verso gli 85. La ' +
+          'chiusura di lunedì non era ancora avvenuta al momento del controllo, ma la condizione chiede ' +
+          'entrambe le cose e il prezzo si trova due o tre dollari sopra la soglia: perché scattasse ' +
+          'servirebbe un crollo del 3% nelle ore rimanenti. Registrata come non scattata sulla base del ' +
+          'prezzo osservato, non della chiusura.',
+      },
+      {
+        condition:
+          'Un attacco a un nodo dell’esportazione energetica — Yanbu, Ras Tanura, un terminale di carico — con danno operativo dichiarato da chi lo subisce: sposterebbe l’episodio nella categoria in cui questa lettura non lo mette.',
+        triggered: false,
+        evidence:
+          'Nessun attacco a Yanbu, a Ras Tanura o a un terminale di carico, e nessun danno operativo ' +
+          'dichiarato da un operatore energetico. La seconda ondata houthi di domenica sera ha colpito di ' +
+          'nuovo Mocha, cioè lo stesso porto commerciale che questa analisi collocava fuori dalla ' +
+          'categoria rilevante per l’offerta.',
+      },
+      {
+        condition:
+          'Una conferma saudita che l’incendio di Jazan sia stato causato dall’attacco rivendicato, con la capacità ferma oltre la settimana: renderebbe la giornata più grave di come è descritta qui.',
+        triggered: false,
+        evidence:
+          'Nessuna conferma saudita dell’attribuzione nelle quarantotto ore successive, e nessuna ' +
+          'dichiarazione sulla capacità dell’impianto. L’attribuzione resta dove l’analisi l’aveva ' +
+          'lasciata: un incendio confermato dal ministero dell’Energia e una rivendicazione houthi, senza ' +
+          'il nesso fra i due.',
+      },
+      {
+        condition:
+          'Un annuncio di tregua sullo Yemen, o un ritorno al tavolo negoziale sotto egida delle Nazioni Unite entro la settimana: toglierebbe la premessa nel modo più diretto.',
+        triggered: false,
+        evidence:
+          'Non scattata, e la settimana non è finita. Nella finestra è andata nella direzione opposta: una ' +
+          'seconda ondata di missili e droni sullo stesso porto la sera di domenica, riferita da Reuters ' +
+          'alle 20:18 UTC. Nessun annuncio di tregua e nessun ritorno al tavolo.',
+      },
+      {
+        condition:
+          'Prima di tutte queste, e senza aspettare la rottura: un Brent sopra gli 84 dollari con il biennale che risale sopra il 4,25%. È la regola dichiarata il 5 agosto e mai cambiata — oltre quella soglia il premio energetico smette di sostenere il metallo e ricomincia ad alimentare i rendimenti contro di lui.',
+        triggered: false,
+        evidence:
+          'Non scattata per un margine minimo su entrambe le gambe: sulla serie di questo archivio il ' +
+          'Brent vale circa 83,85 dollari e il biennale è a 4,228%, quindi quindici centesimi e due punti ' +
+          'base sotto le rispettive tacche. È la lettura più vicina allo scatto da quando la regola esiste.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e la tesi ha retto nella parte che le stava più a cuore. L’analisi sosteneva che l’episodio letale della giornata — il porto di Mocha, con almeno sette morti — non avrebbe avuto un prezzo, mentre quello senza feriti, la raffineria di Jazan, ne aveva uno; e che il premio si aggiorna di quanto vale la cosa e non di quanto la cosa colpisce. Lunedì il greggio è salito, ma per l’incertezza sulla riapertura dello Stretto, che è il canale dell’offerta, e non per la seconda ondata su Mocha arrivata nel frattempo. La distinzione fra le due scale, che era il punto di quell’analisi, si è rivelata quella giusta.',
+  },
+  {
+    slug: 'un-drone-su-jazan-e-la-via-di-fuga-da-hormuz',
+    checkedAt: '2026-08-10T15:30:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Una smentita saudita dell’attribuzione houthi, o una ricostruzione indipendente che attribuisca l’incendio a un guasto industriale: toglierebbe il fatto militare su cui questa lettura poggia.',
+        triggered: false,
+        evidence:
+          'Nessuna smentita e nessuna ricostruzione indipendente nelle quarantotto ore successive. ' +
+          'L’attribuzione resta non confermata da Riyadh, che è la situazione di partenza e non un ' +
+          'peggioramento: la condizione chiedeva una smentita, non l’assenza di conferma.',
+      },
+      {
+        condition:
+          'Il ripristino dichiarato della piena capacità di Jazan, circa 400.000 barili al giorno, entro la settimana: direbbe che l’episodio non ha prodotto un danno operativo.',
+        triggered: false,
+        evidence:
+          'Nessuna dichiarazione di ripristino, e la settimana non è finita. Aramco non ha aggiornato la ' +
+          'formula usata finora, quella delle interruzioni produttive senza impatto materiale ' +
+          'complessivo.',
+      },
+      {
+        condition:
+          'Un Brent che apre lunedì e chiude sotto gli 82 dollari: direbbe che nemmeno un impianto colpito e rivendicato produce un premio, dopo che quindici navi colpite dichiarate da ADNOC non l’avevano prodotto.',
+        triggered: false,
+        evidence:
+          'Apertura a 84,79 dollari con più 1,44% e ritorno verso gli 85 nel pomeriggio: il premio si è ' +
+          'formato e per la prima volta in una settimana non si è sgonfiato entro la seduta. La chiusura ' +
+          'non era ancora avvenuta al controllo, ma il prezzo si trova due o tre dollari sopra la soglia.',
+      },
+      {
+        condition:
+          'Un conteggio dei transiti a Hormuz sopra le otto navi al giorno insieme a un’accettazione americana delle condizioni iraniane: sarebbe la riapertura vera, e renderebbe irrilevante la via di fuga di cui parla questa analisi.',
+        triggered: false,
+        evidence:
+          'Non scattata su nessuna delle due gambe, e su entrambe è andata nella direzione opposta. Il ' +
+          'conteggio noto è di due navi venerdì, cioè un quarto della soglia; e l’Iran ripete che ' +
+          'l’accordo tecnico con l’Oman non equivale alla riapertura, che richiede concessioni ' +
+          'statunitensi su sanzioni e minacce militari. La via di fuga di cui parla l’analisi è più ' +
+          'rilevante di quando è stata scritta, non meno.',
+      },
+      {
+        condition:
+          'Prima di tutte queste, e senza aspettare la rottura: un Brent sopra gli 84 dollari con il biennale che risale sopra il 4,25%. È la regola dichiarata il 5 agosto e mai cambiata — oltre quella soglia il premio energetico smette di sostenere il metallo e ricomincia ad alimentare i rendimenti contro di lui.',
+        triggered: false,
+        evidence:
+          'Non scattata: circa 83,85 dollari sulla serie di questo archivio contro gli 84 richiesti, e ' +
+          '4,228% contro il 4,25%. Entrambe le gambe a ridosso e nessuna delle due oltre.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata. L’analisi sosteneva che colpire la costa saudita del Mar Rosso non aggiungesse un fronte ma togliesse l’alternativa a quello già aperto, perché i due colli di bottiglia sono in serie e non in parallelo: lunedì il mercato ha prezzato esattamente quello, con il Brent che sale sull’incertezza dello Stretto mentre il traffico resta a due navi al giorno. La quarta condizione è quella che dice di più, perché è andata nel verso opposto su entrambe le gambe — il conteggio è sceso invece di salire e l’Iran ha ribadito che l’accordo tecnico non è la riapertura. È la conferma più forte fra le quattro registrate oggi, e viene dal vincolo materiale invece che da un prezzo.',
+  },
+  {
     slug: 'cinquantamila-soldati-dichiarati-e-un-decimo-di-punto-nel-golfo',
     checkedAt: '2026-08-10T10:40:00+02:00',
     verdict: 'confermata',

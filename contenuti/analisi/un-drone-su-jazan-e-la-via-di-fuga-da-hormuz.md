@@ -26,8 +26,10 @@ fonti:
   - testata: "Ministero dell’Energia saudita"
   - testata: "Bureau of Labor Statistics"
     titolo: "Calendario delle diffusioni"
+esito: "confermata"
+controllata: "2026-08-10T15:30:00+02:00"
 sorgente: "src/app/core/data/articles/un-drone-su-jazan-e-la-via-di-fuga-da-hormuz.ts"
-impronta: "51ad99e98f6c360f"
+impronta: "d67d0e3783b63801"
 ---
 
 # Un drone su Jazan, e la via di fuga da Hormuz si restringe
@@ -140,6 +142,20 @@ La domanda che il primo prezzo può risolvere è precisa, e vale più della dire
 Impostazione su XAU/USD: rialzista, forza media, orizzonte medio.
 
 Il motore resta il rapporto occupazionale e l’attesa dell’indice dei prezzi di mercoledì, e niente di quanto è successo oggi lo tocca. Sul canale geopolitico però cambia la natura di quello che si osserva: per una settimana l’archivio ha contato dichiarazioni, oggi c’è un impianto da 400.000 barili al giorno che ha preso fuoco e qualcuno che dice di averlo colpito. La forza resta media e non sale perché il danno dichiarato è contenuto — incendio spento, nessun ferito — e perché l’attribuzione non è confermata da Riyadh: sono le due cose che, se cambiassero, cambierebbero anche il grado.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-10T15:30:00+02:00.
+
+Nessuna delle cinque condizioni è scattata. L’analisi sosteneva che colpire la costa saudita del Mar Rosso non aggiungesse un fronte ma togliesse l’alternativa a quello già aperto, perché i due colli di bottiglia sono in serie e non in parallelo: lunedì il mercato ha prezzato esattamente quello, con il Brent che sale sull’incertezza dello Stretto mentre il traffico resta a due navi al giorno. La quarta condizione è quella che dice di più, perché è andata nel verso opposto su entrambe le gambe — il conteggio è sceso invece di salire e l’Iran ha ribadito che l’accordo tecnico non è la riapertura. È la conferma più forte fra le quattro registrate oggi, e viene dal vincolo materiale invece che da un prezzo.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Una smentita saudita dell’attribuzione houthi, o una ricostruzione indipendente che attribuisca l’incendio a un guasto industriale: toglierebbe il fatto militare su cui questa lettura poggia. | no | Nessuna smentita e nessuna ricostruzione indipendente nelle quarantotto ore successive. L’attribuzione resta non confermata da Riyadh, che è la situazione di partenza e non un peggioramento: la condizione chiedeva una smentita, non l’assenza di conferma. |
+| Il ripristino dichiarato della piena capacità di Jazan, circa 400.000 barili al giorno, entro la settimana: direbbe che l’episodio non ha prodotto un danno operativo. | no | Nessuna dichiarazione di ripristino, e la settimana non è finita. Aramco non ha aggiornato la formula usata finora, quella delle interruzioni produttive senza impatto materiale complessivo. |
+| Un Brent che apre lunedì e chiude sotto gli 82 dollari: direbbe che nemmeno un impianto colpito e rivendicato produce un premio, dopo che quindici navi colpite dichiarate da ADNOC non l’avevano prodotto. | no | Apertura a 84,79 dollari con più 1,44% e ritorno verso gli 85 nel pomeriggio: il premio si è formato e per la prima volta in una settimana non si è sgonfiato entro la seduta. La chiusura non era ancora avvenuta al controllo, ma il prezzo si trova due o tre dollari sopra la soglia. |
+| Un conteggio dei transiti a Hormuz sopra le otto navi al giorno insieme a un’accettazione americana delle condizioni iraniane: sarebbe la riapertura vera, e renderebbe irrilevante la via di fuga di cui parla questa analisi. | no | Non scattata su nessuna delle due gambe, e su entrambe è andata nella direzione opposta. Il conteggio noto è di due navi venerdì, cioè un quarto della soglia; e l’Iran ripete che l’accordo tecnico con l’Oman non equivale alla riapertura, che richiede concessioni statunitensi su sanzioni e minacce militari. La via di fuga di cui parla l’analisi è più rilevante di quando è stata scritta, non meno. |
+| Prima di tutte queste, e senza aspettare la rottura: un Brent sopra gli 84 dollari con il biennale che risale sopra il 4,25%. È la regola dichiarata il 5 agosto e mai cambiata — oltre quella soglia il premio energetico smette di sostenere il metallo e ricomincia ad alimentare i rendimenti contro di lui. | no | Non scattata: circa 83,85 dollari sulla serie di questo archivio contro gli 84 richiesti, e 4,228% contro il 4,25%. Entrambe le gambe a ridosso e nessuna delle due oltre. |
 
 ## Fonti consultate
 

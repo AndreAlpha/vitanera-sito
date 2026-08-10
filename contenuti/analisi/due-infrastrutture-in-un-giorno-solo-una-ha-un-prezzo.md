@@ -26,8 +26,10 @@ fonti:
   - testata: "Associated Press"
   - testata: "Bureau of Labor Statistics"
     titolo: "Calendario delle diffusioni"
+esito: "confermata"
+controllata: "2026-08-10T15:30:00+02:00"
 sorgente: "src/app/core/data/articles/due-infrastrutture-in-un-giorno-solo-una-ha-un-prezzo.ts"
-impronta: "1063893c36fbe33a"
+impronta: "b5f37a20784a5d46"
 ---
 
 # Due infrastrutture in un giorno, e solo una ha un prezzo
@@ -126,6 +128,20 @@ La domanda arriva al primo prezzo già molto stretta, perché la settimana ne ha
 Impostazione su XAU/USD: rialzista, forza media, orizzonte medio.
 
 Il motore resta il rapporto occupazionale e l’attesa dell’indice dei prezzi di mercoledì. Sul canale geopolitico la giornata aggiunge una conferma e non un grado: due infrastrutture fisse colpite in poche ore dicono che il cambio di bersaglio osservato stamattina è un modo di operare e non un episodio. Ma il secondo obiettivo è un porto commerciale yemenita dentro una guerra civile che dura da undici anni, non un nodo dell’esportazione energetica: pesa sul conto delle vittime, non sul conto dei barili. La forza resta media perché il premio va aggiornato di quanto vale la cosa, non di quanto la cosa colpisce.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-10T15:30:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e la tesi ha retto nella parte che le stava più a cuore. L’analisi sosteneva che l’episodio letale della giornata — il porto di Mocha, con almeno sette morti — non avrebbe avuto un prezzo, mentre quello senza feriti, la raffineria di Jazan, ne aveva uno; e che il premio si aggiorna di quanto vale la cosa e non di quanto la cosa colpisce. Lunedì il greggio è salito, ma per l’incertezza sulla riapertura dello Stretto, che è il canale dell’offerta, e non per la seconda ondata su Mocha arrivata nel frattempo. La distinzione fra le due scale, che era il punto di quell’analisi, si è rivelata quella giusta.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un Brent che apre lunedì e chiude sotto gli 82 dollari: direbbe che due infrastrutture colpite in un giorno non producono alcun premio, e che il canale geopolitico è chiuso a prescindere dai fatti. | no | Il Brent ha aperto a 84,79 dollari con più 1,44% e nel pomeriggio è tornato verso gli 85. La chiusura di lunedì non era ancora avvenuta al momento del controllo, ma la condizione chiede entrambe le cose e il prezzo si trova due o tre dollari sopra la soglia: perché scattasse servirebbe un crollo del 3% nelle ore rimanenti. Registrata come non scattata sulla base del prezzo osservato, non della chiusura. |
+| Un attacco a un nodo dell’esportazione energetica — Yanbu, Ras Tanura, un terminale di carico — con danno operativo dichiarato da chi lo subisce: sposterebbe l’episodio nella categoria in cui questa lettura non lo mette. | no | Nessun attacco a Yanbu, a Ras Tanura o a un terminale di carico, e nessun danno operativo dichiarato da un operatore energetico. La seconda ondata houthi di domenica sera ha colpito di nuovo Mocha, cioè lo stesso porto commerciale che questa analisi collocava fuori dalla categoria rilevante per l’offerta. |
+| Una conferma saudita che l’incendio di Jazan sia stato causato dall’attacco rivendicato, con la capacità ferma oltre la settimana: renderebbe la giornata più grave di come è descritta qui. | no | Nessuna conferma saudita dell’attribuzione nelle quarantotto ore successive, e nessuna dichiarazione sulla capacità dell’impianto. L’attribuzione resta dove l’analisi l’aveva lasciata: un incendio confermato dal ministero dell’Energia e una rivendicazione houthi, senza il nesso fra i due. |
+| Un annuncio di tregua sullo Yemen, o un ritorno al tavolo negoziale sotto egida delle Nazioni Unite entro la settimana: toglierebbe la premessa nel modo più diretto. | no | Non scattata, e la settimana non è finita. Nella finestra è andata nella direzione opposta: una seconda ondata di missili e droni sullo stesso porto la sera di domenica, riferita da Reuters alle 20:18 UTC. Nessun annuncio di tregua e nessun ritorno al tavolo. |
+| Prima di tutte queste, e senza aspettare la rottura: un Brent sopra gli 84 dollari con il biennale che risale sopra il 4,25%. È la regola dichiarata il 5 agosto e mai cambiata — oltre quella soglia il premio energetico smette di sostenere il metallo e ricomincia ad alimentare i rendimenti contro di lui. | no | Non scattata per un margine minimo su entrambe le gambe: sulla serie di questo archivio il Brent vale circa 83,85 dollari e il biennale è a 4,228%, quindi quindici centesimi e due punti base sotto le rispettive tacche. È la lettura più vicina allo scatto da quando la regola esiste. |
 
 ## Fonti consultate
 
