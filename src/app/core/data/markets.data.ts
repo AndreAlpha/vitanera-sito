@@ -17,6 +17,15 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'ASTA 3 ANNI',
+    name: 'Collocamento di titoli del Tesoro statunitense a tre anni, 11 agosto',
+    value: '4,291%',
+    change: '58 mld $; circa mezzo punto base sotto il quotato pre-asta',
+    tone: 'bull',
+    icon: 'print',
+    note: 'Aggiudicarsi sotto il livello quotato pochi minuti prima significa che la domanda si è presentata più forte di quanto il mercato si aspettasse: non è un giudizio sul livello dei tassi, è un giudizio sulla capacità del Tesoro di piazzare la propria carta a quel livello. Il confronto con luglio rende il fatto meno banale: allora la stessa scadenza si era aggiudicata al 4,179% con un rapporto fra domanda e offerta di 2,60, quindi il rendimento è undici punti base più alto e a quel prezzo i compratori si sono comunque fatti trovare. Conta per la tesi tenuta qui da tre giorni — la tensione sui rendimenti non è una riprezzatura della Federal Reserve — perché tre anni coprono l’intero orizzonte in cui una decisione di settembre e le successive entrano nel prezzo, e su quell’orizzonte non è stato chiesto un premio. Quello che non dimostra va detto con la stessa chiarezza: un collocamento a tre anni non è un test della parte lunga della curva, che è dove la tensione di questa settimana si è concentrata. Le prove vere sono l’asta del decennale di mercoledì alle 19:00 e quella del trentennale di giovedì. Fino ad allora è un rischio rimosso, non una conferma ottenuta. Una nota sul metodo di questa scheda: la soglia dichiarata alle 19:25 era il 4,30% e il risultato è 4,291%, cioè nove millesimi sotto — terzo avvicinamento senza attraversamento nella stessa giornata, su tre livelli tutti tondi.',
+  },
+  {
     symbol: 'VENABLE',
     name: 'Cheryl Venable, presidente ad interim della Fed di Atlanta',
     value: 'l’inflazione dipende dal Medio Oriente',
@@ -244,11 +253,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'XAU/USD',
     name: 'Oro spot',
-    value: '≈ 4.385 $',
-    change: 'area 4.380-4.390 in serata; minimo di giornata ≈ 4.357, massimo 4.434-4.435',
+    value: '4.383 $',
+    change: 'chiusura del contratto americano, più 0,49%: terza seduta positiva di fila',
     tone: 'warn',
     icon: 'coin',
-    note: 'Giornata in cinque tempi. Nella sessione asiatica il metallo sale fino a 4.434,84 dollari, il più alto dal 5 giugno, con i futures statunitensi a 4.492,60; in mattinata europea restituisce quasi settanta dollari fino a 4.365,65, sotto i 4.372 che erano la prima condizione di invalidazione scritta qui alle 9:45; poi risale a 4.386,13 e infine a 4.393,69 nel pomeriggio, con Investing che lo quota nell’area 4.395. I 4.400 non sono stati presi in nessuno dei due tentativi. La differenza fra i due è però tutta nel contesto: alle 14:20 il metallo saliva contro un trentennale ai massimi da vent’anni e un Brent a 90 dollari, quindi era forza relativa; adesso sale mentre greggio e rendimenti rientrano, quindi è la correlazione normale che funziona. Il secondo movimento è più grande e vale meno del primo. In serata il metallo scivola nell’area 4.380-4.390, intorno a 4.385 secondo Kitco, senza reagire né alla diffusione sulle vendite di case né alle dichiarazioni della Fed di Atlanta. Restano ottantacinque dollari sopra i 4.300 che invaliderebbero la lettura di fondo. Attenzione alla serie: il contratto future scambia una sessantina di dollari sopra lo spot, e tutte le soglie qui sono sullo spot.',
+    note: 'Giornata in cinque tempi. Nella sessione asiatica il metallo sale fino a 4.434,84 dollari, il più alto dal 5 giugno, con i futures statunitensi a 4.492,60; in mattinata europea restituisce quasi settanta dollari fino a 4.365,65, sotto i 4.372 che erano la prima condizione di invalidazione scritta qui alle 9:45; poi risale a 4.386,13 e infine a 4.393,69 nel pomeriggio, con Investing che lo quota nell’area 4.395. I 4.400 non sono stati presi in nessuno dei due tentativi. La differenza fra i due è però tutta nel contesto: alle 14:20 il metallo saliva contro un trentennale ai massimi da vent’anni e un Brent a 90 dollari, quindi era forza relativa; adesso sale mentre greggio e rendimenti rientrano, quindi è la correlazione normale che funziona. Il secondo movimento è più grande e vale meno del primo. In serata il metallo scivola nell’area 4.380-4.390, intorno a 4.385 secondo Kitco, senza reagire né alla diffusione sulle vendite di case né alle dichiarazioni della Fed di Atlanta; il contratto americano chiude poi a 4.383 dollari con più 0,49%, terza seduta positiva consecutiva, mentre lo spot nelle rilevazioni precedenti stava intorno a 4.394. I 4.400 non sono stati presi in nessuno dei tre tentativi della giornata: è un livello tondo, cioè quello dove si accumulano gli ordini in attesa, e questo archivio ha smesso di considerarlo una soglia informativa. Restano ottantatré dollari sopra i 4.300 che invaliderebbero la lettura di fondo. Attenzione alla serie: il contratto future scambia una sessantina di dollari sopra lo spot, e tutte le soglie qui sono sullo spot.',
   },
   {
     symbol: 'SUSSIDI',
@@ -362,11 +371,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'US10Y',
     name: 'Treasury a 10 anni',
-    value: '≈ 4,686%',
-    change: 'alle 16:50, dopo un massimo di 4,739%: rientra sotto la soglia del 4,70%',
+    value: '≈ 4,69%',
+    change: 'dopo l’asta a tre anni, in rientro dal 4,72-4,73% trattato in giornata',
     tone: 'bull',
     icon: 'arrow-down',
-    note: 'Salita a tappe e poi il ritorno: 4,637% nella mattinata di lunedì, 4,664%, circa 4,70% con un massimo di 4,703% in serata, 4,712% nella sessione asiatica dell’11 agosto, 4,721% in mattinata europea, un massimo di 4,739% nel primo pomeriggio, e alle 16:50 il rientro a circa 4,686%. Il rendimento ha quindi passato un giorno intero sopra il 4,70% e lo ha restituito senza che uscisse alcun dato: la salita non aveva un fatto sotto, e la discesa nemmeno. Quello che il decennale non ha fatto conta più di quello che ha fatto: in tutto il tragitto non ha mai portato con sé il biennale, che nella stessa finestra è passato da 4,239% a circa 4,23%, e non ha mai portato giù l’oro, risalito a 4.393,69. La condizione dichiarata chiedeva il 4,75% con l’oro sotto i 4.350, e nessuna delle due gambe è arrivata. Le prove vere sono le aste: il triennale oggi alle 19:00, il decennale mercoledì alla stessa ora, il trentennale giovedì.',
+    note: 'Salita a tappe e poi il ritorno: 4,637% nella mattinata di lunedì, 4,664%, circa 4,70% con un massimo di 4,703% in serata, 4,712% nella sessione asiatica dell’11 agosto, 4,721% in mattinata europea, un massimo di 4,739% nel primo pomeriggio, e alle 16:50 il rientro a circa 4,686%. Il rendimento ha quindi passato un giorno intero sopra il 4,70% e lo ha restituito senza che uscisse alcun dato: la salita non aveva un fatto sotto, e la discesa nemmeno. Quello che il decennale non ha fatto conta più di quello che ha fatto: in tutto il tragitto non ha mai portato con sé il biennale, che nella stessa finestra è passato da 4,239% a circa 4,23%, e non ha mai portato giù l’oro, risalito a 4.393,69. La condizione dichiarata chiedeva il 4,75% con l’oro sotto i 4.350, e nessuna delle due gambe è arrivata. Dopo l’asta a tre anni delle 19:00 il rendimento rientra nell’area del 4,69%: coerente con una buona ricezione dell’offerta, ma un collocamento a tre anni non è un test di questa scadenza. Le prove vere restano le altre due aste, il decennale mercoledì alle 19:00 e il trentennale giovedì. Una cautela sulle cifre: sul massimo di giornata le fonti non concordano sull’ultima cifra — 4,736% e 4,739% in due rilevazioni, con un’agenzia che arrotonda a circa 4,75% — e le condizioni scritte usano il 4,739%, cioè il più alto fra quelli a tre decimali.',
   },
   {
     symbol: 'DXY',
@@ -380,8 +389,8 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: '87,22 $',
-    change: 'meno 0,6% dal massimo di 90,03; circa 85,8 sulla serie di questo archivio',
+    value: '87,8-87,9 $',
+    change: 'ben sotto il massimo di 90,03; circa 86,4 sulla serie di questo archivio',
     tone: 'bull',
     icon: 'arrow-down',
     note: 'La giornata ha una forma netta: 89,12 dollari in mattinata europea, poi 89,81 con il WTI a 84,28 — massimi dal 31 luglio — poi il test di quota 90 con un massimo di 90,03 e il WTI a 84,61, e da lì il rientro a 87,51 e infine a 87,22 nel pomeriggio, con il WTI a 81,77. Reuters attribuisce la discesa a colloqui fra Oman e Iran descritti come in fase avanzata, precisando che un accordo sostanziale non c’è e che lo Stretto non ha riaperto: è l’ottavo annuncio di distensione in una settimana ed è il primo a cui il prezzo paga davvero, quasi tre punti percentuali contro l’uno o meno dei sette precedenti. Nel primo pomeriggio il fatto sembrava andare contro la lettura tenuta qui — che il mercato avesse smesso di pagare per la distensione annunciata — e una giornata sola non bastava a separarlo dall’ipotesi che fosse solo il fallimento di un test a novanta dollari. La seconda osservazione della stessa giornata lo separa: nel Bab el-Mandeb tre membri di un equipaggio sono stati uccisi, primo attacco mortale della fase contro una nave, e la reazione del greggio a quel fatto è indistinguibile da zero. Il mercato non è desensibilizzato alle notizie in generale: è desensibilizzato al danno e non alla speranza, perché il danno è marginale rispetto a un vincolo già estremo mentre un accordo lo rimuoverebbe in un colpo solo. Il percorso della fase resta lo stesso e va tenuto insieme: apertura di lunedì a 84,79 dollari, 86,11 nel tardo pomeriggio, 87,40-87,72 in serata a seconda della fonte, 88,09 nella sessione asiatica. I due motori che l’avevano prodotto sono ancora lì — le richieste di risarcimento fra Stati Uniti e Iran diventate due e simmetriche, e l’attacco con droni che ha ritardato la ripartenza della raffineria Aramco di Jazan — e nessuno dei due è stato tolto da quanto detto oggi al tavolo dell’Oman. Serve la conversione fra le serie: queste quotazioni implicano una chiusura di venerdì intorno a 83,55, mentre la serie usata qui dal 5 agosto ha chiuso a 82,21, ed è su quella che sono fissate le tacche degli 80, 82 e 84 dollari. Applicando la stessa variazione il massimo vale circa 88,6 e il rientro circa 85,8: quasi due dollari sopra la tacca anche nel punto più basso. Resta caduta una gamba sola della regola a due gambe — l’altra chiede un biennale sopra il 4,25%, e nel pomeriggio il biennale è sceso ancora, a circa 4,23%. Una precisazione sulla regola: non è del 5 agosto, come questo archivio ha scritto per giorni, ma del 9, quando è stata formulata in «Due infrastrutture in un giorno»; il 5 agosto era stata dichiarata la sola soglia del 4,25%.',

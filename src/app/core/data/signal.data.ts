@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-11T19:25:00+02:00',
+  updatedAt: '2026-08-11T20:10:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,16 +187,17 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'La direzione era salita nel pomeriggio, e non per l’oro: era salita perché nella stessa finestra ' +
-        'avevano smesso tutte e tre le cose che gli spingevano contro. Il Brent è fra 87 e 88 dollari dopo ' +
-        'un massimo di 90,03, il decennale è rientrato a 4,686% dopo aver toccato 4,739% — quindi sotto la ' +
-        'soglia del 4,70% — e la probabilità di un rialzo a settembre è tornata al 48% dal 52%, con il ' +
-        'biennale a circa 4,23%. Il Dollar Index resta a 99,81. In serata nulla di tutto questo si è ' +
-        'mosso: il metallo scivola dai 4.393,69 delle 17:00 all’area 4.380-4.390, e i 4.400 restano non ' +
-        'presi. La forza resta bassa perché il motore di tutto è il rientro del greggio, e il rientro del ' +
-        'greggio poggia su un annuncio senza accordo: l’ottavo in una settimana, nessuno dei precedenti ha ' +
-        'mai spostato una nave, e stasera l’Iran ha ribadito che lo Stretto resta chiuso finché non ' +
-        'ottiene la fine della guerra e lo sblocco dei propri asset.',
+        'L’asta a tre anni ha tolto un rischio invece di aggiungere una spinta, ed è la differenza che ' +
+        'tiene ferme sia la direzione sia la forza. Il Tesoro ha collocato 58 miliardi al 4,291%, circa ' +
+        'mezzo punto base sotto il quotato pre-asta e undici punti base sopra l’aggiudicazione di luglio: ' +
+        'sulla scadenza che prezza la Federal Reserve la domanda si è presentata senza chiedere un premio. ' +
+        'Dopo l’aggiudicazione il decennale è rientrato nell’area del 4,69% dopo aver trattato sopra il ' +
+        '4,72-4,73%. L’oro chiude la terza seduta positiva consecutiva a 4.383 dollari sul contratto ' +
+        'americano, più 0,49%, con lo spot intorno a 4.394 nelle rilevazioni precedenti; i 4.400 restano ' +
+        'non presi per la terza volta in una giornata. Il Brent è fra 87,8 e 87,9 dollari, ben sotto il ' +
+        'picco di 90,03, e il Dollar Index è stabile. Quello che manca è la prova sulla parte lunga della ' +
+        'curva, dove la tensione si è concentrata: arriva mercoledì e giovedì con le aste del decennale e ' +
+        'del trentennale.',
       invalidation:
         'Un Brent che riconquista i 90 dollari sulle serie delle agenzie — circa 88,6 su quella usata qui — entro la chiusura di mercoledì, o un decennale che torna sopra il 4,70% con l’oro sotto i 4.350: toglierebbero il motore a questa direzione. Nell’altro verso, un oro sopra i 4.435 dollari entro la stessa scadenza direbbe che la forza bassa era troppo prudente. Un oro che chiude mercoledì sotto i 4.357, il minimo di oggi, direbbe che il recupero era un rimbalzo dentro la seduta.',
     },
@@ -216,8 +217,12 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         '11.000, e una presa di posizione restrittiva sull’inflazione dalla presidente ad interim della ' +
         'Fed di Atlanta, che quest’anno non vota. Il biennale non si è mosso, quindi la direzione non si ' +
         'muove: quando il saldo delle notizie è una questione di giudizio e il numero no, decide il ' +
-        'numero. Da registrare per il seguito: la stessa dichiarazione mette il Medio Oriente dentro la ' +
-        'funzione di reazione della Fed, ed è la seconda banca centrale in due giorni a farlo.',
+        'numero. Alle 19:00 è arrivata la conferma più diretta disponibile: l’asta a tre anni si è ' +
+        'aggiudicata al 4,291%, sotto il quotato pre-asta e undici punti base sopra quella di luglio, ' +
+        'quindi sull’intero orizzonte in cui una decisione di settembre entra nel prezzo il mercato ha ' +
+        'comprato senza chiedere un premio. Da registrare per il seguito: la dichiarazione della Fed di ' +
+        'Atlanta mette il Medio Oriente dentro la funzione di reazione della banca centrale, ed è la ' +
+        'seconda banca centrale in due giorni a farlo.',
       invalidation:
         'Un biennale sopra il 4,25%, che è la misura scelta per sostituire una soglia che oscilla: sarebbe la riprezzatura vera e porterebbe la direzione sotto il neutrale. Nell’altro verso, una probabilità di rialzo a settembre che dopo l’indice dei prezzi di mercoledì resta sotto il 50% per due giorni consecutivi rimetterebbe in piedi la gamba caduta. Oppure un Brent che rientra sotto gli 84 dollari sulla serie di questo archivio insieme a un conteggio dei transiti verificabile in aumento.',
     },
@@ -246,41 +251,40 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'La Fed di Atlanta mette Hormuz nel percorso dei prezzi, e l’Iran ripete le condizioni',
+  headline: 'L’asta a tre anni passa, e la terza soglia sfiorata era di nuovo un numero tondo',
   stance:
-    'La presidente ad interim della Fed di Atlanta dichiara che il percorso futuro dell’inflazione ' +
-    'dipenderà molto dagli sviluppi in Medio Oriente; nella stessa giornata l’Iran ribadisce che lo ' +
-    'Stretto resta chiuso finché non ottiene la fine della guerra e lo sblocco dei propri asset. È la ' +
-    'seconda banca centrale in due giorni a nominare quel quadrante, ma la voce è la più leggera fra ' +
-    'quelle contate qui: è ad interim e quest’anno non vota. Accanto, due numeri che non hanno mosso ' +
-    'niente — vendite di case esistenti in calo per il secondo mese a 4,06 milioni annualizzati, appena ' +
-    'sopra il consenso, e occupazione privata settimanale a più 8.300 da più 11.000. L’oro sta fra 4.380 e ' +
-    '4.390 dollari, il Dollar Index a 99,81, la probabilità di settembre al 48%. La direzione sui giorni ' +
-    'non si muove perché non si è mosso il biennale, che è la misura scelta questo pomeriggio. Domani alle ' +
+    'Il Tesoro colloca 58 miliardi di titoli a tre anni al 4,291%, mezzo punto base sotto il quotato ' +
+    'pre-asta e undici sopra l’asta di luglio: sulla scadenza che prezza la Federal Reserve la domanda si ' +
+    'è presentata senza chiedere un premio, ed è la conferma più diretta della tesi tenuta qui da tre ' +
+    'giorni. Il decennale rientra nell’area del 4,69%, l’oro chiude la terza seduta positiva a 4.383 ' +
+    'dollari sul contratto americano. Resta però un rischio rimosso e non una spinta arrivata: la prova ' +
+    'sulla parte lunga della curva è mercoledì e giovedì, con le aste del decennale e del trentennale. E ' +
+    'una nota sul metodo di questa scheda: la soglia dichiarata era il 4,30% e il risultato è 4,291%, ' +
+    'terzo avvicinamento senza attraversamento in una giornata su tre livelli tutti tondi. Domani alle ' +
     '14:30 l’indice dei prezzi.',
   favours: [
-    'Applicare una regola scritta prima proprio nella giornata in cui il saldo delle notizie è discutibile: due sono favorevoli all’oro, una contraria, e il biennale non si è mosso',
-    'Distinguere una dichiarazione da un voto anche quando dice quello che si voleva sentire: la Fed di Atlanta conferma la catena descritta qui, ma non vota',
-    'Contare i transiti a Hormuz anche come dato di politica monetaria: se la funzione di reazione della Fed contiene lo Stretto, quel conteggio non è più solo un termometro energetico',
+    'Distinguere un rischio rimosso da una spinta arrivata: un’asta andata bene toglie una possibilità negativa, non aggiunge una ragione per salire',
+    'Derivare le soglie da livelli che il mercato ha già stabilito invece di arrotondarle: le condizioni scritte stasera sono il massimo del decennale, la rilevazione del biennale e il minimo dell’oro',
+    'Aspettare le aste del decennale e del trentennale prima di dire che la tensione sulla parte lunga è rientrata: tre anni non sono un test di trenta',
   ],
   avoid: [
-    'Sommare la dichiarazione di oggi al verbale della Banca del Giappone come se fossero la stessa cosa: uno è un documento del comitato che decide, l’altra è una voce senza diritto di voto',
-    'Leggere un dato immobiliare debole come un argomento nuovo per allentare: le vendite scendono ma restano sopra il consenso, e il prezzo mediano sale del 2% annuo',
-    'Stimare il risultato di un’asta che non è ancora stato pubblicato: al controllo mancano rendimento di aggiudicazione, rapporto domanda-offerta e ripartizione degli acquirenti',
+    'Attribuire all’asta a tre anni il rientro del decennale: è coerente ma non dimostrato, e la scadenza collocata non è quella dove la tensione si è concentrata',
+    'Leggere il ritracciamento del greggio come un problema risolto: è un premio di rischio che scende, non un vincolo che si allenta, e i transiti non si sono mossi',
+    'Scrivere la prossima soglia su un numero tondo: è il posto dove si accumulano gli ordini, quindi quello dove il livello viene sfiorato più spesso di quanto venga superato',
   ],
   confirming: [
-    'Le vendite di case esistenti scendono per il secondo mese di fila a 4,06 milioni annualizzati: la parte dell’economia più sensibile ai tassi continua a raffreddarsi',
-    'L’occupazione privata settimanale rallenta a più 8.300 da più 11.000, in linea con il rapporto del 7 agosto',
-    'La probabilità di un rialzo a settembre resta al 48% e il biennale a circa 4,23%, tredici millesimi sotto la soglia del 4,25%',
-    'Il Dollar Index resta a 99,81 per la quinta rilevazione consecutiva, sotto quota 100',
-    'Il decennale è rientrato a 4,686% dopo un massimo di 4,739%: sotto la soglia del 4,70%',
+    'L’asta a tre anni si aggiudica al 4,291%, sotto il quotato pre-asta: domanda migliore di quanto il mercato prezzasse pochi minuti prima',
+    'Il decennale rientra nell’area del 4,69% dopo aver trattato sopra il 4,72-4,73%: torna sotto la soglia del 4,70%',
+    'L’oro chiude la terza seduta positiva consecutiva a 4.383 dollari sul contratto americano, più 0,49%',
+    'Il Brent resta fra 87,8 e 87,9 dollari, ben sotto il picco di 90,03, e il Dollar Index è stabile',
+    'Il biennale resta a circa 4,23%: la scadenza che prezza la Fed non si muove da cinque giorni',
   ],
   contradicting: [
-    'Una nuova voce della Fed dichiara che l’inflazione resta troppo alta, e mette il Medio Oriente dentro il percorso dei prezzi',
-    'L’Iran ribadisce ufficialmente le condizioni per riaprire lo Stretto, e la fine della guerra non è una formula che un tavolo tecnico chiude',
-    'Il prezzo mediano delle case sale del 2% annuo mentre le transazioni scendono: attività in meno senza inflazione in meno',
-    'Il Brent resta fra 87 e 88 dollari, quindi ampiamente sopra la tacca degli 84 sulla serie di questo archivio',
-    'La media dei transiti a Hormuz resta a circa undici al giorno con esportazioni nette a 3 milioni di barili: il vincolo materiale non si è allentato',
+    'I 4.400 dollari non sono stati presi per la terza volta in una giornata: la barriera regge e il massimo di 4.434-4.435 resta lontano',
+    'Il rendimento di aggiudicazione è undici punti base sopra quello di luglio: la riprezzatura dei tassi è dentro il prezzo, non fuori',
+    'L’asta a tre anni non dice nulla sulla parte lunga: il trentennale ha superato il 5,20% e il decennale ha toccato circa il 4,75% questa settimana',
+    'Su Hormuz non c’è alcun accordo, il traffico resta drasticamente ridotto e nel Bab el-Mandeb sono morti tre membri dell’equipaggio di una nave egiziana',
+    'La media dei transiti resta a circa undici al giorno con esportazioni nette a 3 milioni di barili: il vincolo materiale non si è allentato',
     'L’indice dei prezzi di mercoledì alle 14:30 può cancellare in mezz’ora tutto quello che regge questa lettura',
   ],
   constraints: [
@@ -424,8 +428,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 85.8,
-      display: '≈ 85,8 $',
+      now: 86.4,
+      display: '≈ 86,4 $',
       marks: [
         {
           at: 82,
@@ -456,8 +460,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.686,
-      display: '≈ 4,686%',
+      now: 4.69,
+      display: '≈ 4,69%',
       marks: [
         {
           at: 4.68,
@@ -475,8 +479,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4385,
-      display: '≈ 4.385 $',
+      now: 4383,
+      display: '4.383 $',
       marks: [
         {
           at: 4300,
@@ -488,15 +492,15 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 4400,
           display: '4.400 $',
           kind: 'invalida',
-          note: 'la soglia dichiarata alle 10:45, sfiorata due volte nella stessa giornata e mai presa: 4.386,13 alle 14:20 e 4.393,69 alle 17:00. Chiedeva però anche un decennale sopra il 4,70%, che nel pomeriggio è sceso: la prova non è più eseguibile e il registro degli esiti spiega perché conta',
+          note: 'la soglia dichiarata alle 10:45, avvicinata tre volte nella stessa giornata e mai presa: 4.386,13 alle 14:20, 4.393,69 alle 17:00, e una chiusura del contratto americano a 4.383. È il livello tondo su cui si accumulano gli ordini, e questo archivio ha smesso di considerarla una soglia informativa: le condizioni nuove sono derivate dai livelli che il mercato ha già stabilito',
         },
       ],
     },
   ],
   sources: [
+    'nove-millesimi-sotto-la-soglia-e-la-soglia-era-tonda',
     'hormuz-entra-nel-percorso-dei-prezzi-e-chi-lo-dice-non-vota',
     'tre-morti-su-una-nave-e-il-prezzo-va-nell-altro-verso',
-    'tre-punti-base-sul-trentennale-trecento-dollari-sull-oro',
   ],
 };
 
