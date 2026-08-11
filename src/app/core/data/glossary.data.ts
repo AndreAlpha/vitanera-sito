@@ -118,6 +118,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     why: 'Può mantenere elevati i rendimenti a lunga scadenza anche quando le aspettative sui tassi a breve scendono.',
   },
   {
+    term: 'Premio a termine',
+    letter: 'P',
+    definition:
+      'La parte di un rendimento a lunga scadenza che non si spiega con i tassi a breve attesi nel frattempo: è il compenso richiesto per impegnare denaro per vent’anni invece di rinnovare un titolo breve, e comprende l’inflazione media attesa lungo tutto quel periodo.',
+    why: 'È il modo per capire che cosa sta salendo davvero quando salgono i rendimenti lunghi. Se sale anche la scadenza a due anni, il mercato sta prezzando una banca centrale più restrittiva; se la scadenza corta sta ferma e si muove solo quella lunga, sta prezzando inflazione. Per l’oro la differenza è decisiva, perché il metallo è penalizzato dal rendimento reale e non da quello nominale: un premio a termine che cresce perché cresce l’inflazione attesa non gli toglie niente.',
+    related: ['Curva dei rendimenti', 'Rendimento reale', 'Aspettative di inflazione'],
+  },
+  {
     term: 'Rifinanziamento trimestrale',
     letter: 'R',
     definition:

@@ -28,6 +28,73 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'settanta-dollari-indietro-e-la-condizione-scatta',
+    checkedAt: '2026-08-11T14:15:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un oro che recupera i 4.400 dollari entro la chiusura di mercoledì con il decennale ancora sopra il 4,70%: direbbe che la forza relativa non è esaurita e che questo ritracciamento era tecnico, e renderebbe sbagliato l’abbassamento della direzione.',
+        triggered: false,
+        evidence:
+          'Mancata per quattordici dollari, ed è il numero più interessante del controllo. Dopo il minimo ' +
+          'relativo nell’area dei 4.370 il metallo è risalito a 4.371,92 e poi a 4.386,13: il decennale ' +
+          'sta sopra il 4,70% come la condizione richiede, ma la soglia sull’oro non è stata toccata. Il ' +
+          'termine dichiarato — la chiusura di mercoledì — non è ancora arrivato, quindi la condizione ' +
+          'resta aperta e questa registrazione vale per quello che si osserva ora.',
+      },
+      {
+        condition:
+          'Un oro sotto i 4.300 dollari con il Dollar Index sopra 100: è il deterioramento vero che questo archivio segue da sei giorni, e nessuna delle due gambe è oggi presente.',
+        triggered: false,
+        evidence:
+          'Nessuna delle due gambe, e a distanza. L’oro è a 4.386,13, ottantasei dollari sopra la soglia e ' +
+          'più alto di quando la condizione è stata scritta; il Dollar Index è fermo intorno a 99,8, sotto ' +
+          'quota 100 per la terza rilevazione consecutiva.',
+      },
+      {
+        condition:
+          'Un decennale sopra il 4,75% con l’oro sotto i 4.350: sarebbe la trasmissione dello shock energetico ai tassi e poi al metallo, cioè il canale che oggi si vede per la prima volta ma con ampiezze troppo piccole per chiamarlo così.',
+        triggered: false,
+        evidence:
+          'Il decennale ha toccato 4,736% in seduta — il valore più alto della fase, un punto e mezzo base ' +
+          'sopra la rilevazione delle 10:45 — per poi rientrare a circa 4,71%. Resta quindi sotto il 4,75% ' +
+          'in entrambe le rilevazioni, e l’oro non è mai sceso sotto i 4.350: il minimo relativo è ' +
+          'nell’area dei 4.370. La congiunzione tiene per la quinta volta in tre giorni.',
+      },
+      {
+        condition:
+          'Un Brent che rientra sotto gli 84 dollari sulla serie di questo archivio, cioè sotto gli 85,4 su quella citata dalle agenzie: toglierebbe il motore a tutta la catena descritta qui.',
+        triggered: false,
+        evidence:
+          'Il greggio è andato nella direzione opposta: massimo a 90,03 dollari con il WTI a 84,61, poi il ' +
+          'rientro a 87,51 e 82,09 sui segnali dai colloqui Oman-Iran. Anche il valore più basso della ' +
+          'giornata vale circa 86,1 sulla serie di questo archivio, quindi oltre due dollari sopra la tacca ' +
+          'degli 84.',
+      },
+      {
+        condition:
+          'Un indice dei prezzi mercoledì 12 agosto sopra il 3,4% annuo sul dato principale, o sopra più 0,2% mensile su quello di fondo: amplificherebbe esattamente il movimento che comincia oggi, e questa lettura risulterebbe troppo prudente invece che troppo generosa.',
+        triggered: false,
+        evidence:
+          'Non giudicabile: l’ufficio di statistica del lavoro conferma la diffusione per mercoledì 12 ' +
+          'agosto alle 14:30 italiane, e al momento del controllo il dato non è pubblicato.',
+      },
+    ],
+    what:
+      'Nessuna delle cinque condizioni è scattata, e la lettura che dichiarava neutrale con forza bassa ha ' +
+      'retto la giornata. Il metallo è a 4.386,13 dollari, venti sopra il valore su cui l’analisi era stata ' +
+      'scritta, dopo aver attraversato un trentennale vicino al 5,28% e un Brent che ha toccato i 90 ' +
+      'dollari: la parte dell’analisi che rifiutava di scendere sotto il neutrale su un ritracciamento di ' +
+      'settanta dollari è quella che il mercato ha premiato. Due precisazioni servono a non far dire al ' +
+      'verdetto più di quello che vale. La prima è che due condizioni su cinque hanno una scadenza ancora ' +
+      'aperta — il recupero dei 4.400 corre fino alla chiusura di mercoledì, l’indice dei prezzi esce ' +
+      'mercoledì alle 14:30 — e «confermata» qui significa non scattata a oggi, non chiusa per sempre. La ' +
+      'seconda è che la condizione più vicina a scattare era quella che avrebbe smentito l’analisi dal lato ' +
+      'del rialzo: i 4.400 sono mancati per quattordici dollari. La lettura ha avuto ragione, ma sul filo, e ' +
+      'dal lato in cui era stata prudente.',
+  },
+  {
     slug: 'l-oro-rompe-i-4400-con-il-dollaro-in-salita',
     checkedAt: '2026-08-11T10:40:00+02:00',
     verdict: 'parziale',

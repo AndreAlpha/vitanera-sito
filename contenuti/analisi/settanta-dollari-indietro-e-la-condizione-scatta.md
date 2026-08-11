@@ -28,8 +28,10 @@ fonti:
     titolo: "Verbale della riunione del 29 luglio"
   - testata: "Bureau of Labor Statistics"
     titolo: "Calendario delle diffusioni"
+esito: "confermata"
+controllata: "2026-08-11T14:15:00+02:00"
 sorgente: "src/app/core/data/articles/settanta-dollari-indietro-e-la-condizione-scatta.ts"
-impronta: "a6444ce8be05622e"
+impronta: "5ca69e1352f95675"
 ---
 
 # Settanta dollari indietro, e la condizione scatta
@@ -134,6 +136,20 @@ Arriva con il greggio sul massimo della fase, il decennale sopra il 4,70% e il m
 Impostazione su XAU/USD: neutrale, forza bassa, orizzonte breve.
 
 Un’ora fa questa scheda diceva rialzista, e la prima delle cinque condizioni che avrebbe dovuto smontarla è scattata: l’oro è rientrato sotto i 4.372 dollari, a 4.365,65, dopo un massimo di 4.434,84. La direzione torna quindi a neutrale, che è dove stava prima del breakout, e ci torna per la ragione dichiarata in anticipo e non per una rilettura a posteriori. Nella stessa finestra il Brent sale a 89,12 dollari, nuovo massimo della fase, e il decennale a circa 4,721%, cioè non più intorno alla soglia del 4,70% ma sopra. Il Dollar Index invece è fermo a 99,83: il vento contrario arriva da rendimenti e greggio, non dal cambio. Non scende sotto il neutrale perché nessuna delle condizioni di deterioramento vero si è completata — l’oro è sessantacinque dollari sopra i 4.300, il dollaro è sotto quota 100, il decennale sotto il 4,75% — e perché Reuters attribuisce il calo a prese di profitto e all’attesa del dato, non ai tassi.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-11T14:15:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e la lettura che dichiarava neutrale con forza bassa ha retto la giornata. Il metallo è a 4.386,13 dollari, venti sopra il valore su cui l’analisi era stata scritta, dopo aver attraversato un trentennale vicino al 5,28% e un Brent che ha toccato i 90 dollari: la parte dell’analisi che rifiutava di scendere sotto il neutrale su un ritracciamento di settanta dollari è quella che il mercato ha premiato. Due precisazioni servono a non far dire al verdetto più di quello che vale. La prima è che due condizioni su cinque hanno una scadenza ancora aperta — il recupero dei 4.400 corre fino alla chiusura di mercoledì, l’indice dei prezzi esce mercoledì alle 14:30 — e «confermata» qui significa non scattata a oggi, non chiusa per sempre. La seconda è che la condizione più vicina a scattare era quella che avrebbe smentito l’analisi dal lato del rialzo: i 4.400 sono mancati per quattordici dollari. La lettura ha avuto ragione, ma sul filo, e dal lato in cui era stata prudente.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un oro che recupera i 4.400 dollari entro la chiusura di mercoledì con il decennale ancora sopra il 4,70%: direbbe che la forza relativa non è esaurita e che questo ritracciamento era tecnico, e renderebbe sbagliato l’abbassamento della direzione. | no | Mancata per quattordici dollari, ed è il numero più interessante del controllo. Dopo il minimo relativo nell’area dei 4.370 il metallo è risalito a 4.371,92 e poi a 4.386,13: il decennale sta sopra il 4,70% come la condizione richiede, ma la soglia sull’oro non è stata toccata. Il termine dichiarato — la chiusura di mercoledì — non è ancora arrivato, quindi la condizione resta aperta e questa registrazione vale per quello che si osserva ora. |
+| Un oro sotto i 4.300 dollari con il Dollar Index sopra 100: è il deterioramento vero che questo archivio segue da sei giorni, e nessuna delle due gambe è oggi presente. | no | Nessuna delle due gambe, e a distanza. L’oro è a 4.386,13, ottantasei dollari sopra la soglia e più alto di quando la condizione è stata scritta; il Dollar Index è fermo intorno a 99,8, sotto quota 100 per la terza rilevazione consecutiva. |
+| Un decennale sopra il 4,75% con l’oro sotto i 4.350: sarebbe la trasmissione dello shock energetico ai tassi e poi al metallo, cioè il canale che oggi si vede per la prima volta ma con ampiezze troppo piccole per chiamarlo così. | no | Il decennale ha toccato 4,736% in seduta — il valore più alto della fase, un punto e mezzo base sopra la rilevazione delle 10:45 — per poi rientrare a circa 4,71%. Resta quindi sotto il 4,75% in entrambe le rilevazioni, e l’oro non è mai sceso sotto i 4.350: il minimo relativo è nell’area dei 4.370. La congiunzione tiene per la quinta volta in tre giorni. |
+| Un Brent che rientra sotto gli 84 dollari sulla serie di questo archivio, cioè sotto gli 85,4 su quella citata dalle agenzie: toglierebbe il motore a tutta la catena descritta qui. | no | Il greggio è andato nella direzione opposta: massimo a 90,03 dollari con il WTI a 84,61, poi il rientro a 87,51 e 82,09 sui segnali dai colloqui Oman-Iran. Anche il valore più basso della giornata vale circa 86,1 sulla serie di questo archivio, quindi oltre due dollari sopra la tacca degli 84. |
+| Un indice dei prezzi mercoledì 12 agosto sopra il 3,4% annuo sul dato principale, o sopra più 0,2% mensile su quello di fondo: amplificherebbe esattamente il movimento che comincia oggi, e questa lettura risulterebbe troppo prudente invece che troppo generosa. | no | Non giudicabile: l’ufficio di statistica del lavoro conferma la diffusione per mercoledì 12 agosto alle 14:30 italiane, e al momento del controllo il dato non è pubblicato. |
 
 ## Fonti consultate
 

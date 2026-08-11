@@ -11,7 +11,7 @@
  */
 import { Cadence, Release, Stage } from '../models/calendar.model';
 
-export const CALENDAR_GENERATED_AT = '2026-08-11T08:54Z';
+export const CALENDAR_GENERATED_AT = '2026-08-11T12:23Z';
 
 type Row = readonly [
   at: string,
@@ -408,7 +408,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
     next: {
       at: '2026-08-13T12:30Z',
       period: 'settimana al 8 agosto 2026',
-      forecast: 201,
+      forecast: 202,
       actual: null,
       previous: 199,
     },
@@ -2468,7 +2468,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
     next: {
       at: '2026-08-14T12:30Z',
       period: 'luglio 2026',
-      forecast: 0.2,
+      forecast: 0.1,
       actual: null,
       previous: 0.2,
     },
