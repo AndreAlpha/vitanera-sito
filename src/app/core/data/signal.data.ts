@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-11T17:15:00+02:00',
+  updatedAt: '2026-08-11T19:25:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,15 +187,16 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'La direzione sale, e non per l’oro: sale perché nella stessa finestra hanno smesso tutte e tre le ' +
-        'cose che gli spingevano contro. Il Brent è a 87,22 dollari dopo un massimo di 90,03, il decennale ' +
-        'è rientrato a 4,686% dopo aver toccato 4,739% — quindi sotto la soglia del 4,70% — e la ' +
-        'probabilità di un rialzo a settembre è tornata al 48% dal 52%, con il biennale che scende a circa ' +
-        '4,23%. Il Dollar Index resta a 99,81. Il metallo è a 4.393,69 e i 4.400 non li ha presi: la prova ' +
-        'richiesta stamattina non è però nemmeno più eseguibile, perché chiedeva quel recupero con il ' +
-        'decennale ancora sopra il 4,70%. La forza resta bassa perché il motore di tutto è il rientro del ' +
-        'greggio, e il rientro del greggio poggia su un annuncio senza accordo: l’ottavo in una settimana, ' +
-        'e nessuno dei precedenti ha mai spostato una nave.',
+        'La direzione era salita nel pomeriggio, e non per l’oro: era salita perché nella stessa finestra ' +
+        'avevano smesso tutte e tre le cose che gli spingevano contro. Il Brent è fra 87 e 88 dollari dopo ' +
+        'un massimo di 90,03, il decennale è rientrato a 4,686% dopo aver toccato 4,739% — quindi sotto la ' +
+        'soglia del 4,70% — e la probabilità di un rialzo a settembre è tornata al 48% dal 52%, con il ' +
+        'biennale a circa 4,23%. Il Dollar Index resta a 99,81. In serata nulla di tutto questo si è ' +
+        'mosso: il metallo scivola dai 4.393,69 delle 17:00 all’area 4.380-4.390, e i 4.400 restano non ' +
+        'presi. La forza resta bassa perché il motore di tutto è il rientro del greggio, e il rientro del ' +
+        'greggio poggia su un annuncio senza accordo: l’ottavo in una settimana, nessuno dei precedenti ha ' +
+        'mai spostato una nave, e stasera l’Iran ha ribadito che lo Stretto resta chiuso finché non ' +
+        'ottiene la fine della guerra e lo sblocco dei propri asset.',
       invalidation:
         'Un Brent che riconquista i 90 dollari sulle serie delle agenzie — circa 88,6 su quella usata qui — entro la chiusura di mercoledì, o un decennale che torna sopra il 4,70% con l’oro sotto i 4.350: toglierebbero il motore a questa direzione. Nell’altro verso, un oro sopra i 4.435 dollari entro la stessa scadenza direbbe che la forza bassa era troppo prudente. Un oro che chiude mercoledì sotto i 4.357, il minimo di oggi, direbbe che il recupero era un rimbalzo dentro la seduta.',
     },
@@ -204,18 +205,19 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale',
       strength: 'bassa',
       regime:
-        'La direzione non si muove, ma la ragione per cui non si muove è cambiata, e va detto. Dal 7 agosto ' +
-        'questa lettura poggiava sul rapporto occupazionale tradotto in un numero: la probabilità di un ' +
-        'rialzo a settembre passata in minoranza, con la condizione — scritta allora — che sarebbe caduta ' +
-        'sopra il 50%. È salita al 52% il 10 agosto in serata e la direzione è stata abbassata a neutrale ' +
-        'per quello; oggi pomeriggio il numero è tornato al 48%. La sequenza completa dice il resto: 55,1% ' +
-        'prima del dato, 41,7% subito dopo, 43,7% in chiusura, 44% per tutto lunedì, 48-50% in serata, 52% ' +
-        'a notte fonda, 48% adesso. Quattro attraversamenti della metà in quattro giorni, due nei due sensi ' +
-        'in quarantotto ore: quella soglia non sta misurando un cambio di regime, sta misurando il rumore ' +
-        'intorno a una linea scelta perché era tonda. La lettura quindi non torna indietro solo perché il ' +
-        'numero è tornato indietro — sarebbe lo stesso errore di lunedì sera col segno cambiato. Il numero ' +
-        'che deciderebbe è la scadenza a due anni, ferma fra il 4,20% e il 4,24% da cinque giorni, e ' +
-        'l’indice dei prezzi di mercoledì.',
+        'La regola scritta nel pomeriggio ha avuto la sua prima prova, e la prova consisteva nel non fare ' +
+        'niente. La probabilità di un rialzo a settembre ha attraversato la soglia del 50% quattro volte ' +
+        'in quattro giorni — 55,1%, 41,7%, 43,7%, 44%, 48-50%, 52%, 48% — e due volte nei due sensi in ' +
+        'quarantotto ore: non misura un cambio di regime, misura il rumore intorno a una linea scelta ' +
+        'perché era tonda. La misura di riferimento è quindi diventata la scadenza a due anni, ferma fra ' +
+        'il 4,20% e il 4,24% da cinque giorni. In serata sono arrivate tre informazioni che tirano in ' +
+        'versi diversi: vendite di case esistenti in calo per il secondo mese a 4,06 milioni annualizzati ' +
+        'ma appena sopra il consenso, occupazione privata settimanale in decelerazione a più 8.300 da più ' +
+        '11.000, e una presa di posizione restrittiva sull’inflazione dalla presidente ad interim della ' +
+        'Fed di Atlanta, che quest’anno non vota. Il biennale non si è mosso, quindi la direzione non si ' +
+        'muove: quando il saldo delle notizie è una questione di giudizio e il numero no, decide il ' +
+        'numero. Da registrare per il seguito: la stessa dichiarazione mette il Medio Oriente dentro la ' +
+        'funzione di reazione della Fed, ed è la seconda banca centrale in due giorni a farlo.',
       invalidation:
         'Un biennale sopra il 4,25%, che è la misura scelta per sostituire una soglia che oscilla: sarebbe la riprezzatura vera e porterebbe la direzione sotto il neutrale. Nell’altro verso, una probabilità di rialzo a settembre che dopo l’indice dei prezzi di mercoledì resta sotto il 50% per due giorni consecutivi rimetterebbe in piedi la gamba caduta. Oppure un Brent che rientra sotto gli 84 dollari sulla serie di questo archivio insieme a un conteggio dei transiti verificabile in aumento.',
     },
@@ -244,41 +246,42 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'Tre morti su una nave valgono zero, una frase sui colloqui vale tre dollari',
+  headline: 'La Fed di Atlanta mette Hormuz nel percorso dei prezzi, e l’Iran ripete le condizioni',
   stance:
-    'Primo attacco mortale della fase contro una nave nel Bab el-Mandeb, almeno tre membri dell’equipaggio ' +
-    'uccisi, e il Brent scende: da un massimo di 90,03 dollari a 87,22, su indicazioni di colloqui ' +
-    'Oman-Iran in fase avanzata senza alcun accordo sostanziale. Non è indifferenza — il prezzo sconta un ' +
-    'vincolo materiale già al massimo della sua stretta, e un attacco in più non toglie barili che non ' +
-    'passano già, mentre un accordo li rimetterebbe tutti insieme. Con il greggio rientrano anche i tassi: ' +
-    'decennale a 4,686% dopo un massimo di 4,739%, quindi sotto la soglia del 4,70%, biennale a circa ' +
-    '4,23% e probabilità di un rialzo a settembre al 48% dal 52%. L’oro risale a 4.393,69 senza prendere i ' +
-    '4.400. L’impostazione intraday sale a neutrale con inclinazione rialzista, ma con forza bassa: il ' +
-    'motore è una notizia che in questa vicenda ha già fallito otto volte.',
+    'La presidente ad interim della Fed di Atlanta dichiara che il percorso futuro dell’inflazione ' +
+    'dipenderà molto dagli sviluppi in Medio Oriente; nella stessa giornata l’Iran ribadisce che lo ' +
+    'Stretto resta chiuso finché non ottiene la fine della guerra e lo sblocco dei propri asset. È la ' +
+    'seconda banca centrale in due giorni a nominare quel quadrante, ma la voce è la più leggera fra ' +
+    'quelle contate qui: è ad interim e quest’anno non vota. Accanto, due numeri che non hanno mosso ' +
+    'niente — vendite di case esistenti in calo per il secondo mese a 4,06 milioni annualizzati, appena ' +
+    'sopra il consenso, e occupazione privata settimanale a più 8.300 da più 11.000. L’oro sta fra 4.380 e ' +
+    '4.390 dollari, il Dollar Index a 99,81, la probabilità di settembre al 48%. La direzione sui giorni ' +
+    'non si muove perché non si è mosso il biennale, che è la misura scelta questo pomeriggio. Domani alle ' +
+    '14:30 l’indice dei prezzi.',
   favours: [
-    'Misurare il premio geopolitico sulla distanza dalla rimozione del vincolo e non sulla quantità di violenza: è la variabile che spiega perché tre morti valgono meno di una frase',
-    'Alzare una direzione quando cambia la configurazione e non quando sale un prezzo: oggi si sono mossi greggio, entrambe le scadenze della curva e le attese sulla Fed, e il dollaro è rimasto fermo',
-    'Diffidare di una soglia che viene attraversata nei due sensi in quarantotto ore: quella sul 50% è stata scelta perché era tonda, e sta misurando il rumore',
+    'Applicare una regola scritta prima proprio nella giornata in cui il saldo delle notizie è discutibile: due sono favorevoli all’oro, una contraria, e il biennale non si è mosso',
+    'Distinguere una dichiarazione da un voto anche quando dice quello che si voleva sentire: la Fed di Atlanta conferma la catena descritta qui, ma non vota',
+    'Contare i transiti a Hormuz anche come dato di politica monetaria: se la funzione di reazione della Fed contiene lo Stretto, quel conteggio non è più solo un termometro energetico',
   ],
   avoid: [
-    'Leggere il rientro del greggio come una de-escalation: non c’è accordo, lo Stretto è chiuso, e il numero che lo direbbe è il conteggio dei transiti',
-    'Riportare indietro la lettura sui giorni solo perché il numero è tornato indietro: sarebbe l’errore di lunedì sera con il segno cambiato',
-    'Confondere una desensibilizzazione con una riduzione del rischio: un mercato che non paga più il danno resta scoperto quando il danno diventa un’interruzione vera',
+    'Sommare la dichiarazione di oggi al verbale della Banca del Giappone come se fossero la stessa cosa: uno è un documento del comitato che decide, l’altra è una voce senza diritto di voto',
+    'Leggere un dato immobiliare debole come un argomento nuovo per allentare: le vendite scendono ma restano sopra il consenso, e il prezzo mediano sale del 2% annuo',
+    'Stimare il risultato di un’asta che non è ancora stato pubblicato: al controllo mancano rendimento di aggiudicazione, rapporto domanda-offerta e ripartizione degli acquirenti',
   ],
   confirming: [
-    'Il decennale rientra a 4,686% dopo un massimo di 4,739%: torna sotto il 4,70% e allenta la trasmissione dello shock energetico ai tassi',
-    'Il Brent scende a 87,22 dollari dal massimo di 90,03, cioè circa 85,8 sulla serie di questo archivio',
-    'La probabilità di un rialzo a settembre torna al 48% e il biennale scende a circa 4,23%: nessuna accelerazione sulla parte corta della curva',
-    'Il Dollar Index resta a 99,81 per la quarta rilevazione consecutiva, sotto quota 100',
-    'Il rifinanziamento trimestrale ha tolto una delle tre gambe che tenevano su il trentennale: le aste lunghe non crescono',
+    'Le vendite di case esistenti scendono per il secondo mese di fila a 4,06 milioni annualizzati: la parte dell’economia più sensibile ai tassi continua a raffreddarsi',
+    'L’occupazione privata settimanale rallenta a più 8.300 da più 11.000, in linea con il rapporto del 7 agosto',
+    'La probabilità di un rialzo a settembre resta al 48% e il biennale a circa 4,23%, tredici millesimi sotto la soglia del 4,25%',
+    'Il Dollar Index resta a 99,81 per la quinta rilevazione consecutiva, sotto quota 100',
+    'Il decennale è rientrato a 4,686% dopo un massimo di 4,739%: sotto la soglia del 4,70%',
   ],
   contradicting: [
-    'I 4.400 dollari non sono stati presi neanche stavolta: 4.393,69, con il massimo di giornata a 4.434-4.435 lontano quaranta dollari',
-    'Il motore del miglioramento è un annuncio senza accordo, l’ottavo in una settimana, e nessuno dei precedenti ha spostato una nave',
-    'La violenza sulle rotte cresce mentre il prezzo la sconta di meno: primo attacco mortale contro una nave, almeno tre vittime',
+    'Una nuova voce della Fed dichiara che l’inflazione resta troppo alta, e mette il Medio Oriente dentro il percorso dei prezzi',
+    'L’Iran ribadisce ufficialmente le condizioni per riaprire lo Stretto, e la fine della guerra non è una formula che un tavolo tecnico chiude',
+    'Il prezzo mediano delle case sale del 2% annuo mentre le transazioni scendono: attività in meno senza inflazione in meno',
+    'Il Brent resta fra 87 e 88 dollari, quindi ampiamente sopra la tacca degli 84 sulla serie di questo archivio',
     'La media dei transiti a Hormuz resta a circa undici al giorno con esportazioni nette a 3 milioni di barili: il vincolo materiale non si è allentato',
-    'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
-    'L’indice dei prezzi di mercoledì alle 14:30 può cancellare in mezz’ora tutto quello che si è mosso oggi',
+    'L’indice dei prezzi di mercoledì alle 14:30 può cancellare in mezz’ora tutto quello che regge questa lettura',
   ],
   constraints: [
     {
@@ -311,7 +314,11 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'che l’intesa sulla rotta è «molto vicina» aggiungendo che la riapertura richiede altro, fra cui una ' +
         'compensazione statunitense. È il quinto punto aperto, e non somiglia agli altri quattro: quelli sono ' +
         'questioni tecniche, questo è un risarcimento politico che nessun tavolo tecnico ha il mandato di ' +
-        'concedere.',
+        'concedere. L’11 agosto in serata la configurazione si ripete e peggiora: mentre i colloqui vengono ' +
+        'descritti come in fase avanzata, Teheran ribadisce ufficialmente che lo Stretto resta chiuso ' +
+        'finché gli Stati Uniti non soddisfano le sue condizioni, che ora comprendono anche la fine della ' +
+        'guerra e lo sblocco di asset iraniani. Il tavolo progredisce e l’elenco delle condizioni si ' +
+        'allunga, ed è il sesto punto aperto in quattro giorni.',
       watch:
         'Il conteggio non risale: si quarta. Venerdì 7 agosto dallo Stretto sono transitate due navi secondo ' +
         'Reuters, contro le 33 da lunedì a giovedì della stessa settimana e le 50 di quella precedente. Due ' +
@@ -468,8 +475,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4393.69,
-      display: '≈ 4.393,69 $',
+      now: 4385,
+      display: '≈ 4.385 $',
       marks: [
         {
           at: 4300,
@@ -487,9 +494,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'hormuz-entra-nel-percorso-dei-prezzi-e-chi-lo-dice-non-vota',
     'tre-morti-su-una-nave-e-il-prezzo-va-nell-altro-verso',
     'tre-punti-base-sul-trentennale-trecento-dollari-sull-oro',
-    'sei-navi-lunedi-e-una-media-di-undici',
   ],
 };
 

@@ -561,6 +561,17 @@ export const CATEGORIES: readonly Category[] = [
 
   /* ---------------------------------------------------------- Attività -- */
   {
+    slug: 'mercato-immobiliare',
+    name: 'Mercato immobiliare americano',
+    short: 'Immobiliare',
+    family: 'attivita',
+    series: false,
+    icon: 'layers',
+    tagline: 'Dove i tassi alti si vedono per primi',
+    description:
+      'Vendite di case esistenti, nuove costruzioni, permessi: le serie che il calendario di questo sito non copre. Contano per l’oro perché sono il punto in cui il costo del denaro smette di essere un tasso dichiarato e diventa una transazione che non avviene — la prova più diretta di quanto stia stringendo davvero una politica restrittiva.',
+  },
+  {
     slug: 'ism',
     name: 'Indagine ISM',
     short: 'ISM',

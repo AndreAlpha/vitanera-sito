@@ -29,8 +29,10 @@ fonti:
     titolo: "Calendario delle diffusioni"
   - testata: "U.S. Department of the Treasury"
     titolo: "Calendario delle aste"
+esito: "confermata"
+controllata: "2026-08-11T19:20:00+02:00"
 sorgente: "src/app/core/data/articles/tre-morti-su-una-nave-e-il-prezzo-va-nell-altro-verso.ts"
-impronta: "2cdf3d3e5486ac28"
+impronta: "7aa4f4fd35a1daeb"
 ---
 
 # Tre morti su una nave, e il prezzo va nell’altro verso
@@ -149,6 +151,22 @@ Il consenso riportato da Reuters resta di più 0,1% mensile sul dato principale 
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 La direzione sale, ma non per l’oro: sale perché le tre cose che gli spingevano contro hanno smesso nella stessa finestra. Il Brent è a 87,22 dollari dopo un massimo di 90,03, il decennale è rientrato a 4,686% dopo aver toccato 4,739% — quindi sotto il 4,70% che questo archivio segue come soglia — e la probabilità di un rialzo a settembre è tornata intorno al 48% dal 52% di ieri sera. Il metallo intanto è a 4.393,69 dollari: non ha preso i 4.400, che era la prova richiesta stamattina, e va detto che quella prova non è più eseguibile — chiedeva un oro sopra i 4.400 con il decennale ancora sopra il 4,70%, e il decennale è sceso. La forza resta bassa perché il motore del miglioramento è il rientro del greggio, e il rientro del greggio poggia su un annuncio senza accordo: la cosa che questo archivio ha visto fallire otto volte in una settimana.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-11T19:20:00+02:00.
+
+Nessuna delle cinque condizioni è scattata nelle due ore successive alla pubblicazione, e i prezzi si sono mossi pochissimo: oro fra 4.380 e 4.390 dollari contro i 4.393,69 della scrittura, Brent fra 87 e 88, Dollar Index a 99,81, probabilità di settembre al 48%. La parte sostanziale dell’analisi — l’asimmetria fra un danno che non viene pagato e una speranza che vale tre dollari — non è stata messa alla prova da nessun fatto nuovo, perché nella finestra non ci sono stati né attacchi né annunci. Il verdetto va quindi letto per quello che è: la lettura non è stata smentita, non che sia stata confermata da qualcosa.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un Brent che riconquista i 90 dollari sulle serie delle agenzie — circa 88,6 su quella di questo archivio — entro la chiusura di mercoledì: direbbe che il rientro di oggi era rumore, che l’annuncio senza accordo non valeva tre dollari, e con esso cadrebbe l’asimmetria descritta qui. | no | Il Brent resta fra 87 e 88 dollari, quindi fra due e tre sotto il massimo di 90,03, e il rientro non è stato riassorbito nelle due ore successive alla pubblicazione. La scadenza dichiarata è però la chiusura di mercoledì e non è ancora arrivata. |
+| Un decennale che torna sopra il 4,70% con l’oro sotto i 4.350 dollari: rimetterebbe in piedi la trasmissione dello shock energetico ai tassi, che è la ragione principale per cui la direzione sale oggi. | no | La seconda gamba non si avvicina: l’oro è nell’area 4.380-4.390 dollari, circa 4.385 secondo Kitco dopo la diffusione sulle vendite di case, quindi oltre trenta sopra la soglia. Sul decennale non risulta una rilevazione nuova rispetto al 4,686% delle 16:50, e la condizione chiede comunque entrambe le gambe. |
+| Un oro che chiude mercoledì sotto i 4.357 dollari, cioè sotto il minimo di questa giornata: direbbe che il recupero fino a 4.393,69 era un rimbalzo dentro la seduta e non un cambio di configurazione. | no | Non giudicabile in via definitiva: la chiusura di mercoledì non è arrivata. Al controllo l’oro sta fra 4.380 e 4.390 dollari, quindi sopra la soglia di una trentina di dollari. |
+| Un oro sopra i 4.435 dollari, il massimo di oggi, entro la chiusura di mercoledì: direbbe che questa lettura, ferma a forza bassa, è stata troppo prudente e che il recupero valeva più di quanto le viene riconosciuto. | no | Non raggiunto: il metallo si è mosso al ribasso rispetto ai 4.393,69 della pubblicazione, fermandosi intorno a 4.385. Restano cinquanta dollari dalla soglia, e anche qui la scadenza dichiarata corre fino a mercoledì. |
+| Una probabilità di rialzo a settembre che torna sopra il 52% dopo l’indice dei prezzi di mercoledì: il numero è stato su entrambi i lati della metà due volte in quarantotto ore, e un attraversamento che stavolta tiene direbbe che la riprezzatura è vera e che l’oscillazione descritta qui era la lettura sbagliata. | no | Non giudicabile: la condizione è esplicitamente successiva all’indice dei prezzi di mercoledì, che non è pubblicato. Il numero resta intorno al 48%, cioè fermo rispetto al controllo delle 17:15. |
+
+**Che cosa cambia.** Quattro esiti consecutivi registrati come «confermata» con la condizione decisiva ancora pendente sono un problema di calibrazione, non una serie di letture azzeccate. In tutti e quattro i casi la condizione che avrebbe potuto smentire davvero è la stessa — l’indice dei prezzi di mercoledì 12 agosto — e in tutti e quattro il controllo è stato fatto prima. Quello che il registro sta misurando in questo momento non è la capacità di prevedere ma il tempo trascorso in una fase di calma. La correzione non è controllare più tardi, perché un’analisi di orizzonte breve non chiusa subito diventa impossibile da giudicare onestamente: è dichiarare, quando la condizione decisiva ha una data futura nota, una seconda scadenza di verifica dentro l’analisi stessa, così che il registro distingua fra «non scattata al controllo» e «non scattata dopo l’evento che doveva farla scattare». Finché quella distinzione non esiste, i verdetti di questi quattro giorni vanno letti con lo sconto che meritano.
 
 ## Fonti consultate
 

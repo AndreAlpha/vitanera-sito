@@ -17,6 +17,24 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'VENABLE',
+    name: 'Cheryl Venable, presidente ad interim della Fed di Atlanta',
+    value: 'l’inflazione dipende dal Medio Oriente',
+    change: 'ma non vota al FOMC quest’anno',
+    tone: 'warn',
+    icon: 'bank',
+    note: 'Dichiarazione riportata da Reuters l’11 agosto: l’inflazione resta troppo alta e il percorso futuro dei prezzi dipenderà molto dagli sviluppi imprevedibili in Medio Oriente — una soluzione del conflitto ristabilirebbe i flussi di greggio e ridurrebbe le pressioni, un conflitto prolungato farebbe l’opposto. È la catena descritta in questo archivio dal 5 agosto, ripetuta da dentro il sistema che decide, ed è la seconda volta in due giorni che una banca centrale nomina questo quadrante dopo il riassunto delle opinioni della Banca del Giappone. Ma le due occorrenze non sono confrontabili e sommarle sarebbe un errore: quella era un documento ufficiale del comitato che decide, questa è una dichiarazione di una presidente ad interim che quest’anno non ha diritto di voto e che non ha indicato se preferisca un rialzo alla prossima riunione. Sulla scala usata qui dal 6 agosto — una dichiarazione è una preferenza, un voto è un atto — è la voce più leggera fra tutte quelle contate. Venable descrive inoltre il mercato del lavoro come sostanzialmente stabile nonostante il calo di 23.000 posti di luglio, segnalando la contrazione dell’offerta di lavoro. Quello che cambia davvero è un’altra cosa: se la funzione di reazione della Fed contiene esplicitamente lo Stretto di Hormuz, il conteggio dei transiti smette di essere solo un termometro energetico e diventa anche un dato di politica monetaria.',
+  },
+  {
+    symbol: 'CASE ESISTENTI',
+    name: 'Vendite di case esistenti negli Stati Uniti, luglio',
+    value: '4,06 mln',
+    change: 'annualizzate; attese 4,05, precedente 4,13: meno 1,7% mensile',
+    tone: 'warn',
+    icon: 'layers',
+    note: 'Secondo calo consecutivo, ma appena sopra il consenso: attività debole senza sorpresa, ed è il motivo per cui non ha prodotto reazione — l’oro è rimasto fra 4.380 e 4.390 dollari, intorno a 4.385 secondo Kitco. Il dato è attribuito nel testo ricevuto a Reuters e all’associazione nazionale degli agenti immobiliari; questo archivio non ha una serie storica propria su quell’indicatore con cui confrontarlo. La composizione conta più del numero di copertina: le transazioni scendono, ma il prezzo mediano sale del 2% annuo a 434.100 dollari e le scorte calano dell’1,9%. Non è un mercato che si sgonfia, è un mercato che si blocca — chi ha un mutuo a tasso basso non vende, quindi l’offerta si ritira insieme alla domanda e il prezzo tiene. Per una banca centrale è la configurazione più scomoda, perché il costo del denaro alto produce meno attività senza produrre meno inflazione, cioè l’opposto di quello per cui viene usato. Va registrato anche se non muove niente: un effetto atteso che non si presenta è un’informazione, non un ritardo di trasmissione.',
+  },
+  {
     symbol: 'BAB EL-MANDEB',
     name: 'Primo attacco mortale della fase contro una nave',
     value: 'almeno tre morti',
@@ -226,11 +244,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'XAU/USD',
     name: 'Oro spot',
-    value: '4.393,69 $',
-    change: 'dal minimo di giornata intorno a 4.357; il massimo resta 4.434-4.435',
+    value: '≈ 4.385 $',
+    change: 'area 4.380-4.390 in serata; minimo di giornata ≈ 4.357, massimo 4.434-4.435',
     tone: 'warn',
     icon: 'coin',
-    note: 'Giornata in quattro tempi. Nella sessione asiatica il metallo sale fino a 4.434,84 dollari, il più alto dal 5 giugno, con i futures statunitensi a 4.492,60; in mattinata europea restituisce quasi settanta dollari fino a 4.365,65, sotto i 4.372 che erano la prima condizione di invalidazione scritta qui alle 9:45; poi risale a 4.386,13 e infine a 4.393,69 nel pomeriggio, con Investing che lo quota nell’area 4.395. I 4.400 non sono stati presi in nessuno dei due tentativi. La differenza fra i due è però tutta nel contesto: alle 14:20 il metallo saliva contro un trentennale ai massimi da vent’anni e un Brent a 90 dollari, quindi era forza relativa; adesso sale mentre greggio e rendimenti rientrano, quindi è la correlazione normale che funziona. Il secondo movimento è più grande e vale meno del primo. Restano novantatré dollari sopra i 4.300 che invaliderebbero la lettura di fondo. Attenzione alla serie: il contratto future scambia una sessantina di dollari sopra lo spot, e tutte le soglie qui sono sullo spot.',
+    note: 'Giornata in cinque tempi. Nella sessione asiatica il metallo sale fino a 4.434,84 dollari, il più alto dal 5 giugno, con i futures statunitensi a 4.492,60; in mattinata europea restituisce quasi settanta dollari fino a 4.365,65, sotto i 4.372 che erano la prima condizione di invalidazione scritta qui alle 9:45; poi risale a 4.386,13 e infine a 4.393,69 nel pomeriggio, con Investing che lo quota nell’area 4.395. I 4.400 non sono stati presi in nessuno dei due tentativi. La differenza fra i due è però tutta nel contesto: alle 14:20 il metallo saliva contro un trentennale ai massimi da vent’anni e un Brent a 90 dollari, quindi era forza relativa; adesso sale mentre greggio e rendimenti rientrano, quindi è la correlazione normale che funziona. Il secondo movimento è più grande e vale meno del primo. In serata il metallo scivola nell’area 4.380-4.390, intorno a 4.385 secondo Kitco, senza reagire né alla diffusione sulle vendite di case né alle dichiarazioni della Fed di Atlanta. Restano ottantacinque dollari sopra i 4.300 che invaliderebbero la lettura di fondo. Attenzione alla serie: il contratto future scambia una sessantina di dollari sopra lo spot, e tutte le soglie qui sono sullo spot.',
   },
   {
     symbol: 'SUSSIDI',
@@ -266,7 +284,7 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     change: 'attese 70.000',
     tone: 'bull',
     icon: 'users',
-    note: 'Ritmo più debole degli ultimi sei mesi, con giugno rivisto da 98.000 a 95.000. La lettura di allora — raffreddamento delle assunzioni, non crisi — è stata smentita dal dato ufficiale del 7 agosto: meno 23.000 posti e 103.000 tolti ai due mesi precedenti. La rilevazione privata aveva colto la direzione e sottostimato l’ampiezza, il che è il suo difetto noto quando la serie ufficiale viene rivista.',
+    note: 'Ritmo più debole degli ultimi sei mesi, con giugno rivisto da 98.000 a 95.000. La lettura di allora — raffreddamento delle assunzioni, non crisi — è stata smentita dal dato ufficiale del 7 agosto: meno 23.000 posti e 103.000 tolti ai due mesi precedenti. La rilevazione privata aveva colto la direzione e sottostimato l’ampiezza, il che è il suo difetto noto quando la serie ufficiale viene rivista. L’11 agosto esce anche la rilevazione settimanale della stessa società, che rallenta a più 8.300 da più 11.000: coerente con il tema di raffreddamento, ma va tenuta al suo posto — arriva da un aggregatore di calendario, non ha un consenso pubblicato ed è una serie molto più volatile di quella mensile. Non ha prodotto una reazione distinguibile su nessuno strumento.',
   },
   {
     symbol: 'HORMUZ',

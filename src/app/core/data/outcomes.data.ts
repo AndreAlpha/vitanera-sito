@@ -28,6 +28,78 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'tre-morti-su-una-nave-e-il-prezzo-va-nell-altro-verso',
+    checkedAt: '2026-08-11T19:20:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un Brent che riconquista i 90 dollari sulle serie delle agenzie — circa 88,6 su quella di questo archivio — entro la chiusura di mercoledì: direbbe che il rientro di oggi era rumore, che l’annuncio senza accordo non valeva tre dollari, e con esso cadrebbe l’asimmetria descritta qui.',
+        triggered: false,
+        evidence:
+          'Il Brent resta fra 87 e 88 dollari, quindi fra due e tre sotto il massimo di 90,03, e il rientro ' +
+          'non è stato riassorbito nelle due ore successive alla pubblicazione. La scadenza dichiarata è ' +
+          'però la chiusura di mercoledì e non è ancora arrivata.',
+      },
+      {
+        condition:
+          'Un decennale che torna sopra il 4,70% con l’oro sotto i 4.350 dollari: rimetterebbe in piedi la trasmissione dello shock energetico ai tassi, che è la ragione principale per cui la direzione sale oggi.',
+        triggered: false,
+        evidence:
+          'La seconda gamba non si avvicina: l’oro è nell’area 4.380-4.390 dollari, circa 4.385 secondo ' +
+          'Kitco dopo la diffusione sulle vendite di case, quindi oltre trenta sopra la soglia. Sul ' +
+          'decennale non risulta una rilevazione nuova rispetto al 4,686% delle 16:50, e la condizione ' +
+          'chiede comunque entrambe le gambe.',
+      },
+      {
+        condition:
+          'Un oro che chiude mercoledì sotto i 4.357 dollari, cioè sotto il minimo di questa giornata: direbbe che il recupero fino a 4.393,69 era un rimbalzo dentro la seduta e non un cambio di configurazione.',
+        triggered: false,
+        evidence:
+          'Non giudicabile in via definitiva: la chiusura di mercoledì non è arrivata. Al controllo l’oro ' +
+          'sta fra 4.380 e 4.390 dollari, quindi sopra la soglia di una trentina di dollari.',
+      },
+      {
+        condition:
+          'Un oro sopra i 4.435 dollari, il massimo di oggi, entro la chiusura di mercoledì: direbbe che questa lettura, ferma a forza bassa, è stata troppo prudente e che il recupero valeva più di quanto le viene riconosciuto.',
+        triggered: false,
+        evidence:
+          'Non raggiunto: il metallo si è mosso al ribasso rispetto ai 4.393,69 della pubblicazione, ' +
+          'fermandosi intorno a 4.385. Restano cinquanta dollari dalla soglia, e anche qui la scadenza ' +
+          'dichiarata corre fino a mercoledì.',
+      },
+      {
+        condition:
+          'Una probabilità di rialzo a settembre che torna sopra il 52% dopo l’indice dei prezzi di mercoledì: il numero è stato su entrambi i lati della metà due volte in quarantotto ore, e un attraversamento che stavolta tiene direbbe che la riprezzatura è vera e che l’oscillazione descritta qui era la lettura sbagliata.',
+        triggered: false,
+        evidence:
+          'Non giudicabile: la condizione è esplicitamente successiva all’indice dei prezzi di mercoledì, ' +
+          'che non è pubblicato. Il numero resta intorno al 48%, cioè fermo rispetto al controllo delle ' +
+          '17:15.',
+      },
+    ],
+    what:
+      'Nessuna delle cinque condizioni è scattata nelle due ore successive alla pubblicazione, e i prezzi ' +
+      'si sono mossi pochissimo: oro fra 4.380 e 4.390 dollari contro i 4.393,69 della scrittura, Brent ' +
+      'fra 87 e 88, Dollar Index a 99,81, probabilità di settembre al 48%. La parte sostanziale ' +
+      'dell’analisi — l’asimmetria fra un danno che non viene pagato e una speranza che vale tre dollari ' +
+      '— non è stata messa alla prova da nessun fatto nuovo, perché nella finestra non ci sono stati né ' +
+      'attacchi né annunci. Il verdetto va quindi letto per quello che è: la lettura non è stata smentita, ' +
+      'non che sia stata confermata da qualcosa.',
+    lesson:
+      'Quattro esiti consecutivi registrati come «confermata» con la condizione decisiva ancora pendente ' +
+      'sono un problema di calibrazione, non una serie di letture azzeccate. In tutti e quattro i casi la ' +
+      'condizione che avrebbe potuto smentire davvero è la stessa — l’indice dei prezzi di mercoledì 12 ' +
+      'agosto — e in tutti e quattro il controllo è stato fatto prima. Quello che il registro sta ' +
+      'misurando in questo momento non è la capacità di prevedere ma il tempo trascorso in una fase di ' +
+      'calma. La correzione non è controllare più tardi, perché un’analisi di orizzonte breve non chiusa ' +
+      'subito diventa impossibile da giudicare onestamente: è dichiarare, quando la condizione decisiva ha ' +
+      'una data futura nota, una seconda scadenza di verifica dentro l’analisi stessa, così che il ' +
+      'registro distingua fra «non scattata al controllo» e «non scattata dopo l’evento che doveva farla ' +
+      'scattare». Finché quella distinzione non esiste, i verdetti di questi quattro giorni vanno letti ' +
+      'con lo sconto che meritano.',
+  },
+  {
     slug: 'tre-punti-base-sul-trentennale-trecento-dollari-sull-oro',
     checkedAt: '2026-08-11T17:10:00+02:00',
     verdict: 'confermata',

@@ -88,7 +88,8 @@ export type EditorialCategorySlug =
   | 'jolts'
   | 'adp'
   | 'produttivita'
-  | 'aspettative-di-inflazione';
+  | 'aspettative-di-inflazione'
+  | 'mercato-immobiliare';
 
 /**
  * Categorie dell'archivio: un'analisi può appartenere a più categorie

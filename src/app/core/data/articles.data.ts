@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { hormuzEntraNelPercorsoDeiPrezzi } from './articles/hormuz-entra-nel-percorso-dei-prezzi-e-chi-lo-dice-non-vota';
 import { treMortiSuUnaNave } from './articles/tre-morti-su-una-nave-e-il-prezzo-va-nell-altro-verso';
 import { trePuntiBaseSulTrentennale } from './articles/tre-punti-base-sul-trentennale-trecento-dollari-sull-oro';
 import { settantaDollariIndietro } from './articles/settanta-dollari-indietro-e-la-condizione-scatta';
@@ -87,6 +88,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  hormuzEntraNelPercorsoDeiPrezzi,
   treMortiSuUnaNave,
   trePuntiBaseSulTrentennale,
   settantaDollariIndietro,
