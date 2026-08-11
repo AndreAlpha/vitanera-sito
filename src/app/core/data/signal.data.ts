@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-11T20:10:00+02:00',
+  updatedAt: '2026-08-11T21:55:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,17 +187,15 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'L’asta a tre anni ha tolto un rischio invece di aggiungere una spinta, ed è la differenza che ' +
-        'tiene ferme sia la direzione sia la forza. Il Tesoro ha collocato 58 miliardi al 4,291%, circa ' +
-        'mezzo punto base sotto il quotato pre-asta e undici punti base sopra l’aggiudicazione di luglio: ' +
-        'sulla scadenza che prezza la Federal Reserve la domanda si è presentata senza chiedere un premio. ' +
-        'Dopo l’aggiudicazione il decennale è rientrato nell’area del 4,69% dopo aver trattato sopra il ' +
-        '4,72-4,73%. L’oro chiude la terza seduta positiva consecutiva a 4.383 dollari sul contratto ' +
-        'americano, più 0,49%, con lo spot intorno a 4.394 nelle rilevazioni precedenti; i 4.400 restano ' +
-        'non presi per la terza volta in una giornata. Il Brent è fra 87,8 e 87,9 dollari, ben sotto il ' +
-        'picco di 90,03, e il Dollar Index è stabile. Quello che manca è la prova sulla parte lunga della ' +
-        'curva, dove la tensione si è concentrata: arriva mercoledì e giovedì con le aste del decennale e ' +
-        'del trentennale.',
+        'La direzione era salita alle 17:15 perché avevano smesso tutte e tre le cose che spingevano contro ' +
+        'il metallo. In serata una delle tre è tornata: il Brent è risalito a 88,67 dollari con più 1,1%, ' +
+        'quindi il rientro dai 90 non è diventato una correzione, e Reuters cita anche nuove interruzioni ' +
+        'in Libia e un attacco a una raffineria russa. La lettura sta ora su due gambe invece che su tre — ' +
+        'il decennale è rientrato nell’area del 4,69% e la probabilità di un rialzo a settembre resta ' +
+        'intorno alla metà — e la condizione dichiarata non è scattata, perché chiede un Brent sopra i 90 ' +
+        'sulla serie delle agenzie. L’asta a tre anni si è aggiudicata al 4,291%, sotto il quotato ' +
+        'pre-asta: un rischio rimosso, non una spinta arrivata. L’oro intanto segna il terzo prezzo ' +
+        'consecutivo più basso della serata, intorno a 4.376 dollari, dopo il massimo di 4.434,84.',
       invalidation:
         'Un Brent che riconquista i 90 dollari sulle serie delle agenzie — circa 88,6 su quella usata qui — entro la chiusura di mercoledì, o un decennale che torna sopra il 4,70% con l’oro sotto i 4.350: toglierebbero il motore a questa direzione. Nell’altro verso, un oro sopra i 4.435 dollari entro la stessa scadenza direbbe che la forza bassa era troppo prudente. Un oro che chiude mercoledì sotto i 4.357, il minimo di oggi, direbbe che il recupero era un rimbalzo dentro la seduta.',
     },
@@ -220,9 +218,16 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'numero. Alle 19:00 è arrivata la conferma più diretta disponibile: l’asta a tre anni si è ' +
         'aggiudicata al 4,291%, sotto il quotato pre-asta e undici punti base sopra quella di luglio, ' +
         'quindi sull’intero orizzonte in cui una decisione di settembre entra nel prezzo il mercato ha ' +
-        'comprato senza chiedere un premio. Da registrare per il seguito: la dichiarazione della Fed di ' +
-        'Atlanta mette il Medio Oriente dentro la funzione di reazione della banca centrale, ed è la ' +
-        'seconda banca centrale in due giorni a farlo.',
+        'comprato senza chiedere un premio. In serata l’agenzia americana per l’energia mette per la prima ' +
+        'volta una durata sul vincolo di Hormuz — transiti limitati per tutto agosto, ripresa graduale da ' +
+        'settembre, circa 600.000 barili al giorno di capacità indisponibile fino a fine 2027 — e alza la ' +
+        'previsione sul Brent del terzo trimestre di undici dollari, a circa 85. Resta però sotto gli ' +
+        '88,67 a cui il greggio scambia adesso: il mercato aveva già prezzato la revisione. E un prezzo ' +
+        'che si stabilizza in alto smette di alimentare la variazione annua dei prezzi entro dodici mesi, ' +
+        'quindi la catena che porta dal greggio a una Fed più restrittiva ha un anello debole. Il ' +
+        'biennale, che è la misura, non si è mosso attraverso quattro notizie in una sera: se non si ' +
+        'muove nemmeno con l’indice dei prezzi di mercoledì, la misura andrà cambiata invece di essere ' +
+        'riconfermata.',
       invalidation:
         'Un biennale sopra il 4,25%, che è la misura scelta per sostituire una soglia che oscilla: sarebbe la riprezzatura vera e porterebbe la direzione sotto il neutrale. Nell’altro verso, una probabilità di rialzo a settembre che dopo l’indice dei prezzi di mercoledì resta sotto il 50% per due giorni consecutivi rimetterebbe in piedi la gamba caduta. Oppure un Brent che rientra sotto gli 84 dollari sulla serie di questo archivio insieme a un conteggio dei transiti verificabile in aumento.',
     },
@@ -251,39 +256,39 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'L’asta a tre anni passa, e la terza soglia sfiorata era di nuovo un numero tondo',
+  headline: 'Il vincolo su Hormuz ha una data ufficiale, e arriva al 2027',
   stance:
-    'Il Tesoro colloca 58 miliardi di titoli a tre anni al 4,291%, mezzo punto base sotto il quotato ' +
-    'pre-asta e undici sopra l’asta di luglio: sulla scadenza che prezza la Federal Reserve la domanda si ' +
-    'è presentata senza chiedere un premio, ed è la conferma più diretta della tesi tenuta qui da tre ' +
-    'giorni. Il decennale rientra nell’area del 4,69%, l’oro chiude la terza seduta positiva a 4.383 ' +
-    'dollari sul contratto americano. Resta però un rischio rimosso e non una spinta arrivata: la prova ' +
-    'sulla parte lunga della curva è mercoledì e giovedì, con le aste del decennale e del trentennale. E ' +
-    'una nota sul metodo di questa scheda: la soglia dichiarata era il 4,30% e il risultato è 4,291%, ' +
-    'terzo avvicinamento senza attraversamento in una giornata su tre livelli tutti tondi. Domani alle ' +
-    '14:30 l’indice dei prezzi.',
+    'L’agenzia americana per l’energia assume transiti fortemente limitati nello Stretto per tutto agosto, ' +
+    'una ripresa solo graduale da settembre e circa 600.000 barili al giorno di capacità indisponibile ' +
+    'fino a fine 2027: è la prima volta che il vincolo contato ogni giorno in questa scheda riceve una ' +
+    'durata da una fonte terza. Alza la previsione sul Brent del terzo trimestre di undici dollari, a ' +
+    'circa 85 — che restano sotto gli 88,67 a cui il greggio scambia stasera, quindi il mercato era già ' +
+    'più avanti dell’agenzia. Resta comunque una previsione, e qui una previsione vale meno di un ' +
+    'transito contato. La direzione sui giorni non si muove perché non si è mosso il biennale, e nella ' +
+    'stessa serata l’asta a tre anni si è aggiudicata al 4,291% senza chiedere un premio. Domani alle ' +
+    '14:30 l’indice dei prezzi, che è dove l’argomento si misura.',
   favours: [
-    'Distinguere un rischio rimosso da una spinta arrivata: un’asta andata bene toglie una possibilità negativa, non aggiunge una ragione per salire',
-    'Derivare le soglie da livelli che il mercato ha già stabilito invece di arrotondarle: le condizioni scritte stasera sono il massimo del decennale, la rilevazione del biennale e il minimo dell’oro',
-    'Aspettare le aste del decennale e del trentennale prima di dire che la tensione sulla parte lunga è rientrata: tre anni non sono un test di trenta',
+    'Separare il livello dalla variazione: un greggio che si stabilizza a 88 dollari smette di alimentare l’inflazione annua entro dodici mesi, anche restando scomodo sui costi',
+    'Trattare una previsione a diciassette mesi come una dichiarazione e non come un vincolo: il numero che decide resta il conteggio dei transiti, e stasera non è cambiato',
+    'Guardare la componente energetica dell’indice dei prezzi di domani invece del numero di copertina: è lì che il canale descritto dall’agenzia si vede o non si vede',
   ],
   avoid: [
-    'Attribuire all’asta a tre anni il rientro del decennale: è coerente ma non dimostrato, e la scadenza collocata non è quella dove la tensione si è concentrata',
-    'Leggere il ritracciamento del greggio come un problema risolto: è un premio di rischio che scende, non un vincolo che si allenta, e i transiti non si sono mossi',
-    'Scrivere la prossima soglia su un numero tondo: è il posto dove si accumulano gli ordini, quindi quello dove il livello viene sfiorato più spesso di quanto venga superato',
+    'Leggere la revisione come uno shock nuovo: il numero rivisto è sotto il prezzo corrente, quindi il mercato lo aveva già scontato prima della pubblicazione',
+    'Tenere una regola che non si attiva mai: il biennale non si è mosso attraverso quattro notizie in una sera, e se non si muove nemmeno col dato di domani la misura va cambiata',
+    'Raccontare ancora la crisi energetica come un fronte solo: le interruzioni sono su quattro fronti scollegati — Hormuz, Mar Rosso, Libia, raffinazione russa',
   ],
   confirming: [
-    'L’asta a tre anni si aggiudica al 4,291%, sotto il quotato pre-asta: domanda migliore di quanto il mercato prezzasse pochi minuti prima',
-    'Il decennale rientra nell’area del 4,69% dopo aver trattato sopra il 4,72-4,73%: torna sotto la soglia del 4,70%',
-    'L’oro chiude la terza seduta positiva consecutiva a 4.383 dollari sul contratto americano, più 0,49%',
-    'Il Brent resta fra 87,8 e 87,9 dollari, ben sotto il picco di 90,03, e il Dollar Index è stabile',
-    'Il biennale resta a circa 4,23%: la scadenza che prezza la Fed non si muove da cinque giorni',
+    'La previsione rivista sul Brent, circa 85 dollari, resta sotto gli 88,67 correnti: la notizia era già nel prezzo prima di uscire',
+    'L’asta a tre anni si è aggiudicata al 4,291%, sotto il quotato pre-asta: sulla scadenza che prezza la Fed non è stato chiesto un premio',
+    'Il decennale è rientrato nell’area del 4,69% e il biennale resta a circa 4,23%, fermo da cinque giorni',
+    'Un premio energetico che si stabilizza in alto smette di spingere la variazione annua dei prezzi entro dodici mesi',
+    'La probabilità di un rialzo della Fed a settembre resta intorno alla metà, e il Dollar Index è stabile sotto quota 100',
   ],
   contradicting: [
-    'I 4.400 dollari non sono stati presi per la terza volta in una giornata: la barriera regge e il massimo di 4.434-4.435 resta lontano',
-    'Il rendimento di aggiudicazione è undici punti base sopra quello di luglio: la riprezzatura dei tassi è dentro il prezzo, non fuori',
-    'L’asta a tre anni non dice nulla sulla parte lunga: il trentennale ha superato il 5,20% e il decennale ha toccato circa il 4,75% questa settimana',
-    'Su Hormuz non c’è alcun accordo, il traffico resta drasticamente ridotto e nel Bab el-Mandeb sono morti tre membri dell’equipaggio di una nave egiziana',
+    'Il Brent risale a 88,67 dollari con più 1,1%: il rientro dai 90 non è diventato una correzione, e circa 87,3 sulla serie usata qui è oltre tre dollari sopra la tacca degli 84',
+    'Un ente pubblico mette per iscritto che 600.000 barili al giorno di capacità restano fuori fino a fine 2027: il pavimento del prezzo si alza in modo dichiarato',
+    'Le interruzioni si moltiplicano fuori dal Golfo: nuove fermate in Libia e un attacco a una raffineria russa nella stessa serata',
+    'L’oro segna il terzo prezzo consecutivo più basso della serata, intorno a 4.376 dollari dopo il massimo di 4.434,84, e chiude sotto la zona dei massimi',
     'La media dei transiti resta a circa undici al giorno con esportazioni nette a 3 milioni di barili: il vincolo materiale non si è allentato',
     'L’indice dei prezzi di mercoledì alle 14:30 può cancellare in mezz’ora tutto quello che regge questa lettura',
   ],
@@ -428,8 +433,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 86.4,
-      display: '≈ 86,4 $',
+      now: 87.3,
+      display: '≈ 87,3 $',
       marks: [
         {
           at: 82,
@@ -479,8 +484,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4383,
-      display: '4.383 $',
+      now: 4376,
+      display: '≈ 4.376 $',
       marks: [
         {
           at: 4300,
@@ -498,9 +503,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'l-agenzia-mette-una-data-sul-vincolo-e-arriva-al-2027',
     'nove-millesimi-sotto-la-soglia-e-la-soglia-era-tonda',
     'hormuz-entra-nel-percorso-dei-prezzi-e-chi-lo-dice-non-vota',
-    'tre-morti-su-una-nave-e-il-prezzo-va-nell-altro-verso',
   ],
 };
 

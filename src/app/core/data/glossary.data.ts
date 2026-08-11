@@ -118,6 +118,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     why: 'Può mantenere elevati i rendimenti a lunga scadenza anche quando le aspettative sui tassi a breve scendono.',
   },
   {
+    term: 'Effetto base',
+    letter: 'E',
+    definition:
+      'Il fatto che l’inflazione annua confronti il prezzo di oggi con quello di dodici mesi fa. Quando il mese di confronto era già alto, lo stesso prezzo produce una variazione più bassa: il contributo si esaurisce da solo, senza che il prezzo scenda.',
+    why: 'È la ragione per cui uno shock energetico che si stabilizza in alto smette di alimentare l’inflazione misurata entro un anno, mentre continua a pesare sui costi. Per l’oro la distinzione è decisiva: un prezzo del greggio che sale spinge i rendimenti contro il metallo, un prezzo che resta fermo su un livello alto smette di farlo anche se il livello resta scomodo.',
+    related: ['Aspettative di inflazione', 'Brent', 'Rendimento reale'],
+  },
+  {
     term: 'Premio a termine',
     letter: 'P',
     definition:
