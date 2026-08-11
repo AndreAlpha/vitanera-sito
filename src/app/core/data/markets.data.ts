@@ -208,11 +208,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'XAU/USD',
     name: 'Oro spot',
-    value: '4.402,52 $',
-    change: 'massimo a 4.432,74 con più 1%, il più alto dal 5 giugno',
-    tone: 'bull',
+    value: '≈ 4.365,65 $',
+    change: 'meno 0,5%, quasi settanta dollari sotto il massimo di 4.434,84',
+    tone: 'warn',
     icon: 'coin',
-    note: 'Sessione asiatica dell’11 agosto in tre tempi: 4.411,77 dollari alle 2:30 con più 0,5%, poi 4.409,81, poi il massimo a 4.432,74 con più 1% — il più alto dal 5 giugno, terza seduta consecutiva di rialzo, con i futures statunitensi a 4.492,60 e più 1,7% — e infine il rientro a 4.402,52. Reuters attribuisce il movimento a un ritorno dei flussi verso il bene rifugio, a ricoperture di posizioni corte e ad acquisti di chi aveva perso il rimbalzo dai 4.000 dollari, con il rapporto occupazionale debole che continua a limitare le attese su una Fed più aggressiva. Il livello superato non è psicologico ma dichiarato: i 4.372 dollari, cioè i massimi di venerdì, comparivano come condizione in due analisi ancora aperte di questo archivio. In entrambe però la condizione chiedeva anche un dollaro più debole — sotto 99,4 — oppure un biennale sotto il 4,21%, e stanotte il dollaro è salito a 99,80 e il biennale è a 4,239%. Il livello è caduto dal lato che la condizione non prevedeva, il che rende il segnale più forte di quello che era stato scritto e insieme incapace di essere registrato da quella condizione. Attenzione alla serie: il contratto future scambia una sessantina di dollari sopra lo spot, e tutte le soglie qui sono sullo spot.',
+    note: 'Giornata in due metà. Nella sessione asiatica il metallo sale a 4.411,77 dollari, poi 4.409,81, poi il massimo a 4.434,84 — il più alto dal 5 giugno, terza seduta consecutiva di rialzo, con i futures statunitensi a 4.492,60. Reuters attribuisce quel movimento a flussi verso il bene rifugio, ricoperture di posizioni corte e acquisti di chi aveva perso il rimbalzo dai 4.000 dollari. Poi il rientro: 4.402,52, e in mattinata europea circa 4.365,65 con meno 0,5%, quindi sotto i 4.400 e sotto i 4.372. Quest’ultimo numero non è psicologico: era la prima condizione di invalidazione scritta in questa scheda alle 9:45, e scattando ha riportato la lettura intraday a neutrale poco più di un’ora dopo. Restano sessantacinque dollari sopra i 4.300 che invaliderebbero la lettura di fondo. Attenzione alla serie: il contratto future scambia una sessantina di dollari sopra lo spot, e tutte le soglie qui sono sullo spot.',
   },
   {
     symbol: 'SUSSIDI',
@@ -325,11 +325,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'US10Y',
     name: 'Treasury a 10 anni',
-    value: '≈ 4,71%',
-    change: 'massimo intraday 4,716%: sopra la soglia del 4,70%',
+    value: '4,721%',
+    change: 'più 2,3 punti base: consolida sopra il 4,70% invece di toccarlo',
     tone: 'bear',
     icon: 'arrow-up',
-    note: 'Salita a tappe in due giorni: 4,637% nella mattinata di lunedì, poi 4,664%, poi circa 4,70% con un massimo di 4,703% in serata, e infine circa 4,712% nella sessione asiatica dell’11 agosto con un massimo di 4,716%. La soglia del 4,70% indicata come campanello d’allarme è quindi superata, non solo toccata. La condizione dichiarata resta però non scattata perché ne chiede due — una chiusura stabile sopra quel livello e un Dollar Index sopra 100, che è a 99,80 — e perché il mercato a pronti statunitense era chiuso per una festività giapponese, quindi non esiste una chiusura in quella finestra: i futures scendono leggermente, il che indica pressione verso rendimenti più alti alla riapertura ma è un’indicazione e non una misura. Il fatto che conta è un altro: nella stessa finestra in cui questo rendimento superava il 4,70%, l’oro segnava il massimo dal 5 giugno. Da tenere d’occhio, perché fra martedì e giovedì arrivano 125 miliardi di titoli del Tesoro proprio su questa parte della curva.',
+    note: 'Salita a tappe in due giorni: 4,637% nella mattinata di lunedì, poi 4,664%, poi circa 4,70% con un massimo di 4,703% in serata, poi 4,712% nella sessione asiatica dell’11 agosto e infine 4,721% con più 2,3 punti base in mattinata europea. La differenza rispetto a ieri non è il livello ma la permanenza: il rendimento non tocca più la soglia del 4,70%, ci sta sopra. E questa volta l’oro scende insieme — per la prima volta dal 5 agosto greggio, rendimenti e metallo si muovono nel verso che la catena descritta in questo archivio prevedeva. Le ampiezze restano però piccole, due punti base e mezzo contro mezzo punto percentuale sul metallo, e la fonte attribuisce il calo dell’oro a prese di profitto prima che ai tassi: è il primo segno di un canale, non il canale che funziona. La condizione dichiarata chiede il 4,75% con l’oro sotto i 4.350, e mancano ancora quasi tre punti base. Fra martedì e giovedì arrivano 125 miliardi di titoli del Tesoro proprio su questa parte della curva.',
   },
   {
     symbol: 'US30Y',
@@ -352,11 +352,11 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: '88,09 $',
-    change: 'massimo dal 31 luglio; circa 86,7 sulla serie di questo archivio',
+    value: '89,12 $',
+    change: 'nuovo massimo della fase; circa 87,7 sulla serie di questo archivio',
     tone: 'bear',
     icon: 'arrow-up',
-    note: 'Il premio si forma e per la prima volta in una settimana non si sgonfia entro la seduta, e poi allunga per due giorni di fila: apertura di lunedì a 84,79 dollari, 86,11 nel tardo pomeriggio, 87,40-87,72 in serata a seconda della fonte, e infine 88,09 nella sessione asiatica dell’11 agosto, massimo dal 31 luglio. Il WTI segue a 82,52. Due motori, e il secondo è materiale: le richieste di risarcimento fra Stati Uniti e Iran diventano due e simmetriche, mentre Reuters riferisce che l’attacco con droni alla raffineria Aramco di Jazan ha contribuito a ritardare la ripartenza dell’impianto — il danno operativo che il 9 agosto era ancora una domanda aperta in questo archivio. Serve la conversione fra le serie: queste quotazioni implicano una chiusura di venerdì intorno a 83,55, mentre la serie usata qui dal 5 agosto ha chiuso a 82,21, ed è su quella che sono fissate le tacche degli 80, 82 e 84 dollari. Applicando la stessa variazione il Brent di questa scheda vale circa 86,7: quasi tre dollari sopra la tacca. Resta caduta una gamba sola della regola del 5 agosto — l’altra chiede un biennale sopra il 4,25%, e il biennale è a 4,239%, cioè a undici millesimi.',
+    note: 'Il premio si forma e per la prima volta in una settimana non si sgonfia entro la seduta, e poi allunga per due giorni di fila: apertura di lunedì a 84,79 dollari, 86,11 nel tardo pomeriggio, 87,40-87,72 in serata a seconda della fonte, 88,09 nella sessione asiatica dell’11 agosto e infine 89,12 in mattinata europea, nuovo massimo della fase. Il WTI segue a 83,48. Due motori, e il secondo è materiale: le richieste di risarcimento fra Stati Uniti e Iran diventano due e simmetriche, mentre Reuters riferisce che l’attacco con droni alla raffineria Aramco di Jazan ha contribuito a ritardare la ripartenza dell’impianto — il danno operativo che il 9 agosto era ancora una domanda aperta in questo archivio. Serve la conversione fra le serie: queste quotazioni implicano una chiusura di venerdì intorno a 83,55, mentre la serie usata qui dal 5 agosto ha chiuso a 82,21, ed è su quella che sono fissate le tacche degli 80, 82 e 84 dollari. Applicando la stessa variazione il Brent di questa scheda vale circa 87,7: quasi quattro dollari sopra la tacca. Resta caduta una gamba sola della regola del 5 agosto — l’altra chiede un biennale sopra il 4,25%, e l’ultima rilevazione lo dà a 4,239%, cioè a undici millesimi.',
   },
   {
     symbol: 'GOLFO',

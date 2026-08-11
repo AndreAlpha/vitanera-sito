@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { settantaDollariIndietro } from './articles/settanta-dollari-indietro-e-la-condizione-scatta';
 import { oroRompe4400 } from './articles/l-oro-rompe-i-4400-con-il-dollaro-in-salita';
 import { seiNaviLunediMediaUndici } from './articles/sei-navi-lunedi-e-una-media-di-undici';
 import { rialzoSettembreTornaInMaggioranza } from './articles/il-rialzo-di-settembre-torna-in-maggioranza';
@@ -84,6 +85,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  settantaDollariIndietro,
   oroRompe4400,
   seiNaviLunediMediaUndici,
   rialzoSettembreTornaInMaggioranza,

@@ -1,0 +1,219 @@
+/**
+ * settanta-dollari-indietro-e-la-condizione-scatta
+ *
+ * Copia leggibile in `contenuti/analisi/`, rigenerata da `npm run analisi`.
+ * Le modifiche si fanno qui, mai nel markdown.
+ */
+import type { Article } from '../../models/article.model';
+import { AUTHOR } from '../author';
+
+export const settantaDollariIndietro: Article = {
+  slug: 'settanta-dollari-indietro-e-la-condizione-scatta',
+  categories: ['correlazioni', 'oro', 'obbligazioni', 'usa'],
+  title: 'Settanta dollari indietro, e la condizione scatta',
+  kicker: 'Correlazioni · La prima invalidazione della giornata',
+  dek:
+    'XAU/USD torna a 4.365,65 dollari dal massimo di 4.434,84, sotto i 4.372 che questo archivio aveva ' +
+    'scritto un’ora fa come prima condizione di invalidazione. È scattata. E per la prima volta l’oro ' +
+    'scende mentre greggio e rendimenti salgono insieme.',
+  publishedAt: '2026-08-11T10:45:00+02:00',
+  author: AUTHOR,
+  readingMinutes: 7,
+  tags: ['Invalidazione', 'Hammack', 'Dissenso', 'Soglie', 'Ritracciamento'],
+  instruments: ['XAU/USD', 'Brent', 'WTI', 'Treasury', 'DXY'],
+  horizons: ['breve', 'medio'],
+  bias: {
+    asset: 'XAU/USD',
+    direction: 'neutrale',
+    strength: 'bassa',
+    regime:
+      'Un’ora fa questa scheda diceva rialzista, e la prima delle cinque condizioni che avrebbe dovuto ' +
+      'smontarla è scattata: l’oro è rientrato sotto i 4.372 dollari, a 4.365,65, dopo un massimo di ' +
+      '4.434,84. La direzione torna quindi a neutrale, che è dove stava prima del breakout, e ci torna ' +
+      'per la ragione dichiarata in anticipo e non per una rilettura a posteriori. Nella stessa finestra ' +
+      'il Brent sale a 89,12 dollari, nuovo massimo della fase, e il decennale a circa 4,721%, cioè non ' +
+      'più intorno alla soglia del 4,70% ma sopra. Il Dollar Index invece è fermo a 99,83: il vento ' +
+      'contrario arriva da rendimenti e greggio, non dal cambio. Non scende sotto il neutrale perché ' +
+      'nessuna delle condizioni di deterioramento vero si è completata — l’oro è sessantacinque dollari ' +
+      'sopra i 4.300, il dollaro è sotto quota 100, il decennale sotto il 4,75% — e perché Reuters ' +
+      'attribuisce il calo a prese di profitto e all’attesa del dato, non ai tassi.',
+    horizon: 'breve',
+  },
+  certainty: 'alta',
+  certaintyNote:
+    'Alta sui fatti, che sono prezzi osservati e riportati dalle agenzie, e sul voto di dissenso di Beth ' +
+    'Hammack alla riunione del 29 luglio, che è un atto a verbale. Media sulla lettura del meccanismo, e ' +
+    'per una ragione che conviene dire invece di nascondere: la co-oscillazione ha finalmente il segno ' +
+    'giusto — oro giù mentre greggio e rendimenti salgono — ma le ampiezze sono piccole, due punti base e ' +
+    'mezzo sul decennale contro mezzo punto percentuale sul metallo, e la fonte attribuisce il calo a ' +
+    'prese di profitto prima che ai tassi. Il primo segno di un canale non è il canale che funziona, e ' +
+    'trattarlo come tale sarebbe lo stesso errore commesso un’ora fa nel verso opposto.',
+  takeaways: [
+    'Dopo il massimo di 4.434,84 dollari, il più alto dal 5 giugno, XAU/USD è sceso a circa 4.365,65 con meno 0,5%: quasi settanta dollari di ritracciamento e un ritorno sotto i 4.400.',
+    'Il livello che conta però è un altro: 4.372 dollari. Era la prima condizione di invalidazione dell’analisi pubblicata qui alle 9:45, ed è scattata poco più di un’ora dopo.',
+    'Nella stessa finestra il Brent è salito a circa 89,12 dollari e il WTI a 83,48, nuovi massimi della fase; il decennale statunitense è a circa 4,721% con più 2,3 punti base, quindi non più intorno al 4,70% ma sopra.',
+    'Il Dollar Index resta quasi invariato a 99,83: il vento contrario di questa mattina arriva da rendimenti e greggio, non da un rafforzamento del dollaro. È la differenza fra le due configurazioni che questo archivio distingue dal 5 agosto.',
+    'Sul fronte Fed, Beth Hammack della Fed di Cleveland continua a sostenere la necessità di rialzi graduali se le pressioni sui prezzi persistono. Il dettaglio che conta non è la dichiarazione ma il precedente: alla riunione del 29 luglio ha votato per un rialzo di 25 punti base mentre il Comitato lasciava i tassi al 3,50-3,75%.',
+  ],
+  invalidation: [
+    'Un oro che recupera i 4.400 dollari entro la chiusura di mercoledì con il decennale ancora sopra il 4,70%: direbbe che la forza relativa non è esaurita e che questo ritracciamento era tecnico, e renderebbe sbagliato l’abbassamento della direzione.',
+    'Un oro sotto i 4.300 dollari con il Dollar Index sopra 100: è il deterioramento vero che questo archivio segue da sei giorni, e nessuna delle due gambe è oggi presente.',
+    'Un decennale sopra il 4,75% con l’oro sotto i 4.350: sarebbe la trasmissione dello shock energetico ai tassi e poi al metallo, cioè il canale che oggi si vede per la prima volta ma con ampiezze troppo piccole per chiamarlo così.',
+    'Un Brent che rientra sotto gli 84 dollari sulla serie di questo archivio, cioè sotto gli 85,4 su quella citata dalle agenzie: toglierebbe il motore a tutta la catena descritta qui.',
+    'Un indice dei prezzi mercoledì 12 agosto sopra il 3,4% annuo sul dato principale, o sopra più 0,2% mensile su quello di fondo: amplificherebbe esattamente il movimento che comincia oggi, e questa lettura risulterebbe troppo prudente invece che troppo generosa.',
+  ],
+  nextEvent: {
+    when: 'Mercoledì 12 agosto, 14:30 italiane',
+    title: 'Indice dei prezzi al consumo statunitense di luglio',
+    detail:
+      'Arriva con il greggio sul massimo della fase, il decennale sopra il 4,70% e il metallo che ha appena restituito il breakout: la configurazione più carica delle ultime due settimane. Il consenso riportato da Reuters è di più 0,1% mensile sul dato principale e più 0,2% su quello di fondo. Una sorpresa al rialzo amplificherebbe il movimento che comincia oggi, perché darebbe al petrolio la strada verso i tassi che finora ha percorso solo in parte; un dato tiepido rimetterebbe in gioco la forza relativa vista stanotte. Con la diffusione escono anche i Real Earnings; giovedì 13 i prezzi alla produzione.',
+  },
+  sources: [
+    { outlet: 'Reuters' },
+    { outlet: 'Wall Street Journal' },
+    { outlet: 'Federal Reserve', title: 'Verbale della riunione del 29 luglio' },
+    { outlet: 'Bureau of Labor Statistics', title: 'Calendario delle diffusioni' },
+  ],
+  blocks: [
+    {
+      kind: 'paragraph',
+      lead: true,
+      text: 'Alle 9:45 questa scheda ha pubblicato un’analisi che portava l’impostazione intraday a rialzista, e in fondo a quell’analisi la prima delle cinque condizioni che l’avrebbero smontata era scritta così: un oro spot che rientra sotto i 4.372 dollari, perché direbbe che il movimento era una ricopertura in sessione sottile e non una riprezzatura. Poco più di un’ora dopo l’oro è a 4.365,65 dollari. La condizione è scattata, e con essa la direzione torna dov’era.',
+    },
+    {
+      kind: 'stats',
+      title: 'Il ritracciamento, e che cosa lo accompagna',
+      caption:
+        'Rilevazioni riferite dalle agenzie nella stessa finestra; non sono chiusure ufficiali né quotazioni in tempo reale.',
+      items: [
+        {
+          label: 'XAU/USD',
+          value: '≈ 4.365,65 $',
+          tone: 'bear',
+          note: 'Meno 0,5%, quasi settanta dollari sotto il massimo di 4.434,84',
+        },
+        {
+          label: 'Livello scattato',
+          value: '4.372 $',
+          tone: 'bear',
+          note: 'Prima condizione di invalidazione dell’analisi delle 9:45',
+        },
+        {
+          label: 'Brent',
+          value: '89,12 $',
+          tone: 'bear',
+          note: 'Nuovo massimo della fase; circa 87,7 sulla serie di questo archivio',
+        },
+        {
+          label: 'Treasury 10 anni',
+          value: '≈ 4,721%',
+          tone: 'bear',
+          note: 'Più 2,3 punti base: non più intorno al 4,70% ma sopra',
+        },
+        {
+          label: 'Dollar Index',
+          value: '≈ 99,83',
+          tone: 'bull',
+          note: 'Quasi invariato: il vento contrario non arriva dal cambio',
+        },
+        {
+          label: 'Soglia sull’oro',
+          value: '4.300 $',
+          tone: 'bull',
+          note: 'Sessantacinque dollari più in basso: il deterioramento vero è lontano',
+        },
+      ],
+    },
+    {
+      kind: 'heading',
+      text: 'La forza era calibrata, la direzione no',
+      anchor: 'forza-calibrata',
+    },
+    {
+      kind: 'paragraph',
+      text: 'Vale la pena rileggere che cosa diceva l’analisi di stamattina, perché è il tipo di cosa che un archivio serve a rendere possibile. La direzione era rialzista, e la ragione era che un livello dichiarato in anticipo era stato superato contro il dollaro invece che grazie al dollaro. Ma la forza era bassa, e le tre ragioni erano elencate: trenta dollari già restituiti dentro la sessione, il mercato a pronti dei Treasury chiuso per una festività giapponese, e una parte del movimento fatta di ricoperture di posizioni corte, cioè flussi che per costruzione si esauriscono.',
+    },
+    {
+      kind: 'paragraph',
+      text: 'Tutte e tre erano giuste, e tutte e tre puntavano nella stessa direzione. È da lì che viene la correzione di metodo di questa mattina: quando ogni ragione elencata per dichiarare una forza bassa dice la stessa cosa, quella non è più incertezza sulla durata — è un’indicazione sulla direzione. La forza bassa serve a dire «ci credo poco»; se i motivi per crederci poco sono tutti motivi per credere il contrario, la direzione andava lasciata dov’era e non alzata. È scritto nel registro degli esiti, dove quell’analisi risulta ora parziale con una condizione su cinque scattata.',
+    },
+    {
+      kind: 'callout',
+      tone: 'warn',
+      title: 'Il registro serve proprio a questo',
+      text: 'Non c’è niente da salvare e niente da riscrivere: l’analisi resta com’era, con la sua direzione e le sue condizioni, e accanto compare il verdetto. È il motivo per cui le condizioni si scrivono prima. Un archivio che aggiustasse la lettura di stamattina alla luce del prezzo di adesso misurerebbe la memoria di chi lo compila; scritta prima, la soglia dei 4.372 ha fatto esattamente il lavoro per cui esisteva — ha detto in quale momento smettere di credere a una lettura, senza lasciarlo decidere all’umore. Il metodo è descritto in /metodologia.',
+    },
+    {
+      kind: 'heading',
+      text: 'Il canale si vede, ma è ancora piccolo',
+      anchor: 'canale-piccolo',
+    },
+    {
+      kind: 'paragraph',
+      text: 'C’è però una cosa nuova nel mercato e non solo nel registro, e vale più del ritracciamento. Per tre controlli consecutivi questo archivio ha scritto che l’oro saliva mentre greggio e rendimenti salivano contro di lui: era una divergenza, ed era il fatto notevole. Adesso quella divergenza si è chiusa. Il Brent è a 89,12 dollari, nuovo massimo della fase; il decennale a circa 4,721%, non più intorno al 4,70% ma sopra; e il metallo scende. È la prima volta dal 5 agosto che i tre si muovono nel modo che la catena descritta qui prevedeva.',
+    },
+    {
+      kind: 'paragraph',
+      text: 'Prima di chiamarlo un cambio di regime conviene però guardare le dimensioni, e non tornano. Il decennale ha guadagnato due punti base e mezzo; l’oro ha perso mezzo punto percentuale; il dollaro non si è praticamente mosso, fermo a 99,83. E la fonte attribuisce il calo a prese di profitto e all’attesa del dato di domani, non a una riprezzatura dei tassi. Il primo segno di un canale non è il canale che funziona: è la stessa distinzione che stamattina è stata sbagliata nel verso opposto, quando un breakout in sessione sottile è stato preso per una riprezzatura.',
+    },
+    {
+      kind: 'heading',
+      text: 'Un voto, non una dichiarazione',
+      anchor: 'un-voto',
+    },
+    {
+      kind: 'paragraph',
+      text: 'Sul fronte della banca centrale c’è un elemento che questo archivio non aveva registrato e che merita più attenzione delle sette prese di posizione contate la settimana scorsa. Beth Hammack, presidente della Fed di Cleveland, continua a sostenere che servano rialzi graduali se le pressioni sui prezzi persistono, per evitare interventi più aggressivi dopo. Ma la parte che conta non è quello che dice adesso: è che alla riunione del 29 luglio ha votato per un rialzo di venticinque punti base, mentre il Comitato lasciava i tassi al 3,50-3,75%.',
+    },
+    {
+      kind: 'paragraph',
+      text: 'La distinzione è la stessa che questo archivio ha fatto il 6 agosto sulla governatrice Cook, e vale ancora: una dichiarazione è una preferenza, un voto è un atto. Le sette posizioni restrittive contate fra il 3 e il 7 agosto erano dichiarazioni, e insieme non erano riuscite a spostare la probabilità di un rialzo a settembre oltre il 57%. Un dissenso a verbale è un’altra cosa — dice che nel comitato esiste già almeno una persona che ha votato per stringere quando gli altri non lo hanno fatto. Con la probabilità di settembre appena sopra la metà, quel precedente smette di essere un dettaglio procedurale.',
+    },
+    {
+      kind: 'heading',
+      text: 'Perché conta per XAU/USD',
+      anchor: 'perche-conta',
+    },
+    {
+      kind: 'balance',
+      title: 'Una condizione scattata, e tre che non si sono avvicinate',
+      left: {
+        title: 'A favore dell’oro',
+        tone: 'bull',
+        items: [
+          'Il Dollar Index è quasi fermo a 99,83, sotto quota 100: manca la gamba valutaria di ogni condizione di deterioramento.',
+          'L’oro resta sessantacinque dollari sopra i 4.300 che invaliderebbero la lettura di fondo.',
+          'Reuters attribuisce il calo a prese di profitto e all’attesa del dato, non a una riprezzatura dei tassi.',
+          'Il decennale è a 4,721%, quindi ancora quasi tre punti base sotto il 4,75% che segnerebbe la trasmissione vera.',
+        ],
+      },
+      right: {
+        title: 'A sfavore dell’oro',
+        tone: 'bear',
+        items: [
+          'La prima condizione dichiarata stamattina è scattata: sotto i 4.372 il breakout è restituito.',
+          'Per la prima volta dal 5 agosto oro, greggio e rendimenti si muovono nel modo che la catena prevedeva.',
+          'Il Brent a 89,12 dollari è il massimo della fase, circa 87,7 sulla serie di questo archivio.',
+          'Nel comitato che decide a settembre c’è già un dissenso a verbale per un rialzo, non solo una dichiarazione.',
+        ],
+      },
+    },
+    {
+      kind: 'heading',
+      text: 'Interpretazione',
+      anchor: 'interpretazione',
+    },
+    {
+      kind: 'paragraph',
+      text: 'L’impostazione sull’orizzonte più stretto torna neutrale con forza bassa, cioè esattamente dov’era prima del breakout di stanotte. Non scende sotto il neutrale, e la ragione è la stessa disciplina che ha fatto scattare la condizione: le tre configurazioni che questo archivio ha dichiarato come deterioramento vero — oro sotto i 4.300, dollaro sopra 100, decennale sopra il 4,75% — non si sono completate, e nessuna è vicina. Una direzione sotto il neutrale va presa quando una condizione lo dice, non quando tre prezzi si muovono insieme per settanta dollari.',
+    },
+    {
+      kind: 'paragraph',
+      text: 'Quello che resta da guardare fino a domani è una cosa sola, ed è il rapporto fra due numeri: se il metallo recupera i 4.400 mentre il decennale sta sopra il 4,70%, la forza relativa di ieri non era finita e questa mattina è stata solo una presa di profitto; se invece scende verso i 4.350 mentre il decennale sale verso il 4,75%, il canale che oggi si intravede diventa il canale che funziona. In mezzo c’è l’indice dei prezzi delle 14:30 di domani, che può decidere la questione in mezz’ora e nella direzione che vuole.',
+    },
+    {
+      kind: 'note',
+      text: 'I livelli citati sono rilevazioni riferite dalle agenzie nella stessa finestra dell’11 agosto e non sono chiusure ufficiali: servono a rendere verificabile il ragionamento e non sono obiettivi. Le quotazioni del Brent appartengono alla serie che venerdì ha chiuso a 83,55 dollari, mentre le soglie di questo archivio sono fissate sulla serie che ha chiuso a 82,21: la conversione a circa 87,7 applica la stessa variazione percentuale ed è approssimata. Il voto di Beth Hammack per un rialzo di venticinque punti base alla riunione del 29 luglio è un atto a verbale; la posizione che le viene attribuita adesso è invece una dichiarazione riportata. Il consenso sull’indice dei prezzi è un’aspettativa di mercato, non un dato.',
+    },
+  ],
+};

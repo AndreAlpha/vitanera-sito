@@ -28,8 +28,10 @@ fonti:
   - testata: "Wall Street Journal"
   - testata: "Bureau of Labor Statistics"
     titolo: "Calendario delle diffusioni"
+esito: "parziale"
+controllata: "2026-08-11T10:40:00+02:00"
 sorgente: "src/app/core/data/articles/l-oro-rompe-i-4400-con-il-dollaro-in-salita.ts"
-impronta: "0a91bfac17c8b2ca"
+impronta: "641db05a766ad19c"
 ---
 
 # L’oro rompe i 4.400 con il dollaro in salita
@@ -119,6 +121,22 @@ Arriva con il metallo appena sopra un livello rotto in sessione sottile e con il
 Impostazione su XAU/USD: rialzista, forza bassa, orizzonte breve.
 
 Il metallo sale con tutti e quattro i venti contrari accesi insieme, ed è la prima volta in dieci giorni. Dai 4.356 di ieri sera XAU/USD è arrivato a 4.411,77 alle 2:30 e poi a 4.432,74 con più 1%, massimo dal 5 giugno e terza seduta consecutiva di rialzo, prima di restituire una trentina di dollari a 4.402,52. Nella stessa finestra il Brent è salito a 88,09, il decennale ha superato il 4,70% toccando 4,716%, il Dollar Index è salito a 99,80 e la probabilità di un rialzo a settembre resta intorno alla metà. Reuters attribuisce il movimento a flussi di rifugio, ricoperture di posizioni corte e acquisti di chi aveva perso il rimbalzo dai 4.000. La direzione torna al rialzo perché un livello dichiarato è stato rotto e perché è stato rotto contro il dollaro invece che grazie al dollaro; la forza resta bassa perché trenta dollari sono stati restituiti dentro la stessa sessione, la liquidità asiatica è sottile con il mercato giapponese chiuso, e l’indice dei prezzi arriva fra poche ore.
+
+## Come è andata
+
+Verdetto: **parziale**, controllata il 2026-08-11T10:40:00+02:00.
+
+Una condizione su cinque è scattata, e la lettura risulta parziale a settantacinque minuti dalla pubblicazione. L’analisi delle 9:45 aveva portato l’impostazione intraday a rialzista perché i 4.372 dollari erano stati superati contro il dollaro invece che grazie al dollaro; la prima condizione dichiarata prevedeva il rientro sotto quel livello, ed è arrivato con l’oro a 4.365,65 dopo un massimo di 4.434,84. Nella stessa finestra il Brent è salito a 89,12 e il decennale a 4,721%. La parte che ha retto è quella difensiva: le tre condizioni costruite con una congiunzione — oro sotto 4.300 con dollaro sopra 100, decennale sopra il 4,75% con oro sotto 4.400 — non sono scattate, e nessuna è vicina.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un oro spot che rientra sotto i 4.372 dollari entro la chiusura di mercoledì: restituirebbe il livello rotto stanotte e direbbe che il movimento era una ricopertura in sessione sottile, non una riprezzatura. | sì | Scattata poco più di un’ora dopo la pubblicazione. Dopo il massimo di 4.434,84 dollari l’oro è sceso a circa 4.365,65 con meno 0,5%, quindi sotto i 4.372: quasi settanta dollari di ritracciamento e un ritorno anche sotto i 4.400. Reuters attribuisce il calo a prese di profitto e all’attesa dell’indice dei prezzi. Il termine dichiarato — la chiusura di mercoledì — non era ancora arrivato, ma l’evento sì. |
+| Un oro sotto i 4.300 dollari con il Dollar Index sopra 100 e il biennale sopra il 4,25%: è la combinazione che questo archivio segue da sei giorni come il deterioramento vero, e nessuna delle tre gambe è oggi presente. | no | Nessuna delle tre gambe. L’oro è a 4.365,65, sessantacinque dollari sopra la soglia; il Dollar Index è quasi invariato a 99,83, sotto quota 100; il biennale non ha una rilevazione nuova rispetto al 4,239% precedente. Il deterioramento vero resta lontano. |
+| Un decennale che si porta sopra il 4,75% mentre l’oro perde i 4.400: sarebbe la trasmissione dello shock energetico ai tassi e poi al metallo, cioè lo scenario che il rialzo di stanotte ha finora smentito. | no | Metà condizione soddisfatta e metà no, quindi non scattata. L’oro ha perso i 4.400, ma il decennale è a circa 4,721% con più 2,3 punti base: sopra il 4,70%, che è la soglia di allarme, ma quasi tre punti base sotto il 4,75% che questa condizione richiede. È la congiunzione che tiene, per la quarta volta in tre giorni. |
+| Un indice dei prezzi mercoledì 12 agosto sopra il 3,4% annuo sul dato principale, o sopra più 0,2% mensile su quello di fondo: riporterebbe il comando al canale americano e renderebbe irrilevante la forza relativa descritta qui. | no | Non giudicabile: il dato esce mercoledì 12 agosto alle 14:30 italiane e al momento del controllo non è pubblicato. |
+| Una probabilità di rialzo a settembre che rientra sotto il 50% mentre l’oro continua a salire: direbbe che il movimento era una riprezzatura della Fed e non forza relativa del metallo, e toglierebbe il fondamento a questa lettura pur lasciando intatto il prezzo. | no | Non scattata in nessuna delle due gambe: non risulta una nuova rilevazione della probabilità sotto il 50% rispetto al 52% del controllo precedente, e soprattutto l’oro non ha continuato a salire — è sceso. La condizione descriveva uno scenario che non si è verificato. |
+
+**Che cosa cambia.** Quando ogni ragione elencata per dichiarare una forza bassa punta nella stessa direzione, non è incertezza sulla durata: è un’indicazione sulla direzione. L’analisi delle 9:45 metteva per iscritto tre motivi per non fidarsi del breakout — trenta dollari già restituiti, mercato a pronti dei Treasury chiuso, ricoperture di posizioni corte — e tutti e tre dicevano che il movimento non avrebbe tenuto. Erano stati usati per abbassare la forza e lasciare la direzione al rialzo; andavano usati per non alzare la direzione. La forza bassa serve a dire quanto si crede a una lettura, non a comprare il diritto di scriverne una che le proprie stesse note contraddicono.
 
 ## Fonti consultate
 

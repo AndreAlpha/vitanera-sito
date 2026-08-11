@@ -28,6 +28,63 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'l-oro-rompe-i-4400-con-il-dollaro-in-salita',
+    checkedAt: '2026-08-11T10:40:00+02:00',
+    verdict: 'parziale',
+    conditions: [
+      {
+        condition:
+          'Un oro spot che rientra sotto i 4.372 dollari entro la chiusura di mercoledì: restituirebbe il livello rotto stanotte e direbbe che il movimento era una ricopertura in sessione sottile, non una riprezzatura.',
+        triggered: true,
+        evidence:
+          'Scattata poco più di un’ora dopo la pubblicazione. Dopo il massimo di 4.434,84 dollari l’oro è ' +
+          'sceso a circa 4.365,65 con meno 0,5%, quindi sotto i 4.372: quasi settanta dollari di ' +
+          'ritracciamento e un ritorno anche sotto i 4.400. Reuters attribuisce il calo a prese di ' +
+          'profitto e all’attesa dell’indice dei prezzi. Il termine dichiarato — la chiusura di mercoledì ' +
+          '— non era ancora arrivato, ma l’evento sì.',
+      },
+      {
+        condition:
+          'Un oro sotto i 4.300 dollari con il Dollar Index sopra 100 e il biennale sopra il 4,25%: è la combinazione che questo archivio segue da sei giorni come il deterioramento vero, e nessuna delle tre gambe è oggi presente.',
+        triggered: false,
+        evidence:
+          'Nessuna delle tre gambe. L’oro è a 4.365,65, sessantacinque dollari sopra la soglia; il Dollar ' +
+          'Index è quasi invariato a 99,83, sotto quota 100; il biennale non ha una rilevazione nuova ' +
+          'rispetto al 4,239% precedente. Il deterioramento vero resta lontano.',
+      },
+      {
+        condition:
+          'Un decennale che si porta sopra il 4,75% mentre l’oro perde i 4.400: sarebbe la trasmissione dello shock energetico ai tassi e poi al metallo, cioè lo scenario che il rialzo di stanotte ha finora smentito.',
+        triggered: false,
+        evidence:
+          'Metà condizione soddisfatta e metà no, quindi non scattata. L’oro ha perso i 4.400, ma il ' +
+          'decennale è a circa 4,721% con più 2,3 punti base: sopra il 4,70%, che è la soglia di allarme, ' +
+          'ma quasi tre punti base sotto il 4,75% che questa condizione richiede. È la congiunzione che ' +
+          'tiene, per la quarta volta in tre giorni.',
+      },
+      {
+        condition:
+          'Un indice dei prezzi mercoledì 12 agosto sopra il 3,4% annuo sul dato principale, o sopra più 0,2% mensile su quello di fondo: riporterebbe il comando al canale americano e renderebbe irrilevante la forza relativa descritta qui.',
+        triggered: false,
+        evidence:
+          'Non giudicabile: il dato esce mercoledì 12 agosto alle 14:30 italiane e al momento del ' +
+          'controllo non è pubblicato.',
+      },
+      {
+        condition:
+          'Una probabilità di rialzo a settembre che rientra sotto il 50% mentre l’oro continua a salire: direbbe che il movimento era una riprezzatura della Fed e non forza relativa del metallo, e toglierebbe il fondamento a questa lettura pur lasciando intatto il prezzo.',
+        triggered: false,
+        evidence:
+          'Non scattata in nessuna delle due gambe: non risulta una nuova rilevazione della probabilità ' +
+          'sotto il 50% rispetto al 52% del controllo precedente, e soprattutto l’oro non ha continuato a ' +
+          'salire — è sceso. La condizione descriveva uno scenario che non si è verificato.',
+      },
+    ],
+    what: 'Una condizione su cinque è scattata, e la lettura risulta parziale a settantacinque minuti dalla pubblicazione. L’analisi delle 9:45 aveva portato l’impostazione intraday a rialzista perché i 4.372 dollari erano stati superati contro il dollaro invece che grazie al dollaro; la prima condizione dichiarata prevedeva il rientro sotto quel livello, ed è arrivato con l’oro a 4.365,65 dopo un massimo di 4.434,84. Nella stessa finestra il Brent è salito a 89,12 e il decennale a 4,721%. La parte che ha retto è quella difensiva: le tre condizioni costruite con una congiunzione — oro sotto 4.300 con dollaro sopra 100, decennale sopra il 4,75% con oro sotto 4.400 — non sono scattate, e nessuna è vicina.',
+    lesson:
+      'Quando ogni ragione elencata per dichiarare una forza bassa punta nella stessa direzione, non è incertezza sulla durata: è un’indicazione sulla direzione. L’analisi delle 9:45 metteva per iscritto tre motivi per non fidarsi del breakout — trenta dollari già restituiti, mercato a pronti dei Treasury chiuso, ricoperture di posizioni corte — e tutti e tre dicevano che il movimento non avrebbe tenuto. Erano stati usati per abbassare la forza e lasciare la direzione al rialzo; andavano usati per non alzare la direzione. La forza bassa serve a dire quanto si crede a una lettura, non a comprare il diritto di scriverne una che le proprie stesse note contraddicono.',
+  },
+  {
     slug: 'il-brent-passa-gli-84-il-biennale-resta-fermo',
     checkedAt: '2026-08-10T20:15:00+02:00',
     verdict: 'confermata',
