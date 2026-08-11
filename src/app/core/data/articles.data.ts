@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { treMortiSuUnaNave } from './articles/tre-morti-su-una-nave-e-il-prezzo-va-nell-altro-verso';
 import { trePuntiBaseSulTrentennale } from './articles/tre-punti-base-sul-trentennale-trecento-dollari-sull-oro';
 import { settantaDollariIndietro } from './articles/settanta-dollari-indietro-e-la-condizione-scatta';
 import { oroRompe4400 } from './articles/l-oro-rompe-i-4400-con-il-dollaro-in-salita';
@@ -86,6 +87,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  treMortiSuUnaNave,
   trePuntiBaseSulTrentennale,
   settantaDollariIndietro,
   oroRompe4400,

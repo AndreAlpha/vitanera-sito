@@ -179,46 +179,45 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-11T14:20:00+02:00',
+  updatedAt: '2026-08-11T17:15:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'neutrale',
+      direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'Il metallo ha attraversato la configurazione più ostile della fase e ne è uscito più su: ' +
-        'trentennale vicino al 5,28%, cioè ai massimi da quasi vent’anni, Brent che tocca 90,03 dollari, e ' +
-        'un oro che da 4.365,65 risale a 4.386,13. È forza relativa, ed è misurabile. La direzione resta ' +
-        'però neutrale, perché la prova da chiedere era stata scritta qui alle 10:45 — il recupero dei ' +
-        '4.400 dollari con il decennale ancora sopra il 4,70% — e il metallo si è fermato quattordici ' +
-        'dollari sotto. Alzare la direzione su una soglia mancata sarebbe lo stesso errore commesso alle ' +
-        '9:45 nel verso opposto. Il quadro dei tassi spiega perché la tenuta non sorprende: la tensione è ' +
-        'tutta sulla parte lunga della curva, mentre il biennale è a 4,237%, sceso di due millesimi e ' +
-        'tredici sotto la soglia del 4,25%. Quello che sale è il rendimento nominale per l’inflazione ' +
-        'attesa, non il costo del denaro deciso dalla banca centrale — e l’oro paga il secondo, non il ' +
-        'primo.',
+        'La direzione sale, e non per l’oro: sale perché nella stessa finestra hanno smesso tutte e tre le ' +
+        'cose che gli spingevano contro. Il Brent è a 87,22 dollari dopo un massimo di 90,03, il decennale ' +
+        'è rientrato a 4,686% dopo aver toccato 4,739% — quindi sotto la soglia del 4,70% — e la ' +
+        'probabilità di un rialzo a settembre è tornata al 48% dal 52%, con il biennale che scende a circa ' +
+        '4,23%. Il Dollar Index resta a 99,81. Il metallo è a 4.393,69 e i 4.400 non li ha presi: la prova ' +
+        'richiesta stamattina non è però nemmeno più eseguibile, perché chiedeva quel recupero con il ' +
+        'decennale ancora sopra il 4,70%. La forza resta bassa perché il motore di tutto è il rientro del ' +
+        'greggio, e il rientro del greggio poggia su un annuncio senza accordo: l’ottavo in una settimana, ' +
+        'e nessuno dei precedenti ha mai spostato una nave.',
       invalidation:
-        'Un oro che recupera i 4.400 dollari entro la chiusura di mercoledì con il decennale ancora sopra il 4,70%, che direbbe che la direzione andava alzata e questa lettura è stata troppo prudente; oppure, nell’altro verso, un biennale sopra il 4,25% con il Brent oltre gli 84 dollari sulla serie usata qui, un oro sotto i 4.300 con il Dollar Index sopra 100, o un Brent che riconquista i 90 dollari e li tiene mentre l’oro scende sotto i 4.350.',
+        'Un Brent che riconquista i 90 dollari sulle serie delle agenzie — circa 88,6 su quella usata qui — entro la chiusura di mercoledì, o un decennale che torna sopra il 4,70% con l’oro sotto i 4.350: toglierebbero il motore a questa direzione. Nell’altro verso, un oro sopra i 4.435 dollari entro la stessa scadenza direbbe che la forza bassa era troppo prudente. Un oro che chiude mercoledì sotto i 4.357, il minimo di oggi, direbbe che il recupero era un rimbalzo dentro la seduta.',
     },
     {
       horizon: 'medio',
       direction: 'neutrale',
       strength: 'bassa',
       regime:
-        'La gamba è caduta, ed era una sola. Dal 7 agosto questa lettura poggiava sul rapporto occupazionale ' +
-        '— meno 23.000 posti, 103.000 tolti ai due mesi precedenti — tradotto in un numero: la probabilità ' +
-        'di un rialzo a settembre passata in minoranza. La condizione che l’avrebbe smontata era scritta ' +
-        'allora, «una probabilità di rialzo a settembre che risale sopra il 50%», ed è stata registrata come ' +
-        'non scattata a ogni controllo: 43,7%, poi 44%, poi 48-50%. Stasera i futures la danno al 52%, con ' +
-        'il Brent che allunga verso gli 88 dollari e Jazan che non riparte. Il caso base non è più una Fed ' +
-        'ferma, quindi la direzione scende a neutrale — per la soglia, non per un prezzo. Non scende oltre ' +
-        'per due ragioni: il biennale non conferma nulla, fermo a circa 4,22% mentre quel numero ha ' +
-        'guadagnato otto punti, e mercoledì l’indice dei prezzi può ribaltarlo in mezz’ora come già fece il ' +
-        '7 agosto nel verso opposto. Sullo sfondo restano il verbale restrittivo della Banca del Giappone e ' +
-        '125 miliardi di titoli del Tesoro fra martedì e giovedì.',
+        'La direzione non si muove, ma la ragione per cui non si muove è cambiata, e va detto. Dal 7 agosto ' +
+        'questa lettura poggiava sul rapporto occupazionale tradotto in un numero: la probabilità di un ' +
+        'rialzo a settembre passata in minoranza, con la condizione — scritta allora — che sarebbe caduta ' +
+        'sopra il 50%. È salita al 52% il 10 agosto in serata e la direzione è stata abbassata a neutrale ' +
+        'per quello; oggi pomeriggio il numero è tornato al 48%. La sequenza completa dice il resto: 55,1% ' +
+        'prima del dato, 41,7% subito dopo, 43,7% in chiusura, 44% per tutto lunedì, 48-50% in serata, 52% ' +
+        'a notte fonda, 48% adesso. Quattro attraversamenti della metà in quattro giorni, due nei due sensi ' +
+        'in quarantotto ore: quella soglia non sta misurando un cambio di regime, sta misurando il rumore ' +
+        'intorno a una linea scelta perché era tonda. La lettura quindi non torna indietro solo perché il ' +
+        'numero è tornato indietro — sarebbe lo stesso errore di lunedì sera col segno cambiato. Il numero ' +
+        'che deciderebbe è la scadenza a due anni, ferma fra il 4,20% e il 4,24% da cinque giorni, e ' +
+        'l’indice dei prezzi di mercoledì.',
       invalidation:
-        'Una probabilità di rialzo a settembre che rientra sotto il 50% dopo l’indice dei prezzi di mercoledì, che rimetterebbe in piedi la gamba caduta; un biennale che sale sopra il 4,25% confermando la riprezzatura, che invece porterebbe la direzione sotto il neutrale; un oro spot che rompe i massimi di venerdì a circa 4.372 dollari con il Dollar Index sotto 99,4; oppure un Brent che rientra sotto gli 84 dollari sulla serie di questo archivio insieme a un annuncio verificabile sulla riapertura dello Stretto.',
+        'Un biennale sopra il 4,25%, che è la misura scelta per sostituire una soglia che oscilla: sarebbe la riprezzatura vera e porterebbe la direzione sotto il neutrale. Nell’altro verso, una probabilità di rialzo a settembre che dopo l’indice dei prezzi di mercoledì resta sotto il 50% per due giorni consecutivi rimetterebbe in piedi la gamba caduta. Oppure un Brent che rientra sotto gli 84 dollari sulla serie di questo archivio insieme a un conteggio dei transiti verificabile in aumento.',
     },
     {
       horizon: 'lungo',
@@ -245,40 +244,41 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'Il trentennale è dove era il 4 agosto, l’oro trecento dollari più su',
+  headline: 'Tre morti su una nave valgono zero, una frase sui colloqui vale tre dollari',
   stance:
-    'Il trentennale statunitense è vicino al 5,28%, il livello più alto da quasi vent’anni. Questo archivio ' +
-    'lo aveva già pubblicato il 4 agosto al 5,25%, e allora era la ragione per cui l’oro restava fermo a ' +
-    '4.062 dollari: oggi lo stesso rendimento convive con un oro a 4.386,13, cioè più 8% in una settimana. ' +
-    'La spiegazione era stata scritta con più forza di quanta ne avesse. La forma della curva dice perché: ' +
-    'il biennale è a 4,237%, sceso di due millesimi, quindi a salire è il rendimento per l’inflazione ' +
-    'attesa e non il costo del denaro. Il Brent ha toccato 90,03 dollari e li ha restituiti a 87,51 ' +
-    'sull’ottavo annuncio di distensione in una settimana. La lettura intraday resta neutrale perché i ' +
-    '4.400 dichiarati stamattina sono mancati per quattordici dollari. Domani alle 14:30 l’indice dei prezzi.',
+    'Primo attacco mortale della fase contro una nave nel Bab el-Mandeb, almeno tre membri dell’equipaggio ' +
+    'uccisi, e il Brent scende: da un massimo di 90,03 dollari a 87,22, su indicazioni di colloqui ' +
+    'Oman-Iran in fase avanzata senza alcun accordo sostanziale. Non è indifferenza — il prezzo sconta un ' +
+    'vincolo materiale già al massimo della sua stretta, e un attacco in più non toglie barili che non ' +
+    'passano già, mentre un accordo li rimetterebbe tutti insieme. Con il greggio rientrano anche i tassi: ' +
+    'decennale a 4,686% dopo un massimo di 4,739%, quindi sotto la soglia del 4,70%, biennale a circa ' +
+    '4,23% e probabilità di un rialzo a settembre al 48% dal 52%. L’oro risale a 4.393,69 senza prendere i ' +
+    '4.400. L’impostazione intraday sale a neutrale con inclinazione rialzista, ma con forza bassa: il ' +
+    'motore è una notizia che in questa vicenda ha già fallito otto volte.',
   favours: [
-    'Rileggere una spiegazione dell’archivio quando il fatto che spiegava si è ribaltato: il trentennale al 5,25% non ha tenuto fermo niente per una settimana intera',
-    'Guardare quale scadenza si muove prima del livello che raggiunge: fra biennale e trentennale c’è la differenza fra una Fed che reagisce e un’inflazione che si prezza',
-    'Aspettare il dato di domani con un numero solo in mente: se l’indice dei prezzi porta con sé il biennale la lettura cade, se muove solo la parte lunga non cambia niente',
+    'Misurare il premio geopolitico sulla distanza dalla rimozione del vincolo e non sulla quantità di violenza: è la variabile che spiega perché tre morti valgono meno di una frase',
+    'Alzare una direzione quando cambia la configurazione e non quando sale un prezzo: oggi si sono mossi greggio, entrambe le scadenze della curva e le attese sulla Fed, e il dollaro è rimasto fermo',
+    'Diffidare di una soglia che viene attraversata nei due sensi in quarantotto ore: quella sul 50% è stata scelta perché era tonda, e sta misurando il rumore',
   ],
   avoid: [
-    'Alzare la direzione su una soglia mancata per quattordici dollari: usare una condizione quando conviene e ignorarla quando manca poco è il modo in cui un registro smette di misurare',
-    'Trattare il rendimento nominale come se fosse quello reale: un lungo che sale perché sale l’inflazione attesa non toglie niente a un’attività che non paga cedole',
-    'Prendere il rientro del greggio da 90 dollari come una de-escalation: un accordo sostanziale non c’è, e il numero che lo direbbe è il conteggio dei transiti',
+    'Leggere il rientro del greggio come una de-escalation: non c’è accordo, lo Stretto è chiuso, e il numero che lo direbbe è il conteggio dei transiti',
+    'Riportare indietro la lettura sui giorni solo perché il numero è tornato indietro: sarebbe l’errore di lunedì sera con il segno cambiato',
+    'Confondere una desensibilizzazione con una riduzione del rischio: un mercato che non paga più il danno resta scoperto quando il danno diventa un’interruzione vera',
   ],
   confirming: [
-    'Il biennale è a 4,237%, sceso di due millesimi e tredici sotto il 4,25%: lo strumento che prezza una Fed più restrittiva non si muove',
-    'L’oro è a 4.386,13 dopo aver assorbito un trentennale ai massimi da vent’anni e un Brent a 90 dollari: venti dollari sopra il controllo delle 10:45',
-    'Il Dollar Index resta intorno a 99,8 per la terza rilevazione consecutiva, sotto quota 100',
+    'Il decennale rientra a 4,686% dopo un massimo di 4,739%: torna sotto il 4,70% e allenta la trasmissione dello shock energetico ai tassi',
+    'Il Brent scende a 87,22 dollari dal massimo di 90,03, cioè circa 85,8 sulla serie di questo archivio',
+    'La probabilità di un rialzo a settembre torna al 48% e il biennale scende a circa 4,23%: nessuna accelerazione sulla parte corta della curva',
+    'Il Dollar Index resta a 99,81 per la quarta rilevazione consecutiva, sotto quota 100',
     'Il rifinanziamento trimestrale ha tolto una delle tre gambe che tenevano su il trentennale: le aste lunghe non crescono',
-    'La media dei transiti a Hormuz resta a circa undici al giorno con esportazioni nette a 3 milioni di barili: il vincolo materiale non si è allentato',
   ],
   contradicting: [
-    'I 4.400 dollari non sono stati recuperati: 4.386,13 è quattordici dollari sotto la soglia dichiarata stamattina',
-    'Il trentennale è vicino al 5,28%, tre punti base sopra il record del 4 agosto e ai massimi da quasi vent’anni',
-    'Il decennale ha toccato 4,736% in seduta, il valore più alto della fase, e resta sopra il 4,70%',
-    'Il Brent anche dopo il rientro vale circa 86,1 sulla serie di questo archivio: due dollari sopra la tacca degli 84, dentro da tre giorni',
-    'La probabilità di un rialzo a settembre resta al 52%, sopra la metà: il caso base non è più una Fed ferma',
+    'I 4.400 dollari non sono stati presi neanche stavolta: 4.393,69, con il massimo di giornata a 4.434-4.435 lontano quaranta dollari',
+    'Il motore del miglioramento è un annuncio senza accordo, l’ottavo in una settimana, e nessuno dei precedenti ha spostato una nave',
+    'La violenza sulle rotte cresce mentre il prezzo la sconta di meno: primo attacco mortale contro una nave, almeno tre vittime',
+    'La media dei transiti a Hormuz resta a circa undici al giorno con esportazioni nette a 3 milioni di barili: il vincolo materiale non si è allentato',
     'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
+    'L’indice dei prezzi di mercoledì alle 14:30 può cancellare in mezz’ora tutto quello che si è mosso oggi',
   ],
   constraints: [
     {
@@ -404,21 +404,21 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 52,
-      display: '≈ 52%',
+      now: 48,
+      display: '≈ 48%',
       marks: [
         {
           at: 50,
           display: '50%',
           kind: 'invalida',
-          note: 'superata in salita la sera del 10 agosto: il rialzo torna a essere lo scenario più probabile, ed era l’unica gamba su cui la lettura sui giorni poggiava',
+          note: 'attraversata quattro volte in quattro giorni e due volte nei due sensi in quarantotto ore: superata in salita la sera del 10 agosto, ridiscesa il pomeriggio dell’11. Una soglia che oscilla così non misura un cambio di regime, e la lettura sui giorni non la segue più in automatico',
         },
       ],
     },
     {
       label: 'Brent',
-      now: 86.1,
-      display: '≈ 86,1 $',
+      now: 85.8,
+      display: '≈ 85,8 $',
       marks: [
         {
           at: 82,
@@ -436,8 +436,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.237,
-      display: '4,237%',
+      now: 4.23,
+      display: '≈ 4,23%',
       marks: [
         {
           at: 4.25,
@@ -449,27 +449,27 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.71,
-      display: '≈ 4,71%',
+      now: 4.686,
+      display: '≈ 4,686%',
       marks: [
         {
           at: 4.68,
           display: '4,68%',
           kind: 'logora',
-          note: 'superata nel pomeriggio del 10 agosto: segnalava il logoramento senza aspettare la rottura, e il logoramento è arrivato',
+          note: 'superata nel pomeriggio del 10 agosto: segnalava il logoramento senza aspettare la rottura, e il rendimento ci è rimasto sopra da allora',
         },
         {
           at: 4.7,
           display: '4,70%',
           kind: 'invalida',
-          note: 'superata e mantenuta dall’11 agosto, con un massimo di seduta a 4,736%, ma senza la seconda gamba: la condizione chiede anche un oro sotto i 4.350, e il metallo sta a 4.386',
+          note: 'superata e mantenuta per un giorno intero, con un massimo di seduta a 4,739%, e restituita nel pomeriggio dell’11 agosto: alle 16:50 il rendimento è a 4,686%, quindi sotto. La condizione chiedeva comunque anche un oro sotto i 4.350, che non è mai arrivato',
         },
       ],
     },
     {
       label: 'XAU/USD',
-      now: 4386.13,
-      display: '≈ 4.386,13 $',
+      now: 4393.69,
+      display: '≈ 4.393,69 $',
       marks: [
         {
           at: 4300,
@@ -481,14 +481,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 4400,
           display: '4.400 $',
           kind: 'invalida',
-          note: 'il recupero di questo livello con il decennale sopra il 4,70% direbbe che la forza relativa non era esaurita e che la direzione andava alzata: è la soglia dichiarata alle 10:45 e mancata oggi per quattordici dollari',
+          note: 'la soglia dichiarata alle 10:45, sfiorata due volte nella stessa giornata e mai presa: 4.386,13 alle 14:20 e 4.393,69 alle 17:00. Chiedeva però anche un decennale sopra il 4,70%, che nel pomeriggio è sceso: la prova non è più eseguibile e il registro degli esiti spiega perché conta',
         },
       ],
     },
   ],
   sources: [
+    'tre-morti-su-una-nave-e-il-prezzo-va-nell-altro-verso',
     'tre-punti-base-sul-trentennale-trecento-dollari-sull-oro',
-    'settanta-dollari-indietro-e-la-condizione-scatta',
     'sei-navi-lunedi-e-una-media-di-undici',
   ],
 };

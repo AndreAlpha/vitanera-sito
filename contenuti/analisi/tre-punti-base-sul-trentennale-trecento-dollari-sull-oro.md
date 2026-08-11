@@ -28,8 +28,10 @@ fonti:
     titolo: "Calendario delle diffusioni"
   - testata: "Federal Reserve"
     titolo: "Elenco degli interventi del Board"
+esito: "confermata"
+controllata: "2026-08-11T17:10:00+02:00"
 sorgente: "src/app/core/data/articles/tre-punti-base-sul-trentennale-trecento-dollari-sull-oro.ts"
-impronta: "2acf09758e1a12a3"
+impronta: "6ec72dc53ca9e443"
 ---
 
 # Tre punti base sul trentennale, trecento dollari sull’oro
@@ -144,6 +146,22 @@ Alta sui fatti, che sono prezzi riferiti dalle agenzie e un confronto con un’a
 Impostazione su XAU/USD: neutrale, forza bassa, orizzonte breve.
 
 L’oro ha attraversato la configurazione più ostile della fase — trentennale vicino al 5,28%, cioè ai massimi da quasi vent’anni, e Brent che tocca i 90 dollari — e ne è uscito a 4.386,13, venti dollari sopra il controllo delle 10:45. È forza relativa, ed è misurabile. Ma la direzione resta neutrale, e la ragione è scritta in questo archivio da stamattina: la condizione che avrebbe autorizzato ad alzarla chiedeva il recupero dei 4.400 dollari, e il metallo si è fermato quattordici dollari sotto. Il quadro dei tassi spiega perché la tenuta non sorprende: la tensione è tutta sulla parte lunga della curva, mentre il biennale è a 4,237%, due millesimi sotto la rilevazione precedente e tredici sotto la soglia del 4,25%. Quello che il mercato sta prezzando è inflazione, non una Fed che reagisce.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-11T17:10:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e la parte sostanziale dell’analisi ha retto entro la stessa giornata. La tesi era che la tensione fosse concentrata sulla parte lunga della curva e che la Fed non stesse entrando nel prezzo: nel pomeriggio il decennale ha restituito i massimi rientrando a 4,686%, il biennale è sceso ancora a circa 4,23%, e la probabilità di un rialzo a settembre è tornata sotto la metà, al 48% dal 52%. Il verdetto va però letto con la stessa cautela della volta precedente: la condizione decisiva è quella sull’indice dei prezzi, che esce domani, e «confermata» qui significa non scattata a oggi.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un oro che recupera i 4.400 dollari entro la chiusura di mercoledì con il decennale ancora sopra il 4,70%: è la condizione scritta qui alle 10:45, oggi mancata per quattordici dollari, e se scatta significa che la direzione andava alzata e questa lettura è stata troppo prudente. | no | Non scattata, ma per una ragione che merita di essere scritta invece che archiviata: non è più eseguibile. L’oro è risalito a 4.393,69 dollari, quindi ancora sotto i 4.400, e nel frattempo il decennale è rientrato a circa 4,686% dopo un massimo di 4,739% — cioè sotto il 4,70% che la seconda gamba richiede. Anche se il metallo prendesse i 4.400 domani, non lo farebbe più contro rendimenti in salita, che era l’unica cosa che la condizione voleva misurare. |
+| Un biennale sopra il 4,25% con il Brent oltre gli 84 dollari sulla serie di questo archivio: è la regola a due gambe del 5 agosto, la prima gamba è dentro da tre giorni, e la caduta della seconda direbbe che la Fed sta entrando nel prezzo dove finora non è entrata. | no | Il biennale è andato nella direzione opposta: da 4,237% a circa 4,23%. La gamba energetica resta dentro — il Brent a 87,22 vale circa 85,8 sulla serie usata qui, quindi sopra gli 84 — ma quella monetaria continua a non arrivare, per il quinto giorno. Una precisazione sulla condizione stessa: la regola a due gambe non è del 5 agosto ma del 9, quando è stata scritta in «Due infrastrutture in un giorno»; il 5 agosto era stata dichiarata la sola soglia del 4,25%. |
+| Un oro sotto i 4.300 dollari con il Dollar Index sopra 100: è il deterioramento vero, e nessuna delle due gambe è presente — il metallo è ottantasei dollari sopra, il dollaro è a 99,8. | no | Nessuna delle due gambe, e la distanza è aumentata. Il minimo di giornata dell’oro è intorno a 4.357 dollari, cioè cinquantasette sopra la soglia, e la rilevazione del pomeriggio è 4.393,69. Il Dollar Index è a 99,81, sotto quota 100 per la quarta rilevazione consecutiva. |
+| Un Brent che riconquista i 90 dollari sulla serie delle agenzie, cioè circa 88,6 su quella usata qui, e li tiene oltre la chiusura di mercoledì mentre l’oro scende sotto i 4.350: sarebbe la prova di stabilità che oggi è fallita, e riporterebbe in vita la catena descritta nel testo ricevuto. | no | Il Brent non è tornato sui 90 dollari: dal massimo di 90,03 è sceso a 87,22 con meno 0,6%, e il movimento si è esteso nel pomeriggio invece di rientrare. Il WTI è a 81,77. La seconda gamba non si è mai presentata: l’oro non è sceso sotto i 4.350 in nessun momento della giornata. |
+| Un indice dei prezzi mercoledì 12 agosto sopra il 3,4% annuo sul dato principale, o sopra più 0,2% mensile su quello di fondo: darebbe alla parte lunga della curva la conferma che le manca e trascinerebbe con sé anche la scadenza a due anni, che è l’unico modo perché questa lettura risulti sbagliata dal lato dei tassi. | no | Non giudicabile: il dato esce mercoledì 12 agosto alle 14:30 italiane e al momento del controllo non è pubblicato. |
+
+**Che cosa cambia.** Una condizione composta — un livello su uno strumento insieme a un livello su un altro — può diventare inapplicabile invece che vera o falsa, e questo archivio non lo aveva previsto. La prima condizione chiedeva un oro sopra i 4.400 con il decennale ancora sopra il 4,70%: serviva a distinguere una forza vera da un rimbalzo, perché salire contro rendimenti in aumento è un’informazione e salire mentre scendono no. Il decennale è sceso sotto la soglia mentre l’oro era ancora in viaggio, e la prova non si può più eseguire. Una condizione inapplicabile è peggio di una falsa, perché non dice niente e sembra dire qualcosa. La regola che se ne ricava è di scrivere le condizioni composte con la gamba di contesto espressa come intervallo di validità e non come requisito — «finché il decennale resta sopra il 4,70%» invece di «con il decennale sopra il 4,70%» — così che quando il contesto cambia la condizione decada dichiaratamente invece di restare in sospeso.
 
 ## Fonti consultate
 
