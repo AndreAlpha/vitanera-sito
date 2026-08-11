@@ -11,7 +11,7 @@
  */
 import { CalendarArea, CentralBankKind } from '../models/calendar.model';
 
-export const EVENTS_GENERATED_AT = '2026-08-10T22:06Z';
+export const EVENTS_GENERATED_AT = '2026-08-11T07:56Z';
 
 export type EventRow = readonly [
   at: string,
@@ -74,7 +74,7 @@ export const EVENT_ROWS: readonly EventRow[] = [
   ['2026-07-09T13:00Z', 'usa', 'discorso', 'Williams', false, 'Fed Williams Speech'],
   ['2026-07-08T18:00Z', 'usa', 'verbali', null, false, 'FOMC Minutes'],
   ['2026-09-10T12:15Z', 'euro', 'decisione', null, false, 'ECB Interest Rate Decision'],
-  ['2026-09-10T12:45Z', 'euro', 'conferenza', null, true, 'ECB Press Conference'],
+  ['2026-09-10T12:45Z', 'euro', 'conferenza', null, false, 'ECB Press Conference'],
   ['2026-10-29T13:15Z', 'euro', 'decisione', null, false, 'ECB Interest Rate Decision'],
   ['2026-10-29T13:45Z', 'euro', 'conferenza', null, true, 'ECB Press Conference'],
   ['2026-12-17T13:15Z', 'euro', 'decisione', null, false, 'ECB Interest Rate Decision'],

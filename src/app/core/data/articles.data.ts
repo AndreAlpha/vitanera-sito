@@ -22,6 +22,8 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { oroRompe4400 } from './articles/l-oro-rompe-i-4400-con-il-dollaro-in-salita';
+import { seiNaviLunediMediaUndici } from './articles/sei-navi-lunedi-e-una-media-di-undici';
 import { rialzoSettembreTornaInMaggioranza } from './articles/il-rialzo-di-settembre-torna-in-maggioranza';
 import { brentPassaGli84 } from './articles/il-brent-passa-gli-84-il-biennale-resta-fermo';
 import { petrolioArrivaAiTassi } from './articles/il-petrolio-arriva-ai-tassi-e-mancano-due-punti-base';
@@ -82,6 +84,8 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  oroRompe4400,
+  seiNaviLunediMediaUndici,
   rialzoSettembreTornaInMaggioranza,
   brentPassaGli84,
   petrolioArrivaAiTassi,

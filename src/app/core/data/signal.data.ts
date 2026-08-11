@@ -179,25 +179,26 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-10T23:50:00+02:00',
+  updatedAt: '2026-08-11T09:45:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'neutrale',
+      direction: 'rialzista',
       strength: 'bassa',
       regime:
-        'La regola dichiarata il 5 agosto chiede due gambe insieme e ne resta caduta una sola. Il Brent ' +
-        'allunga verso gli 88 dollari — circa 86 sulla serie usata qui — e sta ormai due dollari sopra la ' +
-        'tacca degli 84; il biennale resta invece a circa 4,22%, tre punti base sotto la sua, dove era ' +
-        'lunedì mattina. È la scadenza dove una decisione di settembre si prezza per prima, e non si è ' +
-        'mossa nemmeno mentre il decennale toccava il 4,703% e la probabilità di rialzo guadagnava otto ' +
-        'punti. Finché quella gamba manca, il premio energetico resta un problema di offerta di greggio e ' +
-        'non un problema per il metallo, e il canale che gli fa male in fretta resta chiuso. Va però detto ' +
-        'che l’ultima rilevazione disponibile dell’oro — 4.356,79 dollari, più 0,4% — precede il ' +
-        'movimento del greggio di stasera: che cosa abbia fatto dopo, per ora non si sa.',
+        'Il metallo sale con tutti e quattro i venti contrari accesi insieme, ed è la prima volta in dieci ' +
+        'giorni. Nella sessione asiatica XAU/USD passa da 4.411,77 a 4.432,74 con più 1%, massimo dal 5 ' +
+        'giugno e terza seduta consecutiva di rialzo, prima di restituire una trentina di dollari a ' +
+        '4.402,52. Nella stessa finestra il Brent è a 88,09, il decennale supera il 4,70% toccando 4,716%, ' +
+        'il Dollar Index sale a 99,80 e la probabilità di un rialzo a settembre resta intorno alla metà. Il ' +
+        'punto non è il livello ma il modo: i 4.372 dollari erano scritti come condizione in due analisi ' +
+        'ancora aperte, sempre insieme a un dollaro più debole, e sono caduti mentre il dollaro saliva — un ' +
+        'segnale più forte di quello che la condizione descriveva. La forza resta bassa per tre ragioni ' +
+        'tutte tecniche: trenta dollari restituiti dentro la sessione, il mercato a pronti dei Treasury ' +
+        'chiuso per festività giapponese, e una parte del movimento fatta di ricoperture di posizioni corte.',
       invalidation:
-        'Un biennale che supera il 4,25% mentre il Brent resta sopra gli 84 dollari sulla serie di questo archivio: sono le due gambe insieme, ed è il solo scenario in cui il premio energetico smette di essere neutro per il metallo. Oppure un decennale stabilmente sopra il 4,70% con il Dollar Index sopra 100; oppure un oro spot sotto i 4.300 dollari, che cancellerebbe il movimento del rapporto occupazionale.',
+        'Un oro spot che rientra sotto i 4.372 dollari entro la chiusura di mercoledì, cioè che restituisce il livello rotto stanotte; oppure un oro sotto i 4.300 con il Dollar Index sopra 100 e il biennale sopra il 4,25%; oppure un decennale sopra il 4,75% con l’oro che perde i 4.400. In senso opposto, una probabilità di rialzo a settembre che rientra sotto il 50% mentre l’oro continua a salire direbbe che il movimento era una riprezzatura della Fed e non forza relativa.',
     },
     {
       horizon: 'medio',
@@ -243,39 +244,40 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'Il rialzo di settembre torna in maggioranza, al 52%',
+  headline: 'L’oro rompe i 4.400 mentre il dollaro sale',
   stance:
-    'La soglia dichiarata il 7 agosto è stata riattraversata, questa volta in salita: i futures danno il ' +
-    'rialzo di settembre al 52%, contro il 44% dopo il rapporto occupazionale e il 48-50% del controllo ' +
-    'precedente. Era la condizione scritta come invalidazione della lettura sui giorni, ed è scattata: il ' +
-    'caso base non è più una Fed ferma. Il motore è il greggio, che allunga verso gli 88 dollari mentre ' +
-    'Reuters riferisce che l’attacco a Jazan ha ritardato la ripartenza dell’impianto — il danno operativo ' +
-    'che il 9 agosto era ancora una domanda aperta. Contro tutto questo il biennale non si muove, fermo a ' +
-    'circa 4,22%: due misure dello stesso percorso che non concordano. Mercoledì l’indice dei prezzi.',
+    'Nella sessione asiatica XAU/USD tocca 4.432,74 dollari con più 1%, massimo dal 5 giugno e terza ' +
+    'seduta consecutiva di rialzo, prima di tornare a 4.402,52. Ha superato i 4.372 che erano scritti come ' +
+    'condizione in due analisi ancora aperte — ma quelle condizioni chiedevano anche un dollaro più ' +
+    'debole, e il dollaro è salito a 99,80 mentre il decennale superava il 4,70%. Il livello è caduto dal ' +
+    'lato che nessuno aveva previsto. Sul fronte materiale i dati Kpler danno una serie al conteggio dei ' +
+    'transiti a Hormuz: sei navi lunedì ma una media di circa undici in dieci giorni, sopra la soglia di ' +
+    'otto seguita qui, mentre le esportazioni nette scendono a 3 milioni di barili al giorno da 4,4. Fra ' +
+    'poche ore l’indice dei prezzi.',
   favours: [
-    'Onorare una soglia che scatta anche quando è scomoda: la metà era scritta il 7 agosto ed è stata registrata come non scattata quattro volte, quindi vale anche adesso che è stata superata di due punti',
-    'Guardare quale scadenza si muove, non di quanto: finché il biennale resta a 4,22% la riprezzatura della Fed non è confermata dalla curva che la prezzerebbe per prima',
-    'Distinguere un premio energetico da annuncio e uno da danno: Jazan che non riparte toglie barili, e vive più a lungo di sette annunci di distensione',
+    'Guardare come un livello viene rotto, non solo se viene rotto: i 4.372 sono caduti con il dollaro in salita, che è più informativo di una rottura ottenuta grazie a un dollaro in calo',
+    'Contare i barili accanto agli scafi: le esportazioni nette a 3 milioni al giorno da 4,4 dicono della strozzatura più di quanto dica un conteggio di navi, dove una superpetroliera e una nave prodotti valgono uno',
+    'Trattare una sessione asiatica a mercato obbligazionario chiuso per quello che è: i rendimenti citati non sono prezzi formati adesso, e il movimento va riverificato alla riapertura',
   ],
   avoid: [
-    'Misurare la tenuta dell’oro contro un movimento che il suo ultimo prezzo non ha visto: 4.356,79 dollari è la rilevazione del controllo precedente e precede il greggio di stasera',
-    'Trattare il 52% come un livello: quel numero si è mosso di tredici punti in un senso e di dieci nell’altro in quattro giorni, su una decisione che nessuno ha preso',
-    'Leggere il Brent oltre gli 84 come lo scatto della regola del 5 agosto: ne chiede due, e la seconda è ferma a tre punti base di distanza',
+    'Alzare il grado su un breakout che ha già restituito trenta dollari dentro la stessa sessione e che Reuters attribuisce anche a ricoperture di posizioni corte',
+    'Leggere il conteggio dei transiti su un giorno solo: oscilla fra due e undici, e la media di dieci giorni sta sopra la soglia che questo archivio usa',
+    'Portare la lettura di fondo dietro a quella intraday: sui giorni la probabilità di un rialzo a settembre resta sopra la metà, e quel numero non si muove per un massimo asiatico',
   ],
   confirming: [
-    'Il biennale non conferma la riprezzatura: circa 4,22%, dove era lunedì mattina, mentre la probabilità di rialzo guadagnava otto punti',
-    'Il Dollar Index resta sotto quota 100 a circa 99,80: è la seconda gamba, mancante, di tutte le condizioni scritte su di lui',
-    'L’ultima rilevazione disponibile dell’oro è più 0,4% a 4.356,79 dollari, cinquantasette sopra il livello che invaliderebbe la lettura',
-    'Un premio energetico che nasce da un danno all’offerta ha una vita più lunga di uno che nasce da un annuncio, e alimenta anche la domanda di copertura',
-    'La domanda ufficiale cinese resta la gamba lenta sotto il metallo: 76,08 milioni di once a fine luglio, ventunesimo mese consecutivo di acquisti',
+    'Il metallo sale con quattro venti contrari accesi insieme — greggio, dollaro, decennale e attese sulla Fed — e guadagna l’1%',
+    'Il livello dichiarato dei 4.372 dollari è stato superato con sessanta dollari di margine, e con il dollaro che saliva invece di scendere',
+    'Terza seduta consecutiva di rialzo e massimo dal 5 giugno, con i futures statunitensi a 4.492,60',
+    'Le richieste di risarcimento diventano due e simmetriche: la riapertura dello Stretto si allontana invece di avvicinarsi',
+    'Le esportazioni nette attraverso Hormuz scendono a circa 3 milioni di barili al giorno dai 4,4 della settimana precedente',
   ],
   contradicting: [
-    'Il rialzo di settembre torna sopra la metà al 52%: è la condizione dichiarata il 7 agosto, ed è la gamba su cui poggiava tutta la lettura sui giorni',
-    'Il Brent allunga verso gli 88 dollari, circa 86 sulla serie di questo archivio, cioè due sopra la tacca degli 84',
-    'Jazan non riparte: Reuters riferisce che l’attacco ha ritardato la ripartenza, e il danno operativo che mancava adesso è riferito',
-    'Il decennale ha già testato il 4,70% con un massimo di 4,703%, e il Dollar Index sale a 99,80',
-    '125 miliardi di titoli del Tesoro fra martedì e giovedì, su una parte lunga che sta già chiedendo più premio',
-    'Aspettative a tre e cinque anni ferme al 3,3% e al 3,0%, contro un obiettivo del 2%',
+    'Trenta dollari restituiti dal massimo dentro la stessa sessione: sopra i 4.400 comincia a comparire chi vende',
+    'Il decennale supera il 4,70% con un massimo di 4,716%, e il Dollar Index sale a 99,80',
+    'La media dei transiti a dieci giorni è di circa undici al giorno, sopra la soglia di otto: il passaggio è meno bloccato di come era stato descritto',
+    'Il Brent a 88,09 dollari, massimo dal 31 luglio, tiene acceso il canale dell’inflazione attesa',
+    'La Reserve Bank of Australia lascia i tassi al 4,35% dichiarando i rischi sui prezzi orientati al rialzo: seconda banca centrale del G10 in due giorni',
+    'Il mercato a pronti dei Treasury è chiuso per festività giapponese: parte della fotografia non è un prezzo formato adesso',
   ],
   constraints: [
     {
@@ -414,8 +416,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 86,
-      display: '≈ 86 $',
+      now: 86.7,
+      display: '≈ 86,7 $',
       marks: [
         {
           at: 82,
@@ -433,8 +435,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.22,
-      display: '≈ 4,22%',
+      now: 4.239,
+      display: '4,239%',
       marks: [
         {
           at: 4.25,
@@ -446,8 +448,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.698,
-      display: '≈ 4,70%',
+      now: 4.712,
+      display: '≈ 4,71%',
       marks: [
         {
           at: 4.68,
@@ -465,8 +467,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4356.79,
-      display: '4.356,79 $',
+      now: 4402.52,
+      display: '4.402,52 $',
       marks: [
         {
           at: 4300,
@@ -478,15 +480,15 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 4372,
           display: '4.372 $',
           kind: 'logora',
-          note: 'i massimi di venerdì: superarli con il dollaro sotto 99,4 direbbe che il metallo stava aspettando e non ignorando, e la forza bassa andrebbe alzata',
+          note: 'i massimi di venerdì, superati nella sessione asiatica dell’11 agosto con sessanta dollari di margine — ma con il dollaro in salita invece che sotto 99,4, cioè dal lato che la condizione non prevedeva',
         },
       ],
     },
   ],
   sources: [
+    'l-oro-rompe-i-4400-con-il-dollaro-in-salita',
+    'sei-navi-lunedi-e-una-media-di-undici',
     'il-rialzo-di-settembre-torna-in-maggioranza',
-    'il-brent-passa-gli-84-il-biennale-resta-fermo',
-    'tre-settimane-per-lisa-cook-e-il-numero-non-si-muove',
   ],
 };
 
