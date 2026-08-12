@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-12T20:08:00+02:00',
+  updatedAt: '2026-08-12T21:38:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -251,12 +251,21 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'possibile futuro membro e un interesse turco per le rotte del Mar Rosso. Alza il pavimento del premio ' +
         'geopolitico, ma in modo ambiguo: una deterrenza che riesce toglie premio invece di darlo. Contro ' +
         'tutto questo restano le aspettative di inflazione ferme al 3,3% e al 3,0% su tre e cinque anni, che ' +
-        'tengono in vita il caso per tassi alti: è la ragione per cui la lettura non passa a rialzista.',
+        'tengono in vita il caso per tassi alti: è la ragione per cui la lettura non passa a rialzista. Il ' +
+        '12 agosto si aggiunge una terza gamba, fiscale e misurata mensilmente: il rendiconto del Tesoro ' +
+        'americano porta il disavanzo cumulato dell’anno fiscale a 1.799 miliardi in dieci mesi, oltre i ' +
+        '1.775 dell’intero anno precedente, con le spese di luglio a più 22% e le entrate a meno 1%. Anche ' +
+        'questa taglia in due sensi — più emissioni alzano il rendimento che il metallo deve battere, una ' +
+        'traiettoria del debito che peggiora è la ragione per cui una riserva senza rischio di emittente ' +
+        'viene comprata — e per questo non sposta il segno ma il numero di ragioni che lo sostengono. Nello ' +
+        'stesso rendiconto le entrate doganali nette sono negative per 8,55 miliardi dopo 33,38 miliardi di ' +
+        'rimborsi: la prima misura di quanto i dazi incassino davvero, contro due analisi che li avevano ' +
+        'seguiti solo dal lato dell’annuncio.',
       invalidation:
-        'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
+        'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera; sulla gamba fiscale, il prossimo rifinanziamento trimestrale che allarga le aste a lunga scadenza rispetto ai 125 miliardi rimasti invariati, oppure conti federali di agosto con spese sotto i 667 miliardi, che direbbero che il record di luglio era calendario e non traiettoria.',
     },
   ],
-  headline: 'Asta da 42 miliardi con domanda nella media, e l’oro scivola sotto i 4.400',
+  headline: 'L’anno fiscale supera il precedente con due mesi d’anticipo: 1.799 contro 1.775',
   stance:
     'Giornata in tre tempi, e ogni tempo toglie qualcosa al precedente. Alle 14:30 l’indice dei prezzi ' +
     'esce sul consenso — 3,4% annuo dal 3,5%, fondo a 2,5% dal 2,6% — e la probabilità di un rialzo a ' +
@@ -267,10 +276,12 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'controprova contando barili. Alle 19:00 il collocamento da 42 miliardi di titoli a dieci anni si ' +
     'aggiudica al 4,683% con un rapporto fra domanda e offerta di 2,53, sopra la media di 2,48 delle ' +
     'ultime dieci aste: la domanda non è stata debole, e va corretta la lettura pubblicata qui alle ' +
-    '19:40, che aveva la cifra sbagliata sulla dimensione e si appoggiava a un indizio più fragile. Nel ' +
-    'frattempo il dollaro ha fatto il giro completo — minimo a 99,500, massimo a 99,910 — e l’oro è ' +
-    'scivolato sotto i 4.400, a 4.399,20. Dei tre canali allineati alle 16:05 ne resta uno, ed è quello ' +
-    'monetario; la ragione per non salire non è più l’asta ma il prezzo.',
+    '19:40, che aveva la cifra sbagliata sulla dimensione e si appoggiava a un indizio più fragile. In ' +
+    'serata il Tesoro chiude la giornata con il rendiconto di luglio: disavanzo mensile di 432 miliardi, ' +
+    'record per il mese, e cumulato dell’anno fiscale a 1.799 miliardi, già oltre i 1.775 dell’intero ' +
+    'anno precedente con due mesi da contare. È l’unico dei quattro fatti che agisce sui trimestri invece ' +
+    'che sulle ore, e infatti entra dalla lettura di fondo. Il dollaro ha fatto il giro completo — minimo ' +
+    'a 99,500, massimo a 99,910 — e l’oro ha recuperato a 4.417,09 dopo essere sceso sotto i 4.400.',
   favours: [
     'Cercare la controprova nella misura più dura disponibile: la scarsità di greggio è stata raccontata qui per sei giorni con conteggi di navi, e il primo conteggio di barili nei serbatoi dice il contrario',
     'Muovere una lettura quando decade la ragione scritta in anticipo per tenerla su, anche quando è stata scritta un’ora prima: la forza intraday scende perché due dei tre canali che la giustificavano si sono chiusi',
@@ -289,11 +300,13 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Il biennale resta a 4,184%, meno 3,4 punti base sulla chiusura di 4,218% che è anche il massimo odierno: la misura scelta l’11 agosto continua a confermare',
     'Le scorte commerciali americane di greggio salgono di 17,422 milioni di barili nella settimana al 7 agosto, a 424,4 milioni: meno pressione sul canale energia-inflazione, che è l’ultimo argomento restrittivo rimasto',
     'Il collocamento del decennale trova domanda modestamente sopra la media: rapporto fra domanda e offerta 2,53 contro 2,48 sulle ultime dieci aste, e il rendimento resta a 4,677% dentro un intervallo fra 4,631% e 4,688%, lontano dal 4,735% di ieri',
+    'L’oro recupera a 4.417,09 con più 1,12% dopo essere sceso a 4.399,20: il cedimento del pomeriggio si è fermato, e il massimo di 4.441,01 resta a ventiquattro dollari',
+    'Entrate doganali nette negative per 8,55 miliardi dopo 33,38 miliardi di rimborsi: la prima misura di quanto i dazi incassino toglie credibilità a una delle vie d’uscita dichiarate dal disavanzo',
     'L’indice dei prezzi di luglio esce a 3,4% annuo dal 3,5% e a 2,5% di fondo dal 2,6%, con la componente energetica in decelerazione: più 14,7% annuo da più 15,7%',
   ],
   contradicting: [
     'Il Dollar Index non ha solo restituito il calo, lo ha superato: massimo salito a 99,910 e quotazione a 99,867 con più 0,15%, contro i 99,615 su cui era stata scritta la lettura delle 16:05 e il minimo di 99,500',
-    'L’oro scivola sotto i 4.400 dollari, a 4.399,20: quarantadue sotto il massimo di 4.441,01 e in cedimento da oltre cinque ore senza una sola ripresa',
+    'Il disavanzo federale cumulato dell’anno fiscale è a 1.799 miliardi in dieci mesi, oltre i 1.775 dell’intero anno precedente: più emissioni sulla parte lunga alzano il rendimento alternativo che il metallo deve battere',
     'Il rapporto domanda-offerta dell’asta è comunque sceso rispetto al mese scorso, da 2,59 a 2,53, con un rendimento di dieci punti base e mezzo più alto: contro la media va meglio del solito, contro sé stessa di trenta giorni fa va peggio',
     'Lo stesso record di scorte che indebolisce l’argomento restrittivo indebolisce il premio geopolitico: un mercato che smette di credere alla scarsità ha meno ragioni per pagare un rifugio',
     'Il Brent resta a 88,72 dollari dopo un aumento record delle scorte, circa 87,3 sulla serie usata qui: il greggio non sta prezzando il contrappeso',
@@ -420,8 +433,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'lunghe, ed era una delle tre gambe che tenevano il trentennale sui massimi dal 2007.',
       watch:
         'Il prossimo rifinanziamento trimestrale. Fino ad allora lo shock di offerta che frenava l’oro è ' +
-        'rinviato, e alla parte lunga della curva resta una variabile in meno.',
-      state: 'sciolto',
+        'rinviato, e alla parte lunga della curva resta una variabile in meno. Il 12 agosto arriva però il ' +
+        'numero che può rimetterlo in gioco: il rendiconto del Tesoro porta il disavanzo cumulato ' +
+        'dell’anno fiscale a 1.799 miliardi in dieci mesi, oltre i 1.775 dell’intero anno precedente, con ' +
+        'le spese di luglio a più 22% contro entrate a meno 1%. Un disavanzo più grande non è ancora carta ' +
+        'da collocare — lo diventa solo quando il rifinanziamento allarga le aste lunghe — ma è la ' +
+        'condizione perché accada, e il vincolo passa da sciolto a in via di allentamento nel verso ' +
+        'opposto: non si sta stringendo di nuovo, si sta preparando a farlo.',
+      state: 'si-allenta',
     },
     {
       label: 'Premio di rischio sul greggio che non si forma',
@@ -513,8 +532,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.867,
-      display: '99,867',
+      now: 99.887,
+      display: '99,887',
       marks: [
         {
           at: 99.795,
@@ -532,8 +551,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4399.2,
-      display: '4.399,20 $',
+      now: 4417.09,
+      display: '4.417,09 $',
       marks: [
         {
           at: 4300,
@@ -551,8 +570,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'l-anno-fiscale-supera-il-precedente-con-due-mesi-d-anticipo',
     'quarantadue-miliardi-non-trentanove-l-asta-era-nella-media',
-    'l-asta-si-aggiudica-sopra-il-mercato-e-il-dollaro-torna-su',
     'diciassette-milioni-di-barili-e-il-conteggio-era-di-navi',
   ],
 };
