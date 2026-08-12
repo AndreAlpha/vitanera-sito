@@ -179,8 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-12T11:00:00+02:00',
-  checkedAt: '2026-08-12T15:50:00+02:00',
+  updatedAt: '2026-08-12T16:05:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -188,49 +187,38 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'media',
       regime:
-        'La forza sale da bassa a media, e non per il prezzo: sale perché la ragione dichiarata ieri per ' +
-        'tenerla bassa è stata rimossa dai fatti. Quella ragione era il rientro del greggio, e il rientro ' +
-        'si è annullato per intero — il Brent è alla sesta seduta consecutiva di rialzo, intorno a 89,5 ' +
-        'dollari. L’oro è salito lo stesso, a 4.400,44 con più 0,77%, e lo ha fatto con il Dollar Index in ' +
-        'rialzo a 99,89: sale contro il cambio e contro il greggio, quindi è domanda rifugio isolata dagli ' +
-        'altri due canali, la prima volta in questa fase. Sotto ci sono due numeri contati e non ' +
-        'previsti: otto mercantili in transito martedì con una sola nave in uscita, minimo della ' +
-        'settimana, e un decennale rientrato a 4,682% dai 4,735% di ieri. Non sale a rialzista per due ' +
-        'ragioni con un orario: le 14:30 dell’indice dei prezzi e le 19:00 dell’asta del decennale.',
+        'Dopo l’indice dei prezzi la configurazione intraday è la più pulita di tutta la fase. Stamattina ' +
+        'l’oro saliva contro il dollaro e contro il greggio, e andava scritto come forza relativa isolata; ' +
+        'adesso sale con il dollaro che scende a 99,615 e il decennale che rientra a 4,662%, cioè con tutti ' +
+        'e tre i canali dalla stessa parte. Il metallo è a 4.429,54 dollari con più 1,41% e ha superato in ' +
+        'seduta i 4.441,01, quindi anche i 4.435 che l’analisi di ieri sera aveva indicato come il livello ' +
+        'oltre il quale una delle notizie valeva più di quanto le veniva riconosciuto. Resta un vento ' +
+        'contrario solo, ed è quello energetico: il Brent ha toccato 90,06 dollari stamattina, circa 88,6 ' +
+        'sulla serie usata qui, e due agenzie in due giorni hanno tagliato l’offerta attesa.',
       invalidation:
-        'Un oro che chiude sotto i 4.363 dollari, il minimo di questa giornata, che direbbe che il recupero era posizionamento prima del dato e non domanda rifugio; oppure un decennale che torna sopra il 4,735% di ieri con il Dollar Index sopra 99,89, che è la combinazione dichiarata assente. Un indice dei prezzi sopra il 3,4% annuo con il biennale che si porta sopra il 4,237% porterebbe la direzione sotto il neutrale, perché renderebbe le due dichiarazioni della Fed una riprezzatura invece che due preferenze.',
+        'Un oro che chiude la settimana sotto i 4.362,57 dollari, il minimo di questa giornata, che direbbe che il balzo dopo il dato era una reazione di giornata; oppure un decennale che torna sopra il 4,735% di ieri con il Dollar Index sopra 99,795, cioè sopra il massimo odierno invece che sopra un livello tondo. Un’asta del decennale alle 19:00 che si aggiudica sopra il quotato pre-asta riporterebbe la parte lunga della curva contro il metallo a prescindere dalla Fed.',
     },
     {
       horizon: 'medio',
-      direction: 'neutrale',
-      strength: 'bassa',
+      direction: 'neutrale-rialzista',
+      strength: 'media',
       regime:
-        'La regola scritta nel pomeriggio ha avuto la sua prima prova, e la prova consisteva nel non fare ' +
-        'niente. La probabilità di un rialzo a settembre ha attraversato la soglia del 50% quattro volte ' +
-        'in quattro giorni — 55,1%, 41,7%, 43,7%, 44%, 48-50%, 52%, 48% — e due volte nei due sensi in ' +
-        'quarantotto ore: non misura un cambio di regime, misura il rumore intorno a una linea scelta ' +
-        'perché era tonda. La misura di riferimento è quindi diventata la scadenza a due anni, ferma fra ' +
-        'il 4,20% e il 4,24% da cinque giorni. In serata sono arrivate tre informazioni che tirano in ' +
-        'versi diversi: vendite di case esistenti in calo per il secondo mese a 4,06 milioni annualizzati ' +
-        'ma appena sopra il consenso, occupazione privata settimanale in decelerazione a più 8.300 da più ' +
-        '11.000, e una presa di posizione restrittiva sull’inflazione dalla presidente ad interim della ' +
-        'Fed di Atlanta, che quest’anno non vota. Il biennale non si è mosso, quindi la direzione non si ' +
-        'muove: quando il saldo delle notizie è una questione di giudizio e il numero no, decide il ' +
-        'numero. Alle 19:00 è arrivata la conferma più diretta disponibile: l’asta a tre anni si è ' +
-        'aggiudicata al 4,291%, sotto il quotato pre-asta e undici punti base sopra quella di luglio, ' +
-        'quindi sull’intero orizzonte in cui una decisione di settembre entra nel prezzo il mercato ha ' +
-        'comprato senza chiedere un premio. In serata l’agenzia americana per l’energia mette per la prima ' +
-        'volta una durata sul vincolo di Hormuz — transiti limitati per tutto agosto, ripresa graduale da ' +
-        'settembre, circa 600.000 barili al giorno di capacità indisponibile fino a fine 2027 — e alza la ' +
-        'previsione sul Brent del terzo trimestre di undici dollari, a circa 85. Resta però sotto gli ' +
-        '88,67 a cui il greggio scambia adesso: il mercato aveva già prezzato la revisione. E un prezzo ' +
-        'che si stabilizza in alto smette di alimentare la variazione annua dei prezzi entro dodici mesi, ' +
-        'quindi la catena che porta dal greggio a una Fed più restrittiva ha un anello debole. Il ' +
-        'biennale, che è la misura, non si è mosso attraverso quattro notizie in una sera: se non si ' +
-        'muove nemmeno con l’indice dei prezzi di mercoledì, la misura andrà cambiata invece di essere ' +
-        'riconfermata.',
+        'La condizione dichiarata il 10 agosto è scattata, ed è la ragione per cui questa lettura si ' +
+        'muove. Allora la direzione era stata abbassata a neutrale per un numero solo — la probabilità di ' +
+        'un rialzo a settembre risalita al 52%, sopra la metà — e accanto era stata scritta la condizione ' +
+        'per uscirne: un rientro sotto il 50% dopo l’indice dei prezzi di mercoledì. Il dato è uscito alle ' +
+        '14:30 esattamente sul consenso, più 0,1% mensile e 3,4% annuo in calo dal 3,5%, con il fondo a ' +
+        '2,5% dal 2,6%, e la probabilità è scesa al 37,7%: quattordici punti in un’ora e mezza. La forza ' +
+        'sale a media perché è decaduta anche la ragione data per tenerla bassa, cioè che il biennale non ' +
+        'confermava nulla: quella scadenza si è mossa per la prima volta in sei giorni, a 4,180% con meno ' +
+        '3,8 punti base. Non sale oltre perché il canale energetico non è stato misurato da questa ' +
+        'diffusione — l’indice di luglio non contiene il Brent a 90 dollari, che è un fatto di agosto — e ' +
+        'nel frattempo si è irrigidito: l’agenzia internazionale ha tagliato l’offerta mondiale attesa nel ' +
+        '2026 a meno 4,3 milioni di barili al giorno da meno 3,7. Da correggere infine un conto che ' +
+        'sorreggeva le due letture precedenti: al FOMC del 29 luglio i dissensi per un rialzo erano tre — ' +
+        'Hammack, Kashkari e Logan — e non uno solo.',
       invalidation:
-        'Un biennale sopra il 4,25%, che è la misura scelta per sostituire una soglia che oscilla: sarebbe la riprezzatura vera e porterebbe la direzione sotto il neutrale. Nell’altro verso, una probabilità di rialzo a settembre che dopo l’indice dei prezzi di mercoledì resta sotto il 50% per due giorni consecutivi rimetterebbe in piedi la gamba caduta. Oppure un Brent che rientra sotto gli 84 dollari sulla serie di questo archivio insieme a un conteggio dei transiti verificabile in aumento.',
+        'Una probabilità di rialzo a settembre che risale sopra il 48% entro venerdì, cioè sopra il livello di ieri mattina invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
     },
     {
       horizon: 'lungo',
@@ -257,25 +245,25 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'Otto navi martedì e una sola in uscita: la previsione trova il suo conteggio',
+  headline: 'La condizione dichiarata il 10 agosto è scattata: rialzo di settembre al 37,7%',
   stance:
-    'Dallo Stretto martedì sono passati otto mercantili, minimo della settimana, e uno solo è uscito. Ieri ' +
-    'sera questa scheda aveva declassato la previsione dell’agenzia americana perché era una previsione: ' +
-    'oggi arriva il numero contato e va nella stessa direzione, mentre l’agenzia internazionale taglia ' +
-    'l’offerta mondiale attesa nel 2026 di altri 600.000 barili al giorno rispetto a un mese fa. Il Brent ' +
-    'è alla sesta seduta di rialzo intorno a 89,5 dollari e l’oro sale lo stesso, a 4.400,44 con più ' +
-    '0,77%, con il Dollar Index in rialzo a 99,89: è domanda rifugio isolata dal cambio e dai tassi, la ' +
-    'prima volta in questa fase. La forza sale quindi da bassa a media. Restano due appuntamenti che ' +
-    'possono riscrivere tutto: l’indice dei prezzi alle 14:30 e l’asta del decennale alle 19:00.',
+    'L’indice dei prezzi di luglio esce esattamente sul consenso — più 0,1% mensile e 3,4% annuo in calo ' +
+    'dal 3,5%, fondo a 2,5% dal 2,6% — e la probabilità di un rialzo a settembre crolla al 37,7% dal 52% ' +
+    'del 10 agosto. È la condizione che questa scheda aveva scritto allora per uscire dalla lettura ' +
+    'neutrale, ed è scattata sull’evento che nominava. Il biennale si muove per la prima volta in sei ' +
+    'giorni, a 4,180%, e con il decennale a 4,662% e il dollaro a 99,615 l’oro sale a 4.429,54 con più ' +
+    '1,41%: tre canali dalla stessa parte. Resta fuori il quarto, ed è quello energetico — l’indice di ' +
+    'luglio non contiene il Brent a 90 dollari, che è un fatto di agosto, e quel test ha appuntamento a ' +
+    'settembre. Alle 19:00 l’asta del decennale.',
   favours: [
-    'Alzare la forza quando cade la ragione dichiarata per tenerla bassa, non quando sale il prezzo: il rientro del greggio si è annullato e la lettura ha retto lo stesso',
-    'Distinguere un conteggio da una previsione anche quando dicono la stessa cosa: sono tre osservazioni indipendenti che convergono, non una tesi che si conferma da sola',
-    'Guardare la composizione invece della soglia: un oro che sale con il dollaro in rialzo e il greggio in rialzo è domanda rifugio, e non dipende da nessun livello tondo',
+    'Muovere una lettura quando decade la ragione scritta in anticipo per tenerla ferma, e non quando si muove il prezzo: qui sono decadute entrambe, quella sulla direzione e quella sulla forza',
+    'Chiedersi che cosa un test può davvero discriminare prima di aspettarlo per sei giorni: un dato di luglio non poteva contenere uno shock di agosto, per quanto solidi fossero i suoi numeri',
+    'Guardare la composizione e non il livello: tre canali che si muovono insieme dicono più di una soglia superata, e non dipendono da nessun numero tondo',
   ],
   avoid: [
-    'Usare il livello puntuale dei transiti: i due fornitori danno otto e undici per lo stesso giorno, quindi regge la direzione e non il numero — è l’errore già commesso l’11 agosto',
-    'Contare due dichiarazioni della Fed come se fossero due voti: né Collins né Venable votano quest’anno, e la probabilità di settembre è dove stava prima che parlassero',
-    'Trattare i 4.400 ripresi come il fatto della giornata: è un numero tondo, e questa scheda ha smesso di appoggiarcisi ventiquattro ore fa',
+    'Ancorare una condizione al consenso: il dato è uscito esattamente sul 3,4% e su più 0,2%, e cinque analisi che avevano scritto «sopra» o «sotto» quei livelli non hanno potuto dire niente',
+    'Leggere il calo dell’inflazione come una risposta sul petrolio: la componente energetica di luglio decelera perché luglio non conteneva il rialzo del greggio',
+    'Contare gli atti a verbale a memoria: al FOMC del 29 luglio i dissensi per un rialzo erano tre — Hammack, Kashkari e Logan — e non uno solo come questa scheda ha scritto due volte',
   ],
   confirming: [
     'Riverificato alle 15:50 dopo l’indice dei prezzi: la probabilità di un rialzo a settembre crolla al 37,7% dal 52% del 10 agosto, contro il 62,3% attribuito alla permanenza al 3,50-3,75%',
@@ -503,9 +491,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'la-fed-esce-dal-prezzo-e-il-petrolio-non-era-nel-dato',
     'otto-navi-e-adesso-la-previsione-ha-un-conteggio',
     'l-agenzia-mette-una-data-sul-vincolo-e-arriva-al-2027',
-    'nove-millesimi-sotto-la-soglia-e-la-soglia-era-tonda',
   ],
 };
 

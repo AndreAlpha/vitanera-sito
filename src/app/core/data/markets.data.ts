@@ -17,6 +17,24 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'IPC LUGLIO',
+    name: 'Indice dei prezzi al consumo statunitense, luglio',
+    value: '3,4% annuo',
+    change: 'più 0,1% mensile, dal 3,5% di giugno; fondo a 2,5% dal 2,6%',
+    tone: 'bull',
+    icon: 'percent',
+    note: 'Diffuso il 12 agosto alle 14:30, esattamente sul consenso su entrambe le misure. È il dato che questo archivio indicava da sei giorni come decisivo, e ha deciso una delle due questioni che gli erano state affidate. La prima: la probabilità di un rialzo a settembre è scesa al 37,7% dal 52% del 10 agosto, e la condizione scritta allora per uscire dalla lettura neutrale — un rientro sotto il 50% dopo questo dato — è scattata sull’evento che nominava. La seconda invece non poteva essere decisa: l’indice di luglio misura luglio, mentre la corsa del Brent da 79 a 90 dollari è avvenuta interamente ad agosto. La componente energetica infatti decelera, più 14,7% annuo contro più 15,7% di giugno, con la benzina da più 26,7% a più 24,6%: non è una smentita del canale energetico, è una diffusione che quel canale non poteva contenere. Il test vero è l’indice di agosto, in uscita a settembre. Una nota sul metodo: il dato è uscito esattamente sui livelli che quattro analisi avevano scritto con «sopra» e una con «sotto», e nessuna delle due formulazioni è scattata — una condizione ancorata al consenso sta dove il dato ha più probabilità di atterrare.',
+  },
+  {
+    symbol: 'RIALZO SETTEMBRE',
+    name: 'Probabilità di un rialzo alla riunione Fed del 16 settembre',
+    value: '37,7%',
+    change: 'dal 52% del 10 agosto; 62,3% alla permanenza al 3,50-3,75%',
+    tone: 'bull',
+    icon: 'gauge',
+    note: 'Quattordici punti in un’ora e mezza, ricavati dai contratti a termine sui Fed Fund. È il numero su cui questa scheda ha lavorato per sei giorni, e finalmente si è mosso in modo leggibile invece di oscillare intorno alla metà: aveva attraversato quel livello quattro volte in quattro giorni, il che aveva portato l’11 agosto a smettere di seguirlo e a scegliere il biennale come misura. Anche quella misura si è mossa, e nello stesso verso: 4,180% con meno 3,8 punti base, primo movimento in sei giorni. Le due misure concordano per la prima volta da quando sono state messe l’una accanto all’altra. Una correzione che riguarda proprio il conto sulla Fed: al FOMC del 29 luglio i dissensi per un rialzo di venticinque punti base erano tre — Beth Hammack, Neel Kashkari e Lorie Logan — e non uno solo come questo archivio ha scritto nelle due analisi precedenti. Il fondo restrittivo del Comitato è più consistente di come era stato descritto, e un mercato che oggi prezza il rialzo a poco più di un terzo sta scommettendo che quei tre restino minoranza anche fra cinque settimane.',
+  },
+  {
     symbol: 'TRANSITI MARTEDI',
     name: 'Transiti nello Stretto di Hormuz, martedì 11 agosto',
     value: 'otto navi',
@@ -289,8 +307,8 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'XAU/USD',
     name: 'Oro spot',
-    value: '4.400,44 $',
-    change: 'più 0,77%, con il Dollar Index in rialzo: sale contro il cambio, non grazie al cambio',
+    value: '4.429,54 $',
+    change: 'più 1,41% dopo il dato; massimo di giornata 4.441,01, minimo 4.362,57',
     tone: 'warn',
     icon: 'coin',
     note: 'Giornata in cinque tempi. Nella sessione asiatica il metallo sale fino a 4.434,84 dollari, il più alto dal 5 giugno, con i futures statunitensi a 4.492,60; in mattinata europea restituisce quasi settanta dollari fino a 4.365,65, sotto i 4.372 che erano la prima condizione di invalidazione scritta qui alle 9:45; poi risale a 4.386,13 e infine a 4.393,69 nel pomeriggio, con Investing che lo quota nell’area 4.395. I 4.400 non sono stati presi in nessuno dei due tentativi. La differenza fra i due è però tutta nel contesto: alle 14:20 il metallo saliva contro un trentennale ai massimi da vent’anni e un Brent a 90 dollari, quindi era forza relativa; adesso sale mentre greggio e rendimenti rientrano, quindi è la correlazione normale che funziona. Il secondo movimento è più grande e vale meno del primo. In serata il metallo scivola nell’area 4.380-4.390, intorno a 4.385 secondo Kitco, senza reagire né alla diffusione sulle vendite di case né alle dichiarazioni della Fed di Atlanta; e in tarda serata lo spot scende ancora, intorno a 4.376. La mattina del 12 agosto il metallo riprende invece quota 4.400, a 4.400,44 con più 0,77%, con un intervallo di giornata fra circa 4.363 e 4.405. Il fatto informativo non è però il livello superato — è un numero tondo, cioè quello dove si accumulano gli ordini in attesa, e questa scheda ha smesso di appoggiarcisi il giorno prima. È la composizione: l’oro guadagna mentre il Dollar Index sale a 99,89 e il Brent corre alla sesta seduta di rialzo, quindi non risponde né al cambio né al canale dei tassi. Quello che resta è la domanda rifugio, isolata dagli altri due canali per la prima volta in questa fase. Sulla chiusura dell’11 agosto sul contratto americano le fonti restano in disaccordo — 4.383 dollari da una parte, 4.441,10 dall’altra — e qui non si sceglie fra i due: tutte le soglie restano fissate sullo spot. Attenzione alla serie: il contratto future scambia una sessantina di dollari sopra lo spot, e tutte le soglie qui sono sullo spot.',
@@ -362,9 +380,8 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     symbol: 'FED FUNDS',
     name: 'Tasso ufficiale della Federal Reserve',
     value: '3,50%-3,75%',
-    change:
-      'rialzo di settembre tornato al 48%: quarto attraversamento della metà in quattro giorni',
-    tone: 'warn',
+    change: 'rialzo di settembre al 37,7% dopo l’indice dei prezzi: il primo movimento leggibile',
+    tone: 'bull',
     icon: 'bank',
     note: 'La sequenza completa, dal rapporto occupazionale in poi: 55,1% alle 14:20 del 7 agosto, 41,7% subito dopo il dato, 43,7% in chiusura, circa 44% per tutta la giornata di lunedì, 48-50% in serata, 52% a notte fonda, e circa 48% nel pomeriggio dell’11 agosto. Sono quattro attraversamenti della metà in quattro giorni, e due nei due sensi in quarantotto ore. La metà è la linea che questo archivio aveva dichiarato il 7 agosto come condizione di invalidazione della lettura sui giorni, e su quella base la direzione era stata abbassata a neutrale lunedì sera; il ritorno sotto il 50% di oggi non la riporta indietro, perché farlo significherebbe ripetere l’errore col segno cambiato. La conclusione da trarre riguarda la soglia più del mercato: un livello attraversato nei due sensi due volte in due giorni non sta misurando un cambio di regime, sta misurando il rumore intorno a una linea scelta perché era tonda. La misura che deciderebbe è un’altra ed è sempre la stessa: la scadenza a due anni, ferma fra il 4,20% e il 4,24% da cinque giorni mentre questo numero si muoveva di tredici punti. Due misure dello stesso percorso che non concordano non sono un segnale finché non concordano. Resta un’aspettativa ricavata dai contratti a termine, non una decisione della Federal Reserve, e l’indice dei prezzi di mercoledì può ribaltarla in mezz’ora.',
   },
@@ -398,8 +415,8 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'US2Y',
     name: 'Treasury a 2 anni',
-    value: '≈ 4,23%',
-    change: 'ancora in discesa: nessuna accelerazione sulla parte corta della curva',
+    value: '4,180%',
+    change: 'meno 3,8 punti base dopo il dato: primo movimento in sei giorni',
     tone: 'bull',
     icon: 'arrow-down',
     note: 'È la scadenza dove si prezza per prima una decisione di settembre, ed è la metà della regola dichiarata il 5 agosto: oltre il 4,25%, con il Brent sopra gli 84 dollari, il canale dei tassi torna a lavorare contro il metallo. Per due giorni è rimasto immobile fra il 4,204% e il 4,228% mentre il greggio superava la sua tacca, la probabilità di un rialzo a settembre guadagnava otto punti e il decennale saliva di sette: era il numero più importante proprio perché non si muoveva. Nella sessione asiatica dell’11 agosto arriva a 4,239%, a undici millesimi dalla soglia — ma quella rilevazione era stata presa con il mercato a pronti statunitense chiuso per una festività giapponese, e a mercato aperto il numero è tornato indietro a 4,237%. È il dato più informativo della giornata proprio per quello che non ha fatto: mentre il trentennale andava vicino al 5,28% e il Brent toccava i 90 dollari, la scadenza che prezza la Fed è scesa di due millesimi. Un rialzo dei rendimenti che non passa dalla parte corta non è la banca centrale che diventa più restrittiva, è l’inflazione attesa che sale — e l’oro paga la prima cosa, non la seconda. Se il biennale supera il 4,25% con il Brent dove sta, entrambe le gambe della regola cadono per la prima volta.',
@@ -407,8 +424,8 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'US10Y',
     name: 'Treasury a 10 anni',
-    value: '4,682%',
-    change: 'dai 4,735% di ieri: rientra sotto la soglia del 4,70% prima del dato',
+    value: '4,662%',
+    change: 'dai 4,735% di ieri, con un intervallo di giornata fra 4,631% e 4,688%',
     tone: 'bull',
     icon: 'arrow-down',
     note: 'Salita a tappe e poi il ritorno: 4,637% nella mattinata di lunedì, 4,664%, circa 4,70% con un massimo di 4,703% in serata, 4,712% nella sessione asiatica dell’11 agosto, 4,721% in mattinata europea, un massimo di 4,739% nel primo pomeriggio, e alle 16:50 il rientro a circa 4,686%. Il rendimento ha quindi passato un giorno intero sopra il 4,70% e lo ha restituito senza che uscisse alcun dato: la salita non aveva un fatto sotto, e la discesa nemmeno. Quello che il decennale non ha fatto conta più di quello che ha fatto: in tutto il tragitto non ha mai portato con sé il biennale, che nella stessa finestra è passato da 4,239% a circa 4,23%, e non ha mai portato giù l’oro, risalito a 4.393,69. La condizione dichiarata chiedeva il 4,75% con l’oro sotto i 4.350, e nessuna delle due gambe è arrivata. Dopo l’asta a tre anni delle 19:00 il rendimento rientra nell’area del 4,69%: coerente con una buona ricezione dell’offerta, ma un collocamento a tre anni non è un test di questa scadenza. Le prove vere restano le altre due aste, il decennale mercoledì alle 19:00 e il trentennale giovedì. Una cautela sulle cifre: sul massimo di giornata le fonti non concordano sull’ultima cifra — 4,736% e 4,739% in due rilevazioni, con un’agenzia che arrotonda a circa 4,75% — e le condizioni scritte usano il 4,739%, cioè il più alto fra quelli a tre decimali.',
@@ -416,8 +433,8 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'DXY',
     name: 'Dollar Index',
-    value: '≈ 99,81',
-    change: 'fermo per la quarta rilevazione consecutiva, sotto quota 100',
+    value: '99,615',
+    change: 'meno 0,10% dopo il dato; intervallo di giornata 99,500-99,795',
     tone: 'bull',
     icon: 'arrow-flat',
     note: 'Per tutta la mattina il dollaro non aveva fatto nulla — 99,57-99,65, vicino al minimo da due mesi — e quel nulla era informativo: in una sessione con il greggio in rialzo su una crisi di approvvigionamento, il biglietto verde non attraeva la fuga verso la qualità. Nel pomeriggio sale a 99,70 con più 0,2%, insieme al biennale e al decennale. È poco, e il livello resta sotto quota 100: la combinazione che affonda davvero il metallo — dollaro forte insieme a rendimenti in salita — è ancora lontana nell’ampiezza. Ma il segno si è girato, e con esso è sparito l’unico elemento che teneva inclinata al rialzo la lettura intraday. La soglia da guardare resta quota 100, insieme al 4,25% sul biennale.',
@@ -425,8 +442,8 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
     symbol: 'PETROLIO',
     name: 'Greggio Brent',
-    value: '≈ 89,5 $',
-    change: 'sesta seduta consecutiva di rialzo; circa 88,1 sulla serie di questo archivio',
+    value: '88,43 $',
+    change: 'massimo di giornata a 90,06; circa 87,0 sulla serie di questo archivio',
     tone: 'bull',
     icon: 'arrow-down',
     note: 'La giornata ha una forma netta: 89,12 dollari in mattinata europea, poi 89,81 con il WTI a 84,28 — massimi dal 31 luglio — poi il test di quota 90 con un massimo di 90,03 e il WTI a 84,61, e da lì il rientro a 87,51 e infine a 87,22 nel pomeriggio, con il WTI a 81,77. Reuters attribuisce la discesa a colloqui fra Oman e Iran descritti come in fase avanzata, precisando che un accordo sostanziale non c’è e che lo Stretto non ha riaperto: è l’ottavo annuncio di distensione in una settimana ed è il primo a cui il prezzo paga davvero, quasi tre punti percentuali contro l’uno o meno dei sette precedenti. Nel primo pomeriggio il fatto sembrava andare contro la lettura tenuta qui — che il mercato avesse smesso di pagare per la distensione annunciata — e una giornata sola non bastava a separarlo dall’ipotesi che fosse solo il fallimento di un test a novanta dollari. La seconda osservazione della stessa giornata lo separa: nel Bab el-Mandeb tre membri di un equipaggio sono stati uccisi, primo attacco mortale della fase contro una nave, e la reazione del greggio a quel fatto è indistinguibile da zero. Il mercato non è desensibilizzato alle notizie in generale: è desensibilizzato al danno e non alla speranza, perché il danno è marginale rispetto a un vincolo già estremo mentre un accordo lo rimuoverebbe in un colpo solo. Il percorso della fase resta lo stesso e va tenuto insieme: apertura di lunedì a 84,79 dollari, 86,11 nel tardo pomeriggio, 87,40-87,72 in serata a seconda della fonte, 88,09 nella sessione asiatica. I due motori che l’avevano prodotto sono ancora lì — le richieste di risarcimento fra Stati Uniti e Iran diventate due e simmetriche, e l’attacco con droni che ha ritardato la ripartenza della raffineria Aramco di Jazan — e nessuno dei due è stato tolto da quanto detto oggi al tavolo dell’Oman. Serve la conversione fra le serie: queste quotazioni implicano una chiusura di venerdì intorno a 83,55, mentre la serie usata qui dal 5 agosto ha chiuso a 82,21, ed è su quella che sono fissate le tacche degli 80, 82 e 84 dollari. Applicando la stessa variazione il massimo vale circa 88,6 e il rientro circa 85,8: quasi due dollari sopra la tacca anche nel punto più basso. Resta caduta una gamba sola della regola a due gambe — l’altra chiede un biennale sopra il 4,25%, e nel pomeriggio il biennale è sceso ancora, a circa 4,23%. Una precisazione sulla regola: non è del 5 agosto, come questo archivio ha scritto per giorni, ma del 9, quando è stata formulata in «Due infrastrutture in un giorno»; il 5 agosto era stata dichiarata la sola soglia del 4,25%.',
