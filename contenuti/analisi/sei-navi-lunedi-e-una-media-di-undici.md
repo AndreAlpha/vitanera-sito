@@ -27,8 +27,10 @@ fonti:
     titolo: "Dati sui transiti nello Stretto di Hormuz"
   - testata: "Bureau of Labor Statistics"
     titolo: "Calendario delle diffusioni"
+esito: "confermata"
+controllata: "2026-08-12T15:50:00+02:00"
 sorgente: "src/app/core/data/articles/sei-navi-lunedi-e-una-media-di-undici.ts"
-impronta: "c38d33eb0dc4ecbd"
+impronta: "2a3286b5f6329673"
 ---
 
 # Sei navi lunedì, e una media di undici
@@ -125,6 +127,20 @@ Alta sui fatti: i numeri sui transiti vengono da un fornitore di dati nominato, 
 Impostazione su XAU/USD: neutrale, forza bassa, orizzonte medio.
 
 Due fatti che tirano in verso opposto, e il netto è vicino a zero. Da un lato il conteggio dei transiti — il metro che questo archivio segue dal 5 agosto con una soglia di otto navi al giorno — trova finalmente una fonte con una serie: Kpler dà sei navi lunedì, ma una media di circa undici negli ultimi dieci giorni. Undici è sopra la soglia, e obbliga a dire che le due navi di venerdì erano un minimo e non il livello. Dall’altro lato la trattativa si irrigidisce: alle richieste iraniane di risarcimento Washington risponde chiedendo a sua volta risarcimenti per vittime e feriti, e due pretese simmetriche sono più difficili da chiudere di una sola. Il greggio resta sopra gli 88 dollari, sui massimi dal 31 luglio: la strada per cui questa vicenda arriva all’oro passa ancora dall’inflazione attesa, non dal rifugio.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-12T15:50:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e la lettura ha retto su tutti i fronti che dichiarava. Il conteggio dei transiti non è risalito ma nemmeno crollato sotto la soglia delle otto navi di media, le esportazioni nette non sono tornate sopra i quattro milioni di barili, nessuna delle due richieste di risarcimento è stata ritirata, il Brent resta a 88,43 dollari contro gli 85,4 che avrebbero smontato la premessa, e l’indice dei prezzi è uscito esattamente sulla soglia. La verifica aggiunge però un limite alla misura su cui questa analisi si regge, e conviene scriverlo accanto al verdetto invece che al posto suo: i servizi di tracciamento segnalano circa venti petroliere che navigano con il transponder spento, il che significa che il conteggio delle navi sottostima il flusso reale di una quantità non nota. La conclusione di fondo non cambia — un traffico ridotto di circa il 90% resta un regime di eccezione — ma la precisione del metro è inferiore a quella che sei giorni di analisi gli hanno attribuito.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Una media dei transiti a dieci giorni che scende stabilmente sotto le otto navi al giorno nella prossima rilevazione Kpler: riporterebbe il metro dove questo archivio lo aveva collocato, e direbbe che la media di undici era il residuo di una settimana migliore. | no | La media a dieci giorni resta sopra le otto: le rilevazioni riportate fra l’11 e il 12 agosto la collocano intorno a undici-dodici transiti al giorno, mentre il dato giornaliero peggiora — sei navi lunedì, otto martedì. Il conteggio del mercoledì non è ancora disponibile al controllo. Va aggiunta una cautela che questa verifica ha trovato e che l’archivio non aveva: secondo i servizi di tracciamento circa venti petroliere navigano con il transponder spento, quindi il flusso reale può essere superiore a quello contato. È un limite della misura, non un suo movimento. |
+| Esportazioni nette attraverso lo Stretto che risalgono sopra i 4 milioni di barili al giorno: sarebbe la normalizzazione misurata in barili, che è la misura giusta, e toglierebbe la premessa a questa lettura. | no | Non verificabile con le fonti raggiungibili: non risulta pubblicata una rilevazione delle esportazioni nette successiva ai circa 3 milioni di barili al giorno riportati l’11 agosto. Registrata come non scattata sulla direzione descritta, non su un numero nuovo. |
+| Il ritiro di una delle due richieste di risarcimento, o un incontro diretto fra le parti: sarebbe il primo passo strutturale verso la riapertura da quando la vicenda è cominciata. | no | Nessun ritiro e nessun incontro diretto risultano riportati fra l’11 e il 12 agosto. Al contrario, la cronaca del 12 agosto descrive lo Stretto come ancora di fatto chiuso al traffico commerciale e le speranze di un accordo rapido in ulteriore riduzione. |
+| Un Brent che rientra sotto gli 84 dollari sulla serie di questo archivio, cioè sotto gli 85,4 su quella citata dalle agenzie: direbbe che il mercato dell’energia ha smesso di prezzare lo stallo descritto qui. | no | Molto lontano. Alle 15:50 del 12 agosto il Brent è a 88,43 dollari, cioè circa 87,0 sulla serie usata in questo archivio, con un intervallo di giornata fra 88,14 e 90,06 (Investing.com). Il minimo della giornata resta quasi tre dollari sopra la soglia delle agenzie. |
+| Un indice dei prezzi statunitense mercoledì 12 agosto sopra il 3,4% annuo sul dato principale, o sopra più 0,2% mensile su quello di fondo: sposterebbe il comando al canale americano, dove il conteggio delle navi conta molto meno. | no | Il dato è uscito esattamente sulle due soglie e non sopra: 3,4% annuo sul principale, in calo dal 3,5% di giugno, e più 0,2% mensile sul dato di fondo (Trading Economics, letto alle 15:50 del 12 agosto). Il comando non si è spostato al canale americano. |
 
 ## Fonti consultate
 

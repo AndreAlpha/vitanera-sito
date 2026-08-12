@@ -27,8 +27,10 @@ fonti:
   - testata: "Reuters"
   - testata: "Bureau of Labor Statistics"
     titolo: "Calendario delle diffusioni"
+esito: "confermata"
+controllata: "2026-08-12T15:50:00+02:00"
 sorgente: "src/app/core/data/articles/la-boj-apre-a-un-ritmo-piu-rapido-e-nomina-il-medio-oriente.ts"
-impronta: "68a2dfd599f9cfb3"
+impronta: "6e046a5377265785"
 ---
 
 # La Banca del Giappone apre a un ritmo più rapido, e nomina il Medio Oriente
@@ -117,6 +119,20 @@ Alta sui fatti: il riassunto delle opinioni è un documento ufficiale pubblicato
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte medio.
 
 Il documento tira in due direzioni con la stessa riga. Da un lato una Banca del Giappone più restrittiva sostiene lo yen e contribuisce a indebolire il dollaro contro cui il metallo è quotato, e il dollaro è già vicino al minimo da due mesi: questo è il canale favorevole. Dall’altro allunga l’elenco delle banche centrali che dichiarano di temere ancora l’inflazione, e un mondo di tassi che restano alti è il costo di tenere un’attività che non paga cedole. La reazione giapponese conferma il tono ma non il grado: i rendimenti dei titoli di Stato salgono di un punto base scarso su entrambe le scadenze. È un documento su un ritmo condizionato, non una decisione presa.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-12T15:50:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e questa è la prima volta che questo esito viene chiuso con una prova per ciascuna invece che con un rinvio: era in attesa dal 10 agosto proprio dell’indice dei prezzi che è uscito oggi. La lettura sosteneva che il riassunto delle opinioni della Banca del Giappone fosse un’intenzione dichiarata e non un fatto, e che la forza andasse tenuta bassa finché non compariva un atto. Due giorni dopo la classificazione regge: nessun rialzo, nessuna data, il decennale giapponese salito di quattro punti base e mezzo su venti necessari, il dollaro fermo in una fascia di quattro decimi. Quello che si è mosso è l’attesa di mercato, che ha spostato il prossimo rialzo da dicembre a settembre: è esattamente il canale che l’analisi descriveva, misurato dove diceva di misurarlo, ma resta un’aspettativa e non un atto — la stessa distinzione che il documento aveva ricevuto.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un rialzo effettivo della Banca del Giappone alla prossima riunione, o l’annuncio di una data: sposterebbe il documento dalla categoria delle intenzioni dichiarate a quella dei fatti, e renderebbe troppo prudente la forza bassa scritta qui. | no | Nessun rialzo e nessuna data annunciata fra il 10 e il 12 agosto. Si è però mosso quello che l’analisi diceva di guardare: gli operatori hanno anticipato a settembre l’attesa del prossimo rialzo, che prima era collocata a dicembre, citando il tono del riassunto delle opinioni di luglio e l’intervento valutario congiunto. È un’attesa di mercato, non un atto della banca centrale, quindi la condizione resta non scattata per come è scritta. |
+| Uno yen che si rafforza sotto quota 140 contro dollaro con il Dollar Index sotto 99: sarebbe la conferma che il canale valutario descritto qui funziona davvero, e la lettura andrebbe alzata di grado invece che lasciata dov’è. | no | La seconda gamba non c’è: il Dollar Index è a 99,615 alle 15:50 del 12 agosto, con un minimo di giornata a 99,500, quindi mai sotto 99 (Investing.com). La condizione è una congiunzione e cade indipendentemente dal livello dello yen, per il quale non risulta comunque una rilevazione sotto quota 140 nelle fonti raggiungibili. |
+| Un Dollar Index che risale sopra 100 nonostante il verbale: direbbe che il mercato ha letto il documento come rumore, e che il canale su cui questa lettura poggia non esiste. | no | Il Dollar Index non ha mai raggiunto quota 100 nella finestra: alle 15:50 del 12 agosto è a 99,615 con meno 0,10%, e il massimo di giornata è 99,795 (Investing.com). Nei tre giorni coperti dalla lettura è rimasto in una fascia stretta fra 99,5 e 99,9. |
+| Un decennale giapponese che rompe il 3% entro la settimana, cioè quasi venti punti base sopra il livello di oggi: sarebbe una riprezzatura vera del ritmo, non la conferma di un tono, e trascinerebbe anche la parte lunga americana. | no | Non raggiunto, ma si è mosso nella direzione giusta: il decennale giapponese sale di 4,5 punti base al 2,850%, dai 2,805% citati nell’analisi. Restano quindi quindici punti base dal 3%, e la settimana dichiarata dalla condizione scade venerdì 14: la condizione è registrata come non scattata al controllo, con il termine ancora aperto. |
+| Un indice dei prezzi statunitense mercoledì 12 agosto sopra le attese del 3,4% annuo, o un dato di fondo sopra il 2,5%: riporterebbe il comando al canale americano, dove un verbale giapponese conta molto poco. | no | Il dato è uscito esattamente sulle due attese e non sopra: 3,4% annuo sul principale, in calo dal 3,5% di giugno, e 2,5% sul dato di fondo, in calo dal 2,6% (Trading Economics, letto alle 15:50 del 12 agosto). Il comando non è tornato al canale americano. |
 
 ## Fonti consultate
 

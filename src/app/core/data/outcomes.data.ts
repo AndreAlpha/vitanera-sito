@@ -28,6 +28,368 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'l-agenzia-mette-una-data-sul-vincolo-e-arriva-al-2027',
+    checkedAt: '2026-08-12T15:50:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un Brent che chiude mercoledì sopra gli 88,67 dollari di questa sera, cioè sopra il massimo serale invece che sopra i 90 tondi: direbbe che il mercato sta prezzando più della revisione dell’agenzia e non meno, e toglierebbe il fondamento all’argomento centrale di questa lettura.',
+        triggered: false,
+        evidence:
+          'Alle 15:50 del 12 agosto il Brent è a 88,43 dollari con meno 0,54%, contro una chiusura ' +
+          'precedente di 88,91 (Investing.com). La chiusura di mercoledì non è ancora avvenuta, quindi la ' +
+          'condizione è registrata come non scattata sul prezzo osservato e non sul termine dichiarato. Da ' +
+          'annotare che l’intervallo di giornata arriva a 90,06: il livello è stato toccato in seduta ma ' +
+          'la condizione chiede la chiusura.',
+      },
+      {
+        condition:
+          'Un biennale che si porta sopra il 4,237%, cioè sopra la rilevazione di questa mattina: è la misura dichiarata da questo archivio nel pomeriggio, non si è mossa attraverso quattro notizie in una sera, e la sua caduta direbbe che la Fed sta entrando nel prezzo.',
+        triggered: false,
+        evidence:
+          'È andata nella direzione opposta, e nettamente. Dopo l’indice dei prezzi il biennale scende a ' +
+          '4,180% con meno 3,8 punti base, con un intervallo di giornata fra 4,170% e 4,218% ' +
+          '(Investing.com, 15:50 del 12 agosto): il massimo della giornata resta diciannove millesimi ' +
+          'sotto la soglia. La misura scelta si è mossa per la prima volta in sei giorni, e verso il basso.',
+      },
+      {
+        condition:
+          'Un indice dei prezzi mercoledì sopra il 3,4% annuo sul dato principale con la componente energetica in aumento su base mensile: sarebbe il canale che questa analisi dice non ancora attivo, misurato dove si misura davvero.',
+        triggered: false,
+        evidence:
+          'Non scattata su nessuna delle due gambe. L’indice dei prezzi di luglio, diffuso il 12 agosto ' +
+          'alle 14:30, è a più 0,1% mensile e 3,4% annuo, in calo dal 3,5% di giugno: esattamente sulla ' +
+          'soglia e non sopra. E la componente energetica va nel verso opposto a quello richiesto — più ' +
+          '14,7% annuo contro più 15,7% di giugno, con la benzina a più 24,6% da più 26,7% e il gasolio a ' +
+          'più 39,1% da più 42,9% (Trading Economics, letto alle 15:50). La cronaca del giorno riporta un ' +
+          'indice energetico in calo dell’1,5% sul mese. Resta però il limite che questa verifica ha ' +
+          'scoperto: il dato misura luglio, mentre la corsa del Brent da 79 a 90 dollari è avvenuta ad ' +
+          'agosto. Il canale descritto qui non poteva comparire in questo dato.',
+      },
+      {
+        condition:
+          'Un oro spot sotto i 4.357 dollari, il minimo di questa giornata, entro la chiusura di mercoledì: interromperebbe la sequenza di sedute positive e direbbe che la componente rifugio della notizia non ha alcun peso.',
+        triggered: false,
+        evidence:
+          'Mancata per cinque dollari e cinquantasette centesimi. Il minimo di giornata dell’oro spot è ' +
+          '4.362,57 dollari; alle 15:50 il metallo è a 4.429,54 con più 1,41%, e il massimo di giornata è ' +
+          '4.441,01 (Investing.com). La sequenza di sedute positive non si è interrotta.',
+      },
+      {
+        condition:
+          'Una nuova revisione al rialzo della previsione sul Brent nell’aggiornamento di settembre dell’agenzia: confermerebbe che quella di oggi inseguiva il mercato invece di anticiparlo, e che il prezzo resta la misura migliore della previsione.',
+        triggered: false,
+        evidence:
+          'Non giudicabile: l’aggiornamento mensile dell’agenzia americana esce a settembre e al controllo ' +
+          'non è pubblicato. La condizione era scritta apposta con una scadenza lontana e resta il solo ' +
+          'debito aperto di questa analisi.',
+      },
+    ],
+    what:
+      'Nessuna delle cinque condizioni è scattata, e l’argomento centrale ha retto meglio di quanto la ' +
+      'lettura stessa si aspettasse. L’analisi sosteneva che la catena dal greggio all’inflazione ha un ' +
+      'anello debole, perché l’indice dei prezzi misura una variazione e non un livello: il dato di luglio ' +
+      'esce con la componente energetica in decelerazione su base annua e il biennale scende di quasi ' +
+      'quattro punti base. La verifica ha però trovato un limite nella costruzione stessa del test, e va ' +
+      'detto perché vale più del verdetto: questo archivio ha indicato per sei giorni l’indice dei prezzi ' +
+      'del 12 agosto come l’evento che avrebbe deciso se lo shock energetico stesse entrando ' +
+      'nell’inflazione, ma quel dato misura luglio, e la corsa del Brent da 79 a 90 dollari è avvenuta ad ' +
+      'agosto. La domanda posta non poteva ricevere risposta da questa diffusione. Il test giusto è ' +
+      'l’indice dei prezzi di agosto, che esce a settembre.',
+  },
+  {
+    slug: 'hormuz-entra-nel-percorso-dei-prezzi-e-chi-lo-dice-non-vota',
+    checkedAt: '2026-08-12T15:50:00+02:00',
+    verdict: 'parziale',
+    conditions: [
+      {
+        condition:
+          'Un biennale che si porta sopra il 4,25%: è la misura dichiarata in questo archivio tre ore prima di questa analisi come quella che decide la direzione sui giorni, e la sua caduta direbbe che il quadro si è mosso mentre questa lettura sosteneva il contrario.',
+        triggered: false,
+        evidence:
+          'Il biennale scende a 4,180% dopo l’indice dei prezzi, con meno 3,8 punti base e un intervallo ' +
+          'di giornata fra 4,170% e 4,218% (Investing.com, 15:50 del 12 agosto). Il massimo della giornata ' +
+          'resta trentadue millesimi sotto la soglia.',
+      },
+      {
+        condition:
+          'Un indice dei prezzi mercoledì 12 agosto sopra il 3,4% annuo sul dato principale, o sopra più 0,2% mensile su quello di fondo: la parte di inflazione che Venable attribuisce al Medio Oriente arriverebbe nel dato, e la prudenza di questa lettura risulterebbe eccessiva nel verso sbagliato.',
+        triggered: false,
+        evidence:
+          'Il dato è uscito esattamente sulle due soglie, non sopra: 3,4% annuo sul principale, in calo dal ' +
+          '3,5% di giugno, e più 0,2% mensile sul dato di fondo, con il fondo annuo al 2,5% da 2,6% ' +
+          '(Trading Economics, letto alle 15:50; il titolo di cronaca del giorno riporta «più 0,1% a ' +
+          'luglio, come atteso, con il tasso annuo al 3,4%»). Una condizione scritta con «sopra» e un dato ' +
+          'che stampa il numero esatto non scattano: vedi la lezione.',
+      },
+      {
+        condition:
+          'Un oro sopra i 4.435 dollari o sotto i 4.357 entro la chiusura di mercoledì, cioè fuori dall’intervallo in cui il metallo si è mosso in questa giornata: direbbe che una delle tre notizie contava più di quanto le viene riconosciuto qui.',
+        triggered: true,
+        evidence:
+          'Scattata dal lato alto. L’oro spot ha toccato 4.441,01 dollari nell’intervallo di giornata del ' +
+          '12 agosto, cioè sei dollari sopra la soglia dei 4.435, ed è a 4.429,54 con più 1,41% alle 15:50 ' +
+          '(Investing.com). Il lato basso non è stato toccato: il minimo è 4.362,57, cinque dollari e ' +
+          'cinquantasette centesimi sopra i 4.357. Il metallo è quindi uscito dall’intervallo dichiarato, ' +
+          'e nella direzione che l’analisi indicava come «una delle tre notizie contava più di quanto le ' +
+          'viene riconosciuto qui».',
+      },
+      {
+        condition:
+          'Un’asta a tre anni con un rendimento di aggiudicazione superiore al 4,30%, contro il 4,179% della precedente: sarebbe una richiesta di premio sulla scadenza che prezza la Fed, e contraddirebbe la lettura di un biennale immobile.',
+        triggered: false,
+        evidence:
+          'L’asta si è tenuta la sera stessa dell’11 agosto e si è aggiudicata al 4,291%, nove millesimi ' +
+          'sotto la soglia, con un rapporto fra domanda e offerta di 2,71 contro 2,60 della precedente e ' +
+          'una media di circa 2,64 sulle ultime dieci. Non è stato chiesto alcun premio.',
+      },
+      {
+        condition:
+          'Una nuova dichiarazione restrittiva da un membro con diritto di voto al FOMC entro mercoledì: renderebbe irrilevante la distinzione fra voci che votano e voci che non votano su cui si regge una parte di questa analisi.',
+        triggered: false,
+        evidence:
+          'Non risultano nuove dichiarazioni restrittive da membri votanti fra la pubblicazione e il ' +
+          'controllo: le ricerche sui discorsi della Federal Reserve del 12 agosto non restituiscono ' +
+          'interventi successivi a quello della governatrice Cook del 5 agosto. La distinzione fra chi ' +
+          'vota e chi non vota regge quindi come criterio, ma il conto su cui era stata applicata era ' +
+          'sbagliato: vedi il commento.',
+      },
+    ],
+    what:
+      'Una condizione su cinque è scattata, ed è quella sull’oro: il metallo ha toccato 4.441,01 dollari, ' +
+      'sei sopra la soglia dei 4.435 che l’analisi aveva indicato come il livello oltre il quale una delle ' +
+      'notizie di quella sera valeva più di quanto le venisse riconosciuto. Le altre quattro hanno retto, e ' +
+      'due in modo netto: il biennale è sceso a 4,180% invece di salire, e l’asta a tre anni si è ' +
+      'aggiudicata sotto la soglia. C’è però una correzione da registrare che riguarda il cuore ' +
+      'dell’analisi e che non si può fare sul testo, perché un’analisi pubblicata non si tocca. Questa ' +
+      'lettura, e quella che l’ha seguita, hanno costruito il proprio giudizio sulla Fed contando «due ' +
+      'preferenze dichiarate da chi non ha il voto contro un solo atto a verbale», identificando ' +
+      'quell’atto nel dissenso di Beth Hammack del 29 luglio. Il comunicato ufficiale di quella riunione ' +
+      'dice altro: a votare contro furono in tre — Beth Hammack, Neel Kashkari e Lorie Logan — tutti per ' +
+      'un rialzo di venticinque punti base. Gli atti a verbale erano quindi tre, non uno, e il conto che ' +
+      'sorreggeva la lettura era sbagliato di due terzi nella direzione che rendeva la conclusione più ' +
+      'comoda.',
+    lesson:
+      'Una condizione ancorata al consenso è una condizione messa dove il dato ha più probabilità di ' +
+      'atterrare, e quindi non può né confermare né smentire. È lo stesso difetto dei livelli tondi ' +
+      'registrato l’11 agosto, applicato alle previsioni invece che ai prezzi, ed è la terza volta in due ' +
+      'giorni. La dimostrazione è che l’archivio ha scritto sulla stessa diffusione due condizioni ' +
+      'speculari — «sopra il 3,4% annuo» qui e in altre tre analisi, «sotto il 3,4% annuo» in quella del ' +
+      '10 agosto sul rialzo di settembre — e il dato ha stampato esattamente 3,4%, con il dato di fondo ' +
+      'esattamente a più 0,2% mensile: nessuna delle due è scattata. Cinque analisi hanno aspettato per ' +
+      'giorni un evento che, per come le condizioni erano scritte, non poteva decidere niente. La regola ' +
+      'che se ne ricava è di ancorare la condizione a una distanza dal consenso e non al consenso — «due ' +
+      'decimi sopra la stima» invece di «sopra la stima» — così che il caso più probabile stia dentro la ' +
+      'zona neutra per costruzione e non per caso.',
+  },
+  {
+    slug: 'sei-navi-lunedi-e-una-media-di-undici',
+    checkedAt: '2026-08-12T15:50:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Una media dei transiti a dieci giorni che scende stabilmente sotto le otto navi al giorno nella prossima rilevazione Kpler: riporterebbe il metro dove questo archivio lo aveva collocato, e direbbe che la media di undici era il residuo di una settimana migliore.',
+        triggered: false,
+        evidence:
+          'La media a dieci giorni resta sopra le otto: le rilevazioni riportate fra l’11 e il 12 agosto ' +
+          'la collocano intorno a undici-dodici transiti al giorno, mentre il dato giornaliero peggiora — ' +
+          'sei navi lunedì, otto martedì. Il conteggio del mercoledì non è ancora disponibile al ' +
+          'controllo. Va aggiunta una cautela che questa verifica ha trovato e che l’archivio non aveva: ' +
+          'secondo i servizi di tracciamento circa venti petroliere navigano con il transponder spento, ' +
+          'quindi il flusso reale può essere superiore a quello contato. È un limite della misura, non un ' +
+          'suo movimento.',
+      },
+      {
+        condition:
+          'Esportazioni nette attraverso lo Stretto che risalgono sopra i 4 milioni di barili al giorno: sarebbe la normalizzazione misurata in barili, che è la misura giusta, e toglierebbe la premessa a questa lettura.',
+        triggered: false,
+        evidence:
+          'Non verificabile con le fonti raggiungibili: non risulta pubblicata una rilevazione delle ' +
+          'esportazioni nette successiva ai circa 3 milioni di barili al giorno riportati l’11 agosto. ' +
+          'Registrata come non scattata sulla direzione descritta, non su un numero nuovo.',
+      },
+      {
+        condition:
+          'Il ritiro di una delle due richieste di risarcimento, o un incontro diretto fra le parti: sarebbe il primo passo strutturale verso la riapertura da quando la vicenda è cominciata.',
+        triggered: false,
+        evidence:
+          'Nessun ritiro e nessun incontro diretto risultano riportati fra l’11 e il 12 agosto. Al ' +
+          'contrario, la cronaca del 12 agosto descrive lo Stretto come ancora di fatto chiuso al traffico ' +
+          'commerciale e le speranze di un accordo rapido in ulteriore riduzione.',
+      },
+      {
+        condition:
+          'Un Brent che rientra sotto gli 84 dollari sulla serie di questo archivio, cioè sotto gli 85,4 su quella citata dalle agenzie: direbbe che il mercato dell’energia ha smesso di prezzare lo stallo descritto qui.',
+        triggered: false,
+        evidence:
+          'Molto lontano. Alle 15:50 del 12 agosto il Brent è a 88,43 dollari, cioè circa 87,0 sulla serie ' +
+          'usata in questo archivio, con un intervallo di giornata fra 88,14 e 90,06 (Investing.com). Il ' +
+          'minimo della giornata resta quasi tre dollari sopra la soglia delle agenzie.',
+      },
+      {
+        condition:
+          'Un indice dei prezzi statunitense mercoledì 12 agosto sopra il 3,4% annuo sul dato principale, o sopra più 0,2% mensile su quello di fondo: sposterebbe il comando al canale americano, dove il conteggio delle navi conta molto meno.',
+        triggered: false,
+        evidence:
+          'Il dato è uscito esattamente sulle due soglie e non sopra: 3,4% annuo sul principale, in calo ' +
+          'dal 3,5% di giugno, e più 0,2% mensile sul dato di fondo (Trading Economics, letto alle 15:50 ' +
+          'del 12 agosto). Il comando non si è spostato al canale americano.',
+      },
+    ],
+    what:
+      'Nessuna delle cinque condizioni è scattata, e la lettura ha retto su tutti i fronti che dichiarava. ' +
+      'Il conteggio dei transiti non è risalito ma nemmeno crollato sotto la soglia delle otto navi di ' +
+      'media, le esportazioni nette non sono tornate sopra i quattro milioni di barili, nessuna delle due ' +
+      'richieste di risarcimento è stata ritirata, il Brent resta a 88,43 dollari contro gli 85,4 che ' +
+      'avrebbero smontato la premessa, e l’indice dei prezzi è uscito esattamente sulla soglia. La ' +
+      'verifica aggiunge però un limite alla misura su cui questa analisi si regge, e conviene scriverlo ' +
+      'accanto al verdetto invece che al posto suo: i servizi di tracciamento segnalano circa venti ' +
+      'petroliere che navigano con il transponder spento, il che significa che il conteggio delle navi ' +
+      'sottostima il flusso reale di una quantità non nota. La conclusione di fondo non cambia — un ' +
+      'traffico ridotto di circa il 90% resta un regime di eccezione — ma la precisione del metro è ' +
+      'inferiore a quella che sei giorni di analisi gli hanno attribuito.',
+  },
+  {
+    slug: 'il-rialzo-di-settembre-torna-in-maggioranza',
+    checkedAt: '2026-08-12T15:50:00+02:00',
+    verdict: 'parziale',
+    conditions: [
+      {
+        condition:
+          'Una probabilità di rialzo a settembre che rientra sotto il 50% dopo l’indice dei prezzi di mercoledì: rimetterebbe in piedi la gamba che questa lettura dichiara caduta, e riporterebbe la direzione sui giorni dov’era.',
+        triggered: true,
+        evidence:
+          'Scattata, e con margine. Dopo l’indice dei prezzi del 12 agosto la probabilità di un rialzo ' +
+          'alla riunione del 16 settembre scende al 37,7%, contro il 62,3% attribuito alla permanenza ' +
+          'nella fascia corrente del 3,50-3,75% (Investing.com sui futures sui Fed Fund del CME, letto ' +
+          'alle 15:50). Il numero era intorno alla metà nella mattinata e al 52% la sera del 10 agosto: la ' +
+          'gamba che questa lettura dichiarava caduta è tornata in piedi, ed è successo esattamente dopo ' +
+          'l’evento che la condizione nominava.',
+      },
+      {
+        condition:
+          'Un biennale che sale sopra il 4,25% confermando la riprezzatura: sarebbe la conferma che oggi manca, e allora la direzione non resterebbe neutrale ma scenderebbe.',
+        triggered: false,
+        evidence:
+          'La conferma non è mai arrivata, e adesso è arrivata la smentita: il biennale scende a 4,180% ' +
+          'con meno 3,8 punti base dopo il dato, con un massimo di giornata a 4,218% (Investing.com, ' +
+          '15:50 del 12 agosto). In sei giorni quella scadenza non ha mai superato il 4,239%.',
+      },
+      {
+        condition:
+          'Un oro spot che rompe i massimi di venerdì, circa 4.372 dollari, con il Dollar Index sotto 99,4: direbbe che il metallo ha prezzato la riprezzatura della Fed e l’ha ignorata, e renderebbe sbagliato l’abbassamento della direzione.',
+        triggered: false,
+        evidence:
+          'Metà condizione soddisfatta e metà no, quindi non scattata. L’oro ha rotto i massimi di venerdì ' +
+          'con ampio margine — 4.429,54 dollari alle 15:50, con un massimo di giornata a 4.441,01 — ma il ' +
+          'Dollar Index è a 99,615 con meno 0,10% e un minimo di giornata a 99,500, quindi sopra la soglia ' +
+          'del 99,4 che la condizione richiede. Mancano undici centesimi di indice sul minimo.',
+      },
+      {
+        condition:
+          'Un Brent che rientra sotto gli 84 dollari sulla serie di questo archivio, cioè sotto gli 85,4 su quella citata dalle agenzie, con un annuncio verificabile sulla riapertura dello Stretto: toglierebbe il motore alla riprezzatura descritta qui.',
+        triggered: false,
+        evidence:
+          'Nessuna delle due gambe. Il Brent è a 88,43 dollari, circa 87,0 sulla serie usata qui, con un ' +
+          'massimo di giornata a 90,06; e nessun annuncio verificabile sulla riapertura dello Stretto ' +
+          'risulta pubblicato, con la cronaca del 12 agosto che descrive le speranze di accordo in ' +
+          'ulteriore riduzione.',
+      },
+      {
+        condition:
+          'Un indice dei prezzi mercoledì 12 agosto sotto il 3,4% annuo sul dato principale e sotto più 0,2% mensile su quello di fondo: sarebbe il modo più rapido perché tutto questo si riveli un’oscillazione di due giorni.',
+        triggered: false,
+        evidence:
+          'Il dato è uscito esattamente sui due livelli, non sotto: 3,4% annuo sul principale e più 0,2% ' +
+          'mensile sul dato di fondo (Trading Economics, letto alle 15:50). È la condizione speculare a ' +
+          'quella scritta in quattro altre analisi, e il numero esatto le ha fatte fallire tutte insieme — ' +
+          'ma il mercato ha reagito come se il dato fosse morbido, perché entrambi i tassi annui scendono ' +
+          'di un decimo rispetto a giugno.',
+      },
+    ],
+    what:
+      'Una condizione su cinque è scattata, ed è la prima: la probabilità di un rialzo a settembre è ' +
+      'scesa al 37,7% dopo l’indice dei prezzi, contro il 52% su cui questa analisi aveva abbassato la ' +
+      'direzione sui giorni la sera del 10 agosto. La lettura è quindi sbagliata nel punto che aveva ' +
+      'dichiarato come il suo, e lo è per la ragione che aveva scritto: il numero è tornato sotto la ' +
+      'metà dopo l’evento che la condizione nominava. Vale la pena notare che la cautela messa accanto a ' +
+      'quel giudizio ha invece funzionato — l’analisi diceva di non scendere oltre il neutrale perché il ' +
+      'biennale non confermava nulla, e il biennale in sei giorni non ha mai superato il 4,239%, per poi ' +
+      'scendere a 4,180% proprio sul dato. La parte prudente ha retto, la parte decisa no. E c’è un ' +
+      'dettaglio che l’ultima condizione rende visibile: il dato è uscito esattamente sui livelli scritti ' +
+      'e formalmente non l’ha soddisfatta, ma il mercato lo ha letto come morbido perché entrambi i tassi ' +
+      'annui scendono di un decimo. Fra la condizione e il mercato, ha avuto ragione il mercato.',
+  },
+  {
+    slug: 'la-boj-apre-a-un-ritmo-piu-rapido-e-nomina-il-medio-oriente',
+    checkedAt: '2026-08-12T15:50:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un rialzo effettivo della Banca del Giappone alla prossima riunione, o l’annuncio di una data: sposterebbe il documento dalla categoria delle intenzioni dichiarate a quella dei fatti, e renderebbe troppo prudente la forza bassa scritta qui.',
+        triggered: false,
+        evidence:
+          'Nessun rialzo e nessuna data annunciata fra il 10 e il 12 agosto. Si è però mosso quello che ' +
+          'l’analisi diceva di guardare: gli operatori hanno anticipato a settembre l’attesa del prossimo ' +
+          'rialzo, che prima era collocata a dicembre, citando il tono del riassunto delle opinioni di ' +
+          'luglio e l’intervento valutario congiunto. È un’attesa di mercato, non un atto della banca ' +
+          'centrale, quindi la condizione resta non scattata per come è scritta.',
+      },
+      {
+        condition:
+          'Uno yen che si rafforza sotto quota 140 contro dollaro con il Dollar Index sotto 99: sarebbe la conferma che il canale valutario descritto qui funziona davvero, e la lettura andrebbe alzata di grado invece che lasciata dov’è.',
+        triggered: false,
+        evidence:
+          'La seconda gamba non c’è: il Dollar Index è a 99,615 alle 15:50 del 12 agosto, con un minimo di ' +
+          'giornata a 99,500, quindi mai sotto 99 (Investing.com). La condizione è una congiunzione e ' +
+          'cade indipendentemente dal livello dello yen, per il quale non risulta comunque una rilevazione ' +
+          'sotto quota 140 nelle fonti raggiungibili.',
+      },
+      {
+        condition:
+          'Un Dollar Index che risale sopra 100 nonostante il verbale: direbbe che il mercato ha letto il documento come rumore, e che il canale su cui questa lettura poggia non esiste.',
+        triggered: false,
+        evidence:
+          'Il Dollar Index non ha mai raggiunto quota 100 nella finestra: alle 15:50 del 12 agosto è a ' +
+          '99,615 con meno 0,10%, e il massimo di giornata è 99,795 (Investing.com). Nei tre giorni ' +
+          'coperti dalla lettura è rimasto in una fascia stretta fra 99,5 e 99,9.',
+      },
+      {
+        condition:
+          'Un decennale giapponese che rompe il 3% entro la settimana, cioè quasi venti punti base sopra il livello di oggi: sarebbe una riprezzatura vera del ritmo, non la conferma di un tono, e trascinerebbe anche la parte lunga americana.',
+        triggered: false,
+        evidence:
+          'Non raggiunto, ma si è mosso nella direzione giusta: il decennale giapponese sale di 4,5 punti ' +
+          'base al 2,850%, dai 2,805% citati nell’analisi. Restano quindi quindici punti base dal 3%, e la ' +
+          'settimana dichiarata dalla condizione scade venerdì 14: la condizione è registrata come non ' +
+          'scattata al controllo, con il termine ancora aperto.',
+      },
+      {
+        condition:
+          'Un indice dei prezzi statunitense mercoledì 12 agosto sopra le attese del 3,4% annuo, o un dato di fondo sopra il 2,5%: riporterebbe il comando al canale americano, dove un verbale giapponese conta molto poco.',
+        triggered: false,
+        evidence:
+          'Il dato è uscito esattamente sulle due attese e non sopra: 3,4% annuo sul principale, in calo ' +
+          'dal 3,5% di giugno, e 2,5% sul dato di fondo, in calo dal 2,6% (Trading Economics, letto alle ' +
+          '15:50 del 12 agosto). Il comando non è tornato al canale americano.',
+      },
+    ],
+    what:
+      'Nessuna delle cinque condizioni è scattata, e questa è la prima volta che questo esito viene ' +
+      'chiuso con una prova per ciascuna invece che con un rinvio: era in attesa dal 10 agosto proprio ' +
+      'dell’indice dei prezzi che è uscito oggi. La lettura sosteneva che il riassunto delle opinioni ' +
+      'della Banca del Giappone fosse un’intenzione dichiarata e non un fatto, e che la forza andasse ' +
+      'tenuta bassa finché non compariva un atto. Due giorni dopo la classificazione regge: nessun ' +
+      'rialzo, nessuna data, il decennale giapponese salito di quattro punti base e mezzo su venti ' +
+      'necessari, il dollaro fermo in una fascia di quattro decimi. Quello che si è mosso è l’attesa di ' +
+      'mercato, che ha spostato il prossimo rialzo da dicembre a settembre: è esattamente il canale che ' +
+      'l’analisi descriveva, misurato dove diceva di misurarlo, ma resta un’aspettativa e non un atto — ' +
+      'la stessa distinzione che il documento aveva ricevuto.',
+  },
+  {
     slug: 'nove-millesimi-sotto-la-soglia-e-la-soglia-era-tonda',
     checkedAt: '2026-08-12T10:55:00+02:00',
     verdict: 'senza-verifica',

@@ -27,8 +27,10 @@ fonti:
   - testata: "MarketWatch"
   - testata: "Bureau of Labor Statistics"
     titolo: "Calendario delle diffusioni"
+esito: "parziale"
+controllata: "2026-08-12T15:50:00+02:00"
 sorgente: "src/app/core/data/articles/il-rialzo-di-settembre-torna-in-maggioranza.ts"
-impronta: "dea5dd16988e3aa0"
+impronta: "e4c270eb16ce0e6d"
 ---
 
 # Il rialzo di settembre torna in maggioranza
@@ -137,6 +139,20 @@ Arriva con il rialzo di settembre tornato sopra la metà e il greggio a ridosso 
 Impostazione su XAU/USD: neutrale, forza bassa, orizzonte medio.
 
 Il 7 agosto un rapporto occupazionale aveva portato la probabilità di un rialzo a settembre dal 55,1% al 41,7%, e da quel giorno l’intera lettura di questo archivio sui giorni poggiava su un numero solo: una Fed ferma perché il lavoro si contrae. La condizione che l’avrebbe smontata era scritta esplicitamente — «una probabilità di rialzo a settembre che risale sopra il 50%» — e stasera i futures la danno al 52%, con il Brent che allunga verso gli 88 dollari. La gamba non c’è più, e la direzione sui giorni scende a neutrale per quello e non per un prezzo. Restano due ragioni per non andare oltre: il biennale non conferma nulla, fermo a circa 4,22% mentre la probabilità ha guadagnato otto punti in tre rilevazioni, e mercoledì l’indice dei prezzi può ribaltare quel numero in mezz’ora nella direzione opposta.
+
+## Come è andata
+
+Verdetto: **parziale**, controllata il 2026-08-12T15:50:00+02:00.
+
+Una condizione su cinque è scattata, ed è la prima: la probabilità di un rialzo a settembre è scesa al 37,7% dopo l’indice dei prezzi, contro il 52% su cui questa analisi aveva abbassato la direzione sui giorni la sera del 10 agosto. La lettura è quindi sbagliata nel punto che aveva dichiarato come il suo, e lo è per la ragione che aveva scritto: il numero è tornato sotto la metà dopo l’evento che la condizione nominava. Vale la pena notare che la cautela messa accanto a quel giudizio ha invece funzionato — l’analisi diceva di non scendere oltre il neutrale perché il biennale non confermava nulla, e il biennale in sei giorni non ha mai superato il 4,239%, per poi scendere a 4,180% proprio sul dato. La parte prudente ha retto, la parte decisa no. E c’è un dettaglio che l’ultima condizione rende visibile: il dato è uscito esattamente sui livelli scritti e formalmente non l’ha soddisfatta, ma il mercato lo ha letto come morbido perché entrambi i tassi annui scendono di un decimo. Fra la condizione e il mercato, ha avuto ragione il mercato.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Una probabilità di rialzo a settembre che rientra sotto il 50% dopo l’indice dei prezzi di mercoledì: rimetterebbe in piedi la gamba che questa lettura dichiara caduta, e riporterebbe la direzione sui giorni dov’era. | sì | Scattata, e con margine. Dopo l’indice dei prezzi del 12 agosto la probabilità di un rialzo alla riunione del 16 settembre scende al 37,7%, contro il 62,3% attribuito alla permanenza nella fascia corrente del 3,50-3,75% (Investing.com sui futures sui Fed Fund del CME, letto alle 15:50). Il numero era intorno alla metà nella mattinata e al 52% la sera del 10 agosto: la gamba che questa lettura dichiarava caduta è tornata in piedi, ed è successo esattamente dopo l’evento che la condizione nominava. |
+| Un biennale che sale sopra il 4,25% confermando la riprezzatura: sarebbe la conferma che oggi manca, e allora la direzione non resterebbe neutrale ma scenderebbe. | no | La conferma non è mai arrivata, e adesso è arrivata la smentita: il biennale scende a 4,180% con meno 3,8 punti base dopo il dato, con un massimo di giornata a 4,218% (Investing.com, 15:50 del 12 agosto). In sei giorni quella scadenza non ha mai superato il 4,239%. |
+| Un oro spot che rompe i massimi di venerdì, circa 4.372 dollari, con il Dollar Index sotto 99,4: direbbe che il metallo ha prezzato la riprezzatura della Fed e l’ha ignorata, e renderebbe sbagliato l’abbassamento della direzione. | no | Metà condizione soddisfatta e metà no, quindi non scattata. L’oro ha rotto i massimi di venerdì con ampio margine — 4.429,54 dollari alle 15:50, con un massimo di giornata a 4.441,01 — ma il Dollar Index è a 99,615 con meno 0,10% e un minimo di giornata a 99,500, quindi sopra la soglia del 99,4 che la condizione richiede. Mancano undici centesimi di indice sul minimo. |
+| Un Brent che rientra sotto gli 84 dollari sulla serie di questo archivio, cioè sotto gli 85,4 su quella citata dalle agenzie, con un annuncio verificabile sulla riapertura dello Stretto: toglierebbe il motore alla riprezzatura descritta qui. | no | Nessuna delle due gambe. Il Brent è a 88,43 dollari, circa 87,0 sulla serie usata qui, con un massimo di giornata a 90,06; e nessun annuncio verificabile sulla riapertura dello Stretto risulta pubblicato, con la cronaca del 12 agosto che descrive le speranze di accordo in ulteriore riduzione. |
+| Un indice dei prezzi mercoledì 12 agosto sotto il 3,4% annuo sul dato principale e sotto più 0,2% mensile su quello di fondo: sarebbe il modo più rapido perché tutto questo si riveli un’oscillazione di due giorni. | no | Il dato è uscito esattamente sui due livelli, non sotto: 3,4% annuo sul principale e più 0,2% mensile sul dato di fondo (Trading Economics, letto alle 15:50). È la condizione speculare a quella scritta in quattro altre analisi, e il numero esatto le ha fatte fallire tutte insieme — ma il mercato ha reagito come se il dato fosse morbido, perché entrambi i tassi annui scendono di un decimo rispetto a giugno. |
 
 ## Fonti consultate
 

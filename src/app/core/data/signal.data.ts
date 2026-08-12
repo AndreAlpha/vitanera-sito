@@ -180,6 +180,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-12T11:00:00+02:00',
+  checkedAt: '2026-08-12T15:50:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -277,19 +278,19 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Trattare i 4.400 ripresi come il fatto della giornata: è un numero tondo, e questa scheda ha smesso di appoggiarcisi ventiquattro ore fa',
   ],
   confirming: [
-    'L’oro sale dello 0,77% a 4.400,44 mentre il Dollar Index sale a 99,89 e il greggio corre: domanda rifugio isolata dagli altri due canali',
-    'Il decennale rientra a 4,682% dai 4,735% di ieri, quindi sotto la soglia del 4,70%',
-    'Otto transiti martedì con una sola nave in uscita, e due agenzie energetiche che convergono sulla durata del problema',
-    'Le scorte americane rilevate dall’associazione di settore salgono di 9,1 milioni di barili: un contrappeso che il prezzo non sta scontando',
-    'Le due voci della Fed che hanno aperto a un rialzo di settembre non votano quest’anno',
+    'Riverificato alle 15:50 dopo l’indice dei prezzi: la probabilità di un rialzo a settembre crolla al 37,7% dal 52% del 10 agosto, contro il 62,3% attribuito alla permanenza al 3,50-3,75%',
+    'Il biennale scende a 4,180% con meno 3,8 punti base: in sei giorni non ha mai superato il 4,239%, e la misura scelta si muove per la prima volta, verso il basso',
+    'L’oro spot sale a 4.429,54 con più 1,41%, con un massimo di giornata a 4.441,01: supera i massimi della settimana con il dollaro in calo',
+    'Il decennale rientra a 4,662% e il Dollar Index scende a 99,615: tutti e tre i canali si muovono a favore del metallo insieme',
+    'L’indice dei prezzi di luglio esce a 3,4% annuo dal 3,5% e a 2,5% di fondo dal 2,6%, con la componente energetica in decelerazione: più 14,7% annuo da più 15,7%',
   ],
   contradicting: [
-    'Il Brent è alla sesta seduta consecutiva di rialzo intorno a 89,5 dollari, circa 88,1 sulla serie usata qui: il canale energia-tassi ha più carburante, non meno',
+    'Il Brent resta a 88,43 dollari, circa 87,0 sulla serie usata qui, con un massimo di giornata a 90,06: il canale energia-tassi ha ancora carburante',
     'L’agenzia internazionale taglia l’offerta mondiale attesa nel 2026 a meno 4,3 milioni di barili al giorno, da meno 3,7 di un mese fa',
-    'L’indice dei prezzi alle 14:30 può trasformare due dichiarazioni senza voto in una riprezzatura in mezz’ora',
+    'Otto transiti martedì con una sola nave in uscita, e i servizi di tracciamento segnalano venti petroliere con il transponder spento: il conteggio sottostima il flusso',
     'Alle 19:00 l’asta del decennale da 39 miliardi: la prova sulla parte lunga della curva è ancora da fare',
-    'Il massimo di 4.434-4.435 dollari resta a trentacinque dollari di distanza',
-    'La media dei transiti a dieci giorni sale a circa dodici mentre il dato giornaliero peggiora: il traffico si concentra in pochi giorni buoni',
+    'Il dato di luglio misura luglio, mentre la corsa del Brent da 79 a 90 dollari è di agosto: il canale energetico non poteva comparire in questa diffusione',
+    'Al FOMC del 29 luglio i dissensi per un rialzo erano tre — Hammack, Kashkari e Logan — non uno: gli atti a verbale sono più di quanti l’archivio ne avesse contati',
   ],
   constraints: [
     {
@@ -310,8 +311,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Transiti nello Stretto di Hormuz',
-      value: 'due navi venerdì',
-      baseline: 'contro una soglia di otto al giorno e 130-140 prima del conflitto',
+      value: 'otto navi martedì, una sola in uscita',
+      baseline: 'contro una media a dieci giorni di ≈ 12 e 130-140 prima del conflitto',
       against:
         'Sette annunci di distensione in quattro giorni — l’apertura di Bessent, la smentita iraniana, la ' +
         'minaccia rilanciata, la richiesta di controllo sugli ingressi, la trattativa «durata tutto il ' +
@@ -419,8 +420,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 48,
-      display: '≈ 48%',
+      now: 37.7,
+      display: '37,7%',
       marks: [
         {
           at: 50,
@@ -432,8 +433,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 88.1,
-      display: '≈ 88,1 $',
+      now: 87,
+      display: '≈ 87,0 $',
       marks: [
         {
           at: 82,
@@ -451,8 +452,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.23,
-      display: '≈ 4,23%',
+      now: 4.18,
+      display: '4,180%',
       marks: [
         {
           at: 4.25,
@@ -464,8 +465,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.682,
-      display: '4,682%',
+      now: 4.662,
+      display: '4,662%',
       marks: [
         {
           at: 4.68,
@@ -483,8 +484,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4400.44,
-      display: '4.400,44 $',
+      now: 4429.54,
+      display: '4.429,54 $',
       marks: [
         {
           at: 4300,

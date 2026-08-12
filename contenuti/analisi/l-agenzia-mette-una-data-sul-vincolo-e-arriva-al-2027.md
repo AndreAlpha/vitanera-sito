@@ -26,8 +26,10 @@ fonti:
     titolo: "Short-Term Energy Outlook, 11 agosto"
   - testata: "Reuters"
   - testata: "Federal Reserve"
+esito: "confermata"
+controllata: "2026-08-12T15:50:00+02:00"
 sorgente: "src/app/core/data/articles/l-agenzia-mette-una-data-sul-vincolo-e-arriva-al-2027.ts"
-impronta: "24d13290f4b77c46"
+impronta: "b1cf87c0d55d4246"
 ---
 
 # L’agenzia mette una data sul vincolo, e arriva al 2027
@@ -142,6 +144,20 @@ Alta sul fondamento, che è una pubblicazione ufficiale dell’agenzia statistic
 Impostazione su XAU/USD: neutrale, forza bassa, orizzonte medio.
 
 Per la prima volta il vincolo che questo archivio conta ogni giorno ha una durata scritta da un ente ufficiale: l’agenzia americana per l’energia assume transiti fortemente limitati a Hormuz per tutto agosto, una ripresa solo graduale da settembre e circa 600.000 barili al giorno di capacità indisponibile fino alla fine del 2027. Alza di conseguenza la previsione sul Brent del terzo trimestre a circa 85 dollari, undici sopra la stima del mese scorso. Ma resta una previsione, e questo archivio la classifica sotto un transito contato: l’ente dichiara un’attesa, non toglie una nave dal conto. E il numero rivisto è comunque sotto gli 88,67 dollari a cui il Brent scambia stasera, quindi il mercato sta già prezzando più di quanto l’agenzia preveda. La direzione sui giorni non si muove perché non si è mosso il biennale, e la misura è quella.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-12T15:50:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e l’argomento centrale ha retto meglio di quanto la lettura stessa si aspettasse. L’analisi sosteneva che la catena dal greggio all’inflazione ha un anello debole, perché l’indice dei prezzi misura una variazione e non un livello: il dato di luglio esce con la componente energetica in decelerazione su base annua e il biennale scende di quasi quattro punti base. La verifica ha però trovato un limite nella costruzione stessa del test, e va detto perché vale più del verdetto: questo archivio ha indicato per sei giorni l’indice dei prezzi del 12 agosto come l’evento che avrebbe deciso se lo shock energetico stesse entrando nell’inflazione, ma quel dato misura luglio, e la corsa del Brent da 79 a 90 dollari è avvenuta ad agosto. La domanda posta non poteva ricevere risposta da questa diffusione. Il test giusto è l’indice dei prezzi di agosto, che esce a settembre.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un Brent che chiude mercoledì sopra gli 88,67 dollari di questa sera, cioè sopra il massimo serale invece che sopra i 90 tondi: direbbe che il mercato sta prezzando più della revisione dell’agenzia e non meno, e toglierebbe il fondamento all’argomento centrale di questa lettura. | no | Alle 15:50 del 12 agosto il Brent è a 88,43 dollari con meno 0,54%, contro una chiusura precedente di 88,91 (Investing.com). La chiusura di mercoledì non è ancora avvenuta, quindi la condizione è registrata come non scattata sul prezzo osservato e non sul termine dichiarato. Da annotare che l’intervallo di giornata arriva a 90,06: il livello è stato toccato in seduta ma la condizione chiede la chiusura. |
+| Un biennale che si porta sopra il 4,237%, cioè sopra la rilevazione di questa mattina: è la misura dichiarata da questo archivio nel pomeriggio, non si è mossa attraverso quattro notizie in una sera, e la sua caduta direbbe che la Fed sta entrando nel prezzo. | no | È andata nella direzione opposta, e nettamente. Dopo l’indice dei prezzi il biennale scende a 4,180% con meno 3,8 punti base, con un intervallo di giornata fra 4,170% e 4,218% (Investing.com, 15:50 del 12 agosto): il massimo della giornata resta diciannove millesimi sotto la soglia. La misura scelta si è mossa per la prima volta in sei giorni, e verso il basso. |
+| Un indice dei prezzi mercoledì sopra il 3,4% annuo sul dato principale con la componente energetica in aumento su base mensile: sarebbe il canale che questa analisi dice non ancora attivo, misurato dove si misura davvero. | no | Non scattata su nessuna delle due gambe. L’indice dei prezzi di luglio, diffuso il 12 agosto alle 14:30, è a più 0,1% mensile e 3,4% annuo, in calo dal 3,5% di giugno: esattamente sulla soglia e non sopra. E la componente energetica va nel verso opposto a quello richiesto — più 14,7% annuo contro più 15,7% di giugno, con la benzina a più 24,6% da più 26,7% e il gasolio a più 39,1% da più 42,9% (Trading Economics, letto alle 15:50). La cronaca del giorno riporta un indice energetico in calo dell’1,5% sul mese. Resta però il limite che questa verifica ha scoperto: il dato misura luglio, mentre la corsa del Brent da 79 a 90 dollari è avvenuta ad agosto. Il canale descritto qui non poteva comparire in questo dato. |
+| Un oro spot sotto i 4.357 dollari, il minimo di questa giornata, entro la chiusura di mercoledì: interromperebbe la sequenza di sedute positive e direbbe che la componente rifugio della notizia non ha alcun peso. | no | Mancata per cinque dollari e cinquantasette centesimi. Il minimo di giornata dell’oro spot è 4.362,57 dollari; alle 15:50 il metallo è a 4.429,54 con più 1,41%, e il massimo di giornata è 4.441,01 (Investing.com). La sequenza di sedute positive non si è interrotta. |
+| Una nuova revisione al rialzo della previsione sul Brent nell’aggiornamento di settembre dell’agenzia: confermerebbe che quella di oggi inseguiva il mercato invece di anticiparlo, e che il prezzo resta la misura migliore della previsione. | no | Non giudicabile: l’aggiornamento mensile dell’agenzia americana esce a settembre e al controllo non è pubblicato. La condizione era scritta apposta con una scadenza lontana e resta il solo debito aperto di questa analisi. |
 
 ## Fonti consultate
 

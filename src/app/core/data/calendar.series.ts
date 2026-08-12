@@ -11,7 +11,7 @@
  */
 import { Cadence, Release, Stage } from '../models/calendar.model';
 
-export const CALENDAR_GENERATED_AT = '2026-08-12T09:09Z';
+export const CALENDAR_GENERATED_AT = '2026-08-12T14:05Z';
 
 type Row = readonly [
   at: string,
@@ -548,6 +548,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
   'usa/ipc': {
     cadence: 'mensile',
     releases: r([
+      ['2026-08-12T12:30Z', 'luglio 2026', 333.99, 333.92, 333.95],
       ['2026-07-14T12:30Z', 'giugno 2026', 334.7, 333.95, 335.12],
       ['2026-06-10T12:30Z', 'maggio 2026', 335.11, 335.12, 333.02],
       ['2026-05-12T12:30Z', 'aprile 2026', null, 333.02, 330.21],
@@ -616,16 +617,17 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2021-01-13T13:30Z', 'dicembre 2020', 260.428, 260.474, 260.229],
     ]),
     next: {
-      at: '2026-08-12T12:30Z',
-      period: 'luglio 2026',
+      at: '2026-09-11T12:30Z',
+      period: 'agosto 2026',
       forecast: null,
       actual: null,
-      previous: 333.95,
+      previous: 333.92,
     },
   },
   'usa/variazione-ipc': {
     cadence: 'mensile',
     releases: r([
+      ['2026-08-12T12:30Z', 'luglio 2026', 3.4, 3.4, 3.5],
       ['2026-07-14T12:30Z', 'giugno 2026', 3.8, 3.5, 4.2],
       ['2026-06-10T12:30Z', 'maggio 2026', 4.2, 4.2, 3.8],
       ['2026-05-12T12:30Z', 'aprile 2026', 3.7, 3.8, 3.3],
@@ -745,19 +747,19 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2016-10-18T12:30Z', 'settembre 2016', 1.5, 1.5, 1.1],
       ['2016-09-16T12:30Z', 'agosto 2016', 1, 1.1, 0.8],
       ['2016-08-16T12:30Z', 'luglio 2016', 0.9, 0.8, 1],
-      ['2016-07-15T12:30Z', 'giugno 2016', 1.1, 1, 1],
     ]),
     next: {
-      at: '2026-08-12T12:30Z',
-      period: 'luglio 2026',
-      forecast: 3.4,
+      at: '2026-09-11T12:30Z',
+      period: 'agosto 2026',
+      forecast: null,
       actual: null,
-      previous: 3.5,
+      previous: 3.4,
     },
   },
   'usa/ipc-core': {
     cadence: 'mensile',
     releases: r([
+      ['2026-08-12T12:30Z', 'luglio 2026', 2.5, 2.5, 2.6],
       ['2026-07-14T12:30Z', 'giugno 2026', 2.8, 2.6, 2.9],
       ['2026-06-10T12:30Z', 'maggio 2026', 2.9, 2.9, 2.8],
       ['2026-05-12T12:30Z', 'aprile 2026', 2.7, 2.8, 2.6],
@@ -877,19 +879,19 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2016-10-18T12:30Z', 'settembre 2016', 2.3, 2.2, 2.3],
       ['2016-09-16T12:30Z', 'agosto 2016', 2.2, 2.3, 2.2],
       ['2016-08-16T12:30Z', 'luglio 2016', 2.3, 2.2, 2.3],
-      ['2016-07-15T12:30Z', 'giugno 2016', 2.3, 2.3, 2.2],
     ]),
     next: {
-      at: '2026-08-12T12:30Z',
-      period: 'luglio 2026',
-      forecast: 2.5,
+      at: '2026-09-11T12:30Z',
+      period: 'agosto 2026',
+      forecast: null,
       actual: null,
-      previous: 2.6,
+      previous: 2.5,
     },
   },
   'usa/variazione-ipc-core': {
     cadence: 'mensile',
     releases: r([
+      ['2026-08-12T12:30Z', 'luglio 2026', 0.2, 0.2, 0],
       ['2026-07-14T12:30Z', 'giugno 2026', 0.2, 0, 0.2],
       ['2026-06-10T12:30Z', 'maggio 2026', 0.3, 0.2, 0.4],
       ['2026-05-12T12:30Z', 'aprile 2026', 0.3, 0.4, 0.2],
@@ -1009,14 +1011,13 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2016-10-18T12:30Z', 'settembre 2016', 0.2, 0.1, 0.3],
       ['2016-09-16T12:30Z', 'agosto 2016', 0.2, 0.3, 0.1],
       ['2016-08-16T12:30Z', 'luglio 2016', 0.2, 0.1, 0.2],
-      ['2016-07-15T12:30Z', 'giugno 2016', 0.2, 0.2, 0.2],
     ]),
     next: {
-      at: '2026-08-12T12:30Z',
-      period: 'luglio 2026',
-      forecast: 0.2,
+      at: '2026-09-11T12:30Z',
+      period: 'agosto 2026',
+      forecast: null,
       actual: null,
-      previous: 0,
+      previous: 0.2,
     },
   },
   'usa/pce': {
@@ -3370,7 +3371,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
     next: {
       at: '2026-08-13T09:00Z',
       period: 'giugno 2026',
-      forecast: 0,
+      forecast: -0.1,
       actual: null,
       previous: -0.2,
     },
