@@ -28,6 +28,26 @@ import { Outcome } from '../models/article.model';
  */
 export const OUTCOMES: readonly Outcome[] = [
   {
+    slug: 'nove-millesimi-sotto-la-soglia-e-la-soglia-era-tonda',
+    checkedAt: '2026-08-12T10:55:00+02:00',
+    verdict: 'senza-verifica',
+    conditions: [],
+    what:
+      'Questo è il primo esito registrato come non verificabile, ed è una scelta invece di un ripiego. ' +
+      'L’analisi ha orizzonte breve ed è vecchia di quattordici ore, quindi il suo termine è passato e va ' +
+      'chiusa; ma nessuna delle cinque condizioni che aveva dichiarato è oggi giudicabile. Tre si ' +
+      'risolvono nelle prossime ore e non prima: la chiusura di mercoledì sul decennale, la chiusura di ' +
+      'mercoledì sull’oro, e l’indice dei prezzi delle 14:30. Una si risolve alle 19:00 con l’asta del ' +
+      'decennale, che al momento del controllo non si è ancora tenuta. L’ultima, il biennale sopra il ' +
+      '4,237%, non ha alcuna rilevazione nuova nelle fonti disponibili stamattina: non è che non sia ' +
+      'scattata, è che non c’è il numero per dirlo. Scrivere «confermata» sarebbe stato meccanicamente ' +
+      'possibile — nessuna condizione risulta soddisfatta — e sarebbe stato il quinto verdetto ' +
+      'consecutivo di quel tipo con la condizione decisiva ancora pendente, cioè esattamente il problema ' +
+      'di calibrazione registrato ieri sera nel registro. Questa voce lo applica invece di ripeterlo: la ' +
+      'lettura sull’asta a tre anni e sulle soglie tonde resta interessante, ma non è stata messa alla ' +
+      'prova, e un archivio che lo dichiara vale più di uno che accumula conferme non testate.',
+  },
+  {
     slug: 'tre-morti-su-una-nave-e-il-prezzo-va-nell-altro-verso',
     checkedAt: '2026-08-11T19:20:00+02:00',
     verdict: 'confermata',

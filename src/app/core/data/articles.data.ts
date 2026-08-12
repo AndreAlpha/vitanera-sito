@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { ottoNaviEIlConteggio } from './articles/otto-navi-e-adesso-la-previsione-ha-un-conteggio';
 import { agenziaMetteUnaDataSulVincolo } from './articles/l-agenzia-mette-una-data-sul-vincolo-e-arriva-al-2027';
 import { noveMillesimiSottoLaSoglia } from './articles/nove-millesimi-sotto-la-soglia-e-la-soglia-era-tonda';
 import { hormuzEntraNelPercorsoDeiPrezzi } from './articles/hormuz-entra-nel-percorso-dei-prezzi-e-chi-lo-dice-non-vota';
@@ -90,6 +91,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  ottoNaviEIlConteggio,
   agenziaMetteUnaDataSulVincolo,
   noveMillesimiSottoLaSoglia,
   hormuzEntraNelPercorsoDeiPrezzi,

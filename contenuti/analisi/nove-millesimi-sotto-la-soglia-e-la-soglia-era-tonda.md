@@ -29,8 +29,10 @@ fonti:
   - testata: "Reuters"
   - testata: "The Wall Street Journal"
   - testata: "Trading Economics"
+esito: "senza-verifica"
+controllata: "2026-08-12T10:55:00+02:00"
 sorgente: "src/app/core/data/articles/nove-millesimi-sotto-la-soglia-e-la-soglia-era-tonda.ts"
-impronta: "9a75fa34c3b5f152"
+impronta: "de8ab766980c00f0"
 ---
 
 # Nove millesimi sotto la soglia, e la soglia era tonda
@@ -139,6 +141,12 @@ Due prove nella stessa giornata, e la seconda è quella che manca a questa lettu
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 L’asta a tre anni ha tolto un rischio invece di aggiungere una spinta, ed è la differenza che tiene ferma la forza. Il Tesoro ha collocato 58 miliardi al 4,291%, circa mezzo punto base sotto il quotato pre-asta — quindi con domanda migliore di quanto il mercato prezzasse pochi minuti prima — e dopo l’aggiudicazione il decennale è rientrato nell’area del 4,69% dopo aver trattato sopra 4,72-4,73%. L’oro chiude la terza seduta positiva consecutiva, a 4.383 dollari sul contratto americano con più 0,49%, ma i 4.400 restano non presi per la terza volta in una giornata. Quello che l’asta dice è che sulla scadenza che prezza la Fed non è stato chiesto un premio nonostante un rendimento undici punti base sopra quello di luglio; quello che non dice è niente sulla parte lunga della curva, dove la tensione si è concentrata e dove le prove vere sono mercoledì e giovedì.
+
+## Come è andata
+
+Verdetto: **senza-verifica**, controllata il 2026-08-12T10:55:00+02:00.
+
+Questo è il primo esito registrato come non verificabile, ed è una scelta invece di un ripiego. L’analisi ha orizzonte breve ed è vecchia di quattordici ore, quindi il suo termine è passato e va chiusa; ma nessuna delle cinque condizioni che aveva dichiarato è oggi giudicabile. Tre si risolvono nelle prossime ore e non prima: la chiusura di mercoledì sul decennale, la chiusura di mercoledì sull’oro, e l’indice dei prezzi delle 14:30. Una si risolve alle 19:00 con l’asta del decennale, che al momento del controllo non si è ancora tenuta. L’ultima, il biennale sopra il 4,237%, non ha alcuna rilevazione nuova nelle fonti disponibili stamattina: non è che non sia scattata, è che non c’è il numero per dirlo. Scrivere «confermata» sarebbe stato meccanicamente possibile — nessuna condizione risulta soddisfatta — e sarebbe stato il quinto verdetto consecutivo di quel tipo con la condizione decisiva ancora pendente, cioè esattamente il problema di calibrazione registrato ieri sera nel registro. Questa voce lo applica invece di ripeterlo: la lettura sull’asta a tre anni e sulle soglie tonde resta interessante, ma non è stata messa alla prova, e un archivio che lo dichiara vale più di uno che accumula conferme non testate.
 
 ## Fonti consultate
 

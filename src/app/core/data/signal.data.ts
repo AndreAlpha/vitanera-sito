@@ -179,25 +179,25 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-11T21:55:00+02:00',
+  updatedAt: '2026-08-12T11:00:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
       direction: 'neutrale-rialzista',
-      strength: 'bassa',
+      strength: 'media',
       regime:
-        'La direzione era salita alle 17:15 perché avevano smesso tutte e tre le cose che spingevano contro ' +
-        'il metallo. In serata una delle tre è tornata: il Brent è risalito a 88,67 dollari con più 1,1%, ' +
-        'quindi il rientro dai 90 non è diventato una correzione, e Reuters cita anche nuove interruzioni ' +
-        'in Libia e un attacco a una raffineria russa. La lettura sta ora su due gambe invece che su tre — ' +
-        'il decennale è rientrato nell’area del 4,69% e la probabilità di un rialzo a settembre resta ' +
-        'intorno alla metà — e la condizione dichiarata non è scattata, perché chiede un Brent sopra i 90 ' +
-        'sulla serie delle agenzie. L’asta a tre anni si è aggiudicata al 4,291%, sotto il quotato ' +
-        'pre-asta: un rischio rimosso, non una spinta arrivata. L’oro intanto segna il terzo prezzo ' +
-        'consecutivo più basso della serata, intorno a 4.376 dollari, dopo il massimo di 4.434,84.',
+        'La forza sale da bassa a media, e non per il prezzo: sale perché la ragione dichiarata ieri per ' +
+        'tenerla bassa è stata rimossa dai fatti. Quella ragione era il rientro del greggio, e il rientro ' +
+        'si è annullato per intero — il Brent è alla sesta seduta consecutiva di rialzo, intorno a 89,5 ' +
+        'dollari. L’oro è salito lo stesso, a 4.400,44 con più 0,77%, e lo ha fatto con il Dollar Index in ' +
+        'rialzo a 99,89: sale contro il cambio e contro il greggio, quindi è domanda rifugio isolata dagli ' +
+        'altri due canali, la prima volta in questa fase. Sotto ci sono due numeri contati e non ' +
+        'previsti: otto mercantili in transito martedì con una sola nave in uscita, minimo della ' +
+        'settimana, e un decennale rientrato a 4,682% dai 4,735% di ieri. Non sale a rialzista per due ' +
+        'ragioni con un orario: le 14:30 dell’indice dei prezzi e le 19:00 dell’asta del decennale.',
       invalidation:
-        'Un Brent che riconquista i 90 dollari sulle serie delle agenzie — circa 88,6 su quella usata qui — entro la chiusura di mercoledì, o un decennale che torna sopra il 4,70% con l’oro sotto i 4.350: toglierebbero il motore a questa direzione. Nell’altro verso, un oro sopra i 4.435 dollari entro la stessa scadenza direbbe che la forza bassa era troppo prudente. Un oro che chiude mercoledì sotto i 4.357, il minimo di oggi, direbbe che il recupero era un rimbalzo dentro la seduta.',
+        'Un oro che chiude sotto i 4.363 dollari, il minimo di questa giornata, che direbbe che il recupero era posizionamento prima del dato e non domanda rifugio; oppure un decennale che torna sopra il 4,735% di ieri con il Dollar Index sopra 99,89, che è la combinazione dichiarata assente. Un indice dei prezzi sopra il 3,4% annuo con il biennale che si porta sopra il 4,237% porterebbe la direzione sotto il neutrale, perché renderebbe le due dichiarazioni della Fed una riprezzatura invece che due preferenze.',
     },
     {
       horizon: 'medio',
@@ -256,41 +256,40 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'Il vincolo su Hormuz ha una data ufficiale, e arriva al 2027',
+  headline: 'Otto navi martedì e una sola in uscita: la previsione trova il suo conteggio',
   stance:
-    'L’agenzia americana per l’energia assume transiti fortemente limitati nello Stretto per tutto agosto, ' +
-    'una ripresa solo graduale da settembre e circa 600.000 barili al giorno di capacità indisponibile ' +
-    'fino a fine 2027: è la prima volta che il vincolo contato ogni giorno in questa scheda riceve una ' +
-    'durata da una fonte terza. Alza la previsione sul Brent del terzo trimestre di undici dollari, a ' +
-    'circa 85 — che restano sotto gli 88,67 a cui il greggio scambia stasera, quindi il mercato era già ' +
-    'più avanti dell’agenzia. Resta comunque una previsione, e qui una previsione vale meno di un ' +
-    'transito contato. La direzione sui giorni non si muove perché non si è mosso il biennale, e nella ' +
-    'stessa serata l’asta a tre anni si è aggiudicata al 4,291% senza chiedere un premio. Domani alle ' +
-    '14:30 l’indice dei prezzi, che è dove l’argomento si misura.',
+    'Dallo Stretto martedì sono passati otto mercantili, minimo della settimana, e uno solo è uscito. Ieri ' +
+    'sera questa scheda aveva declassato la previsione dell’agenzia americana perché era una previsione: ' +
+    'oggi arriva il numero contato e va nella stessa direzione, mentre l’agenzia internazionale taglia ' +
+    'l’offerta mondiale attesa nel 2026 di altri 600.000 barili al giorno rispetto a un mese fa. Il Brent ' +
+    'è alla sesta seduta di rialzo intorno a 89,5 dollari e l’oro sale lo stesso, a 4.400,44 con più ' +
+    '0,77%, con il Dollar Index in rialzo a 99,89: è domanda rifugio isolata dal cambio e dai tassi, la ' +
+    'prima volta in questa fase. La forza sale quindi da bassa a media. Restano due appuntamenti che ' +
+    'possono riscrivere tutto: l’indice dei prezzi alle 14:30 e l’asta del decennale alle 19:00.',
   favours: [
-    'Separare il livello dalla variazione: un greggio che si stabilizza a 88 dollari smette di alimentare l’inflazione annua entro dodici mesi, anche restando scomodo sui costi',
-    'Trattare una previsione a diciassette mesi come una dichiarazione e non come un vincolo: il numero che decide resta il conteggio dei transiti, e stasera non è cambiato',
-    'Guardare la componente energetica dell’indice dei prezzi di domani invece del numero di copertina: è lì che il canale descritto dall’agenzia si vede o non si vede',
+    'Alzare la forza quando cade la ragione dichiarata per tenerla bassa, non quando sale il prezzo: il rientro del greggio si è annullato e la lettura ha retto lo stesso',
+    'Distinguere un conteggio da una previsione anche quando dicono la stessa cosa: sono tre osservazioni indipendenti che convergono, non una tesi che si conferma da sola',
+    'Guardare la composizione invece della soglia: un oro che sale con il dollaro in rialzo e il greggio in rialzo è domanda rifugio, e non dipende da nessun livello tondo',
   ],
   avoid: [
-    'Leggere la revisione come uno shock nuovo: il numero rivisto è sotto il prezzo corrente, quindi il mercato lo aveva già scontato prima della pubblicazione',
-    'Tenere una regola che non si attiva mai: il biennale non si è mosso attraverso quattro notizie in una sera, e se non si muove nemmeno col dato di domani la misura va cambiata',
-    'Raccontare ancora la crisi energetica come un fronte solo: le interruzioni sono su quattro fronti scollegati — Hormuz, Mar Rosso, Libia, raffinazione russa',
+    'Usare il livello puntuale dei transiti: i due fornitori danno otto e undici per lo stesso giorno, quindi regge la direzione e non il numero — è l’errore già commesso l’11 agosto',
+    'Contare due dichiarazioni della Fed come se fossero due voti: né Collins né Venable votano quest’anno, e la probabilità di settembre è dove stava prima che parlassero',
+    'Trattare i 4.400 ripresi come il fatto della giornata: è un numero tondo, e questa scheda ha smesso di appoggiarcisi ventiquattro ore fa',
   ],
   confirming: [
-    'La previsione rivista sul Brent, circa 85 dollari, resta sotto gli 88,67 correnti: la notizia era già nel prezzo prima di uscire',
-    'L’asta a tre anni si è aggiudicata al 4,291%, sotto il quotato pre-asta: sulla scadenza che prezza la Fed non è stato chiesto un premio',
-    'Il decennale è rientrato nell’area del 4,69% e il biennale resta a circa 4,23%, fermo da cinque giorni',
-    'Un premio energetico che si stabilizza in alto smette di spingere la variazione annua dei prezzi entro dodici mesi',
-    'La probabilità di un rialzo della Fed a settembre resta intorno alla metà, e il Dollar Index è stabile sotto quota 100',
+    'L’oro sale dello 0,77% a 4.400,44 mentre il Dollar Index sale a 99,89 e il greggio corre: domanda rifugio isolata dagli altri due canali',
+    'Il decennale rientra a 4,682% dai 4,735% di ieri, quindi sotto la soglia del 4,70%',
+    'Otto transiti martedì con una sola nave in uscita, e due agenzie energetiche che convergono sulla durata del problema',
+    'Le scorte americane rilevate dall’associazione di settore salgono di 9,1 milioni di barili: un contrappeso che il prezzo non sta scontando',
+    'Le due voci della Fed che hanno aperto a un rialzo di settembre non votano quest’anno',
   ],
   contradicting: [
-    'Il Brent risale a 88,67 dollari con più 1,1%: il rientro dai 90 non è diventato una correzione, e circa 87,3 sulla serie usata qui è oltre tre dollari sopra la tacca degli 84',
-    'Un ente pubblico mette per iscritto che 600.000 barili al giorno di capacità restano fuori fino a fine 2027: il pavimento del prezzo si alza in modo dichiarato',
-    'Le interruzioni si moltiplicano fuori dal Golfo: nuove fermate in Libia e un attacco a una raffineria russa nella stessa serata',
-    'L’oro segna il terzo prezzo consecutivo più basso della serata, intorno a 4.376 dollari dopo il massimo di 4.434,84, e chiude sotto la zona dei massimi',
-    'La media dei transiti resta a circa undici al giorno con esportazioni nette a 3 milioni di barili: il vincolo materiale non si è allentato',
-    'L’indice dei prezzi di mercoledì alle 14:30 può cancellare in mezz’ora tutto quello che regge questa lettura',
+    'Il Brent è alla sesta seduta consecutiva di rialzo intorno a 89,5 dollari, circa 88,1 sulla serie usata qui: il canale energia-tassi ha più carburante, non meno',
+    'L’agenzia internazionale taglia l’offerta mondiale attesa nel 2026 a meno 4,3 milioni di barili al giorno, da meno 3,7 di un mese fa',
+    'L’indice dei prezzi alle 14:30 può trasformare due dichiarazioni senza voto in una riprezzatura in mezz’ora',
+    'Alle 19:00 l’asta del decennale da 39 miliardi: la prova sulla parte lunga della curva è ancora da fare',
+    'Il massimo di 4.434-4.435 dollari resta a trentacinque dollari di distanza',
+    'La media dei transiti a dieci giorni sale a circa dodici mentre il dato giornaliero peggiora: il traffico si concentra in pochi giorni buoni',
   ],
   constraints: [
     {
@@ -433,8 +432,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 87.3,
-      display: '≈ 87,3 $',
+      now: 88.1,
+      display: '≈ 88,1 $',
       marks: [
         {
           at: 82,
@@ -465,8 +464,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.69,
-      display: '≈ 4,69%',
+      now: 4.682,
+      display: '4,682%',
       marks: [
         {
           at: 4.68,
@@ -484,8 +483,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4376,
-      display: '≈ 4.376 $',
+      now: 4400.44,
+      display: '4.400,44 $',
       marks: [
         {
           at: 4300,
@@ -497,15 +496,15 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 4400,
           display: '4.400 $',
           kind: 'invalida',
-          note: 'la soglia dichiarata alle 10:45, avvicinata tre volte nella stessa giornata e mai presa: 4.386,13 alle 14:20, 4.393,69 alle 17:00, e una chiusura del contratto americano a 4.383. È il livello tondo su cui si accumulano gli ordini, e questo archivio ha smesso di considerarla una soglia informativa: le condizioni nuove sono derivate dai livelli che il mercato ha già stabilito',
+          note: 'superata la mattina del 12 agosto a 4.400,44, dopo tre avvicinamenti falliti il giorno prima. Il fatto informativo non è però il livello, che è tondo e quindi attira ordini: è la composizione, cioè un oro che sale mentre salgono sia il dollaro sia il greggio. Le condizioni nuove restano derivate dai livelli che il mercato ha già stabilito',
         },
       ],
     },
   ],
   sources: [
+    'otto-navi-e-adesso-la-previsione-ha-un-conteggio',
     'l-agenzia-mette-una-data-sul-vincolo-e-arriva-al-2027',
     'nove-millesimi-sotto-la-soglia-e-la-soglia-era-tonda',
-    'hormuz-entra-nel-percorso-dei-prezzi-e-chi-lo-dice-non-vota',
   ],
 };
 
