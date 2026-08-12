@@ -179,24 +179,25 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-12T16:05:00+02:00',
+  updatedAt: '2026-08-12T16:52:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
       direction: 'neutrale-rialzista',
-      strength: 'media',
+      strength: 'bassa',
       regime:
-        'Dopo l’indice dei prezzi la configurazione intraday è la più pulita di tutta la fase. Stamattina ' +
-        'l’oro saliva contro il dollaro e contro il greggio, e andava scritto come forza relativa isolata; ' +
-        'adesso sale con il dollaro che scende a 99,615 e il decennale che rientra a 4,662%, cioè con tutti ' +
-        'e tre i canali dalla stessa parte. Il metallo è a 4.429,54 dollari con più 1,41% e ha superato in ' +
-        'seduta i 4.441,01, quindi anche i 4.435 che l’analisi di ieri sera aveva indicato come il livello ' +
-        'oltre il quale una delle notizie valeva più di quanto le veniva riconosciuto. Resta un vento ' +
-        'contrario solo, ed è quello energetico: il Brent ha toccato 90,06 dollari stamattina, circa 88,6 ' +
-        'sulla serie usata qui, e due agenzie in due giorni hanno tagliato l’offerta attesa.',
+        'La forza scende da media a bassa, e come sempre non per il prezzo: scende perché è decaduta la ' +
+        'ragione scritta un’ora fa per tenerla su. Alle 16:05 questa lettura poggiava sulla composizione — ' +
+        'tassi, cambio e attese sulla Fed dalla stessa parte per la prima volta in tutta la fase — e due ' +
+        'di quei tre canali si sono chiusi entro l’ora. Il Dollar Index ha restituito per intero il calo ' +
+        'del pomeriggio, a 99,709 con variazione di giornata quasi nulla dopo un minimo a 99,500, e l’oro ' +
+        'ha lasciato undici dollari, a 4.418,15 senza riavvicinare il massimo di 4.441,01. Resta il canale ' +
+        'monetario, che invece si è rafforzato: la probabilità di un rialzo a settembre scende ancora al ' +
+        '35,7% e il biennale resta a 4,184%. Una lettura che poggiava su tre gambe e ne conserva una sola ' +
+        'tiene la direzione e perde la forza.',
       invalidation:
-        'Un oro che chiude la settimana sotto i 4.362,57 dollari, il minimo di questa giornata, che direbbe che il balzo dopo il dato era una reazione di giornata; oppure un decennale che torna sopra il 4,735% di ieri con il Dollar Index sopra 99,795, cioè sopra il massimo odierno invece che sopra un livello tondo. Un’asta del decennale alle 19:00 che si aggiudica sopra il quotato pre-asta riporterebbe la parte lunga della curva contro il metallo a prescindere dalla Fed.',
+        'Un oro che chiude sotto i 4.362,57 dollari, il minimo di questa giornata, che toglierebbe anche il canale rimasto; oppure un Dollar Index che chiude sopra il 99,795 del massimo odierno, cioè sopra un livello che il mercato ha stabilito oggi invece che sopra un numero tondo. Un’asta del decennale alle 19:00 che si aggiudica sopra il quotato pre-asta, con il rendimento riportato sopra il 4,688% del massimo odierno, riporterebbe la parte lunga della curva contro il metallo a prescindere dalla Fed.',
     },
     {
       horizon: 'medio',
@@ -216,7 +217,12 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'nel frattempo si è irrigidito: l’agenzia internazionale ha tagliato l’offerta mondiale attesa nel ' +
         '2026 a meno 4,3 milioni di barili al giorno da meno 3,7. Da correggere infine un conto che ' +
         'sorreggeva le due letture precedenti: al FOMC del 29 luglio i dissensi per un rialzo erano tre — ' +
-        'Hammack, Kashkari e Logan — e non uno solo.',
+        'Hammack, Kashkari e Logan — e non uno solo. Alle 16:30 arriva poi il numero che il canale ' +
+        'energetico non aveva ancora ricevuto, e arriva dai serbatoi invece che dalle previsioni: le ' +
+        'scorte commerciali americane salgono di 17,4 milioni di barili in una settimana, a 424,4 milioni ' +
+        'complessivi, il maggior aumento dal gennaio 2023, contro un consenso che ne attendeva 1,7 in ' +
+        'meno. Taglia in due sensi e per questo non muove la direzione: toglie carburante all’argomento ' +
+        'restrittivo, ma toglie anche fondamento alla scarsità su cui poggia il premio geopolitico.',
       invalidation:
         'Una probabilità di rialzo a settembre che risale sopra il 48% entro venerdì, cioè sopra il livello di ieri mattina invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
     },
@@ -245,42 +251,66 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'La condizione dichiarata il 10 agosto è scattata: rialzo di settembre al 37,7%',
+  headline:
+    'Scorte americane su di 17,4 milioni di barili: il record contro la tesi della scarsità',
   stance:
-    'L’indice dei prezzi di luglio esce esattamente sul consenso — più 0,1% mensile e 3,4% annuo in calo ' +
-    'dal 3,5%, fondo a 2,5% dal 2,6% — e la probabilità di un rialzo a settembre crolla al 37,7% dal 52% ' +
-    'del 10 agosto. È la condizione che questa scheda aveva scritto allora per uscire dalla lettura ' +
-    'neutrale, ed è scattata sull’evento che nominava. Il biennale si muove per la prima volta in sei ' +
-    'giorni, a 4,180%, e con il decennale a 4,662% e il dollaro a 99,615 l’oro sale a 4.429,54 con più ' +
-    '1,41%: tre canali dalla stessa parte. Resta fuori il quarto, ed è quello energetico — l’indice di ' +
-    'luglio non contiene il Brent a 90 dollari, che è un fatto di agosto, e quel test ha appuntamento a ' +
-    'settembre. Alle 19:00 l’asta del decennale.',
+    'Giornata in due tempi, e il secondo corregge il primo. Alle 14:30 l’indice dei prezzi esce sul ' +
+    'consenso — 3,4% annuo dal 3,5%, fondo a 2,5% dal 2,6% — e la probabilità di un rialzo a settembre ' +
+    'crolla, ora al 35,7% dal 52% del 10 agosto: è la condizione dichiarata allora, scattata sull’evento ' +
+    'che nominava. Alle 16:30 arriva però un numero che nessuno aspettava in quella direzione: le scorte ' +
+    'commerciali americane di greggio salgono di 17,4 milioni di barili in una settimana, a 424,4 milioni, ' +
+    'il maggior aumento dal gennaio 2023, contro attese di un calo. Per sei giorni la scarsità è stata ' +
+    'misurata qui contando navi in uno stretto; questo è il primo conteggio di barili, ed è uno stock ' +
+    'ufficiale invece di un flusso stimato. Intanto il dollaro ha restituito il calo del pomeriggio, a ' +
+    '99,709, e l’oro ha lasciato undici dollari dal massimo: dei tre canali allineati alle 16:05 ne resta ' +
+    'uno. Alle 19:00 l’asta del decennale.',
   favours: [
-    'Muovere una lettura quando decade la ragione scritta in anticipo per tenerla ferma, e non quando si muove il prezzo: qui sono decadute entrambe, quella sulla direzione e quella sulla forza',
-    'Chiedersi che cosa un test può davvero discriminare prima di aspettarlo per sei giorni: un dato di luglio non poteva contenere uno shock di agosto, per quanto solidi fossero i suoi numeri',
-    'Guardare la composizione e non il livello: tre canali che si muovono insieme dicono più di una soglia superata, e non dipendono da nessun numero tondo',
+    'Cercare la controprova nella misura più dura disponibile: la scarsità di greggio è stata raccontata qui per sei giorni con conteggi di navi, e il primo conteggio di barili nei serbatoi dice il contrario',
+    'Muovere una lettura quando decade la ragione scritta in anticipo per tenerla su, anche quando è stata scritta un’ora prima: la forza intraday scende perché due dei tre canali che la giustificavano si sono chiusi',
+    'Ancorare le condizioni ai livelli che il mercato ha stabilito nella giornata — 4.362,57, 4.441,01, 99,795, 4,688% — invece che ai numeri tondi su cui si accumulano gli ordini',
   ],
   avoid: [
+    'Scambiare un flusso stimato per una misura: due fornitori danno otto e undici transiti per lo stesso martedì, mentre le scorte sono uno stock ufficiale che arriva con accanto il livello complessivo per verificarne la coerenza',
+    'Contare come tre conferme indipendenti tre effetti della stessa riprezzatura: attese sulla Fed, biennale e dollaro dopo l’indice dei prezzi sono un movimento solo guardato da tre parti, e infatti due sono rientrati insieme',
     'Ancorare una condizione al consenso: il dato è uscito esattamente sul 3,4% e su più 0,2%, e cinque analisi che avevano scritto «sopra» o «sotto» quei livelli non hanno potuto dire niente',
-    'Leggere il calo dell’inflazione come una risposta sul petrolio: la componente energetica di luglio decelera perché luglio non conteneva il rialzo del greggio',
-    'Contare gli atti a verbale a memoria: al FOMC del 29 luglio i dissensi per un rialzo erano tre — Hammack, Kashkari e Logan — e non uno solo come questa scheda ha scritto due volte',
   ],
   confirming: [
-    'Riverificato alle 15:50 dopo l’indice dei prezzi: la probabilità di un rialzo a settembre crolla al 37,7% dal 52% del 10 agosto, contro il 62,3% attribuito alla permanenza al 3,50-3,75%',
-    'Il biennale scende a 4,180% con meno 3,8 punti base: in sei giorni non ha mai superato il 4,239%, e la misura scelta si muove per la prima volta, verso il basso',
-    'L’oro spot sale a 4.429,54 con più 1,41%, con un massimo di giornata a 4.441,01: supera i massimi della settimana con il dollaro in calo',
-    'Il decennale rientra a 4,662% e il Dollar Index scende a 99,615: tutti e tre i canali si muovono a favore del metallo insieme',
+    'Riverificato alle 16:48: la probabilità di un rialzo a settembre scende ancora, al 35,7% dal 37,7% delle 15:50 e dal 52% del 10 agosto, contro il 64,3% attribuito alla permanenza al 3,50-3,75%',
+    'Il biennale resta a 4,184%, meno 3,4 punti base sulla chiusura di 4,218% che è anche il massimo odierno: la misura scelta l’11 agosto continua a confermare',
+    'Le scorte commerciali americane di greggio salgono di 17,422 milioni di barili nella settimana al 7 agosto, a 424,4 milioni: meno pressione sul canale energia-inflazione, che è l’ultimo argomento restrittivo rimasto',
+    'Il decennale scende a 4,670%, sotto la soglia del 4,70% seguita qui e sotto il massimo odierno di 4,688%',
     'L’indice dei prezzi di luglio esce a 3,4% annuo dal 3,5% e a 2,5% di fondo dal 2,6%, con la componente energetica in decelerazione: più 14,7% annuo da più 15,7%',
   ],
   contradicting: [
-    'Il Brent resta a 88,43 dollari, circa 87,0 sulla serie usata qui, con un massimo di giornata a 90,06: il canale energia-tassi ha ancora carburante',
-    'L’agenzia internazionale taglia l’offerta mondiale attesa nel 2026 a meno 4,3 milioni di barili al giorno, da meno 3,7 di un mese fa',
-    'Otto transiti martedì con una sola nave in uscita, e i servizi di tracciamento segnalano venti petroliere con il transponder spento: il conteggio sottostima il flusso',
-    'Alle 19:00 l’asta del decennale da 39 miliardi: la prova sulla parte lunga della curva è ancora da fare',
-    'Il dato di luglio misura luglio, mentre la corsa del Brent da 79 a 90 dollari è di agosto: il canale energetico non poteva comparire in questa diffusione',
+    'Il Dollar Index ha restituito per intero il calo del pomeriggio: 99,709 con variazione di giornata quasi nulla, dopo un minimo a 99,500 e contro i 99,615 su cui era stata scritta la lettura delle 16:05',
+    'L’oro lascia undici dollari dalla rilevazione delle 15:50 e ventitré dal massimo di 4.441,01, senza riavvicinarlo dopo la diffusione sulle scorte',
+    'Lo stesso record di scorte che indebolisce l’argomento restrittivo indebolisce il premio geopolitico: un mercato che smette di credere alla scarsità ha meno ragioni per pagare un rifugio',
+    'Alle 19:00 l’asta del decennale da 39 miliardi: la prova sulla parte lunga della curva è ancora da fare, per la terza volta',
+    'Il dato di luglio misura luglio, mentre la corsa del Brent da 79 a 90 dollari è di agosto: il canale energetico non poteva comparire in quella diffusione',
     'Al FOMC del 29 luglio i dissensi per un rialzo erano tre — Hammack, Kashkari e Logan — non uno: gli atti a verbale sono più di quanti l’archivio ne avesse contati',
   ],
   constraints: [
+    {
+      label: 'Scarsità di greggio misurata nei serbatoi americani',
+      value: 'più 17,4 mln barili in una settimana',
+      baseline: 'a 424,4 mln complessivi; consenso meno 1,7, stima di settore più 9,1',
+      against:
+        'Tre osservazioni convergenti sulla scarsità, raccolte qui in due giorni e usate per alzare la ' +
+        'forza della lettura: l’agenzia americana che dà 600.000 barili al giorno indisponibili fino a ' +
+        'fine 2027, l’agenzia internazionale che porta l’offerta mondiale attesa nel 2026 a meno 4,3 ' +
+        'milioni di barili al giorno da meno 3,7, e il conteggio dei transiti a Hormuz sceso a otto navi ' +
+        'martedì con una sola in uscita. Due sono previsioni e la terza è un flusso stimato da un ' +
+        'fornitore privato, con un secondo fornitore che per lo stesso giorno ne conta undici.',
+      watch:
+        'La diffusione settimanale dell’agenzia statunitense, ogni mercoledì. Il numero della settimana al ' +
+        '7 agosto è il maggior aumento dal gennaio 2023 e arriva contro un consenso che attendeva un calo: ' +
+        'sulla scala usata qui uno stock ufficiale batte un flusso stimato, e questa è la prima volta che ' +
+        'la scarsità viene cercata dove si accumula invece che dove passa. Quello che scioglierebbe il ' +
+        'dubbio nel verso opposto è la composizione, pubblicata nella stessa tabella: se l’aumento venisse ' +
+        'da un rilascio di riserve strategiche non sarebbe offerta che abbonda ma un ammortizzatore che si ' +
+        'consuma, e il numero significherebbe il contrario di quello che sembra.',
+      state: 'sciolto',
+    },
     {
       label: 'Transito assicurabile nello Stretto di Hormuz',
       value: 'copertura che decade',
@@ -408,8 +438,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 37.7,
-      display: '37,7%',
+      now: 35.7,
+      display: '35,7%',
       marks: [
         {
           at: 50,
@@ -421,8 +451,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 87,
-      display: '≈ 87,0 $',
+      now: 87.1,
+      display: '≈ 87,1 $',
       marks: [
         {
           at: 82,
@@ -440,8 +470,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.18,
-      display: '4,180%',
+      now: 4.184,
+      display: '4,184%',
       marks: [
         {
           at: 4.25,
@@ -453,8 +483,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.662,
-      display: '4,662%',
+      now: 4.67,
+      display: '4,670%',
       marks: [
         {
           at: 4.68,
@@ -472,8 +502,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4429.54,
-      display: '4.429,54 $',
+      now: 4418.15,
+      display: '4.418,15 $',
       marks: [
         {
           at: 4300,
@@ -491,9 +521,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'diciassette-milioni-di-barili-e-il-conteggio-era-di-navi',
     'la-fed-esce-dal-prezzo-e-il-petrolio-non-era-nel-dato',
     'otto-navi-e-adesso-la-previsione-ha-un-conteggio',
-    'l-agenzia-mette-una-data-sul-vincolo-e-arriva-al-2027',
   ],
 };
 

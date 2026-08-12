@@ -258,6 +258,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     why: 'Un’interruzione dei transiti trasformerebbe un premio al rischio reversibile in uno shock di offerta.',
   },
   {
+    term: 'Scorte commerciali di greggio',
+    letter: 'S',
+    definition:
+      'Il petrolio conservato nei depositi commerciali di un Paese, escluse le riserve strategiche di Stato. Negli Stati Uniti la variazione settimanale è pubblicata ogni mercoledì dall’agenzia federale per l’energia.',
+    why: 'È uno stock, non un flusso: misura quanto greggio è rimasto fermo, non quanto ne è passato da qualche parte. Per questo funziona da controprova su un racconto di scarsità costruito su conteggi di transiti o su previsioni di offerta — un vincolo che stringe davvero prima o poi si vede nei serbatoi. La variazione da sola però non dice la causa, che può essere più importazioni, meno lavorazioni, meno esportazioni o un rilascio di riserve.',
+    related: ['Brent', 'Stretto di Hormuz', 'Premio di rischio geopolitico'],
+  },
+  {
     term: 'Bab el-Mandeb',
     letter: 'B',
     definition:
