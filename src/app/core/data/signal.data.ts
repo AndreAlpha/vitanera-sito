@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-12T19:40:00+02:00',
+  updatedAt: '2026-08-12T20:08:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,17 +187,16 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'La lettura resta dove era stata portata alle 16:52, e tenerla ferma è una conseguenza di come era ' +
-        'stata scritta: poggiava dichiaratamente su una gamba sola, quella monetaria, e quella gamba è ' +
-        'esattamente dove era — biennale a 4,184% senza riprendere un punto base dei tre e mezzo persi, ' +
-        'probabilità di un rialzo a settembre al 35,7%. Le tre cose successe dopo hanno colpito tutte le ' +
-        'altre, che erano già state tolte dal conto. Il collocamento da 39 miliardi si è aggiudicato al ' +
-        '4,683%, dieci punti base e mezzo sopra l’asta di luglio e sopra il 4,673% del mercato secondario: ' +
-        'la parte lunga non accompagna la parte breve. Il dollaro non ha solo restituito il calo, lo ha ' +
-        'superato, a 99,880 con più 0,17% dopo un minimo a 99,500. E l’oro cede da cinque ore, a 4.409,14 ' +
-        'contro un massimo di 4.441,01.',
+        'Il saldo resta quello di quaranta minuti fa e il contenuto è cambiato, che è una distinzione da ' +
+        'fare invece di nasconderla dietro un’etichetta ferma. È caduto un elemento contrario: l’asta del ' +
+        'decennale non ha mostrato domanda debole, con un rapporto fra domanda e offerta di 2,53 contro ' +
+        'una media di 2,48 sulle ultime dieci, ed era il numero che alle 19:40 mancava. Ne è comparso un ' +
+        'altro: l’oro è sceso sotto i 4.400 dollari, a 4.399,20, e il Dollar Index ha toccato 99,910, ' +
+        'cioè oltre il livello appena dichiarato come condizione per decadere. La gamba monetaria è dove ' +
+        'era — biennale a 4,184%, probabilità di un rialzo a settembre al 35,7% — e la ragione per cui la ' +
+        'lettura non sale non è più l’asta ma il prezzo: cinque ore di cedimento senza una sola ripresa.',
       invalidation:
-        'Un Dollar Index che chiude sopra i 99,895 del massimo odierno: mentre si scrive l’indice è a 99,880, quindi la condizione sta scambiando attraverso il proprio livello e manca solo la chiusura. Un oro che chiude sotto i 4.362,57 dollari, il minimo di questa giornata, cancellerebbe per intero il movimento prodotto dal dato. Un biennale che torna sopra il 4,218%, insieme massimo di oggi e chiusura di ieri, toglierebbe l’unica gamba rimasta in piedi.',
+        'Un Dollar Index che chiude sopra i 99,910 del massimo odierno: l’indice ci è già passato attraverso in seduta e manca solo la chiusura. Un oro che chiude sotto i 4.362,57 dollari, il minimo di questa giornata, cancellerebbe per intero il movimento prodotto dal dato delle 14:30. Un biennale che torna sopra il 4,218%, insieme massimo di oggi e chiusura di ieri, toglierebbe l’unica gamba rimasta in piedi.',
     },
     {
       horizon: 'medio',
@@ -223,11 +222,12 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'complessivi, il maggior aumento dal gennaio 2023, contro un consenso che ne attendeva 1,7 in ' +
         'meno. Taglia in due sensi e per questo non muove la direzione: toglie carburante all’argomento ' +
         'restrittivo, ma toglie anche fondamento alla scarsità su cui poggia il premio geopolitico. Alle ' +
-        '19:00 arriva infine la prova rimandata da tre giorni sulla parte lunga, e non la supera: il ' +
-        'collocamento da 39 miliardi di titoli a dieci anni si aggiudica al 4,683%, dieci punti base e ' +
-        'mezzo sopra l’asta di luglio, contro una scadenza a tre anni che ieri aveva trovato domanda più ' +
-        'forte del solito. Il costo del debito lungo sale mentre le attese sulla banca centrale scendono: ' +
-        'sono due movimenti opposti, e il secondo non compensa il primo.',
+        '19:00 arriva infine la prova rimandata da tre giorni sulla parte lunga, e la supera senza brillare: ' +
+        'il collocamento da 42 miliardi di titoli a dieci anni si aggiudica al 4,683% con un rapporto fra ' +
+        'domanda e offerta di 2,53, sopra la media di 2,48 delle ultime dieci aste ma sotto il 2,59 del ' +
+        'mese scorso, quando il rendimento era dieci punti base e mezzo più basso. Il costo del debito ' +
+        'lungo sale mentre le attese sulla banca centrale scendono: sono due movimenti opposti, e il ' +
+        'secondo non compensa il primo.',
       invalidation:
         'Una probabilità di rialzo a settembre che risale sopra il 48% entro venerdì, cioè sopra il livello di ieri mattina invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
     },
@@ -256,7 +256,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera.',
     },
   ],
-  headline: 'L’asta si aggiudica al 4,683% e il dollaro torna positivo: resta una gamba sola',
+  headline: 'Asta da 42 miliardi con domanda nella media, e l’oro scivola sotto i 4.400',
   stance:
     'Giornata in tre tempi, e ogni tempo toglie qualcosa al precedente. Alle 14:30 l’indice dei prezzi ' +
     'esce sul consenso — 3,4% annuo dal 3,5%, fondo a 2,5% dal 2,6% — e la probabilità di un rialzo a ' +
@@ -264,32 +264,37 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'sull’evento che nominava. Alle 16:30 le scorte commerciali americane di greggio salgono di 17,4 ' +
     'milioni di barili in una settimana, a 424,4 milioni, il maggior aumento dal gennaio 2023 e contro ' +
     'attese di un calo: la scarsità raccontata qui per sei giorni contando navi riceve la prima ' +
-    'controprova contando barili. Alle 19:00 il collocamento da 39 miliardi di titoli a dieci anni si ' +
-    'aggiudica al 4,683%, dieci punti base e mezzo sopra l’asta di luglio e sopra il 4,673% del mercato ' +
-    'secondario: la parte lunga non accompagna la parte breve. Nel frattempo il dollaro ha fatto il giro ' +
-    'completo — minimo a 99,500, adesso 99,880 con più 0,17% — e l’oro cede da cinque ore, a 4.409,14. ' +
-    'Dei tre canali allineati alle 16:05 ne resta uno, ed è quello monetario.',
+    'controprova contando barili. Alle 19:00 il collocamento da 42 miliardi di titoli a dieci anni si ' +
+    'aggiudica al 4,683% con un rapporto fra domanda e offerta di 2,53, sopra la media di 2,48 delle ' +
+    'ultime dieci aste: la domanda non è stata debole, e va corretta la lettura pubblicata qui alle ' +
+    '19:40, che aveva la cifra sbagliata sulla dimensione e si appoggiava a un indizio più fragile. Nel ' +
+    'frattempo il dollaro ha fatto il giro completo — minimo a 99,500, massimo a 99,910 — e l’oro è ' +
+    'scivolato sotto i 4.400, a 4.399,20. Dei tre canali allineati alle 16:05 ne resta uno, ed è quello ' +
+    'monetario; la ragione per non salire non è più l’asta ma il prezzo.',
   favours: [
     'Cercare la controprova nella misura più dura disponibile: la scarsità di greggio è stata raccontata qui per sei giorni con conteggi di navi, e il primo conteggio di barili nei serbatoi dice il contrario',
     'Muovere una lettura quando decade la ragione scritta in anticipo per tenerla su, anche quando è stata scritta un’ora prima: la forza intraday scende perché due dei tre canali che la giustificavano si sono chiusi',
-    'Ancorare le condizioni ai livelli che il mercato ha stabilito nella giornata — 4.362,57, 4.441,01, 99,895, 4,688% — invece che ai numeri tondi su cui si accumulano gli ordini',
+    'Ancorare le condizioni ai livelli che il mercato ha stabilito nella giornata — 4.362,57, 4.441,01, 99,910, 4,688% — invece che ai numeri tondi su cui si accumulano gli ordini',
+    'Correggere per iscritto e subito: l’asta di stasera era da 42 miliardi e non da 39, e la correzione è stata pubblicata a parte invece di essere infilata nel testo sbagliato',
   ],
   avoid: [
     'Scambiare un flusso stimato per una misura: due fornitori danno otto e undici transiti per lo stesso martedì, mentre le scorte sono uno stock ufficiale che arriva con accanto il livello complessivo per verificarne la coerenza',
     'Contare come tre conferme indipendenti tre effetti della stessa riprezzatura: attese sulla Fed, biennale e dollaro dopo l’indice dei prezzi sono un movimento solo guardato da tre parti, e infatti due sono rientrati insieme',
     'Ancorare una condizione al consenso: il dato è uscito esattamente sul 3,4% e su più 0,2%, e cinque analisi che avevano scritto «sopra» o «sotto» quei livelli non hanno potuto dire niente',
+    'Ricopiare un numero atteso finché finisce accanto a un risultato ufficiale: i 39 miliardi erano la dimensione prevista, passata per tre analisi senza riverifica fino a comparire vicino al rendimento vero e a prenderne l’autorevolezza',
+    'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
     'Riverificato alle 16:48: la probabilità di un rialzo a settembre scende ancora, al 35,7% dal 37,7% delle 15:50 e dal 52% del 10 agosto, contro il 64,3% attribuito alla permanenza al 3,50-3,75%',
     'Il biennale resta a 4,184%, meno 3,4 punti base sulla chiusura di 4,218% che è anche il massimo odierno: la misura scelta l’11 agosto continua a confermare',
     'Le scorte commerciali americane di greggio salgono di 17,422 milioni di barili nella settimana al 7 agosto, a 424,4 milioni: meno pressione sul canale energia-inflazione, che è l’ultimo argomento restrittivo rimasto',
-    'Il decennale resta a 4,673%, sotto la soglia del 4,70% seguita qui e sotto il massimo odierno di 4,688%, nonostante il collocamento',
+    'Il collocamento del decennale trova domanda modestamente sopra la media: rapporto fra domanda e offerta 2,53 contro 2,48 sulle ultime dieci aste, e il rendimento resta a 4,677% dentro un intervallo fra 4,631% e 4,688%, lontano dal 4,735% di ieri',
     'L’indice dei prezzi di luglio esce a 3,4% annuo dal 3,5% e a 2,5% di fondo dal 2,6%, con la componente energetica in decelerazione: più 14,7% annuo da più 15,7%',
   ],
   contradicting: [
-    'Il Dollar Index non ha solo restituito il calo, lo ha superato: 99,880 con più 0,17% e a quindici millesimi dal massimo di 99,895, contro i 99,615 su cui era stata scritta la lettura delle 16:05 e il minimo di 99,500',
-    'L’asta del decennale da 39 miliardi si aggiudica al 4,683%, dieci punti base e mezzo sopra quella di luglio e sopra il 4,673% del secondario: la parte lunga non segue la riprezzatura della parte breve',
-    'L’oro cede da cinque ore: 4.409,14 dollari contro il 4.429,54 delle 15:50 e trentadue sotto il massimo di 4.441,01, senza riavvicinarlo dopo nessuno dei tre fatti del pomeriggio',
+    'Il Dollar Index non ha solo restituito il calo, lo ha superato: massimo salito a 99,910 e quotazione a 99,867 con più 0,15%, contro i 99,615 su cui era stata scritta la lettura delle 16:05 e il minimo di 99,500',
+    'L’oro scivola sotto i 4.400 dollari, a 4.399,20: quarantadue sotto il massimo di 4.441,01 e in cedimento da oltre cinque ore senza una sola ripresa',
+    'Il rapporto domanda-offerta dell’asta è comunque sceso rispetto al mese scorso, da 2,59 a 2,53, con un rendimento di dieci punti base e mezzo più alto: contro la media va meglio del solito, contro sé stessa di trenta giorni fa va peggio',
     'Lo stesso record di scorte che indebolisce l’argomento restrittivo indebolisce il premio geopolitico: un mercato che smette di credere alla scarsità ha meno ragioni per pagare un rifugio',
     'Il Brent resta a 88,72 dollari dopo un aumento record delle scorte, circa 87,3 sulla serie usata qui: il greggio non sta prezzando il contrappeso',
     'Il dato di luglio misura luglio, mentre la corsa del Brent da 79 a 90 dollari è di agosto: il canale energetico non poteva comparire in quella diffusione',
@@ -489,8 +494,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.673,
-      display: '4,673%',
+      now: 4.677,
+      display: '4,677%',
       marks: [
         {
           at: 4.68,
@@ -508,8 +513,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.88,
-      display: '99,880',
+      now: 99.867,
+      display: '99,867',
       marks: [
         {
           at: 99.795,
@@ -518,17 +523,17 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           note: 'era il massimo della giornata quando è stata scritta la lettura delle 16:52, ed è stato superato nel giro di un’ora: sopra questo livello il cambio ha smesso di aiutare il metallo',
         },
         {
-          at: 99.895,
-          display: '99,895',
+          at: 99.91,
+          display: '99,910',
           kind: 'invalida',
-          note: 'massimo della giornata del 12 agosto. Una chiusura sopra direbbe che il calo seguito all’indice dei prezzi non è stato solo restituito ma annullato, e la lettura intraday decade',
+          note: 'massimo della giornata del 12 agosto, aggiornato alle 20:05. Una chiusura sopra direbbe che il calo seguito all’indice dei prezzi non è stato solo restituito ma annullato, e la lettura intraday decade',
         },
       ],
     },
     {
       label: 'XAU/USD',
-      now: 4409.14,
-      display: '4.409,14 $',
+      now: 4399.2,
+      display: '4.399,20 $',
       marks: [
         {
           at: 4300,
@@ -546,9 +551,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'quarantadue-miliardi-non-trentanove-l-asta-era-nella-media',
     'l-asta-si-aggiudica-sopra-il-mercato-e-il-dollaro-torna-su',
     'diciassette-milioni-di-barili-e-il-conteggio-era-di-navi',
-    'la-fed-esce-dal-prezzo-e-il-petrolio-non-era-nel-dato',
   ],
 };
 
