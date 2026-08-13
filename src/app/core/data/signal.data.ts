@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-13T18:35:00+02:00',
+  updatedAt: '2026-08-13T19:15:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -235,7 +235,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'domanda e offerta di 2,53, sopra la media di 2,48 delle ultime dieci aste ma sotto il 2,59 del ' +
         'mese scorso, quando il rendimento era dieci punti base e mezzo più basso. Il costo del debito ' +
         'lungo sale mentre le attese sulla banca centrale scendono: sono due movimenti opposti, e il ' +
-        'secondo non compensa il primo.',
+        'secondo non compensa il primo. Il 13 agosto quel conto riceve la sua prova: il collocamento del ' +
+        'trentennale da 25 miliardi si aggiudica al 5,216%, leggermente sotto il 5,23% circa quotato prima ' +
+        'dell’asta, e il rendimento sul secondario chiude in calo a 5,218%. Il debito si colloca, e la ' +
+        'coda più temuta — un mercato che comincia a rifiutare la carta lunga americana — non si è vista. ' +
+        'Si colloca però al costo più alto su questa scadenza da circa un quarto di secolo, quasi sedici ' +
+        'punti base sopra l’asta di un mese fa: il premio richiesto sale in modo misurabile ogni mese, e ' +
+        'quella pendenza è la cosa da seguire. Il rapporto fra domanda e offerta, che deciderebbe davvero, ' +
+        'non è ancora pubblicato.',
       invalidation:
         'Una probabilità di rialzo a settembre che risale sopra il 48% entro venerdì, cioè sopra il livello di ieri mattina invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
     },
@@ -268,12 +275,17 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'viene comprata — e per questo non sposta il segno ma il numero di ragioni che lo sostengono. Nello ' +
         'stesso rendiconto le entrate doganali nette sono negative per 8,55 miliardi dopo 33,38 miliardi di ' +
         'rimborsi: la prima misura di quanto i dazi incassino davvero, contro due analisi che li avevano ' +
-        'seguiti solo dal lato dell’annuncio.',
+        'seguiti solo dal lato dell’annuncio. Il 13 agosto quella gamba riceve il suo primo prezzo di ' +
+        'mercato: il collocamento del trentennale si aggiudica al 5,216%, il costo più alto su questa ' +
+        'scadenza da circa un quarto di secolo e quasi sedici punti base sopra l’asta di un mese fa. Il ' +
+        'debito continua a trovare compratori — l’ipotesi estrema di un rifiuto della carta lunga resta ' +
+        'smentita — ma il premio richiesto sale in modo misurabile a ogni collocamento, ed è quella ' +
+        'pendenza, non il singolo risultato, la cosa che agisce sui trimestri.',
       invalidation:
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera; sulla gamba fiscale, il prossimo rifinanziamento trimestrale che allarga le aste a lunga scadenza rispetto ai 125 miliardi rimasti invariati, oppure conti federali di agosto con spese sotto i 667 miliardi, che direbbero che il record di luglio era calendario e non traiettoria.',
     },
   ],
-  headline: 'Due dati morbidi e l’oro perde l’1,01%: la direzione intraday scende a neutrale',
+  headline: 'Il trentennale si colloca al 5,216%, il costo più alto da un quarto di secolo',
   stance:
     'Giornata in tre tempi, e ogni tempo toglie qualcosa al precedente. Alle 14:30 l’indice dei prezzi ' +
     'esce sul consenso — 3,4% annuo dal 3,5%, fondo a 2,5% dal 2,6% — e la probabilità di un rialzo a ' +
@@ -284,13 +296,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'controprova contando barili. Alle 19:00 il collocamento da 42 miliardi di titoli a dieci anni si ' +
     'aggiudica al 4,683% con un rapporto fra domanda e offerta di 2,53, sopra la media di 2,48 delle ' +
     'ultime dieci aste, e in serata il rendiconto del Tesoro ha portato il disavanzo cumulato dell’anno ' +
-    'fiscale oltre quello dell’intero anno precedente. Giovedì alle 14:30 arrivano due diffusioni che ' +
-    'vanno entrambe nella direzione favorevole al metallo: prezzi alla produzione piatti contro attese di ' +
-    'più 0,2% e al 4,7% annuo dal 5,5%, richieste di sussidio a 209.000 contro 204.000. Il decennale ' +
-    'scende di cinque punti base a 4,641%, il Brent perde l’1,06% dopo un minimo a 85,87. E l’oro perde ' +
-    'l’1,01%, a 4.364,11 con un minimo a 4.351,45. È la terza seduta consecutiva in cui i sostegni ' +
-    'migliorano e il prezzo va nell’altro verso, e la direzione intraday scende a neutrale: non perché ' +
-    'qualcosa spinga in basso, ma perché è venuta a mancare la ragione per cui dovrebbe salire.',
+    'fiscale oltre quello dell’intero anno precedente. Giovedì alle 14:30 arrivano due diffusioni ' +
+    'favorevoli al metallo — prezzi alla produzione piatti contro attese di più 0,2% e richieste di ' +
+    'sussidio a 209.000 contro 204.000 — e alle 19:00 la prova rimandata da tre giorni: il collocamento ' +
+    'del trentennale da 25 miliardi si aggiudica al 5,216%, sotto il livello quotato prima dell’asta, con ' +
+    'il rendimento sul secondario in calo a 5,218%. Il debito si colloca, e si colloca al costo più alto ' +
+    'da un quarto di secolo. L’oro resta però a 4.370,67 con meno 0,86%: quattro eventi favorevoli in una ' +
+    'giornata e quattro mancate risposte, ed è la terza seduta di fila. La direzione intraday è a ' +
+    'neutrale non perché qualcosa spinga in basso, ma perché manca la ragione per cui dovrebbe salire.',
   favours: [
     'Cercare la controprova nella misura più dura disponibile: la scarsità di greggio è stata raccontata qui per sei giorni con conteggi di navi, e il primo conteggio di barili nei serbatoi dice il contrario',
     'Muovere una lettura quando decade la ragione scritta in anticipo per tenerla su, anche quando è stata scritta un’ora prima: la forza intraday scende perché due dei tre canali che la giustificavano si sono chiusi',
@@ -308,13 +321,17 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   ],
   confirming: [
     'I prezzi alla produzione di luglio escono piatti sul mese contro attese di più 0,2%, e scendono al 4,7% annuo dal 5,5%; il dato di fondo sale dello 0,2% contro attese di più 0,3%. Dopo l’indice al consumo di mercoledì sono due diffusioni consecutive che non convalidano una nuova accelerazione',
-    'Il decennale scende di cinque punti base a 4,641% con un minimo a 4,600%, il più basso della settimana, e il Brent perde l’1,06% dopo essere arrivato a 85,87 dollari, circa 84,5 sulla serie usata qui',
+    'Il decennale scende di 4,7 punti base a 4,645% con un minimo a 4,600%, il più basso della settimana, e il Brent perde l’1,06% dopo essere arrivato a 85,87 dollari',
+    'Il collocamento del trentennale si aggiudica al 5,216%, sotto il 5,23% circa quotato prima dell’asta, e il rendimento sul secondario scende a 5,218% dal 5,247% della vigilia: la prova sulla parte lunga è passata senza shock',
+    'Tom Barkin dice che il livello attuale dei tassi potrebbe già essere abbastanza restrittivo e che non è affatto certo servano altri rialzi: è la prima voce del comitato che mette in dubbio la necessità di un rialzo, contro Hammack poche ore prima',
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%: domanda che non dipende dal movimento',
     'OPEC e agenzia internazionale tagliano la domanda mondiale attesa nel 2026 — crescita a 580.000 barili al giorno dai 780.000 di luglio, e una contrazione di circa 1,6 milioni — quindi il greggio scende senza che il vincolo sull’offerta si allenti',
     'Il biennale resta a 4,184%, meno 3,4 punti base sulla chiusura di 4,218% che è anche il massimo odierno: la misura scelta l’11 agosto continua a confermare',
     'Le scorte commerciali americane di greggio salgono di 17,422 milioni di barili nella settimana al 7 agosto, a 424,4 milioni: meno pressione sul canale energia-inflazione, che è l’ultimo argomento restrittivo rimasto',
     'Il collocamento del decennale trova domanda modestamente sopra la media: rapporto fra domanda e offerta 2,53 contro 2,48 sulle ultime dieci aste, e il rendimento resta a 4,677% dentro un intervallo fra 4,631% e 4,688%, lontano dal 4,735% di ieri',
-    'L’oro perde l’1,01% a 4.364,11 dollari nella giornata dei due dati favorevoli, con un minimo a 4.351,45 sotto il livello dichiarato al mattino: terza seduta consecutiva in cui i sostegni migliorano e il prezzo scende',
+    'L’oro resta a 4.370,67 dollari con meno 0,86%, minimo a 4.351,45: quattro eventi favorevoli in una giornata — due diffusioni, il calo dei rendimenti, l’asta senza shock — e quattro mancate risposte, alla terza seduta di fila',
+    'Il costo del debito a trent’anni è salito di quasi sedici punti base in un mese, al massimo da circa un quarto di secolo: il rendimento alternativo che un metallo senza cedole deve battere continua a crescere',
+    'Il rapporto fra domanda e offerta dell’asta non è pubblicato, ed è la seconda volta in due giorni che una condizione dichiarata qui dipende da una cifra che non esce in tempo',
     'La probabilità di un rialzo a settembre non è scesa dopo i dati: 35,0% contro il 34,7% del mattino e il 35,7% di mercoledì sera, quindi ferma dentro due punti da tre giorni mentre il racconto della giornata dice il contrario',
     'Beth Hammack, una dei tre dissensi messi a verbale il 29 luglio, ripete che il rialzo andrebbe fatto adesso: la componente restrittiva del comitato non si è mossa con i dati',
     'Hossein Taeb, rimesso a capo dei Basij tre giorni fa, dichiara all’agenzia Fars che lo Stretto di Hormuz è «sotto la gestione e il controllo» iraniano: è l’esatto contrario di quanto scritto da Trump mercoledì, e il conteggio dei transiti non si muove per nessuna delle due',
@@ -539,8 +556,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.641,
-      display: '4,641%',
+      now: 4.645,
+      display: '4,645%',
       marks: [
         {
           at: 4.68,
@@ -558,8 +575,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.86,
-      display: '99,860',
+      now: 99.85,
+      display: '99,850',
       marks: [
         {
           at: 99.795,
@@ -577,8 +594,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4364.11,
-      display: '4.364,11 $',
+      now: 4370.67,
+      display: '4.370,67 $',
       marks: [
         {
           at: 4300,
@@ -596,8 +613,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'il-trentennale-si-colloca-al-prezzo-piu-alto-dal-2001',
     'due-dati-a-favore-e-l-oro-perde-l-uno-per-cento',
-    'il-greggio-scende-dal-lato-della-domanda-non-dell-offerta',
     'l-anno-fiscale-supera-il-precedente-con-due-mesi-d-anticipo',
   ],
 };
