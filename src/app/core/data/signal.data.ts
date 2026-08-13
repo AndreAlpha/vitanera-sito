@@ -180,7 +180,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-13T08:20:00+02:00',
-  checkedAt: '2026-08-13T11:25:00+02:00',
+  checkedAt: '2026-08-13T12:50:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -300,20 +300,22 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   avoid: [
     'Scambiare un flusso stimato per una misura: due fornitori danno otto e undici transiti per lo stesso martedì, mentre le scorte sono uno stock ufficiale che arriva con accanto il livello complessivo per verificarne la coerenza',
     'Contare come tre conferme indipendenti tre effetti della stessa riprezzatura: attese sulla Fed, biennale e dollaro dopo l’indice dei prezzi sono un movimento solo guardato da tre parti, e infatti due sono rientrati insieme',
+    'Giudicare alle 08:15 se un movimento notturno è una riprezzatura o una reazione a un titolo: il calo del Brent era stato archiviato qui come rientrato entro poche ore, e in giornata è arrivato a meno 2,06% con un minimo sotto quello notturno. La sessione europea non era ancora cominciata, e il test era stato applicato troppo presto',
     'Affidare una condizione a un numero che pubblica un terzo quando vuole: il conteggio dei transiti di mercoledi non e uscito, e la condizione che ci poggiava sopra e rimasta senza verdetto ne in un verso ne nell’altro',
     'Ancorare una condizione al consenso: il dato è uscito esattamente sul 3,4% e su più 0,2%, e cinque analisi che avevano scritto «sopra» o «sotto» quei livelli non hanno potuto dire niente',
     'Ricopiare un numero atteso finché finisce accanto a un risultato ufficiale: i 39 miliardi erano la dimensione prevista, passata per tre analisi senza riverifica fino a comparire vicino al rendimento vero e a prenderne l’autorevolezza',
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
-    'Riverificato alle 11:25 del 13 agosto: la probabilità di un rialzo a settembre resta al 34,7%, ferma da tre ore e in calo dal 35,7% di ieri sera e dal 52% del 10 agosto, contro il 65,3% attribuito alla permanenza',
-    'Il dollaro si è girato: 99,830 con meno 0,07%, sotto la chiusura di 99,899 dopo un massimo a 99,990. La risalita di ieri sera non ha avuto seguito, e il decennale scende ancora a 4,660% dal 4,692% di chiusura',
+    'Riverificato alle 12:50 del 13 agosto: la probabilità di un rialzo a settembre resta al 34,7% dalle 08:15, in calo dal 35,7% di ieri sera e dal 52% del 10 agosto, contro il 65,3% attribuito alla permanenza',
+    'Il Brent estende il calo a 87,15 dollari con meno 2,06%, un minimo a 86,86 e circa 85,7 sulla serie usata qui: la lettura sul lato della domanda pubblicata alle 08:20 sta venendo confermata, e la condizione scritta allora — un ritorno sopra gli 89,06 del massimo — è lontana',
+    'Il dollaro non ha passato quota 100: a 99,790 con meno 0,11% è vicino al minimo di giornata, e il massimo resta 99,990, lo stesso registrato alle 11:25. Il canale del cambio non sta lavorando contro il metallo',
     'OPEC e agenzia internazionale tagliano la domanda mondiale attesa nel 2026 — crescita a 580.000 barili al giorno dai 780.000 di luglio, e una contrazione di circa 1,6 milioni — quindi il greggio scende senza che il vincolo sull’offerta si allenti',
     'Il biennale resta a 4,184%, meno 3,4 punti base sulla chiusura di 4,218% che è anche il massimo odierno: la misura scelta l’11 agosto continua a confermare',
     'Le scorte commerciali americane di greggio salgono di 17,422 milioni di barili nella settimana al 7 agosto, a 424,4 milioni: meno pressione sul canale energia-inflazione, che è l’ultimo argomento restrittivo rimasto',
     'Il collocamento del decennale trova domanda modestamente sopra la media: rapporto fra domanda e offerta 2,53 contro 2,48 sulle ultime dieci aste, e il rendimento resta a 4,677% dentro un intervallo fra 4,631% e 4,688%, lontano dal 4,735% di ieri',
-    'L’oro ha stampato un massimo a 4.449,71 e lasciato settanta dollari: a 4.381,04 con meno 0,62% resta sotto i 4.400 e sotto la chiusura di 4.408,59, con il minimo di giornata sceso a 4.364,27',
-    'La divergenza non si è risolta ma non è peggiorata: alle 11:25 il metallo è tre dollari sopra la rilevazione delle 08:15 mentre dollaro e decennale sono scesi, quindi la configurazione migliora e il prezzo resta fermo',
+    'L’oro ha stampato un massimo a 4.449,71 e lasciato sessantacinque dollari: a 4.384,82 con meno 0,54% resta sotto i 4.400 e sotto la chiusura di 4.408,59, con il minimo di giornata a 4.364,27',
+    'La divergenza non si è risolta ma non è peggiorata: alle 12:50 il metallo è sette dollari sopra la rilevazione delle 08:15 mentre dollaro, decennale e greggio sono tutti scesi, quindi la configurazione migliora e il prezzo resta fermo invece di seguirla',
     'Hossein Taeb, rimesso a capo dei Basij tre giorni fa, dichiara all’agenzia Fars che lo Stretto di Hormuz è «sotto la gestione e il controllo» iraniano: è l’esatto contrario di quanto scritto da Trump mercoledì, e il conteggio dei transiti non si muove per nessuna delle due',
     'L’inflazione all’ingrosso giapponese di luglio manca le attese del 7,4% e decelera al 7,2% dal 7,3%, con i prezzi all’importazione in yen al 29,1% dal 30,1%: argomento più debole per un rialzo di settembre, non più forte',
     'Entrate doganali nette negative per 8,55 miliardi dopo 33,38 miliardi di rimborsi: la prima misura di quanto i dazi incassino toglie credibilità a una delle vie d’uscita dichiarate dal disavanzo',
@@ -504,8 +506,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 87.4,
-      display: '≈ 87,4 $',
+      now: 85.7,
+      display: '≈ 85,7 $',
       marks: [
         {
           at: 82,
@@ -555,8 +557,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.83,
-      display: '99,830',
+      now: 99.79,
+      display: '99,790',
       marks: [
         {
           at: 99.795,
@@ -574,8 +576,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4381.04,
-      display: '4.381,04 $',
+      now: 4384.82,
+      display: '4.384,82 $',
       marks: [
         {
           at: 4300,
