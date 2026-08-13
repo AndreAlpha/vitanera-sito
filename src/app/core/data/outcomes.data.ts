@@ -2257,4 +2257,49 @@ export const OUTCOMES: readonly Outcome[] = [
     lesson:
       'Il Dollar Index ha chiuso a 99,899. Questa analisi, delle 19:40, aveva messo la condizione a 99,895 ed è scattata per quattro millesimi; quella pubblicata ventotto minuti dopo aveva alzato lo stesso livello a 99,910, perché nel frattempo il massimo di giornata si era spostato, e sullo stesso identico numero di chiusura non scatta per undici millesimi. Due condizioni scritte a mezz’ora di distanza sulla stessa grandezza danno verdetti opposti, e la differenza non sta nel mercato ma nell’ora in cui è stata scritta la regola. Ancorare una condizione al massimo corrente ha il pregio di usare un livello che il mercato ha stabilito invece di un numero tondo, ma ha questo difetto: il livello si sposta mentre la giornata avanza, e chi scrive più tardi si dà automaticamente un margine più largo. Quando due analisi ravvicinate misurano la stessa cosa, l’ancora va fissata una volta sola.',
   },
+  {
+    slug: 'quarantadue-miliardi-non-trentanove-l-asta-era-nella-media',
+    checkedAt: '2026-08-13T20:28:00+02:00',
+    verdict: 'parziale',
+    conditions: [
+      {
+        condition:
+          'Un Dollar Index che chiude sopra i 99,910 del massimo odierno, aggiornato rispetto ai 99,895 di quaranta minuti fa: l’indice ci è già passato attraverso in seduta, e manca solo la chiusura.',
+        triggered: false,
+        evidence:
+          'La chiusura di mercoledì 12 agosto è 99,899, undici millesimi sotto la condizione. Nella seduta di giovedì l’indice ha toccato un massimo di 99,990 senza chiudere: alle 20:26 è a 99,852, sotto la chiusura della vigilia. Nessuna chiusura sopra 99,910 nella finestra.',
+      },
+      {
+        condition:
+          'Un oro che chiude sotto i 4.362,57 dollari, il minimo di questa giornata: cancellerebbe per intero il movimento prodotto dal dato delle 14:30.',
+        triggered: false,
+        evidence:
+          'La chiusura di mercoledì è 4.408,59. Giovedì il future COMEX di agosto ha chiuso a 4.363,60, cioè un dollaro sopra la soglia, e lo spot alle 20:26 è a 4.356,73 con un minimo a 4.351,45 ma senza chiusura. La condizione chiede una chiusura e nessuna chiusura sotto 4.362,57 è stata registrata: manca per un dollaro.',
+      },
+      {
+        condition:
+          'Un biennale che torna sopra il 4,218%, insieme massimo di oggi e chiusura di ieri: è l’unica gamba rimasta, e senza quella non resta niente sotto la direzione.',
+        triggered: false,
+        evidence:
+          'Il biennale ha chiuso mercoledì a 4,184% ed è sceso ancora giovedì, a 4,149% dopo il collocamento del trentennale. La gamba monetaria non ha ceduto in nessun momento della finestra.',
+      },
+      {
+        condition:
+          'Il collocamento del trentennale di giovedì alle 19:00 con un rapporto fra domanda e offerta sotto la propria media delle ultime dieci aste: sarebbe la debolezza sulla parte lunga che quello di stasera non ha mostrato, e su una scadenza dove peserebbe di più.',
+        triggered: true,
+        evidence:
+          'Il collocamento di giovedì 13 agosto, 25 miliardi aggiudicati al 5,216%, ha un rapporto fra domanda e offerta di 2,39 contro 2,44 dell’asta precedente e circa 2,43 di media sulle ultime dieci. Sotto la media. Nella stessa direzione l’aggiudicazione è arrivata quattro decimi di punto base sopra il 5,212% quotato alla chiusura delle offerte, e gli operatori primari hanno assorbito l’11,6% contro circa 10,6% di media. I numeri di domanda provengono da un servizio di dati di mercato e non dal comunicato del Tesoro, che non risultava raggiungibile: le tre quote di ripartizione sommano esattamente a 100,0, che è un controllo di congruenza e non una conferma.',
+      },
+      {
+        condition:
+          'I prezzi alla produzione di luglio, giovedì alle 14:30, sopra il consenso con il decennale che si porta sopra il 4,688% del massimo odierno.',
+        triggered: false,
+        evidence:
+          'I prezzi alla produzione di luglio sono usciti a 0,0% sul mese contro un consenso di più 0,2%, quindi sotto e non sopra il consenso. Il decennale ha toccato un massimo di 4,684% e ha chiuso a 4,629%, in calo di 6,3 punti base. Entrambe le gambe della condizione mancano.',
+      },
+    ],
+    what: 'Una condizione su cinque, ed è l’unica delle cinque che l’analisi non poteva verificare quando l’ha scritta. Le altre quattro erano ancorate a prezzi e a un dato macro, e nessuna è scattata: il dollaro non ha chiuso sopra la soglia, il biennale è sceso invece di salire, i prezzi alla produzione sono usciti sotto il consenso e il decennale con loro. La quinta era ancorata al risultato di un’asta che si sarebbe tenuta il giorno dopo, ed è quella che ha ceduto. Vale la pena notare che l’oro ha mancato la propria condizione per un dollaro sul future di agosto: la lettura è stata salvata da uno scarto che non ha nessun significato economico.',
+    lesson:
+      'Questa è la terza condizione in due giorni ancorata a un numero che al momento della scrittura non esisteva ancora, e stavolta è scattata: il rapporto fra domanda e offerta è uscito, è sotto la media, e il verdetto lo decide lui. Ma il registro deve annotare l’altra metà. Nell’attesa di quel numero l’analisi delle 19:15 del 13 agosto ha giudicato lo stesso collocamento usando un sostituto — un livello pre-asta riportato in mattinata al posto del quotato alla chiusura delle offerte — e ha concluso il contrario di quello che il numero vero avrebbe detto. La regola che vieta quel sostituto era già scritta in questo archivio il 12 agosto alle 19:40, in un riquadro che si rifiutava di scrivere «coda» senza il dato giusto. Scrivere la regola non basta, e nemmeno dichiarare l’incertezza accanto alla conclusione: finché il numero decisivo manca, la conclusione non si scrive in forma attenuata, non si scrive.',
+  },
 ];

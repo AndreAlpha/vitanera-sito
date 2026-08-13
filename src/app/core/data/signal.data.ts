@@ -179,25 +179,28 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-13T19:15:00+02:00',
+  updatedAt: '2026-08-13T20:30:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'neutrale',
+      direction: 'neutrale-ribassista',
       strength: 'bassa',
       regime:
-        'La direzione scende da neutrale-rialzista a neutrale, ed è la prima volta in questa fase che si ' +
-        'muove per il comportamento del prezzo invece che per il decadere di una ragione. Il meccanismo ' +
-        'dichiarato continua a funzionare: i prezzi alla produzione escono piatti contro attese di più ' +
-        '0,2%, le richieste di sussidio salgono a 209.000 contro 204.000, il decennale scende di cinque ' +
-        'punti base a 4,641% con un minimo a 4,600%, il Brent perde l’1,06%. Quattro cose dalla stessa ' +
-        'parte, e l’oro perde l’1,01% a 4.364,11 dollari con un minimo a 4.351,45. È la terza seduta ' +
-        'consecutiva con questa struttura, e alla terza un meccanismo che non produce il proprio effetto ' +
-        'smette di essere una spiegazione. Neutrale non è ribassista: niente dice che l’oro debba scendere, ' +
-        'e quello che manca è la ragione per cui non sale.',
+        'La direzione scende di un altro gradino, da neutrale a neutrale con inclinazione ribassista, e ' +
+        'anche stavolta si muove per il comportamento del prezzo. Alle 18:35 la lettura era stata portata ' +
+        'a neutrale osservando che quattro elementi favorevoli non producevano il loro effetto; alle 20:30 ' +
+        'gli elementi sono cinque, perché il collocamento del trentennale non solo è passato senza shock ' +
+        'ma è andato leggermente peggio delle attese — aggiudicazione quattro decimi di punto base sopra ' +
+        'il quotato alla chiusura delle offerte, rapporto fra domanda e offerta a 2,39 contro circa 2,43 ' +
+        'di media — cioè nel verso che a un bene rifugio conviene. L’oro chiude comunque a meno 1,18% a ' +
+        '4.356,73 dollari, con un minimo a 4.351,45, e il future di agosto interrompe a meno 1,03% una ' +
+        'serie di quattro sedute positive. Il punto che sposta la direzione non è però il segno: è che ' +
+        'cade l’ultima spiegazione benevola. Fino a stasera si poteva dire che il metallo stesse fermo in ' +
+        'attesa dell’asta; l’asta è passata, e la debolezza è rimasta. Cinque catalizzatori dalla stessa ' +
+        'parte e una chiusura in perdita non sono più una mancata reazione, sono una reazione contraria.',
       invalidation:
-        'Un oro che chiude domani sopra i 4.408,59 dollari della chiusura di mercoledì, cioè che riprende per intero quello che ha perso oggi: direbbe che la seduta era posizionamento prima del collocamento del trentennale e non debolezza relativa, e la direzione tornerebbe neutrale-rialzista. Oppure una probabilità di rialzo a settembre sotto il 30%, contro il 35,0% di oggi e una fascia di due punti che regge da tre giorni: sarebbe il primo movimento vero su quella misura da mercoledì.',
+        'Un oro che chiude entro venerdì sopra i 4.408,59 dollari della chiusura di mercoledì, cioè che riprende per intero quello che ha perso oggi: direbbe che la debolezza era davvero posizionamento e non domanda ridotta, e la direzione tornerebbe almeno neutrale. Oppure le vendite al dettaglio di venerdì sotto il consenso con l’oro che sale: separerebbe le due spiegazioni rimaste a favore di quella che qui è stata messa da parte. Nell’altro verso, una chiusura sotto i 4.351,45 del minimo odierno confermerebbe l’inclinazione invece di logorarla.',
     },
     {
       horizon: 'medio',
@@ -236,13 +239,17 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'mese scorso, quando il rendimento era dieci punti base e mezzo più basso. Il costo del debito ' +
         'lungo sale mentre le attese sulla banca centrale scendono: sono due movimenti opposti, e il ' +
         'secondo non compensa il primo. Il 13 agosto quel conto riceve la sua prova: il collocamento del ' +
-        'trentennale da 25 miliardi si aggiudica al 5,216%, leggermente sotto il 5,23% circa quotato prima ' +
-        'dell’asta, e il rendimento sul secondario chiude in calo a 5,218%. Il debito si colloca, e la ' +
-        'coda più temuta — un mercato che comincia a rifiutare la carta lunga americana — non si è vista. ' +
-        'Si colloca però al costo più alto su questa scadenza da circa un quarto di secolo, quasi sedici ' +
-        'punti base sopra l’asta di un mese fa: il premio richiesto sale in modo misurabile ogni mese, e ' +
-        'quella pendenza è la cosa da seguire. Il rapporto fra domanda e offerta, che deciderebbe davvero, ' +
-        'non è ancora pubblicato.',
+        'trentennale da 25 miliardi si aggiudica al 5,216%. Alle 19:15 questa scheda aveva letto quel ' +
+        'rendimento come leggermente sotto il livello pre-asta e quindi come domanda solida; il numero ' +
+        'corretto per il confronto è il quotato alla chiusura delle offerte, che era 5,212%, e ' +
+        'l’aggiudicazione è arrivata quattro decimi di punto base sopra. Il rapporto fra domanda e offerta ' +
+        'è 2,39 contro circa 2,43 di media, e gli operatori primari hanno preso l’11,6% contro circa ' +
+        '10,6%. Il debito si colloca, e l’ipotesi estrema — un mercato che comincia a rifiutare la carta ' +
+        'lunga americana — resta smentita. Ma si colloca al costo più alto su questa scadenza da circa un ' +
+        'quarto di secolo, quasi sedici punti base sopra l’asta di un mese fa, e con la domanda ' +
+        'leggermente sotto la propria media invece che sopra. La direzione della seduta l’ha comunque ' +
+        'decisa il quadro macroeconomico e non l’asta: il trentennale chiude a 5,213% con meno 3,4 punti ' +
+        'base e il decennale a 4,629% con meno 6,3.',
       invalidation:
         'Una probabilità di rialzo a settembre che risale sopra il 48% entro venerdì, cioè sopra il livello di ieri mattina invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
     },
@@ -280,7 +287,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'scadenza da circa un quarto di secolo e quasi sedici punti base sopra l’asta di un mese fa. Il ' +
         'debito continua a trovare compratori — l’ipotesi estrema di un rifiuto della carta lunga resta ' +
         'smentita — ma il premio richiesto sale in modo misurabile a ogni collocamento, ed è quella ' +
-        'pendenza, non il singolo risultato, la cosa che agisce sui trimestri.',
+        'pendenza, non il singolo risultato, la cosa che agisce sui trimestri. Alle 20:30 quel prezzo ' +
+        'risulta più alto di come era stato scritto un’ora prima: il rapporto fra domanda e offerta ' +
+        'dell’asta è 2,39 contro circa 2,43 di media sulle ultime dieci, e l’aggiudicazione è arrivata ' +
+        'sopra il quotato alla chiusura delle offerte invece che sotto. È la prima volta che il ' +
+        'deterioramento fiscale si vede nel comportamento dei compratori e non soltanto nei rendiconti del ' +
+        'Tesoro, ed è per questo che la gamba si rafforza mentre la lettura resta dov’è: uno scarto di ' +
+        'quattro decimi di punto base e cinque centesimi di rapporto sono misure piccole, e quello che ' +
+        'conta è che adesso abbiano il segno giusto.',
       invalidation:
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera; sulla gamba fiscale, il prossimo rifinanziamento trimestrale che allarga le aste a lunga scadenza rispetto ai 125 miliardi rimasti invariati, oppure conti federali di agosto con spese sotto i 667 miliardi, che direbbero che il record di luglio era calendario e non traiettoria.',
     },
@@ -524,8 +538,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 86.6,
-      display: '≈ 86,6 $',
+      now: 86.89,
+      display: '≈ 86,9 $',
       marks: [
         {
           at: 82,
@@ -543,8 +557,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.184,
-      display: '4,184%',
+      now: 4.149,
+      display: '4,149%',
       marks: [
         {
           at: 4.25,
@@ -556,8 +570,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.645,
-      display: '4,645%',
+      now: 4.629,
+      display: '4,629%',
       marks: [
         {
           at: 4.68,
@@ -575,8 +589,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.85,
-      display: '99,850',
+      now: 99.852,
+      display: '99,852',
       marks: [
         {
           at: 99.795,
@@ -594,8 +608,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4370.67,
-      display: '4.370,67 $',
+      now: 4356.73,
+      display: '4.356,73 $',
       marks: [
         {
           at: 4300,
@@ -613,9 +627,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'il-numero-mancante-e-arrivato-e-l-asta-aveva-una-coda',
     'il-trentennale-si-colloca-al-prezzo-piu-alto-dal-2001',
     'due-dati-a-favore-e-l-oro-perde-l-uno-per-cento',
-    'l-anno-fiscale-supera-il-precedente-con-due-mesi-d-anticipo',
   ],
 };
 
