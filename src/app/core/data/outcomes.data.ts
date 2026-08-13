@@ -2167,4 +2167,49 @@ export const OUTCOMES: readonly Outcome[] = [
     ],
     what: 'Le quattro condizioni hanno retto tutte. La catena descritta — greggio giù, rendimenti giù, oro su — ha continuato a funzionare per un’altra sessione: l’oro ha superato i 4.100 dollari che l’analisi indicava come test immediato, il decennale è arretrato di altri quattro punti base e il dollaro è rimasto debole. La probabilità di un rialzo Fed a settembre è scesa verso il 57-59%.',
   },
+  {
+    slug: 'otto-navi-e-adesso-la-previsione-ha-un-conteggio',
+    checkedAt: '2026-08-13T08:15:00+02:00',
+    verdict: 'parziale',
+    conditions: [
+      {
+        condition:
+          'Un conteggio dei transiti di mercoledì sopra i dodici al giorno della media a dieci giorni: direbbe che gli otto di martedì erano varianza di campionamento e non un peggioramento, esattamente come le due navi di venerdì scorso che questa scheda aveva dovuto correggere.',
+        triggered: false,
+        evidence:
+          'Nessun conteggio giornaliero per mercoledì 12 agosto risulta pubblicato dai due fornitori seguiti qui, alla mattina del 13 agosto. Le ultime cifre restano quelle di martedì: otto transiti secondo Kpler, undici secondo LSEG contro quattordici del giorno prima, con una media a cinque giorni di circa tredici e il valore giornaliero più basso dal 5 agosto. La condizione chiedeva che comparisse un numero sopra dodici, e quel numero non è comparso — ma va detto con la stessa chiarezza che non è comparso nemmeno il suo contrario.',
+      },
+      {
+        condition:
+          'Un oro che chiude sotto i 4.363 dollari, cioè sotto il minimo di questa giornata: direbbe che il recupero di stamattina era posizionamento prima del dato e non domanda rifugio, e la forza andrebbe riportata a bassa.',
+        triggered: false,
+        evidence:
+          'Lo spot ha chiuso mercoledì 12 agosto a 4.408,59 dollari, quarantacinque sopra la soglia. Il minimo di 4.362,57 era stato toccato in mattinata, prima dell’indice dei prezzi, e non alla chiusura.',
+      },
+      {
+        condition:
+          'Un decennale che torna sopra il 4,735% di ieri con il Dollar Index sopra 99,89: è la combinazione che questa lettura dichiara assente, e la sua comparsa toglierebbe la ragione principale per cui la forza sale.',
+        triggered: false,
+        evidence:
+          'Metà condizione si è verificata e l’altra metà no, quindi la condizione no. Il Dollar Index ha superato i 99,89 — massimo di giornata 99,910 e chiusura a 99,899 — ma il decennale non si è mai avvicinato al 4,735%: massimo 4,688% e chiusura a 4,692%, quindi oltre quattro punti base sotto.',
+      },
+      {
+        condition:
+          'Un indice dei prezzi alle 14:30 sopra il 3,4% annuo con il biennale che si porta sopra il 4,237%: è la trasmissione che manca da sei giorni, e renderebbe le due dichiarazioni della Fed qualcosa di più di due preferenze senza voto.',
+        triggered: false,
+        evidence:
+          'Nessuno dei due lati si è verificato. L’indice dei prezzi è uscito esattamente a 3,4% annuo, cioè sul consenso e non sopra, e il biennale è andato nella direzione opposta: massimo di giornata 4,218% contro i 4,237% richiesti, e chiusura a 4,184% con meno 3,4 punti base.',
+      },
+      {
+        condition:
+          'Il dato ufficiale sulle scorte che conferma l’aumento di 9,1 milioni di barili: direbbe che al racconto sull’offerta scarsa esiste un contrappeso misurato, e che il Brent alla sesta seduta di rialzo sta prezzando la logistica invece dei barili disponibili.',
+        triggered: true,
+        evidence:
+          'Le scorte commerciali americane di greggio sono salite di 17,422 milioni di barili nella settimana chiusa il 7 agosto, a 424,4 milioni complessivi: il maggior aumento settimanale dal gennaio 2023, contro un consenso che attendeva un calo di 1,7 milioni. Non solo confermano i 9,1 milioni della rilevazione di settore, li quasi raddoppiano.',
+      },
+    ],
+    what: 'Quattro condizioni su cinque hanno retto e una è scattata, ed è quella che l’analisi stessa aveva indicato come il contrappeso che nessuno stava prezzando. Il resto della giornata è andato nella direzione descritta: l’indice dei prezzi è uscito sul consenso, il biennale è sceso invece di salire, la probabilità di un rialzo a settembre è passata dal 52% al 35,7%. Il conteggio dei transiti, che era il perno del pezzo, non ha ricevuto né conferma né smentita perché il numero di mercoledì non è stato pubblicato.',
+    lesson:
+      'Una condizione può fallire non perché il mondo non si sia mosso, ma perché nessuno ha pubblicato il numero che serviva per giudicarla. Il conteggio dei transiti dipende da due fornitori privati che diffondono quando vogliono e non concordano fra loro, e costruirci sopra una condizione di invalidazione significa affidare il verdetto a un terzo che non ha nessun obbligo verso questo archivio. Le condizioni vanno ancorate a serie con un orario di pubblicazione dichiarato — un dato statistico, un risultato d’asta, una chiusura di mercato — oppure va messo in conto in anticipo che restino non verificabili. Vale anche l’osservazione opposta, ed è il motivo per cui il verdetto non è più severo: l’assenza del numero non è una prova a favore della lettura, è solo assenza.',
+  },
 ];

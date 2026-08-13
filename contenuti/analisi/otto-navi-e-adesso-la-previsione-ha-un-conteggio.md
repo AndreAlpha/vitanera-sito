@@ -31,8 +31,10 @@ fonti:
   - testata: "Investing.com"
   - testata: "Bureau of Labor Statistics"
     titolo: "Calendario delle diffusioni"
+esito: "parziale"
+controllata: "2026-08-13T08:15:00+02:00"
 sorgente: "src/app/core/data/articles/otto-navi-e-adesso-la-previsione-ha-un-conteggio.ts"
-impronta: "4a982f896d8f941f"
+impronta: "c9628511cea23737"
 ---
 
 # Otto navi, e adesso la previsione ha un conteggio
@@ -147,6 +149,22 @@ Il consenso riportato da Reuters è di più 0,1% mensile e più 3,4% annuo sul d
 Impostazione su XAU/USD: neutrale-rialzista, forza media, orizzonte breve.
 
 La forza sale da bassa a media, e non per il prezzo: sale perché la ragione dichiarata per tenerla bassa è stata rimossa dai fatti. Dal 17:15 di ieri la lettura poggiava sul rientro del greggio, e quel rientro si è annullato — il Brent è alla sesta seduta consecutiva di rialzo, intorno a 89,5 dollari. L’oro è salito lo stesso, a 4.400,44 con più 0,77%, e lo ha fatto con il Dollar Index in rialzo a 99,89 e il greggio in rialzo: è domanda rifugio, non una configurazione macro favorevole. Sotto ci sono due numeri contati e non previsti: otto mercantili in transito martedì con uno solo in uscita, il livello più basso della settimana, e un decennale rientrato a 4,682% dai 4,735% di ieri. Non sale a rialzista perché alle 14:30 arriva l’indice dei prezzi, e perché due voci della Fed in due giorni hanno aperto a un rialzo di settembre — nessuna delle due con diritto di voto.
+
+## Come è andata
+
+Verdetto: **parziale**, controllata il 2026-08-13T08:15:00+02:00.
+
+Quattro condizioni su cinque hanno retto e una è scattata, ed è quella che l’analisi stessa aveva indicato come il contrappeso che nessuno stava prezzando. Il resto della giornata è andato nella direzione descritta: l’indice dei prezzi è uscito sul consenso, il biennale è sceso invece di salire, la probabilità di un rialzo a settembre è passata dal 52% al 35,7%. Il conteggio dei transiti, che era il perno del pezzo, non ha ricevuto né conferma né smentita perché il numero di mercoledì non è stato pubblicato.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un conteggio dei transiti di mercoledì sopra i dodici al giorno della media a dieci giorni: direbbe che gli otto di martedì erano varianza di campionamento e non un peggioramento, esattamente come le due navi di venerdì scorso che questa scheda aveva dovuto correggere. | no | Nessun conteggio giornaliero per mercoledì 12 agosto risulta pubblicato dai due fornitori seguiti qui, alla mattina del 13 agosto. Le ultime cifre restano quelle di martedì: otto transiti secondo Kpler, undici secondo LSEG contro quattordici del giorno prima, con una media a cinque giorni di circa tredici e il valore giornaliero più basso dal 5 agosto. La condizione chiedeva che comparisse un numero sopra dodici, e quel numero non è comparso — ma va detto con la stessa chiarezza che non è comparso nemmeno il suo contrario. |
+| Un oro che chiude sotto i 4.363 dollari, cioè sotto il minimo di questa giornata: direbbe che il recupero di stamattina era posizionamento prima del dato e non domanda rifugio, e la forza andrebbe riportata a bassa. | no | Lo spot ha chiuso mercoledì 12 agosto a 4.408,59 dollari, quarantacinque sopra la soglia. Il minimo di 4.362,57 era stato toccato in mattinata, prima dell’indice dei prezzi, e non alla chiusura. |
+| Un decennale che torna sopra il 4,735% di ieri con il Dollar Index sopra 99,89: è la combinazione che questa lettura dichiara assente, e la sua comparsa toglierebbe la ragione principale per cui la forza sale. | no | Metà condizione si è verificata e l’altra metà no, quindi la condizione no. Il Dollar Index ha superato i 99,89 — massimo di giornata 99,910 e chiusura a 99,899 — ma il decennale non si è mai avvicinato al 4,735%: massimo 4,688% e chiusura a 4,692%, quindi oltre quattro punti base sotto. |
+| Un indice dei prezzi alle 14:30 sopra il 3,4% annuo con il biennale che si porta sopra il 4,237%: è la trasmissione che manca da sei giorni, e renderebbe le due dichiarazioni della Fed qualcosa di più di due preferenze senza voto. | no | Nessuno dei due lati si è verificato. L’indice dei prezzi è uscito esattamente a 3,4% annuo, cioè sul consenso e non sopra, e il biennale è andato nella direzione opposta: massimo di giornata 4,218% contro i 4,237% richiesti, e chiusura a 4,184% con meno 3,4 punti base. |
+| Il dato ufficiale sulle scorte che conferma l’aumento di 9,1 milioni di barili: direbbe che al racconto sull’offerta scarsa esiste un contrappeso misurato, e che il Brent alla sesta seduta di rialzo sta prezzando la logistica invece dei barili disponibili. | sì | Le scorte commerciali americane di greggio sono salite di 17,422 milioni di barili nella settimana chiusa il 7 agosto, a 424,4 milioni complessivi: il maggior aumento settimanale dal gennaio 2023, contro un consenso che attendeva un calo di 1,7 milioni. Non solo confermano i 9,1 milioni della rilevazione di settore, li quasi raddoppiano. |
+
+**Che cosa cambia.** Una condizione può fallire non perché il mondo non si sia mosso, ma perché nessuno ha pubblicato il numero che serviva per giudicarla. Il conteggio dei transiti dipende da due fornitori privati che diffondono quando vogliono e non concordano fra loro, e costruirci sopra una condizione di invalidazione significa affidare il verdetto a un terzo che non ha nessun obbligo verso questo archivio. Le condizioni vanno ancorate a serie con un orario di pubblicazione dichiarato — un dato statistico, un risultato d’asta, una chiusura di mercato — oppure va messo in conto in anticipo che restino non verificabili. Vale anche l’osservazione opposta, ed è il motivo per cui il verdetto non è più severo: l’assenza del numero non è una prova a favore della lettura, è solo assenza.
 
 ## Fonti consultate
 

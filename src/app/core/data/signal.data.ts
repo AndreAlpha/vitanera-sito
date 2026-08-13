@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-12T21:38:00+02:00',
+  updatedAt: '2026-08-13T08:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,16 +187,16 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'Il saldo resta quello di quaranta minuti fa e il contenuto è cambiato, che è una distinzione da ' +
-        'fare invece di nasconderla dietro un’etichetta ferma. È caduto un elemento contrario: l’asta del ' +
-        'decennale non ha mostrato domanda debole, con un rapporto fra domanda e offerta di 2,53 contro ' +
-        'una media di 2,48 sulle ultime dieci, ed era il numero che alle 19:40 mancava. Ne è comparso un ' +
-        'altro: l’oro è sceso sotto i 4.400 dollari, a 4.399,20, e il Dollar Index ha toccato 99,910, ' +
-        'cioè oltre il livello appena dichiarato come condizione per decadere. La gamba monetaria è dove ' +
-        'era — biennale a 4,184%, probabilità di un rialzo a settembre al 35,7% — e la ragione per cui la ' +
-        'lettura non sale non è più l’asta ma il prezzo: cinque ore di cedimento senza una sola ripresa.',
+        'La gamba monetaria non solo tiene, migliora: la probabilità di un rialzo a settembre scende ancora ' +
+        'al 34,7% dal 35,7% di ieri sera, e il decennale arretra a 4,668% dalla chiusura di 4,692%. Il ' +
+        'problema è che l’oro ha smesso di rispondere. Nella notte ha stampato un massimo nuovo a 4.449,71 ' +
+        'dollari, sopra i 4.441,01 di mercoledì, e da lì ha lasciato settantadue dollari: adesso è a ' +
+        '4.378,07 con meno 0,69%, sotto i 4.400 e sotto la chiusura di 4.408,59. Sono due sedute ' +
+        'consecutive in cui il sostegno dichiarato migliora e il prezzo va nell’altro verso, e la regola ' +
+        'di muovere una lettura solo quando decade la ragione scritta ha qui il suo limite: se il prezzo ' +
+        'continua a non rispondere, prima o poi non è il prezzo a sbagliare.',
       invalidation:
-        'Un Dollar Index che chiude sopra i 99,910 del massimo odierno: l’indice ci è già passato attraverso in seduta e manca solo la chiusura. Un oro che chiude sotto i 4.362,57 dollari, il minimo di questa giornata, cancellerebbe per intero il movimento prodotto dal dato delle 14:30. Un biennale che torna sopra il 4,218%, insieme massimo di oggi e chiusura di ieri, toglierebbe l’unica gamba rimasta in piedi.',
+        'Un oro che chiude oggi sotto i 4.362,57 dollari, il minimo di mercoledì: sarebbe la terza seduta consecutiva di cedimento con il sostegno monetario intatto, e a quel punto la direzione va portata a neutrale invece di essere tenuta con forza bassa. È scritta sul numero di sedute e non sulla profondità, perché è la ripetizione a decidere. Oppure una probabilità di rialzo a settembre che risale sopra il 37,7% di ieri pomeriggio, che toglierebbe la sola gamba rimasta.',
     },
     {
       horizon: 'medio',
@@ -221,7 +221,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'scorte commerciali americane salgono di 17,4 milioni di barili in una settimana, a 424,4 milioni ' +
         'complessivi, il maggior aumento dal gennaio 2023, contro un consenso che ne attendeva 1,7 in ' +
         'meno. Taglia in due sensi e per questo non muove la direzione: toglie carburante all’argomento ' +
-        'restrittivo, ma toglie anche fondamento alla scarsità su cui poggia il premio geopolitico. Alle ' +
+        'restrittivo, ma toglie anche fondamento alla scarsità su cui poggia il premio geopolitico. Il 13 ' +
+        'agosto quel quadro riceve una precisazione che ne cambia il verso: OPEC e agenzia internazionale ' +
+        'hanno tagliato mercoledì le previsioni sulla domanda mondiale del 2026 — crescita a 580.000 ' +
+        'barili al giorno dai 780.000 di luglio la prima, contrazione di circa 1,6 milioni la seconda — ' +
+        'quindi il greggio scende dal lato della domanda e non da quello dell’offerta. Il vincolo su ' +
+        'Hormuz resta dov’era; a cedere sono i consumi attesi. Per il canale dei tassi il sollievo è lo ' +
+        'stesso perché conta il livello del prezzo, ma per il premio di rischio non toglie niente, ed è ' +
+        'l’opposto di come andrebbe letta una discesa dovuta a navi che ripassano. Alle ' +
         '19:00 arriva infine la prova rimandata da tre giorni sulla parte lunga, e la supera senza brillare: ' +
         'il collocamento da 42 miliardi di titoli a dieci anni si aggiudica al 4,683% con un rapporto fra ' +
         'domanda e offerta di 2,53, sopra la media di 2,48 delle ultime dieci aste ma sotto il 2,59 del ' +
@@ -265,7 +272,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera; sulla gamba fiscale, il prossimo rifinanziamento trimestrale che allarga le aste a lunga scadenza rispetto ai 125 miliardi rimasti invariati, oppure conti federali di agosto con spese sotto i 667 miliardi, che direbbero che il record di luglio era calendario e non traiettoria.',
     },
   ],
-  headline: 'L’anno fiscale supera il precedente con due mesi d’anticipo: 1.799 contro 1.775',
+  headline: 'Il greggio scende per la domanda, e l’oro non risponde più a ciò che lo sostiene',
   stance:
     'Giornata in tre tempi, e ogni tempo toglie qualcosa al precedente. Alle 14:30 l’indice dei prezzi ' +
     'esce sul consenso — 3,4% annuo dal 3,5%, fondo a 2,5% dal 2,6% — e la probabilità di un rialzo a ' +
@@ -275,13 +282,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'attese di un calo: la scarsità raccontata qui per sei giorni contando navi riceve la prima ' +
     'controprova contando barili. Alle 19:00 il collocamento da 42 miliardi di titoli a dieci anni si ' +
     'aggiudica al 4,683% con un rapporto fra domanda e offerta di 2,53, sopra la media di 2,48 delle ' +
-    'ultime dieci aste: la domanda non è stata debole, e va corretta la lettura pubblicata qui alle ' +
-    '19:40, che aveva la cifra sbagliata sulla dimensione e si appoggiava a un indizio più fragile. In ' +
-    'serata il Tesoro chiude la giornata con il rendiconto di luglio: disavanzo mensile di 432 miliardi, ' +
-    'record per il mese, e cumulato dell’anno fiscale a 1.799 miliardi, già oltre i 1.775 dell’intero ' +
-    'anno precedente con due mesi da contare. È l’unico dei quattro fatti che agisce sui trimestri invece ' +
-    'che sulle ore, e infatti entra dalla lettura di fondo. Il dollaro ha fatto il giro completo — minimo ' +
-    'a 99,500, massimo a 99,910 — e l’oro ha recuperato a 4.417,09 dopo essere sceso sotto i 4.400.',
+    'ultime dieci aste, e in serata il rendiconto del Tesoro ha portato il disavanzo cumulato dell’anno ' +
+    'fiscale a 1.799 miliardi, già oltre i 1.775 dell’intero anno precedente. Stamattina si aggiunge il ' +
+    'pezzo che riordina il quadro petrolifero: OPEC e agenzia internazionale hanno tagliato le previsioni ' +
+    'sulla domanda mondiale del 2026, non l’offerta, quindi il greggio scende dall’altro lato del ' +
+    'bilancio e il vincolo su Hormuz resta dov’era. Il fatto scomodo è però un altro, e riguarda il ' +
+    'metallo: la probabilità di un rialzo a settembre scende ancora al 34,7% e il decennale arretra a ' +
+    '4,668%, mentre l’oro stampa un massimo nuovo a 4.449,71 e poi lascia settantadue dollari, a ' +
+    '4.378,07 con meno 0,69%. Due sedute in cui il sostegno migliora e il prezzo scende.',
   favours: [
     'Cercare la controprova nella misura più dura disponibile: la scarsità di greggio è stata raccontata qui per sei giorni con conteggi di navi, e il primo conteggio di barili nei serbatoi dice il contrario',
     'Muovere una lettura quando decade la ragione scritta in anticipo per tenerla su, anche quando è stata scritta un’ora prima: la forza intraday scende perché due dei tre canali che la giustificavano si sono chiusi',
@@ -291,16 +299,19 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   avoid: [
     'Scambiare un flusso stimato per una misura: due fornitori danno otto e undici transiti per lo stesso martedì, mentre le scorte sono uno stock ufficiale che arriva con accanto il livello complessivo per verificarne la coerenza',
     'Contare come tre conferme indipendenti tre effetti della stessa riprezzatura: attese sulla Fed, biennale e dollaro dopo l’indice dei prezzi sono un movimento solo guardato da tre parti, e infatti due sono rientrati insieme',
+    'Affidare una condizione a un numero che pubblica un terzo quando vuole: il conteggio dei transiti di mercoledi non e uscito, e la condizione che ci poggiava sopra e rimasta senza verdetto ne in un verso ne nell’altro',
     'Ancorare una condizione al consenso: il dato è uscito esattamente sul 3,4% e su più 0,2%, e cinque analisi che avevano scritto «sopra» o «sotto» quei livelli non hanno potuto dire niente',
     'Ricopiare un numero atteso finché finisce accanto a un risultato ufficiale: i 39 miliardi erano la dimensione prevista, passata per tre analisi senza riverifica fino a comparire vicino al rendimento vero e a prenderne l’autorevolezza',
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
-    'Riverificato alle 16:48: la probabilità di un rialzo a settembre scende ancora, al 35,7% dal 37,7% delle 15:50 e dal 52% del 10 agosto, contro il 64,3% attribuito alla permanenza al 3,50-3,75%',
+    'Riverificato alle 08:15 del 13 agosto: la probabilità di un rialzo a settembre scende ancora, al 34,7% dal 35,7% di ieri sera e dal 52% del 10 agosto, contro il 65,3% attribuito alla permanenza al 3,50-3,75%',
+    'OPEC e agenzia internazionale tagliano la domanda mondiale attesa nel 2026 — crescita a 580.000 barili al giorno dai 780.000 di luglio, e una contrazione di circa 1,6 milioni — quindi il greggio scende senza che il vincolo sull’offerta si allenti',
     'Il biennale resta a 4,184%, meno 3,4 punti base sulla chiusura di 4,218% che è anche il massimo odierno: la misura scelta l’11 agosto continua a confermare',
     'Le scorte commerciali americane di greggio salgono di 17,422 milioni di barili nella settimana al 7 agosto, a 424,4 milioni: meno pressione sul canale energia-inflazione, che è l’ultimo argomento restrittivo rimasto',
     'Il collocamento del decennale trova domanda modestamente sopra la media: rapporto fra domanda e offerta 2,53 contro 2,48 sulle ultime dieci aste, e il rendimento resta a 4,677% dentro un intervallo fra 4,631% e 4,688%, lontano dal 4,735% di ieri',
-    'L’oro recupera a 4.417,09 con più 1,12% dopo essere sceso a 4.399,20: il cedimento del pomeriggio si è fermato, e il massimo di 4.441,01 resta a ventiquattro dollari',
+    'L’oro stampa un massimo nuovo a 4.449,71 e lascia settantadue dollari: a 4.378,07 con meno 0,69% è sotto i 4.400 e sotto la chiusura di 4.408,59, seconda seduta consecutiva in cui il sostegno migliora e il prezzo scende',
+    'L’inflazione all’ingrosso giapponese di luglio manca le attese del 7,4% e decelera al 7,2% dal 7,3%, con i prezzi all’importazione in yen al 29,1% dal 30,1%: argomento più debole per un rialzo di settembre, non più forte',
     'Entrate doganali nette negative per 8,55 miliardi dopo 33,38 miliardi di rimborsi: la prima misura di quanto i dazi incassino toglie credibilità a una delle vie d’uscita dichiarate dal disavanzo',
     'L’indice dei prezzi di luglio esce a 3,4% annuo dal 3,5% e a 2,5% di fondo dal 2,6%, con la componente energetica in decelerazione: più 14,7% annuo da più 15,7%',
   ],
@@ -468,8 +479,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 35.7,
-      display: '35,7%',
+      now: 34.7,
+      display: '34,7%',
       marks: [
         {
           at: 50,
@@ -481,8 +492,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 87.3,
-      display: '≈ 87,3 $',
+      now: 87.4,
+      display: '≈ 87,4 $',
       marks: [
         {
           at: 82,
@@ -513,8 +524,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.677,
-      display: '4,677%',
+      now: 4.668,
+      display: '4,668%',
       marks: [
         {
           at: 4.68,
@@ -532,8 +543,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.887,
-      display: '99,887',
+      now: 99.91,
+      display: '99,910',
       marks: [
         {
           at: 99.795,
@@ -542,17 +553,17 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           note: 'era il massimo della giornata quando è stata scritta la lettura delle 16:52, ed è stato superato nel giro di un’ora: sopra questo livello il cambio ha smesso di aiutare il metallo',
         },
         {
-          at: 99.91,
-          display: '99,910',
+          at: 99.935,
+          display: '99,935',
           kind: 'invalida',
-          note: 'massimo della giornata del 12 agosto, aggiornato alle 20:05. Una chiusura sopra direbbe che il calo seguito all’indice dei prezzi non è stato solo restituito ma annullato, e la lettura intraday decade',
+          note: 'massimo della giornata del 13 agosto: il livello si sposta ogni giorno perche e ancorato a quello che il mercato ha stabilito, non a una cifra tonda. Una chiusura sopra direbbe che il calo seguito all’indice dei prezzi non è stato solo restituito ma annullato, e la lettura intraday decade',
         },
       ],
     },
     {
       label: 'XAU/USD',
-      now: 4417.09,
-      display: '4.417,09 $',
+      now: 4378.07,
+      display: '4.378,07 $',
       marks: [
         {
           at: 4300,
@@ -570,9 +581,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'il-greggio-scende-dal-lato-della-domanda-non-dell-offerta',
     'l-anno-fiscale-supera-il-precedente-con-due-mesi-d-anticipo',
     'quarantadue-miliardi-non-trentanove-l-asta-era-nella-media',
-    'diciassette-milioni-di-barili-e-il-conteggio-era-di-navi',
   ],
 };
 
