@@ -578,6 +578,22 @@ function directionIcon(direction: BiasDirection): string {
       gap: var(--s-2);
     }
 
+    /* Le voci di queste due righe non sono etichette da due parole: sono frasi
+       intere. Il primitivo globale .chip le tiene su una riga sola — serve alle
+       pastiglie brevi di tutto il resto del sito — e qui la più lunga misurava
+       oltre mille pixel e usciva dal riquadro a destra, sul desktop come sul
+       telefono. Qui il testo va a capo dentro la pastiglia, che non supera mai
+       la larghezza della colonna: a quel punto ogni frase si prende una riga
+       intera, che è anche il modo in cui si legge meglio. */
+    .tags__items .chip {
+      max-width: 100%;
+      align-items: flex-start;
+      padding: var(--s-2) var(--s-3);
+      white-space: normal;
+      line-height: var(--lh-snug);
+      overflow-wrap: break-word;
+    }
+
     /* --- Storico, soglie e vincoli ---------------------------------------------
        Si separano con un filetto e non con un riquadro proprio: sono la stessa
        scheda, non tre schede.
