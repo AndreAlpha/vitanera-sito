@@ -11,7 +11,7 @@
  */
 import { Cadence, Release, Stage } from '../models/calendar.model';
 
-export const CALENDAR_GENERATED_AT = '2026-08-13T10:52Z';
+export const CALENDAR_GENERATED_AT = '2026-08-13T16:39Z';
 
 type Row = readonly [
   at: string,
@@ -284,6 +284,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
   'usa/richieste-iniziali-sussidi': {
     cadence: 'settimanale',
     releases: r([
+      ['2026-08-13T12:30Z', 'settimana al 8 agosto 2026', 202, 209, 200],
       ['2026-08-06T12:30Z', 'settimana al 1 agosto 2026', 202, 199, 198],
       ['2026-07-30T12:30Z', 'settimana al 25 luglio 2026', 200, 197, 188],
       ['2026-07-23T12:30Z', 'settimana al 18 luglio 2026', 212, 187, 209],
@@ -403,14 +404,13 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2024-05-16T12:30Z', 'settimana al 11 maggio 2024', 220, 222, 232],
       ['2024-05-09T12:30Z', 'settimana al 4 maggio 2024', 210, 231, 209],
       ['2024-05-02T12:30Z', 'settimana al 27 aprile 2024', 212, 208, 208],
-      ['2024-04-25T12:30Z', 'settimana al 20 aprile 2024', 214, 207, 212],
     ]),
     next: {
-      at: '2026-08-13T12:30Z',
-      period: 'settimana al 8 agosto 2026',
-      forecast: 202,
+      at: '2026-08-20T12:30Z',
+      period: 'settimana al 15 agosto 2026',
+      forecast: null,
       actual: null,
-      previous: 199,
+      previous: 209,
     },
   },
   'usa/nfp': {
@@ -1552,6 +1552,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
   'usa/variazione-ipp': {
     cadence: 'mensile',
     releases: r([
+      ['2026-08-13T12:30Z', 'luglio 2026', 0.2, 0, -0.1],
       ['2026-07-15T12:30Z', 'giugno 2026', 0, -0.3, 0.6],
       ['2026-06-11T12:30Z', 'maggio 2026', 0.7, 1.1, 1.1],
       ['2026-05-13T12:30Z', 'aprile 2026', 0.5, 1.4, 0.7],
@@ -1671,19 +1672,19 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2016-11-16T13:30Z', 'ottobre 2016', 0.3, 0, 0.3],
       ['2016-10-14T12:30Z', 'settembre 2016', 0.2, 0.3, 0],
       ['2016-09-15T12:30Z', 'agosto 2016', 0.1, 0, -0.4],
-      ['2016-08-12T12:30Z', 'luglio 2016', 0.1, -0.4, 0.5],
     ]),
     next: {
-      at: '2026-08-13T12:30Z',
-      period: 'luglio 2026',
-      forecast: 0.2,
+      at: '2026-09-10T12:30Z',
+      period: 'agosto 2026',
+      forecast: null,
       actual: null,
-      previous: -0.3,
+      previous: 0,
     },
   },
   'usa/variazione-ipp-core': {
     cadence: 'mensile',
     releases: r([
+      ['2026-08-13T12:30Z', 'luglio 2026', 0.3, 0.2, 0.4],
       ['2026-07-15T12:30Z', 'giugno 2026', 0.4, 0.2, 0.1],
       ['2026-06-11T12:30Z', 'maggio 2026', 0.5, 0.4, 0.7],
       ['2026-05-13T12:30Z', 'aprile 2026', 0.3, 1, 0.2],
@@ -1803,12 +1804,11 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2016-11-16T13:30Z', 'ottobre 2016', 0.2, -0.2, 0.2],
       ['2016-10-14T12:30Z', 'settembre 2016', 0.1, 0.2, 0.1],
       ['2016-09-15T12:30Z', 'agosto 2016', 0.1, 0.1, -0.3],
-      ['2016-08-12T12:30Z', 'luglio 2016', 0.2, -0.3, 0.4],
     ]),
     next: {
-      at: '2026-08-13T12:30Z',
-      period: 'luglio 2026',
-      forecast: 0.3,
+      at: '2026-09-10T12:30Z',
+      period: 'agosto 2026',
+      forecast: null,
       actual: null,
       previous: 0.2,
     },
@@ -2204,7 +2204,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
     next: {
       at: '2026-08-18T13:15Z',
       period: 'luglio 2026',
-      forecast: null,
+      forecast: 0.3,
       actual: null,
       previous: 0.1,
     },

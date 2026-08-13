@@ -24,6 +24,7 @@
 import type { Article } from '../models/article.model';
 import { diciassetteMilioniDiBarili } from './articles/diciassette-milioni-di-barili-e-il-conteggio-era-di-navi';
 import { lAstaSiAggiudicaSopraIlMercato } from './articles/l-asta-si-aggiudica-sopra-il-mercato-e-il-dollaro-torna-su';
+import { dueDatiAFavoreELOroPerde } from './articles/due-dati-a-favore-e-l-oro-perde-l-uno-per-cento';
 import { ilGreggioScendeDalLatoDellaDomanda } from './articles/il-greggio-scende-dal-lato-della-domanda-non-dell-offerta';
 import { lAnnoFiscaleSuperaIlPrecedente } from './articles/l-anno-fiscale-supera-il-precedente-con-due-mesi-d-anticipo';
 import { quarantadueMiliardiNonTrentanove } from './articles/quarantadue-miliardi-non-trentanove-l-asta-era-nella-media';
@@ -97,6 +98,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  dueDatiAFavoreELOroPerde,
   ilGreggioScendeDalLatoDellaDomanda,
   lAnnoFiscaleSuperaIlPrecedente,
   quarantadueMiliardiNonTrentanove,

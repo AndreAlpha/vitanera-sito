@@ -179,25 +179,25 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-13T08:20:00+02:00',
-  checkedAt: '2026-08-13T12:50:00+02:00',
+  updatedAt: '2026-08-13T18:35:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'neutrale-rialzista',
+      direction: 'neutrale',
       strength: 'bassa',
       regime:
-        'La gamba monetaria non solo tiene, migliora: la probabilità di un rialzo a settembre scende ancora ' +
-        'al 34,7% dal 35,7% di ieri sera, e il decennale arretra a 4,668% dalla chiusura di 4,692%. Il ' +
-        'problema è che l’oro ha smesso di rispondere. Nella notte ha stampato un massimo nuovo a 4.449,71 ' +
-        'dollari, sopra i 4.441,01 di mercoledì, e da lì ha lasciato settantadue dollari: adesso è a ' +
-        '4.378,07 con meno 0,69%, sotto i 4.400 e sotto la chiusura di 4.408,59. Sono due sedute ' +
-        'consecutive in cui il sostegno dichiarato migliora e il prezzo va nell’altro verso, e la regola ' +
-        'di muovere una lettura solo quando decade la ragione scritta ha qui il suo limite: se il prezzo ' +
-        'continua a non rispondere, prima o poi non è il prezzo a sbagliare.',
+        'La direzione scende da neutrale-rialzista a neutrale, ed è la prima volta in questa fase che si ' +
+        'muove per il comportamento del prezzo invece che per il decadere di una ragione. Il meccanismo ' +
+        'dichiarato continua a funzionare: i prezzi alla produzione escono piatti contro attese di più ' +
+        '0,2%, le richieste di sussidio salgono a 209.000 contro 204.000, il decennale scende di cinque ' +
+        'punti base a 4,641% con un minimo a 4,600%, il Brent perde l’1,06%. Quattro cose dalla stessa ' +
+        'parte, e l’oro perde l’1,01% a 4.364,11 dollari con un minimo a 4.351,45. È la terza seduta ' +
+        'consecutiva con questa struttura, e alla terza un meccanismo che non produce il proprio effetto ' +
+        'smette di essere una spiegazione. Neutrale non è ribassista: niente dice che l’oro debba scendere, ' +
+        'e quello che manca è la ragione per cui non sale.',
       invalidation:
-        'Un oro che chiude oggi sotto i 4.362,57 dollari, il minimo di mercoledì: sarebbe la terza seduta consecutiva di cedimento con il sostegno monetario intatto, e a quel punto la direzione va portata a neutrale invece di essere tenuta con forza bassa. È scritta sul numero di sedute e non sulla profondità, perché è la ripetizione a decidere. Oppure una probabilità di rialzo a settembre che risale sopra il 37,7% di ieri pomeriggio, che toglierebbe la sola gamba rimasta.',
+        'Un oro che chiude domani sopra i 4.408,59 dollari della chiusura di mercoledì, cioè che riprende per intero quello che ha perso oggi: direbbe che la seduta era posizionamento prima del collocamento del trentennale e non debolezza relativa, e la direzione tornerebbe neutrale-rialzista. Oppure una probabilità di rialzo a settembre sotto il 30%, contro il 35,0% di oggi e una fascia di due punti che regge da tre giorni: sarebbe il primo movimento vero su quella misura da mercoledì.',
     },
     {
       horizon: 'medio',
@@ -273,7 +273,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera; sulla gamba fiscale, il prossimo rifinanziamento trimestrale che allarga le aste a lunga scadenza rispetto ai 125 miliardi rimasti invariati, oppure conti federali di agosto con spese sotto i 667 miliardi, che direbbero che il record di luglio era calendario e non traiettoria.',
     },
   ],
-  headline: 'Il greggio scende per la domanda, e l’oro non risponde più a ciò che lo sostiene',
+  headline: 'Due dati morbidi e l’oro perde l’1,01%: la direzione intraday scende a neutrale',
   stance:
     'Giornata in tre tempi, e ogni tempo toglie qualcosa al precedente. Alle 14:30 l’indice dei prezzi ' +
     'esce sul consenso — 3,4% annuo dal 3,5%, fondo a 2,5% dal 2,6% — e la probabilità di un rialzo a ' +
@@ -284,13 +284,13 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'controprova contando barili. Alle 19:00 il collocamento da 42 miliardi di titoli a dieci anni si ' +
     'aggiudica al 4,683% con un rapporto fra domanda e offerta di 2,53, sopra la media di 2,48 delle ' +
     'ultime dieci aste, e in serata il rendiconto del Tesoro ha portato il disavanzo cumulato dell’anno ' +
-    'fiscale a 1.799 miliardi, già oltre i 1.775 dell’intero anno precedente. Stamattina si aggiunge il ' +
-    'pezzo che riordina il quadro petrolifero: OPEC e agenzia internazionale hanno tagliato le previsioni ' +
-    'sulla domanda mondiale del 2026, non l’offerta, quindi il greggio scende dall’altro lato del ' +
-    'bilancio e il vincolo su Hormuz resta dov’era. Il fatto scomodo è però un altro, e riguarda il ' +
-    'metallo: la probabilità di un rialzo a settembre scende ancora al 34,7% e il decennale arretra a ' +
-    '4,668%, mentre l’oro stampa un massimo nuovo a 4.449,71 e poi lascia settantadue dollari, a ' +
-    '4.378,07 con meno 0,69%. Due sedute in cui il sostegno migliora e il prezzo scende.',
+    'fiscale oltre quello dell’intero anno precedente. Giovedì alle 14:30 arrivano due diffusioni che ' +
+    'vanno entrambe nella direzione favorevole al metallo: prezzi alla produzione piatti contro attese di ' +
+    'più 0,2% e al 4,7% annuo dal 5,5%, richieste di sussidio a 209.000 contro 204.000. Il decennale ' +
+    'scende di cinque punti base a 4,641%, il Brent perde l’1,06% dopo un minimo a 85,87. E l’oro perde ' +
+    'l’1,01%, a 4.364,11 con un minimo a 4.351,45. È la terza seduta consecutiva in cui i sostegni ' +
+    'migliorano e il prezzo va nell’altro verso, e la direzione intraday scende a neutrale: non perché ' +
+    'qualcosa spinga in basso, ma perché è venuta a mancare la ragione per cui dovrebbe salire.',
   favours: [
     'Cercare la controprova nella misura più dura disponibile: la scarsità di greggio è stata raccontata qui per sei giorni con conteggi di navi, e il primo conteggio di barili nei serbatoi dice il contrario',
     'Muovere una lettura quando decade la ragione scritta in anticipo per tenerla su, anche quando è stata scritta un’ora prima: la forza intraday scende perché due dei tre canali che la giustificavano si sono chiusi',
@@ -307,15 +307,16 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
-    'Riverificato alle 12:50 del 13 agosto: la probabilità di un rialzo a settembre resta al 34,7% dalle 08:15, in calo dal 35,7% di ieri sera e dal 52% del 10 agosto, contro il 65,3% attribuito alla permanenza',
-    'Il Brent estende il calo a 87,15 dollari con meno 2,06%, un minimo a 86,86 e circa 85,7 sulla serie usata qui: la lettura sul lato della domanda pubblicata alle 08:20 sta venendo confermata, e la condizione scritta allora — un ritorno sopra gli 89,06 del massimo — è lontana',
-    'Il dollaro non ha passato quota 100: a 99,790 con meno 0,11% è vicino al minimo di giornata, e il massimo resta 99,990, lo stesso registrato alle 11:25. Il canale del cambio non sta lavorando contro il metallo',
+    'I prezzi alla produzione di luglio escono piatti sul mese contro attese di più 0,2%, e scendono al 4,7% annuo dal 5,5%; il dato di fondo sale dello 0,2% contro attese di più 0,3%. Dopo l’indice al consumo di mercoledì sono due diffusioni consecutive che non convalidano una nuova accelerazione',
+    'Il decennale scende di cinque punti base a 4,641% con un minimo a 4,600%, il più basso della settimana, e il Brent perde l’1,06% dopo essere arrivato a 85,87 dollari, circa 84,5 sulla serie usata qui',
+    'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%: domanda che non dipende dal movimento',
     'OPEC e agenzia internazionale tagliano la domanda mondiale attesa nel 2026 — crescita a 580.000 barili al giorno dai 780.000 di luglio, e una contrazione di circa 1,6 milioni — quindi il greggio scende senza che il vincolo sull’offerta si allenti',
     'Il biennale resta a 4,184%, meno 3,4 punti base sulla chiusura di 4,218% che è anche il massimo odierno: la misura scelta l’11 agosto continua a confermare',
     'Le scorte commerciali americane di greggio salgono di 17,422 milioni di barili nella settimana al 7 agosto, a 424,4 milioni: meno pressione sul canale energia-inflazione, che è l’ultimo argomento restrittivo rimasto',
     'Il collocamento del decennale trova domanda modestamente sopra la media: rapporto fra domanda e offerta 2,53 contro 2,48 sulle ultime dieci aste, e il rendimento resta a 4,677% dentro un intervallo fra 4,631% e 4,688%, lontano dal 4,735% di ieri',
-    'L’oro ha stampato un massimo a 4.449,71 e lasciato sessantacinque dollari: a 4.384,82 con meno 0,54% resta sotto i 4.400 e sotto la chiusura di 4.408,59, con il minimo di giornata a 4.364,27',
-    'La divergenza non si è risolta ma non è peggiorata: alle 12:50 il metallo è sette dollari sopra la rilevazione delle 08:15 mentre dollaro, decennale e greggio sono tutti scesi, quindi la configurazione migliora e il prezzo resta fermo invece di seguirla',
+    'L’oro perde l’1,01% a 4.364,11 dollari nella giornata dei due dati favorevoli, con un minimo a 4.351,45 sotto il livello dichiarato al mattino: terza seduta consecutiva in cui i sostegni migliorano e il prezzo scende',
+    'La probabilità di un rialzo a settembre non è scesa dopo i dati: 35,0% contro il 34,7% del mattino e il 35,7% di mercoledì sera, quindi ferma dentro due punti da tre giorni mentre il racconto della giornata dice il contrario',
+    'Beth Hammack, una dei tre dissensi messi a verbale il 29 luglio, ripete che il rialzo andrebbe fatto adesso: la componente restrittiva del comitato non si è mossa con i dati',
     'Hossein Taeb, rimesso a capo dei Basij tre giorni fa, dichiara all’agenzia Fars che lo Stretto di Hormuz è «sotto la gestione e il controllo» iraniano: è l’esatto contrario di quanto scritto da Trump mercoledì, e il conteggio dei transiti non si muove per nessuna delle due',
     'L’inflazione all’ingrosso giapponese di luglio manca le attese del 7,4% e decelera al 7,2% dal 7,3%, con i prezzi all’importazione in yen al 29,1% dal 30,1%: argomento più debole per un rialzo di settembre, non più forte',
     'Entrate doganali nette negative per 8,55 miliardi dopo 33,38 miliardi di rimborsi: la prima misura di quanto i dazi incassino toglie credibilità a una delle vie d’uscita dichiarate dal disavanzo',
@@ -493,8 +494,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 34.7,
-      display: '34,7%',
+      now: 35.0,
+      display: '35,0%',
       marks: [
         {
           at: 50,
@@ -506,8 +507,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 85.7,
-      display: '≈ 85,7 $',
+      now: 86.6,
+      display: '≈ 86,6 $',
       marks: [
         {
           at: 82,
@@ -538,8 +539,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.66,
-      display: '4,660%',
+      now: 4.641,
+      display: '4,641%',
       marks: [
         {
           at: 4.68,
@@ -557,8 +558,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.79,
-      display: '99,790',
+      now: 99.86,
+      display: '99,860',
       marks: [
         {
           at: 99.795,
@@ -576,8 +577,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4384.82,
-      display: '4.384,82 $',
+      now: 4364.11,
+      display: '4.364,11 $',
       marks: [
         {
           at: 4300,
@@ -595,9 +596,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'due-dati-a-favore-e-l-oro-perde-l-uno-per-cento',
     'il-greggio-scende-dal-lato-della-domanda-non-dell-offerta',
     'l-anno-fiscale-supera-il-precedente-con-due-mesi-d-anticipo',
-    'quarantadue-miliardi-non-trentanove-l-asta-era-nella-media',
   ],
 };
 

@@ -30,8 +30,10 @@ fonti:
   - testata: "CBS News"
   - testata: "U.S. Energy Information Administration"
   - testata: "The Wall Street Journal"
+esito: "parziale"
+controllata: "2026-08-13T18:30:00+02:00"
 sorgente: "src/app/core/data/articles/l-asta-si-aggiudica-sopra-il-mercato-e-il-dollaro-torna-su.ts"
-impronta: "453e8f15ff302733"
+impronta: "4e6cabdf3c197c19"
 ---
 
 # L’asta si aggiudica sopra il mercato, e il dollaro torna positivo
@@ -138,6 +140,22 @@ Alta sui fatti: il rendimento di aggiudicazione è il risultato ufficiale di un 
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 La direzione resta perché la gamba monetaria non si è mossa: il biennale chiude la giornata a 4,184%, meno 3,4 punti base, e la probabilità di un rialzo a settembre è al 35,7%. La forza resta bassa perché tutto il resto si è chiuso dentro la seduta. Il dollaro ha fatto il giro completo — minimo a 99,500 dopo il dato, adesso 99,880 con più 0,17% — e l’oro ha restituito trentadue dollari dal massimo di 4.441,01. Il collocamento del decennale si è aggiudicato al 4,683%, dieci punti base sopra quello di luglio e sopra il rendimento a cui il titolo scambia adesso: la parte lunga non ha accompagnato la riprezzatura della parte breve.
+
+## Come è andata
+
+Verdetto: **parziale**, controllata il 2026-08-13T18:30:00+02:00.
+
+Una condizione su cinque, ed è quella del cambio. Il resto della giornata successiva è andato nella direzione che l’analisi descriveva: i prezzi alla produzione sono usciti sotto il consenso, il decennale è sceso di cinque punti base invece di salire, il biennale non ha mai superato il proprio massimo. La lettura reggeva su una gamba sola, quella monetaria, e quella gamba non ha ceduto in nessun momento.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un Dollar Index che chiude sopra i 99,895 del massimo odierno: direbbe che il calo dopo l’indice dei prezzi non è stato solo restituito ma annullato, e che il cambio è tornato a lavorare contro il metallo. | sì | Il Dollar Index ha chiuso mercoledì 12 agosto a 99,899, cioè quattro millesimi sopra il livello dichiarato, dopo un massimo di giornata a 99,910. È scattata, e per il margine più stretto che questo registro abbia mai misurato. |
+| Un oro che chiude sotto i 4.362,57 dollari, il minimo di questa giornata: cancellerebbe per intero il movimento prodotto dal dato e toglierebbe la ragione della direzione. | no | Lo spot ha chiuso mercoledì a 4.408,59 dollari, quarantasei sopra la soglia. Il minimo di 4.362,57 era stato toccato in mattinata, prima dell’indice dei prezzi, e non in chiusura. |
+| Un biennale che torna sopra il 4,218%, che è insieme il massimo di oggi e la chiusura di ieri: è l’unica gamba rimasta in piedi, e sopra quel livello non c’è più niente sotto la lettura. | no | Il biennale ha chiuso mercoledì a 4,184% con meno 3,4 punti base, e il massimo di quella giornata è stato esattamente 4,218%: toccato, mai superato. La gamba ha retto. |
+| I prezzi alla produzione di luglio, giovedì alle 14:30, sopra il consenso con il decennale che si porta sopra il 4,688% del massimo odierno: sarebbe il canale energia-prezzi che entra dal lato dei costi dopo aver mancato quello dei consumi. | no | Nessuna delle due metà si è verificata, e la prima è andata nella direzione opposta. I prezzi alla produzione di luglio sono usciti piatti sul mese contro attese di più 0,2%, quindi sotto il consenso e non sopra, con il dato di fondo a più 0,2% contro più 0,3%. Il decennale è sceso invece di salire: massimo di giovedì 4,684% e quotazione a 4,641% con meno 5,1 punti base. |
+| Un conteggio dei transiti di mercoledì sopra le otto navi di martedì: darebbe alla dichiarazione di Washington un aggancio materiale che oggi non ha, e toglierebbe forza al premio geopolitico letto qui come non riscattato. | no | Il conteggio giornaliero di mercoledì 12 agosto non risulta pubblicato da nessuno dei due fornitori seguiti qui, a trenta ore di distanza. Vale la stessa nota registrata sull’analisi delle 11:00 dello stesso giorno: il numero non è comparso, e la sua assenza non è una prova a favore della lettura. |
+
+**Che cosa cambia.** Il Dollar Index ha chiuso a 99,899. Questa analisi, delle 19:40, aveva messo la condizione a 99,895 ed è scattata per quattro millesimi; quella pubblicata ventotto minuti dopo aveva alzato lo stesso livello a 99,910, perché nel frattempo il massimo di giornata si era spostato, e sullo stesso identico numero di chiusura non scatta per undici millesimi. Due condizioni scritte a mezz’ora di distanza sulla stessa grandezza danno verdetti opposti, e la differenza non sta nel mercato ma nell’ora in cui è stata scritta la regola. Ancorare una condizione al massimo corrente ha il pregio di usare un livello che il mercato ha stabilito invece di un numero tondo, ma ha questo difetto: il livello si sposta mentre la giornata avanza, e chi scrive più tardi si dà automaticamente un margine più largo. Quando due analisi ravvicinate misurano la stessa cosa, l’ancora va fissata una volta sola.
 
 ## Fonti consultate
 
