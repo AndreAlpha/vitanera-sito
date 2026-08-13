@@ -180,6 +180,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-13T08:20:00+02:00',
+  checkedAt: '2026-08-13T11:25:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -305,12 +306,15 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
-    'Riverificato alle 08:15 del 13 agosto: la probabilità di un rialzo a settembre scende ancora, al 34,7% dal 35,7% di ieri sera e dal 52% del 10 agosto, contro il 65,3% attribuito alla permanenza al 3,50-3,75%',
+    'Riverificato alle 11:25 del 13 agosto: la probabilità di un rialzo a settembre resta al 34,7%, ferma da tre ore e in calo dal 35,7% di ieri sera e dal 52% del 10 agosto, contro il 65,3% attribuito alla permanenza',
+    'Il dollaro si è girato: 99,830 con meno 0,07%, sotto la chiusura di 99,899 dopo un massimo a 99,990. La risalita di ieri sera non ha avuto seguito, e il decennale scende ancora a 4,660% dal 4,692% di chiusura',
     'OPEC e agenzia internazionale tagliano la domanda mondiale attesa nel 2026 — crescita a 580.000 barili al giorno dai 780.000 di luglio, e una contrazione di circa 1,6 milioni — quindi il greggio scende senza che il vincolo sull’offerta si allenti',
     'Il biennale resta a 4,184%, meno 3,4 punti base sulla chiusura di 4,218% che è anche il massimo odierno: la misura scelta l’11 agosto continua a confermare',
     'Le scorte commerciali americane di greggio salgono di 17,422 milioni di barili nella settimana al 7 agosto, a 424,4 milioni: meno pressione sul canale energia-inflazione, che è l’ultimo argomento restrittivo rimasto',
     'Il collocamento del decennale trova domanda modestamente sopra la media: rapporto fra domanda e offerta 2,53 contro 2,48 sulle ultime dieci aste, e il rendimento resta a 4,677% dentro un intervallo fra 4,631% e 4,688%, lontano dal 4,735% di ieri',
-    'L’oro stampa un massimo nuovo a 4.449,71 e lascia settantadue dollari: a 4.378,07 con meno 0,69% è sotto i 4.400 e sotto la chiusura di 4.408,59, seconda seduta consecutiva in cui il sostegno migliora e il prezzo scende',
+    'L’oro ha stampato un massimo a 4.449,71 e lasciato settanta dollari: a 4.381,04 con meno 0,62% resta sotto i 4.400 e sotto la chiusura di 4.408,59, con il minimo di giornata sceso a 4.364,27',
+    'La divergenza non si è risolta ma non è peggiorata: alle 11:25 il metallo è tre dollari sopra la rilevazione delle 08:15 mentre dollaro e decennale sono scesi, quindi la configurazione migliora e il prezzo resta fermo',
+    'Hossein Taeb, rimesso a capo dei Basij tre giorni fa, dichiara all’agenzia Fars che lo Stretto di Hormuz è «sotto la gestione e il controllo» iraniano: è l’esatto contrario di quanto scritto da Trump mercoledì, e il conteggio dei transiti non si muove per nessuna delle due',
     'L’inflazione all’ingrosso giapponese di luglio manca le attese del 7,4% e decelera al 7,2% dal 7,3%, con i prezzi all’importazione in yen al 29,1% dal 30,1%: argomento più debole per un rialzo di settembre, non più forte',
     'Entrate doganali nette negative per 8,55 miliardi dopo 33,38 miliardi di rimborsi: la prima misura di quanto i dazi incassino toglie credibilità a una delle vie d’uscita dichiarate dal disavanzo',
     'L’indice dei prezzi di luglio esce a 3,4% annuo dal 3,5% e a 2,5% di fondo dal 2,6%, con la componente energetica in decelerazione: più 14,7% annuo da più 15,7%',
@@ -380,7 +384,15 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'descritti come in fase avanzata, Teheran ribadisce ufficialmente che lo Stretto resta chiuso ' +
         'finché gli Stati Uniti non soddisfano le sue condizioni, che ora comprendono anche la fine della ' +
         'guerra e lo sblocco di asset iraniani. Il tavolo progredisce e l’elenco delle condizioni si ' +
-        'allunga, ed è il sesto punto aperto in quattro giorni.',
+        'allunga, ed è il sesto punto aperto in quattro giorni. Il 12 e il 13 agosto la serie arriva al suo ' +
+        'esito più netto, e la simmetria vale più di ciascuna delle due voci: mercoledì il presidente ' +
+        'americano scrive che gli Stati Uniti hanno «il controllo totale» dello Stretto e che il blocco ' +
+        'navale è «un muro d’acciaio»; giovedì Hossein Taeb, rimesso a capo dei Basij da appena tre giorni, ' +
+        'dichiara all’agenzia Fars che lo Stretto è «sotto la gestione e il controllo della Repubblica ' +
+        'islamica» e che l’America è stata sconfitta ancora. Due rivendicazioni di sovranità che si ' +
+        'escludono a vicenda sulla stessa acqua, a ventiquattr’ore di distanza, mentre il conteggio dei ' +
+        'transiti non si muove di una nave. Nessuna delle due è verificabile e nessuna delle due sposta il ' +
+        'numero: quello che aumenta è la probabilità che qualcuno provi a dimostrarla.',
       watch:
         'Il conteggio non risale: si quarta. Venerdì 7 agosto dallo Stretto sono transitate due navi secondo ' +
         'Reuters, contro le 33 da lunedì a giovedì della stessa settimana e le 50 di quella precedente. Due ' +
@@ -524,8 +536,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.668,
-      display: '4,668%',
+      now: 4.66,
+      display: '4,660%',
       marks: [
         {
           at: 4.68,
@@ -543,8 +555,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.91,
-      display: '99,910',
+      now: 99.83,
+      display: '99,830',
       marks: [
         {
           at: 99.795,
@@ -562,8 +574,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4378.07,
-      display: '4.378,07 $',
+      now: 4381.04,
+      display: '4.381,04 $',
       marks: [
         {
           at: 4300,
