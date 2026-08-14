@@ -17,6 +17,42 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'ADNOC',
+    name: 'Attacco a due navi della compagnia petrolifera emiratina nello Stretto di Hormuz, 13 agosto',
+    value: '≥ 16 dal 28 febbraio',
+    change: 'due episodi in meno di una settimana; nessuna risposta iraniana',
+    tone: 'warn',
+    icon: 'alert',
+    note: 'Gli Emirati accusano l’Iran di aver colpito due navi di ADNOC mentre transitavano giovedì sera; la compagnia conferma l’incidente, la situazione è stata riportata sotto controllo e non risultano feriti. Il ministero degli Esteri emiratino parla di «pirateria» e di minaccia diretta all’approvvigionamento energetico mondiale. Il fatto singolo conta meno del conteggio che lo contiene: è almeno il sedicesimo attacco a navi collegate ad ADNOC dal 28 febbraio, in una campagna con missili e droni che nel complesso ha ucciso un membro d’equipaggio e ferito venti persone. Per due settimane questo archivio ha contato annunci di distensione contro transiti fermi, e il conteggio stava tutto da una parte; questa è la prima grandezza materiale che si può mettere sul lato dell’escalation. La regola però vale in entrambi i versi: sono i sedici attacchi a essere un fatto contato, mentre «blocco a tempo indefinito» e «nuove misure la prossima settimana» restano due frasi.',
+  },
+  {
+    symbol: 'UST-LUGA',
+    name: 'Attacco con droni sul secondo porto petrolifero russo del Baltico, notte del 14 agosto',
+    value: '54 droni',
+    change: 'sesto attacco allo stesso porto quest’anno; incendio spento, nessun ferito',
+    tone: 'warn',
+    icon: 'bolt',
+    note: 'Il governatore della regione di Leningrado riferisce di cinquantaquattro droni e di un incendio poi spento in mattinata. È il caso opposto a quello di Jazan, ed è il confronto a rendere leggibile la differenza: la raffineria saudita era ferma da fine luglio, quindi l’attacco colpiva capacità già fuori dal conto, mentre Ust-Luga lavora. Nel 2025 ci sono passati circa 700.000 barili al giorno, è il secondo scalo russo sul Baltico dopo Primorsk, e i due insieme valgono circa il 40% dell’export marittimo russo di greggio. Un impianto che lavora è un bersaglio con un prezzo. Il metro dice però anche dove fermarsi: l’entità dei danni non è nota e nessuno ha dichiarato una riduzione dei caricamenti, quindi è un rischio su capacità attiva e non una perdita accertata di barili.',
+  },
+  {
+    symbol: 'BLOCCO NAVALE',
+    name: 'Pete Hegseth, segretario alla Difesa statunitense, sulla durata del blocco dei porti iraniani',
+    value: 'a tempo indefinito',
+    change: 'la Marina ruota le unità; negoziati fermi',
+    tone: 'warn',
+    icon: 'shield',
+    note: 'La formulazione è tecnica e per questo pesa: «Indefinitamente la Marina degli Stati Uniti può mantenere un blocco del genere, perché ruoteremo le navi dentro e fuori, come abbiamo già fatto, e continueremo a farlo». Non promette una volontà politica, descrive una capacità logistica. La strategia americana passa così da pressione a tempo determinato a una stretta senza scadenza dichiarata. Nella stessa giornata il segretario al Tesoro Bessent annuncia nuove misure di isolamento economico per la settimana prossima senza fornirne il contenuto: su questa scala resta un annuncio, non una sanzione in vigore, ed è la stessa categoria dei sei annunci di distensione contati la settimana scorsa, con il segno rovesciato. Il verso sull’oro è ambiguo: un blocco senza scadenza allontana la riapertura dello Stretto e sostiene il rifugio, ma se riporta il greggio verso i 95 dollari torna a lavorare contro il metallo attraverso rendimenti e inflazione.',
+  },
+  {
+    symbol: 'GOOLSBEE',
+    name: 'Austan Goolsbee, presidente della Fed di Chicago',
+    value: 'dati «un po’ migliori»',
+    change: 'terza voce del comitato in due giorni, dopo Hammack e Barkin',
+    tone: 'bull',
+    icon: 'bank',
+    note: 'Goolsbee si dice fiducioso che, se gli effetti dei dazi e del petrolio legato alla guerra iraniana finissero alle spalle, si tornerebbe su quella che ha chiamato la strada maestra, cioè un’inflazione che rientra verso il 2%. Con la stessa frase precisa però che un livello complessivo intorno al 3% resta troppo alto: è un rinvio motivato, non un’apertura a tagli. Il ventaglio del comitato si è aperto in quarantott’ore — Hammack chiede un rialzo adesso, Barkin non è certo che serva, Goolsbee vede la direzione giusta ma non il livello — e nessuna delle tre posizioni ha un voto garantito a settembre. Il numero che le riassume si è mosso poco e nella stessa direzione: probabilità di rialzo al 33,0%, contro il 35,0% del giorno prima e circa il 55% di una settimana fa.',
+  },
+  {
     symbol: 'ASTA 30 ANNI',
     name: 'Collocamento di titoli del Tesoro statunitense a trent’anni, 13 agosto',
     value: '5,216%',
@@ -24,7 +60,7 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
       '25 mld $; quattro decimi di punto base sopra il 5,212% quotato alla chiusura delle offerte',
     tone: 'warn',
     icon: 'print',
-    note: 'È la prova che questo archivio indicava da tre giorni come il principale rischio sui giorni, e arriva ventiquattro ore dopo il rendiconto federale che ha portato il disavanzo dell’anno fiscale oltre quello dell’intero anno precedente. Questa voce corregge la lettura pubblicata alle 19:15. Allora il confronto era stato fatto con un livello pre-asta di «circa 5,23%» riportato in mattinata, e la conclusione era che il collocamento si fosse aggiudicato sotto il mercato. Il numero giusto per quel confronto è il rendimento quotato nell’istante in cui si chiudono le offerte, ed era 5,212%: l’aggiudicazione al 5,216% è quindi arrivata sopra, con quattro decimi di punto base di scarto. Nella stessa direzione vanno gli altri due numeri: il rapporto fra domanda e offerta è 2,39 contro 2,44 dell’asta precedente e circa 2,43 di media sulle ultime dieci, e gli operatori primari hanno assorbito l’11,6% contro circa 10,6% di media. Nessuno dei tre è drammatico, e insieme dicono un’asta modestamente sotto la media invece che solida. Resta vero il piano lento, che non dipendeva da quel confronto: 5,216% è il costo più alto pagato su questa scadenza da circa un quarto di secolo, quasi sedici punti base sopra l’asta di un mese fa, e il debito continua comunque a collocarsi. La direzione della seduta l’ha decisa il quadro macroeconomico e non l’asta: il trentennale chiude a 5,213%, in calo di 3,4 punti base. I numeri di domanda provengono da un servizio di dati di mercato e non dal comunicato del Tesoro, che non risultava raggiungibile.',
+    note: 'È la prova che questo archivio indicava da tre giorni come il principale rischio sui giorni, e arriva ventiquattro ore dopo il rendiconto federale che ha portato il disavanzo dell’anno fiscale oltre quello dell’intero anno precedente. Questa voce corregge la lettura pubblicata alle 19:15. Allora il confronto era stato fatto con un livello pre-asta di «circa 5,23%» riportato in mattinata, e la conclusione era che il collocamento si fosse aggiudicato sotto il mercato. Il numero giusto per quel confronto è il rendimento quotato nell’istante in cui si chiudono le offerte, ed era 5,212%: l’aggiudicazione al 5,216% è quindi arrivata sopra, con quattro decimi di punto base di scarto. Nella stessa direzione vanno gli altri due numeri: il rapporto fra domanda e offerta è 2,39 contro 2,44 dell’asta precedente e circa 2,43 di media sulle ultime dieci, e gli operatori primari hanno assorbito l’11,6% contro circa 10,6% di media. Nessuno dei tre è drammatico, e insieme dicono un’asta modestamente sotto la media invece che solida. Resta vero il piano lento, che non dipendeva da quel confronto: 5,216% è il costo più alto pagato su questa scadenza da circa un quarto di secolo, quasi sedici punti base sopra l’asta di un mese fa, e il debito continua comunque a collocarsi. La direzione della seduta l’ha decisa il quadro macroeconomico e non l’asta: il trentennale chiude a 5,213%, in calo di 3,4 punti base. Il 14 agosto il comunicato del Tesoro rende questi numeri verificabili sulla fonte primaria e li conferma: rapporto fra domanda e offerta 2,39 (59.801.010.300 $ di offerte contro 25.000.015.300 $ collocati), operatori primari all’11,51%, acquirenti indiretti al 66,85%, diretti al 21,64%, assegnato al massimo il 12,10%. Restano fuori dal comunicato — e ne restano fuori sempre — il rendimento quotato alla chiusura delle offerte, che è il dato su cui poggia la parola «coda».',
   },
   {
     symbol: 'JAZAN',

@@ -179,28 +179,28 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-13T20:30:00+02:00',
+  updatedAt: '2026-08-14T10:30:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
       direction: 'neutrale-ribassista',
-      strength: 'bassa',
+      strength: 'media',
       regime:
-        'La direzione scende di un altro gradino, da neutrale a neutrale con inclinazione ribassista, e ' +
-        'anche stavolta si muove per il comportamento del prezzo. Alle 18:35 la lettura era stata portata ' +
-        'a neutrale osservando che quattro elementi favorevoli non producevano il loro effetto; alle 20:30 ' +
-        'gli elementi sono cinque, perché il collocamento del trentennale non solo è passato senza shock ' +
-        'ma è andato leggermente peggio delle attese — aggiudicazione quattro decimi di punto base sopra ' +
-        'il quotato alla chiusura delle offerte, rapporto fra domanda e offerta a 2,39 contro circa 2,43 ' +
-        'di media — cioè nel verso che a un bene rifugio conviene. L’oro chiude comunque a meno 1,18% a ' +
-        '4.356,73 dollari, con un minimo a 4.351,45, e il future di agosto interrompe a meno 1,03% una ' +
-        'serie di quattro sedute positive. Il punto che sposta la direzione non è però il segno: è che ' +
-        'cade l’ultima spiegazione benevola. Fino a stasera si poteva dire che il metallo stesse fermo in ' +
-        'attesa dell’asta; l’asta è passata, e la debolezza è rimasta. Cinque catalizzatori dalla stessa ' +
-        'parte e una chiusura in perdita non sono più una mancata reazione, sono una reazione contraria.',
+        'La forza sale da bassa a media, e il motivo è che un livello dichiarato in anticipo è stato ' +
+        'rotto. L’analisi delle 19:15 del 13 agosto aveva scritto che una chiusura sotto i 4.351,45 ' +
+        'dollari avrebbe detto che neanche la domanda ufficiale e la traiettoria del debito stavano più ' +
+        'sostenendo il prezzo: la chiusura è arrivata a 4.351,07, e nella notte asiatica il metallo è ' +
+        'sceso fino a 4.311,22. Nel frattempo tutto il resto è migliorato. La probabilità di un rialzo a ' +
+        'settembre è al 33,0%, in calo di due punti in un giorno e di ventidue in una settimana; il ' +
+        'Dollar Index è a 99,637, praticamente sul minimo di giornata, quindi la spiegazione meccanica ' +
+        'del cambio non è più disponibile; e il rischio sulle rotte è salito su due fronti nella stessa ' +
+        'notte, con due navi di ADNOC colpite nello Stretto e cinquantaquattro droni su Ust-Luga. Quattro ' +
+        'sedute in cui i motivi per salire si accumulano e il prezzo scende sono una serie, e una serie ' +
+        'si tratta diversamente da un episodio. Resta una lettura sulle ore: la gamba di fondo non è in ' +
+        'discussione, e quello che manca è il ponte fra il quadro e il prezzo.',
       invalidation:
-        'Un oro che chiude entro venerdì sopra i 4.408,59 dollari della chiusura di mercoledì, cioè che riprende per intero quello che ha perso oggi: direbbe che la debolezza era davvero posizionamento e non domanda ridotta, e la direzione tornerebbe almeno neutrale. Oppure le vendite al dettaglio di venerdì sotto il consenso con l’oro che sale: separerebbe le due spiegazioni rimaste a favore di quella che qui è stata messa da parte. Nell’altro verso, una chiusura sotto i 4.351,45 del minimo odierno confermerebbe l’inclinazione invece di logorarla.',
+        'Un oro che chiude la settimana sopra i 4.408,59 dollari della chiusura di mercoledì: annullerebbe per intero la rottura e riporterebbe la direzione almeno a neutrale. Oppure le vendite al dettaglio di oggi alle 14:30 sotto il consenso con il metallo che recupera comunque i 4.400: toglierebbe insieme le due spiegazioni rimaste, prese di profitto e rotazione verso il rischio. Nell’altro verso, un Dollar Index sopra 100,00 con l’oro sotto i 4.300 rimetterebbe in piedi la spiegazione del cambio e questa lettura perderebbe la sua parte più solida.',
     },
     {
       horizon: 'medio',
@@ -249,7 +249,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'quarto di secolo, quasi sedici punti base sopra l’asta di un mese fa, e con la domanda ' +
         'leggermente sotto la propria media invece che sopra. La direzione della seduta l’ha comunque ' +
         'decisa il quadro macroeconomico e non l’asta: il trentennale chiude a 5,213% con meno 3,4 punti ' +
-        'base e il decennale a 4,629% con meno 6,3.',
+        'base e il decennale a 4,629% con meno 6,3. Il 14 agosto il comunicato del Tesoro rende quei numeri ' +
+        'verificabili sulla fonte primaria: rapporto fra domanda e offerta 2,39, operatori primari ' +
+        'all’11,51%, acquirenti indiretti al 66,85%, assegnato al massimo il 12,10%. Coincidono con ' +
+        'quanto pubblicato la sera prima, e la correzione regge.',
       invalidation:
         'Una probabilità di rialzo a settembre che risale sopra il 48% entro venerdì, cioè sopra il livello di ieri mattina invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
     },
@@ -294,7 +297,12 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'deterioramento fiscale si vede nel comportamento dei compratori e non soltanto nei rendiconti del ' +
         'Tesoro, ed è per questo che la gamba si rafforza mentre la lettura resta dov’è: uno scarto di ' +
         'quattro decimi di punto base e cinque centesimi di rapporto sono misure piccole, e quello che ' +
-        'conta è che adesso abbiano il segno giusto.',
+        'conta è che adesso abbiano il segno giusto. Il 14 agosto si irrobustisce anche la gamba di ' +
+        'sicurezza regionale, e per una volta con un conteggio invece che con una dichiarazione: gli ' +
+        'attacchi a navi collegate ad ADNOC sono almeno sedici dal 28 febbraio, due nell’ultima ' +
+        'settimana, e Washington dichiara di poter mantenere il blocco dei porti iraniani senza una ' +
+        'scadenza. È una struttura di rischio che si assesta su un livello più alto, ed è contro ' +
+        'quella che comprano le riserve ufficiali, non contro la seduta di giovedì.',
       invalidation:
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera; sulla gamba fiscale, il prossimo rifinanziamento trimestrale che allarga le aste a lunga scadenza rispetto ai 125 miliardi rimasti invariati, oppure conti federali di agosto con spese sotto i 667 miliardi, che direbbero che il record di luglio era calendario e non traiettoria.',
     },
@@ -525,8 +533,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 35.0,
-      display: '35,0%',
+      now: 33.0,
+      display: '33,0%',
       marks: [
         {
           at: 50,
@@ -538,8 +546,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 86.89,
-      display: '≈ 86,9 $',
+      now: 88.49,
+      display: '≈ 88,5 $',
       marks: [
         {
           at: 82,
@@ -557,8 +565,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.149,
-      display: '4,149%',
+      now: 4.159,
+      display: '4,159%',
       marks: [
         {
           at: 4.25,
@@ -570,8 +578,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.629,
-      display: '4,629%',
+      now: 4.653,
+      display: '4,653%',
       marks: [
         {
           at: 4.68,
@@ -589,8 +597,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.852,
-      display: '99,852',
+      now: 99.637,
+      display: '99,637',
       marks: [
         {
           at: 99.795,
@@ -608,8 +616,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4356.73,
-      display: '4.356,73 $',
+      now: 4346.06,
+      display: '4.346,06 $',
       marks: [
         {
           at: 4300,
@@ -627,9 +635,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'il-livello-non-ha-retto-e-ust-luga-non-e-jazan',
+    'sedici-attacchi-alle-navi-e-il-blocco-senza-scadenza',
     'il-numero-mancante-e-arrivato-e-l-asta-aveva-una-coda',
-    'il-trentennale-si-colloca-al-prezzo-piu-alto-dal-2001',
-    'due-dati-a-favore-e-l-oro-perde-l-uno-per-cento',
   ],
 };
 
