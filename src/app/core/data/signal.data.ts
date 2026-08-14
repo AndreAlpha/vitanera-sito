@@ -179,29 +179,26 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-14T14:50:00+02:00',
-  checkedAt: '2026-08-14T15:20:00+02:00',
+  updatedAt: '2026-08-14T16:10:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'neutrale',
+      direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'La direzione risale da neutrale-ribassista a neutrale, e il motivo è che la ragione scritta per ' +
-        'tenerla più in basso è decaduta. Quella ragione era una sola: per quattro sedute i motivi per ' +
-        'salire si erano accumulati e il prezzo era sceso lo stesso, cioè il canale di trasmissione fra ' +
-        'quadro macroeconomico e metallo sembrava interrotto. Alle 14:30 le vendite al dettaglio di ' +
-        'luglio escono a meno 0,6% contro attese di più 0,1%, primo calo dopo dieci mesi, e la catena ' +
-        'trasmette in tutti i suoi passaggi: la probabilità di un rialzo a settembre scende al 29,3% e ' +
-        'passa sotto il 30% per la prima volta, il biennale va a 4,119% sul minimo di giornata, il Dollar ' +
-        'Index a 99,500 sul minimo, e l’oro sale dello 0,58% a 4.376,10 con un massimo a 4.386,91. Non ' +
-        'risale oltre il neutrale per due ragioni misurabili: il prezzo resta sotto i 4.408,59 della ' +
-        'chiusura di mercoledì, quindi la settimana è ancora negativa, e la reazione ha meno di un’ora di ' +
-        'vita in una seduta americana appena aperta — un’osservazione che questa settimana si è già ' +
-        'rivelata fragile due volte.',
+        'La direzione sale a neutrale con inclinazione rialzista perché è caduta la riserva scritta due ' +
+        'ore fa: alle 14:50 la risposta dell’oro al dato sui consumi aveva meno di un’ora di vita, adesso ' +
+        'ne ha due e si è estesa da 4.376,10 a 4.392,33, con il massimo di giornata a 4.396,88. La forza ' +
+        'resta bassa perché il dato delle 16:00 non è accomodante quanto sembra dal titolo: la fiducia ' +
+        'dei consumatori del Michigan crolla a 51,0 da 55,2, circa meno 8%, ma le attese di inflazione a ' +
+        'un anno salgono al 4,3% dal 4,2%. Il mercato dei tassi ha reagito alla seconda parte più che ' +
+        'alla prima: la probabilità di un rialzo a settembre è risalita al 31,6% dal 29,3% delle 14:50 e ' +
+        'il biennale è rientrato a 4,136% dal minimo di 4,117%. Il metallo sta quindi salendo sul cambio, ' +
+        'non sui tassi — il Dollar Index è a 99,410, nuovo minimo — e una gamba sola è la configurazione ' +
+        'che il 12 agosto è durata meno di un’ora.',
       invalidation:
-        'Un oro che chiude sotto i 4.351,07 dollari della chiusura di giovedì: annullerebbe per intero la risposta al dato e riporterebbe la direzione a neutrale-ribassista, perché direbbe che il canale ha trasmesso per mezz’ora e poi si è richiuso. Nell’altro verso, una chiusura sopra i 4.408,59 di mercoledì porterebbe la direzione a neutrale-rialzista, perché a quel punto la settimana smetterebbe di essere negativa. Sulla misura monetaria, una probabilità di rialzo a settembre che torna sopra il 33,0% di stamattina entro lunedì direbbe che il 29,3% era la reazione al titolo e non una riprezzatura.',
+        'Un oro che chiude sotto i 4.351,07 dollari della chiusura di giovedì: annullerebbe per intero il recupero e riporterebbe la direzione almeno a neutrale. Oppure un Dollar Index che torna sopra i 99,855 di ieri mentre il metallo resta sopra i 4.390: toglierebbe la gamba del cambio, che è l’unica che in questo momento sta spingendo davvero. Nell’altro verso, un biennale sotto il 4,117% del minimo odierno direbbe che anche la parte breve è tornata a confermare, e la forza salirebbe.',
     },
     {
       horizon: 'medio',
@@ -259,7 +256,11 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'giustificasse un altro rialzo, e la probabilità di un aumento a settembre scende al 29,3%: ' +
         'quattro diffusioni consecutive — prezzi al consumo, prezzi alla produzione, sussidi e adesso ' +
         'consumo — nessuna delle quali ha contraddetto la riprezzatura. Resta separata la questione del ' +
-        'debito lungo, che il dato non tocca: il decennale è invariato a 4,640%.',
+        'debito lungo, che il dato non tocca: il decennale è invariato a 4,640%. Alle 16:00 arriva però il ' +
+        'primo elemento contrario da mercoledì: la fiducia del Michigan scende a 51,0 ma le attese di ' +
+        'inflazione a un anno salgono al 4,3%, e la probabilità di un rialzo risale al 31,6%. Le attese ' +
+        'a lungo termine restano ferme al 3,3%, quindi la lettura non si muove — ma la sequenza di ' +
+        'diffusioni che non si contraddicevano mai si è interrotta, e va contato.',
       invalidation:
         'Una probabilità di rialzo a settembre che risale sopra il 48% entro venerdì, cioè sopra il livello di ieri mattina invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
     },
@@ -315,7 +316,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   headline:
-    'Le vendite al dettaglio scendono dello 0,6%, e per la prima volta in quattro sedute l’oro risponde',
+    'La fiducia crolla dell’8%, ma le attese di inflazione salgono e le probabilità di rialzo risalgono',
   stance:
     'La settimana chiude sciogliendo la domanda che l’aveva tenuta aperta. Per quattro sedute il metallo ' +
     'non aveva risposto a niente: prezzi al consumo e alla produzione sotto le attese, richieste di ' +
@@ -532,8 +533,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 29.3,
-      display: '29,3%',
+      now: 31.6,
+      display: '31,6%',
       marks: [
         {
           at: 50,
@@ -564,8 +565,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.119,
-      display: '4,119%',
+      now: 4.136,
+      display: '4,136%',
       marks: [
         {
           at: 4.25,
@@ -596,8 +597,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.487,
-      display: '99,487',
+      now: 99.41,
+      display: '99,410',
       marks: [
         {
           at: 99.795,
@@ -615,8 +616,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4385.71,
-      display: '4.385,71 $',
+      now: 4392.33,
+      display: '4.392,33 $',
       marks: [
         {
           at: 4300,
@@ -634,9 +635,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'la-fiducia-crolla-e-le-attese-di-inflazione-salgono',
     'il-consumatore-si-ferma-e-l-oro-finalmente-risponde',
     'il-livello-non-ha-retto-e-ust-luga-non-e-jazan',
-    'sedici-attacchi-alle-navi-e-il-blocco-senza-scadenza',
   ],
 };
 

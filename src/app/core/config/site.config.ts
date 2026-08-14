@@ -572,6 +572,17 @@ export const CATEGORIES: readonly Category[] = [
       'Vendite di case esistenti, nuove costruzioni, permessi: le serie che il calendario di questo sito non copre. Contano per l’oro perché sono il punto in cui il costo del denaro smette di essere un tasso dichiarato e diventa una transazione che non avviene — la prova più diretta di quanto stia stringendo davvero una politica restrittiva.',
   },
   {
+    slug: 'fiducia-michigan',
+    name: 'Fiducia dei consumatori dell’Università del Michigan',
+    short: 'Fiducia Michigan',
+    family: 'attivita',
+    series: false,
+    icon: 'users',
+    tagline: 'Umore delle famiglie e attese di inflazione',
+    description:
+      'Indagine mensile dell’Università del Michigan, distinta da quella del Conference Board che il calendario di questo sito segue. Conta per l’oro soprattutto per la seconda metà del questionario: le attese di inflazione a un anno e a cinque anni sono fra le poche misure di aspettative che la Federal Reserve cita per nome, e possono muovere il prezzo del metallo anche quando l’indice di fiducia va nella direzione opposta.',
+  },
+  {
     slug: 'ism',
     name: 'Indagine ISM',
     short: 'ISM',

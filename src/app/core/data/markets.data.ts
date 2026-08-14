@@ -17,6 +17,15 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'FIDUCIA AGOSTO',
+    name: 'Fiducia dei consumatori dell’Università del Michigan, preliminare di agosto 2026',
+    value: '51,0',
+    change: 'da 55,2 di luglio, circa meno 8%; attese a un anno al 4,3% dal 4,2%',
+    tone: 'warn',
+    icon: 'users',
+    note: 'Le due metà dell’indagine si sono mosse in senso opposto, ed è questo a renderla diversa dalle vendite al dettaglio uscite due ore prima. La fiducia crolla e finiscono due mesi consecutivi di miglioramento; le attese di inflazione a un anno però salgono, mentre quelle a lungo termine restano ferme al 3,3%. Il mercato dei tassi ha letto la seconda parte: la probabilità di un rialzo a settembre è risalita al 31,6% dal 29,3% delle 14:50, e il biennale è rientrato a 4,136% dopo il minimo di 4,117%. Il calo di fiducia è generalizzato ma non uniforme — la direttrice dell’indagine segnala cali particolarmente ripidi fra gli elettori repubblicani e riduzioni più marcate fra consumatori anziani, redditi bassi e chi non ha una laurea. Il dato è preliminare e viene rivisto a fine mese.',
+  },
+  {
     symbol: 'VENDITE LUGLIO',
     name: 'Vendite al dettaglio e servizi di ristorazione statunitensi, luglio 2026',
     value: '− 0,6%',
