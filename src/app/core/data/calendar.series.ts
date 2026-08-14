@@ -11,7 +11,7 @@
  */
 import { Cadence, Release, Stage } from '../models/calendar.model';
 
-export const CALENDAR_GENERATED_AT = '2026-08-14T11:22Z';
+export const CALENDAR_GENERATED_AT = '2026-08-14T12:51Z';
 
 type Row = readonly [
   at: string,
@@ -2345,6 +2345,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
   'usa/variazione-vendite-dettaglio': {
     cadence: 'mensile',
     releases: r([
+      ['2026-08-14T12:30Z', 'luglio 2026', 0.1, -0.6, 0.2],
       ['2026-07-16T12:30Z', 'giugno 2026', 0.2, 0.2, 1],
       ['2026-06-17T12:30Z', 'maggio 2026', 0.5, 0.9, 0.4],
       ['2026-05-14T12:30Z', 'aprile 2026', 0.5, 0.5, 1.6],
@@ -2464,19 +2465,13 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2016-11-15T13:30Z', 'ottobre 2016', 0.6, 0.8, 1],
       ['2016-10-14T12:30Z', 'settembre 2016', 0.6, 0.6, -0.2],
       ['2016-09-15T12:30Z', 'agosto 2016', -0.1, -0.3, 0.1],
-      ['2016-08-12T12:30Z', 'luglio 2016', 0.4, 0, 0.8],
     ]),
-    next: {
-      at: '2026-08-14T12:30Z',
-      period: 'luglio 2026',
-      forecast: 0.1,
-      actual: null,
-      previous: 0.2,
-    },
+    next: null,
   },
   'usa/vendite-dettaglio-essenziali': {
     cadence: 'mensile',
     releases: r([
+      ['2026-08-14T12:30Z', 'luglio 2026', 0.2, -0.3, -0.2],
       ['2026-07-16T12:30Z', 'giugno 2026', -0.1, -0.2, 1],
       ['2026-06-17T12:30Z', 'maggio 2026', 0.5, 0.8, 0.7],
       ['2026-05-14T12:30Z', 'aprile 2026', 0.6, 0.7, 1.9],
@@ -2596,15 +2591,8 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2016-11-15T13:30Z', 'ottobre 2016', 0.5, 0.8, 0.7],
       ['2016-10-14T12:30Z', 'settembre 2016', 0.4, 0.5, -0.2],
       ['2016-09-15T12:30Z', 'agosto 2016', 0.2, -0.1, -0.4],
-      ['2016-08-12T12:30Z', 'luglio 2016', 0.2, -0.3, 0.9],
     ]),
-    next: {
-      at: '2026-08-14T12:30Z',
-      period: 'luglio 2026',
-      forecast: 0.2,
-      actual: null,
-      previous: -0.2,
-    },
+    next: null,
   },
   'euro/tasso-di-interesse': {
     cadence: 'riunione',

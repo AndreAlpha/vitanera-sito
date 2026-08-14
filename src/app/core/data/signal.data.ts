@@ -179,28 +179,28 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-14T10:30:00+02:00',
-  checkedAt: '2026-08-14T13:20:00+02:00',
+  updatedAt: '2026-08-14T14:50:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'neutrale-ribassista',
+      direction: 'neutrale',
       strength: 'bassa',
       regime:
-        'La forza torna da media a bassa, e va detto perché, visto che era stata alzata stamattina. ' +
-        'Era stata alzata per una ragione sola: la chiusura di 4.351,07 stava sotto i 4.351,45 che ' +
-        'l’analisi delle 19:15 aveva dichiarato in anticipo come proprio livello di rottura. Alle 13:25 ' +
-        'il metallo è a 4.355,27 e ha ripreso quella fascia, quindi la prova più solida che sorreggeva la ' +
-        'forza media non c’è più — la chiusura di venerdì però non è ancora stampata, e la settimana ' +
-        'resta negativa. La direzione non cambia perché non è cambiato il meccanismo: il Dollar Index è ' +
-        'sceso a 99,550, nuovo minimo di giornata, la probabilità di un rialzo a settembre resta al 33,0%, ' +
-        'e il metallo guadagna appena lo 0,10% sulla vigilia. Continua cioè a non capitalizzare condizioni ' +
-        'che gli sono favorevoli, ma non le sta più contraddicendo. Nel frattempo il canale energetico si ' +
-        'è quasi chiuso: il Brent, arrivato a 88,68, è a 87,16 con più 0,10%, quindi il rialzo attribuito ' +
-        'alla minaccia di blocco è rientrato quasi per intero nell’arco della mattinata.',
+        'La direzione risale da neutrale-ribassista a neutrale, e il motivo è che la ragione scritta per ' +
+        'tenerla più in basso è decaduta. Quella ragione era una sola: per quattro sedute i motivi per ' +
+        'salire si erano accumulati e il prezzo era sceso lo stesso, cioè il canale di trasmissione fra ' +
+        'quadro macroeconomico e metallo sembrava interrotto. Alle 14:30 le vendite al dettaglio di ' +
+        'luglio escono a meno 0,6% contro attese di più 0,1%, primo calo dopo dieci mesi, e la catena ' +
+        'trasmette in tutti i suoi passaggi: la probabilità di un rialzo a settembre scende al 29,3% e ' +
+        'passa sotto il 30% per la prima volta, il biennale va a 4,119% sul minimo di giornata, il Dollar ' +
+        'Index a 99,500 sul minimo, e l’oro sale dello 0,58% a 4.376,10 con un massimo a 4.386,91. Non ' +
+        'risale oltre il neutrale per due ragioni misurabili: il prezzo resta sotto i 4.408,59 della ' +
+        'chiusura di mercoledì, quindi la settimana è ancora negativa, e la reazione ha meno di un’ora di ' +
+        'vita in una seduta americana appena aperta — un’osservazione che questa settimana si è già ' +
+        'rivelata fragile due volte.',
       invalidation:
-        'Un oro che chiude la settimana sopra i 4.408,59 dollari della chiusura di mercoledì: annullerebbe per intero la rottura e riporterebbe la direzione almeno a neutrale. Oppure le vendite al dettaglio di oggi alle 14:30 sotto il consenso con il metallo che recupera comunque i 4.400: toglierebbe insieme le due spiegazioni rimaste, prese di profitto e rotazione verso il rischio. Nell’altro verso, un Dollar Index sopra 100,00 con l’oro sotto i 4.300 rimetterebbe in piedi la spiegazione del cambio e questa lettura perderebbe la sua parte più solida.',
+        'Un oro che chiude sotto i 4.351,07 dollari della chiusura di giovedì: annullerebbe per intero la risposta al dato e riporterebbe la direzione a neutrale-ribassista, perché direbbe che il canale ha trasmesso per mezz’ora e poi si è richiuso. Nell’altro verso, una chiusura sopra i 4.408,59 di mercoledì porterebbe la direzione a neutrale-rialzista, perché a quel punto la settimana smetterebbe di essere negativa. Sulla misura monetaria, una probabilità di rialzo a settembre che torna sopra il 33,0% di stamattina entro lunedì direbbe che il 29,3% era la reazione al titolo e non una riprezzatura.',
     },
     {
       horizon: 'medio',
@@ -252,7 +252,13 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'base e il decennale a 4,629% con meno 6,3. Il 14 agosto il comunicato del Tesoro rende quei numeri ' +
         'verificabili sulla fonte primaria: rapporto fra domanda e offerta 2,39, operatori primari ' +
         'all’11,51%, acquirenti indiretti al 66,85%, assegnato al massimo il 12,10%. Coincidono con ' +
-        'quanto pubblicato la sera prima, e la correzione regge.',
+        'quanto pubblicato la sera prima, e la correzione regge. Alle 14:30 del 14 agosto arriva l’ultimo ' +
+        'tassello: le vendite al dettaglio di luglio scendono dello 0,6% contro attese di più 0,1%, ' +
+        'primo calo dopo dieci mesi. Era l’argomento residuo di chi sosteneva che la domanda interna ' +
+        'giustificasse un altro rialzo, e la probabilità di un aumento a settembre scende al 29,3%: ' +
+        'quattro diffusioni consecutive — prezzi al consumo, prezzi alla produzione, sussidi e adesso ' +
+        'consumo — nessuna delle quali ha contraddetto la riprezzatura. Resta separata la questione del ' +
+        'debito lungo, che il dato non tocca: il decennale è invariato a 4,640%.',
       invalidation:
         'Una probabilità di rialzo a settembre che risale sopra il 48% entro venerdì, cioè sopra il livello di ieri mattina invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
     },
@@ -307,24 +313,23 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera; sulla gamba fiscale, il prossimo rifinanziamento trimestrale che allarga le aste a lunga scadenza rispetto ai 125 miliardi rimasti invariati, oppure conti federali di agosto con spese sotto i 667 miliardi, che direbbero che il record di luglio era calendario e non traiettoria.',
     },
   ],
-  headline: 'Il livello dichiarato in anticipo non ha retto: chiusura a 4.351,07 dollari',
+  headline:
+    'Le vendite al dettaglio scendono dello 0,6%, e per la prima volta in quattro sedute l’oro risponde',
   stance:
-    'La settimana si chiude su una divergenza che non si è ancora sciolta. Fino a mercoledì la debolezza ' +
-    'del metallo aveva una spiegazione disponibile per ogni seduta: prima il posizionamento in attesa del ' +
-    'collocamento del trentennale, poi il dollaro vicino a quota 100. Giovedì l’asta è passata — e il ' +
-    'comunicato del Tesoro, letto venerdì, conferma che è andata leggermente sotto la media: rapporto fra ' +
-    'domanda e offerta 2,39, operatori primari all’11,51%, indiretti al 66,85% — quindi nel verso che a un ' +
-    'bene rifugio conviene. Venerdì mattina il dollaro è a 99,625, sul minimo di giornata, e la ' +
-    'probabilità di un rialzo a settembre è al 33,0%, in calo di ventidue punti in una settimana. Nella ' +
-    'stessa notte il rischio sulle rotte sale su due fronti: due navi di ADNOC colpite nello Stretto — ' +
-    'almeno il sedicesimo episodio dal 28 febbraio — con Washington che dichiara il blocco dei porti ' +
-    'iraniani sostenibile senza scadenza, e cinquantaquattro droni su Ust-Luga, che a differenza della ' +
-    'raffineria di Jazan è un terminale attivo da circa 700.000 barili al giorno. L’oro ha chiuso giovedì ' +
-    'a 4.351,07, cioè trentotto centesimi sotto il livello che l’analisi delle 19:15 aveva scritto come ' +
-    'propria condizione, è sceso a 4.311,22 nella notte e alle 11:20 è a 4.348,63. Il greggio, salito fino ' +
-    'a 88,68, ha già restituito parte del rialzo ed è a 87,84. Restano due spiegazioni, prese di profitto ' +
-    'e rotazione verso il rischio, e nessuna delle due è ancora verificata da un dato: il primo utile sono ' +
-    'le vendite al dettaglio delle 14:30.',
+    'La settimana chiude sciogliendo la domanda che l’aveva tenuta aperta. Per quattro sedute il metallo ' +
+    'non aveva risposto a niente: prezzi al consumo e alla produzione sotto le attese, richieste di ' +
+    'sussidio in aumento, un collocamento del trentennale con domanda sotto la media, un dollaro in calo, ' +
+    'e il prezzo che scendeva lo stesso fino a rompere nella notte i 4.351,45 dichiarati in anticipo come ' +
+    'livello di rottura, con un minimo a 4.311,22. Alle 14:30 di venerdì le vendite al dettaglio di luglio ' +
+    'escono a meno 0,6% contro attese di più 0,1% — primo calo dopo dieci mesi, 763,6 miliardi, con la ' +
+    'revisione di giugno confermata a più 0,2% — e la catena trasmette in tutti i suoi passaggi: la ' +
+    'probabilità di un rialzo a settembre scende al 29,3% e passa sotto il 30% per la prima volta in ' +
+    'questa fase, il biennale va a 4,119%, il Dollar Index a 99,500 sul minimo, e l’oro sale dello 0,58% a ' +
+    '4.376,10 con un massimo a 4.386,91. Va detto il limite che il comunicato dichiara da sé: delle tre ' +
+    'misure pubblicate solo quella complessiva ha un intervallo di confidenza che non contiene lo zero, ' +
+    'mentre il dato al netto delle auto e quello al netto di auto e carburanti sono marcati come non ' +
+    'distinguibili da zero. Nel frattempo il canale energetico si è chiuso: il Brent, arrivato a 88,68 in ' +
+    'mattinata sulla minaccia di blocco iraniano, è tornato negativo sulla giornata a 86,97.',
   favours: [
     'Chiedere a un attacco a un’infrastruttura una cosa sola, cioè quanta capacità toglie al mercato: la raffineria di Jazan era ferma da fine luglio e il rimbalzo è rientrato in un’ora, Ust-Luga lavora e va trattata diversamente. Lo stesso metro deve poter dare risposte opposte, altrimenti non è un metro',
     'Cercare la controprova nella misura più dura disponibile: la scarsità di greggio è stata raccontata qui per sei giorni con conteggi di navi, e il primo conteggio di barili nei serbatoi dice il contrario',
@@ -343,24 +348,22 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
-    'La probabilità di un rialzo a settembre è al 33,0%, contro il 35,0% di giovedì e circa il 55% di una settimana fa: quattro sedute di riprezzatura che nessuno dei tre interventi di Fed ha contraddetto',
-    'Il Dollar Index scende a 99,550, nuovo minimo di giornata contro una chiusura di 99,855: il cambio ha smesso di essere la spiegazione meccanica della debolezza del metallo, e continua a indebolirsi senza che il metallo ne approfitti',
-    'Austan Goolsbee è la terza voce del comitato in due giorni: dati d’inflazione «un po’ migliori» e strada aperta verso il 2% se dazi e petrolio rientrano, con la precisazione che il 3% resta troppo alto',
-    'Il comunicato del Tesoro conferma sulla fonte primaria che il collocamento del trentennale ha trovato domanda sotto la media: rapporto 2,39 contro circa 2,43, operatori primari all’11,51% contro circa 10,6%, assegnato al massimo il 12,10%',
-    'Gli attacchi a navi collegate ad ADNOC sono almeno sedici dal 28 febbraio, due nell’ultima settimana, ed è la prima grandezza materiale che questo archivio può mettere sul lato dell’escalation invece che su quello degli annunci',
-    'Hegseth dichiara che la Marina può mantenere il blocco dei porti iraniani a tempo indefinito ruotando le unità: una rivendicazione di controllo permanente allontana la riapertura dello Stretto invece di avvicinarla',
-    'Cinquantaquattro droni su Ust-Luga, secondo scalo petrolifero russo sul Baltico con circa 700.000 barili al giorno nel 2025: a differenza di Jazan è capacità attiva, quindi un bersaglio con un prezzo',
-    'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%: domanda che non dipende dal movimento',
-    'Il costo del debito a trent’anni resta al massimo da circa un quarto di secolo, quasi sedici punti base sopra l’asta di un mese fa: la traiettoria fiscale continua a chiedere un premio misurabile a ogni collocamento',
+    'Le vendite al dettaglio di luglio scendono dello 0,6% a 763,6 miliardi contro attese di più 0,1%: primo calo dopo dieci mesi di crescita, e toglie l’ultimo argomento a chi sosteneva che la domanda interna giustificasse un altro rialzo',
+    'La probabilità di un rialzo a settembre scende al 29,3%, sotto il 30% per la prima volta in questa fase, dal 33,0% della mattina e da circa il 55% di una settimana fa: quattro diffusioni consecutive senza una sola che la contraddica',
+    'Il biennale va a 4,119%, minimo di giornata e meno 2,1 punti base sulla chiusura: è la scadenza su cui la riprezzatura si misura per prima, e ha trasmesso subito',
+    'Il Dollar Index scende a 99,500 con un minimo a 99,390, terza seduta consecutiva di calo: si allontana da quota 100, che era il livello a cui la debolezza del metallo aveva una spiegazione meccanica',
+    'L’oro risponde per la prima volta in quattro sedute: più 0,58% a 4.376,10 con un massimo a 4.386,91, e ha ripreso la fascia 4.350-4.360 persa nella notte',
+    'Il comunicato del Tesoro conferma sulla fonte primaria la domanda sotto la media al collocamento del trentennale: rapporto 2,39 contro circa 2,43, operatori primari all’11,51%, assegnato al massimo il 12,10%',
+    'Gli attacchi a navi collegate ad ADNOC sono almeno sedici dal 28 febbraio, due nell’ultima settimana, e Washington dichiara di poter mantenere il blocco dei porti iraniani senza scadenza: la struttura di rischio regionale si assesta più in alto',
+    'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
-    'L’oro ha chiuso a 4.351,07 dollari, trentotto centesimi sotto i 4.351,45 che l’analisi delle 19:15 aveva scritto come proprio livello di rottura, ed è poi sceso fino a 4.311,22 nella notte asiatica: alle 13:25 ha ripreso la fascia a 4.355,27, ma la chiusura di venerdì non è ancora stampata e la settimana resta negativa',
-    'Quattro sedute in cui i motivi per salire si accumulano e il prezzo scende non sono più una mancata reazione: sono una serie, e nessuna delle due spiegazioni rimaste — prese di profitto, rotazione verso il rischio — è stata verificata da un dato',
-    'Il rimbalzo del greggio è rientrato quasi per intero: il Brent è arrivato a 88,68 dollari e alle 13:25 è a 87,16 con più 0,10% sulla vigilia, quindi il canale che avrebbe dovuto trasmettere il rischio al rifugio ha restituito in mezza giornata quasi tutto quello che aveva guadagnato',
-    'Il trentennale risale a 5,238% dal 5,211% della chiusura, a nove millesimi dal 5,247% di mercoledì: il rendimento alternativo che un metallo senza cedole deve battere non sta scendendo',
+    'Delle tre misure del comunicato solo il meno 0,6% complessivo è distinguibile da zero al 90%: il dato al netto delle auto, meno 0,3%, e quello al netto di auto e carburanti, meno 0,2%, sono marcati dal Census come non significativi, e la revisione arriva il 16 settembre',
+    'Il prezzo resta sotto i 4.408,59 della chiusura di mercoledì: la settimana è ancora in perdita, e la reazione al dato ha meno di un’ora di vita in una seduta americana appena aperta',
+    'La parte lunga della curva non ha seguito quella breve: il decennale è invariato a 4,640% e il trentennale resta sopra il 5,23%, quindi il premio richiesto sul debito lungo non è stato toccato dal dato sul consumo',
+    'Il canale energetico si è chiuso: il Brent è tornato negativo sulla giornata a 86,97 dollari dopo un massimo a 88,68, quindi il premio geopolitico non sta fornendo sostegno al rifugio',
+    'Questa settimana due letture intraday scritte su una reazione di poche ore sono state smentite dalla chiusura: la stessa cautela vale per la risposta descritta adesso',
     'Le nuove misure americane contro l’Iran restano un annuncio senza contenuto pubblicato, e su questa scala valgono quanto i sei annunci di distensione contati la settimana scorsa',
-    'L’entità dei danni a Ust-Luga non è nota e nessuno ha dichiarato una riduzione dei caricamenti: è un rischio su capacità attiva, non una perdita accertata di barili',
-    'Un Brent che tornasse stabilmente sopra i 90 dollari rovescerebbe il segno del canale energetico, da sostegno del rifugio a pressione sui rendimenti e sulle attese di inflazione',
   ],
   constraints: [
     {
@@ -525,8 +528,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 33.0,
-      display: '33,0%',
+      now: 29.3,
+      display: '29,3%',
       marks: [
         {
           at: 50,
@@ -538,8 +541,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 87.16,
-      display: '≈ 87,2 $',
+      now: 86.97,
+      display: '≈ 87,0 $',
       marks: [
         {
           at: 82,
@@ -557,8 +560,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.159,
-      display: '4,159%',
+      now: 4.119,
+      display: '4,119%',
       marks: [
         {
           at: 4.25,
@@ -570,8 +573,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.653,
-      display: '4,653%',
+      now: 4.64,
+      display: '4,640%',
       marks: [
         {
           at: 4.68,
@@ -589,8 +592,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.55,
-      display: '99,550',
+      now: 99.5,
+      display: '99,500',
       marks: [
         {
           at: 99.795,
@@ -608,8 +611,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4355.27,
-      display: '4.355,27 $',
+      now: 4376.1,
+      display: '4.376,10 $',
       marks: [
         {
           at: 4300,
@@ -627,9 +630,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'il-consumatore-si-ferma-e-l-oro-finalmente-risponde',
     'il-livello-non-ha-retto-e-ust-luga-non-e-jazan',
     'sedici-attacchi-alle-navi-e-il-blocco-senza-scadenza',
-    'il-numero-mancante-e-arrivato-e-l-asta-aveva-una-coda',
   ],
 };
 

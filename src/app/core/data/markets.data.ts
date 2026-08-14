@@ -17,6 +17,15 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'VENDITE LUGLIO',
+    name: 'Vendite al dettaglio e servizi di ristorazione statunitensi, luglio 2026',
+    value: '− 0,6%',
+    change: '763,6 mld $; contro attese di più 0,1% e più 0,2% di giugno',
+    tone: 'bull',
+    icon: 'basket',
+    note: 'Primo calo mensile dopo dieci mesi consecutivi di crescita, e uno scarto di sette decimi di punto rispetto al consenso. Sull’anno le vendite restano a più 5,0% e il trimestre maggio-luglio a più 6,3%, quindi il livello non crolla: quello che si ferma è il margine. Il dato toglie l’ultimo argomento a chi nel comitato sostiene che la domanda interna giustifichi un altro rialzo, e la probabilità di un aumento a settembre scende al 29,3%, sotto il 30% per la prima volta in questa fase. Va letto però con il margine che il comunicato dichiara: il meno 0,6% ha un intervallo di ±0,4% e resta distinguibile da zero, mentre il dato al netto delle auto (meno 0,3%) e quello al netto di auto e carburanti (meno 0,2%) sono marcati dal Census come non significativi al 90%. È la misura complessiva, di solito considerata la più rumorosa, a essere questo mese l’unica che dice qualcosa. La revisione arriva il 16 settembre, insieme al dato di agosto e nello stesso giorno della riunione della Fed.',
+  },
+  {
     symbol: 'ADNOC',
     name: 'Attacco a due navi della compagnia petrolifera emiratina nello Stretto di Hormuz, 13 agosto',
     value: '≥ 16 dal 28 febbraio',

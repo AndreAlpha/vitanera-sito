@@ -25,6 +25,7 @@ import type { Article } from '../models/article.model';
 import { diciassetteMilioniDiBarili } from './articles/diciassette-milioni-di-barili-e-il-conteggio-era-di-navi';
 import { lAstaSiAggiudicaSopraIlMercato } from './articles/l-asta-si-aggiudica-sopra-il-mercato-e-il-dollaro-torna-su';
 import { dueDatiAFavoreELOroPerde } from './articles/due-dati-a-favore-e-l-oro-perde-l-uno-per-cento';
+import { ilConsumatoreSiFerma } from './articles/il-consumatore-si-ferma-e-l-oro-finalmente-risponde';
 import { ilLivelloNonHaRetto } from './articles/il-livello-non-ha-retto-e-ust-luga-non-e-jazan';
 import { sediciAttacchiAlleNavi } from './articles/sedici-attacchi-alle-navi-e-il-blocco-senza-scadenza';
 import { ilNumeroMancanteEArrivato } from './articles/il-numero-mancante-e-arrivato-e-l-asta-aveva-una-coda';
@@ -102,6 +103,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  ilConsumatoreSiFerma,
   ilLivelloNonHaRetto,
   sediciAttacchiAlleNavi,
   ilNumeroMancanteEArrivato,
