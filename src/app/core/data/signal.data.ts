@@ -180,26 +180,25 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-14T10:30:00+02:00',
-  checkedAt: '2026-08-14T11:20:00+02:00',
+  checkedAt: '2026-08-14T13:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
       direction: 'neutrale-ribassista',
-      strength: 'media',
+      strength: 'bassa',
       regime:
-        'La forza sale da bassa a media, e il motivo è che un livello dichiarato in anticipo è stato ' +
-        'rotto. L’analisi delle 19:15 del 13 agosto aveva scritto che una chiusura sotto i 4.351,45 ' +
-        'dollari avrebbe detto che neanche la domanda ufficiale e la traiettoria del debito stavano più ' +
-        'sostenendo il prezzo: la chiusura è arrivata a 4.351,07, e nella notte asiatica il metallo è ' +
-        'sceso fino a 4.311,22. Nel frattempo tutto il resto è migliorato. La probabilità di un rialzo a ' +
-        'settembre è al 33,0%, in calo di due punti in un giorno e di ventidue in una settimana; il ' +
-        'Dollar Index è a 99,637, praticamente sul minimo di giornata, quindi la spiegazione meccanica ' +
-        'del cambio non è più disponibile; e il rischio sulle rotte è salito su due fronti nella stessa ' +
-        'notte, con due navi di ADNOC colpite nello Stretto e cinquantaquattro droni su Ust-Luga. Quattro ' +
-        'sedute in cui i motivi per salire si accumulano e il prezzo scende sono una serie, e una serie ' +
-        'si tratta diversamente da un episodio. Resta una lettura sulle ore: la gamba di fondo non è in ' +
-        'discussione, e quello che manca è il ponte fra il quadro e il prezzo.',
+        'La forza torna da media a bassa, e va detto perché, visto che era stata alzata stamattina. ' +
+        'Era stata alzata per una ragione sola: la chiusura di 4.351,07 stava sotto i 4.351,45 che ' +
+        'l’analisi delle 19:15 aveva dichiarato in anticipo come proprio livello di rottura. Alle 13:25 ' +
+        'il metallo è a 4.355,27 e ha ripreso quella fascia, quindi la prova più solida che sorreggeva la ' +
+        'forza media non c’è più — la chiusura di venerdì però non è ancora stampata, e la settimana ' +
+        'resta negativa. La direzione non cambia perché non è cambiato il meccanismo: il Dollar Index è ' +
+        'sceso a 99,550, nuovo minimo di giornata, la probabilità di un rialzo a settembre resta al 33,0%, ' +
+        'e il metallo guadagna appena lo 0,10% sulla vigilia. Continua cioè a non capitalizzare condizioni ' +
+        'che gli sono favorevoli, ma non le sta più contraddicendo. Nel frattempo il canale energetico si ' +
+        'è quasi chiuso: il Brent, arrivato a 88,68, è a 87,16 con più 0,10%, quindi il rialzo attribuito ' +
+        'alla minaccia di blocco è rientrato quasi per intero nell’arco della mattinata.',
       invalidation:
         'Un oro che chiude la settimana sopra i 4.408,59 dollari della chiusura di mercoledì: annullerebbe per intero la rottura e riporterebbe la direzione almeno a neutrale. Oppure le vendite al dettaglio di oggi alle 14:30 sotto il consenso con il metallo che recupera comunque i 4.400: toglierebbe insieme le due spiegazioni rimaste, prese di profitto e rotazione verso il rischio. Nell’altro verso, un Dollar Index sopra 100,00 con l’oro sotto i 4.300 rimetterebbe in piedi la spiegazione del cambio e questa lettura perderebbe la sua parte più solida.',
     },
@@ -334,6 +333,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Correggere per iscritto e subito: l’asta di stasera era da 42 miliardi e non da 39, e la correzione è stata pubblicata a parte invece di essere infilata nel testo sbagliato',
   ],
   avoid: [
+    'Fondere il rendimento di aggiudicazione di un’asta con quello del mercato secondario: il 5,216% del collocamento del 13 agosto è il costo più alto su questa scadenza da circa un quarto di secolo, ma il trentennale scambiato sul secondario è a 5,238% e ha toccato 5,281% nell’ultimo anno. Sono due grandezze diverse e solo la prima porta quel primato',
     'Scambiare un flusso stimato per una misura: due fornitori danno otto e undici transiti per lo stesso martedì, mentre le scorte sono uno stock ufficiale che arriva con accanto il livello complessivo per verificarne la coerenza',
     'Contare come tre conferme indipendenti tre effetti della stessa riprezzatura: attese sulla Fed, biennale e dollaro dopo l’indice dei prezzi sono un movimento solo guardato da tre parti, e infatti due sono rientrati insieme',
     'Giudicare alle 08:15 se un movimento notturno è una riprezzatura o una reazione a un titolo: il calo del Brent era stato archiviato qui come rientrato entro poche ore, e in giornata è arrivato a meno 2,06% con un minimo sotto quello notturno. La sessione europea non era ancora cominciata, e il test era stato applicato troppo presto',
@@ -344,7 +344,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   ],
   confirming: [
     'La probabilità di un rialzo a settembre è al 33,0%, contro il 35,0% di giovedì e circa il 55% di una settimana fa: quattro sedute di riprezzatura che nessuno dei tre interventi di Fed ha contraddetto',
-    'Il Dollar Index è a 99,625, praticamente sul minimo di giornata di 99,590 e contro una chiusura di 99,855: il cambio ha smesso di essere la spiegazione meccanica della debolezza del metallo',
+    'Il Dollar Index scende a 99,550, nuovo minimo di giornata contro una chiusura di 99,855: il cambio ha smesso di essere la spiegazione meccanica della debolezza del metallo, e continua a indebolirsi senza che il metallo ne approfitti',
     'Austan Goolsbee è la terza voce del comitato in due giorni: dati d’inflazione «un po’ migliori» e strada aperta verso il 2% se dazi e petrolio rientrano, con la precisazione che il 3% resta troppo alto',
     'Il comunicato del Tesoro conferma sulla fonte primaria che il collocamento del trentennale ha trovato domanda sotto la media: rapporto 2,39 contro circa 2,43, operatori primari all’11,51% contro circa 10,6%, assegnato al massimo il 12,10%',
     'Gli attacchi a navi collegate ad ADNOC sono almeno sedici dal 28 febbraio, due nell’ultima settimana, ed è la prima grandezza materiale che questo archivio può mettere sul lato dell’escalation invece che su quello degli annunci',
@@ -354,9 +354,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Il costo del debito a trent’anni resta al massimo da circa un quarto di secolo, quasi sedici punti base sopra l’asta di un mese fa: la traiettoria fiscale continua a chiedere un premio misurabile a ogni collocamento',
   ],
   contradicting: [
-    'L’oro ha chiuso a 4.351,07 dollari, trentotto centesimi sotto i 4.351,45 che l’analisi delle 19:15 aveva scritto come proprio livello di rottura, ed è poi sceso fino a 4.311,22 nella notte asiatica',
+    'L’oro ha chiuso a 4.351,07 dollari, trentotto centesimi sotto i 4.351,45 che l’analisi delle 19:15 aveva scritto come proprio livello di rottura, ed è poi sceso fino a 4.311,22 nella notte asiatica: alle 13:25 ha ripreso la fascia a 4.355,27, ma la chiusura di venerdì non è ancora stampata e la settimana resta negativa',
     'Quattro sedute in cui i motivi per salire si accumulano e il prezzo scende non sono più una mancata reazione: sono una serie, e nessuna delle due spiegazioni rimaste — prese di profitto, rotazione verso il rischio — è stata verificata da un dato',
-    'Il rimbalzo del greggio non tiene: il Brent è arrivato a 88,68 dollari e alle 11:20 è già a 87,84, quindi anche il canale che avrebbe dovuto trasmettere il rischio al rifugio sta perdendo colpi in giornata',
+    'Il rimbalzo del greggio è rientrato quasi per intero: il Brent è arrivato a 88,68 dollari e alle 13:25 è a 87,16 con più 0,10% sulla vigilia, quindi il canale che avrebbe dovuto trasmettere il rischio al rifugio ha restituito in mezza giornata quasi tutto quello che aveva guadagnato',
     'Il trentennale risale a 5,238% dal 5,211% della chiusura, a nove millesimi dal 5,247% di mercoledì: il rendimento alternativo che un metallo senza cedole deve battere non sta scendendo',
     'Le nuove misure americane contro l’Iran restano un annuncio senza contenuto pubblicato, e su questa scala valgono quanto i sei annunci di distensione contati la settimana scorsa',
     'L’entità dei danni a Ust-Luga non è nota e nessuno ha dichiarato una riduzione dei caricamenti: è un rischio su capacità attiva, non una perdita accertata di barili',
@@ -538,8 +538,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 87.84,
-      display: '≈ 87,8 $',
+      now: 87.16,
+      display: '≈ 87,2 $',
       marks: [
         {
           at: 82,
@@ -589,8 +589,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.625,
-      display: '99,625',
+      now: 99.55,
+      display: '99,550',
       marks: [
         {
           at: 99.795,
@@ -608,8 +608,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4348.63,
-      display: '4.348,63 $',
+      now: 4355.27,
+      display: '4.355,27 $',
       marks: [
         {
           at: 4300,
