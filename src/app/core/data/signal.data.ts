@@ -179,8 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-14T16:10:00+02:00',
-  checkedAt: '2026-08-14T17:20:00+02:00',
+  updatedAt: '2026-08-14T21:05:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -188,18 +187,18 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'La direzione sale a neutrale con inclinazione rialzista perché è caduta la riserva scritta due ' +
-        'ore fa: alle 14:50 la risposta dell’oro al dato sui consumi aveva meno di un’ora di vita, adesso ' +
-        'ne ha due e si è estesa da 4.376,10 a 4.392,33, con il massimo di giornata a 4.396,88. La forza ' +
-        'resta bassa perché il dato delle 16:00 non è accomodante quanto sembra dal titolo: la fiducia ' +
-        'dei consumatori del Michigan crolla a 51,0 da 55,2, circa meno 8%, ma le attese di inflazione a ' +
-        'un anno salgono al 4,3% dal 4,2%. Il mercato dei tassi ha reagito alla seconda parte più che ' +
-        'alla prima: la probabilità di un rialzo a settembre è risalita al 31,6% dal 29,3% delle 14:50 e ' +
-        'il biennale è rientrato a 4,136% dal minimo di 4,117%. Il metallo sta quindi salendo sul cambio, ' +
-        'non sui tassi — il Dollar Index è a 99,410, nuovo minimo — e una gamba sola è la configurazione ' +
-        'che il 12 agosto è durata meno di un’ora.',
+        'La direzione resta dov’era, ma il contrappeso nominato alle 16:10 ha cominciato ad agire. Quella ' +
+        'lettura diceva che il metallo saliva sul cambio e non sui tassi, e che una gamba sola è fragile. ' +
+        'In serata se ne aggiunge una seconda che tira nell’altro verso: il terminale di Sheskharis, a ' +
+        'Novorossiysk, ha sospeso i carichi di greggio dopo un attacco con droni, con i serbatoi pieni e ' +
+        'una petroliera uscita senza completare il carico, e a luglio da lì passava quasi un milione di ' +
+        'barili al giorno. Il Brent è salito a 88,53 con più 1,68% e un massimo di 88,88, diciotto ' +
+        'centesimi sotto gli 89,06 che tre analisi hanno scritto come condizione, mentre l’oro scendeva ' +
+        'dal massimo di 4.396,88 a 4.375,19. La direzione regge perché il metallo resta sopra la chiusura ' +
+        'di giovedì e chiude la settimana in guadagno; la forza resta bassa perché il canale energetico, ' +
+        'dato per chiuso alle 15:20 e corretto alle 17:20, adesso è aperto e sta trasmettendo.',
       invalidation:
-        'Un oro che chiude sotto i 4.351,07 dollari della chiusura di giovedì: annullerebbe per intero il recupero e riporterebbe la direzione almeno a neutrale. Oppure un Dollar Index che torna sopra i 99,855 di ieri mentre il metallo resta sopra i 4.390: toglierebbe la gamba del cambio, che è l’unica che in questo momento sta spingendo davvero. Nell’altro verso, un biennale sotto il 4,117% del minimo odierno direbbe che anche la parte breve è tornata a confermare, e la forza salirebbe.',
+        'Un Brent stabilmente sopra i 90 dollari con un decennale che torna sopra il 4,70%: sarebbe la conferma che il canale energetico ha cambiato segno, e la direzione andrebbe portata sotto il neutrale invece che tenuta sopra. Oppure un oro che chiude sotto i 4.351,07 di giovedì, che toglierebbe il fondamento alla parte di lettura che la tiene sopra. Nell’altro verso, una ripresa dei carichi a Sheskharis con il Brent che rientra sotto gli 87,07 riporterebbe l’episodio fra quelli che non tolgono barili, e la forza potrebbe salire.',
     },
     {
       horizon: 'medio',
@@ -317,7 +316,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   headline:
-    'La fiducia crolla dell’8%, ma le attese di inflazione salgono e le probabilità di rialzo risalgono',
+    'Sheskharis sospende i carichi: il terzo attacco in due giorni è il primo che toglie barili',
   stance:
     'La settimana chiude sciogliendo la domanda che l’aveva tenuta aperta. Per quattro sedute il metallo ' +
     'non aveva risposto a niente: prezzi al consumo e alla produzione sotto le attese, richieste di ' +
@@ -552,8 +551,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 88.04,
-      display: '≈ 88,0 $',
+      now: 88.53,
+      display: '≈ 88,5 $',
       marks: [
         {
           at: 82,
@@ -622,8 +621,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4383.36,
-      display: '4.383,36 $',
+      now: 4375.19,
+      display: '4.375,19 $',
       marks: [
         {
           at: 4300,
@@ -641,9 +640,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'il-terzo-attacco-in-due-giorni-e-il-primo-che-toglie-barili',
     'la-fiducia-crolla-e-le-attese-di-inflazione-salgono',
     'il-consumatore-si-ferma-e-l-oro-finalmente-risponde',
-    'il-livello-non-ha-retto-e-ust-luga-non-e-jazan',
   ],
 };
 

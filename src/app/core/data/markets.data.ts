@@ -17,6 +17,15 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'SHESKHARIS',
+    name: 'Sospensione dei carichi di greggio al terminale di Novorossiysk dopo un attacco con droni, 14 agosto',
+    value: 'carichi sospesi',
+    change: '≈ 1 mln b/g movimentati a luglio, contro 700.000 di capacità dichiarata',
+    tone: 'bear',
+    icon: 'flow',
+    note: 'È il terzo attacco a un’infrastruttura energetica in due giorni ed è il primo con una conseguenza operativa dichiarata da chi la subisce. La raffineria di Jazan era ferma da fine luglio, quindi non toglieva barili; a Ust-Luga l’incendio è stato spento senza che nessuno quantificasse i danni. Qui invece il terminale ha sospeso i carichi, ha smesso di ricevere greggio perché i serbatoi hanno raggiunto la capienza, e una petroliera è uscita in mare aperto senza completare il carico. Il passaggio successivo è meccanico: con lo stoccaggio pieno la pressione risale la catena fino ai giacimenti, e le fonti citate dalle agenzie dicono che la Russia potrebbe dover ridurre l’estrazione. Manca la variabile che decide il totale, cioè la durata: un attacco allo stesso terminale a inizio marzo aveva prodotto una sospensione di cinque giorni. Il prezzo distingue rispetto a Jazan: il Brent sale dell’1,68% a 88,53 dollari con un massimo a 88,88, e la risalita dura da sei ore invece che da una.',
+  },
+  {
     symbol: 'FIDUCIA AGOSTO',
     name: 'Fiducia dei consumatori dell’Università del Michigan, preliminare di agosto 2026',
     value: '51,0',
