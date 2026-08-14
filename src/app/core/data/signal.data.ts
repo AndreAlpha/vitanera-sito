@@ -180,6 +180,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-14T14:50:00+02:00',
+  checkedAt: '2026-08-14T15:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -331,6 +332,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'distinguibili da zero. Nel frattempo il canale energetico si è chiuso: il Brent, arrivato a 88,68 in ' +
     'mattinata sulla minaccia di blocco iraniano, è tornato negativo sulla giornata a 86,97.',
   favours: [
+    'Cercare il qualificatore dentro la stessa fonte prima che altrove: il comunicato del Census pubblica il totale e le due misure che ne tolgono le voci volatili, e il confronto fra meno 0,6% e meno 0,2% dice da solo quanto del calo stia in auto e carburanti, senza bisogno di una ricostruzione riportata',
     'Chiedere a un attacco a un’infrastruttura una cosa sola, cioè quanta capacità toglie al mercato: la raffineria di Jazan era ferma da fine luglio e il rimbalzo è rientrato in un’ora, Ust-Luga lavora e va trattata diversamente. Lo stesso metro deve poter dare risposte opposte, altrimenti non è un metro',
     'Cercare la controprova nella misura più dura disponibile: la scarsità di greggio è stata raccontata qui per sei giorni con conteggi di navi, e il primo conteggio di barili nei serbatoi dice il contrario',
     'Muovere una lettura quando decade la ragione scritta in anticipo per tenerla su, anche quando è stata scritta un’ora prima: la forza intraday scende perché due dei tre canali che la giustificavano si sono chiusi',
@@ -351,13 +353,15 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Le vendite al dettaglio di luglio scendono dello 0,6% a 763,6 miliardi contro attese di più 0,1%: primo calo dopo dieci mesi di crescita, e toglie l’ultimo argomento a chi sosteneva che la domanda interna giustificasse un altro rialzo',
     'La probabilità di un rialzo a settembre scende al 29,3%, sotto il 30% per la prima volta in questa fase, dal 33,0% della mattina e da circa il 55% di una settimana fa: quattro diffusioni consecutive senza una sola che la contraddica',
     'Il biennale va a 4,119%, minimo di giornata e meno 2,1 punti base sulla chiusura: è la scadenza su cui la riprezzatura si misura per prima, e ha trasmesso subito',
-    'Il Dollar Index scende a 99,500 con un minimo a 99,390, terza seduta consecutiva di calo: si allontana da quota 100, che era il livello a cui la debolezza del metallo aveva una spiegazione meccanica',
-    'L’oro risponde per la prima volta in quattro sedute: più 0,58% a 4.376,10 con un massimo a 4.386,91, e ha ripreso la fascia 4.350-4.360 persa nella notte',
+    'Il Dollar Index scende a 99,487 con un minimo a 99,390, terza seduta consecutiva di calo: si allontana da quota 100, che era il livello a cui la debolezza del metallo aveva una spiegazione meccanica',
+    'L’oro risponde per la prima volta in quattro sedute e alle 15:20 estende: più 0,80% a 4.385,71, a poco più di un dollaro dal massimo di giornata di 4.386,91. Ha ripreso la fascia 4.350-4.360 persa nella notte e si è avvicinato ai 4.408,59 di mercoledì',
     'Il comunicato del Tesoro conferma sulla fonte primaria la domanda sotto la media al collocamento del trentennale: rapporto 2,39 contro circa 2,43, operatori primari all’11,51%, assegnato al massimo il 12,10%',
     'Gli attacchi a navi collegate ad ADNOC sono almeno sedici dal 28 febbraio, due nell’ultima settimana, e Washington dichiara di poter mantenere il blocco dei porti iraniani senza scadenza: la struttura di rischio regionale si assesta più in alto',
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'Il grosso del calo sta dove il comunicato stesso lo isola: il totale scende dello 0,6%, ma al netto di auto e carburanti il calo è di 0,2% e non è distinguibile da zero. Quattro decimi su sei stanno quindi in due sole voci, e la serie non è corretta per le variazioni di prezzo, quindi un calo dei prezzi alla pompa abbassa gli incassi delle stazioni di servizio senza che i consumi reali si muovano',
+    'Viene riportata anche una misura più stretta, il cosiddetto gruppo di controllo — al netto di auto, benzina, materiali da costruzione e ristorazione — a meno 0,4% contro attese di più 0,3%, con giugno rivisto da più 0,5% a più 0,4%. Non è una serie che il Census pubblichi nel comunicato anticipato, che ne dà tre: totale, netto auto, netto auto e benzina. È un calcolo di terzi e qui resta non verificato',
     'Delle tre misure del comunicato solo il meno 0,6% complessivo è distinguibile da zero al 90%: il dato al netto delle auto, meno 0,3%, e quello al netto di auto e carburanti, meno 0,2%, sono marcati dal Census come non significativi, e la revisione arriva il 16 settembre',
     'Il prezzo resta sotto i 4.408,59 della chiusura di mercoledì: la settimana è ancora in perdita, e la reazione al dato ha meno di un’ora di vita in una seduta americana appena aperta',
     'La parte lunga della curva non ha seguito quella breve: il decennale è invariato a 4,640% e il trentennale resta sopra il 5,23%, quindi il premio richiesto sul debito lungo non è stato toccato dal dato sul consumo',
@@ -592,8 +596,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.5,
-      display: '99,500',
+      now: 99.487,
+      display: '99,487',
       marks: [
         {
           at: 99.795,
@@ -611,8 +615,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4376.1,
-      display: '4.376,10 $',
+      now: 4385.71,
+      display: '4.385,71 $',
       marks: [
         {
           at: 4300,
