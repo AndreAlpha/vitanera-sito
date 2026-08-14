@@ -180,6 +180,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-14T16:10:00+02:00',
+  checkedAt: '2026-08-14T17:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -341,6 +342,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Correggere per iscritto e subito: l’asta di stasera era da 42 miliardi e non da 39, e la correzione è stata pubblicata a parte invece di essere infilata nel testo sbagliato',
   ],
   avoid: [
+    'Trattare un conteggio giornaliero dei transiti come un fatto verificato: è la seconda volta in un giorno che una cifra quotidiana attribuita a un fornitore privato — cinque e nove mercoledì e giovedì, due venerdì — non risulta confermabile su nessuna fonte indipendente, mentre il dato di martedì, otto navi, si trova senza difficoltà. Quello che regge è la media a dieci giorni e il confronto con le 130 di prima del conflitto, non il numero del giorno',
     'Fondere il rendimento di aggiudicazione di un’asta con quello del mercato secondario: il 5,216% del collocamento del 13 agosto è il costo più alto su questa scadenza da circa un quarto di secolo, ma il trentennale scambiato sul secondario è a 5,238% e ha toccato 5,281% nell’ultimo anno. Sono due grandezze diverse e solo la prima porta quel primato',
     'Scambiare un flusso stimato per una misura: due fornitori danno otto e undici transiti per lo stesso martedì, mentre le scorte sono uno stock ufficiale che arriva con accanto il livello complessivo per verificarne la coerenza',
     'Contare come tre conferme indipendenti tre effetti della stessa riprezzatura: attese sulla Fed, biennale e dollaro dopo l’indice dei prezzi sono un movimento solo guardato da tre parti, e infatti due sono rientrati insieme',
@@ -351,6 +353,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'La distanza fra quello che viene dichiarato e quello che viene misurato su Hormuz adesso ha due nomi e due numeri: il segretario all’Energia Chris Wright dice che le esportazioni attraverso lo Stretto hanno raggiunto una media a sette giorni di quasi 9 milioni di barili al giorno, mentre JPMorgan stima che il numero vero sia vicino a 4 milioni. È la stessa discrepanza già annotata qui fra ricostruzione ufficiale e tracciamento navale, con la differenza che entrambe le cifre sono ora attribuibili',
+    'Il conteggio dei transiti verificabile resta quello di martedì: otto navi, il più basso dal 5 agosto, contro una media a dieci giorni di circa dodici e contro le 130 al giorno precedenti al 28 febbraio, cioè circa il 90% in meno. Il vincolo materiale non si è allentato',
     'Le vendite al dettaglio di luglio scendono dello 0,6% a 763,6 miliardi contro attese di più 0,1%: primo calo dopo dieci mesi di crescita, e toglie l’ultimo argomento a chi sosteneva che la domanda interna giustificasse un altro rialzo',
     'La probabilità di un rialzo a settembre scende al 29,3%, sotto il 30% per la prima volta in questa fase, dal 33,0% della mattina e da circa il 55% di una settimana fa: quattro diffusioni consecutive senza una sola che la contraddica',
     'Il biennale va a 4,119%, minimo di giornata e meno 2,1 punti base sulla chiusura: è la scadenza su cui la riprezzatura si misura per prima, e ha trasmesso subito',
@@ -361,6 +365,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'Il canale energetico si è riaperto nel pomeriggio, e va detto perché alle 15:20 questa scheda aveva registrato l’opposto: il Brent è risalito a 88,04 dollari con più 1,11%, dopo essere sceso a 86,97 e a 87,16 nel corso della giornata, ed è avviato alla prima settimana in guadagno su tre. Sopra i 90 dollari il rischio geopolitico smetterebbe di sostenere il rifugio e tornerebbe a spingere rendimenti e attese di inflazione contro il metallo',
+    'L’oro è sceso dal massimo di 4.396,88 a 4.383,36 mentre il greggio risaliva: le due cose insieme sono la prima misura di quanto il canale energetico pesi in questa fase, ed è più di quanto il racconto della giornata suggerisse',
     'Il grosso del calo sta dove il comunicato stesso lo isola: il totale scende dello 0,6%, ma al netto di auto e carburanti il calo è di 0,2% e non è distinguibile da zero. Quattro decimi su sei stanno quindi in due sole voci, e la serie non è corretta per le variazioni di prezzo, quindi un calo dei prezzi alla pompa abbassa gli incassi delle stazioni di servizio senza che i consumi reali si muovano',
     'Viene riportata anche una misura più stretta, il cosiddetto gruppo di controllo — al netto di auto, benzina, materiali da costruzione e ristorazione — a meno 0,4% contro attese di più 0,3%, con giugno rivisto da più 0,5% a più 0,4%. Non è una serie che il Census pubblichi nel comunicato anticipato, che ne dà tre: totale, netto auto, netto auto e benzina. È un calcolo di terzi e qui resta non verificato',
     'Delle tre misure del comunicato solo il meno 0,6% complessivo è distinguibile da zero al 90%: il dato al netto delle auto, meno 0,3%, e quello al netto di auto e carburanti, meno 0,2%, sono marcati dal Census come non significativi, e la revisione arriva il 16 settembre',
@@ -546,8 +552,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 86.97,
-      display: '≈ 87,0 $',
+      now: 88.04,
+      display: '≈ 88,0 $',
       marks: [
         {
           at: 82,
@@ -616,8 +622,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4392.33,
-      display: '4.392,33 $',
+      now: 4383.36,
+      display: '4.383,36 $',
       marks: [
         {
           at: 4300,
