@@ -180,6 +180,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-14T10:30:00+02:00',
+  checkedAt: '2026-08-14T11:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -307,26 +308,26 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera; sulla gamba fiscale, il prossimo rifinanziamento trimestrale che allarga le aste a lunga scadenza rispetto ai 125 miliardi rimasti invariati, oppure conti federali di agosto con spese sotto i 667 miliardi, che direbbero che il record di luglio era calendario e non traiettoria.',
     },
   ],
-  headline: 'Il trentennale si colloca al 5,216%, il costo più alto da un quarto di secolo',
+  headline: 'Il livello dichiarato in anticipo non ha retto: chiusura a 4.351,07 dollari',
   stance:
-    'Giornata in tre tempi, e ogni tempo toglie qualcosa al precedente. Alle 14:30 l’indice dei prezzi ' +
-    'esce sul consenso — 3,4% annuo dal 3,5%, fondo a 2,5% dal 2,6% — e la probabilità di un rialzo a ' +
-    'settembre crolla, ora al 35,7% dal 52% del 10 agosto: è la condizione dichiarata allora, scattata ' +
-    'sull’evento che nominava. Alle 16:30 le scorte commerciali americane di greggio salgono di 17,4 ' +
-    'milioni di barili in una settimana, a 424,4 milioni, il maggior aumento dal gennaio 2023 e contro ' +
-    'attese di un calo: la scarsità raccontata qui per sei giorni contando navi riceve la prima ' +
-    'controprova contando barili. Alle 19:00 il collocamento da 42 miliardi di titoli a dieci anni si ' +
-    'aggiudica al 4,683% con un rapporto fra domanda e offerta di 2,53, sopra la media di 2,48 delle ' +
-    'ultime dieci aste, e in serata il rendiconto del Tesoro ha portato il disavanzo cumulato dell’anno ' +
-    'fiscale oltre quello dell’intero anno precedente. Giovedì alle 14:30 arrivano due diffusioni ' +
-    'favorevoli al metallo — prezzi alla produzione piatti contro attese di più 0,2% e richieste di ' +
-    'sussidio a 209.000 contro 204.000 — e alle 19:00 la prova rimandata da tre giorni: il collocamento ' +
-    'del trentennale da 25 miliardi si aggiudica al 5,216%, sotto il livello quotato prima dell’asta, con ' +
-    'il rendimento sul secondario in calo a 5,218%. Il debito si colloca, e si colloca al costo più alto ' +
-    'da un quarto di secolo. L’oro resta però a 4.370,67 con meno 0,86%: quattro eventi favorevoli in una ' +
-    'giornata e quattro mancate risposte, ed è la terza seduta di fila. La direzione intraday è a ' +
-    'neutrale non perché qualcosa spinga in basso, ma perché manca la ragione per cui dovrebbe salire.',
+    'La settimana si chiude su una divergenza che non si è ancora sciolta. Fino a mercoledì la debolezza ' +
+    'del metallo aveva una spiegazione disponibile per ogni seduta: prima il posizionamento in attesa del ' +
+    'collocamento del trentennale, poi il dollaro vicino a quota 100. Giovedì l’asta è passata — e il ' +
+    'comunicato del Tesoro, letto venerdì, conferma che è andata leggermente sotto la media: rapporto fra ' +
+    'domanda e offerta 2,39, operatori primari all’11,51%, indiretti al 66,85% — quindi nel verso che a un ' +
+    'bene rifugio conviene. Venerdì mattina il dollaro è a 99,625, sul minimo di giornata, e la ' +
+    'probabilità di un rialzo a settembre è al 33,0%, in calo di ventidue punti in una settimana. Nella ' +
+    'stessa notte il rischio sulle rotte sale su due fronti: due navi di ADNOC colpite nello Stretto — ' +
+    'almeno il sedicesimo episodio dal 28 febbraio — con Washington che dichiara il blocco dei porti ' +
+    'iraniani sostenibile senza scadenza, e cinquantaquattro droni su Ust-Luga, che a differenza della ' +
+    'raffineria di Jazan è un terminale attivo da circa 700.000 barili al giorno. L’oro ha chiuso giovedì ' +
+    'a 4.351,07, cioè trentotto centesimi sotto il livello che l’analisi delle 19:15 aveva scritto come ' +
+    'propria condizione, è sceso a 4.311,22 nella notte e alle 11:20 è a 4.348,63. Il greggio, salito fino ' +
+    'a 88,68, ha già restituito parte del rialzo ed è a 87,84. Restano due spiegazioni, prese di profitto ' +
+    'e rotazione verso il rischio, e nessuna delle due è ancora verificata da un dato: il primo utile sono ' +
+    'le vendite al dettaglio delle 14:30.',
   favours: [
+    'Chiedere a un attacco a un’infrastruttura una cosa sola, cioè quanta capacità toglie al mercato: la raffineria di Jazan era ferma da fine luglio e il rimbalzo è rientrato in un’ora, Ust-Luga lavora e va trattata diversamente. Lo stesso metro deve poter dare risposte opposte, altrimenti non è un metro',
     'Cercare la controprova nella misura più dura disponibile: la scarsità di greggio è stata raccontata qui per sei giorni con conteggi di navi, e il primo conteggio di barili nei serbatoi dice il contrario',
     'Muovere una lettura quando decade la ragione scritta in anticipo per tenerla su, anche quando è stata scritta un’ora prima: la forza intraday scende perché due dei tre canali che la giustificavano si sono chiusi',
     'Ancorare le condizioni ai livelli che il mercato ha stabilito nella giornata — 4.362,57, 4.441,01, 99,910, 4,688% — invece che ai numeri tondi su cui si accumulano gli ordini',
@@ -342,33 +343,24 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
-    'I prezzi alla produzione di luglio escono piatti sul mese contro attese di più 0,2%, e scendono al 4,7% annuo dal 5,5%; il dato di fondo sale dello 0,2% contro attese di più 0,3%. Dopo l’indice al consumo di mercoledì sono due diffusioni consecutive che non convalidano una nuova accelerazione',
-    'Il decennale scende di 4,7 punti base a 4,645% con un minimo a 4,600%, il più basso della settimana, e il Brent perde l’1,06% dopo essere arrivato a 85,87 dollari',
-    'Il collocamento del trentennale si aggiudica al 5,216%, sotto il 5,23% circa quotato prima dell’asta, e il rendimento sul secondario scende a 5,218% dal 5,247% della vigilia: la prova sulla parte lunga è passata senza shock',
-    'Tom Barkin dice che il livello attuale dei tassi potrebbe già essere abbastanza restrittivo e che non è affatto certo servano altri rialzi: è la prima voce del comitato che mette in dubbio la necessità di un rialzo, contro Hammack poche ore prima',
+    'La probabilità di un rialzo a settembre è al 33,0%, contro il 35,0% di giovedì e circa il 55% di una settimana fa: quattro sedute di riprezzatura che nessuno dei tre interventi di Fed ha contraddetto',
+    'Il Dollar Index è a 99,625, praticamente sul minimo di giornata di 99,590 e contro una chiusura di 99,855: il cambio ha smesso di essere la spiegazione meccanica della debolezza del metallo',
+    'Austan Goolsbee è la terza voce del comitato in due giorni: dati d’inflazione «un po’ migliori» e strada aperta verso il 2% se dazi e petrolio rientrano, con la precisazione che il 3% resta troppo alto',
+    'Il comunicato del Tesoro conferma sulla fonte primaria che il collocamento del trentennale ha trovato domanda sotto la media: rapporto 2,39 contro circa 2,43, operatori primari all’11,51% contro circa 10,6%, assegnato al massimo il 12,10%',
+    'Gli attacchi a navi collegate ad ADNOC sono almeno sedici dal 28 febbraio, due nell’ultima settimana, ed è la prima grandezza materiale che questo archivio può mettere sul lato dell’escalation invece che su quello degli annunci',
+    'Hegseth dichiara che la Marina può mantenere il blocco dei porti iraniani a tempo indefinito ruotando le unità: una rivendicazione di controllo permanente allontana la riapertura dello Stretto invece di avvicinarla',
+    'Cinquantaquattro droni su Ust-Luga, secondo scalo petrolifero russo sul Baltico con circa 700.000 barili al giorno nel 2025: a differenza di Jazan è capacità attiva, quindi un bersaglio con un prezzo',
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%: domanda che non dipende dal movimento',
-    'OPEC e agenzia internazionale tagliano la domanda mondiale attesa nel 2026 — crescita a 580.000 barili al giorno dai 780.000 di luglio, e una contrazione di circa 1,6 milioni — quindi il greggio scende senza che il vincolo sull’offerta si allenti',
-    'Il biennale resta a 4,184%, meno 3,4 punti base sulla chiusura di 4,218% che è anche il massimo odierno: la misura scelta l’11 agosto continua a confermare',
-    'Le scorte commerciali americane di greggio salgono di 17,422 milioni di barili nella settimana al 7 agosto, a 424,4 milioni: meno pressione sul canale energia-inflazione, che è l’ultimo argomento restrittivo rimasto',
-    'Il collocamento del decennale trova domanda modestamente sopra la media: rapporto fra domanda e offerta 2,53 contro 2,48 sulle ultime dieci aste, e il rendimento resta a 4,677% dentro un intervallo fra 4,631% e 4,688%, lontano dal 4,735% di ieri',
-    'L’oro resta a 4.370,67 dollari con meno 0,86%, minimo a 4.351,45: quattro eventi favorevoli in una giornata — due diffusioni, il calo dei rendimenti, l’asta senza shock — e quattro mancate risposte, alla terza seduta di fila',
-    'Il costo del debito a trent’anni è salito di quasi sedici punti base in un mese, al massimo da circa un quarto di secolo: il rendimento alternativo che un metallo senza cedole deve battere continua a crescere',
-    'Il rapporto fra domanda e offerta dell’asta non è pubblicato, ed è la seconda volta in due giorni che una condizione dichiarata qui dipende da una cifra che non esce in tempo',
-    'La probabilità di un rialzo a settembre non è scesa dopo i dati: 35,0% contro il 34,7% del mattino e il 35,7% di mercoledì sera, quindi ferma dentro due punti da tre giorni mentre il racconto della giornata dice il contrario',
-    'Beth Hammack, una dei tre dissensi messi a verbale il 29 luglio, ripete che il rialzo andrebbe fatto adesso: la componente restrittiva del comitato non si è mossa con i dati',
-    'Hossein Taeb, rimesso a capo dei Basij tre giorni fa, dichiara all’agenzia Fars che lo Stretto di Hormuz è «sotto la gestione e il controllo» iraniano: è l’esatto contrario di quanto scritto da Trump mercoledì, e il conteggio dei transiti non si muove per nessuna delle due',
-    'L’inflazione all’ingrosso giapponese di luglio manca le attese del 7,4% e decelera al 7,2% dal 7,3%, con i prezzi all’importazione in yen al 29,1% dal 30,1%: argomento più debole per un rialzo di settembre, non più forte',
-    'Entrate doganali nette negative per 8,55 miliardi dopo 33,38 miliardi di rimborsi: la prima misura di quanto i dazi incassino toglie credibilità a una delle vie d’uscita dichiarate dal disavanzo',
-    'L’indice dei prezzi di luglio esce a 3,4% annuo dal 3,5% e a 2,5% di fondo dal 2,6%, con la componente energetica in decelerazione: più 14,7% annuo da più 15,7%',
+    'Il costo del debito a trent’anni resta al massimo da circa un quarto di secolo, quasi sedici punti base sopra l’asta di un mese fa: la traiettoria fiscale continua a chiedere un premio misurabile a ogni collocamento',
   ],
   contradicting: [
-    'Il Dollar Index non ha solo restituito il calo, lo ha superato: massimo salito a 99,910 e quotazione a 99,867 con più 0,15%, contro i 99,615 su cui era stata scritta la lettura delle 16:05 e il minimo di 99,500',
-    'Il disavanzo federale cumulato dell’anno fiscale è a 1.799 miliardi in dieci mesi, oltre i 1.775 dell’intero anno precedente: più emissioni sulla parte lunga alzano il rendimento alternativo che il metallo deve battere',
-    'Il rapporto domanda-offerta dell’asta è comunque sceso rispetto al mese scorso, da 2,59 a 2,53, con un rendimento di dieci punti base e mezzo più alto: contro la media va meglio del solito, contro sé stessa di trenta giorni fa va peggio',
-    'Lo stesso record di scorte che indebolisce l’argomento restrittivo indebolisce il premio geopolitico: un mercato che smette di credere alla scarsità ha meno ragioni per pagare un rifugio',
-    'Il Brent resta a 88,72 dollari dopo un aumento record delle scorte, circa 87,3 sulla serie usata qui: il greggio non sta prezzando il contrappeso',
-    'Il dato di luglio misura luglio, mentre la corsa del Brent da 79 a 90 dollari è di agosto: il canale energetico non poteva comparire in quella diffusione',
-    'Al FOMC del 29 luglio i dissensi per un rialzo erano tre — Hammack, Kashkari e Logan — non uno: gli atti a verbale sono più di quanti l’archivio ne avesse contati',
+    'L’oro ha chiuso a 4.351,07 dollari, trentotto centesimi sotto i 4.351,45 che l’analisi delle 19:15 aveva scritto come proprio livello di rottura, ed è poi sceso fino a 4.311,22 nella notte asiatica',
+    'Quattro sedute in cui i motivi per salire si accumulano e il prezzo scende non sono più una mancata reazione: sono una serie, e nessuna delle due spiegazioni rimaste — prese di profitto, rotazione verso il rischio — è stata verificata da un dato',
+    'Il rimbalzo del greggio non tiene: il Brent è arrivato a 88,68 dollari e alle 11:20 è già a 87,84, quindi anche il canale che avrebbe dovuto trasmettere il rischio al rifugio sta perdendo colpi in giornata',
+    'Il trentennale risale a 5,238% dal 5,211% della chiusura, a nove millesimi dal 5,247% di mercoledì: il rendimento alternativo che un metallo senza cedole deve battere non sta scendendo',
+    'Le nuove misure americane contro l’Iran restano un annuncio senza contenuto pubblicato, e su questa scala valgono quanto i sei annunci di distensione contati la settimana scorsa',
+    'L’entità dei danni a Ust-Luga non è nota e nessuno ha dichiarato una riduzione dei caricamenti: è un rischio su capacità attiva, non una perdita accertata di barili',
+    'Un Brent che tornasse stabilmente sopra i 90 dollari rovescerebbe il segno del canale energetico, da sostegno del rifugio a pressione sui rendimenti e sulle attese di inflazione',
   ],
   constraints: [
     {
@@ -546,8 +538,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 88.49,
-      display: '≈ 88,5 $',
+      now: 87.84,
+      display: '≈ 87,8 $',
       marks: [
         {
           at: 82,
@@ -597,8 +589,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.637,
-      display: '99,637',
+      now: 99.625,
+      display: '99,625',
       marks: [
         {
           at: 99.795,
@@ -616,8 +608,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4346.06,
-      display: '4.346,06 $',
+      now: 4348.63,
+      display: '4.348,63 $',
       marks: [
         {
           at: 4300,

@@ -11,7 +11,7 @@
  */
 import { Cadence, Release, Stage } from '../models/calendar.model';
 
-export const CALENDAR_GENERATED_AT = '2026-08-14T08:22Z';
+export const CALENDAR_GENERATED_AT = '2026-08-14T09:19Z';
 
 type Row = readonly [
   at: string,
@@ -3373,6 +3373,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
   'euro/pil-annuale': {
     cadence: 'trimestrale',
     releases: r([
+      ['2026-08-14T09:00Z', 'T2 2026', 1, 1, 0.5, 'seconda'],
       ['2026-07-30T09:00Z', 'T2 2026', 0.5, 1, 0.5, 'flash'],
       ['2026-06-05T09:00Z', 'T1 2026', 0.8, 0.3, 1.2, 'terza'],
       ['2026-05-13T09:00Z', 'T1 2026', 0.8, 0.8, 1.2, 'seconda'],
@@ -3492,20 +3493,20 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2016-11-15T10:00Z', 'T3 2016', 1.6, 1.6, 1.6, 'seconda'],
       ['2016-10-31T10:00Z', 'T3 2016', 1.6, 1.6, 1.6, 'flash'],
       ['2016-09-06T09:00Z', 'T2 2016', 1.6, 1.6, 1.7, 'terza'],
-      ['2016-08-12T09:00Z', 'T2 2016', 1.6, 1.6, 1.7, 'seconda'],
     ]),
     next: {
-      at: '2026-08-14T09:00Z',
+      at: '2026-09-07T09:00Z',
       period: 'T2 2026',
       forecast: 1,
       actual: null,
       previous: 0.5,
-      stage: 'seconda',
+      stage: 'terza',
     },
   },
   'euro/pil-trimestrale': {
     cadence: 'trimestrale',
     releases: r([
+      ['2026-08-14T09:00Z', 'T2 2026', 0.4, 0.4, 0, 'seconda'],
       ['2026-07-30T09:00Z', 'T2 2026', 0.2, 0.4, 0, 'flash'],
       ['2026-06-05T09:00Z', 'T1 2026', 0.1, -0.2, 0.2, 'terza'],
       ['2026-05-13T09:00Z', 'T1 2026', 0.1, 0.1, 0.2, 'seconda'],
@@ -3625,15 +3626,14 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2016-11-15T10:00Z', 'T3 2016', 0.3, 0.3, 0.3, 'seconda'],
       ['2016-10-31T10:00Z', 'T3 2016', 0.3, 0.3, 0.3, 'flash'],
       ['2016-09-06T09:00Z', 'T2 2016', 0.3, 0.3, 0.5, 'terza'],
-      ['2016-08-12T09:00Z', 'T2 2016', 0.3, 0.3, 0.6, 'seconda'],
     ]),
     next: {
-      at: '2026-08-14T09:00Z',
+      at: '2026-09-07T09:00Z',
       period: 'T2 2026',
       forecast: 0.4,
       actual: null,
       previous: 0,
-      stage: 'seconda',
+      stage: 'terza',
     },
   },
   'euro/indice-vendite-dettaglio': {
