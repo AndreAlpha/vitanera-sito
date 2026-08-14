@@ -25,6 +25,7 @@ import type { Article } from '../models/article.model';
 import { diciassetteMilioniDiBarili } from './articles/diciassette-milioni-di-barili-e-il-conteggio-era-di-navi';
 import { lAstaSiAggiudicaSopraIlMercato } from './articles/l-asta-si-aggiudica-sopra-il-mercato-e-il-dollaro-torna-su';
 import { dueDatiAFavoreELOroPerde } from './articles/due-dati-a-favore-e-l-oro-perde-l-uno-per-cento';
+import { ilBreveScendeEIlLungoSale } from './articles/il-breve-scende-e-il-lungo-sale';
 import { ilTerzoAttaccoInDueGiorni } from './articles/il-terzo-attacco-in-due-giorni-e-il-primo-che-toglie-barili';
 import { laFiduciaCrolla } from './articles/la-fiducia-crolla-e-le-attese-di-inflazione-salgono';
 import { ilConsumatoreSiFerma } from './articles/il-consumatore-si-ferma-e-l-oro-finalmente-risponde';
@@ -105,6 +106,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  ilBreveScendeEIlLungoSale,
   ilTerzoAttaccoInDueGiorni,
   laFiduciaCrolla,
   ilConsumatoreSiFerma,

@@ -28,8 +28,10 @@ fonti:
     titolo: "Intervento di Tom Barkin"
   - testata: "Reuters"
   - testata: "Investing.com"
+esito: "parziale"
+controllata: "2026-08-14T23:50:00+02:00"
 sorgente: "src/app/core/data/articles/il-trentennale-si-colloca-al-prezzo-piu-alto-dal-2001.ts"
-impronta: "3223227440cd29b2"
+impronta: "9019127bca5e3b2d"
 ---
 
 # Il trentennale si colloca al prezzo più alto dal 2001, e si colloca
@@ -134,6 +136,22 @@ Alta sui fatti: il rendimento di aggiudicazione e la dimensione sono il risultat
 Impostazione su XAU/USD: neutrale-rialzista, forza media, orizzonte medio.
 
 La prova che questo archivio segnalava da tre giorni come il principale rischio sui giorni è stata fatta, e non ha prodotto lo shock temuto: il collocamento del trentennale si aggiudica al 5,216%, leggermente sotto il 5,23% circa quotato prima dell’asta, e il rendimento sul secondario chiude la giornata in calo a 5,218% dal 5,247% della vigilia. Resta però il livello, che è la parte che conta sui trimestri: 5,216% è il costo più alto pagato dal Tesoro americano sul debito a trent’anni da circa un quarto di secolo, e arriva ventiquattr’ore dopo un rendiconto federale che ha portato il disavanzo dell’anno fiscale oltre quello dell’intero anno precedente. Il debito si colloca, e si colloca caro.
+
+## Come è andata
+
+Verdetto: **parziale**, controllata il 2026-08-14T23:50:00+02:00.
+
+Quattro condizioni su cinque, ed è il verdetto più severo registrato finora. L’analisi aveva letto il collocamento del trentennale come solido confrontando il rendimento di aggiudicazione con un livello pre-asta riportato in mattinata; il comunicato del Tesoro ha poi mostrato domanda sotto la media, il metallo ha chiuso sotto il minimo indicato la sera stessa, e il giorno dopo entrambe le scadenze lunghe hanno superato i livelli dichiarati chiudendo a 4,695% e 5,261%. L’unica condizione che ha retto è quella agganciata alle vendite al dettaglio, e ha retto perché il dato è uscito nel verso opposto a quello ipotizzato: il consumo è calato invece di crescere.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Il rapporto fra domanda e offerta dell’asta, quando sarà pubblicato, sotto la propria media delle ultime dieci: direbbe che il rendimento di aggiudicazione ha nascosto una domanda debole, e che il collocamento è riuscito solo perché il prezzo era già stato alzato abbastanza. | sì | Il comunicato del Tesoro dà 2,39, contro 2,44 dell’asta precedente e circa 2,43 di media sulle ultime dieci. Gli operatori primari hanno assorbito l’11,51% contro circa 10,6% di media, e l’aggiudicazione è arrivata quattro decimi di punto base sopra il quotato alla chiusura delle offerte. |
+| Un trentennale che torna sopra il 5,247% della chiusura di ieri entro venerdì: direbbe che il mercato ha guardato il risultato e ha chiesto comunque di più, cioè che il sollievo di stasera era tecnico. | sì | Il trentennale ha chiuso venerdì 14 agosto a 5,261%, in rialzo di cinque punti base, con un massimo di giornata a 5,271%: sopra il 5,247% richiesto e a un decimo di punto base dal massimo delle cinquantadue settimane, 5,281%. |
+| Un decennale che risale sopra il 4,684% del massimo odierno: la parte lunga ha guidato il calo di oggi, e un ritorno su quel livello toglierebbe il fondamento a questa lettura. | sì | Il decennale ha chiuso venerdì a 4,695%, in rialzo di 5,4 punti base sulla chiusura di 4,641%, con un massimo di giornata a 4,701%. Il livello è stato superato in chiusura e non solo in seduta. |
+| Le vendite al dettaglio di venerdì alle 14:30 sopra il consenso con il biennale che si porta sopra il 4,218%: sarebbe la domanda interna che rimette in gioco un rialzo di settembre, e la riprezzatura di questa settimana andrebbe rifatta al contrario. | no | Le vendite al dettaglio sono uscite a meno 0,6% contro attese di più 0,1%, quindi sotto e non sopra il consenso: la prima gamba della condizione va nel verso opposto a quello richiesto, e il biennale è sceso fino a 4,117% invece di salire sopra il 4,218%. |
+| Un oro che chiude sotto i 4.351,45 dollari del minimo odierno: la lettura di fondo sul metallo resta positiva perché poggia su domanda ufficiale e traiettoria del debito, e una chiusura sotto quel livello direbbe che neanche quelle stanno più sostenendo il prezzo. | sì | L’oro ha chiuso giovedì 13 agosto a 4.351,07 dollari, trentotto centesimi sotto il livello indicato. La chiusura sotto quel minimo è arrivata la sera stessa in cui la condizione era stata scritta. |
+
+**Che cosa cambia.** Il confronto fra questo esito e quello dell’analisi pubblicata settantacinque minuti dopo è la misura più chiara che questo registro abbia prodotto. La prima aveva dichiarato la propria incertezza sul giudizio della domanda e si era appoggiata lo stesso all’indizio debole: quattro condizioni su cinque scattate. La seconda aveva rifiutato quell’indizio, aveva usato i numeri veri e aveva messo come prima condizione il comunicato ufficiale che ancora mancava: nessuna condizione scattata. Le due analisi guardavano lo stesso evento a un’ora e un quarto di distanza, con la stessa informazione disponibile a chiunque, e la differenza fra un verdetto e l’altro sta per intero nell’avere accettato o rifiutato un sostituto al numero che serviva. La regola che ne esce non è nuova — era già scritta il 12 agosto — ma adesso ha un prezzo misurato accanto.
 
 ## Fonti consultate
 

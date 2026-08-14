@@ -2302,4 +2302,135 @@ export const OUTCOMES: readonly Outcome[] = [
     lesson:
       'Questa è la terza condizione in due giorni ancorata a un numero che al momento della scrittura non esisteva ancora, e stavolta è scattata: il rapporto fra domanda e offerta è uscito, è sotto la media, e il verdetto lo decide lui. Ma il registro deve annotare l’altra metà. Nell’attesa di quel numero l’analisi delle 19:15 del 13 agosto ha giudicato lo stesso collocamento usando un sostituto — un livello pre-asta riportato in mattinata al posto del quotato alla chiusura delle offerte — e ha concluso il contrario di quello che il numero vero avrebbe detto. La regola che vieta quel sostituto era già scritta in questo archivio il 12 agosto alle 19:40, in un riquadro che si rifiutava di scrivere «coda» senza il dato giusto. Scrivere la regola non basta, e nemmeno dichiarare l’incertezza accanto alla conclusione: finché il numero decisivo manca, la conclusione non si scrive in forma attenuata, non si scrive.',
   },
+  {
+    slug: 'due-dati-a-favore-e-l-oro-perde-l-uno-per-cento',
+    checkedAt: '2026-08-14T23:50:00+02:00',
+    verdict: 'parziale',
+    conditions: [
+      {
+        condition:
+          'Un oro che chiude domani sopra i 4.408,59 dollari della chiusura di mercoledì, cioè che riprende per intero quello che ha perso oggi: direbbe che la seduta era posizionamento prima del collocamento del trentennale e non debolezza relativa, e la direzione tornerebbe neutrale-rialzista.',
+        triggered: false,
+        evidence:
+          'L’oro ha chiuso venerdì 14 agosto a 4.376,59 dollari, in rialzo dello 0,59%, con un massimo di giornata a 4.396,88. Non ha mai toccato i 4.408,59: mancano dodici dollari dal massimo e trentadue dalla chiusura.',
+      },
+      {
+        condition:
+          'Il collocamento del trentennale delle 19:00 con un rapporto fra domanda e offerta sopra la propria media delle ultime dieci aste, seguito da un decennale sotto il 4,600% del minimo odierno: sarebbe la parte lunga che smette di essere un freno, e a quel punto la mancata risposta del metallo perderebbe la sua spiegazione più semplice.',
+        triggered: false,
+        evidence:
+          'Il comunicato del Tesoro dà un rapporto fra domanda e offerta di 2,39, sotto la media di circa 2,43 delle ultime dieci aste: la prima gamba della condizione va nel verso opposto. Anche la seconda manca, perché il minimo del decennale venerdì è stato 4,625% e non è mai sceso sotto il 4,600%.',
+      },
+      {
+        condition:
+          'Una probabilità di rialzo a settembre che scende sotto il 30%: oggi è al 35,0% ed è ferma da tre giorni fra il 34 e il 36. Un movimento vero su quel numero rimetterebbe in gioco la direzione, perché è la misura su cui questa lettura ha poggiato per due giorni.',
+        triggered: true,
+        evidence:
+          'Alle 14:50 di venerdì 14 agosto, dopo le vendite al dettaglio uscite a meno 0,6% contro attese di più 0,1%, la probabilità implicita di un rialzo a settembre è scesa al 29,3%: prima volta sotto il 30% in tutta la fase. In serata è risalita al 31,6% sulla componente delle attese di inflazione dell’indagine del Michigan, ma la condizione chiedeva la discesa sotto la soglia e la discesa c’è stata.',
+      },
+      {
+        condition:
+          'I prezzi al consumo di agosto, in uscita a settembre, con la componente energetica in aumento sul mese: è il test che né quello di luglio né i prezzi alla produzione di oggi potevano fare, e porterebbe la lettura sotto il neutrale invece che sopra.',
+        triggered: false,
+        evidence:
+          'L’indice dei prezzi al consumo di agosto esce a settembre e non è ancora disponibile. La condizione non è scattata perché il dato non esiste ancora, non perché sia stato smentito: è un rinvio, non una verifica.',
+      },
+      {
+        condition:
+          'Un Brent che torna sopra gli 89,06 dollari del massimo di ieri: oggi è arrivato a toccare 85,87 ed è già risalito a 88,04, quindi il calo di cui si parla è meno stabile di come viene descritto.',
+        triggered: false,
+        evidence:
+          'Il Brent ha chiuso venerdì a 88,60 dollari con più 1,76%, dopo un massimo di giornata di 88,79. Gli 89,06 non sono stati toccati per ventisette centesimi, pur con tre interruzioni di offerta nella stessa settimana.',
+      },
+    ],
+    what: 'Una condizione su cinque, ed è quella monetaria. La lettura poggiava sull’osservazione che quattro elementi favorevoli non producessero effetto sul prezzo, e chiedeva un movimento vero sulla probabilità di rialzo per rimettere in gioco la direzione: quel movimento è arrivato il giorno dopo, con il 29,3% sulle vendite al dettaglio. Le altre quattro hanno retto, e due di esse — l’oro sopra 4.408,59 e il Brent sopra 89,06 — sono mancate per dodici dollari e per ventisette centesimi. La parte che aveva previsto male è quella che dava per improbabile un movimento sulle attese sulla Fed.',
+  },
+  {
+    slug: 'il-numero-mancante-e-arrivato-e-l-asta-aveva-una-coda',
+    checkedAt: '2026-08-14T23:50:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Il risultato ufficiale del collocamento, pubblicato dal Tesoro statunitense, con un rapporto fra domanda e offerta pari o superiore a 2,43 oppure con un’aggiudicazione al di sotto del quotato alla chiusura delle offerte: direbbe che i numeri usati qui sono sbagliati e che l’analisi delle 19:15 aveva ragione.',
+        triggered: false,
+        evidence:
+          'Il comunicato del Tesoro, letto il 14 agosto sul risultato d’asta con CUSIP 912810UW6, dà un rapporto fra domanda e offerta di 2,39 — 59.801.010.300 $ di offerte contro 25.000.015.300 $ collocati — quindi sotto il 2,43 richiesto. Le quote calcolate sui dollari aggiudicati sono 11,51% agli operatori primari, 21,64% ai diretti e 66,85% agli indiretti, e coincidono a meno del secondo decimale con quelle usate nell’analisi. L’aggiudicazione al 5,216% resta sopra e non sotto il quotato di 5,212%.',
+      },
+      {
+        condition:
+          'Un oro che chiude sopra i 4.408,59 dollari della vigilia entro la seduta di venerdì: cancellerebbe la prima chiusura negativa dopo quattro positive e toglierebbe il fondamento all’abbassamento della direzione.',
+        triggered: false,
+        evidence:
+          'Chiusura di venerdì 14 agosto a 4.376,59 dollari, con un massimo di giornata a 4.396,88: il livello non è mai stato raggiunto.',
+      },
+      {
+        condition:
+          'Le vendite al dettaglio di luglio, venerdì alle 14:30, sotto il consenso con l’oro che scende comunque: lascerebbe senza appoggio anche la rotazione verso il rischio, cioè l’ultima delle spiegazioni rimaste, e imporrebbe di cercarne una nuova.',
+        triggered: false,
+        evidence:
+          'La prima gamba è scattata: le vendite al dettaglio di luglio sono uscite a meno 0,6% contro attese di più 0,1%, sette decimi sotto il consenso. La seconda no, e in modo netto: l’oro è salito dello 0,59% chiudendo a 4.376,59 contro i 4.351,07 della vigilia. La condizione chiedeva entrambe le cose.',
+      },
+      {
+        condition:
+          'Un Brent che torna sopra gli 89,06 dollari del massimo odierno entro venerdì: direbbe che la rivendicazione su Jazan ha un contenuto di offerta che qui è stato escluso.',
+        triggered: false,
+        evidence:
+          'Massimo del Brent venerdì a 88,79 dollari, chiusura a 88,60 con più 1,76%. Gli 89,06 non sono stati raggiunti, e il rialzo della giornata è arrivato dopo la sospensione dei carichi a Novorossiysk e non dalla rivendicazione su Jazan.',
+      },
+      {
+        condition:
+          'Una comunicazione ufficiale saudita o di Aramco che dichiari un danno con effetto sulla produzione o sulle esportazioni: la lettura data qui poggia sul fatto che l’impianto è fermo da fine luglio, e un danno operativo dichiarato la smentirebbe.',
+        triggered: false,
+        evidence:
+          'Nessuna comunicazione di Aramco o delle autorità saudite su danni con effetto sulla produzione o sulle esportazioni nelle ventisette ore successive alla pubblicazione. Le autorità non hanno commentato la rivendicazione.',
+      },
+    ],
+    what: 'Nessuna condizione su cinque. L’analisi correggeva quella pubblicata settantacinque minuti prima sostenendo che il collocamento del trentennale avesse trovato domanda sotto la media invece che solida, e aveva messo come prima condizione il comunicato ufficiale del Tesoro, che allora non era raggiungibile. Il comunicato è arrivato il giorno dopo e ha confermato i tre numeri a meno del secondo decimale. Le altre quattro condizioni hanno retto: l’oro non ha ripreso i 4.408,59, il Brent non ha toccato gli 89,06 nemmeno con tre interruzioni di offerta nella stessa settimana, le vendite al dettaglio sono uscite sotto il consenso ma il metallo è salito invece di scendere, e nessuna comunicazione saudita ha dichiarato danni.',
+  },
+  {
+    slug: 'il-trentennale-si-colloca-al-prezzo-piu-alto-dal-2001',
+    checkedAt: '2026-08-14T23:50:00+02:00',
+    verdict: 'parziale',
+    conditions: [
+      {
+        condition:
+          'Il rapporto fra domanda e offerta dell’asta, quando sarà pubblicato, sotto la propria media delle ultime dieci: direbbe che il rendimento di aggiudicazione ha nascosto una domanda debole, e che il collocamento è riuscito solo perché il prezzo era già stato alzato abbastanza.',
+        triggered: true,
+        evidence:
+          'Il comunicato del Tesoro dà 2,39, contro 2,44 dell’asta precedente e circa 2,43 di media sulle ultime dieci. Gli operatori primari hanno assorbito l’11,51% contro circa 10,6% di media, e l’aggiudicazione è arrivata quattro decimi di punto base sopra il quotato alla chiusura delle offerte.',
+      },
+      {
+        condition:
+          'Un trentennale che torna sopra il 5,247% della chiusura di ieri entro venerdì: direbbe che il mercato ha guardato il risultato e ha chiesto comunque di più, cioè che il sollievo di stasera era tecnico.',
+        triggered: true,
+        evidence:
+          'Il trentennale ha chiuso venerdì 14 agosto a 5,261%, in rialzo di cinque punti base, con un massimo di giornata a 5,271%: sopra il 5,247% richiesto e a un decimo di punto base dal massimo delle cinquantadue settimane, 5,281%.',
+      },
+      {
+        condition:
+          'Un decennale che risale sopra il 4,684% del massimo odierno: la parte lunga ha guidato il calo di oggi, e un ritorno su quel livello toglierebbe il fondamento a questa lettura.',
+        triggered: true,
+        evidence:
+          'Il decennale ha chiuso venerdì a 4,695%, in rialzo di 5,4 punti base sulla chiusura di 4,641%, con un massimo di giornata a 4,701%. Il livello è stato superato in chiusura e non solo in seduta.',
+      },
+      {
+        condition:
+          'Le vendite al dettaglio di venerdì alle 14:30 sopra il consenso con il biennale che si porta sopra il 4,218%: sarebbe la domanda interna che rimette in gioco un rialzo di settembre, e la riprezzatura di questa settimana andrebbe rifatta al contrario.',
+        triggered: false,
+        evidence:
+          'Le vendite al dettaglio sono uscite a meno 0,6% contro attese di più 0,1%, quindi sotto e non sopra il consenso: la prima gamba della condizione va nel verso opposto a quello richiesto, e il biennale è sceso fino a 4,117% invece di salire sopra il 4,218%.',
+      },
+      {
+        condition:
+          'Un oro che chiude sotto i 4.351,45 dollari del minimo odierno: la lettura di fondo sul metallo resta positiva perché poggia su domanda ufficiale e traiettoria del debito, e una chiusura sotto quel livello direbbe che neanche quelle stanno più sostenendo il prezzo.',
+        triggered: true,
+        evidence:
+          'L’oro ha chiuso giovedì 13 agosto a 4.351,07 dollari, trentotto centesimi sotto il livello indicato. La chiusura sotto quel minimo è arrivata la sera stessa in cui la condizione era stata scritta.',
+      },
+    ],
+    what: 'Quattro condizioni su cinque, ed è il verdetto più severo registrato finora. L’analisi aveva letto il collocamento del trentennale come solido confrontando il rendimento di aggiudicazione con un livello pre-asta riportato in mattinata; il comunicato del Tesoro ha poi mostrato domanda sotto la media, il metallo ha chiuso sotto il minimo indicato la sera stessa, e il giorno dopo entrambe le scadenze lunghe hanno superato i livelli dichiarati chiudendo a 4,695% e 5,261%. L’unica condizione che ha retto è quella agganciata alle vendite al dettaglio, e ha retto perché il dato è uscito nel verso opposto a quello ipotizzato: il consumo è calato invece di crescere.',
+    lesson:
+      'Il confronto fra questo esito e quello dell’analisi pubblicata settantacinque minuti dopo è la misura più chiara che questo registro abbia prodotto. La prima aveva dichiarato la propria incertezza sul giudizio della domanda e si era appoggiata lo stesso all’indizio debole: quattro condizioni su cinque scattate. La seconda aveva rifiutato quell’indizio, aveva usato i numeri veri e aveva messo come prima condizione il comunicato ufficiale che ancora mancava: nessuna condizione scattata. Le due analisi guardavano lo stesso evento a un’ora e un quarto di distanza, con la stessa informazione disponibile a chiunque, e la differenza fra un verdetto e l’altro sta per intero nell’avere accettato o rifiutato un sostituto al numero che serviva. La regola che ne esce non è nuova — era già scritta il 12 agosto — ma adesso ha un prezzo misurato accanto.',
+  },
 ];

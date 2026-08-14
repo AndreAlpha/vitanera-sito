@@ -32,8 +32,10 @@ fonti:
   - testata: "CNBC"
   - testata: "MarketWatch"
   - testata: "Investing.com"
+esito: "parziale"
+controllata: "2026-08-14T23:50:00+02:00"
 sorgente: "src/app/core/data/articles/due-dati-a-favore-e-l-oro-perde-l-uno-per-cento.ts"
-impronta: "6ec5c51d4a64428b"
+impronta: "c606addd7891eefb"
 ---
 
 # Due dati a favore, e l’oro perde l’uno per cento
@@ -148,6 +150,20 @@ Alta sui fatti: due diffusioni statistiche ufficiali con il loro consenso, e pre
 Impostazione su XAU/USD: neutrale, forza bassa, orizzonte breve.
 
 La direzione scende da neutrale-rialzista a neutrale, ed è la prima volta in questa fase che si muove per il prezzo e non per un meccanismo. La ragione è che il meccanismo continua a funzionare e il prezzo continua a non seguirlo: i prezzi alla produzione escono piatti contro attese di più 0,2%, le richieste di sussidio salgono a 209.000 contro 204.000, il decennale scende di cinque punti base a 4,641% e il Brent perde l’1,06%. Sono quattro cose che tirano tutte dalla stessa parte, e l’oro chiude la giornata a 4.364,11 con meno 1,01% dopo un minimo a 4.351,45. Alla terza seduta consecutiva con questa configurazione, tenere una direzione rialzista significa affermare che il prezzo ha torto tre volte di fila.
+
+## Come è andata
+
+Verdetto: **parziale**, controllata il 2026-08-14T23:50:00+02:00.
+
+Una condizione su cinque, ed è quella monetaria. La lettura poggiava sull’osservazione che quattro elementi favorevoli non producessero effetto sul prezzo, e chiedeva un movimento vero sulla probabilità di rialzo per rimettere in gioco la direzione: quel movimento è arrivato il giorno dopo, con il 29,3% sulle vendite al dettaglio. Le altre quattro hanno retto, e due di esse — l’oro sopra 4.408,59 e il Brent sopra 89,06 — sono mancate per dodici dollari e per ventisette centesimi. La parte che aveva previsto male è quella che dava per improbabile un movimento sulle attese sulla Fed.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un oro che chiude domani sopra i 4.408,59 dollari della chiusura di mercoledì, cioè che riprende per intero quello che ha perso oggi: direbbe che la seduta era posizionamento prima del collocamento del trentennale e non debolezza relativa, e la direzione tornerebbe neutrale-rialzista. | no | L’oro ha chiuso venerdì 14 agosto a 4.376,59 dollari, in rialzo dello 0,59%, con un massimo di giornata a 4.396,88. Non ha mai toccato i 4.408,59: mancano dodici dollari dal massimo e trentadue dalla chiusura. |
+| Il collocamento del trentennale delle 19:00 con un rapporto fra domanda e offerta sopra la propria media delle ultime dieci aste, seguito da un decennale sotto il 4,600% del minimo odierno: sarebbe la parte lunga che smette di essere un freno, e a quel punto la mancata risposta del metallo perderebbe la sua spiegazione più semplice. | no | Il comunicato del Tesoro dà un rapporto fra domanda e offerta di 2,39, sotto la media di circa 2,43 delle ultime dieci aste: la prima gamba della condizione va nel verso opposto. Anche la seconda manca, perché il minimo del decennale venerdì è stato 4,625% e non è mai sceso sotto il 4,600%. |
+| Una probabilità di rialzo a settembre che scende sotto il 30%: oggi è al 35,0% ed è ferma da tre giorni fra il 34 e il 36. Un movimento vero su quel numero rimetterebbe in gioco la direzione, perché è la misura su cui questa lettura ha poggiato per due giorni. | sì | Alle 14:50 di venerdì 14 agosto, dopo le vendite al dettaglio uscite a meno 0,6% contro attese di più 0,1%, la probabilità implicita di un rialzo a settembre è scesa al 29,3%: prima volta sotto il 30% in tutta la fase. In serata è risalita al 31,6% sulla componente delle attese di inflazione dell’indagine del Michigan, ma la condizione chiedeva la discesa sotto la soglia e la discesa c’è stata. |
+| I prezzi al consumo di agosto, in uscita a settembre, con la componente energetica in aumento sul mese: è il test che né quello di luglio né i prezzi alla produzione di oggi potevano fare, e porterebbe la lettura sotto il neutrale invece che sopra. | no | L’indice dei prezzi al consumo di agosto esce a settembre e non è ancora disponibile. La condizione non è scattata perché il dato non esiste ancora, non perché sia stato smentito: è un rinvio, non una verifica. |
+| Un Brent che torna sopra gli 89,06 dollari del massimo di ieri: oggi è arrivato a toccare 85,87 ed è già risalito a 88,04, quindi il calo di cui si parla è meno stabile di come viene descritto. | no | Il Brent ha chiuso venerdì a 88,60 dollari con più 1,76%, dopo un massimo di giornata di 88,79. Gli 89,06 non sono stati toccati per ventisette centesimi, pur con tre interruzioni di offerta nella stessa settimana. |
 
 ## Fonti consultate
 

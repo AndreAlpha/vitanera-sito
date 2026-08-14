@@ -21,8 +21,10 @@ prossimoAppuntamento:
   quando: "Venerdì 14 agosto, 14:30 italiane"
   titolo: "Vendite al dettaglio statunitensi di luglio"
   dettaglio: "È il primo elemento nuovo utile a separare le due spiegazioni rimaste della debolezza del metallo. Se la domanda interna è forte, la rotazione verso il rischio ha un fondamento misurabile; se è debole e l’oro continua a non salire, entrambe le spiegazioni cadono e va cercata altrove. Prima di allora c’è il comunicato ufficiale del Tesoro sul collocamento di stasera, che è la fonte primaria dei numeri di domanda usati qui e la prima condizione di invalidazione di questa analisi."
+esito: "confermata"
+controllata: "2026-08-14T23:50:00+02:00"
 sorgente: "src/app/core/data/articles/il-numero-mancante-e-arrivato-e-l-asta-aveva-una-coda.ts"
-impronta: "ed6afddfec3eb1d9"
+impronta: "19f698408a732b06"
 ---
 
 # Il numero mancante è arrivato, e l’asta aveva una coda
@@ -144,3 +146,17 @@ Alta sul rendimento di aggiudicazione, sul mercato secondario e sui prezzi, tutt
 Impostazione su XAU/USD: neutrale-ribassista, forza bassa, orizzonte breve.
 
 Sull’orizzonte più stretto la lettura scende di un gradino, da neutrale a neutrale con inclinazione ribassista, e la ragione è una sola: l’ultima spiegazione residua della debolezza del metallo è caduta. Fino a stasera si poteva dire che l’oro non salisse perché il mercato si teneva coperto prima del collocamento della scadenza più lunga. Il collocamento è passato, ed è andato leggermente peggio delle attese, cioè nel verso che a un bene rifugio conviene: il metallo ha comunque chiuso la prima seduta negativa dopo quattro positive, con un minimo a 4.351,45. Cinque eventi favorevoli in una giornata e nessuna risposta non sono più una mancata reazione, sono una reazione contraria. Sull’orizzonte lungo invece la correzione lavora nell’altro verso e la lettura di fondo non cambia: il premio richiesto sul debito a trent’anni è più alto di quanto scritto alle 19:15.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-14T23:50:00+02:00.
+
+Nessuna condizione su cinque. L’analisi correggeva quella pubblicata settantacinque minuti prima sostenendo che il collocamento del trentennale avesse trovato domanda sotto la media invece che solida, e aveva messo come prima condizione il comunicato ufficiale del Tesoro, che allora non era raggiungibile. Il comunicato è arrivato il giorno dopo e ha confermato i tre numeri a meno del secondo decimale. Le altre quattro condizioni hanno retto: l’oro non ha ripreso i 4.408,59, il Brent non ha toccato gli 89,06 nemmeno con tre interruzioni di offerta nella stessa settimana, le vendite al dettaglio sono uscite sotto il consenso ma il metallo è salito invece di scendere, e nessuna comunicazione saudita ha dichiarato danni.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Il risultato ufficiale del collocamento, pubblicato dal Tesoro statunitense, con un rapporto fra domanda e offerta pari o superiore a 2,43 oppure con un’aggiudicazione al di sotto del quotato alla chiusura delle offerte: direbbe che i numeri usati qui sono sbagliati e che l’analisi delle 19:15 aveva ragione. | no | Il comunicato del Tesoro, letto il 14 agosto sul risultato d’asta con CUSIP 912810UW6, dà un rapporto fra domanda e offerta di 2,39 — 59.801.010.300 $ di offerte contro 25.000.015.300 $ collocati — quindi sotto il 2,43 richiesto. Le quote calcolate sui dollari aggiudicati sono 11,51% agli operatori primari, 21,64% ai diretti e 66,85% agli indiretti, e coincidono a meno del secondo decimale con quelle usate nell’analisi. L’aggiudicazione al 5,216% resta sopra e non sotto il quotato di 5,212%. |
+| Un oro che chiude sopra i 4.408,59 dollari della vigilia entro la seduta di venerdì: cancellerebbe la prima chiusura negativa dopo quattro positive e toglierebbe il fondamento all’abbassamento della direzione. | no | Chiusura di venerdì 14 agosto a 4.376,59 dollari, con un massimo di giornata a 4.396,88: il livello non è mai stato raggiunto. |
+| Le vendite al dettaglio di luglio, venerdì alle 14:30, sotto il consenso con l’oro che scende comunque: lascerebbe senza appoggio anche la rotazione verso il rischio, cioè l’ultima delle spiegazioni rimaste, e imporrebbe di cercarne una nuova. | no | La prima gamba è scattata: le vendite al dettaglio di luglio sono uscite a meno 0,6% contro attese di più 0,1%, sette decimi sotto il consenso. La seconda no, e in modo netto: l’oro è salito dello 0,59% chiudendo a 4.376,59 contro i 4.351,07 della vigilia. La condizione chiedeva entrambe le cose. |
+| Un Brent che torna sopra gli 89,06 dollari del massimo odierno entro venerdì: direbbe che la rivendicazione su Jazan ha un contenuto di offerta che qui è stato escluso. | no | Massimo del Brent venerdì a 88,79 dollari, chiusura a 88,60 con più 1,76%. Gli 89,06 non sono stati raggiunti, e il rialzo della giornata è arrivato dopo la sospensione dei carichi a Novorossiysk e non dalla rivendicazione su Jazan. |
+| Una comunicazione ufficiale saudita o di Aramco che dichiari un danno con effetto sulla produzione o sulle esportazioni: la lettura data qui poggia sul fatto che l’impianto è fermo da fine luglio, e un danno operativo dichiarato la smentirebbe. | no | Nessuna comunicazione di Aramco o delle autorità saudite su danni con effetto sulla produzione o sulle esportazioni nelle ventisette ore successive alla pubblicazione. Le autorità non hanno commentato la rivendicazione. |

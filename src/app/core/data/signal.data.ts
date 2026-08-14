@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-14T21:05:00+02:00',
+  updatedAt: '2026-08-14T23:55:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,18 +187,18 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'La direzione resta dov’era, ma il contrappeso nominato alle 16:10 ha cominciato ad agire. Quella ' +
-        'lettura diceva che il metallo saliva sul cambio e non sui tassi, e che una gamba sola è fragile. ' +
-        'In serata se ne aggiunge una seconda che tira nell’altro verso: il terminale di Sheskharis, a ' +
-        'Novorossiysk, ha sospeso i carichi di greggio dopo un attacco con droni, con i serbatoi pieni e ' +
-        'una petroliera uscita senza completare il carico, e a luglio da lì passava quasi un milione di ' +
-        'barili al giorno. Il Brent è salito a 88,53 con più 1,68% e un massimo di 88,88, diciotto ' +
-        'centesimi sotto gli 89,06 che tre analisi hanno scritto come condizione, mentre l’oro scendeva ' +
-        'dal massimo di 4.396,88 a 4.375,19. La direzione regge perché il metallo resta sopra la chiusura ' +
-        'di giovedì e chiude la settimana in guadagno; la forza resta bassa perché il canale energetico, ' +
-        'dato per chiuso alle 15:20 e corretto alle 17:20, adesso è aperto e sta trasmettendo.',
+        'La direzione resta dov’era perché è quello che ha fatto il prezzo: l’oro chiude a 4.376,59 ' +
+        'dollari con più 0,59% e la settimana in guadagno, con il dollaro in calo per la terza seduta e ' +
+        'la probabilità di un rialzo a settembre scesa fino al 29,3% in giornata, prima volta sotto il ' +
+        '30%. La forza resta bassa perché il rischio sorvegliato tutto il giorno si è materializzato in ' +
+        'chiusura, e dal lato sbagliato rispetto a dove era puntata la sorveglianza: non il petrolio, che ' +
+        'ha chiuso a 88,60 senza toccare gli 89,06, ma i rendimenti. Il decennale ha chiuso a 4,695% con ' +
+        'un massimo a 4,701% e il trentennale a 5,261% con un massimo a 5,271%, entrambi in rialzo di ' +
+        'cinque punti base in una seduta di dati deboli. Il rendimento alternativo che un metallo senza ' +
+        'cedole deve battere è salito proprio mentre saliva il metallo, ed è una convivenza che di solito ' +
+        'non dura: il livello da guardare alla riapertura è il 4,70% sul decennale.',
       invalidation:
-        'Un Brent stabilmente sopra i 90 dollari con un decennale che torna sopra il 4,70%: sarebbe la conferma che il canale energetico ha cambiato segno, e la direzione andrebbe portata sotto il neutrale invece che tenuta sopra. Oppure un oro che chiude sotto i 4.351,07 di giovedì, che toglierebbe il fondamento alla parte di lettura che la tiene sopra. Nell’altro verso, una ripresa dei carichi a Sheskharis con il Brent che rientra sotto gli 87,07 riporterebbe l’episodio fra quelli che non tolgono barili, e la forza potrebbe salire.',
+        'Un decennale che chiude sopra il 4,70% e ci resta, con il Brent oltre i 90 dollari: è la combinazione indicata da tre giorni come quella che porta la lettura sotto il neutrale, e venerdì entrambe le gambe si sono avvicinate senza arrivarci. Oppure un oro che chiude sotto i 4.351,07 di giovedì, che annullerebbe il recupero della seconda metà di venerdì. Nell’altro verso, un decennale che rientra sotto il 4,641% della chiusura di giovedì direbbe che la salita della parte lunga era una coda di seduta, e la forza salirebbe.',
     },
     {
       horizon: 'medio',
@@ -260,7 +260,12 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'primo elemento contrario da mercoledì: la fiducia del Michigan scende a 51,0 ma le attese di ' +
         'inflazione a un anno salgono al 4,3%, e la probabilità di un rialzo risale al 31,6%. Le attese ' +
         'a lungo termine restano ferme al 3,3%, quindi la lettura non si muove — ma la sequenza di ' +
-        'diffusioni che non si contraddicevano mai si è interrotta, e va contato.',
+        'diffusioni che non si contraddicevano mai si è interrotta, e va contato. Venerdì in chiusura arriva ' +
+        'la conferma sulla gamba fiscale, e arriva dal posto giusto: dopo un collocamento che aveva ' +
+        'mostrato domanda sotto la media al costo più alto da un quarto di secolo, il mercato ha chiesto ' +
+        'altri cinque punti base su entrambe le scadenze lunghe — decennale a 4,695%, trentennale a ' +
+        '5,261% — in una giornata in cui tutto il resto diceva di scendere. Non è un evento, è una ' +
+        'pendenza.',
       invalidation:
         'Una probabilità di rialzo a settembre che risale sopra il 48% entro venerdì, cioè sopra il livello di ieri mattina invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
     },
@@ -316,7 +321,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   headline:
-    'Sheskharis sospende i carichi: il terzo attacco in due giorni è il primo che toglie barili',
+    'La curva si divide: il biennale scende al 4,117%, il decennale chiude a 4,695% e il trentennale a 5,261%',
   stance:
     'La settimana chiude sciogliendo la domanda che l’aveva tenuta aperta. Per quattro sedute il metallo ' +
     'non aveva risposto a niente: prezzi al consumo e alla produzione sotto le attese, richieste di ' +
@@ -551,8 +556,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 88.53,
-      display: '≈ 88,5 $',
+      now: 88.6,
+      display: '≈ 88,6 $',
       marks: [
         {
           at: 82,
@@ -570,8 +575,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.136,
-      display: '4,136%',
+      now: 4.117,
+      display: '4,117%',
       marks: [
         {
           at: 4.25,
@@ -583,8 +588,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.64,
-      display: '4,640%',
+      now: 4.695,
+      display: '4,695%',
       marks: [
         {
           at: 4.68,
@@ -621,8 +626,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4375.19,
-      display: '4.375,19 $',
+      now: 4376.59,
+      display: '4.376,59 $',
       marks: [
         {
           at: 4300,
@@ -640,9 +645,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'il-breve-scende-e-il-lungo-sale',
     'il-terzo-attacco-in-due-giorni-e-il-primo-che-toglie-barili',
     'la-fiducia-crolla-e-le-attese-di-inflazione-salgono',
-    'il-consumatore-si-ferma-e-l-oro-finalmente-risponde',
   ],
 };
 

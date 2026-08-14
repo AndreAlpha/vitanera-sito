@@ -17,6 +17,15 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'CHIUSURA 14/8',
+    name: 'Chiusure di seduta della curva americana, venerdì 14 agosto',
+    value: '10Y 4,695% · 30Y 5,261%',
+    change: 'entrambi più cinque punti base, in una giornata di dati deboli',
+    tone: 'bear',
+    icon: 'chart',
+    note: 'La curva si è divisa, ed è la cosa più informativa della settimana. Il biennale è sceso fino al 4,117% sulle vendite al dettaglio e la probabilità di un rialzo a settembre è passata sotto il 30% per la prima volta in questa fase; nelle stesse ore il decennale è salito a 4,695% con un massimo a 4,701% e il trentennale a 5,261% con un massimo a 5,271%, a un decimo di punto base dal massimo delle cinquantadue settimane. Le due estremità non si contraddicono: rispondono a due domande diverse. Il biennale prezza la banca centrale, che i dati hanno spinto verso la pausa; la parte lunga prezza anche il premio richiesto per tenere carta di un emittente che ne produce sempre di più, e quella componente aveva ricevuto una misura precisa il giorno prima, quando il collocamento da venticinque miliardi si era aggiudicato al 5,216% con domanda sotto la media. Per un metallo senza cedole conta la seconda, perché fissa il rendimento alternativo da battere.',
+  },
+  {
     symbol: 'SHESKHARIS',
     name: 'Sospensione dei carichi di greggio al terminale di Novorossiysk dopo un attacco con droni, 14 agosto',
     value: 'carichi sospesi',
