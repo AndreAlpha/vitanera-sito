@@ -113,6 +113,13 @@ describe('pagine', () => {
     }
   });
 
+  // I due controlli che seguono renderizzano una pagina per ogni analisi in
+  // archivio, quindi il loro costo cresce con l'archivio: superate le ottanta
+  // analisi il ciclo sfonda il limite predefinito di cinque secondi e il test
+  // comincia a fallire per tempo scaduto invece che per un'asserzione. Il limite
+  // e' dichiarato qui perche' un timeout che dipende da quante analisi sono state
+  // pubblicate blocca il deploy in modo intermittente, che e' peggio di un test
+  // rosso: le asserzioni non cambiano.
   it('dettaglio di ogni analisi pubblicata', async () => {
     for (const article of ARTICLES) {
       const text = textOf(await render(ArticleDetail, { slug: article.slug }));
@@ -121,7 +128,7 @@ describe('pagine', () => {
       // Una sola avvertenza, in chiusura: prima ne portava cinque.
       expect(occurrences(text, 'Non costituisce consulenza finanziaria')).toBe(1);
     }
-  });
+  }, 60_000);
 
   it('dice su ogni analisi chi la pensa e chi la scrive, una volta sola', async () => {
     // E' una costante resa da <app-authorship-notice />, non un campo: se fosse
@@ -132,7 +139,7 @@ describe('pagine', () => {
       const text = textOf(await render(ArticleDetail, { slug: article.slug }));
       expect(occurrences(text, AUTHORSHIP_NOTICE), article.slug).toBe(1);
     }
-  });
+  }, 60_000);
 
   it('dettaglio con slug inesistente', async () => {
     const text = textOf(await render(ArticleDetail, { slug: 'inesistente' }));

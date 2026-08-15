@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-15T11:50:00+02:00',
+  updatedAt: '2026-08-15T21:35:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,18 +187,18 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'Il fine settimana ha aggiunto fatti e tolto il prezzo, e questa lettura descrive quella ' +
-        'asimmetria invece di nasconderla. I fatti: una terza nave ADNOC attaccata venerdì nello Stretto ' +
-        'secondo l’agenzia ufficiale emiratina, Teheran che dichiara di comandare l’apertura e la chiusura ' +
-        'del passaggio, nessuna decisione sulla ripresa dei negoziati, e due nuove chiazze di petrolio nel ' +
-        'Golfo più uno sversamento stimato in circa 2.000 chilometri quadrati al largo dell’Oman. Il ' +
-        'prezzo: nessuno, perché fra la chiusura del venerdì e la riapertura non esiste una rilevazione ' +
-        'con liquidità dietro. La direzione resta sopra il neutrale perché il rischio geopolitico si ' +
-        'assesta più in alto; la forza resta bassa perché la stessa escalation alimenta anche le attese di ' +
-        'inflazione, e perché quello che è aumentato è l’ampiezza attesa dei movimenti di lunedì e non il ' +
-        'loro verso. Un rischio più alto non è una previsione più forte.',
+        'Cinque fatti geopolitici sono arrivati fra venerdì sera e sabato notte senza incontrare un ' +
+        'mercato aperto, e gli ultimi due hanno una forma diversa dai primi tre: la chiusura del porto di ' +
+        'Mocha, dichiarata dal suo direttore dopo oltre venticinque missili houthi, e undici morti negli ' +
+        'attacchi israeliani nel sud del Libano, il fronte più grave dalla tregua. Nessuno dei due passa ' +
+        'per il prezzo di un barile — Mocha è un porto commerciale e non un terminale di esportazione, il ' +
+        'Libano non esporta greggio — quindi aggiungono domanda di protezione senza alimentare le attese ' +
+        'di inflazione e senza toccare la parte lunga della curva. È il canale pulito che è mancato per ' +
+        'tutta la settimana, ed è la ragione per cui la direzione resta sopra il neutrale. La forza resta ' +
+        'bassa perché nessuno dei due fatti ha una taglia in barili, e un premio senza quantità è il primo ' +
+        'a essere restituito: a Jazan è successo nel giro di un’ora.',
       invalidation:
-        'Un Brent che apre lunedì sopra i 90 dollari mentre il decennale resta sopra il 4,695% della chiusura di venerdì: è la combinazione sorvegliata da quattro giorni, e arriverebbe come salto del fine settimana invece che dentro una seduta. Oppure un oro che chiude sotto i 4.351,07 di giovedì, che annullerebbe il recupero della seconda metà di venerdì. Nell’altro verso, un oro che apre e chiude sopra i 4.396,88 del massimo di venerdì direbbe che l’escalation è entrata nel prezzo e la forza salirebbe; e un conteggio dei transiti di lunedì pari o superiore a otto navi da fonte ricontrollabile direbbe che le due di venerdì erano un minimo di campionamento, come già succedeva il 7 agosto.',
+        'Un oro che apre lunedì e chiude sotto i 4.376,59 dollari della chiusura di venerdì, restituendo per intero il premio del fine settimana: direbbe che cinque fatti geopolitici in due giorni non producono domanda di protezione, e la direzione va portata a neutrale. Oppure un decennale che apre sopra il 4,701% del massimo di venerdì con l’oro che non sale, che direbbe che il premio di rifugio è già assorbito dal costo-opportunità e la forza va azzerata. Nell’altro verso, un oro sopra i 4.396,88 del massimo di venerdì con il Brent che resta sotto i 90: è la configurazione favorevole descritta da giorni, e la forza salirebbe.',
     },
     {
       horizon: 'medio',
@@ -265,7 +265,17 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'mostrato domanda sotto la media al costo più alto da un quarto di secolo, il mercato ha chiesto ' +
         'altri cinque punti base su entrambe le scadenze lunghe — decennale a 4,695%, trentennale a ' +
         '5,261% — in una giornata in cui tutto il resto diceva di scendere. Non è un evento, è una ' +
-        'pendenza.',
+        'pendenza. Il 15 agosto in serata la gamba dell’offerta si sgonfia invece di gonfiarsi, e per una ' +
+        'volta la correzione arriva dalla fonte e non dal prezzo: Reuters precisa che a Ust-Luga l’attacco ' +
+        'del 14 agosto ha danneggiato l’impianto di condensato di Novatek senza interrompere le ' +
+        'esportazioni di petrolio, quindi i terminali russi fermi passano da due a uno e resta soltanto ' +
+        'Sheskharis. Nello stesso momento arriva il primo numero che misura la conseguenza, e va nel verso ' +
+        'opposto a quello atteso: le importazioni turche dai porti russi scendono da circa 1,2 milioni di ' +
+        'tonnellate a giugno a 900.000 a luglio, con agosto stimato attorno a 200.000, perché Ankara ha ' +
+        'sostituito con Brasile e Guyana. Un compratore che sostituisce non rincara il barile scarso: lo ' +
+        'shock resta sull’offerta russa invece di diventare un prezzo mondiale. Sull’arco dei giorni il ' +
+        'fronte del Mar Nero è quindi la gamba più debole delle due, perché è l’unica che ha una ' +
+        'deviazione già percorsa, mentre per Hormuz una deviazione non esiste.',
       invalidation:
         'Una probabilità di rialzo a settembre che risale sopra il 48% entro venerdì, cioè sopra il livello di ieri mattina invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
     },
@@ -321,24 +331,22 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   headline:
-    'Terza nave ADNOC colpita in una settimana, e Washington mette in conto la benzina più cara: nessun prezzo aperto fino a lunedì',
+    'Mocha chiude e il sud del Libano si riaccende, mentre a Ust-Luga l’interruzione russa viene corretta: cinque fatti e nessun prezzo fino a lunedì',
   stance:
-    'Il fine settimana porta tre fatti nuovi e nessuna rilevazione con cui arbitrarli. Il primo è un ' +
-    'episodio in più su una serie contata: una terza nave ADNOC attaccata venerdì nello Stretto secondo ' +
-    'l’agenzia ufficiale degli Emirati, dopo le almeno sedici dal 28 febbraio. Il secondo è politico e ' +
-    'allontana la riapertura invece di avvicinarla — Teheran dichiara che Hormuz si apre o si chiude ' +
-    'soltanto sotto il proprio comando, e che sulla ripresa dei negoziati non è stata presa alcuna ' +
-    'decisione. Il terzo è americano ed è quello che cambia più cose: il presidente invita a mettere in ' +
-    'conto una benzina più cara finché dura il conflitto, con il prezzo alla pompa a circa 4,08 dollari ' +
-    'per gallone e più 29% sull’anno, cioè accetta in pubblico il costo energetico della pressione. Per ' +
-    'l’oro le due spinte restano opposte: rifugio da una parte, attese di inflazione e rendimenti ' +
-    'dall’altra, ed è la ragione per cui la direzione sta a metà. Accanto, due nuove chiazze di petrolio ' +
-    'nel Golfo e uno sversamento di circa 2.000 chilometri quadrati al largo dell’Oman alzano il costo ' +
-    'operativo delle rotte senza togliere un barile misurato. Le ultime osservazioni con liquidità dietro ' +
-    'restano le chiusure di venerdì: oro a 4.376,59 dollari con più 0,59% e la settimana in guadagno, ' +
-    'Brent a 88,60, decennale a 4,695% con un massimo a 4,701% e trentennale a 5,261%, con la probabilità ' +
-    'di un rialzo a settembre al 31,6% dopo essere scesa al 29,3%. Quello che il fine settimana ha ' +
-    'aumentato è l’ampiezza attesa del primo movimento di lunedì, non il suo verso.',
+    'Il fine settimana ha prodotto cinque fatti geopolitici e nessuna rilevazione con cui arbitrarli, e ' +
+    'conviene separarli per canale invece che per gravità. Tre passano per il petrolio: la terza nave ' +
+    'ADNOC attaccata nello Stretto, gli sversamenti nel Golfo, e la sospensione dei carichi a Sheskharis ' +
+    '— che resta l’unica interruzione fisica vera, perché Reuters ha precisato che a Ust-Luga le ' +
+    'esportazioni di petrolio non si sono mai fermate. Su quel fronte è arrivato anche il primo numero ' +
+    'che misura la conseguenza, e va contro la lettura rialzista: la Turchia ha portato le importazioni ' +
+    'dai porti russi da circa 1,2 milioni di tonnellate a giugno a una stima di 200.000 per agosto ' +
+    'sostituendo con Brasile e Guyana, e un compratore che sostituisce non rincara il barile scarso. Due ' +
+    'fatti non passano invece per il petrolio: la chiusura del porto di Mocha e undici morti nel sud del ' +
+    'Libano aggiungono domanda di protezione senza toccare il prezzo di un barile, che è il canale pulito ' +
+    'mancato per tutta la settimana. Le ultime osservazioni con liquidità dietro restano le chiusure di ' +
+    'venerdì: oro a 4.376,59 dollari con più 0,59%, Brent a 88,60, decennale a 4,695% con un massimo a ' +
+    '4,701%, trentennale a 5,261%, probabilità di un rialzo a settembre al 31,6%. Quello che il fine ' +
+    'settimana ha aumentato è l’ampiezza attesa del primo movimento di lunedì, non il suo verso.',
   favours: [
     'Distinguere la qualità della misura da quella della fonte, e dirlo quando le due non coincidono: «nessuna spedizione visibile di greggio attraverso Hormuz» è la misura giusta, perché conta barili invece di scafi, e arriva dal dato meno verificabile di tutti, cioè un conteggio giornaliero di un fornitore privato. Le due metà vanno registrate insieme invece di scegliere quella che conviene',
     'Trattare il fine settimana per quello che è: fra la chiusura del venerdì e la riapertura non esiste alcuna rilevazione con liquidità dietro, quindi un fatto emerso di sabato aumenta l’ampiezza attesa del primo movimento e non il suo verso. Il quadro di metodo sul rischio del fine settimana dice di stimare l’ampiezza, non di indovinare la direzione',
@@ -362,6 +370,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'Il porto yemenita di Mocha ha sospeso tutte le attività commerciali e marittime: lo annuncia il suo direttore sabato 15 agosto, dopo oltre venticinque missili houthi negli ultimi giorni, con sette morti e circa sedici milioni di dollari di danni. Per la prima volta su questo fronte c’è una conseguenza operativa dichiarata da un’autorità, e non soltanto una rivendicazione',
+    'Reuters riferisce almeno undici morti negli attacchi israeliani nel sud del Libano, l’episodio più grave da quando è in vigore la tregua mediata dagli Stati Uniti, con Hezbollah che annuncia una risposta: è un terzo fronte contemporaneo, e il primo libanese che entra in questo archivio',
+    'I due fatti di sabato sera non passano per il prezzo del greggio — Mocha è un porto commerciale, il Libano non esporta petrolio — quindi aggiungono domanda di protezione senza alimentare le attese di inflazione: è la configurazione in cui il metallo lavora meglio, e in questa settimana non si era ancora presentata',
     'Una terza nave ADNOC è stata attaccata venerdì 14 agosto mentre attraversava lo Stretto, secondo la comunicazione della compagnia tramite l’agenzia ufficiale emiratina WAM, e Reuters la conta come terzo incidente su navi ADNOC in meno di una settimana: nessun ferito, situazione riportata sotto controllo. La serie contata dal 28 febbraio si allunga e la frequenza aumenta invece di calare',
     'Teheran alza la posta e la alza nel verso che allontana la riapertura: il vice ministro degli Esteri Gharibabadi dichiara che Hormuz sarà aperto o chiuso esclusivamente sotto il comando dell’Iran e che il blocco continuerà a essere fatto rispettare, mentre il ministro Araqchi dice che sulla ripresa dei negoziati con Washington non è stata presa alcuna decisione',
     'Il presidente americano invita a mettere in conto prezzi della benzina più alti finché continuerà il conflitto, con il prezzo alla pompa a circa 4,08 dollari per gallone e più 29% sull’anno: è la prima volta che il costo energetico della pressione viene accettato in pubblico invece che minimizzato, e rende meno probabile una chiusura rapida',
@@ -377,6 +388,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'La gamba dell’offerta russa era contata due volte e una delle due era sbagliata: Reuters precisa che a Ust-Luga l’attacco del 14 agosto ha danneggiato l’impianto di condensato di Novatek senza interrompere le esportazioni di petrolio, quindi i terminali fermi passano da due a uno e resta soltanto Sheskharis',
+    'La sostituzione assorbe lo shock invece di trasmetterlo: le importazioni turche dai porti russi scendono da circa 1,2 milioni di tonnellate a giugno a 900.000 a luglio, con agosto stimato attorno a 200.000, e Ankara compensa con Brasile e Guyana. Il fronte del Mar Nero ha una deviazione già percorsa, Hormuz no, e sommare i due gonfia il premio invece di misurarlo',
+    'Il bilancio delle vittime a Mocha non è un dato nuovo: almeno sette morti erano già stati contati qui il 9 agosto e ieri era arrivata una cifra di quattro vittime civili, quindi i sette di oggi sono con ogni probabilità gli stessi. Tre conteggi sovrapposti per lo stesso luogo in una settimana non si sommano, e il solo fatto non ripetuto è la chiusura',
     'La stessa accettazione del costo energetico alimenta il canale contrario, ed è il rischio principale di questa fase: la benzina alla pompa è il punto in cui il greggio diventa una spesa osservata ogni settimana dalle famiglie, e venerdì le attese di inflazione a un anno del Michigan sono salite al 4,3% riportando la probabilità di un rialzo a settembre al 31,6% dal 29,3%. Le attese a lungo termine restano ferme al 3,3%: finché stanno lì il canale è un rischio e non un fatto',
     'Il numero su cui poggia la parte più citata del fine settimana non è verificabile: due transiti venerdì è una cifra giornaliera attribuita a un fornitore privato, cioè la stessa categoria che questa scheda aveva elencato come non confermabile su fonte indipendente dodici ore prima, e le due navi del 7 agosto si erano già rivelate un minimo di campionamento',
     'Nessuno dei fatti del fine settimana porta una perdita di offerta quantificata: né ADNOC né il governo emiratino hanno dichiarato riduzioni di caricamenti dopo il terzo attacco, e per le due chiazze nel Golfo e lo sversamento di circa 2.000 chilometri quadrati al largo dell’Oman non esiste alcuna stima in barili',
@@ -489,6 +503,28 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       state: 'fermo',
     },
     {
+      label: 'Capacità di esportazione russa sul Mar Nero',
+      value: 'carichi sospesi a Sheskharis',
+      baseline: '≈ 700.000 b/g di capacità dichiarata, quasi un milione movimentati a luglio',
+      against:
+        'La lettura che ha accompagnato questi due giorni, cioè due fronti fisici contemporanei sull’offerta ' +
+        'energetica — Golfo Persico e Mar Nero — trattati come grandezze sommabili. Il conto era però ' +
+        'gonfiato di una unità: Reuters ha precisato che a Ust-Luga l’attacco del 14 agosto ha danneggiato ' +
+        'l’impianto di condensato di Novatek senza interrompere le esportazioni di petrolio, quindi i ' +
+        'terminali fermi sono uno e non due.',
+      watch:
+        'Due numeri, e nessuno dei due è una quotazione. Il primo è la ripresa dei carichi: il precedente ' +
+        'utile è un attacco allo stesso terminale a inizio marzo, che aveva prodotto una sospensione di ' +
+        'cinque giorni, quindi il termine informativo scade a metà settimana. Il secondo è il tonnellaggio ' +
+        'turco, che è la prima misura della conseguenza e dice l’opposto di quanto sembra: le importazioni ' +
+        'dai porti russi passano da circa 1,2 milioni di tonnellate a giugno a 900.000 a luglio, con agosto ' +
+        'stimato attorno a 200.000, perché Ankara ha sostituito con Brasile e Guyana. Un compratore che ' +
+        'sostituisce non rincara il barile scarso: finché la deviazione funziona, questo vincolo pesa meno ' +
+        'di quello su Hormuz, dove una deviazione non esiste. Lo stringerebbe davvero un dato ufficiale ' +
+        'russo di estrazione in calo, che è il passaggio dai serbatoi pieni alla produzione ridotta.',
+      state: 'si-allenta',
+    },
+    {
       label: 'Capacità saudita sulla costa del Mar Rosso',
       value: 'Jazan ferma due volte in due settimane',
       baseline: 'circa 400.000 barili al giorno di raffinazione',
@@ -506,7 +542,13 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'della stessa via di fuga. Aramco dichiara per ora interruzioni produttive senza impatto materiale ' +
         'complessivo, e finché quella formula regge il vincolo non stringe davvero. L’attacco al porto di ' +
         'Mocha, nello stesso giorno, allarga il quadro fino a Bab el-Mandeb — l’altra estremità della ' +
-        'rotta — ma non entra in questo conto: è un porto commerciale yemenita e non esporta greggio.',
+        'rotta — ma non entra in questo conto: è un porto commerciale yemenita e non esporta greggio. Il ' +
+        '15 agosto quel porto chiude: il direttore sospende tutte le attività commerciali e marittime dopo ' +
+        'oltre venticinque missili houthi, con sette morti e circa sedici milioni di dollari di danni. La ' +
+        'conclusione sul conto non cambia, perché continua a non esportare greggio, e resta la ragione per ' +
+        'cui questa chiusura non è un evento di offerta; quello che cambia è la corsia di servizio, perché ' +
+        'l’imbocco meridionale della rotta che evita lo Stretto adesso ha un porto fermo invece di un ' +
+        'porto colpito.',
       state: 'si-allenta',
     },
     {
@@ -678,9 +720,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'mocha-chiude-e-il-libano-apre-un-terzo-fronte',
+    'un-porto-si-ferma-l-altro-no-e-la-turchia-cambia-fornitore',
     'due-chiazze-e-duemila-chilometri-quadrati',
-    'la-terza-nave-e-washington-mette-in-conto-la-benzina',
-    'il-breve-scende-e-il-lungo-sale',
   ],
 };
 

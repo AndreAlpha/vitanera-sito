@@ -17,6 +17,34 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'MOCHA CHIUSO',
+    name: 'Sospensione delle attività commerciali e marittime nel porto yemenita di Mocha, 15 agosto',
+    value: 'operazioni sospese',
+    change: 'oltre 25 missili houthi negli ultimi giorni; sette morti, ≈ 16 mln $ di danni',
+    tone: 'warn',
+    icon: 'lock',
+    note: 'Lo annuncia il direttore del porto, e questo è il primo elemento di questo fronte con una conseguenza operativa dichiarata da un’autorità invece di una rivendicazione. Il metro usato qui chiede a un’infrastruttura colpita una cosa sola — quanta capacità toglie al mercato — e la risposta resta zero, perché Mocha è un porto commerciale e non un terminale di esportazione energetica: una chiusura che non sottrae greggio non è un evento di offerta, e la conclusione va accettata anche quando il fatto è grave. Quello che cambia è la logistica: all’inizio di agosto questo archivio ha corretto una propria lettura riconoscendo che Mar Rosso e Hormuz non sono fronti indipendenti ma colli di bottiglia in serie, perché quella costa è il modo con cui il greggio attraversa la penisola ed evita lo Stretto. Mocha sta all’imbocco meridionale di quella rotta. Sul bilancio delle vittime serve invece cautela: almeno sette morti erano già stati contati qui il 9 agosto e il 14 agosto era arrivata una cifra di quattro vittime civili, quindi i sette di oggi sono con ogni probabilità gli stessi. Tre conteggi sovrapposti in una settimana non si sommano, e il solo fatto non ripetuto è la chiusura.',
+  },
+  {
+    symbol: 'LIBANO',
+    name: 'Attacchi israeliani nel sud del Libano, 15 agosto',
+    value: 'almeno 11 morti',
+    change:
+      'episodio più grave dalla tregua mediata dagli Stati Uniti; Hezbollah annuncia una risposta',
+    tone: 'warn',
+    icon: 'alert',
+    note: 'Riportato da Reuters. Israele dichiara che il bombardamento è seguito al fuoco di Hezbollah che aveva ferito tre soldati nella zona di sicurezza; Hezbollah avverte che gli attacchi riceveranno risposta. È il primo fronte libanese che entra in questo archivio e va classificato per quello che è: un aumento della probabilità che il conflitto si allarghi, non una guerra aperta e non un fatto energetico — il Libano non esporta greggio e non ha uno stretto. Per l’oro conta perché arriva contemporaneamente a Iran-Hormuz e allo Yemen, e perché appartiene alla categoria dei fatti che aggiungono domanda di protezione senza passare per il prezzo di un barile, quindi senza il contrappeso dei rendimenti. La cautela è la stessa applicata alla clausola della Mecca: una tregua che regge toglie premio, e finché non arriva la risposta annunciata questo resta un episodio con una minaccia accanto.',
+  },
+  {
+    symbol: 'TURCHIA',
+    name: 'Importazioni turche di greggio dai porti russi del Mar Nero',
+    value: '≈ 200.000 t stimate ad agosto',
+    change: 'da ≈ 1,2 mln t a giugno e 900.000 a luglio; Ankara compensa con Brasile e Guyana',
+    tone: 'warn',
+    icon: 'arrow-right',
+    note: 'È il primo numero che misura la conseguenza dell’interruzione russa, e arriva nella forma che questo archivio preferisce: un flusso e non un annuncio. Viene letto come escalation, e per il prezzo del greggio dice il contrario. Il premio geopolitico si forma quando qualcuno deve procurarsi lo stesso barile in un mercato dove ce n’è meno: è la competizione fra compratori a muovere il prezzo, non il danno in sé. Se la Turchia risolve comprando in Brasile e in Guyana, quel barile russo non viene inseguito da nessuno e lo shock resta sull’offerta russa invece di diventare un prezzo mondiale. È la stessa distinzione registrata il 13 agosto sul lato del bilancio da cui arriva un movimento. Il tono è ambiguo perché taglia in due sensi: toglie una gamba al premio che sostiene il metallo, e allo stesso tempo rende meno probabile il canale che gli lavora contro, cioè un Brent sopra i 90 dollari che spinge attese di inflazione e rendimenti. Due cautele: la cifra di agosto è una stima a mese in corso, e il calo di luglio su giugno è cominciato prima dell’attacco a Sheskharis, quindi non gli si può attribuire per intero.',
+  },
+  {
     symbol: 'ADNOC 14/8',
     name: 'Terzo attacco a una nave ADNOC in transito nello Stretto di Hormuz, 14 agosto',
     value: 'la terza in una settimana',
@@ -104,7 +132,7 @@ export const MARKET_REFERENCES: readonly MarketReference[] = [
     change: 'sesto attacco allo stesso porto quest’anno; incendio spento, nessun ferito',
     tone: 'warn',
     icon: 'bolt',
-    note: 'Il governatore della regione di Leningrado riferisce di cinquantaquattro droni e di un incendio poi spento in mattinata. È il caso opposto a quello di Jazan, ed è il confronto a rendere leggibile la differenza: la raffineria saudita era ferma da fine luglio, quindi l’attacco colpiva capacità già fuori dal conto, mentre Ust-Luga lavora. Nel 2025 ci sono passati circa 700.000 barili al giorno, è il secondo scalo russo sul Baltico dopo Primorsk, e i due insieme valgono circa il 40% dell’export marittimo russo di greggio. Un impianto che lavora è un bersaglio con un prezzo. Il metro dice però anche dove fermarsi: l’entità dei danni non è nota e nessuno ha dichiarato una riduzione dei caricamenti, quindi è un rischio su capacità attiva e non una perdita accertata di barili.',
+    note: 'Il governatore della regione di Leningrado riferisce di cinquantaquattro droni e di un incendio poi spento in mattinata. È il caso opposto a quello di Jazan, ed è il confronto a rendere leggibile la differenza: la raffineria saudita era ferma da fine luglio, quindi l’attacco colpiva capacità già fuori dal conto, mentre Ust-Luga lavora. Nel 2025 ci sono passati circa 700.000 barili al giorno, è il secondo scalo russo sul Baltico dopo Primorsk, e i due insieme valgono circa il 40% dell’export marittimo russo di greggio. Un impianto che lavora è un bersaglio con un prezzo. Il metro dice però anche dove fermarsi: l’entità dei danni non è nota e nessuno ha dichiarato una riduzione dei caricamenti, quindi è un rischio su capacità attiva e non una perdita accertata di barili. Il 15 agosto Reuters precisa il quadro, e questa voce va corretta di conseguenza: l’attacco ha danneggiato l’impianto di trattamento del condensato di Novatek, ma le operazioni di esportazione di petrolio dal terminale non sono state interrotte, e le autorità russe dichiarano di aver gestito rapidamente gli effetti dell’incendio. Il bersaglio non era quindi la capacità di export, e la cautela scritta sopra si è rivelata la lettura giusta per la ragione più netta possibile: non c’era niente da quantificare. Resta una sola interruzione russa vera, quella dei carichi di greggio a Sheskharis, e il conto dei terminali fermi passa da due a uno.',
   },
   {
     symbol: 'BLOCCO NAVALE',

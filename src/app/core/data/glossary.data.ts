@@ -331,4 +331,12 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     why: 'Per chi legge un’analisi scritta a mercati chiusi cambia la domanda da porsi. Un fatto nuovo emerso di sabato non ha ancora un prezzo, quindi allarga l’ampiezza attesa del primo movimento senza dire nulla sul suo verso: un rischio più alto non è una previsione più forte. La conseguenza pratica è che un vuoto di contrattazione non si attraversa — un ordine collocato venerdì viene eseguito al primo prezzo disponibile, che può essere molto più lontano di quanto pianificato — e che la risposta sensata è stimare l’ampiezza attesa del salto invece di indovinarne la direzione.',
     related: ['Volatilità', 'Regime di mercato', 'Invalidazione'],
   },
+  {
+    term: 'Sostituzione dell’offerta',
+    letter: 'S',
+    definition:
+      'La possibilità, per chi compra una materia prima, di procurarsi lo stesso volume da un altro fornitore quando la fonte abituale si interrompe. Un’interruzione con una deviazione praticabile produce un cambio di rotta e di controparte; una senza deviazione produce un aumento di prezzo.',
+    why: 'Serve a non sommare interruzioni che non sono sommabili. Il premio geopolitico sul greggio non nasce dal danno in sé ma dalla competizione fra compratori per un barile che è diventato scarso: se un importante acquirente risolve il problema comprando altrove, quel barile non viene inseguito e lo shock resta locale invece di diventare un prezzo mondiale. È la differenza fra un porto di esportazione fermo, che ha alternative, e uno stretto chiuso, che è esso stesso l’alternativa di tutti.',
+    related: ['Premio di rischio geopolitico', 'Stretto di Hormuz', 'Vincolo materiale'],
+  },
 ];

@@ -22,6 +22,8 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { mochaChiudeEIlLibanoApreUnTerzoFronte } from './articles/mocha-chiude-e-il-libano-apre-un-terzo-fronte';
+import { unPortoSiFermaLAltroNo } from './articles/un-porto-si-ferma-l-altro-no-e-la-turchia-cambia-fornitore';
 import { dueChiazzeEDuemilaChilometriQuadrati } from './articles/due-chiazze-e-duemila-chilometri-quadrati';
 import { laTerzaNaveEWashingtonMetteInConto } from './articles/la-terza-nave-e-washington-mette-in-conto-la-benzina';
 import { diciassetteMilioniDiBarili } from './articles/diciassette-milioni-di-barili-e-il-conteggio-era-di-navi';
@@ -108,6 +110,8 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  mochaChiudeEIlLibanoApreUnTerzoFronte,
+  unPortoSiFermaLAltroNo,
   dueChiazzeEDuemilaChilometriQuadrati,
   laTerzaNaveEWashingtonMetteInConto,
   ilBreveScendeEIlLungoSale,
