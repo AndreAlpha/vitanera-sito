@@ -79,6 +79,7 @@ export type EditorialCategorySlug =
   | 'correlazioni'
   | 'premio-di-rischio'
   | 'rotte-e-approvvigionamento'
+  | 'assicurazioni-marittime'
   | 'interventi-valutari'
   | 'riserve-auree'
   | 'debito-pubblico'

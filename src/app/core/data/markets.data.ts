@@ -17,6 +17,42 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'ADNOC 14/8',
+    name: 'Terzo attacco a una nave ADNOC in transito nello Stretto di Hormuz, 14 agosto',
+    value: 'la terza in una settimana',
+    change: 'dopo le almeno sedici navi contate dal 28 febbraio; nessun ferito',
+    tone: 'warn',
+    icon: 'alert',
+    note: 'ADNOC ha comunicato tramite WAM, l’agenzia ufficiale degli Emirati, che una propria nave è stata attaccata venerdì mentre attraversava lo Stretto: nessun ferito, situazione riportata sotto controllo. Reuters precisa che è il terzo incidente che coinvolge navi della compagnia in meno di una settimana. Il fatto singolo conta meno della frequenza che lo contiene, ed è la frequenza a essere cambiata: dal 28 febbraio gli attacchi contati sono almeno sedici, ma tre cadono negli ultimi sette giorni. Accanto arriva la parte politica, e va nello stesso verso: il vice ministro degli Esteri Kazem Gharibabadi dichiara sabato che Hormuz sarà aperto o chiuso esclusivamente sotto il comando dell’Iran e che il blocco continuerà a essere fatto rispettare, mentre il ministro degli Esteri Abbas Araqchi dice che sulla ripresa dei negoziati con Washington non è stata presa alcuna decisione. Sulla scala usata qui restano preferenze dichiarate, e in due settimane non hanno spostato di una nave il conteggio dei transiti; ma il verso è quello annotato il 12 agosto, e va contro l’intuizione — una rivendicazione di comando permanente allontana la riapertura invece di avvicinarla, perché trasforma il passaggio da ripristino tecnico in concessione da negoziare.',
+  },
+  {
+    symbol: 'TRANSITI VENERDI',
+    name: 'Transiti nello Stretto di Hormuz, venerdì 14 agosto',
+    value: 'due navi',
+    change: 'più una metaniera vuota in entrata; nessuna spedizione visibile di greggio',
+    tone: 'warn',
+    icon: 'map',
+    note: 'È il numero più citato del fine settimana ed è anche il più fragile, e le due cose vanno dette insieme. Il conteggio è attribuito a Kpler: due navi in transito venerdì più una metaniera vuota diretta nel Golfo, contro oltre 130 al giorno prima del conflitto. Ma è una cifra giornaliera di un fornitore privato, cioè esattamente la categoria che questa scheda ha elencato il 14 agosto fra i dati non confermabili su una fonte indipendente, e le due navi del 7 agosto si erano già rivelate un minimo di campionamento e non il livello. Dentro lo stesso conteggio c’è però una voce di natura diversa e migliore: nessuna spedizione visibile di greggio. Questo archivio scrive da giorni che i barili battono gli scafi, perché il mercato dell’energia prezza il carico e non il numero di navi; un giorno senza greggio visibile in uscita è quindi la misura giusta, e arriva dalla fonte meno verificabile. La misura migliore dal dato più debole va registrata così, senza scegliere la metà che conviene. Quello che regge senza riserve è il confronto con le 130-140 di prima del 28 febbraio.',
+  },
+  {
+    symbol: 'BENZINA USA',
+    name: 'Prezzo medio della benzina negli Stati Uniti, metà agosto 2026',
+    value: '≈ 4,08 $/gallone',
+    change: 'più 29% sull’anno; il presidente invita a mettere in conto ulteriori aumenti',
+    tone: 'bear',
+    icon: 'dollar',
+    note: 'Venerdì il presidente americano ha detto agli americani di mettere in conto prezzi della benzina più alti finché continuerà il conflitto con l’Iran. Per due settimane la linea pubblica era stata l’opposto — lo Stretto sotto «controllo totale», il blocco come «un muro d’acciaio», il greggio che potrebbe contare sempre meno per gli Stati Uniti — e una dichiarazione che accetta il costo invece di negarlo cambia ciò che si può dedurre sulla durata: chi mette in conto la spesa non ha la stessa fretta di chiuderla. Per l’oro il canale non è il rifugio ma quello opposto, e conviene dirlo con precisione: la benzina alla pompa è il punto in cui il greggio smette di essere una quotazione e diventa una spesa che le famiglie osservano ogni settimana, ed è per questa via che si muovono le aspettative di inflazione. Venerdì alle 16:00 l’indagine del Michigan lo ha mostrato: fiducia in caduta a 51,0 da 55,2, attese a un anno in salita al 4,3% dal 4,2%, e probabilità di un rialzo a settembre risalita al 31,6% dal 29,3%. Le attese a lungo termine restano ferme al 3,3%, e finché stanno lì il canale è un rischio e non un fatto: la misura da guardare è la lettura definitiva dell’indagine a fine mese.',
+  },
+  {
+    symbol: 'SVERSAMENTI',
+    name: 'Due nuove chiazze di petrolio nel Golfo e sversamento al largo dell’Oman, 15 agosto',
+    value: '≈ 2.000 km²',
+    change: 'stima su immagini satellitari; nessuna perdita di offerta quantificata',
+    tone: 'warn',
+    icon: 'flow',
+    note: 'Reuters documenta tre episodi: una chiazza presso l’isola iraniana di Qeshm, collegata alla Minoan Pioneer, nave danneggiata in quello che viene descritto come un sospetto attacco iraniano; una seconda presso Sirri Island; e, separatamente, l’arenamento al largo dell’Oman della petroliera Caroline Bezengi, con greggio russo a bordo, da cui lo sversamento stimato via satellite in circa 2.000 chilometri quadrati. Le tensioni geopolitiche stanno già ostacolando le operazioni di bonifica. Il metro che questo archivio applica alle infrastrutture chiede una cosa sola — quanta capacità toglie al mercato — e qui la risposta è nessuna misurata: non è uno shock dell’offerta e non va contato come tale, altrimenti il metro darebbe solo risposte allarmanti e smetterebbe di essere un metro. Quello che sale è un’altra grandezza, cioè il costo di operare su quelle acque: recupero, autorizzazioni, assicurazioni e logistica, in un quadrante che ha già un vincolo assicurativo aperto da fine luglio con la clausola sul rischio bellico. Una rotta può chiudersi per via assicurativa senza che nessuno la blocchi, ed è il modo meno visibile e più duraturo di tenere ferme le navi. Il primo prezzo del meccanismo non sarà la cronaca delle bonifiche ma un rialzo dichiarato dei premi per il rischio di guerra.',
+  },
+  {
     symbol: 'CHIUSURA 14/8',
     name: 'Chiusure di seduta della curva americana, venerdì 14 agosto',
     value: '10Y 4,695% · 30Y 5,261%',

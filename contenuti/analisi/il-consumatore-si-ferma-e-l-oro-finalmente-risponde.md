@@ -29,8 +29,10 @@ fonti:
     titolo: "US retail sales fell 0.6% in July, missing forecasts as consumers pull back"
   - testata: "Investing.com"
     titolo: "Rilevazioni di prezzo su oro, Dollar Index, rendimenti e Brent"
+esito: "confermata"
+controllata: "2026-08-15T09:20:00+02:00"
 sorgente: "src/app/core/data/articles/il-consumatore-si-ferma-e-l-oro-finalmente-risponde.ts"
-impronta: "f1d274f71e373d11"
+impronta: "9156be6fb0acf409"
 ---
 
 # Il consumatore si ferma, e l’oro finalmente risponde
@@ -141,6 +143,20 @@ Le due cose che questa analisi lascia aperte si decidono nella stessa giornata. 
 Impostazione su XAU/USD: neutrale, forza bassa, orizzonte breve.
 
 La direzione risale da neutrale-ribassista a neutrale, e il motivo è che la ragione scritta per tenerla più in basso è decaduta. Quella ragione era una sola e precisa: per quattro sedute i motivi per salire si erano accumulati e il prezzo era sceso lo stesso, cioè il canale di trasmissione fra quadro macroeconomico e metallo sembrava interrotto. Alle 14:30 le vendite al dettaglio escono a meno 0,6% contro attese di più 0,1%, il Dollar Index scende a 99,500, il biennale a 4,119% e la probabilità di un rialzo a settembre passa per la prima volta sotto il 30%: il metallo sale dello 0,58% a 4.376,10 con un massimo a 4.386,91. Il canale funziona. Non risale oltre il neutrale per due ragioni misurabili: il prezzo resta sotto i 4.408,59 della chiusura di mercoledì, quindi la settimana è ancora negativa, e la reazione ha meno di un’ora di vita in una seduta americana appena aperta.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-15T09:20:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, ed è l’analisi che fra quelle di venerdì ha avuto il verdetto più solido nel merito. Sosteneva che il metallo avesse ripreso a rispondere ai dati dopo quattro sedute in cui non lo faceva, e che la trasmissione passasse dal biennale: l’oro ha chiuso in guadagno a 4.376,59 invece di restituire la reazione, il biennale non è mai rientrato sopra il 4,159% del massimo di quella mattina, e la probabilità di un rialzo a settembre si è fermata al 31,6% contro il 33,0% dichiarato come smentita. Due condizioni restano aperte per costruzione, con un termine che corre fino a lunedì, e una fino al 16 settembre.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un oro che chiude sotto i 4.351,07 dollari della chiusura di giovedì: annullerebbe per intero la risposta al dato e direbbe che la reazione era di mezz’ora, non una riprezzatura. | no | La chiusura di venerdì è 4.376,59 dollari con più 0,59%, quindi venticinque dollari e cinquantadue sopra il livello: la risposta al dato non è stata restituita nelle ore successive, che è esattamente quello che la condizione metteva alla prova. |
+| Una probabilità di rialzo a settembre che torna sopra il 33,0% di stamattina entro lunedì: direbbe che il 29,3% era la reazione al titolo e non un movimento vero sulla misura. | no | Il numero è risalito ma si è fermato sotto: 31,6% dopo la componente sulle attese di inflazione dell’indagine del Michigan delle 16:00, contro il 33,0% che la condizione richiede. Un punto e quattro decimi di margine, e il termine di lunedì è ancora aperto. |
+| La revisione delle vendite al dettaglio di luglio, in uscita con il dato di agosto il 16 settembre, che riporti la variazione complessiva in territorio positivo: il meno 0,6% ha un margine di ±0,4% e il mese precedente era già dentro il rumore. | no | Non giudicabile al controllo: la revisione esce il 16 settembre insieme al dato di agosto, cioè nello stesso giorno della riunione della Federal Reserve. È il debito aperto di questa analisi, e la condizione era stata scritta con quella scadenza in chiaro. |
+| Un biennale che torna sopra il 4,159% del massimo odierno: è la scadenza su cui la trasmissione descritta qui si misura per prima, e un rientro toglierebbe il primo anello della catena. | no | Il biennale è scivolato fino a 4,117% ed è rientrato a 4,136% dopo l’indagine del Michigan: non risulta alcuna rilevazione sopra il 4,159% nella parte restante della seduta. Il primo anello della catena ha tenuto. |
+| Un Brent che chiude sopra gli 89,06 dollari del massimo di mercoledì entro lunedì: riaprirebbe il canale energetico verso l’inflazione attesa, che oggi si è chiuso, e sposterebbe il segno della lettura. | no | Il canale si è riaperto in parte ma non è arrivato alla soglia: dopo la sospensione dei carichi a Novorossiysk il Brent ha chiuso a 88,60 dollari con più 1,76% e un massimo di 88,79, quarantasei centesimi sotto. Il termine di lunedì resta aperto. |
 
 ## Fonti consultate
 

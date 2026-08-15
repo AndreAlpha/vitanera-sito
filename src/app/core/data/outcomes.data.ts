@@ -2433,4 +2433,221 @@ export const OUTCOMES: readonly Outcome[] = [
     lesson:
       'Il confronto fra questo esito e quello dell’analisi pubblicata settantacinque minuti dopo è la misura più chiara che questo registro abbia prodotto. La prima aveva dichiarato la propria incertezza sul giudizio della domanda e si era appoggiata lo stesso all’indizio debole: quattro condizioni su cinque scattate. La seconda aveva rifiutato quell’indizio, aveva usato i numeri veri e aveva messo come prima condizione il comunicato ufficiale che ancora mancava: nessuna condizione scattata. Le due analisi guardavano lo stesso evento a un’ora e un quarto di distanza, con la stessa informazione disponibile a chiunque, e la differenza fra un verdetto e l’altro sta per intero nell’avere accettato o rifiutato un sostituto al numero che serviva. La regola che ne esce non è nuova — era già scritta il 12 agosto — ma adesso ha un prezzo misurato accanto.',
   },
+  {
+    slug: 'sedici-attacchi-alle-navi-e-il-blocco-senza-scadenza',
+    checkedAt: '2026-08-15T09:20:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Una risposta ufficiale iraniana che rivendichi o smentisca l’attacco alle due navi di ADNOC: qui l’episodio è registrato come accusa emiratina non ancora contestata, e una posizione di Teheran ne cambierebbe lo stato.',
+        triggered: false,
+        evidence:
+          'Teheran ha parlato dello Stretto e non dell’episodio, ed è la distinzione che tiene in piedi la condizione. Sabato 15 agosto il vice ministro degli Esteri Kazem Gharibabadi ha dichiarato che Hormuz sarà aperto o chiuso esclusivamente sotto il comando dell’Iran e che il blocco continuerà a essere fatto rispettare, e il ministro degli Esteri Abbas Araqchi ha detto che non è stata presa alcuna decisione sulla ripresa dei negoziati con Washington. Nessuna delle due dichiarazioni rivendica o smentisce l’attacco alle due navi di giovedì: lo stato dell’episodio resta quello di un’accusa emiratina non contestata.',
+      },
+      {
+        condition:
+          'Un conteggio dei transiti nello Stretto, venerdì o lunedì, sopra la media di agosto di circa dodici navi al giorno: direbbe che la frequenza degli attacchi non sta riducendo il passaggio e che il vincolo materiale si sta allentando invece di stringersi.',
+        triggered: false,
+        evidence:
+          'Va nel verso opposto, con la cautela che questo archivio ha dichiarato lo stesso giorno. Il conteggio attribuito a Kpler per venerdì 14 agosto è di due navi, più una metaniera vuota diretta nel Golfo, senza spedizioni visibili di greggio. Due è un sesto della media di agosto richiesta dalla condizione. Ma è una cifra giornaliera di un fornitore privato, cioè esattamente la categoria che la scheda operativa del 14 agosto alle 23:55 elencava fra quelle non confermabili su una fonte indipendente: la condizione è registrata come non scattata sulla direzione, non sul livello. Il conteggio di lunedì non è ancora disponibile.',
+      },
+      {
+        condition:
+          'Un Brent che chiude sopra i 90 dollari entro lunedì: sposterebbe il canale energetico dal sostegno al rifugio alla pressione sui rendimenti, e la direzione di questa lettura andrebbe rivista al ribasso invece che al rialzo.',
+        triggered: false,
+        evidence:
+          'La chiusura di venerdì è 88,60 dollari con più 1,76% e un massimo di giornata a 88,79, quindi un dollaro e ventuno sotto la soglia; su un’altra rilevazione la stessa chiusura vale 88,52. Restano da contare le sedute di lunedì, e il termine della condizione è ancora aperto.',
+      },
+      {
+        condition:
+          'Le misure annunciate da Bessent pubblicate entro la prossima settimana con un contenuto operativo verificabile: farebbero passare quell’annuncio dalla colonna delle dichiarazioni a quella dei fatti, che è la distinzione su cui questa analisi poggia.',
+        triggered: false,
+        evidence:
+          'Nessuna pubblicazione con contenuto operativo risulta al controllo: l’annuncio del segretario al Tesoro resta senza testo. Il termine dichiarato copre l’intera settimana successiva e scade il 21 agosto, quindi la condizione è aperta per costruzione.',
+      },
+      {
+        condition:
+          'Un oro che chiude sopra i 4.400 dollari entro venerdì: toglierebbe il fondamento all’osservazione centrale, cioè che il metallo non risponde neanche a un’escalation materiale.',
+        triggered: false,
+        evidence:
+          'È l’unica condizione con il termine scaduto, e si chiude per tre dollari e dodici centesimi: il massimo di venerdì è 4.396,88 dollari e la chiusura 4.376,59, con più 0,59%. L’oro non ha superato i 4.400 in nessun momento della giornata in cui veniva contato il sedicesimo attacco.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e l’osservazione centrale ha retto sul filo. L’analisi sosteneva che l’escalation fosse reale e misurabile — almeno sedici attacchi a navi collegate ad ADNOC dal 28 febbraio — e che il metallo non la stesse prezzando: l’oro ha chiuso a 4.376,59 dollari senza mai toccare i 4.400 che la condizione indicava come smentita, mancandoli per tre dollari e dodici. Nelle ore successive la frequenza degli attacchi è aumentata invece di diminuire, con una terza nave ADNOC colpita venerdì secondo l’agenzia ufficiale emiratina WAM, e il conteggio dei transiti è scivolato a due navi per venerdì. Su quest’ultimo numero il verdetto poggia sulla direzione e non sul livello: è una cifra giornaliera di un fornitore privato, e questo archivio ha già dovuto correggersi due volte per aver preso un conteggio simile per il livello invece che per la varianza del campionamento.',
+  },
+  {
+    slug: 'il-livello-non-ha-retto-e-ust-luga-non-e-jazan',
+    checkedAt: '2026-08-15T09:20:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Le vendite al dettaglio di luglio, oggi alle 14:30, sotto il consenso con l’oro che recupera comunque i 4.400 dollari entro la chiusura: toglierebbe insieme la rotazione verso il rischio e le prese di profitto, cioè entrambe le spiegazioni su cui questa analisi poggia.',
+        triggered: false,
+        evidence:
+          'Prima gamba dentro, seconda mancata per tre dollari e dodici centesimi. Le vendite al dettaglio di luglio sono uscite a meno 0,6% contro attese di più 0,1%, sette decimi sotto il consenso; l’oro è salito ma si è fermato a un massimo di 4.396,88 e ha chiuso a 4.376,59. La condizione chiede entrambe le cose e cade sulla seconda.',
+      },
+      {
+        condition:
+          'Un Brent che chiude sopra gli 89,06 dollari del massimo di mercoledì: sposterebbe il canale energetico dal sostegno alla pressione, e la lettura sull’oro andrebbe rivista guardando i rendimenti invece del rifugio.',
+        triggered: false,
+        evidence:
+          'Chiusura a 88,60 dollari con un massimo di 88,79: quarantasei centesimi sotto la soglia, pur con tre interruzioni di offerta nella stessa settimana e la sospensione dei carichi a Novorossiysk nel pomeriggio.',
+      },
+      {
+        condition:
+          'Una dichiarazione ufficiale russa, di Transneft o dell’operatore del porto, che quantifichi una riduzione dei caricamenti a Ust-Luga: farebbe passare l’episodio da rischio su capacità attiva a perdita accertata di barili, che è la categoria che qui è stata esplicitamente esclusa.',
+        triggered: false,
+        evidence:
+          'Nessuna dichiarazione su Ust-Luga, e la conseguenza operativa è arrivata da un altro porto: la sospensione dei carichi dichiarata in serata riguarda il terminale di Sheskharis a Novorossiysk, sul Mar Nero, non lo scalo baltico che questa condizione nomina. La distinzione fra rischio su capacità attiva e perdita accertata regge quindi per Ust-Luga e si è sciolta altrove.',
+      },
+      {
+        condition:
+          'Un oro che chiude la settimana sopra i 4.408,59 dollari della chiusura di mercoledì: annullerebbe per intero la rottura descritta qui e riporterebbe la direzione di breve almeno a neutrale.',
+        triggered: false,
+        evidence:
+          'Termine scaduto e condizione chiusa: la settimana si chiude a 4.376,59 dollari, trentadue sotto il livello, e il massimo di venerdì si è fermato a 4.396,88. La rottura descritta la mattina del 14 agosto non è stata annullata.',
+      },
+      {
+        condition:
+          'Un Dollar Index che torna sopra 100,00 mentre l’oro resta sotto i 4.300: rimetterebbe in piedi la spiegazione meccanica del cambio, e la debolezza relativa descritta qui perderebbe la sua parte più solida.',
+        triggered: false,
+        evidence:
+          'Nessuna delle due gambe, e a distanza. Il Dollar Index scende per la terza seduta consecutiva, con rilevazioni fra 99,390 di minimo e 99,487, quindi mai vicino a quota 100; l’oro chiude settantasei dollari sopra i 4.300.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e due si chiudono definitivamente perché il loro termine era la fine della settimana. L’analisi era stata scritta la mattina di venerdì sulla rottura del livello dichiarato in anticipo, e sosteneva due cose: che l’oro fosse in ritardo relativo, e che l’attacco a Ust-Luga fosse un rischio su capacità attiva e non una perdita accertata di barili. La prima ha retto per tre dollari e dodici centesimi, che è il margine con cui il metallo ha mancato i 4.400 nella seduta in cui i dati americani gli davano ragione. La seconda ha retto per una ragione che vale più del verdetto: la conseguenza operativa è arrivata la sera stessa, ma da Novorossiysk e non da Ust-Luga, cioè da un terminale diverso da quello che la condizione nominava. Distinguere i due porti non era pedanteria.',
+  },
+  {
+    slug: 'il-consumatore-si-ferma-e-l-oro-finalmente-risponde',
+    checkedAt: '2026-08-15T09:20:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un oro che chiude sotto i 4.351,07 dollari della chiusura di giovedì: annullerebbe per intero la risposta al dato e direbbe che la reazione era di mezz’ora, non una riprezzatura.',
+        triggered: false,
+        evidence:
+          'La chiusura di venerdì è 4.376,59 dollari con più 0,59%, quindi venticinque dollari e cinquantadue sopra il livello: la risposta al dato non è stata restituita nelle ore successive, che è esattamente quello che la condizione metteva alla prova.',
+      },
+      {
+        condition:
+          'Una probabilità di rialzo a settembre che torna sopra il 33,0% di stamattina entro lunedì: direbbe che il 29,3% era la reazione al titolo e non un movimento vero sulla misura.',
+        triggered: false,
+        evidence:
+          'Il numero è risalito ma si è fermato sotto: 31,6% dopo la componente sulle attese di inflazione dell’indagine del Michigan delle 16:00, contro il 33,0% che la condizione richiede. Un punto e quattro decimi di margine, e il termine di lunedì è ancora aperto.',
+      },
+      {
+        condition:
+          'La revisione delle vendite al dettaglio di luglio, in uscita con il dato di agosto il 16 settembre, che riporti la variazione complessiva in territorio positivo: il meno 0,6% ha un margine di ±0,4% e il mese precedente era già dentro il rumore.',
+        triggered: false,
+        evidence:
+          'Non giudicabile al controllo: la revisione esce il 16 settembre insieme al dato di agosto, cioè nello stesso giorno della riunione della Federal Reserve. È il debito aperto di questa analisi, e la condizione era stata scritta con quella scadenza in chiaro.',
+      },
+      {
+        condition:
+          'Un biennale che torna sopra il 4,159% del massimo odierno: è la scadenza su cui la trasmissione descritta qui si misura per prima, e un rientro toglierebbe il primo anello della catena.',
+        triggered: false,
+        evidence:
+          'Il biennale è scivolato fino a 4,117% ed è rientrato a 4,136% dopo l’indagine del Michigan: non risulta alcuna rilevazione sopra il 4,159% nella parte restante della seduta. Il primo anello della catena ha tenuto.',
+      },
+      {
+        condition:
+          'Un Brent che chiude sopra gli 89,06 dollari del massimo di mercoledì entro lunedì: riaprirebbe il canale energetico verso l’inflazione attesa, che oggi si è chiuso, e sposterebbe il segno della lettura.',
+        triggered: false,
+        evidence:
+          'Il canale si è riaperto in parte ma non è arrivato alla soglia: dopo la sospensione dei carichi a Novorossiysk il Brent ha chiuso a 88,60 dollari con più 1,76% e un massimo di 88,79, quarantasei centesimi sotto. Il termine di lunedì resta aperto.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, ed è l’analisi che fra quelle di venerdì ha avuto il verdetto più solido nel merito. Sosteneva che il metallo avesse ripreso a rispondere ai dati dopo quattro sedute in cui non lo faceva, e che la trasmissione passasse dal biennale: l’oro ha chiuso in guadagno a 4.376,59 invece di restituire la reazione, il biennale non è mai rientrato sopra il 4,159% del massimo di quella mattina, e la probabilità di un rialzo a settembre si è fermata al 31,6% contro il 33,0% dichiarato come smentita. Due condizioni restano aperte per costruzione, con un termine che corre fino a lunedì, e una fino al 16 settembre.',
+  },
+  {
+    slug: 'la-fiducia-crolla-e-le-attese-di-inflazione-salgono',
+    checkedAt: '2026-08-15T09:20:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Una probabilità di rialzo a settembre che torna sotto il 29,3% delle 14:50 entro lunedì: direbbe che la risalita al 31,6% era la reazione di un’ora alla riga sulle attese di inflazione e non una riprezzatura vera.',
+        triggered: false,
+        evidence:
+          'Il numero è rimasto dove l’indagine lo aveva portato: 31,6% in chiusura di settimana, contro il 29,3% che la condizione richiede come rientro. La risalita non è stata restituita nelle ore successive, quindi la lettura data qui sulla componente inflazione ha retto entro la seduta. Il termine di lunedì è ancora aperto.',
+      },
+      {
+        condition:
+          'Un oro che chiude sotto i 4.351,07 dollari della chiusura di giovedì: annullerebbe per intero il recupero descritto qui e riporterebbe la direzione almeno a neutrale.',
+        triggered: false,
+        evidence:
+          'Chiusura a 4.376,59 dollari con più 0,59%: il recupero della seconda metà di venerdì è arrivato intatto alla chiusura, con un minimo di giornata di 4.311,22 toccato nella notte e mai riavvicinato dopo il dato.',
+      },
+      {
+        condition:
+          'Un Dollar Index che torna sopra 99,855, cioè sopra la chiusura di ieri, mentre l’oro resta sopra i 4.390: toglierebbe la gamba del cambio, che in questa analisi è indicata come l’unica che sta davvero spingendo.',
+        triggered: false,
+        evidence:
+          'Nessuna delle due gambe. Il Dollar Index ha chiuso la terza seduta consecutiva in calo, con rilevazioni fra 99,390 di minimo e 99,487, quindi oltre tre decimi sotto la soglia; e l’oro non è rimasto sopra i 4.390, chiudendo a 4.376,59 dopo un massimo di 4.396,88. La gamba del cambio ha continuato a spingere per tutta la seduta.',
+      },
+      {
+        condition:
+          'La lettura definitiva del Michigan, a fine mese, con l’indice rivisto sopra 54,0 oppure con le attese a un anno riportate al 4,2%: il dato usato qui è preliminare e la revisione può cambiare entrambe le metà del ragionamento.',
+        triggered: false,
+        evidence:
+          'Non giudicabile: la lettura definitiva dell’indagine esce a fine agosto e al controllo non è pubblicata. Resta il debito aperto di questa analisi, dichiarato con la sua scadenza al momento della scrittura.',
+      },
+      {
+        condition:
+          'Un biennale che scende sotto il 4,117% del minimo odierno: direbbe che la parte breve ha ripreso a confermare e che il metallo non sta salendo solo sul cambio.',
+        triggered: false,
+        evidence:
+          'Il 4,117% è rimasto il minimo della giornata e non è stato bucato: dopo l’indagine del Michigan il biennale è rientrato a 4,136%. La parte breve non ha aggiunto conferme nella parte finale della seduta, che è la ragione per cui la lettura teneva la forza dove l’aveva messa.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata. L’analisi era la sola di venerdì a registrare un elemento contrario — la fiducia del Michigan che crolla a 51,0 mentre le attese di inflazione a un anno salgono al 4,3% — e sosteneva che il mercato dei tassi avesse letto la seconda metà dell’indagine invece della prima. Il numero le ha dato ragione fino alla chiusura: la probabilità di un rialzo a settembre è rimasta al 31,6% invece di rientrare sotto il 29,3%, e il biennale non è più scivolato sotto il minimo di 4,117%. Due condizioni non sono giudicabili per costruzione, e una — la revisione definitiva dell’indagine a fine mese — è il solo modo per mettere alla prova il dato preliminare su cui l’intera lettura poggia.',
+  },
+  {
+    slug: 'il-terzo-attacco-in-due-giorni-e-il-primo-che-toglie-barili',
+    checkedAt: '2026-08-15T09:20:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Una comunicazione dell’operatore del terminale o di Transneft che dichiari la ripresa dei carichi a Sheskharis entro lunedì: ridurrebbe l’episodio a una sospensione di poche ore, e la differenza di natura descritta qui rispetto a Jazan e Ust-Luga si assottiglierebbe.',
+        triggered: false,
+        evidence:
+          'Nessuna comunicazione sulla ripresa dei carichi risulta al controllo, trentasei ore dopo la sospensione. Il termine dichiarato è lunedì e la condizione resta aperta: il precedente citato nell’analisi, un attacco allo stesso terminale a inizio marzo, aveva prodotto una sospensione di cinque giorni.',
+      },
+      {
+        condition:
+          'Dati di tracciamento navale che mostrino carichi in uscita da Novorossiysk nei prossimi giorni sui volumi di luglio: direbbe che i serbatoi si sono svuotati senza che la produzione venisse toccata, e la catena descritta qui non si sarebbe attivata.',
+        triggered: false,
+        evidence:
+          'Nessuna rilevazione di carichi in uscita sui volumi di luglio — circa un milione di barili al giorno — risulta pubblicata nelle trentasei ore successive. La condizione è registrata come non scattata sull’assenza del dato e non su un numero contrario, che è una distinzione che questo registro ha imparato a dichiarare.',
+      },
+      {
+        condition:
+          'Un Brent che chiude sotto gli 87,07 dollari della vigilia entro lunedì: annullerebbe la risalita e riporterebbe l’episodio nella categoria dei rimbalzi che rientrano, dove questo archivio ha collocato Jazan.',
+        triggered: false,
+        evidence:
+          'La risalita non è rientrata: il Brent ha chiuso a 88,60 dollari con più 1,76% sulla chiusura di 87,07, cioè un dollaro e cinquantatré sopra la soglia, con un massimo di 88,79. È il contrario di quello che era successo a Jazan, dove il rimbalzo si era esaurito in un’ora.',
+      },
+      {
+        condition:
+          'Un oro che chiude sotto i 4.351,07 dollari della chiusura di giovedì: toglierebbe il fondamento alla parte di questa lettura che tiene la direzione sopra il neutrale.',
+        triggered: false,
+        evidence:
+          'Chiusura a 4.376,59 dollari con più 0,59%, venticinque e cinquantadue sopra il livello. La direzione sopra il neutrale ha conservato il suo fondamento fino alla chiusura di settimana.',
+      },
+      {
+        condition:
+          'Un Brent stabilmente sopra i 90 dollari accompagnato da un decennale che torna sopra il 4,70%: sarebbe la conferma che il canale energetico ha cambiato segno, e la lettura di breve andrebbe portata sotto il neutrale invece che tenuta sopra.',
+        triggered: false,
+        evidence:
+          'La seconda gamba si è avvicinata più della prima, e va detto. Il decennale ha chiuso a 4,695% con un massimo di 4,701%, quindi ha attraversato il 4,70% in seduta senza mantenerlo; il Brent è rimasto un dollaro e quaranta sotto i 90. La congiunzione non si è formata, ma per la prima volta una delle due gambe ha toccato il proprio livello.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e l’argomento centrale ha retto nel modo più diretto possibile. L’analisi distingueva la sospensione dei carichi a Sheskharis dai due attacchi precedenti — Jazan, ferma da fine luglio, e Ust-Luga, colpita senza danni quantificati — sostenendo che solo la prima toglie barili al mercato, e prevedeva che la differenza si vedesse nel prezzo. Il Brent ha chiuso a 88,60 dollari con più 1,76% invece di restituire il rialzo entro l’ora come era successo a Jazan, nessuna ripresa dei carichi è stata comunicata a trentasei ore dalla sospensione, e l’oro ha tenuto la chiusura di giovedì con venticinque dollari di margine. Il dato più informativo è però nella quinta condizione: il decennale ha toccato 4,701% in seduta, cioè ha attraversato per la prima volta il livello che tre analisi consecutive avevano indicato come metà della combinazione da temere, e non lo ha mantenuto.',
+    lesson:
+      'Cinque analisi chiuse insieme, cinque verdetti «confermata», nessuna condizione scattata su venticinque: è un risultato che va guardato con sospetto invece che con soddisfazione, e la ragione sta nella costruzione delle condizioni e non nella qualità delle letture. Le cinque analisi sono state scritte nello stesso giorno e hanno dichiarato in gran parte le stesse soglie — i 4.351,07 di chiusura di giovedì sull’oro, i 4.400 e i 4.408,59 come rottura al rialzo, gli 89,06 e i 90 dollari sul Brent, il 33,0% e il 29,3% sulla probabilità di settembre — quindi le venticinque condizioni sono in realtà otto numeri contati più volte, e una sola chiusura di seduta le ha risolte tutte nello stesso verso. Un registro che funziona non può moltiplicare per cinque una singola osservazione: quando più analisi dello stesso giorno condividono la soglia, la seconda e la terza dovrebbero dichiararne una diversa — un livello che la prima non stava già misurando — altrimenti il conteggio degli esiti misura quante volte è stato scritto lo stesso numero e non quante volte quel numero ha avuto ragione.',
+  },
 ];

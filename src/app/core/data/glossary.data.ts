@@ -323,4 +323,12 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     why: 'Per l’oro conta la distanza fra la solennità della formula e l’esistenza di una procedura. Una clausola senza comando integrato, esercitazioni e forze stazionate alza il premio di rischio percepito molto meno di quanto suggerisca il suo testo, e una deterrenza che funzionasse davvero lo ridurrebbe invece di alzarlo.',
     related: ['Premio di rischio', 'Invalidazione'],
   },
+  {
+    term: 'Rischio di gap',
+    letter: 'R',
+    definition:
+      'Il salto di prezzo fra la chiusura di una seduta e l’apertura della successiva, quando nell’intervallo non è avvenuta alcuna contrattazione che possa attivare gli ordini di protezione. Si concentra sul fine settimana, perché fra il venerdì sera e la riapertura non esiste una rilevazione con liquidità dietro e le notizie si accumulano senza che nessuno le arbitri.',
+    why: 'Per chi legge un’analisi scritta a mercati chiusi cambia la domanda da porsi. Un fatto nuovo emerso di sabato non ha ancora un prezzo, quindi allarga l’ampiezza attesa del primo movimento senza dire nulla sul suo verso: un rischio più alto non è una previsione più forte. La conseguenza pratica è che un vuoto di contrattazione non si attraversa — un ordine collocato venerdì viene eseguito al primo prezzo disponibile, che può essere molto più lontano di quanto pianificato — e che la risposta sensata è stimare l’ampiezza attesa del salto invece di indovinarne la direzione.',
+    related: ['Volatilità', 'Regime di mercato', 'Invalidazione'],
+  },
 ];

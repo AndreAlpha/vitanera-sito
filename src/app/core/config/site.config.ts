@@ -346,6 +346,17 @@ export const CATEGORIES: readonly Category[] = [
       'Colli di bottiglia del commercio marittimo e decisioni sull’offerta di greggio. Quando il transito si complica, il prezzo si muove prima che cambi qualunque dato macro.',
   },
   {
+    slug: 'assicurazioni-marittime',
+    name: 'Assicurazioni marittime',
+    short: 'Assicurazioni',
+    family: 'temi',
+    series: false,
+    icon: 'shield',
+    tagline: 'Coperture, pedaggi, recuperi',
+    description:
+      'Quanto costa, e se è materialmente possibile, far passare un carico attraverso una zona di guerra: clausole sul rischio bellico, pedaggi chiesti per il transito, operazioni di recupero e bonifica. Conta per l’oro perché un vincolo assicurativo chiude una rotta senza che nessuno la blocchi: le navi restano ferme anche quando un accordo viene annunciato, e il premio geopolitico non si sgonfia.',
+  },
+  {
     slug: 'dazi-e-commercio',
     name: 'Dazi e commercio',
     short: 'Dazi',

@@ -27,8 +27,10 @@ fonti:
     quando: "14 agosto 2026"
   - testata: "Investing.com"
     titolo: "Rilevazioni di prezzo e probabilità implicite sui Fed Funds"
+esito: "confermata"
+controllata: "2026-08-15T09:20:00+02:00"
 sorgente: "src/app/core/data/articles/la-fiducia-crolla-e-le-attese-di-inflazione-salgono.ts"
-impronta: "a93f7577b9cc8631"
+impronta: "6386bf9d11d2906b"
 ---
 
 # La fiducia crolla, e le attese di inflazione salgono
@@ -127,6 +129,20 @@ Il 51,0 è preliminare e si basa su una parte del campione. La revisione di fine
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 La direzione sale da neutrale a neutrale con inclinazione rialzista, e la ragione è che è caduta la riserva scritta due ore fa. Alle 14:50 la lettura era stata portata a neutrale osservando che la risposta dell’oro al dato sui consumi aveva meno di un’ora di vita: adesso ne ha due, il metallo è passato da 4.376,10 a 4.392,33 e il massimo di giornata si è spostato a 4.396,88. La forza però resta bassa, e per un motivo che il dato di oggi rende esplicito: l’indagine del Michigan non è un dato accomodante. La fiducia crolla dell’8%, ma le attese di inflazione a un anno salgono al 4,3%, e la probabilità di un rialzo a settembre è risalita al 31,6% dal 29,3% di due ore fa mentre il biennale rientrava a 4,136% dal minimo di 4,117%. Il metallo sta quindi salendo sul cambio, non sui tassi: il Dollar Index è a 99,410, nuovo minimo di giornata.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-15T09:20:00+02:00.
+
+Nessuna delle cinque condizioni è scattata. L’analisi era la sola di venerdì a registrare un elemento contrario — la fiducia del Michigan che crolla a 51,0 mentre le attese di inflazione a un anno salgono al 4,3% — e sosteneva che il mercato dei tassi avesse letto la seconda metà dell’indagine invece della prima. Il numero le ha dato ragione fino alla chiusura: la probabilità di un rialzo a settembre è rimasta al 31,6% invece di rientrare sotto il 29,3%, e il biennale non è più scivolato sotto il minimo di 4,117%. Due condizioni non sono giudicabili per costruzione, e una — la revisione definitiva dell’indagine a fine mese — è il solo modo per mettere alla prova il dato preliminare su cui l’intera lettura poggia.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Una probabilità di rialzo a settembre che torna sotto il 29,3% delle 14:50 entro lunedì: direbbe che la risalita al 31,6% era la reazione di un’ora alla riga sulle attese di inflazione e non una riprezzatura vera. | no | Il numero è rimasto dove l’indagine lo aveva portato: 31,6% in chiusura di settimana, contro il 29,3% che la condizione richiede come rientro. La risalita non è stata restituita nelle ore successive, quindi la lettura data qui sulla componente inflazione ha retto entro la seduta. Il termine di lunedì è ancora aperto. |
+| Un oro che chiude sotto i 4.351,07 dollari della chiusura di giovedì: annullerebbe per intero il recupero descritto qui e riporterebbe la direzione almeno a neutrale. | no | Chiusura a 4.376,59 dollari con più 0,59%: il recupero della seconda metà di venerdì è arrivato intatto alla chiusura, con un minimo di giornata di 4.311,22 toccato nella notte e mai riavvicinato dopo il dato. |
+| Un Dollar Index che torna sopra 99,855, cioè sopra la chiusura di ieri, mentre l’oro resta sopra i 4.390: toglierebbe la gamba del cambio, che in questa analisi è indicata come l’unica che sta davvero spingendo. | no | Nessuna delle due gambe. Il Dollar Index ha chiuso la terza seduta consecutiva in calo, con rilevazioni fra 99,390 di minimo e 99,487, quindi oltre tre decimi sotto la soglia; e l’oro non è rimasto sopra i 4.390, chiudendo a 4.376,59 dopo un massimo di 4.396,88. La gamba del cambio ha continuato a spingere per tutta la seduta. |
+| La lettura definitiva del Michigan, a fine mese, con l’indice rivisto sopra 54,0 oppure con le attese a un anno riportate al 4,2%: il dato usato qui è preliminare e la revisione può cambiare entrambe le metà del ragionamento. | no | Non giudicabile: la lettura definitiva dell’indagine esce a fine agosto e al controllo non è pubblicata. Resta il debito aperto di questa analisi, dichiarato con la sua scadenza al momento della scrittura. |
+| Un biennale che scende sotto il 4,117% del minimo odierno: direbbe che la parte breve ha ripreso a confermare e che il metallo non sta salendo solo sul cambio. | no | Il 4,117% è rimasto il minimo della giornata e non è stato bucato: dopo l’indagine del Michigan il biennale è rientrato a 4,136%. La parte breve non ha aggiunto conferme nella parte finale della seduta, che è la ragione per cui la lettura teneva la forza dove l’aveva messa. |
 
 ## Fonti consultate
 

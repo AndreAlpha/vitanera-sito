@@ -22,6 +22,8 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { dueChiazzeEDuemilaChilometriQuadrati } from './articles/due-chiazze-e-duemila-chilometri-quadrati';
+import { laTerzaNaveEWashingtonMetteInConto } from './articles/la-terza-nave-e-washington-mette-in-conto-la-benzina';
 import { diciassetteMilioniDiBarili } from './articles/diciassette-milioni-di-barili-e-il-conteggio-era-di-navi';
 import { lAstaSiAggiudicaSopraIlMercato } from './articles/l-asta-si-aggiudica-sopra-il-mercato-e-il-dollaro-torna-su';
 import { dueDatiAFavoreELOroPerde } from './articles/due-dati-a-favore-e-l-oro-perde-l-uno-per-cento';
@@ -106,6 +108,8 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  dueChiazzeEDuemilaChilometriQuadrati,
+  laTerzaNaveEWashingtonMetteInConto,
   ilBreveScendeEIlLungoSale,
   ilTerzoAttaccoInDueGiorni,
   laFiduciaCrolla,

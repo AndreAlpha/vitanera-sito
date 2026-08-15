@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-14T23:55:00+02:00',
+  updatedAt: '2026-08-15T11:50:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,18 +187,18 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'La direzione resta dov’era perché è quello che ha fatto il prezzo: l’oro chiude a 4.376,59 ' +
-        'dollari con più 0,59% e la settimana in guadagno, con il dollaro in calo per la terza seduta e ' +
-        'la probabilità di un rialzo a settembre scesa fino al 29,3% in giornata, prima volta sotto il ' +
-        '30%. La forza resta bassa perché il rischio sorvegliato tutto il giorno si è materializzato in ' +
-        'chiusura, e dal lato sbagliato rispetto a dove era puntata la sorveglianza: non il petrolio, che ' +
-        'ha chiuso a 88,60 senza toccare gli 89,06, ma i rendimenti. Il decennale ha chiuso a 4,695% con ' +
-        'un massimo a 4,701% e il trentennale a 5,261% con un massimo a 5,271%, entrambi in rialzo di ' +
-        'cinque punti base in una seduta di dati deboli. Il rendimento alternativo che un metallo senza ' +
-        'cedole deve battere è salito proprio mentre saliva il metallo, ed è una convivenza che di solito ' +
-        'non dura: il livello da guardare alla riapertura è il 4,70% sul decennale.',
+        'Il fine settimana ha aggiunto fatti e tolto il prezzo, e questa lettura descrive quella ' +
+        'asimmetria invece di nasconderla. I fatti: una terza nave ADNOC attaccata venerdì nello Stretto ' +
+        'secondo l’agenzia ufficiale emiratina, Teheran che dichiara di comandare l’apertura e la chiusura ' +
+        'del passaggio, nessuna decisione sulla ripresa dei negoziati, e due nuove chiazze di petrolio nel ' +
+        'Golfo più uno sversamento stimato in circa 2.000 chilometri quadrati al largo dell’Oman. Il ' +
+        'prezzo: nessuno, perché fra la chiusura del venerdì e la riapertura non esiste una rilevazione ' +
+        'con liquidità dietro. La direzione resta sopra il neutrale perché il rischio geopolitico si ' +
+        'assesta più in alto; la forza resta bassa perché la stessa escalation alimenta anche le attese di ' +
+        'inflazione, e perché quello che è aumentato è l’ampiezza attesa dei movimenti di lunedì e non il ' +
+        'loro verso. Un rischio più alto non è una previsione più forte.',
       invalidation:
-        'Un decennale che chiude sopra il 4,70% e ci resta, con il Brent oltre i 90 dollari: è la combinazione indicata da tre giorni come quella che porta la lettura sotto il neutrale, e venerdì entrambe le gambe si sono avvicinate senza arrivarci. Oppure un oro che chiude sotto i 4.351,07 di giovedì, che annullerebbe il recupero della seconda metà di venerdì. Nell’altro verso, un decennale che rientra sotto il 4,641% della chiusura di giovedì direbbe che la salita della parte lunga era una coda di seduta, e la forza salirebbe.',
+        'Un Brent che apre lunedì sopra i 90 dollari mentre il decennale resta sopra il 4,695% della chiusura di venerdì: è la combinazione sorvegliata da quattro giorni, e arriverebbe come salto del fine settimana invece che dentro una seduta. Oppure un oro che chiude sotto i 4.351,07 di giovedì, che annullerebbe il recupero della seconda metà di venerdì. Nell’altro verso, un oro che apre e chiude sopra i 4.396,88 del massimo di venerdì direbbe che l’escalation è entrata nel prezzo e la forza salirebbe; e un conteggio dei transiti di lunedì pari o superiore a otto navi da fonte ricontrollabile direbbe che le due di venerdì erano un minimo di campionamento, come già succedeva il 7 agosto.',
     },
     {
       horizon: 'medio',
@@ -321,23 +321,27 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   headline:
-    'La curva si divide: il biennale scende al 4,117%, il decennale chiude a 4,695% e il trentennale a 5,261%',
+    'Terza nave ADNOC colpita in una settimana, e Washington mette in conto la benzina più cara: nessun prezzo aperto fino a lunedì',
   stance:
-    'La settimana chiude sciogliendo la domanda che l’aveva tenuta aperta. Per quattro sedute il metallo ' +
-    'non aveva risposto a niente: prezzi al consumo e alla produzione sotto le attese, richieste di ' +
-    'sussidio in aumento, un collocamento del trentennale con domanda sotto la media, un dollaro in calo, ' +
-    'e il prezzo che scendeva lo stesso fino a rompere nella notte i 4.351,45 dichiarati in anticipo come ' +
-    'livello di rottura, con un minimo a 4.311,22. Alle 14:30 di venerdì le vendite al dettaglio di luglio ' +
-    'escono a meno 0,6% contro attese di più 0,1% — primo calo dopo dieci mesi, 763,6 miliardi, con la ' +
-    'revisione di giugno confermata a più 0,2% — e la catena trasmette in tutti i suoi passaggi: la ' +
-    'probabilità di un rialzo a settembre scende al 29,3% e passa sotto il 30% per la prima volta in ' +
-    'questa fase, il biennale va a 4,119%, il Dollar Index a 99,500 sul minimo, e l’oro sale dello 0,58% a ' +
-    '4.376,10 con un massimo a 4.386,91. Va detto il limite che il comunicato dichiara da sé: delle tre ' +
-    'misure pubblicate solo quella complessiva ha un intervallo di confidenza che non contiene lo zero, ' +
-    'mentre il dato al netto delle auto e quello al netto di auto e carburanti sono marcati come non ' +
-    'distinguibili da zero. Nel frattempo il canale energetico si è chiuso: il Brent, arrivato a 88,68 in ' +
-    'mattinata sulla minaccia di blocco iraniano, è tornato negativo sulla giornata a 86,97.',
+    'Il fine settimana porta tre fatti nuovi e nessuna rilevazione con cui arbitrarli. Il primo è un ' +
+    'episodio in più su una serie contata: una terza nave ADNOC attaccata venerdì nello Stretto secondo ' +
+    'l’agenzia ufficiale degli Emirati, dopo le almeno sedici dal 28 febbraio. Il secondo è politico e ' +
+    'allontana la riapertura invece di avvicinarla — Teheran dichiara che Hormuz si apre o si chiude ' +
+    'soltanto sotto il proprio comando, e che sulla ripresa dei negoziati non è stata presa alcuna ' +
+    'decisione. Il terzo è americano ed è quello che cambia più cose: il presidente invita a mettere in ' +
+    'conto una benzina più cara finché dura il conflitto, con il prezzo alla pompa a circa 4,08 dollari ' +
+    'per gallone e più 29% sull’anno, cioè accetta in pubblico il costo energetico della pressione. Per ' +
+    'l’oro le due spinte restano opposte: rifugio da una parte, attese di inflazione e rendimenti ' +
+    'dall’altra, ed è la ragione per cui la direzione sta a metà. Accanto, due nuove chiazze di petrolio ' +
+    'nel Golfo e uno sversamento di circa 2.000 chilometri quadrati al largo dell’Oman alzano il costo ' +
+    'operativo delle rotte senza togliere un barile misurato. Le ultime osservazioni con liquidità dietro ' +
+    'restano le chiusure di venerdì: oro a 4.376,59 dollari con più 0,59% e la settimana in guadagno, ' +
+    'Brent a 88,60, decennale a 4,695% con un massimo a 4,701% e trentennale a 5,261%, con la probabilità ' +
+    'di un rialzo a settembre al 31,6% dopo essere scesa al 29,3%. Quello che il fine settimana ha ' +
+    'aumentato è l’ampiezza attesa del primo movimento di lunedì, non il suo verso.',
   favours: [
+    'Distinguere la qualità della misura da quella della fonte, e dirlo quando le due non coincidono: «nessuna spedizione visibile di greggio attraverso Hormuz» è la misura giusta, perché conta barili invece di scafi, e arriva dal dato meno verificabile di tutti, cioè un conteggio giornaliero di un fornitore privato. Le due metà vanno registrate insieme invece di scegliere quella che conviene',
+    'Trattare il fine settimana per quello che è: fra la chiusura del venerdì e la riapertura non esiste alcuna rilevazione con liquidità dietro, quindi un fatto emerso di sabato aumenta l’ampiezza attesa del primo movimento e non il suo verso. Il quadro di metodo sul rischio del fine settimana dice di stimare l’ampiezza, non di indovinare la direzione',
     'Cercare il qualificatore dentro la stessa fonte prima che altrove: il comunicato del Census pubblica il totale e le due misure che ne tolgono le voci volatili, e il confronto fra meno 0,6% e meno 0,2% dice da solo quanto del calo stia in auto e carburanti, senza bisogno di una ricostruzione riportata',
     'Chiedere a un attacco a un’infrastruttura una cosa sola, cioè quanta capacità toglie al mercato: la raffineria di Jazan era ferma da fine luglio e il rimbalzo è rientrato in un’ora, Ust-Luga lavora e va trattata diversamente. Lo stesso metro deve poter dare risposte opposte, altrimenti non è un metro',
     'Cercare la controprova nella misura più dura disponibile: la scarsità di greggio è stata raccontata qui per sei giorni con conteggi di navi, e il primo conteggio di barili nei serbatoi dice il contrario',
@@ -346,6 +350,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Correggere per iscritto e subito: l’asta di stasera era da 42 miliardi e non da 39, e la correzione è stata pubblicata a parte invece di essere infilata nel testo sbagliato',
   ],
   avoid: [
+    'Moltiplicare una sola osservazione per il numero di analisi che l’hanno usata: le cinque letture di venerdì hanno dichiarato in gran parte le stesse otto soglie — 4.351,07, 4.400 e 4.408,59 sull’oro, 89,06 e 90 sul Brent, 33,0% e 29,3% sulla probabilità di settembre — e una sola chiusura di seduta le ha risolte tutte nello stesso verso, producendo cinque verdetti «confermata» che valgono come uno. Quando più analisi dello stesso giorno condividono la soglia, la seconda deve dichiararne una che la prima non stia già misurando',
     'Trattare un conteggio giornaliero dei transiti come un fatto verificato: è la seconda volta in un giorno che una cifra quotidiana attribuita a un fornitore privato — cinque e nove mercoledì e giovedì, due venerdì — non risulta confermabile su nessuna fonte indipendente, mentre il dato di martedì, otto navi, si trova senza difficoltà. Quello che regge è la media a dieci giorni e il confronto con le 130 di prima del conflitto, non il numero del giorno',
     'Fondere il rendimento di aggiudicazione di un’asta con quello del mercato secondario: il 5,216% del collocamento del 13 agosto è il costo più alto su questa scadenza da circa un quarto di secolo, ma il trentennale scambiato sul secondario è a 5,238% e ha toccato 5,281% nell’ultimo anno. Sono due grandezze diverse e solo la prima porta quel primato',
     'Scambiare un flusso stimato per una misura: due fornitori danno otto e undici transiti per lo stesso martedì, mentre le scorte sono uno stock ufficiale che arriva con accanto il livello complessivo per verificarne la coerenza',
@@ -357,6 +362,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'Una terza nave ADNOC è stata attaccata venerdì 14 agosto mentre attraversava lo Stretto, secondo la comunicazione della compagnia tramite l’agenzia ufficiale emiratina WAM, e Reuters la conta come terzo incidente su navi ADNOC in meno di una settimana: nessun ferito, situazione riportata sotto controllo. La serie contata dal 28 febbraio si allunga e la frequenza aumenta invece di calare',
+    'Teheran alza la posta e la alza nel verso che allontana la riapertura: il vice ministro degli Esteri Gharibabadi dichiara che Hormuz sarà aperto o chiuso esclusivamente sotto il comando dell’Iran e che il blocco continuerà a essere fatto rispettare, mentre il ministro Araqchi dice che sulla ripresa dei negoziati con Washington non è stata presa alcuna decisione',
+    'Il presidente americano invita a mettere in conto prezzi della benzina più alti finché continuerà il conflitto, con il prezzo alla pompa a circa 4,08 dollari per gallone e più 29% sull’anno: è la prima volta che il costo energetico della pressione viene accettato in pubblico invece che minimizzato, e rende meno probabile una chiusura rapida',
     'La distanza fra quello che viene dichiarato e quello che viene misurato su Hormuz adesso ha due nomi e due numeri: il segretario all’Energia Chris Wright dice che le esportazioni attraverso lo Stretto hanno raggiunto una media a sette giorni di quasi 9 milioni di barili al giorno, mentre JPMorgan stima che il numero vero sia vicino a 4 milioni. È la stessa discrepanza già annotata qui fra ricostruzione ufficiale e tracciamento navale, con la differenza che entrambe le cifre sono ora attribuibili',
     'Il conteggio dei transiti verificabile resta quello di martedì: otto navi, il più basso dal 5 agosto, contro una media a dieci giorni di circa dodici e contro le 130 al giorno precedenti al 28 febbraio, cioè circa il 90% in meno. Il vincolo materiale non si è allentato',
     'Le vendite al dettaglio di luglio scendono dello 0,6% a 763,6 miliardi contro attese di più 0,1%: primo calo dopo dieci mesi di crescita, e toglie l’ultimo argomento a chi sosteneva che la domanda interna giustificasse un altro rialzo',
@@ -369,6 +377,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'La stessa accettazione del costo energetico alimenta il canale contrario, ed è il rischio principale di questa fase: la benzina alla pompa è il punto in cui il greggio diventa una spesa osservata ogni settimana dalle famiglie, e venerdì le attese di inflazione a un anno del Michigan sono salite al 4,3% riportando la probabilità di un rialzo a settembre al 31,6% dal 29,3%. Le attese a lungo termine restano ferme al 3,3%: finché stanno lì il canale è un rischio e non un fatto',
+    'Il numero su cui poggia la parte più citata del fine settimana non è verificabile: due transiti venerdì è una cifra giornaliera attribuita a un fornitore privato, cioè la stessa categoria che questa scheda aveva elencato come non confermabile su fonte indipendente dodici ore prima, e le due navi del 7 agosto si erano già rivelate un minimo di campionamento',
+    'Nessuno dei fatti del fine settimana porta una perdita di offerta quantificata: né ADNOC né il governo emiratino hanno dichiarato riduzioni di caricamenti dopo il terzo attacco, e per le due chiazze nel Golfo e lo sversamento di circa 2.000 chilometri quadrati al largo dell’Oman non esiste alcuna stima in barili',
     'Il canale energetico si è riaperto nel pomeriggio, e va detto perché alle 15:20 questa scheda aveva registrato l’opposto: il Brent è risalito a 88,04 dollari con più 1,11%, dopo essere sceso a 86,97 e a 87,16 nel corso della giornata, ed è avviato alla prima settimana in guadagno su tre. Sopra i 90 dollari il rischio geopolitico smetterebbe di sostenere il rifugio e tornerebbe a spingere rendimenti e attese di inflazione contro il metallo',
     'L’oro è sceso dal massimo di 4.396,88 a 4.383,36 mentre il greggio risaliva: le due cose insieme sono la prima misura di quanto il canale energetico pesi in questa fase, ed è più di quanto il racconto della giornata suggerisse',
     'Il grosso del calo sta dove il comunicato stesso lo isola: il totale scende dello 0,6%, ma al netto di auto e carburanti il calo è di 0,2% e non è distinguibile da zero. Quattro decimi su sei stanno quindi in due sole voci, e la serie non è corretta per le variazioni di prezzo, quindi un calo dei prezzi alla pompa abbassa gli incassi delle stazioni di servizio senza che i consumi reali si muovano',
@@ -415,7 +426,16 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Due atti tecnici, entrambi con una firma sopra: una deroga statunitense alle sanzioni sull’Autorità ' +
         'dello Stretto del Golfo Persico, e il ritiro o la modifica della clausola che fa decadere la copertura ' +
         'contro il rischio di guerra a chi paga. Finché restano dove sono, un accordo annunciato non è un ' +
-        'accordo utilizzabile e le navi non si muovono.',
+        'accordo utilizzabile e le navi non si muovono. Il 15 agosto si aggiunge un elemento che agisce sullo ' +
+        'stesso vincolo da un lato nuovo, e non è un annuncio: Reuters documenta due nuove chiazze di petrolio ' +
+        'nel Golfo — una presso l’isola iraniana di Qeshm, collegata alla Minoan Pioneer danneggiata in un ' +
+        'sospetto attacco, una presso Sirri Island — e uno sversamento stimato via satellite in circa 2.000 ' +
+        'chilometri quadrati al largo dell’Oman, dove la petroliera Caroline Bezengi si è arenata con greggio ' +
+        'russo a bordo, aggiungendo che le tensioni geopolitiche stanno già ostacolando le operazioni di ' +
+        'bonifica. Non toglie barili misurati e non va contato come offerta: alza il costo e la difficoltà di ' +
+        'operare su quelle acque, cioè lavora sulla stessa leva della clausola assicurativa. Il numero che lo ' +
+        'renderebbe verificabile è uno solo, e non è la cronaca del recupero: un rialzo dichiarato dei premi ' +
+        'per il rischio bellico sulle rotte del Golfo.',
       state: 'fermo',
     },
     {
@@ -458,7 +478,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'missili o droni dall’inizio del conflitto, tre soltanto questa settimana, con un morto e venti ' +
         'feriti. L’8 agosto il governo degli Emirati accusa l’Iran per nome di aver colpito con un missile ' +
         'un’altra nave collegata alla compagnia, senza feriti: l’attribuzione passa da un’azienda che conta i ' +
-        'propri danni a uno Stato che indica l’autore mentre quell’autore sta trattando.',
+        'propri danni a uno Stato che indica l’autore mentre quell’autore sta trattando. Il 14 agosto la serie ' +
+        'si allunga di nuovo e la frequenza aumenta: ADNOC comunica tramite l’agenzia ufficiale emiratina WAM ' +
+        'che una terza propria nave è stata attaccata venerdì in transito nello Stretto, senza feriti, e ' +
+        'Reuters la conta come terzo incidente in meno di una settimana. Per lo stesso venerdì il conteggio ' +
+        'attribuito a Kpler dà due navi più una metaniera vuota in entrata e nessuna spedizione visibile di ' +
+        'greggio: la seconda metà è la misura giusta perché conta barili invece di scafi, ma arriva dalla ' +
+        'fonte meno verificabile, e il numero del giorno non regge una condizione. Quello che resta solido è ' +
+        'il confronto con le 130-140 di prima del conflitto.',
       state: 'fermo',
     },
     {
@@ -557,19 +584,25 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     {
       label: 'Brent',
       now: 88.6,
-      display: '≈ 88,6 $',
+      display: '88,60 $',
       marks: [
         {
-          at: 82,
-          display: '82 $',
+          at: 87.07,
+          display: '87,07 $',
           kind: 'invalida',
-          note: 'sotto questo livello il premio geopolitico si sgonfia e la lettura perde la sua gamba energetica',
+          note: 'chiusura di giovedì: un rientro sotto questo livello riporterebbe la sospensione dei carichi a Novorossiysk nella categoria dei rimbalzi che rientrano, dove è stata collocata Jazan, e la gamba di offerta del rialzo cadrebbe',
         },
         {
-          at: 84,
-          display: '84 $',
+          at: 89.06,
+          display: '89,06 $',
           kind: 'logora',
-          note: 'sopra questo livello il greggio smette di sostenere il metallo e ricomincia ad alimentare i rendimenti contro di lui',
+          note: 'massimo di mercoledì, dichiarato come condizione da tre analisi e mancato per ventisette centesimi con la chiusura di venerdì a 88,60: sopra questo livello il canale energetico passa dal sostenere il rifugio ad alimentare i rendimenti',
+        },
+        {
+          at: 90,
+          display: '90 $',
+          kind: 'invalida',
+          note: 'è la prima gamba della combinazione sorvegliata da quattro giorni, e l’altra è un decennale sopra il 4,695%. Alla riapertura di lunedì può arrivare come salto del fine settimana invece che dentro una seduta: in quel caso la lettura di breve va portata sotto il neutrale',
         },
       ],
     },
@@ -598,10 +631,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           note: 'superata nel pomeriggio del 10 agosto: segnalava il logoramento senza aspettare la rottura, e il rendimento ci è rimasto sopra da allora',
         },
         {
-          at: 4.7,
-          display: '4,70%',
+          at: 4.701,
+          display: '4,701%',
           kind: 'invalida',
-          note: 'superata e mantenuta per un giorno intero, con un massimo di seduta a 4,739%, e restituita nel pomeriggio dell’11 agosto: alle 16:50 il rendimento è a 4,686%, quindi sotto. La condizione chiedeva comunque anche un oro sotto i 4.350, che non è mai arrivato',
+          note: 'massimo di venerdì, e diventa la soglia al posto del 4,70% tondo per la ragione di sempre: è il livello che il mercato ha stabilito. Il rendimento ci è arrivato in seduta senza mantenerlo, chiudendo a 4,695%. Restarci sopra con il Brent oltre i 90 dollari è la combinazione che porta la lettura di breve sotto il neutrale',
         },
       ],
     },
@@ -630,24 +663,24 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       display: '4.376,59 $',
       marks: [
         {
-          at: 4300,
-          display: '4.300 $',
+          at: 4351.07,
+          display: '4.351,07 $',
           kind: 'invalida',
-          note: 'sotto questo livello il movimento del rapporto occupazionale è cancellato per intero, e con esso la ragione della lettura',
+          note: 'chiusura di giovedì, ed è il livello che cinque analisi di venerdì hanno dichiarato in comune: una chiusura sotto annullerebbe il recupero della seconda metà di venerdì e porterebbe la direzione almeno a neutrale',
         },
         {
-          at: 4400,
-          display: '4.400 $',
-          kind: 'invalida',
-          note: 'superata la mattina del 12 agosto a 4.400,44, dopo tre avvicinamenti falliti il giorno prima. Il fatto informativo non è però il livello, che è tondo e quindi attira ordini: è la composizione, cioè un oro che sale mentre salgono sia il dollaro sia il greggio. Le condizioni nuove restano derivate dai livelli che il mercato ha già stabilito',
+          at: 4396.88,
+          display: '4.396,88 $',
+          kind: 'logora',
+          note: 'massimo di venerdì, e la ragione per cui i 4.400 non sono stati toccati per tre dollari e dodici centesimi. Un’apertura e una chiusura sopra questo livello direbbero che l’escalation del fine settimana è entrata nel prezzo, e la forza bassa dichiarata ora risulterebbe troppo prudente. Il livello è quello che il mercato ha stabilito, non la cifra tonda che gli sta accanto',
         },
       ],
     },
   ],
   sources: [
+    'due-chiazze-e-duemila-chilometri-quadrati',
+    'la-terza-nave-e-washington-mette-in-conto-la-benzina',
     'il-breve-scende-e-il-lungo-sale',
-    'il-terzo-attacco-in-due-giorni-e-il-primo-che-toglie-barili',
-    'la-fiducia-crolla-e-le-attese-di-inflazione-salgono',
   ],
 };
 

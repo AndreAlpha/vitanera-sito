@@ -34,8 +34,10 @@ fonti:
     quando: "13 agosto 2026"
   - testata: "Investing.com"
     titolo: "Rilevazioni di prezzo su oro, Brent, Dollar Index e rendimenti"
+esito: "confermata"
+controllata: "2026-08-15T09:20:00+02:00"
 sorgente: "src/app/core/data/articles/il-livello-non-ha-retto-e-ust-luga-non-e-jazan.ts"
-impronta: "672aa0fa3d3e32ec"
+impronta: "21dee805f3287ed3"
 ---
 
 # Il livello non ha retto, e Ust-Luga non è Jazan
@@ -156,6 +158,20 @@ Alta sui numeri: la chiusura dell’oro, i prezzi di stamattina e i rendimenti s
 Impostazione su XAU/USD: neutrale-ribassista, forza media, orizzonte breve.
 
 La forza sale da bassa a media, e il motivo è che il livello nominato in anticipo è stato rotto. L’analisi delle 19:15 aveva scritto che una chiusura sotto i 4.351,45 dollari avrebbe detto che neanche la domanda ufficiale e la traiettoria del debito stavano più sostenendo il prezzo: la chiusura è arrivata a 4.351,07, e nella notte asiatica il metallo è sceso fino a 4.311,22. Nel frattempo il Dollar Index è sceso a 99,637, sul minimo di giornata, e la probabilità di un rialzo a settembre è calata al 33,0%: due elementi che nella catena descritta da questo archivio dovrebbero sostenere il metallo, e che non lo stanno sostenendo. Non è una lettura di discesa strutturale — la gamba di fondo resta dov’era — ma sull’orizzonte delle ore la debolezza relativa ha smesso di essere un’impressione ed è diventata una serie.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-15T09:20:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e due si chiudono definitivamente perché il loro termine era la fine della settimana. L’analisi era stata scritta la mattina di venerdì sulla rottura del livello dichiarato in anticipo, e sosteneva due cose: che l’oro fosse in ritardo relativo, e che l’attacco a Ust-Luga fosse un rischio su capacità attiva e non una perdita accertata di barili. La prima ha retto per tre dollari e dodici centesimi, che è il margine con cui il metallo ha mancato i 4.400 nella seduta in cui i dati americani gli davano ragione. La seconda ha retto per una ragione che vale più del verdetto: la conseguenza operativa è arrivata la sera stessa, ma da Novorossiysk e non da Ust-Luga, cioè da un terminale diverso da quello che la condizione nominava. Distinguere i due porti non era pedanteria.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Le vendite al dettaglio di luglio, oggi alle 14:30, sotto il consenso con l’oro che recupera comunque i 4.400 dollari entro la chiusura: toglierebbe insieme la rotazione verso il rischio e le prese di profitto, cioè entrambe le spiegazioni su cui questa analisi poggia. | no | Prima gamba dentro, seconda mancata per tre dollari e dodici centesimi. Le vendite al dettaglio di luglio sono uscite a meno 0,6% contro attese di più 0,1%, sette decimi sotto il consenso; l’oro è salito ma si è fermato a un massimo di 4.396,88 e ha chiuso a 4.376,59. La condizione chiede entrambe le cose e cade sulla seconda. |
+| Un Brent che chiude sopra gli 89,06 dollari del massimo di mercoledì: sposterebbe il canale energetico dal sostegno alla pressione, e la lettura sull’oro andrebbe rivista guardando i rendimenti invece del rifugio. | no | Chiusura a 88,60 dollari con un massimo di 88,79: quarantasei centesimi sotto la soglia, pur con tre interruzioni di offerta nella stessa settimana e la sospensione dei carichi a Novorossiysk nel pomeriggio. |
+| Una dichiarazione ufficiale russa, di Transneft o dell’operatore del porto, che quantifichi una riduzione dei caricamenti a Ust-Luga: farebbe passare l’episodio da rischio su capacità attiva a perdita accertata di barili, che è la categoria che qui è stata esplicitamente esclusa. | no | Nessuna dichiarazione su Ust-Luga, e la conseguenza operativa è arrivata da un altro porto: la sospensione dei carichi dichiarata in serata riguarda il terminale di Sheskharis a Novorossiysk, sul Mar Nero, non lo scalo baltico che questa condizione nomina. La distinzione fra rischio su capacità attiva e perdita accertata regge quindi per Ust-Luga e si è sciolta altrove. |
+| Un oro che chiude la settimana sopra i 4.408,59 dollari della chiusura di mercoledì: annullerebbe per intero la rottura descritta qui e riporterebbe la direzione di breve almeno a neutrale. | no | Termine scaduto e condizione chiusa: la settimana si chiude a 4.376,59 dollari, trentadue sotto il livello, e il massimo di venerdì si è fermato a 4.396,88. La rottura descritta la mattina del 14 agosto non è stata annullata. |
+| Un Dollar Index che torna sopra 100,00 mentre l’oro resta sotto i 4.300: rimetterebbe in piedi la spiegazione meccanica del cambio, e la debolezza relativa descritta qui perderebbe la sua parte più solida. | no | Nessuna delle due gambe, e a distanza. Il Dollar Index scende per la terza seduta consecutiva, con rilevazioni fra 99,390 di minimo e 99,487, quindi mai vicino a quota 100; l’oro chiude settantasei dollari sopra i 4.300. |
 
 ## Fonti consultate
 
