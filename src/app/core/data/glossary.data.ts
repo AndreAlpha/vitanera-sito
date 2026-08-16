@@ -339,4 +339,12 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     why: 'Serve a non sommare interruzioni che non sono sommabili. Il premio geopolitico sul greggio non nasce dal danno in sé ma dalla competizione fra compratori per un barile che è diventato scarso: se un importante acquirente risolve il problema comprando altrove, quel barile non viene inseguito e lo shock resta locale invece di diventare un prezzo mondiale. È la differenza fra un porto di esportazione fermo, che ha alternative, e uno stretto chiuso, che è esso stesso l’alternativa di tutti.',
     related: ['Premio di rischio geopolitico', 'Stretto di Hormuz', 'Vincolo materiale'],
   },
+  {
+    term: 'Dazi secondari',
+    letter: 'D',
+    definition:
+      'Dazi imposti non al Paese che si vuole colpire, ma ai Paesi terzi che continuano a commerciare con lui. Colpiscono quindi chi compra invece di chi vende, e trasformano una sanzione bilaterale in una scelta obbligata per chiunque abbia scambi con entrambe le parti.',
+    why: 'Per l’oro sono lo strumento sanzionatorio con il canale più ampio, e a differenza di una sanzione ordinaria agisce in due modi opposti. Se colpisce solo le esportazioni del Paese sanzionato, riduce l’offerta di greggio e fa salire attese di inflazione e rendimenti, cioè il costo di tenere un metallo senza cedole. Se invece finisce per contrapporre due grandi economie — perché a essere dazato è un partner commerciale di primo piano — colpisce insieme commercio, energia e rapporti fra Stati, che è la configurazione in cui la domanda di riparo cresce. Quale dei due effetti prevalga si vede da chi viene colpito per primo, non dall’annuncio.',
+    related: ['Premio di rischio geopolitico', 'Aspettative di inflazione', 'Vincolo materiale'],
+  },
 ];

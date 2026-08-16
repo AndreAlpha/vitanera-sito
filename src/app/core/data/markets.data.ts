@@ -17,6 +17,35 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'INCURSIONE 16/8',
+    name: 'Incursione aerea ucraina sul territorio russo e raid russi su Kyiv, notte fra il 15 e il 16 agosto',
+    value: '822 droni dichiarati',
+    change:
+      '≈ 600 diretti su Mosca secondo fonti russe; almeno sei morti; nessun bersaglio energetico',
+    tone: 'warn',
+    icon: 'spark',
+    note: 'Una delle più vaste incursioni aeree della guerra: il ministero della Difesa russo dichiara 822 droni intercettati complessivamente e circa seicento diretti verso Mosca, Reuters conferma attacchi nell’area della capitale compresi Podolsk e Domodedovo con almeno una vittima, AP riporta almeno sei morti in Russia citando le autorità. Nelle stesse ore la Russia ha colpito Kyiv con missili e droni, con incendi in diversi quartieri e almeno tre feriti. Due cautele, e la prima riguarda la fonte: gli 822 e i seicento vengono da una parte in guerra che riferisce il rendimento della propria contraerea, con un interesse in entrambe le direzioni, quindi sono cifre dichiarate e non misurate — la stessa riserva applicata qui ai conteggi giornalieri dei transiti a Hormuz, con l’aggravante che qui la fonte non è nemmeno terza. La seconda riguarda l’effetto: nelle ricostruzioni disponibili non risulta colpito alcun terminale né alcuna raffineria. Sullo stesso fronte che venerdì aveva fermato Sheskharis, e con mezzi molto maggiori, sono stati scelti bersagli che non producono barili: l’assenza è quindi informativa, perché dimostra che intensità ed effetto sull’offerta sono variabili separate.',
+  },
+  {
+    symbol: 'OPZIONI IRAN',
+    name: 'Opzioni allo studio per aumentare la pressione economica sull’Iran, ricostruite il 16 agosto',
+    value: 'cinque, nessuna pubblicata',
+    change: 'raffinerie cinesi, banche cinesi, spedizionieri, aviazione, dazi secondari',
+    tone: 'warn',
+    icon: 'search',
+    note: 'Reuters ricostruisce le strade con cui Washington potrebbe stringere: misure più aggressive contro le raffinerie indipendenti cinesi che comprano greggio iraniano, provvedimenti contro banche cinesi usate nelle transazioni, una stretta su spedizionieri e cambiavalute, restrizioni nell’aviazione, e dazi secondari contro i Paesi terzi. La colonna che conta per un vincolo materiale è però vuota: non risultano designazioni nuove di questo tipo da OFAC o dal Tesoro, quindi non sono state sanzionate banche cinesi né introdotti dazi secondari. Confermato resta soltanto il livello di base, già noto: l’intenzione dichiarata di intensificare, e la campagna del Tesoro contro vendite di petrolio, shadow banking e reti di evasione. Un dettaglio impedisce di trattare la notizia come una novità di strumento: i dazi secondari sono in archivio dal 7 agosto, quando il Senato ne ha approvati 86 a 11 fino al 100% sui maggiori acquirenti di energia russa, testo ancora fermo alla Camera. Nuovo è il bersaglio, non l’attrezzo, e fra le due versioni una ha un voto dietro e l’altra niente. Per l’oro le cinque opzioni non pesano allo stesso modo: quelle sull’export iraniano spingono il greggio e quindi i rendimenti contro il metallo, quelle su banche cinesi e dazi secondari aggiungono avversione al rischio e lavorano a favore.',
+  },
+  {
+    symbol: 'INDIA GPL',
+    name: 'Obiettivi di produzione domestica di GPL imposti alle raffinerie indiane, 16 agosto',
+    value: 'nuovi obiettivi imposti',
+    change:
+      'per aumentare le scorte e ridurre la vulnerabilità alle interruzioni dal Medio Oriente',
+    tone: 'warn',
+    icon: 'factory',
+    note: 'È il solo provvedimento della giornata che sia stato adottato invece che valutato, e non è americano: un governo ha dato un obiettivo vincolante a delle imprese, e quell’obiettivo produrrà scorte misurabili. Il testo ricevuto lo collocava fra le note a margine; su una scala che conta gli atti e non gli annunci merita il centro. Conta anche per il verso in cui punta, che è il secondo caso in ventiquattro ore: ieri la Turchia ha sostituito il greggio russo del Mar Nero con Brasile e Guyana, oggi l’India accumula scorte per rendersi meno esposta al Golfo. Un compratore che sostituisce e uno che accumula fanno la stessa cosa al premio geopolitico — lo attenuano — perché ogni misura di sicurezza energetica presa a valle rende il collo di bottiglia a monte meno capace di muovere il prezzo mondiale. Il tono è ambiguo per questo: conferma che la crisi sta producendo costi reali nei grandi Paesi importatori, e allo stesso tempo taglia la gamba energetica del premio sull’oro lasciando intatta quella del rifugio.',
+  },
+  {
     symbol: 'MOCHA CHIUSO',
     name: 'Sospensione delle attività commerciali e marittime nel porto yemenita di Mocha, 15 agosto',
     value: 'operazioni sospese',

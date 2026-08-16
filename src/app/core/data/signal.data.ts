@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-15T21:35:00+02:00',
+  updatedAt: '2026-08-16T12:05:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,18 +187,18 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'Cinque fatti geopolitici sono arrivati fra venerdì sera e sabato notte senza incontrare un ' +
-        'mercato aperto, e gli ultimi due hanno una forma diversa dai primi tre: la chiusura del porto di ' +
-        'Mocha, dichiarata dal suo direttore dopo oltre venticinque missili houthi, e undici morti negli ' +
-        'attacchi israeliani nel sud del Libano, il fronte più grave dalla tregua. Nessuno dei due passa ' +
-        'per il prezzo di un barile — Mocha è un porto commerciale e non un terminale di esportazione, il ' +
-        'Libano non esporta greggio — quindi aggiungono domanda di protezione senza alimentare le attese ' +
-        'di inflazione e senza toccare la parte lunga della curva. È il canale pulito che è mancato per ' +
-        'tutta la settimana, ed è la ragione per cui la direzione resta sopra il neutrale. La forza resta ' +
-        'bassa perché nessuno dei due fatti ha una taglia in barili, e un premio senza quantità è il primo ' +
-        'a essere restituito: a Jazan è successo nel giro di un’ora.',
+        'Il fine settimana chiude con quattro fronti attivi e un conteggio che vale più dell’elenco: su ' +
+        'cinque fatti geopolitici in due giorni il canale del greggio si è acceso una volta sola. La ' +
+        'notte fra sabato e domenica aggiunge il quarto fronte — una delle più vaste incursioni aeree ' +
+        'della guerra sul territorio russo, con raid russi su Kyiv nelle stesse ore — e lo aggiunge senza ' +
+        'colpire né un terminale né una raffineria. Sullo stesso fronte che venerdì aveva fermato ' +
+        'Sheskharis, e con mezzi molto maggiori, sono stati scelti bersagli che non producono barili: ' +
+        'intensità ed effetto sull’offerta sono variabili separate, e questa notte le ha separate in modo ' +
+        'osservabile. La direzione resta sopra il neutrale perché la domanda di protezione ha una ragione ' +
+        'in più; la forza resta bassa perché un premio alimentato solo da intensità ha un tetto e una ' +
+        'durata breve, come a Jazan, dove è rientrato in un’ora.',
       invalidation:
-        'Un oro che apre lunedì e chiude sotto i 4.376,59 dollari della chiusura di venerdì, restituendo per intero il premio del fine settimana: direbbe che cinque fatti geopolitici in due giorni non producono domanda di protezione, e la direzione va portata a neutrale. Oppure un decennale che apre sopra il 4,701% del massimo di venerdì con l’oro che non sale, che direbbe che il premio di rifugio è già assorbito dal costo-opportunità e la forza va azzerata. Nell’altro verso, un oro sopra i 4.396,88 del massimo di venerdì con il Brent che resta sotto i 90: è la configurazione favorevole descritta da giorni, e la forza salirebbe.',
+        'Un oro che apre lunedì e chiude sotto i 4.376,59 dollari della chiusura di venerdì: direbbe che cinque fatti geopolitici in due giorni non producono domanda di protezione, e la direzione va portata a neutrale. Oppure un Brent che apre sopra i 90 dollari sulla sola escalation russo-ucraina, senza alcun fatto nuovo su Hormuz, che direbbe che il mercato prezza come evento di offerta un attacco senza bersagli energetici. Nell’altro verso, un oro sopra i 4.396,88 del massimo di venerdì con il Brent che resta sotto i 90 e il decennale sotto il 4,701%: è il premio di rifugio che lavora da solo, e la forza salirebbe.',
     },
     {
       horizon: 'medio',
@@ -275,7 +275,17 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'sostituito con Brasile e Guyana. Un compratore che sostituisce non rincara il barile scarso: lo ' +
         'shock resta sull’offerta russa invece di diventare un prezzo mondiale. Sull’arco dei giorni il ' +
         'fronte del Mar Nero è quindi la gamba più debole delle due, perché è l’unica che ha una ' +
-        'deviazione già percorsa, mentre per Hormuz una deviazione non esiste.',
+        'deviazione già percorsa, mentre per Hormuz una deviazione non esiste. Il 16 agosto quella ' +
+        'osservazione riceve un secondo caso, e con un atto invece che con un flusso: l’India ha imposto ' +
+        'alle proprie raffinerie nuovi obiettivi di produzione domestica di GPL per aumentare le scorte e ' +
+        'ridurre la vulnerabilità alle interruzioni dal Medio Oriente. Un compratore che sostituisce e uno ' +
+        'che accumula fanno la stessa cosa al premio geopolitico: lo attenuano, perché ogni misura di ' +
+        'sicurezza energetica presa a valle rende il collo di bottiglia a monte meno capace di muovere il ' +
+        'prezzo mondiale. Nella stessa giornata Reuters ricostruisce le opzioni con cui Washington ' +
+        'potrebbe stringere sull’Iran — raffinerie indipendenti cinesi, banche cinesi, spedizionieri, ' +
+        'aviazione, dazi secondari sui Paesi terzi — ma nessuna è pubblicata, quindi su questo orizzonte ' +
+        'non entra: restano preferenze dichiarate, e lo strumento dei dazi secondari è già in archivio dal ' +
+        '7 agosto nella sua versione russa, approvata dal Senato 86 a 11 e ancora ferma alla Camera.',
       invalidation:
         'Una probabilità di rialzo a settembre che risale sopra il 48% entro venerdì, cioè sopra il livello di ieri mattina invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
     },
@@ -331,22 +341,22 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   headline:
-    'Mocha chiude e il sud del Libano si riaccende, mentre a Ust-Luga l’interruzione russa viene corretta: cinque fatti e nessun prezzo fino a lunedì',
+    'Quattro fronti aperti e una sola interruzione di barili: l’incursione più vasta della guerra non ha colpito né terminali né raffinerie',
   stance:
-    'Il fine settimana ha prodotto cinque fatti geopolitici e nessuna rilevazione con cui arbitrarli, e ' +
-    'conviene separarli per canale invece che per gravità. Tre passano per il petrolio: la terza nave ' +
-    'ADNOC attaccata nello Stretto, gli sversamenti nel Golfo, e la sospensione dei carichi a Sheskharis ' +
-    '— che resta l’unica interruzione fisica vera, perché Reuters ha precisato che a Ust-Luga le ' +
-    'esportazioni di petrolio non si sono mai fermate. Su quel fronte è arrivato anche il primo numero ' +
-    'che misura la conseguenza, e va contro la lettura rialzista: la Turchia ha portato le importazioni ' +
-    'dai porti russi da circa 1,2 milioni di tonnellate a giugno a una stima di 200.000 per agosto ' +
-    'sostituendo con Brasile e Guyana, e un compratore che sostituisce non rincara il barile scarso. Due ' +
-    'fatti non passano invece per il petrolio: la chiusura del porto di Mocha e undici morti nel sud del ' +
-    'Libano aggiungono domanda di protezione senza toccare il prezzo di un barile, che è il canale pulito ' +
-    'mancato per tutta la settimana. Le ultime osservazioni con liquidità dietro restano le chiusure di ' +
-    'venerdì: oro a 4.376,59 dollari con più 0,59%, Brent a 88,60, decennale a 4,695% con un massimo a ' +
-    '4,701%, trentennale a 5,261%, probabilità di un rialzo a settembre al 31,6%. Quello che il fine ' +
-    'settimana ha aumentato è l’ampiezza attesa del primo movimento di lunedì, non il suo verso.',
+    'Due giorni di mercati chiusi hanno prodotto sei fatti geopolitici, e il modo utile di ordinarli non è ' +
+    'per gravità ma per canale. Uno solo ha toccato i barili: la sospensione dei carichi a Sheskharis, ' +
+    'venerdì, ancora aperta e senza conferma di ripresa — e resta l’unica, perché Reuters ha precisato ' +
+    'che a Ust-Luga le esportazioni di petrolio non si sono mai fermate. Tutti gli altri no: la terza ' +
+    'nave ADNOC colpita nello Stretto, gli sversamenti nel Golfo, la chiusura del porto di Mocha, undici ' +
+    'morti nel sud del Libano, e nella notte fra sabato e domenica una delle più vaste incursioni aeree ' +
+    'della guerra sul territorio russo, con raid russi su Kyiv nelle stesse ore e nessun bersaglio ' +
+    'energetico fra gli obiettivi. Nella direzione opposta si muovono due compratori: la Turchia che ha ' +
+    'sostituito il greggio russo del Mar Nero con Brasile e Guyana, e l’India che ha imposto alle ' +
+    'raffinerie obiettivi di produzione di GPL per accumulare scorte. Le opzioni americane di pressione ' +
+    'sull’Iran ricostruite oggi restano fuori dal conto perché nessuna è pubblicata. Gli ultimi ' +
+    'riferimenti con liquidità dietro sono le chiusure di venerdì: oro a 4.376,59 dollari con più 0,59%, ' +
+    'Brent a 88,60, decennale a 4,695% con un massimo a 4,701%, trentennale a 5,261%, probabilità di un ' +
+    'rialzo a settembre al 31,6%.',
   favours: [
     'Distinguere la qualità della misura da quella della fonte, e dirlo quando le due non coincidono: «nessuna spedizione visibile di greggio attraverso Hormuz» è la misura giusta, perché conta barili invece di scafi, e arriva dal dato meno verificabile di tutti, cioè un conteggio giornaliero di un fornitore privato. Le due metà vanno registrate insieme invece di scegliere quella che conviene',
     'Trattare il fine settimana per quello che è: fra la chiusura del venerdì e la riapertura non esiste alcuna rilevazione con liquidità dietro, quindi un fatto emerso di sabato aumenta l’ampiezza attesa del primo movimento e non il suo verso. Il quadro di metodo sul rischio del fine settimana dice di stimare l’ampiezza, non di indovinare la direzione',
@@ -358,6 +368,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Correggere per iscritto e subito: l’asta di stasera era da 42 miliardi e non da 39, e la correzione è stata pubblicata a parte invece di essere infilata nel testo sbagliato',
   ],
   avoid: [
+    'Scrivere condizioni a mercati chiusi senza contare che solo una seduta può risolverle: in due giorni di fine settimana sono state pubblicate sei analisi e nessuna ha avuto un prezzo con cui misurarsi, quindi l’arretrato del registro è di sei letture e trenta condizioni che la prima seduta utile giudicherà tutte insieme. Non è un argomento per non pubblicare, è un argomento per aspettarselo invece di scoprirlo',
+    'Contare l’intensità di un’escalation come se fosse un effetto sull’offerta: l’incursione più vasta della guerra non ha colpito né terminali né raffinerie, mentre l’attacco molto più piccolo di venerdì ha fermato i carichi di un terminale da 700.000 barili al giorno. La domanda da porre a un attacco è quanta capacità toglie, non quanto è grande',
     'Moltiplicare una sola osservazione per il numero di analisi che l’hanno usata: le cinque letture di venerdì hanno dichiarato in gran parte le stesse otto soglie — 4.351,07, 4.400 e 4.408,59 sull’oro, 89,06 e 90 sul Brent, 33,0% e 29,3% sulla probabilità di settembre — e una sola chiusura di seduta le ha risolte tutte nello stesso verso, producendo cinque verdetti «confermata» che valgono come uno. Quando più analisi dello stesso giorno condividono la soglia, la seconda deve dichiararne una che la prima non stia già misurando',
     'Trattare un conteggio giornaliero dei transiti come un fatto verificato: è la seconda volta in un giorno che una cifra quotidiana attribuita a un fornitore privato — cinque e nove mercoledì e giovedì, due venerdì — non risulta confermabile su nessuna fonte indipendente, mentre il dato di martedì, otto navi, si trova senza difficoltà. Quello che regge è la media a dieci giorni e il confronto con le 130 di prima del conflitto, non il numero del giorno',
     'Fondere il rendimento di aggiudicazione di un’asta con quello del mercato secondario: il 5,216% del collocamento del 13 agosto è il costo più alto su questa scadenza da circa un quarto di secolo, ma il trentennale scambiato sul secondario è a 5,238% e ha toccato 5,281% nell’ultimo anno. Sono due grandezze diverse e solo la prima porta quel primato',
@@ -370,6 +382,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'Nella notte fra sabato 15 e domenica 16 agosto l’Ucraina ha lanciato una delle più vaste incursioni aeree della guerra sul territorio russo — 822 droni intercettati e circa seicento diretti su Mosca secondo il ministero della Difesa russo, attacchi confermati da Reuters nell’area della capitale compresi Podolsk e Domodedovo, almeno sei morti secondo AP — mentre la Russia colpiva Kyiv con missili e droni. Quarto fronte simultaneo, e nessuno dei quattro sta allentando',
+    'A Sheskharis i carichi di greggio risultano ancora sospesi e non emerge una conferma affidabile di ripresa: l’unica interruzione fisica del fine settimana resta aperta al terzo giorno, contro il precedente di inizio marzo che si era chiuso in cinque',
     'Il porto yemenita di Mocha ha sospeso tutte le attività commerciali e marittime: lo annuncia il suo direttore sabato 15 agosto, dopo oltre venticinque missili houthi negli ultimi giorni, con sette morti e circa sedici milioni di dollari di danni. Per la prima volta su questo fronte c’è una conseguenza operativa dichiarata da un’autorità, e non soltanto una rivendicazione',
     'Reuters riferisce almeno undici morti negli attacchi israeliani nel sud del Libano, l’episodio più grave da quando è in vigore la tregua mediata dagli Stati Uniti, con Hezbollah che annuncia una risposta: è un terzo fronte contemporaneo, e il primo libanese che entra in questo archivio',
     'I due fatti di sabato sera non passano per il prezzo del greggio — Mocha è un porto commerciale, il Libano non esporta petrolio — quindi aggiungono domanda di protezione senza alimentare le attese di inflazione: è la configurazione in cui il metallo lavora meglio, e in questa settimana non si era ancora presentata',
@@ -388,6 +402,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'L’incursione di questa notte non ha colpito né un terminale né una raffineria: sullo stesso fronte che venerdì aveva fermato Sheskharis, e con mezzi di un ordine di grandezza superiori, sono stati scelti bersagli che non producono barili. Su cinque fatti geopolitici in due giorni il canale del greggio si è acceso una volta sola, e un premio alimentato dalla sola intensità ha un tetto',
+    'La scala di quell’attacco è dichiarata e non misurata: gli 822 droni e i circa seicento su Mosca vengono dal ministero della Difesa russo, cioè da una parte in guerra che riferisce il rendimento della propria contraerea, con un interesse in entrambe le direzioni. Quello che regge senza riserve è più stretto — i raid nell’area di Mosca confermati da Reuters e i sei morti riportati da AP citando le autorità',
+    'L’India ha imposto alle proprie raffinerie nuovi obiettivi di produzione domestica di GPL per aumentare le scorte: è il secondo grande importatore in ventiquattro ore che riduce la propria esposizione invece di rincorrere il barile, dopo la sostituzione turca, e ogni misura di sicurezza energetica a valle attenua la capacità del collo di bottiglia a monte di muovere il prezzo mondiale',
+    'Le misure americane contro l’Iran ricostruite il 16 agosto sono opzioni allo studio e non provvedimenti: nessuna designazione di OFAC o del Tesoro su raffinerie indipendenti cinesi, banche cinesi o dazi secondari risulta pubblicata. Lo strumento è inoltre già in archivio nella sua versione russa, approvata dal Senato 86 a 11 il 7 agosto e ancora ferma alla Camera',
     'La gamba dell’offerta russa era contata due volte e una delle due era sbagliata: Reuters precisa che a Ust-Luga l’attacco del 14 agosto ha danneggiato l’impianto di condensato di Novatek senza interrompere le esportazioni di petrolio, quindi i terminali fermi passano da due a uno e resta soltanto Sheskharis',
     'La sostituzione assorbe lo shock invece di trasmetterlo: le importazioni turche dai porti russi scendono da circa 1,2 milioni di tonnellate a giugno a 900.000 a luglio, con agosto stimato attorno a 200.000, e Ankara compensa con Brasile e Guyana. Il fronte del Mar Nero ha una deviazione già percorsa, Hormuz no, e sommare i due gonfia il premio invece di misurarlo',
     'Il bilancio delle vittime a Mocha non è un dato nuovo: almeno sette morti erano già stati contati qui il 9 agosto e ieri era arrivata una cifra di quattro vittime civili, quindi i sette di oggi sono con ogni probabilità gli stessi. Tre conteggi sovrapposti per lo stesso luogo in una settimana non si sommano, e il solo fatto non ripetuto è la chiusura',
@@ -521,7 +539,13 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'stimato attorno a 200.000, perché Ankara ha sostituito con Brasile e Guyana. Un compratore che ' +
         'sostituisce non rincara il barile scarso: finché la deviazione funziona, questo vincolo pesa meno ' +
         'di quello su Hormuz, dove una deviazione non esiste. Lo stringerebbe davvero un dato ufficiale ' +
-        'russo di estrazione in calo, che è il passaggio dai serbatoi pieni alla produzione ridotta.',
+        'russo di estrazione in calo, che è il passaggio dai serbatoi pieni alla produzione ridotta. Al 16 ' +
+        'agosto i carichi risultano ancora sospesi e nessuna ripresa è stata comunicata: siamo al terzo ' +
+        'giorno contro i cinque del precedente di marzo. Nella stessa notte il fronte ha prodotto ' +
+        'l’incursione aerea più vasta della guerra senza colpire alcun bersaglio energetico, il che ' +
+        'conferma la lettura per sottrazione: l’intensità degli attacchi e la capacità sottratta al ' +
+        'mercato sono due grandezze indipendenti, e su questo fronte si sono mosse in versi opposti in ' +
+        'quarantott’ore.',
       state: 'si-allenta',
     },
     {
@@ -720,9 +744,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
-    'mocha-chiude-e-il-libano-apre-un-terzo-fronte',
+    'cinque-opzioni-sul-tavolo-e-l-unico-atto-e-indiano',
+    'l-attacco-piu-grande-della-guerra-e-i-barili-non-si-muovono',
     'un-porto-si-ferma-l-altro-no-e-la-turchia-cambia-fornitore',
-    'due-chiazze-e-duemila-chilometri-quadrati',
   ],
 };
 
