@@ -80,6 +80,7 @@ export type EditorialCategorySlug =
   | 'premio-di-rischio'
   | 'rotte-e-approvvigionamento'
   | 'assicurazioni-marittime'
+  | 'alleanze-e-deterrenza'
   | 'interventi-valutari'
   | 'riserve-auree'
   | 'debito-pubblico'

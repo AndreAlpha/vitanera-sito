@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { unDroneAbbattutoSullaRomania } from './articles/un-drone-abbattuto-sulla-romania-e-il-quarto-del-2026';
 import { cinqueOpzioniSulTavolo } from './articles/cinque-opzioni-sul-tavolo-e-l-unico-atto-e-indiano';
 import { lAttaccoPiuGrandeDellaGuerra } from './articles/l-attacco-piu-grande-della-guerra-e-i-barili-non-si-muovono';
 import { mochaChiudeEIlLibanoApreUnTerzoFronte } from './articles/mocha-chiude-e-il-libano-apre-un-terzo-fronte';
@@ -112,6 +113,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  unDroneAbbattutoSullaRomania,
   cinqueOpzioniSulTavolo,
   lAttaccoPiuGrandeDellaGuerra,
   mochaChiudeEIlLibanoApreUnTerzoFronte,

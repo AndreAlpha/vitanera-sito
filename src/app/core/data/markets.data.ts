@@ -17,6 +17,15 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'ROMANIA 16/8',
+    name: 'Drone abbattuto nello spazio aereo romeno da un caccia della sorveglianza aerea alleata, 16 agosto',
+    value: 'il quarto del 2026',
+    change: 'prima intercettazione armata di questa escalation; attribuzione non ufficiale',
+    tone: 'warn',
+    icon: 'target',
+    note: 'Il ministero della Difesa romeno comunica che alle 05:01 locali un F-18 spagnolo ha abbattuto un drone entrato dal lato moldavo, circa ventiquattro chilometri a nord di Galați, con frammenti in zona disabitata e nessuna vittima. Due elementi ne riducono la portata rispetto a come si presenta. Il primo è la frequenza: è il quarto episodio dello stesso tipo in Romania nel 2026, circa uno ogni due mesi, quindi la categoria è già stata assorbita tre volte quest’anno — la novità autentica è più stretta, ed è che questa volta un caccia ha aperto il fuoco. Il secondo è l’attribuzione, che non è ufficiale: la Romania non indica la Russia, e un portavoce dell’Alleanza dice a Reuters soltanto che il drone «sembra essere russo». Il verso per l’oro va inoltre contro l’intuizione, e ripete la regola scritta qui sul patto della Mecca: nessuna clausola invocata, nessuna misura militare annunciata, e una procedura che ha funzionato in ogni passaggio significano una deterrenza che riesce, e una deterrenza che riesce toglie premio invece di darlo. Quello che sale è il rischio di errore di calcolo, che non è il rischio di escalation e non ha un prezzo attaccato.',
+  },
+  {
     symbol: 'INCURSIONE 16/8',
     name: 'Incursione aerea ucraina sul territorio russo e raid russi su Kyiv, notte fra il 15 e il 16 agosto',
     value: '822 droni dichiarati',

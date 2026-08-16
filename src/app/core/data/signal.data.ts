@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-16T12:05:00+02:00',
+  updatedAt: '2026-08-16T17:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -187,18 +187,18 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       direction: 'neutrale-rialzista',
       strength: 'bassa',
       regime:
-        'Il fine settimana chiude con quattro fronti attivi e un conteggio che vale più dell’elenco: su ' +
-        'cinque fatti geopolitici in due giorni il canale del greggio si è acceso una volta sola. La ' +
-        'notte fra sabato e domenica aggiunge il quarto fronte — una delle più vaste incursioni aeree ' +
-        'della guerra sul territorio russo, con raid russi su Kyiv nelle stesse ore — e lo aggiunge senza ' +
-        'colpire né un terminale né una raffineria. Sullo stesso fronte che venerdì aveva fermato ' +
-        'Sheskharis, e con mezzi molto maggiori, sono stati scelti bersagli che non producono barili: ' +
-        'intensità ed effetto sull’offerta sono variabili separate, e questa notte le ha separate in modo ' +
-        'osservabile. La direzione resta sopra il neutrale perché la domanda di protezione ha una ragione ' +
-        'in più; la forza resta bassa perché un premio alimentato solo da intensità ha un tetto e una ' +
-        'durata breve, come a Jazan, dove è rientrato in un’ora.',
+        'Il fine settimana chiude con il perimetro della guerra allargato a un Paese dell’Alleanza e con ' +
+        'un conteggio che vale più dell’elenco: su sette fatti geopolitici in tre giorni il canale del ' +
+        'greggio si è acceso una volta sola. Alle 05:01 di domenica un caccia spagnolo della sorveglianza ' +
+        'aerea ha abbattuto un drone entrato in Romania dal lato moldavo — prima intercettazione armata ' +
+        'di questa escalation in territorio alleato, e quarto episodio dello stesso tipo in Romania nel ' +
+        '2026. Le due cose insieme lasciano la lettura dov’era: il drone non è attribuito ufficialmente, ' +
+        'nessuna clausola è stata invocata, nessuna misura militare è stata annunciata, e la procedura ha ' +
+        'funzionato in ogni passaggio. Una deterrenza che riesce toglie premio invece di darlo. Quello ' +
+        'che aumenta è il rischio di errore di calcolo, che non è il rischio di escalation e non ha un ' +
+        'prezzo attaccato.',
       invalidation:
-        'Un oro che apre lunedì e chiude sotto i 4.376,59 dollari della chiusura di venerdì: direbbe che cinque fatti geopolitici in due giorni non producono domanda di protezione, e la direzione va portata a neutrale. Oppure un Brent che apre sopra i 90 dollari sulla sola escalation russo-ucraina, senza alcun fatto nuovo su Hormuz, che direbbe che il mercato prezza come evento di offerta un attacco senza bersagli energetici. Nell’altro verso, un oro sopra i 4.396,88 del massimo di venerdì con il Brent che resta sotto i 90 e il decennale sotto il 4,701%: è il premio di rifugio che lavora da solo, e la forza salirebbe.',
+        'Un oro che apre lunedì e chiude sotto i 4.376,59 dollari della chiusura di venerdì: direbbe che sette fatti geopolitici in tre giorni non producono domanda di protezione, e la direzione va portata a neutrale. Oppure una misura militare dichiarata dall’Alleanza in risposta all’episodio romeno — sorveglianza rafforzata, consultazioni fra alleati, un dispiegamento annunciato — che farebbe passare l’incidente da contenuto a reazione e imporrebbe di alzare la forza. Nell’altro verso, un oro sopra i 4.396,88 del massimo di venerdì con il Brent sotto i 90 e il decennale sotto il 4,701%: è il premio di rifugio che lavora da solo.',
     },
     {
       horizon: 'medio',
@@ -341,7 +341,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   headline:
-    'Quattro fronti aperti e una sola interruzione di barili: l’incursione più vasta della guerra non ha colpito né terminali né raffinerie',
+    'Un caccia dell’Alleanza abbatte un drone sulla Romania — il quarto del 2026 — e su sette fatti in tre giorni il canale del greggio si è acceso una volta',
   stance:
     'Due giorni di mercati chiusi hanno prodotto sei fatti geopolitici, e il modo utile di ordinarli non è ' +
     'per gravità ma per canale. Uno solo ha toccato i barili: la sospensione dei carichi a Sheskharis, ' +
@@ -358,6 +358,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Brent a 88,60, decennale a 4,695% con un massimo a 4,701%, trentennale a 5,261%, probabilità di un ' +
     'rialzo a settembre al 31,6%.',
   favours: [
+    'Chiedere quanto spesso accade prima di chiedere quanto sia grave: l’abbattimento del drone sulla Romania è il quarto episodio del 2026, e la frequenza ridimensiona un fatto che la sola gravità farebbe sembrare inedito. Il tasso di base va cercato prima della reazione, non dopo',
+    'Ricordare che una deterrenza che funziona sottrae premio invece di aggiungerlo: la procedura di sorveglianza aerea ha rilevato, intercettato e abbattuto senza vittime e senza reazioni dell’Alleanza, e questo rende meno probabile l’evento da cui ci si ripara. È il verso contro-intuitivo già annotato sul patto della Mecca, applicato al caso rovesciato',
     'Distinguere la qualità della misura da quella della fonte, e dirlo quando le due non coincidono: «nessuna spedizione visibile di greggio attraverso Hormuz» è la misura giusta, perché conta barili invece di scafi, e arriva dal dato meno verificabile di tutti, cioè un conteggio giornaliero di un fornitore privato. Le due metà vanno registrate insieme invece di scegliere quella che conviene',
     'Trattare il fine settimana per quello che è: fra la chiusura del venerdì e la riapertura non esiste alcuna rilevazione con liquidità dietro, quindi un fatto emerso di sabato aumenta l’ampiezza attesa del primo movimento e non il suo verso. Il quadro di metodo sul rischio del fine settimana dice di stimare l’ampiezza, non di indovinare la direzione',
     'Cercare il qualificatore dentro la stessa fonte prima che altrove: il comunicato del Census pubblica il totale e le due misure che ne tolgono le voci volatili, e il confronto fra meno 0,6% e meno 0,2% dice da solo quanto del calo stia in auto e carburanti, senza bisogno di una ricostruzione riportata',
@@ -382,6 +384,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'Prima intercettazione armata di questa escalation dentro lo spazio aereo dell’Alleanza: alle 05:01 del 16 agosto un F-18 spagnolo della sorveglianza aerea ha abbattuto un drone entrato in Romania dal lato moldavo, circa 24 km a nord di Galați, con frammenti in zona disabitata e nessuna vittima. Il perimetro della guerra si allarga a un Paese membro, e con esso il rischio di errore di calcolo',
+    'La notte porta anche un impianto industriale colpito in Ucraina — ArcelorMittal a Kryvyi Rih, due morti e quattordici feriti — e una rivendicazione ucraina su un impianto di carburante per missili nella regione di Rostov: l’intensità cresce da entrambe le parti nella stessa giornata',
     'Nella notte fra sabato 15 e domenica 16 agosto l’Ucraina ha lanciato una delle più vaste incursioni aeree della guerra sul territorio russo — 822 droni intercettati e circa seicento diretti su Mosca secondo il ministero della Difesa russo, attacchi confermati da Reuters nell’area della capitale compresi Podolsk e Domodedovo, almeno sei morti secondo AP — mentre la Russia colpiva Kyiv con missili e droni. Quarto fronte simultaneo, e nessuno dei quattro sta allentando',
     'A Sheskharis i carichi di greggio risultano ancora sospesi e non emerge una conferma affidabile di ripresa: l’unica interruzione fisica del fine settimana resta aperta al terzo giorno, contro il precedente di inizio marzo che si era chiuso in cinque',
     'Il porto yemenita di Mocha ha sospeso tutte le attività commerciali e marittime: lo annuncia il suo direttore sabato 15 agosto, dopo oltre venticinque missili houthi negli ultimi giorni, con sette morti e circa sedici milioni di dollari di danni. Per la prima volta su questo fronte c’è una conseguenza operativa dichiarata da un’autorità, e non soltanto una rivendicazione',
@@ -402,6 +406,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'L’episodio romeno è il quarto dello stesso tipo nel 2026, cioè circa uno ogni due mesi: la categoria è già stata prezzata tre volte quest’anno senza lasciare un premio duraturo, e la novità autentica è più stretta di come si presenta — questa volta un caccia ha aperto il fuoco. Il drone non è inoltre attribuito ufficialmente: la Romania non indica la Russia, e un portavoce dell’Alleanza dice soltanto che «sembra essere russo»',
+    'La procedura ha funzionato per intero e l’Alleanza non ha annunciato nulla — nessuna clausola invocata, nessuna misura militare: su questa scala una deterrenza che riesce toglie premio invece di darlo, perché rende meno probabile l’evento da cui ci si ripara. È la stessa regola scritta qui per il patto della Mecca, applicata al caso rovesciato',
+    'Nemmeno i bersagli della notte producono barili: ArcelorMittal a Kryvyi Rih è acciaio, e il propellente per missili di Rostov non è greggio da esportazione ed è una rivendicazione di parte. Terza volta in tre giorni che il conteggio non si muove',
     'L’incursione di questa notte non ha colpito né un terminale né una raffineria: sullo stesso fronte che venerdì aveva fermato Sheskharis, e con mezzi di un ordine di grandezza superiori, sono stati scelti bersagli che non producono barili. Su cinque fatti geopolitici in due giorni il canale del greggio si è acceso una volta sola, e un premio alimentato dalla sola intensità ha un tetto',
     'La scala di quell’attacco è dichiarata e non misurata: gli 822 droni e i circa seicento su Mosca vengono dal ministero della Difesa russo, cioè da una parte in guerra che riferisce il rendimento della propria contraerea, con un interesse in entrambe le direzioni. Quello che regge senza riserve è più stretto — i raid nell’area di Mosca confermati da Reuters e i sei morti riportati da AP citando le autorità',
     'L’India ha imposto alle proprie raffinerie nuovi obiettivi di produzione domestica di GPL per aumentare le scorte: è il secondo grande importatore in ventiquattro ore che riduce la propria esposizione invece di rincorrere il barile, dopo la sostituzione turca, e ogni misura di sicurezza energetica a valle attenua la capacità del collo di bottiglia a monte di muovere il prezzo mondiale',
@@ -744,9 +751,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'un-drone-abbattuto-sulla-romania-e-il-quarto-del-2026',
     'cinque-opzioni-sul-tavolo-e-l-unico-atto-e-indiano',
     'l-attacco-piu-grande-della-guerra-e-i-barili-non-si-muovono',
-    'un-porto-si-ferma-l-altro-no-e-la-turchia-cambia-fornitore',
   ],
 };
 

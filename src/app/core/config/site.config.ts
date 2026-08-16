@@ -346,6 +346,17 @@ export const CATEGORIES: readonly Category[] = [
       'Colli di bottiglia del commercio marittimo e decisioni sull’offerta di greggio. Quando il transito si complica, il prezzo si muove prima che cambi qualunque dato macro.',
   },
   {
+    slug: 'alleanze-e-deterrenza',
+    name: 'Alleanze e deterrenza',
+    short: 'Alleanze',
+    family: 'temi',
+    series: false,
+    icon: 'target',
+    tagline: 'Patti, clausole, intercettazioni',
+    description:
+      'Chi si impegna a difendere chi, e con quale procedura dietro la formula. Conta per l’oro in un modo che va contro l’intuizione: una deterrenza che funziona toglie premio invece di darlo, perché rende meno probabile l’evento da cui ci si ripara. Quello che alza il premio è la distanza fra una clausola solenne e un meccanismo che nessuno ha mai fatto funzionare — e a spostarlo davvero non è la gravità di un episodio ma la sua frequenza.',
+  },
+  {
     slug: 'assicurazioni-marittime',
     name: 'Assicurazioni marittime',
     short: 'Assicurazioni',

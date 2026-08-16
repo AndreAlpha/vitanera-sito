@@ -11,7 +11,7 @@
  */
 import { CalendarArea, CentralBankKind } from '../models/calendar.model';
 
-export const EVENTS_GENERATED_AT = '2026-08-16T10:29Z';
+export const EVENTS_GENERATED_AT = '2026-08-16T15:36Z';
 
 export type EventRow = readonly [
   at: string,
