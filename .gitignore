@@ -50,3 +50,7 @@ Thumbs.db
 # Grafo di conoscenza, rigenerabile da contenuti/ e con percorsi assoluti dentro
 /graphify-out
 /contenuti/graphify-out
+
+# Stato dei giri automatici: pianificazione, lucchetti, registro e log delle
+# sessioni. Si ricostruisce da solo con `npm run pianifica`.
+/.giri

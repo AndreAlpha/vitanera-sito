@@ -9,6 +9,7 @@
     "test": "ng test",
     "calendario": "node scripts/build-calendar.mjs",
     "analisi": "node scripts/build-analisi-md.mjs",
+    "pianifica": "node scripts/pianifica-giri.mjs",
     "pubblica-ora": "ng test --no-watch && npm run build && node scripts/prepare-pages.mjs --cloudflare && wrangler pages deploy dist/vitanera/browser --project-name=vitanera --commit-dirty=true"
   },
   "private": true,
