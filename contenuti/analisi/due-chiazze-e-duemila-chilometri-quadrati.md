@@ -25,8 +25,10 @@ fonti:
   - testata: "Reuters"
     titolo: "Due nuove chiazze di petrolio nel Golfo e sversamento al largo dell’Oman: operazioni di bonifica ostacolate dalle tensioni"
     quando: "15 agosto 2026"
+esito: "confermata"
+controllata: "2026-08-17T16:35:00+02:00"
 sorgente: "src/app/core/data/articles/due-chiazze-e-duemila-chilometri-quadrati.ts"
-impronta: "5840d0f9e736994f"
+impronta: "154f69d28fbc4334"
 ---
 
 # Due chiazze e duemila chilometri quadrati, senza un barile in meno
@@ -99,6 +101,20 @@ Alta sull’esistenza dei tre episodi, documentati da Reuters e uno dei tre misu
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte medio.
 
 Sull’arco dei giorni la lettura non si muove e riceve una gamba in più, di natura lenta: il costo operativo delle rotte del Golfo sale senza che l’offerta di greggio si riduca in modo misurabile. È marginalmente favorevole al metallo come premio geopolitico, e non di più: un premio che si forma su un danno senza barili si sgonfia appena il danno smette di fare notizia. Diventerebbe un’altra cosa se dagli incidenti nascessero limitazioni formali alla navigazione, che è il modo in cui un problema ambientale si trasforma in un vincolo di offerta.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-17T16:35:00+02:00.
+
+Nessuna delle cinque condizioni è scattata a due giorni dalla pubblicazione, e il modo in cui non sono scattate è più informativo del verdetto. Tre delle cinque chiedevano che qualcuno pubblicasse un numero — barili perduti, tariffe assicurative, un provvedimento di navigazione — e in due giorni nessuno l’ha fatto: l’analisi aveva collocato gli sversamenti nella categoria del costo operativo invece che dello shock di offerta proprio perché quei numeri non esistevano, e continuano a non esistere. Le due condizioni di prezzo si sono chiuse con margine largo e nel verso favorevole: Brent a 88,95 dollari contro una soglia a 95, oro fra 4.388 e 4.404 contro una soglia a 4.351,07. La lettura che teneva la forza bassa proprio perché il meccanismo descritto non aveva ancora un prezzo resta quella giusta.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un provvedimento delle autorità costiere, dell’Oman o dell’Iran, oppure dell’Organizzazione marittima internazionale, che introduca un’area di esclusione o una restrizione alla navigazione intorno a Qeshm o a Sirri entro venerdì prossimo: farebbe passare gli incidenti da rischio operativo a vincolo di transito, e la forza di questa lettura andrebbe alzata. | no | Nessuna area di esclusione e nessuna restrizione alla navigazione risultano introdotte da alcuna delle autorità indicate. Il termine corre fino a venerdì 21 agosto. Va annotato che nelle stesse ore Teheran ha alzato il linguaggio dichiarandosi pronta a una postura offensiva, cioè si è mossa la parte dichiarata del quadro e non quella regolamentare: è esattamente la distinzione su cui l’analisi aveva costruito la propria cautela. |
+| Una stima quantificata dei barili perduti dalla Minoan Pioneer o dalla Caroline Bezengi, pubblicata da un armatore o da un’autorità: collocherebbe l’episodio nella categoria dello shock di offerta, che questa analisi esclude esplicitamente. | no | Nessuna stima in barili è stata pubblicata da armatori o autorità in due giorni. La classificazione data dall’analisi — costo operativo e non perdita di offerta — regge, ed è il tipo di condizione che si chiude per assenza di pubblicazione invece che per smentita. |
+| Un aumento dei premi per il rischio bellico sulle rotte del Golfo dichiarato dal mercato assicurativo — una nuova circolare del Lloyd’s Market Association o un rialzo delle tariffe riportato da un intermediario: sarebbe il primo prezzo sul meccanismo descritto qui, e la lettura passerebbe da deduzione a misura. | no | Nessuna circolare del Lloyd’s Market Association e nessun rialzo delle tariffe riportato da intermediari risultano al controllo. Il meccanismo assicurativo descritto dall’analisi resta quindi una deduzione e non una misura, come l’analisi stessa dichiarava. |
+| Un Brent che chiude sopra i 95 dollari entro venerdì prossimo con il decennale sopra il 4,70%: il canale dell’inflazione prevarrebbe su quello del rifugio e la direzione andrebbe rivista al ribasso. | no | Non scattata su nessuna delle due gambe, e con ampio margine: il Brent è a circa 88,95 dollari con più 0,5% — oltre sei dollari sotto la soglia — dopo un massimo di giornata a 89,40, e i rendimenti sono in lieve calo. Il termine corre fino a venerdì 21 agosto. |
+| Un oro che chiude la settimana sotto i 4.351,07 dollari della chiusura di giovedì 13 agosto: toglierebbe il fondamento residuo per tenere la direzione sopra il neutrale. | no | Il metallo è andato nella direzione opposta: Reuters lo rileva attorno a 4.388 dollari con più 0,3% e Investing nell’area 4.389-4.404, quindi fra trentasette e cinquantatré dollari sopra la soglia, e la settimana non è ancora chiusa. |
 
 ## Fonti consultate
 

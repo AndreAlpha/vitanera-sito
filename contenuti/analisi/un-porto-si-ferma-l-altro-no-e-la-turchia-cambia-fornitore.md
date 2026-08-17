@@ -27,8 +27,10 @@ fonti:
     quando: "15 agosto 2026"
   - testata: "Reuters"
     titolo: "Sospensione dei carichi di greggio al terminale di Sheskharis, Novorossiysk; importazioni turche di greggio russo dal Mar Nero"
+esito: "confermata"
+controllata: "2026-08-17T16:35:00+02:00"
 sorgente: "src/app/core/data/articles/un-porto-si-ferma-l-altro-no-e-la-turchia-cambia-fornitore.ts"
-impronta: "d01a137f8e9f0d49"
+impronta: "483d1ad323203685"
 ---
 
 # Un porto si ferma, l’altro no, e la Turchia ha già cambiato fornitore
@@ -126,6 +128,20 @@ Alta sul fondamento: la correzione è una precisazione pubblicata dalla stessa a
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte medio.
 
 Sull’arco dei giorni la direzione non si muove, ma una delle ragioni che la sostenevano si assottiglia. Il rischio sull’offerta russa risulta più piccolo di come era stato contato: a Ust-Luga le esportazioni di petrolio non si sono mai fermate, quindi resta una sola interruzione vera, e per quell’unica interruzione esiste già una deviazione che funziona — la Turchia ha sostituito il greggio del Mar Nero con Brasile e Guyana invece di rincorrerlo. Un fronte con un percorso alternativo pesa meno di un fronte senza: è la differenza fra il Mar Nero e Hormuz, e tenerli sullo stesso piano gonfia il premio invece di misurarlo.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-17T16:35:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e la tesi centrale — uno shock che resta sull’offerta russa invece di diventare un prezzo mondiale, perché il compratore sostituisce invece di inseguire il barile — ha retto due giorni senza essere contraddetta da nulla. Il Brent è a 88,95 dollari, tre sotto la soglia dei 92 e sei sotto i 95 della lettura sorella dello stesso giorno. Una precisazione sulla quarta condizione, perché è quella che si è degradata invece di risolversi: chiedeva un Brent sopra i 92 dollari «senza alcun fatto nuovo su Hormuz», e un fatto nuovo su Hormuz è arrivato oggi pomeriggio con la dichiarazione iraniana sulla postura offensiva. La gamba di contesto è quindi caduta mentre la gamba di prezzo era ancora lontana, e la condizione non è più eseguibile nella sua forma piena: è il difetto delle condizioni composte già registrato in questo archivio il 12 agosto, e la regola che se ne era ricavata — scrivere la gamba di contesto come intervallo di validità e non come requisito — non è stata applicata qui.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Una dichiarazione dell’operatore del terminale o di Transneft sulla ripresa dei carichi a Sheskharis accompagnata da dati di tracciamento navale sui volumi di luglio, cioè vicino a un milione di barili al giorno, entro mercoledì 19 agosto: chiuderebbe l’unica interruzione vera e toglierebbe per intero la gamba del Mar Nero. | no | Nessuna dichiarazione di ripresa da parte dell’operatore o di Transneft risulta al controllo, e nessun dato di tracciamento sui volumi. La sospensione dei carichi è al quarto giorno, contro i cinque del precedente di inizio marzo sullo stesso terminale: il confronto che l’analisi indicava come metro resta valido e il termine corre fino a mercoledì 19 agosto. |
+| Importazioni turche dai porti russi del Mar Nero che risalgono sopra le 900.000 tonnellate su base mensile nella rilevazione di settembre: direbbe che le 200.000 stimate per agosto erano l’effetto momentaneo dell’interruzione e non una sostituzione dei fornitori, e cadrebbe l’argomento centrale di questa analisi. | no | La condizione non è ancora eseguibile: la rilevazione mensile di settembre non esiste al 17 agosto, e l’analisi lo sapeva quando l’ha scritta. È registrata come non scattata sullo stato osservabile, non sul termine, che è il più lungo dei cinque. |
+| Una dichiarazione russa o una nuova precisazione che quantifichi una riduzione dei caricamenti di greggio a Ust-Luga: rovescerebbe la correzione su cui questa lettura è costruita e riporterebbe il conto dei terminali fermi a due. | no | Nessuna quantificazione russa sui caricamenti di Ust-Luga è stata pubblicata in due giorni. La correzione su cui l’analisi era costruita — l’attacco del 14 agosto ha danneggiato l’impianto di condensato senza interrompere le esportazioni di petrolio — non è stata rovesciata, e i terminali russi fermi restano uno. |
+| Un Brent che chiude sopra i 92 dollari entro venerdì 21 agosto senza alcun fatto nuovo su Hormuz: direbbe che il mercato prezza il fronte del Mar Nero come una perdita di offerta vera, e la tesi dell’assorbimento per sostituzione risulterebbe sbagliata. | no | Non scattata, e nessuna delle due gambe si avvicina. Il Brent è a circa 88,95 dollari dopo un massimo di 89,40, quindi oltre tre dollari sotto la soglia; e la seconda gamba è comunque venuta meno, perché un fatto nuovo su Hormuz c’è — la dichiarazione iraniana di disponibilità a una postura offensiva, con un termine di alcune settimane. La condizione chiedeva l’assenza di quel fatto e al controllo non è più eseguibile nella sua forma piena. |
+| Un numero ufficiale russo — ministero o Transneft — che dichiari una riduzione dell’estrazione entro fine agosto: farebbe passare la catena dai serbatoi pieni alla produzione ridotta, che è il passaggio che questa analisi considera non ancora avvenuto. | no | Nessun numero ufficiale russo sulla riduzione dell’estrazione risulta pubblicato. Il passaggio dai serbatoi pieni alla produzione ridotta, che l’analisi indicava come non ancora avvenuto, non è avvenuto nemmeno adesso. Il termine corre fino a fine agosto. |
 
 ## Fonti consultate
 

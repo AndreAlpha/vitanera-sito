@@ -2912,4 +2912,90 @@ export const OUTCOMES: readonly Outcome[] = [
     lesson:
       'L’11 agosto questo archivio ha scritto una nota di metodo sui livelli tondi — sono punti di attrazione e non muri, perché è lì che si accumulano gli ordini in attesa — e ne aveva tratto la regola di ancorare le condizioni ai livelli che il mercato ha stabilito da sé. Poi ha continuato a usare i 4.400 come soglia dichiarata: l’11 agosto alle 10:45 e alle 17:15, il 14 agosto sulla chiusura di venerdì, e stamattina come test dell’intera lettura. Oggi il livello è stato toccato per quindici centesimi mentre i tre numeri che dovrebbero spiegarlo si muovevano di frazioni, ed è il caso esatto che la nota descriveva: la soglia ha misurato l’attrazione del numero tondo invece della forza del canale monetario. Il correttivo non è nuovo, è quello già scritto e mai eseguito — i 4.396,88 del massimo di venerdì, i 4.441,01 del 12 agosto — e vale a maggior ragione quando la cifra tonda è comoda perché è quella di cui parlano tutti. Una soglia scelta per essere citabile non è una soglia scelta per essere informativa.',
   },
+  {
+    slug: 'due-chiazze-e-duemila-chilometri-quadrati',
+    checkedAt: '2026-08-17T16:35:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un provvedimento delle autorità costiere, dell’Oman o dell’Iran, oppure dell’Organizzazione marittima internazionale, che introduca un’area di esclusione o una restrizione alla navigazione intorno a Qeshm o a Sirri entro venerdì prossimo: farebbe passare gli incidenti da rischio operativo a vincolo di transito, e la forza di questa lettura andrebbe alzata.',
+        triggered: false,
+        evidence:
+          'Nessuna area di esclusione e nessuna restrizione alla navigazione risultano introdotte da alcuna delle autorità indicate. Il termine corre fino a venerdì 21 agosto. Va annotato che nelle stesse ore Teheran ha alzato il linguaggio dichiarandosi pronta a una postura offensiva, cioè si è mossa la parte dichiarata del quadro e non quella regolamentare: è esattamente la distinzione su cui l’analisi aveva costruito la propria cautela.',
+      },
+      {
+        condition:
+          'Una stima quantificata dei barili perduti dalla Minoan Pioneer o dalla Caroline Bezengi, pubblicata da un armatore o da un’autorità: collocherebbe l’episodio nella categoria dello shock di offerta, che questa analisi esclude esplicitamente.',
+        triggered: false,
+        evidence:
+          'Nessuna stima in barili è stata pubblicata da armatori o autorità in due giorni. La classificazione data dall’analisi — costo operativo e non perdita di offerta — regge, ed è il tipo di condizione che si chiude per assenza di pubblicazione invece che per smentita.',
+      },
+      {
+        condition:
+          'Un aumento dei premi per il rischio bellico sulle rotte del Golfo dichiarato dal mercato assicurativo — una nuova circolare del Lloyd’s Market Association o un rialzo delle tariffe riportato da un intermediario: sarebbe il primo prezzo sul meccanismo descritto qui, e la lettura passerebbe da deduzione a misura.',
+        triggered: false,
+        evidence:
+          'Nessuna circolare del Lloyd’s Market Association e nessun rialzo delle tariffe riportato da intermediari risultano al controllo. Il meccanismo assicurativo descritto dall’analisi resta quindi una deduzione e non una misura, come l’analisi stessa dichiarava.',
+      },
+      {
+        condition:
+          'Un Brent che chiude sopra i 95 dollari entro venerdì prossimo con il decennale sopra il 4,70%: il canale dell’inflazione prevarrebbe su quello del rifugio e la direzione andrebbe rivista al ribasso.',
+        triggered: false,
+        evidence:
+          'Non scattata su nessuna delle due gambe, e con ampio margine: il Brent è a circa 88,95 dollari con più 0,5% — oltre sei dollari sotto la soglia — dopo un massimo di giornata a 89,40, e i rendimenti sono in lieve calo. Il termine corre fino a venerdì 21 agosto.',
+      },
+      {
+        condition:
+          'Un oro che chiude la settimana sotto i 4.351,07 dollari della chiusura di giovedì 13 agosto: toglierebbe il fondamento residuo per tenere la direzione sopra il neutrale.',
+        triggered: false,
+        evidence:
+          'Il metallo è andato nella direzione opposta: Reuters lo rileva attorno a 4.388 dollari con più 0,3% e Investing nell’area 4.389-4.404, quindi fra trentasette e cinquantatré dollari sopra la soglia, e la settimana non è ancora chiusa.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata a due giorni dalla pubblicazione, e il modo in cui non sono scattate è più informativo del verdetto. Tre delle cinque chiedevano che qualcuno pubblicasse un numero — barili perduti, tariffe assicurative, un provvedimento di navigazione — e in due giorni nessuno l’ha fatto: l’analisi aveva collocato gli sversamenti nella categoria del costo operativo invece che dello shock di offerta proprio perché quei numeri non esistevano, e continuano a non esistere. Le due condizioni di prezzo si sono chiuse con margine largo e nel verso favorevole: Brent a 88,95 dollari contro una soglia a 95, oro fra 4.388 e 4.404 contro una soglia a 4.351,07. La lettura che teneva la forza bassa proprio perché il meccanismo descritto non aveva ancora un prezzo resta quella giusta.',
+  },
+  {
+    slug: 'un-porto-si-ferma-l-altro-no-e-la-turchia-cambia-fornitore',
+    checkedAt: '2026-08-17T16:35:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Una dichiarazione dell’operatore del terminale o di Transneft sulla ripresa dei carichi a Sheskharis accompagnata da dati di tracciamento navale sui volumi di luglio, cioè vicino a un milione di barili al giorno, entro mercoledì 19 agosto: chiuderebbe l’unica interruzione vera e toglierebbe per intero la gamba del Mar Nero.',
+        triggered: false,
+        evidence:
+          'Nessuna dichiarazione di ripresa da parte dell’operatore o di Transneft risulta al controllo, e nessun dato di tracciamento sui volumi. La sospensione dei carichi è al quarto giorno, contro i cinque del precedente di inizio marzo sullo stesso terminale: il confronto che l’analisi indicava come metro resta valido e il termine corre fino a mercoledì 19 agosto.',
+      },
+      {
+        condition:
+          'Importazioni turche dai porti russi del Mar Nero che risalgono sopra le 900.000 tonnellate su base mensile nella rilevazione di settembre: direbbe che le 200.000 stimate per agosto erano l’effetto momentaneo dell’interruzione e non una sostituzione dei fornitori, e cadrebbe l’argomento centrale di questa analisi.',
+        triggered: false,
+        evidence:
+          'La condizione non è ancora eseguibile: la rilevazione mensile di settembre non esiste al 17 agosto, e l’analisi lo sapeva quando l’ha scritta. È registrata come non scattata sullo stato osservabile, non sul termine, che è il più lungo dei cinque.',
+      },
+      {
+        condition:
+          'Una dichiarazione russa o una nuova precisazione che quantifichi una riduzione dei caricamenti di greggio a Ust-Luga: rovescerebbe la correzione su cui questa lettura è costruita e riporterebbe il conto dei terminali fermi a due.',
+        triggered: false,
+        evidence:
+          'Nessuna quantificazione russa sui caricamenti di Ust-Luga è stata pubblicata in due giorni. La correzione su cui l’analisi era costruita — l’attacco del 14 agosto ha danneggiato l’impianto di condensato senza interrompere le esportazioni di petrolio — non è stata rovesciata, e i terminali russi fermi restano uno.',
+      },
+      {
+        condition:
+          'Un Brent che chiude sopra i 92 dollari entro venerdì 21 agosto senza alcun fatto nuovo su Hormuz: direbbe che il mercato prezza il fronte del Mar Nero come una perdita di offerta vera, e la tesi dell’assorbimento per sostituzione risulterebbe sbagliata.',
+        triggered: false,
+        evidence:
+          'Non scattata, e nessuna delle due gambe si avvicina. Il Brent è a circa 88,95 dollari dopo un massimo di 89,40, quindi oltre tre dollari sotto la soglia; e la seconda gamba è comunque venuta meno, perché un fatto nuovo su Hormuz c’è — la dichiarazione iraniana di disponibilità a una postura offensiva, con un termine di alcune settimane. La condizione chiedeva l’assenza di quel fatto e al controllo non è più eseguibile nella sua forma piena.',
+      },
+      {
+        condition:
+          'Un numero ufficiale russo — ministero o Transneft — che dichiari una riduzione dell’estrazione entro fine agosto: farebbe passare la catena dai serbatoi pieni alla produzione ridotta, che è il passaggio che questa analisi considera non ancora avvenuto.',
+        triggered: false,
+        evidence:
+          'Nessun numero ufficiale russo sulla riduzione dell’estrazione risulta pubblicato. Il passaggio dai serbatoi pieni alla produzione ridotta, che l’analisi indicava come non ancora avvenuto, non è avvenuto nemmeno adesso. Il termine corre fino a fine agosto.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e la tesi centrale — uno shock che resta sull’offerta russa invece di diventare un prezzo mondiale, perché il compratore sostituisce invece di inseguire il barile — ha retto due giorni senza essere contraddetta da nulla. Il Brent è a 88,95 dollari, tre sotto la soglia dei 92 e sei sotto i 95 della lettura sorella dello stesso giorno. Una precisazione sulla quarta condizione, perché è quella che si è degradata invece di risolversi: chiedeva un Brent sopra i 92 dollari «senza alcun fatto nuovo su Hormuz», e un fatto nuovo su Hormuz è arrivato oggi pomeriggio con la dichiarazione iraniana sulla postura offensiva. La gamba di contesto è quindi caduta mentre la gamba di prezzo era ancora lontana, e la condizione non è più eseguibile nella sua forma piena: è il difetto delle condizioni composte già registrato in questo archivio il 12 agosto, e la regola che se ne era ricavata — scrivere la gamba di contesto come intervallo di validità e non come requisito — non è stata applicata qui.',
+  },
 ];

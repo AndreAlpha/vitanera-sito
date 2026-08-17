@@ -179,8 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-17T09:20:00+02:00',
-  checkedAt: '2026-08-17T11:45:00+02:00',
+  updatedAt: '2026-08-17T16:45:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -208,7 +207,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'macroeconomica. Nove dollari sul metallo contro tre millesimi di punto sul decennale: la ' +
         'separazione fra greggio e curva regge — Brent di nuovo a 89,40 e poi 89,28, WTI a 81,74 — ma il ' +
         'canale monetario sta fermo mentre il prezzo sale, e questo è un rialzo che si allontana dalla ' +
-        'propria spiegazione invece di avvicinarvisi.',
+        'propria spiegazione invece di avvicinarvisi. Nel pomeriggio il dubbio si scioglie dal lato ' +
+        'previsto: la rilevazione Reuters delle 16:45 dà l’oro attorno a 4.388 dollari con più 0,3%, con ' +
+        'Investing fra 4.389 e 4.404. I 4.400 sono stati attraversati due volte in una giornata e non ' +
+        'tenuti nessuna delle due, che è il comportamento tipico di un livello tondo su cui si accumulano ' +
+        'ordini. La forza resta media e la direzione non scende, perché il rientro è di una dozzina di ' +
+        'dollari e i due sostegni sono ancora al loro posto — dollaro sui minimi da circa due mesi e ' +
+        'rendimenti in lieve calo — ma il test dichiarato stamattina resta non superato, e adesso è stato ' +
+        'mancato due volte.',
       invalidation:
         'Un oro che chiude oggi sotto i 4.376,59 dollari della chiusura di venerdì: annullerebbe il recupero della mattina e riporterebbe la forza a bassa. Oppure un Brent che chiude sopra i 90 dollari con il decennale che torna sopra il 4,695%: è la combinazione dichiarata da cinque letture consecutive, oggi non formata, e la sua comparsa porterebbe la direzione sotto il neutrale. Nell’altro verso, un oro che tiene sopra i 4.400 con il decennale fermo sotto il 4,695% riaprirebbe la fascia 4.435-4.450 e imporrebbe di alzare la forza ancora.',
     },
@@ -309,9 +315,25 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'l’Unione europea dichiara di voler proporre in autunno il pacchetto di sanzioni più ampio ' +
         'dall’inizio della guerra, con circa un terzo di entità russe in più, ma senza calendario né settori ' +
         'e quindi senza contenuto energetico verificabile. Sull’orizzonte dei giorni conta il primo, non il ' +
-        'secondo.',
+        'secondo. Nel pomeriggio del 17 agosto arrivano gli altri due elementi che questa lettura registra, ' +
+        'e vanno tenuti separati per solidità come i precedenti. Il primo è geopolitico e dichiarato: un ' +
+        'alto funzionario iraniano non nominato dice a Reuters che Teheran è pronta a una risposta militare ' +
+        '«tempestiva e precisa» e a passare da una postura difensiva a una offensiva se il blocco navale ' +
+        'continuerà, con un termine di alcune settimane per vedere progressi diplomatici. Sulla scala usata ' +
+        'qui resta una preferenza dichiarata e non sposta la direzione — il conteggio dei transiti è fermo a ' +
+        'cinque navi sabato e nessuna domenica, e il Brent è a 88,95 dollari con più 0,5% invece di rompere ' +
+        'i 90 — ma cambia una cosa che le sette dichiarazioni precedenti non cambiavano: adesso c’è una ' +
+        'data, e una data è l’unica parte di una posizione dichiarata che produce un fatto verificabile. Il ' +
+        'secondo elemento è quello con il fondamento più solido, ed è una rilevazione invece di una voce: il ' +
+        'sondaggio Reuters condotto fra il 12 e il 17 agosto trova la grande maggioranza degli economisti ad ' +
+        'attendersi la Federal Reserve ferma al 3,50-3,75% per tutto il resto del 2026. Non è una decisione ' +
+        'e non va contata come tale, ma è la prima misura organizzata del fatto che il consenso ' +
+        'professionale ha finito di riprezzare la sequenza di dati deboli seguita qui una diffusione alla ' +
+        'volta. Il punto operativo sta nella distanza: il prezzo di mercato assegna ancora il 30-33% a un ' +
+        'rialzo a settembre, il sondaggio quasi zero, e finché quella distanza esiste la riprezzatura può ' +
+        'proseguire a favore del metallo senza bisogno di un dato nuovo.',
       invalidation:
-        'Una probabilità di rialzo a settembre che risale sopra il 48% entro venerdì, cioè sopra il livello di ieri mattina invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
+        'Una probabilità di rialzo a settembre che risale sopra il 33% entro venerdì 21 agosto, cioè sopra il limite superiore dell’intervallo rilevato il 17 agosto: direbbe che la distanza fra il consenso degli economisti e il prezzo di mercato si sta chiudendo dal lato sbagliato, ed è la gamba misurabile su cui questa lettura poggia adesso. Oppure una probabilità che risale sopra il 48% entro venerdì, cioè sopra il livello di lunedì 11 agosto invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
     },
     {
       horizon: 'lungo',
@@ -365,9 +387,25 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   headline:
-    'I 4.400 sono stati toccati, non tenuti: l’oro a 4.400,15 mentre biennale, decennale e attese sulla Fed si muovono di frazioni',
+    'Teheran si dichiara pronta a una postura offensiva e mette un termine di alcune settimane, e il Brent resta a 88,95 dollari',
   stance:
-    'Riverifica delle 11:45, senza pubblicare: il quadro regge e non c’è un fatto nuovo da mettere in ' +
+    'Il fatto nuovo del pomeriggio va classificato prima di essere pesato, perché la classificazione decide ' +
+    'quanto vale. Un alto funzionario iraniano non nominato dice a Reuters che Teheran è pronta a una ' +
+    'risposta militare «tempestiva e precisa» e a passare da una postura difensiva a una offensiva se ' +
+    'Washington continuerà il blocco navale, e fissa un termine di alcune settimane per vedere progressi. ' +
+    'È una posizione dichiarata, cioè la categoria che in questa fase si è mossa decine di volte senza mai ' +
+    'spostare il conteggio dei transiti né il prezzo del barile — e infatti il Brent è a 88,95 dollari con ' +
+    'più 0,5%, sotto gli 89,40 già toccati in giornata, con il WTI a 82,65. Il precedente esatto è in ' +
+    'archivio: il 6 agosto una minaccia iraniana più specifica, con i bersagli indicati, coincise con un ' +
+    'Brent che scendeva a 79,08 dollari. La parte davvero nuova è il termine, perché è l’unico pezzo di ' +
+    'una posizione dichiarata che produce un fatto verificabile a una data. Nello stesso pomeriggio arriva ' +
+    'l’elemento con il fondamento più solido, e non è geopolitico: il sondaggio Reuters del 12-17 agosto ' +
+    'dà la grande maggioranza degli economisti sulla Fed ferma al 3,50-3,75% per tutto il resto del 2026, ' +
+    'contro un prezzo di mercato ancora al 30-33% di probabilità di rialzo a settembre. Sull’oro il ' +
+    'quadro intraday si è intanto sgonfiato: dai 4.400,15 delle 11:45 la rilevazione Reuters è scesa a ' +
+    'circa 4.388 con più 0,3%, con Investing fra 4.389 e 4.404. I 4.400 sono stati attraversati due volte ' +
+    'in una giornata e non tenuti nessuna delle due. ' +
+    'Il controllo delle 11:45 resta valido nella sua parte diagnostica: il quadro reggeva e non c’era un fatto nuovo da mettere in ' +
     'archivio. L’oro ha raggiunto i 4.400,15 dollari con più 0,6%, con i futures di dicembre a 4.456,50, ' +
     'quindi la soglia dichiarata stamattina è stata toccata; ma è stata toccata per quindici centesimi, ed ' +
     'è un livello che questo archivio ha classificato l’11 agosto come punto di attrazione invece che come ' +
@@ -377,7 +415,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'macroeconomica è uscita: la prossima è l’indice dei prezzi all’import e all’export di luglio, martedì ' +
     '18 agosto alle 14:30, e i verbali del FOMC del 28-29 luglio arrivano mercoledì. La quotazione si è ' +
     'quindi mossa nella direzione già descritta senza che sia cambiata la ragione per cui si muove, ed è il ' +
-    'caso in cui questa scheda si aggiorna e l’archivio no. ' +
+    'caso in cui questa scheda si aggiornava e l’archivio no — e quel giudizio ha retto fino al pomeriggio, ' +
+    'quando è arrivata una dichiarazione con una data attaccata. ' +
     'La prima quotazione liquida dopo tre giorni di mercati chiusi è la cosa più informativa di tutta la ' +
     'settimana, e va detta senza addolcirla: sette fatti geopolitici su quattro fronti hanno prodotto ' +
     'un’apertura dell’oro tre dollari e mezzo sotto la chiusura di venerdì. Il premio che questo archivio ' +
@@ -433,6 +472,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'Il consenso professionale ha finito di riprezzare, ed è la prima misura organizzata invece di una deduzione: il sondaggio Reuters del 12-17 agosto trova la grande maggioranza degli economisti ad attendersi la Federal Reserve ferma al 3,50-3,75% per tutto il resto del 2026, dopo rapporto occupazionale in contrazione, indice dei prezzi e prezzi alla produzione senza accelerazione, vendite al dettaglio a meno 0,6% e fiducia a 51,0',
+    'La distanza fra consenso e prezzo è il margine che resta da percorrere: il mercato assegna ancora il 30-33% di probabilità a un rialzo a settembre, cioè circa due terzi alla pausa, mentre il sondaggio la dà quasi per esclusa fino a fine anno. Finché quella distanza esiste la riprezzatura può proseguire senza bisogno di un dato nuovo',
+    'La minaccia iraniana alza il pavimento del premio senza passare dal barile, che è la configurazione in cui il metallo lavora meglio: Teheran si dichiara pronta a una postura offensiva e il Brent resta a 88,95 dollari con più 0,5%, sotto gli 89,40 già toccati in giornata, con il WTI a 82,65. Reuters attribuisce il contenimento alle rotte alternative di ADNOC e Saudi Aramco',
+    'Per la prima volta una posizione iraniana ha un orologio: il termine di alcune settimane per vedere progressi diplomatici è l’unica parte di una dichiarazione che produce un fatto verificabile a una data, e nessuna delle sette dichiarazioni contate qui dal 5 agosto ne aveva uno',
     'Il livello dichiarato stamattina è stato raggiunto: alle 11:45 l’oro spot è a 4.400,15 dollari con più 0,6% secondo Reuters, contro i 4.391 delle 09:20, e i futures americani di dicembre sono a 4.456,50 con più 0,4%. È la prima volta dall’11 agosto che lo spot torna sopra quella soglia',
     'La separazione fra greggio e curva regge alla seconda verifica della giornata, ed è la condizione che l’archivio aveva scritto per essere smentito: il Brent ha toccato di nuovo 89,40 dollari e tratta poi attorno a 89,28, con il WTI sceso verso 81,74, mentre il decennale è sceso ancora a 4,681% e il biennale a 4,155%. Terza rilevazione consecutiva in cui il petrolio sale e la curva no',
     'Il vincolo materiale non si è allentato di una nave rispetto alla rilevazione del fine settimana: cinque transiti a Hormuz sabato, nessuno registrato domenica, contro oltre 130 al giorno prima del conflitto, con i colloqui fra Stati Uniti e Iran ancora fermi',
@@ -462,6 +505,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'Il fatto più rumoroso della giornata è anche quello con la fonte più debole: la minaccia arriva da un alto funzionario iraniano non nominato che parla a Reuters, e non è seguita da alcun atto materiale. Il conteggio dei transiti resta quello del fine settimana — cinque navi sabato, nessuna domenica — e non si è mosso di una nave per effetto della dichiarazione',
+    'Il precedente esatto è già in archivio e va nel verso opposto: il 6 agosto una minaccia iraniana più specifica di questa, con i bersagli indicati — le infrastrutture energetiche dei Paesi del Golfo — coincise con un Brent che scendeva a 79,08 dollari. Quella lettura fu registrata con certezza bassa, e il suo esito è confermata',
+    'I 4.400 sono stati attraversati due volte in una giornata e non tenuti nessuna delle due: la rilevazione Reuters delle 16:45 è circa 4.388 dollari con più 0,3%, con Investing fra 4.389 e 4.404, dopo i 4.400,15 delle 11:45. Il test dichiarato al mattino resta non superato',
+    'Un sondaggio è un’aspettativa e non una decisione: i verbali del FOMC di mercoledì 19 agosto possono spostare il prezzo di mercato in entrambe le direzioni, e la distanza fra consenso e prezzo si può chiudere anche dal lato che toglie al metallo il solo canale oggi misurabile',
     'Il canale su cui l’intero rialzo poggia è fermo mentre il prezzo sale, ed è il dato più scomodo della riverifica: in due ore e mezza il biennale è passato da 4,156% a 4,155%, il decennale da 4,684% a 4,681%, la probabilità di un rialzo a settembre da circa il 30% al 29%, e nel frattempo non è uscita alcuna diffusione macroeconomica. Nove dollari sul metallo contro tre millesimi di punto sul decennale: il rialzo si sta allontanando dalla propria spiegazione',
     'I 4.400 sono stati toccati e non tenuti, e il modo in cui sono stati toccati è quello che l’archivio aveva descritto: 4.400,15 dollari, cioè quindici centesimi sopra un numero tondo classificato l’11 agosto come punto di attrazione e non come muro, perché è lì che si accumulano gli ordini in attesa. Il test scritto stamattina chiedeva una tenuta, la fascia 4.435-4.450 non è stata avvicinata, e questo archivio si era rifiutato di alzare la direzione l’11 agosto quando alla stessa soglia mancavano quattordici dollari',
     'Il premio geopolitico accumulato in sette letture a mercati chiusi non esisteva all’apertura: l’oro spot ha aperto intorno a 4.373 dollari, cioè sotto i 4.376,59 della chiusura di venerdì, con i futures di settembre fra 4.379 e 4.381. Nessun salto, ed è la misura più diretta della desensibilizzazione che questo archivio ha annotato da Jazan in poi',
@@ -712,9 +759,15 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 29,
-      display: '≈ 29%',
+      now: 31.5,
+      display: '30-33%',
       marks: [
+        {
+          at: 33,
+          display: '33%',
+          kind: 'logora',
+          note: 'limite superiore dell’intervallo rilevato il 17 agosto, e la soglia dichiarata dalla lettura sui giorni: sopra questo livello la distanza fra il consenso degli economisti — quasi unanime sulla pausa per tutto il resto del 2026 secondo il sondaggio Reuters del 12-17 agosto — e il prezzo di mercato si chiuderebbe dal lato sbagliato',
+        },
         {
           at: 35,
           display: '35%',
@@ -731,8 +784,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 89.28,
-      display: '≈ 89,28 $',
+      now: 88.95,
+      display: '≈ 88,95 $',
       marks: [
         {
           at: 87.07,
@@ -807,8 +860,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4400.15,
-      display: '4.400,15 $',
+      now: 4388,
+      display: '≈ 4.388 $',
       marks: [
         {
           at: 4376.59,
@@ -826,9 +879,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'teheran-mette-una-scadenza-e-il-brent-resta-sotto-i-90',
     'il-salto-non-c-e-stato-e-l-oro-sale-sui-tassi',
     'il-pil-giapponese-manca-le-attese-e-lo-yen-si-rafforza',
-    'un-drone-abbattuto-sulla-romania-e-il-quarto-del-2026',
   ],
 };
 
