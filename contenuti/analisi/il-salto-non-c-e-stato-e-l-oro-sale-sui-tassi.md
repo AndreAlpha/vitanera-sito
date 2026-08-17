@@ -29,8 +29,10 @@ fonti:
     titolo: "Conteggio dei transiti: cinque navi sabato, nessuna registrata domenica"
   - testata: "CME FedWatch"
     titolo: "Probabilità di un rialzo alla riunione di settembre attorno al 30%, ricavata dai futures sui Fed Fund"
+esito: "confermata"
+controllata: "2026-08-17T11:45:00+02:00"
 sorgente: "src/app/core/data/articles/il-salto-non-c-e-stato-e-l-oro-sale-sui-tassi.ts"
-impronta: "d2b342d8cc75dcce"
+impronta: "e5deb7a647b87cd0"
 ---
 
 # Il salto non c’è stato, e l’oro sale sui tassi invece che sul rischio
@@ -129,6 +131,22 @@ Alta sui prezzi, che sono rilevazioni di una sessione aperta e non stime: l’ap
 Impostazione su XAU/USD: neutrale-rialzista, forza media, orizzonte breve.
 
 La direzione resta dov’era e la forza sale, e la ragione è che per la prima volta in una settimana la catena causale non è dedotta ma osservata. Il greggio è salito fino a 89,40 dollari e i rendimenti sono scesi lo stesso — decennale a 4,684%, biennale a 4,156% — con il dollaro a 99,52 e la probabilità di un rialzo a settembre attorno al 30%. È l’opposto della combinazione sorvegliata da quattro giorni, in cui petrolio, rendimenti e dollaro salgono insieme contro il metallo. Non sale a rialzista perché il test dichiarato non è ancora superato: i 4.400 non sono stati presi e il Brent è a un dollaro dai 90.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-17T11:45:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e la prova che l’analisi aveva dichiarato è arrivata nella sua forma più debole possibile. Il test scritto alle 09:20 era che una tenuta sopra i 4.400 dollari avrebbe riaperto la fascia 4.435-4.450 e imposto di alzare la forza: alle 11:45 lo spot è a 4.400,15, cioè quindici centesimi sopra la soglia, in una sola rilevazione e senza che la fascia superiore sia stata avvicinata. L’analisi chiedeva che il metallo tenesse sopra quel livello, non che lo toccasse, e questo archivio ha classificato l’11 agosto i 4.400 come punto di attrazione invece che come muro, perché è esattamente lì che si accumulano gli ordini in attesa. La parte che conta di più è però un’altra, e riguarda il canale su cui l’intero rialzo poggia: in due ore e mezza il biennale è passato da 4,156% a 4,155%, il decennale da 4,684% a 4,681%, la probabilità di un rialzo a settembre da circa il 30% al 29%, e nel frattempo non è uscita alcuna diffusione macroeconomica. Nove dollari sul metallo contro tre millesimi di punto sul decennale: la direzione descritta dall’analisi ha retto, la spinta che le veniva attribuita non si è mossa.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un oro che chiude lunedì sotto i 4.376,59 dollari della chiusura di venerdì: annullerebbe per intero il recupero della mattina e direbbe che il rialzo era una reazione di apertura e non una riprezzatura, riportando la forza a bassa. | no | Alle 11:45 l’oro spot è a circa 4.400,15 dollari con più 0,6% secondo Reuters, quindi ventitré dollari e mezzo sopra il livello, e il recupero della mattina si è esteso invece di essere annullato: dai 4.391 delle 09:20 il metallo ha guadagnato altri nove dollari. La chiusura di lunedì non è ancora avvenuta e il termine resta aperto. |
+| Un Brent che chiude sopra i 90 dollari con il decennale che torna sopra il 4,695%: è la combinazione che questa lettura dichiara non formata, e la sua formazione porterebbe la direzione sotto il neutrale. | no | Nessuna delle due gambe. Il Brent ha toccato di nuovo 89,40 dollari e tratta poi attorno a 89,28, con il WTI sceso verso 81,74; il decennale è a circa 4,681%, quattordici millesimi sotto il 4,695% richiesto e in calo rispetto al 4,684% delle 09:20. La separazione fra petrolio e curva che questa analisi indicava come la sua informazione centrale ha retto altre due ore e mezza. |
+| Un decennale che torna sopra il 4,701% del massimo di venerdì entro mercoledì 19 agosto: toglierebbe la gamba monetaria su cui l’intero rialzo poggia, e senza quella il premio geopolitico da solo non ha mai mosso il metallo in questa fase. | no | Il decennale è a circa 4,681%, due punti base sotto il valore delle 09:20 e venti millesimi sotto la soglia: si muove nella direzione opposta a quella che invaliderebbe la lettura. Il termine corre fino a mercoledì 19 agosto e comprende i verbali del FOMC. |
+| Una probabilità di rialzo a settembre che risale sopra il 35% dopo i verbali del FOMC di mercoledì 19 agosto: direbbe che la riprezzatura su cui l’oro sta salendo era incompleta, e la forza andrebbe riportata a bassa. | no | La condizione non è ancora eseguibile, perché i verbali escono mercoledì 19 agosto e al controllo non sono stati pubblicati. Il numero nel frattempo scende invece di salire: circa 29% contro il 30% delle 09:20 e il 47% di un mese fa, senza che nel frattempo sia uscita una sola diffusione macroeconomica. |
+| Un ritorno di spedizioni petrolifere saudite tracciate attraverso il Bab el-Mandeb entro venerdì 21 agosto: direbbe che l’assottigliamento della seconda arteria era un effetto di fine settimana e non una restrizione, e la parte logistica di questa lettura si indebolirebbe. | no | Nessun ritorno di spedizioni petrolifere saudite tracciate risulta segnalato al controllo. Il conteggio dei transiti a Hormuz resta quello del fine settimana — cinque navi sabato, nessuna registrata domenica, contro oltre 130 al giorno prima del conflitto — e nessuna fonte riporta una ripresa sull’arteria alternativa. Il termine corre fino a venerdì 21 agosto. |
+
+**Che cosa cambia.** L’11 agosto questo archivio ha scritto una nota di metodo sui livelli tondi — sono punti di attrazione e non muri, perché è lì che si accumulano gli ordini in attesa — e ne aveva tratto la regola di ancorare le condizioni ai livelli che il mercato ha stabilito da sé. Poi ha continuato a usare i 4.400 come soglia dichiarata: l’11 agosto alle 10:45 e alle 17:15, il 14 agosto sulla chiusura di venerdì, e stamattina come test dell’intera lettura. Oggi il livello è stato toccato per quindici centesimi mentre i tre numeri che dovrebbero spiegarlo si muovevano di frazioni, ed è il caso esatto che la nota descriveva: la soglia ha misurato l’attrazione del numero tondo invece della forza del canale monetario. Il correttivo non è nuovo, è quello già scritto e mai eseguito — i 4.396,88 del massimo di venerdì, i 4.441,01 del 12 agosto — e vale a maggior ragione quando la cifra tonda è comoda perché è quella di cui parlano tutti. Una soglia scelta per essere citabile non è una soglia scelta per essere informativa.
 
 ## Fonti consultate
 

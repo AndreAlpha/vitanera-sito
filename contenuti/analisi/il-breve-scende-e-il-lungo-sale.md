@@ -30,8 +30,10 @@ fonti:
     titolo: "Advance Monthly Sales for Retail and Food Services, July 2026"
   - testata: "University of Michigan, Surveys of Consumers"
     titolo: "Preliminary Results for August 2026"
+esito: "confermata"
+controllata: "2026-08-17T11:45:00+02:00"
 sorgente: "src/app/core/data/articles/il-breve-scende-e-il-lungo-sale.ts"
-impronta: "e481c38e328bf62c"
+impronta: "82cbb3bab80b1118"
 ---
 
 # Il breve scende e il lungo sale, e la settimana si chiude spaccata
@@ -138,6 +140,20 @@ Alta sui numeri: sono chiusure di seduta, non rilevazioni intermedie, ed è la p
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 La direzione resta dov’era perché è quello che ha fatto il prezzo: l’oro chiude a 4.376,59 dollari con più 0,59% e la settimana in guadagno, con il dollaro in calo per la terza seduta e la probabilità di un rialzo a settembre scesa fino al 29,3% in giornata. La forza resta bassa perché il rischio che questa scheda ha nominato tre volte oggi si è materializzato in chiusura, e non dalla parte del petrolio: il decennale ha chiuso a 4,695% con un massimo a 4,701%, il trentennale a 5,261% con un massimo a 5,271%, entrambi in rialzo di cinque punti base in una giornata di dati deboli. Il rendimento alternativo che un metallo senza cedole deve battere è salito proprio mentre saliva il metallo, ed è una convivenza che di solito non dura.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-17T11:45:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e la gamba più solida della lettura — la riprezzatura della Fed — si è rafforzata invece di indebolirsi: la probabilità di un rialzo a settembre è attorno al 29% contro il 35,0% di giovedì. La prima condizione merita però di essere letta per la direzione invece che per il verdetto, perché è quella che porta l’argomento centrale dell’analisi. La tesi era che il breve scendesse e il lungo salisse, cioè che la parte lunga della curva stesse chiedendo un premio invece di seguire la banca centrale; la condizione per smentirla era un decennale sotto il 4,641% entro martedì. Alle 11:45 di lunedì siamo a 4,681%, ancora quattro punti base sopra, ma la sequenza va tutta in una direzione: 4,695% venerdì in chiusura, 4,684% stamattina alle 09:20, 4,681% adesso. La separazione fra le due estremità della curva si sta chiudendo dal lato lungo, e con il termine aperto fino a martedì questa è la condizione da guardare.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un decennale che chiude lunedì o martedì sotto il 4,641% della chiusura di giovedì: direbbe che la salita della parte lunga di venerdì era una coda di seduta e non una richiesta di premio, e la parte centrale di questa lettura cadrebbe. | no | Alle 11:45 di lunedì il decennale è a circa 4,681%, quindi quattro punti base sopra la soglia, e la chiusura non è ancora avvenuta. Va però registrata la direzione, perché è quella che conta per il termine ancora aperto: dal 4,695% della chiusura di venerdì al 4,684% delle 09:20 al 4,681% di adesso, la scadenza si sta muovendo verso la condizione invece che allontanarsene. Il termine corre fino a martedì. |
+| Un oro che chiude sotto i 4.351,07 dollari della chiusura di giovedì entro martedì: annullerebbe il recupero della seconda metà di venerdì e riporterebbe la direzione almeno a neutrale. | no | Il metallo è andato nella direzione opposta e di parecchio: alle 11:45 lo spot è a 4.400,15 dollari con più 0,6% secondo Reuters, cioè quarantanove dollari sopra la soglia. Nessuna rilevazione della sessione si è avvicinata al livello. |
+| Un Brent che chiude sopra i 90 dollari con il decennale sopra il 4,70%: è la combinazione che questa scheda ha indicato da tre giorni come quella che porta la lettura di breve sotto il neutrale, e venerdì entrambe le gambe si sono avvicinate senza arrivarci. | no | Non scattata su nessuna delle due gambe, ed è la terza seduta consecutiva in cui la combinazione non si forma. Il Brent ha toccato di nuovo 89,40 dollari e tratta poi attorno a 89,28, quindi sotto i 90; il decennale è a 4,681%, sotto il 4,70%. Le due gambe continuano a muoversi in senso opposto invece che insieme, che è l’osservazione su cui questa lettura poggiava. |
+| La ripresa dei carichi a Sheskharis dichiarata dall’operatore entro martedì, con il Brent che rientra sotto gli 87,07 della chiusura di giovedì: toglierebbe la gamba di offerta al rialzo del greggio e ridurrebbe l’episodio a una sospensione di poche ore. | no | Nessuna dichiarazione di ripresa dei carichi risulta al controllo, e la seconda gamba è comunque distante: il Brent a 89,28 dollari sta oltre due dollari sopra gli 87,07 richiesti. La sospensione è al quarto giorno, contro i cinque del precedente di inizio marzo. Il termine corre fino a martedì. |
+| Una probabilità di rialzo a settembre che torna sopra il 35,0% di giovedì entro venerdì prossimo: cancellerebbe per intero la riprezzatura di questa settimana, che è la gamba più solida della lettura. | no | La probabilità è attorno al 29%, sei punti sotto la soglia e in calo rispetto al 30% circa delle 09:20 di stamattina: si muove nella direzione opposta a quella che invaliderebbe la lettura. Il termine resta aperto fino a venerdì e comprende i verbali del FOMC di mercoledì, che sono l’unico appuntamento in grado di riportarla su. |
 
 ## Fonti consultate
 

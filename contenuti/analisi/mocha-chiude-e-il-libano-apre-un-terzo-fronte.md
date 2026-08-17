@@ -28,8 +28,10 @@ fonti:
   - testata: "Direzione del porto di Mocha"
     titolo: "Sospensione delle attività commerciali e marittime dopo oltre venticinque missili houthi: sette morti, circa 16 milioni di dollari di danni"
     quando: "15 agosto 2026"
+esito: "confermata"
+controllata: "2026-08-17T11:45:00+02:00"
 sorgente: "src/app/core/data/articles/mocha-chiude-e-il-libano-apre-un-terzo-fronte.ts"
-impronta: "0c2c3d90e32e9466"
+impronta: "d0b1c40cf0d89d0a"
 ---
 
 # Mocha chiude, e il Libano apre un terzo fronte
@@ -115,6 +117,20 @@ Cinque fatti geopolitici sono arrivati fra venerdì sera e sabato notte senza in
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 Alla riapertura questi due fatti agiscono su un canale solo, e in un verso solo: aggiungono domanda di protezione senza toccare il prezzo di un barile. È una configurazione più pulita di quella di ieri, dove la stessa notizia sosteneva il rifugio e alimentava l’inflazione attesa. Ma la pulizia non è forza: un premio che si forma su fatti privi di una grandezza misurabile si sgonfia appena quei fatti smettono di fare notizia, ed è già successo tre volte in questo archivio nelle ultime due settimane.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-17T11:45:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e la quinta si chiude in modo definitivo perché il suo termine era l’apertura di lunedì: chiedeva un decennale sopra il 4,701% con l’oro fermo, e sono arrivate le due cose opposte — decennale a 4,681% e oro a 4.400,15 dollari. Il rischio principale che l’analisi si era dichiarata, un premio di rifugio interamente assorbito dal costo-opportunità, non si è materializzato. Le altre quattro restano non scattate con i termini aperti, e su due di esse va detto che il tempo non ha ancora prodotto informazione: la chiusura di Mocha è al terzo giorno senza annunci e la risposta di Hezbollah non è arrivata né è stata esclusa. Una nota di igiene del registro: la terza condizione poggia sui 4.376,59 della chiusura di venerdì, cioè esattamente la soglia dichiarata anche dall’analisi delle 09:20 di oggi e da altre due letture del fine settimana. Quattro analisi di giorni diversi che si misurano sullo stesso numero producono quattro verdetti che valgono come uno, ed è il problema di sovrapposizione già registrato in questa scheda il 15 agosto.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un annuncio dell’autorità portuale di Mocha sulla ripresa delle attività commerciali entro venerdì 21 agosto: ridurrebbe la chiusura a un’interruzione di pochi giorni e toglierebbe l’unico fatto operativo nuovo di questa lettura. | no | Nessun annuncio di ripresa risulta pubblicato al controllo: la sospensione dichiarata sabato dal direttore del porto è al terzo giorno. Il termine corre fino a venerdì 21 agosto. |
+| Una stima quantificata del tonnellaggio o dei barili deviati da Bab el-Mandeb attribuibile alla chiusura, pubblicata da un’autorità o da un servizio di tracciamento: farebbe passare l’episodio dalla logistica all’offerta, che è la categoria che questa analisi esclude esplicitamente. | no | Nessuna stima in tonnellate o in barili è stata pubblicata. Esiste il conteggio dei transiti del fine settimana — quarantanove navi commodity nel Bab el-Mandeb contro cinquantacinque del precedente, nessuna spedizione petrolifera saudita tracciata — ma è un conteggio di scafi, non una quantificazione di carico, e nessuna fonte lo attribuisce alla chiusura di Mocha. La classificazione data dall’analisi, logistica e non offerta, regge. |
+| Un oro che apre lunedì e chiude sotto i 4.376,59 dollari della chiusura di venerdì, restituendo per intero il premio del fine settimana: direbbe che tre fatti geopolitici in due giorni non producono domanda di protezione, e la direzione andrebbe portata a neutrale. | no | La prima metà si è verificata e la seconda va nel verso opposto. L’oro ha aperto intorno a 4.373 dollari, cioè sotto il livello, ma alle 11:45 è a 4.400,15 con più 0,6%, ventitré dollari e mezzo sopra la chiusura di venerdì, e la chiusura di lunedì non è ancora avvenuta. La condizione chiede l’apertura e la chiusura insieme, e al controllo non è scattata. |
+| Una tregua ribadita o una de-escalation dichiarata fra Israele e Hezbollah entro venerdì 21 agosto, oppure l’assenza di qualunque risposta di Hezbollah entro quella data: direbbe che il fronte libanese era un episodio e non un’apertura, e la terza gamba di questa lettura cadrebbe. | no | Nessuna tregua ribadita e nessuna de-escalation dichiarata risultano al controllo, e la seconda gamba — l’assenza di risposta di Hezbollah — non è giudicabile prima del termine, che è venerdì 21 agosto. La condizione resta aperta per costruzione. |
+| Un decennale che apre sopra il 4,701% del massimo di venerdì con l’oro che non sale: direbbe che il premio di rifugio è già interamente assorbito dal costo-opportunità, e la forza di questa lettura andrebbe azzerata invece che tenuta bassa. | no | È l’unica condizione del gruppo con il termine ormai chiuso, perché chiedeva l’apertura di lunedì, e si risolve nel verso opposto su entrambe le gambe. Il decennale ha aperto sotto la soglia — 4,684% alle 09:20, 4,681% alle 11:45, quindi anche sotto il 4,695% della chiusura di venerdì — e l’oro è salito, da circa 4.373 dollari in apertura a 4.400,15. La configurazione descritta, premio di rifugio assorbito dal costo-opportunità, non si è formata. |
 
 ## Fonti consultate
 

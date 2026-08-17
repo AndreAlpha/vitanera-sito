@@ -180,6 +180,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-17T09:20:00+02:00',
+  checkedAt: '2026-08-17T11:45:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -196,7 +197,18 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'dollaro a 99,52. L’oro è a 4.391,07 con più 0,4% perché il rendimento alternativo è scivolato, non ' +
         'perché una nave non è passata. La forza sale a media per la qualità della prova, non per ' +
         'l’ampiezza del movimento: per la prima volta in una settimana la catena causale è osservata invece ' +
-        'che dedotta a mercati chiusi.',
+        'che dedotta a mercati chiusi. Riverificato alle 11:45, e la forza resta media per una ragione che ' +
+        'va detta invece di essere nascosta in un numero. Il test dichiarato stamattina era una tenuta ' +
+        'sopra i 4.400 dollari, e lo spot è a 4.400,15: quindici centesimi sopra, in una sola rilevazione, ' +
+        'senza che la fascia 4.435-4.450 sia stata avvicinata. Alzare la forza qui significherebbe usare la ' +
+        'soglia quando conviene, dopo che questo archivio si era rifiutato di alzarla l’11 agosto per ' +
+        'quattordici dollari mancanti. Conta di più il motore, che non si è mosso: fra le 09:20 e le 11:45 ' +
+        'il biennale è passato da 4,156% a 4,155%, il decennale da 4,684% a 4,681%, la probabilità di un ' +
+        'rialzo a settembre da circa il 30% al 29%, e nel frattempo non è uscita alcuna diffusione ' +
+        'macroeconomica. Nove dollari sul metallo contro tre millesimi di punto sul decennale: la ' +
+        'separazione fra greggio e curva regge — Brent di nuovo a 89,40 e poi 89,28, WTI a 81,74 — ma il ' +
+        'canale monetario sta fermo mentre il prezzo sale, e questo è un rialzo che si allontana dalla ' +
+        'propria spiegazione invece di avvicinarvisi.',
       invalidation:
         'Un oro che chiude oggi sotto i 4.376,59 dollari della chiusura di venerdì: annullerebbe il recupero della mattina e riporterebbe la forza a bassa. Oppure un Brent che chiude sopra i 90 dollari con il decennale che torna sopra il 4,695%: è la combinazione dichiarata da cinque letture consecutive, oggi non formata, e la sua comparsa porterebbe la direzione sotto il neutrale. Nell’altro verso, un oro che tiene sopra i 4.400 con il decennale fermo sotto il 4,695% riaprirebbe la fascia 4.435-4.450 e imporrebbe di alzare la forza ancora.',
     },
@@ -353,8 +365,19 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   headline:
-    'Nessun salto alla riapertura: l’oro apre sotto la chiusura di venerdì, poi sale a 4.391 con il Brent a 89,40 e i rendimenti in calo',
+    'I 4.400 sono stati toccati, non tenuti: l’oro a 4.400,15 mentre biennale, decennale e attese sulla Fed si muovono di frazioni',
   stance:
+    'Riverifica delle 11:45, senza pubblicare: il quadro regge e non c’è un fatto nuovo da mettere in ' +
+    'archivio. L’oro ha raggiunto i 4.400,15 dollari con più 0,6%, con i futures di dicembre a 4.456,50, ' +
+    'quindi la soglia dichiarata stamattina è stata toccata; ma è stata toccata per quindici centesimi, ed ' +
+    'è un livello che questo archivio ha classificato l’11 agosto come punto di attrazione invece che come ' +
+    'muro. Tutto il resto è fermo: biennale a 4,155%, decennale a 4,681%, probabilità di un rialzo a ' +
+    'settembre attorno al 29% contro il 30% di due ore fa, Brent che tocca di nuovo 89,40 e tratta a ' +
+    '89,28, conteggio dei transiti a Hormuz identico a quello del fine settimana. Nessuna diffusione ' +
+    'macroeconomica è uscita: la prossima è l’indice dei prezzi all’import e all’export di luglio, martedì ' +
+    '18 agosto alle 14:30, e i verbali del FOMC del 28-29 luglio arrivano mercoledì. La quotazione si è ' +
+    'quindi mossa nella direzione già descritta senza che sia cambiata la ragione per cui si muove, ed è il ' +
+    'caso in cui questa scheda si aggiorna e l’archivio no. ' +
     'La prima quotazione liquida dopo tre giorni di mercati chiusi è la cosa più informativa di tutta la ' +
     'settimana, e va detta senza addolcirla: sette fatti geopolitici su quattro fronti hanno prodotto ' +
     'un’apertura dell’oro tre dollari e mezzo sotto la chiusura di venerdì. Il premio che questo archivio ' +
@@ -410,6 +433,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'Il livello dichiarato stamattina è stato raggiunto: alle 11:45 l’oro spot è a 4.400,15 dollari con più 0,6% secondo Reuters, contro i 4.391 delle 09:20, e i futures americani di dicembre sono a 4.456,50 con più 0,4%. È la prima volta dall’11 agosto che lo spot torna sopra quella soglia',
+    'La separazione fra greggio e curva regge alla seconda verifica della giornata, ed è la condizione che l’archivio aveva scritto per essere smentito: il Brent ha toccato di nuovo 89,40 dollari e tratta poi attorno a 89,28, con il WTI sceso verso 81,74, mentre il decennale è sceso ancora a 4,681% e il biennale a 4,155%. Terza rilevazione consecutiva in cui il petrolio sale e la curva no',
+    'Il vincolo materiale non si è allentato di una nave rispetto alla rilevazione del fine settimana: cinque transiti a Hormuz sabato, nessuno registrato domenica, contro oltre 130 al giorno prima del conflitto, con i colloqui fra Stati Uniti e Iran ancora fermi',
     'La combinazione sorvegliata da cinque letture consecutive non si è formata, ed era la condizione dichiarata per essere smentiti: il Brent è salito fino a 89,40 dollari con circa più 1%, e i rendimenti sono scesi lo stesso — decennale a 4,684% sotto il 4,695% della chiusura di venerdì, biennale a 4,156% con meno due punti base, Dollar Index a 99,52. Petrolio in rialzo e curva in calo nella stessa seduta',
     'Il canale monetario spinge da tre lati e con un numero che si muove da un mese: la probabilità di un rialzo a settembre è attorno al 30% contro circa il 47% di un mese fa, ricavata dai futures sui Fed Fund. L’oro è a 4.391,07 con più 0,4% e i futures di dicembre a 4.448,10',
     'Il vincolo materiale peggiora nella forma che questo archivio ha detto di considerare affidabile — una discesa su più rilevazioni e non il numero di un giorno: trentuno transiti a Hormuz nel fine settimana precedente, cinque sabato, nessuno registrato domenica, contro oltre 130 al giorno prima del conflitto',
@@ -436,6 +462,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'Il canale su cui l’intero rialzo poggia è fermo mentre il prezzo sale, ed è il dato più scomodo della riverifica: in due ore e mezza il biennale è passato da 4,156% a 4,155%, il decennale da 4,684% a 4,681%, la probabilità di un rialzo a settembre da circa il 30% al 29%, e nel frattempo non è uscita alcuna diffusione macroeconomica. Nove dollari sul metallo contro tre millesimi di punto sul decennale: il rialzo si sta allontanando dalla propria spiegazione',
+    'I 4.400 sono stati toccati e non tenuti, e il modo in cui sono stati toccati è quello che l’archivio aveva descritto: 4.400,15 dollari, cioè quindici centesimi sopra un numero tondo classificato l’11 agosto come punto di attrazione e non come muro, perché è lì che si accumulano gli ordini in attesa. Il test scritto stamattina chiedeva una tenuta, la fascia 4.435-4.450 non è stata avvicinata, e questo archivio si era rifiutato di alzare la direzione l’11 agosto quando alla stessa soglia mancavano quattordici dollari',
     'Il premio geopolitico accumulato in sette letture a mercati chiusi non esisteva all’apertura: l’oro spot ha aperto intorno a 4.373 dollari, cioè sotto i 4.376,59 della chiusura di venerdì, con i futures di settembre fra 4.379 e 4.381. Nessun salto, ed è la misura più diretta della desensibilizzazione che questo archivio ha annotato da Jazan in poi',
     'Il test dichiarato non è superato: i 4.396,88 del massimo di venerdì e i 4.400 sono ancora sopra il prezzo, e il Brent è a un dollaro dai 90. Se li rompe tirandosi dietro il decennale verso il 4,70%, la separazione osservata stamattina si rivela temporanea',
     'Il PIL giapponese del secondo trimestre esce all’1,1% annualizzato contro il 2,0% atteso, con consumi fermi e investimenti a meno 1,2%, ma il cambio si muove nel verso opposto: yen più forte dello 0,2% a 159,06 e dollaro a 99,52, perché il mercato pesa i dati americani deboli più di quello giapponese. È un dato senza canale proprio',
@@ -684,8 +712,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 30,
-      display: '≈ 30%',
+      now: 29,
+      display: '≈ 29%',
       marks: [
         {
           at: 35,
@@ -703,8 +731,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 89.2,
-      display: '≈ 89,20 $',
+      now: 89.28,
+      display: '≈ 89,28 $',
       marks: [
         {
           at: 87.07,
@@ -728,8 +756,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.156,
-      display: '4,156%',
+      now: 4.155,
+      display: '4,155%',
       marks: [
         {
           at: 4.25,
@@ -741,8 +769,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.684,
-      display: '4,684%',
+      now: 4.681,
+      display: '4,681%',
       marks: [
         {
           at: 4.68,
@@ -779,8 +807,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4391.07,
-      display: '4.391,07 $',
+      now: 4400.15,
+      display: '4.400,15 $',
       marks: [
         {
           at: 4376.59,
@@ -792,7 +820,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 4400,
           display: '4.400 $',
           kind: 'logora',
-          note: 'è il test dichiarato: una tenuta sopra questa soglia riaprirebbe la fascia 4.435-4.450 e imporrebbe di alzare ancora la forza. Il livello è tondo e attira ordini, e per questo va guardato insieme ai 4.396,88 del massimo di venerdì, che è il livello che il mercato ha stabilito da sé e che al momento non è stato ripreso',
+          note: 'è il test dichiarato: una tenuta sopra questa soglia riaprirebbe la fascia 4.435-4.450 e imporrebbe di alzare ancora la forza. Alle 11:45 del 17 agosto il livello è stato raggiunto per quindici centesimi — 4.400,15 dollari — quindi toccato e non tenuto, e la fascia superiore non è stata avvicinata. Il livello è tondo e attira ordini, ed è per questo che va guardato insieme ai 4.396,88 del massimo di venerdì, che il mercato ha stabilito da sé e che è invece stato superato: quella è la parte del movimento che porta informazione',
         },
       ],
     },

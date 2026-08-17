@@ -2781,4 +2781,135 @@ export const OUTCOMES: readonly Outcome[] = [
     lesson:
       'Sette analisi in tre giorni hanno dichiarato tutte un rischio geopolitico in aumento, e la prima risposta liquida è stata un’apertura dell’oro tre dollari e mezzo sotto la chiusura di venerdì: nessun salto, con il Brent sotto i 90 dollari. Il premio che l’archivio ha descritto accumularsi per tre giorni non esisteva all’apertura. Il rialzo è arrivato dopo, a 4.391,07, ed è arrivato con il decennale a 4,684% — sotto la chiusura di venerdì — il biennale a 4,156% e il dollaro a 99,52: cioè dal canale monetario, non da quello geopolitico. La lezione non è che i sette fatti fossero falsi, perché erano tutti documentati; è che contarli non dice niente su quale canale li porterà nel prezzo, e che scrivere «rischio aumentato» sette volte di seguito senza un prezzo con cui misurarsi accumula convinzione nella scrittura e non premio nel mercato. La domanda da porre in cima a ogni lettura geopolitica non è quanto il rischio sia salito, ma attraverso quale canale dovrebbe arrivare e quale numero lo mostrerebbe.',
   },
+  {
+    slug: 'il-breve-scende-e-il-lungo-sale',
+    checkedAt: '2026-08-17T11:45:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un decennale che chiude lunedì o martedì sotto il 4,641% della chiusura di giovedì: direbbe che la salita della parte lunga di venerdì era una coda di seduta e non una richiesta di premio, e la parte centrale di questa lettura cadrebbe.',
+        triggered: false,
+        evidence:
+          'Alle 11:45 di lunedì il decennale è a circa 4,681%, quindi quattro punti base sopra la soglia, e la chiusura non è ancora avvenuta. Va però registrata la direzione, perché è quella che conta per il termine ancora aperto: dal 4,695% della chiusura di venerdì al 4,684% delle 09:20 al 4,681% di adesso, la scadenza si sta muovendo verso la condizione invece che allontanarsene. Il termine corre fino a martedì.',
+      },
+      {
+        condition:
+          'Un oro che chiude sotto i 4.351,07 dollari della chiusura di giovedì entro martedì: annullerebbe il recupero della seconda metà di venerdì e riporterebbe la direzione almeno a neutrale.',
+        triggered: false,
+        evidence:
+          'Il metallo è andato nella direzione opposta e di parecchio: alle 11:45 lo spot è a 4.400,15 dollari con più 0,6% secondo Reuters, cioè quarantanove dollari sopra la soglia. Nessuna rilevazione della sessione si è avvicinata al livello.',
+      },
+      {
+        condition:
+          'Un Brent che chiude sopra i 90 dollari con il decennale sopra il 4,70%: è la combinazione che questa scheda ha indicato da tre giorni come quella che porta la lettura di breve sotto il neutrale, e venerdì entrambe le gambe si sono avvicinate senza arrivarci.',
+        triggered: false,
+        evidence:
+          'Non scattata su nessuna delle due gambe, ed è la terza seduta consecutiva in cui la combinazione non si forma. Il Brent ha toccato di nuovo 89,40 dollari e tratta poi attorno a 89,28, quindi sotto i 90; il decennale è a 4,681%, sotto il 4,70%. Le due gambe continuano a muoversi in senso opposto invece che insieme, che è l’osservazione su cui questa lettura poggiava.',
+      },
+      {
+        condition:
+          'La ripresa dei carichi a Sheskharis dichiarata dall’operatore entro martedì, con il Brent che rientra sotto gli 87,07 della chiusura di giovedì: toglierebbe la gamba di offerta al rialzo del greggio e ridurrebbe l’episodio a una sospensione di poche ore.',
+        triggered: false,
+        evidence:
+          'Nessuna dichiarazione di ripresa dei carichi risulta al controllo, e la seconda gamba è comunque distante: il Brent a 89,28 dollari sta oltre due dollari sopra gli 87,07 richiesti. La sospensione è al quarto giorno, contro i cinque del precedente di inizio marzo. Il termine corre fino a martedì.',
+      },
+      {
+        condition:
+          'Una probabilità di rialzo a settembre che torna sopra il 35,0% di giovedì entro venerdì prossimo: cancellerebbe per intero la riprezzatura di questa settimana, che è la gamba più solida della lettura.',
+        triggered: false,
+        evidence:
+          'La probabilità è attorno al 29%, sei punti sotto la soglia e in calo rispetto al 30% circa delle 09:20 di stamattina: si muove nella direzione opposta a quella che invaliderebbe la lettura. Il termine resta aperto fino a venerdì e comprende i verbali del FOMC di mercoledì, che sono l’unico appuntamento in grado di riportarla su.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e la gamba più solida della lettura — la riprezzatura della Fed — si è rafforzata invece di indebolirsi: la probabilità di un rialzo a settembre è attorno al 29% contro il 35,0% di giovedì. La prima condizione merita però di essere letta per la direzione invece che per il verdetto, perché è quella che porta l’argomento centrale dell’analisi. La tesi era che il breve scendesse e il lungo salisse, cioè che la parte lunga della curva stesse chiedendo un premio invece di seguire la banca centrale; la condizione per smentirla era un decennale sotto il 4,641% entro martedì. Alle 11:45 di lunedì siamo a 4,681%, ancora quattro punti base sopra, ma la sequenza va tutta in una direzione: 4,695% venerdì in chiusura, 4,684% stamattina alle 09:20, 4,681% adesso. La separazione fra le due estremità della curva si sta chiudendo dal lato lungo, e con il termine aperto fino a martedì questa è la condizione da guardare.',
+  },
+  {
+    slug: 'mocha-chiude-e-il-libano-apre-un-terzo-fronte',
+    checkedAt: '2026-08-17T11:45:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un annuncio dell’autorità portuale di Mocha sulla ripresa delle attività commerciali entro venerdì 21 agosto: ridurrebbe la chiusura a un’interruzione di pochi giorni e toglierebbe l’unico fatto operativo nuovo di questa lettura.',
+        triggered: false,
+        evidence:
+          'Nessun annuncio di ripresa risulta pubblicato al controllo: la sospensione dichiarata sabato dal direttore del porto è al terzo giorno. Il termine corre fino a venerdì 21 agosto.',
+      },
+      {
+        condition:
+          'Una stima quantificata del tonnellaggio o dei barili deviati da Bab el-Mandeb attribuibile alla chiusura, pubblicata da un’autorità o da un servizio di tracciamento: farebbe passare l’episodio dalla logistica all’offerta, che è la categoria che questa analisi esclude esplicitamente.',
+        triggered: false,
+        evidence:
+          'Nessuna stima in tonnellate o in barili è stata pubblicata. Esiste il conteggio dei transiti del fine settimana — quarantanove navi commodity nel Bab el-Mandeb contro cinquantacinque del precedente, nessuna spedizione petrolifera saudita tracciata — ma è un conteggio di scafi, non una quantificazione di carico, e nessuna fonte lo attribuisce alla chiusura di Mocha. La classificazione data dall’analisi, logistica e non offerta, regge.',
+      },
+      {
+        condition:
+          'Un oro che apre lunedì e chiude sotto i 4.376,59 dollari della chiusura di venerdì, restituendo per intero il premio del fine settimana: direbbe che tre fatti geopolitici in due giorni non producono domanda di protezione, e la direzione andrebbe portata a neutrale.',
+        triggered: false,
+        evidence:
+          'La prima metà si è verificata e la seconda va nel verso opposto. L’oro ha aperto intorno a 4.373 dollari, cioè sotto il livello, ma alle 11:45 è a 4.400,15 con più 0,6%, ventitré dollari e mezzo sopra la chiusura di venerdì, e la chiusura di lunedì non è ancora avvenuta. La condizione chiede l’apertura e la chiusura insieme, e al controllo non è scattata.',
+      },
+      {
+        condition:
+          'Una tregua ribadita o una de-escalation dichiarata fra Israele e Hezbollah entro venerdì 21 agosto, oppure l’assenza di qualunque risposta di Hezbollah entro quella data: direbbe che il fronte libanese era un episodio e non un’apertura, e la terza gamba di questa lettura cadrebbe.',
+        triggered: false,
+        evidence:
+          'Nessuna tregua ribadita e nessuna de-escalation dichiarata risultano al controllo, e la seconda gamba — l’assenza di risposta di Hezbollah — non è giudicabile prima del termine, che è venerdì 21 agosto. La condizione resta aperta per costruzione.',
+      },
+      {
+        condition:
+          'Un decennale che apre sopra il 4,701% del massimo di venerdì con l’oro che non sale: direbbe che il premio di rifugio è già interamente assorbito dal costo-opportunità, e la forza di questa lettura andrebbe azzerata invece che tenuta bassa.',
+        triggered: false,
+        evidence:
+          'È l’unica condizione del gruppo con il termine ormai chiuso, perché chiedeva l’apertura di lunedì, e si risolve nel verso opposto su entrambe le gambe. Il decennale ha aperto sotto la soglia — 4,684% alle 09:20, 4,681% alle 11:45, quindi anche sotto il 4,695% della chiusura di venerdì — e l’oro è salito, da circa 4.373 dollari in apertura a 4.400,15. La configurazione descritta, premio di rifugio assorbito dal costo-opportunità, non si è formata.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e la quinta si chiude in modo definitivo perché il suo termine era l’apertura di lunedì: chiedeva un decennale sopra il 4,701% con l’oro fermo, e sono arrivate le due cose opposte — decennale a 4,681% e oro a 4.400,15 dollari. Il rischio principale che l’analisi si era dichiarata, un premio di rifugio interamente assorbito dal costo-opportunità, non si è materializzato. Le altre quattro restano non scattate con i termini aperti, e su due di esse va detto che il tempo non ha ancora prodotto informazione: la chiusura di Mocha è al terzo giorno senza annunci e la risposta di Hezbollah non è arrivata né è stata esclusa. Una nota di igiene del registro: la terza condizione poggia sui 4.376,59 della chiusura di venerdì, cioè esattamente la soglia dichiarata anche dall’analisi delle 09:20 di oggi e da altre due letture del fine settimana. Quattro analisi di giorni diversi che si misurano sullo stesso numero producono quattro verdetti che valgono come uno, ed è il problema di sovrapposizione già registrato in questa scheda il 15 agosto.',
+  },
+  {
+    slug: 'il-salto-non-c-e-stato-e-l-oro-sale-sui-tassi',
+    checkedAt: '2026-08-17T11:45:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un oro che chiude lunedì sotto i 4.376,59 dollari della chiusura di venerdì: annullerebbe per intero il recupero della mattina e direbbe che il rialzo era una reazione di apertura e non una riprezzatura, riportando la forza a bassa.',
+        triggered: false,
+        evidence:
+          'Alle 11:45 l’oro spot è a circa 4.400,15 dollari con più 0,6% secondo Reuters, quindi ventitré dollari e mezzo sopra il livello, e il recupero della mattina si è esteso invece di essere annullato: dai 4.391 delle 09:20 il metallo ha guadagnato altri nove dollari. La chiusura di lunedì non è ancora avvenuta e il termine resta aperto.',
+      },
+      {
+        condition:
+          'Un Brent che chiude sopra i 90 dollari con il decennale che torna sopra il 4,695%: è la combinazione che questa lettura dichiara non formata, e la sua formazione porterebbe la direzione sotto il neutrale.',
+        triggered: false,
+        evidence:
+          'Nessuna delle due gambe. Il Brent ha toccato di nuovo 89,40 dollari e tratta poi attorno a 89,28, con il WTI sceso verso 81,74; il decennale è a circa 4,681%, quattordici millesimi sotto il 4,695% richiesto e in calo rispetto al 4,684% delle 09:20. La separazione fra petrolio e curva che questa analisi indicava come la sua informazione centrale ha retto altre due ore e mezza.',
+      },
+      {
+        condition:
+          'Un decennale che torna sopra il 4,701% del massimo di venerdì entro mercoledì 19 agosto: toglierebbe la gamba monetaria su cui l’intero rialzo poggia, e senza quella il premio geopolitico da solo non ha mai mosso il metallo in questa fase.',
+        triggered: false,
+        evidence:
+          'Il decennale è a circa 4,681%, due punti base sotto il valore delle 09:20 e venti millesimi sotto la soglia: si muove nella direzione opposta a quella che invaliderebbe la lettura. Il termine corre fino a mercoledì 19 agosto e comprende i verbali del FOMC.',
+      },
+      {
+        condition:
+          'Una probabilità di rialzo a settembre che risale sopra il 35% dopo i verbali del FOMC di mercoledì 19 agosto: direbbe che la riprezzatura su cui l’oro sta salendo era incompleta, e la forza andrebbe riportata a bassa.',
+        triggered: false,
+        evidence:
+          'La condizione non è ancora eseguibile, perché i verbali escono mercoledì 19 agosto e al controllo non sono stati pubblicati. Il numero nel frattempo scende invece di salire: circa 29% contro il 30% delle 09:20 e il 47% di un mese fa, senza che nel frattempo sia uscita una sola diffusione macroeconomica.',
+      },
+      {
+        condition:
+          'Un ritorno di spedizioni petrolifere saudite tracciate attraverso il Bab el-Mandeb entro venerdì 21 agosto: direbbe che l’assottigliamento della seconda arteria era un effetto di fine settimana e non una restrizione, e la parte logistica di questa lettura si indebolirebbe.',
+        triggered: false,
+        evidence:
+          'Nessun ritorno di spedizioni petrolifere saudite tracciate risulta segnalato al controllo. Il conteggio dei transiti a Hormuz resta quello del fine settimana — cinque navi sabato, nessuna registrata domenica, contro oltre 130 al giorno prima del conflitto — e nessuna fonte riporta una ripresa sull’arteria alternativa. Il termine corre fino a venerdì 21 agosto.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e la prova che l’analisi aveva dichiarato è arrivata nella sua forma più debole possibile. Il test scritto alle 09:20 era che una tenuta sopra i 4.400 dollari avrebbe riaperto la fascia 4.435-4.450 e imposto di alzare la forza: alle 11:45 lo spot è a 4.400,15, cioè quindici centesimi sopra la soglia, in una sola rilevazione e senza che la fascia superiore sia stata avvicinata. L’analisi chiedeva che il metallo tenesse sopra quel livello, non che lo toccasse, e questo archivio ha classificato l’11 agosto i 4.400 come punto di attrazione invece che come muro, perché è esattamente lì che si accumulano gli ordini in attesa. La parte che conta di più è però un’altra, e riguarda il canale su cui l’intero rialzo poggia: in due ore e mezza il biennale è passato da 4,156% a 4,155%, il decennale da 4,684% a 4,681%, la probabilità di un rialzo a settembre da circa il 30% al 29%, e nel frattempo non è uscita alcuna diffusione macroeconomica. Nove dollari sul metallo contro tre millesimi di punto sul decennale: la direzione descritta dall’analisi ha retto, la spinta che le veniva attribuita non si è mossa.',
+    lesson:
+      'L’11 agosto questo archivio ha scritto una nota di metodo sui livelli tondi — sono punti di attrazione e non muri, perché è lì che si accumulano gli ordini in attesa — e ne aveva tratto la regola di ancorare le condizioni ai livelli che il mercato ha stabilito da sé. Poi ha continuato a usare i 4.400 come soglia dichiarata: l’11 agosto alle 10:45 e alle 17:15, il 14 agosto sulla chiusura di venerdì, e stamattina come test dell’intera lettura. Oggi il livello è stato toccato per quindici centesimi mentre i tre numeri che dovrebbero spiegarlo si muovevano di frazioni, ed è il caso esatto che la nota descriveva: la soglia ha misurato l’attrazione del numero tondo invece della forza del canale monetario. Il correttivo non è nuovo, è quello già scritto e mai eseguito — i 4.396,88 del massimo di venerdì, i 4.441,01 del 12 agosto — e vale a maggior ragione quando la cifra tonda è comoda perché è quella di cui parlano tutti. Una soglia scelta per essere citabile non è una soglia scelta per essere informativa.',
+  },
 ];
