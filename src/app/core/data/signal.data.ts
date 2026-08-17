@@ -179,12 +179,12 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-17T17:50:00+02:00',
+  updatedAt: '2026-08-17T19:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'neutrale-rialzista',
+      direction: 'rialzista',
       strength: 'media',
       regime:
         'La prima seduta liquida dopo tre giorni di mercati chiusi ha risposto a due domande, e le due ' +
@@ -214,9 +214,19 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'ordini. La forza resta media e la direzione non scende, perché il rientro è di una dozzina di ' +
         'dollari e i due sostegni sono ancora al loro posto — dollaro sui minimi da circa due mesi e ' +
         'rendimenti in lieve calo — ma il test dichiarato stamattina resta non superato, e adesso è stato ' +
-        'mancato due volte.',
+        'mancato due volte. In serata il quadro si rovescia, e per una ragione che questa scheda aveva ' +
+        'scritto in anticipo invece di trovarla adesso. L’oro passa a 4.409,94 dollari con più 0,78% e poi ' +
+        'a 4.426,52 con più 1,2%, mentre il decennale è tornato al 4,70% e il trentennale sta al 5,29%: è ' +
+        'la condizione composta dichiarata l’11 agosto — un oro sopra i 4.400 con il decennale ancora sopra ' +
+        'il 4,70% — mancata allora per quattordici dollari e diventata ineseguibile il giorno dopo, quando ' +
+        'il rendimento scivolò sotto la soglia mentre il metallo era ancora in viaggio. Oggi le due gambe ' +
+        'ci sono insieme, con ventisei dollari di margine invece di quindici centesimi. La direzione sale ' +
+        'quindi a rialzista, e la forza resta media perché la prova è tecnica e non causale: dice che il ' +
+        'metallo assorbe un costo-opportunità ai massimi da quasi vent’anni, non chi lo stia comprando. ' +
+        'Il sostegno che rende possibile l’assorbimento è uno solo ed è il cambio, con il Dollar Index a ' +
+        '99,42, minimo da giugno: è quello il numero da guardare, non l’oro.',
       invalidation:
-        'Un oro che chiude oggi sotto i 4.376,59 dollari della chiusura di venerdì: annullerebbe il recupero della mattina e riporterebbe la forza a bassa. Oppure un Brent che chiude sopra i 90 dollari con il decennale che torna sopra il 4,695%: è la combinazione dichiarata da cinque letture consecutive, oggi non formata, e la sua comparsa porterebbe la direzione sotto il neutrale. Nell’altro verso, un oro che tiene sopra i 4.400 con il decennale fermo sotto il 4,695% riaprirebbe la fascia 4.435-4.450 e imporrebbe di alzare la forza ancora.',
+        'Un oro che chiude mercoledì 19 agosto sotto i 4.409,94 dollari della prima rilevazione della serata: direbbe che il superamento dei 4.400 è stato una punta come le due di stamattina e non una tenuta, e la direzione andrebbe riportata a neutrale con inclinazione rialzista. Oppure un decennale sopra il 4,75% entro venerdì 21 agosto: è il livello oltre il quale il costo-opportunità smette di essere assorbibile con il solo sostegno del cambio, e la forza andrebbe riportata a bassa. Resta valida anche nell’altro verso la combinazione sorvegliata da cinque letture, cioè un Brent sopra i 90 dollari con il decennale sopra il 4,695%, che porterebbe la direzione sotto il neutrale.',
     },
     {
       horizon: 'medio',
@@ -406,8 +416,25 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   headline:
-    'Empire State al massimo da quattro anni e NAHB sopra le attese, e la curva non li prezza: biennale a 4,155%, rialzo a settembre fermo al 33%',
+    'L’oro a 4.426,52 con il decennale al 4,70%: la prova composta dichiarata l’11 agosto si verifica per la prima volta',
   stance:
+    'In serata il quadro si chiude su un fatto che questa scheda aveva scritto in anticipo, ed è la ragione ' +
+    'per cui la direzione intraday sale a rialzista. L’11 agosto era stata dichiarata la prova da chiedere ' +
+    'al metallo, in forma composta di proposito: un oro sopra i 4.400 dollari con il decennale ancora sopra ' +
+    'il 4,70%, cioè un rialzo contro il rendimento alternativo invece che grazie al suo calo. Quel giorno ' +
+    'mancò per quattordici dollari; il 12 agosto divenne ineseguibile perché il decennale scivolò sotto la ' +
+    'soglia mentre l’oro era ancora in viaggio; stamattina i 4.400 sono stati attraversati due volte e non ' +
+    'tenuti. Adesso le due gambe ci sono insieme: 4.409,94 e poi 4.426,52 dollari con più 1,2%, futures di ' +
+    'dicembre a 4.484,10, decennale al 4,70% e trentennale al 5,29%. Sul trentennale va però tolta ' +
+    'l’enfasi: il 5,28% era già stato registrato qui il 10 e l’11 agosto, quindi un punto base sopra non è ' +
+    'un livello nuovo ma lo stesso livello che dura. La novità sta nell’altra metà del confronto. Nuova è ' +
+    'invece una gamba della spiegazione riportata sulla parte lunga — accanto alle prospettive fiscali e ' +
+    'all’offerta di debito compare la forte emissione di obbligazioni societarie legata agli investimenti ' +
+    'in intelligenza artificiale — e conta perché è domanda privata di capitale, che non risponde a ' +
+    'decisioni di bilancio. Il sostegno che rende possibile l’assorbimento è uno solo, il cambio: Dollar ' +
+    'Index a 99,42, minimo da giugno. Restano fuori dal conto due elementi dichiarati come tali: il ritorno ' +
+    'della domanda istituzionale è un’inferenza di analisti e non un dato, e i colloqui del segretario ' +
+    'all’Energia con le raffinerie sono un’iniziativa e non un aumento di produzione osservato. ' +
     'La sera del 17 agosto arrivano due diffusioni americane sopra le attese e la curva non le prezza, ed è ' +
     'quello il fatto da registrare. L’Empire State di agosto esce a 20,6 contro 10,6 attesi e 15,6 di ' +
     'luglio, massimo da oltre quattro anni, con i prezzi pagati in salita a 58,6 da 52,3; il NAHB sale a ' +
@@ -506,6 +533,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'La prova composta dichiarata l’11 agosto si verifica per la prima volta, ed è il fatto della serata: l’oro passa a 4.409,94 e poi a 4.426,52 dollari con più 1,2% mentre il decennale è tornato al 4,70%. La condizione chiedeva le due cose insieme — un rialzo contro il rendimento alternativo, non grazie al suo calo — e in sei giorni non si erano mai presentate nello stesso momento',
+    'Il margine è di ventisei dollari sopra i 4.400 invece dei quindici centesimi delle 11:45, e i futures americani di dicembre sono a 4.484,10: la differenza fra una punta e una tenuta è l’unico contenuto informativo che un livello tondo può avere',
+    'Il Dollar Index scende a 99,42, minimo da giugno: è il canale che sta pagando al posto dei rendimenti il costo di tenere un metallo senza cedole, e finché resta lì l’assorbimento è possibile',
     'Due diffusioni americane sopra le attese non hanno riprezzato la Fed, ed è il fatto della serata: Empire State di agosto a 20,6 contro 10,6 attesi, massimo da oltre quattro anni, e NAHB a 35 contro 33. Il biennale resta attorno al 4,155%, il decennale al 4,681%, entrambi leggermente più bassi in giornata, e la probabilità di un rialzo a settembre è ferma attorno al 33% contro il 51,2% di un mese fa',
     'La gamba energetica ha finalmente un meccanismo invece di una coincidenza: Reuters riferisce che Saudi Aramco tratta carichi di settembre con consegne nave-nave al largo di Fujairah — fuori dallo Stretto — e che ADNOC ha collocato almeno quattordici milioni di barili spot a raffinerie asiatiche. Spiega perché il Brent resti a 88,95 dollari con i transiti quasi azzerati',
     'Il livello assoluto del NAHB resta molto depresso e ridimensiona la sorpresa: sotto 40 da sedici mesi consecutivi, la striscia più lunga dal 2012, con circa il 30% dei costruttori che taglia i prezzi e quasi due terzi che offrono incentivi. La sorpresa è sul margine, non sul quadro',
@@ -542,6 +572,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'Il trentennale al 5,29% non è un livello nuovo e va detto contro la presentazione che ne viene fatta: il 5,28% era già stato registrato qui il 10 e l’11 agosto, e la formula «massimi dal 2007» compare in quattro analisi precedenti. Un punto base sopra un massimo già visto è lo stesso massimo che dura, non una novità',
+    'Il costo-opportunità non sta scendendo e i sostegni sono due invece di tre: il decennale al 4,70% è a un millesimo dai 4,701% che questa scheda ha dichiarato come invalidazione, quindi la lettura corrente e la propria smentita non sono mai state così vicine',
+    'La gamba nuova nella spiegazione della parte lunga è la meno governabile: accanto alle prospettive fiscali e all’offerta di debito compare la forte emissione di obbligazioni societarie legata agli investimenti in intelligenza artificiale, che è domanda privata di capitale e non risponde a decisioni di bilancio',
+    'La sola spiegazione candidata per chi stia comprando a questi livelli — un ritorno della domanda istituzionale e ufficiale — è dichiarata dagli analisti come inferenza e non come dato, e i colloqui del segretario all’Energia con le raffinerie sono un’iniziativa annunciata e non un aumento di produzione osservato',
     'I prezzi pagati dell’Empire State salgono a 58,6 da 52,3, ed è la componente che alimenta le attese di inflazione: oggi non ha mosso i rendimenti, ma una conferma nelle indagini nazionali cambierebbe il canale dei tassi su cui l’intera lettura poggia. I prezzi ricevuti vanno però nel verso opposto, a 22,7 da 27,6',
     'La valvola logistica taglia in due sensi e il secondo è sfavorevole: se Aramco e ADNOC riescono a consegnare aggirando lo Stretto, il collo di bottiglia perde la capacità di togliere barili al mercato, e con essa una parte del premio di rifugio che oggi sostiene il metallo. Un rischio che non produce scarsità non si paga',
     'Il meccanismo di Fujairah è un negoziato riferito da un’agenzia e non un atto dichiarato dalla compagnia, e il resoconto non dice come il greggio arrivi fin lì: se ci arriva via mare dal Golfo, qualcuno lo Stretto lo attraversa comunque e a cambiare è chi sopporta il rischio, non quanto passa',
@@ -800,8 +834,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 33,
-      display: '≈ 33%',
+      now: 32,
+      display: '31-33%',
       marks: [
         {
           at: 35,
@@ -819,8 +853,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 88.95,
-      display: '≈ 88,95 $',
+      now: 88.85,
+      display: '≈ 88,85 $',
       marks: [
         {
           at: 87.07,
@@ -863,8 +897,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.681,
-      display: '4,681%',
+      now: 4.7,
+      display: '≈ 4,70%',
       marks: [
         {
           at: 4.68,
@@ -876,14 +910,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 4.701,
           display: '4,701%',
           kind: 'invalida',
-          note: 'massimo di venerdì, e diventa la soglia al posto del 4,70% tondo per la ragione di sempre: è il livello che il mercato ha stabilito. Il rendimento ci è arrivato in seduta senza mantenerlo, chiudendo a 4,695%. Restarci sopra con il Brent oltre i 90 dollari è la combinazione che porta la lettura di breve sotto il neutrale',
+          note: 'massimo di venerdì, e diventa la soglia al posto del 4,70% tondo per la ragione di sempre: è il livello che il mercato ha stabilito. Il rendimento ci è arrivato in seduta senza mantenerlo, chiudendo a 4,695%. Restarci sopra con il Brent oltre i 90 dollari è la combinazione che porta la lettura di breve sotto il neutrale. La sera del 17 agosto il decennale è tornato al 4,70%, cioè a un millesimo da questa tacca: la distanza fra la lettura corrente e la propria invalidazione non è mai stata così sottile, e va guardata insieme al fatto che l’oro sta salendo lo stesso',
         },
       ],
     },
     {
       label: 'Dollar Index',
-      now: 99.52,
-      display: '99,520',
+      now: 99.42,
+      display: '99,420',
       marks: [
         {
           at: 99.795,
@@ -900,9 +934,28 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
       ],
     },
     {
+      label: 'Treasury a 30 anni',
+      now: 5.29,
+      display: '5,29%',
+      marks: [
+        {
+          at: 5.213,
+          display: '5,213%',
+          kind: 'invalida',
+          note: 'chiusura del 13 agosto: un rientro sotto questo livello toglierebbe alla lettura il suo oggetto invece di smentirla, perché l’oro non starebbe più assorbendo alcun costo-opportunità eccezionale e la forza relativa misurata in serata smetterebbe di essere misurabile',
+        },
+        {
+          at: 5.4,
+          display: '5,40%',
+          kind: 'logora',
+          note: 'è la soglia dichiarata il 10 agosto insieme a un biennale fermo sotto il 4,25%: sopra quel livello il premio a termine smetterebbe di essere una pendenza e diventerebbe un evento. Il 5,29% di lunedì 17 agosto è un punto base sopra il 5,28% già registrato il 10 e l’11, quindi è lo stesso massimo che dura invece di un massimo nuovo',
+        },
+      ],
+    },
+    {
       label: 'XAU/USD',
-      now: 4388,
-      display: '≈ 4.388 $',
+      now: 4426.52,
+      display: '4.426,52 $',
       marks: [
         {
           at: 4376.59,
@@ -914,15 +967,15 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 4400,
           display: '4.400 $',
           kind: 'logora',
-          note: 'è il test dichiarato: una tenuta sopra questa soglia riaprirebbe la fascia 4.435-4.450 e imporrebbe di alzare ancora la forza. Alle 11:45 del 17 agosto il livello è stato raggiunto per quindici centesimi — 4.400,15 dollari — quindi toccato e non tenuto, e la fascia superiore non è stata avvicinata. Il livello è tondo e attira ordini, ed è per questo che va guardato insieme ai 4.396,88 del massimo di venerdì, che il mercato ha stabilito da sé e che è invece stato superato: quella è la parte del movimento che porta informazione',
+          note: 'era il test dichiarato, ed è stato superato in serata con ventisei dollari di margine: 4.426,52 dollari con il decennale al 4,70%, che completa la condizione composta scritta l’11 agosto. Nella stessa giornata era stato toccato due volte senza tenuta — 4.400,15 alle 11:45, poi il rientro a 4.388 — e la differenza fra quelle due punte e questa tenuta è tutto il contenuto informativo del livello. Resta un numero tondo che attira ordini, quindi la conferma da guardare adesso non è più questa soglia ma la fascia 4.435-4.450',
         },
       ],
     },
   ],
   sources: [
+    'i-4400-passano-con-il-decennale-al-4-70-era-la-prova',
     'aramco-consegna-fuori-dallo-stretto-e-la-curva-non-si-muove',
     'teheran-mette-una-scadenza-e-il-brent-resta-sotto-i-90',
-    'il-salto-non-c-e-stato-e-l-oro-sale-sui-tassi',
   ],
 };
 

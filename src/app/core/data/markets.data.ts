@@ -17,6 +17,25 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'PROVA 4.400',
+    name: 'La condizione composta dichiarata l’11 agosto: oro sopra i 4.400 dollari con il decennale ancora sopra il 4,70%',
+    value: '4.426,52 $ con 10Y al 4,70%',
+    change: 'da 4.409,94; futures di dicembre a 4.484,10; Dollar Index a 99,42, minimo da giugno',
+    tone: 'gold',
+    icon: 'target',
+    note: 'L’11 agosto alle 10:45 questo archivio aveva scritto la prova da chiedere al metallo, e l’aveva scritta in forma composta di proposito: un oro che recupera i 4.400 dollari con il decennale ancora sopra il 4,70%. La seconda gamba era tutto il senso della prova, perché salire mentre i rendimenti scendono non dice niente sul metallo — scende il costo di tenerlo — mentre salire mentre restano alti dice che qualcuno lo compra pagando quel costo. Quel giorno la prova mancò per quattordici dollari, con il metallo fermo a 4.386,13; il 12 agosto divenne addirittura ineseguibile, perché il decennale rientrò sotto la soglia mentre l’oro era ancora in viaggio, e fu registrato allora che una condizione inapplicabile è peggio di una falsa. La sera del 17 agosto le due gambe si presentano insieme per la prima volta: 4.409,94 e poi 4.426,52 dollari con più 1,2%, con il decennale tornato al 4,70% e il trentennale al 5,29%. Il margine è di ventisei dollari sopra la soglia invece dei quindici centesimi toccati alle 11:45 della stessa giornata, ed è quella differenza — fra un livello attraversato e un livello tenuto — l’unico contenuto informativo che una cifra tonda può avere. La direzione intraday sale quindi a rialzista. Non oltre, perché la prova è tecnica e non causale: dice che l’oro assorbe un costo-opportunità ai massimi da quasi vent’anni, non chi lo stia comprando, e il solo sostegno di prezzo che rende possibile l’assorbimento è il cambio.',
+  },
+  {
+    symbol: 'PARTE LUNGA',
+    name: 'Rendimenti americani a dieci e trent’anni nella serata del 17 agosto',
+    value: '10Y ≈ 4,70% · 30Y 5,29%',
+    change:
+      'attribuiti a prospettive fiscali, offerta di debito ed emissioni societarie per l’intelligenza artificiale',
+    tone: 'bear',
+    icon: 'chart',
+    note: 'Sul livello va tolta l’enfasi prima di aggiungerne al resto: il trentennale a 5,29% è un punto base sopra il 5,28% già registrato qui il 10 e l’11 agosto, e la formula «massimi dal 2007» compare in quattro analisi precedenti. Non è un massimo nuovo, è lo stesso massimo che dura — che è un fatto diverso e per certi versi più pesante, perché una tensione che non rientra logora più di una che punta. Il decennale tornato al 4,70% è invece la notizia utile, e per due ragioni opposte: completa la condizione dichiarata l’11 agosto sull’oro, e allo stesso tempo arriva a un millesimo dal 4,701% che questa scheda ha dichiarato come proprio livello di invalidazione, quindi lettura corrente e smentita non sono mai state così vicine. La spiegazione riportata aggiunge poi una gamba che in questo archivio non c’era: accanto al peggioramento delle prospettive fiscali e all’elevata offerta di debito — le due seguite qui per una settimana, dal rendiconto del Tesoro al collocamento del trentennale al 5,216% — compare la forte emissione di obbligazioni societarie legata agli investimenti in intelligenza artificiale. Conta perché cambia la natura della pressione: le prime due sono offerta pubblica e si affrontano con decisioni di bilancio, la terza è domanda privata di capitale e non risponde a nessuna decisione politica. Un premio a termine alimentato anche da lì è più difficile da far rientrare, ed è la ragione per cui questa voce resta la più ostile del quadro.',
+  },
+  {
     symbol: 'FUJAIRAH',
     name: 'Consegne Saudi Aramco con trasferimenti nave-nave al largo di Fujairah, fuori dallo Stretto di Hormuz',
     value: 'carichi di settembre',
