@@ -17,6 +17,43 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'RIAPERTURA 17/8',
+    name: 'Prima seduta liquida dopo il fine settimana: apertura senza salto e rialzo sul canale monetario',
+    value: 'apertura ≈ 4.373 $, poi 4.391,07',
+    change: 'Brent fino a 89,40; decennale 4,684%; biennale 4,156%; Dollar Index 99,52',
+    tone: 'gold',
+    icon: 'spark',
+    note: 'È la risposta a tre giorni di letture scritte a mercati chiusi, e la prima metà non è quella che l’archivio si aspettava: l’oro spot ha aperto intorno a 4.373 dollari, cioè sotto i 4.376,59 della chiusura di venerdì, con i futures di settembre fra 4.379 e 4.381. Sette fatti geopolitici su quattro fronti non hanno prodotto alcun salto, ed è la misura più diretta della desensibilizzazione annotata qui da Jazan in poi. La seconda metà è invece favorevole e conta di più per il meccanismo: il rialzo a 4.391,07 con più 0,4% è arrivato mentre il Brent saliva fino a 89,40 dollari e i rendimenti scendevano — decennale a 4,684%, sotto il 4,695% di venerdì, biennale a 4,156% con meno due punti base, Dollar Index a 99,52. Le due gambe della combinazione sorvegliata da cinque letture consecutive si sono separate: il petrolio è salito senza tirarsi dietro la curva. L’oro sta quindi salendo perché il rendimento alternativo è scivolato, non perché una nave non è passata, e la probabilità di un rialzo a settembre attorno al 30% contro il 47% di un mese fa è il numero che lo spiega. Il test resta dichiarato: i 4.400 sull’oro e i 90 sul Brent, entrambi a una manciata di dollari.',
+  },
+  {
+    symbol: 'TRANSITI 16/8',
+    name: 'Transiti nello Stretto di Hormuz e nel Bab el-Mandeb, fine settimana del 15-16 agosto',
+    value: 'zero registrati domenica',
+    change:
+      'cinque sabato, trentuno nel fine settimana precedente; oltre 130 al giorno prima del conflitto',
+    tone: 'bear',
+    icon: 'map',
+    note: 'Per la prima volta il conteggio ha la forma che questo archivio ha detto di considerare affidabile: non il numero di un giorno solo, che due volte ha imposto correzioni, ma una discesa su tre rilevazioni consecutive — trentuno, cinque, zero. Reuters collega il rallentamento agli attacchi contro tre navi ADNOC e allo stallo completo dei colloqui fra Stati Uniti e Iran. Il limite della misura resta e va ripetuto perché è nel testo stesso: alcune navi possono transitare con il transponder spento, quindi «zero registrate» non è matematicamente zero passaggi. Quello che regge senza riserve è il confronto con le oltre 130 al giorno di prima del conflitto. Nella stessa rilevazione si assottiglia la via alternativa, e questa è la parte nuova: quarantanove transiti di navi commodity nel Bab el-Mandeb contro cinquantacinque del fine settimana precedente, e soprattutto nessuna spedizione petrolifera saudita tracciata attraverso lo stretto. I due colli di bottiglia sono in serie e non in parallelo, come questo archivio ha dovuto correggersi per riconoscere all’inizio di agosto: se la seconda arteria non assorbe il traffico dirottato dalla prima, il vincolo stringe su entrambe le estremità della stessa rotta.',
+  },
+  {
+    symbol: 'PIL GIAPPONE',
+    name: 'Prodotto interno lordo del Giappone, secondo trimestre 2026',
+    value: '+1,1% annualizzato',
+    change: 'contro +2,0% atteso; trimestre su trimestre +0,3% contro +0,5%',
+    tone: 'warn',
+    icon: 'chart',
+    note: 'La composizione è più debole del totale, e sono proprio le voci che la Banca del Giappone ha dichiarato di osservare: consumi privati fermi contro un più 0,5% atteso, investimenti delle imprese a meno 1,2% contro un più 0,4%. Il trimestre precedente è stato rivisto a circa più 1,9% annualizzato. La lettura per l’istituto è moderatamente accomodante e agisce contro l’attesa di mercato che questo archivio aveva registrato il 12 agosto, quando il prossimo rialzo era stato anticipato da dicembre a settembre. Il punto interessante è però la reazione, che va nel verso opposto a quello che il dato suggerirebbe: lo yen si è rafforzato dello 0,2% a circa 159,06 per dollaro e il Dollar Index è scivolato a 99,52, vicino ai minimi del mese, perché il mercato sta pesando i dati americani deboli della settimana scorsa più del trimestre giapponese. Per l’oro è quindi un fatto senza canale proprio: accorcia l’elenco dei rendimenti globali che un metallo senza cedole deve battere, e questo è marginalmente favorevole, ma il cambio — l’unica via per cui il Giappone raggiunge davvero il prezzo — si è mosso per ragioni americane. Il calendario di questo sito copre Stati Uniti e area euro, quindi per questa diffusione non esiste una serie storica consultabile qui.',
+  },
+  {
+    symbol: 'PACCHETTO UE',
+    name: 'Annuncio dell’Unione europea sul prossimo pacchetto di sanzioni contro la Russia',
+    value: '+ un terzo di entità',
+    change: 'proposta annunciata per l’autunno; nessun calendario, nessun settore',
+    tone: 'warn',
+    icon: 'search',
+    note: 'Kaja Kallas ha dichiarato che il nuovo pacchetto sarebbe il più ampio dall’inizio della guerra e aumenterebbe di circa un terzo il numero complessivo di entità russe sanzionate. Quello che manca è tutto il resto: non c’è un calendario preciso, non ci sono i settori né le aziende, e non si sa se toccherà petrolio, trasporto marittimo o flotta ombra. Su questa scala resta quindi un annuncio politico e non uno shock di mercato, e appartiene esattamente alla categoria in cui questo archivio ha collocato le cinque opzioni americane contro l’Iran del 16 agosto e le misure di isolamento economico annunciate dal Tesoro il 14 agosto e mai pubblicate. Il precedente utile per giudicarlo è il pacchetto europeo di luglio, che aveva colpito anche banche e reti di criptovalute russe: quello era in vigore, questo è una proposta annunciata. Il canale che lo renderebbe rilevante per l’oro è uno solo e si riconosce subito quando arriva — un contenuto energetico o marittimo capace di incidere sull’offerta. Finché non c’è, resta una voce di controllo e non un elemento di prezzo.',
+  },
+  {
     symbol: 'ROMANIA 16/8',
     name: 'Drone abbattuto nello spazio aereo romeno da un caccia della sorveglianza aerea alleata, 16 agosto',
     value: 'il quarto del 2026',

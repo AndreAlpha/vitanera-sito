@@ -29,8 +29,10 @@ fonti:
     titolo: "Terzo incidente che coinvolge navi ADNOC in meno di una settimana; sei missili balistici houthi sul porto di Mocha"
   - testata: "Kpler"
     titolo: "Conteggio dei transiti nello Stretto di Hormuz, venerdì 14 agosto"
+esito: "confermata"
+controllata: "2026-08-17T09:10:00+02:00"
 sorgente: "src/app/core/data/articles/la-terza-nave-e-washington-mette-in-conto-la-benzina.ts"
-impronta: "f85deff28c1f8a14"
+impronta: "ec7d427cebb5088a"
 ---
 
 # La terza nave in una settimana, e Washington mette in conto la benzina
@@ -140,6 +142,20 @@ Tutto quello che è stato scritto qui viene arbitrato in una volta sola. Le tre 
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 La direzione resta sopra il neutrale perché il rischio geopolitico si assesta più in alto — un terzo attacco in meno di una settimana, e un governo che dichiara di comandare il passaggio — ma non sale a rialzista perché la stessa notizia spinge in due direzioni: sostiene il rifugio e alimenta l’inflazione attesa, che è il canale attraverso cui i rendimenti tornano a lavorare contro un metallo senza cedole. La forza resta bassa per una ragione che non riguarda i fatti: è sabato, e la lettura non ha nessun prezzo con cui misurarsi fino a lunedì.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-17T09:10:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e per una volta il verdetto poggia sulla condizione che contava invece che sull’assenza di notizie. L’analisi aveva scritto come terza condizione la combinazione sorvegliata da quattro giorni — Brent sopra i 90 dollari con il decennale sopra il 4,695% — e la prima seduta liquida ha risposto separando le due gambe: il greggio è salito fino a 89,40 e il decennale è scivolato a 4,684%. Anche la condizione sull’oro si chiude in modo pulito: il metallo ha aperto a circa 4.373 dollari, cioè sotto la chiusura di venerdì, quindi l’escalation non è entrata nel prezzo all’apertura come la condizione ipotizzava. Il conteggio dei transiti è invece peggiorato ancora, a zero navi registrate domenica, con la stessa cautela sulla fonte che l’analisi aveva dichiarato per prima.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un conteggio dei transiti di lunedì pari o superiore a otto navi pubblicato da una fonte ricontrollabile: direbbe che le due di venerdì erano un minimo di campionamento, esattamente come quelle del 7 agosto che questo archivio ha dovuto correggere, e cadrebbe il fatto centrale di questa lettura. | no | Il conteggio di lunedì non è ancora pubblicato al controllo, e quello di domenica va nella direzione opposta: nessuna nave commerciale registrata nei dati Kpler, contro cinque sabato e trentuno nel fine settimana precedente. Le due navi di venerdì non erano quindi un minimo di campionamento ma un punto di una discesa. Resta la cautela dichiarata dall’analisi stessa: sono cifre giornaliere di un fornitore privato, e alcune navi possono transitare con il transponder spento, quindi «zero registrate» non è zero passaggi. |
+| Un oro che apre lunedì sopra i 4.396,88 dollari del massimo di venerdì e chiude sopra quel livello: direbbe che l’escalation è entrata nel prezzo e che la forza bassa dichiarata qui era troppo prudente. | no | La prima gamba è mancata in modo netto: l’oro spot ha aperto intorno a 4.373 dollari, cioè sotto la chiusura di venerdì di 4.376,59 e ventiquattro dollari sotto il livello richiesto, con i futures di settembre nell’area 4.379-4.381. Alle 09:20 il metallo è risalito a 4.391,07 con più 0,4%, quindi ancora sotto i 4.396,88. La condizione chiede apertura e chiusura sopra quel livello e cade sulla prima. |
+| Un Brent che apre lunedì sopra i 90 dollari mentre il decennale resta sopra il 4,695% della chiusura di venerdì: è la combinazione sorvegliata da quattro giorni, e per la prima volta arriverebbe come salto del fine settimana invece che dentro una seduta. In quel caso la direzione va portata sotto il neutrale. | no | Nessuna delle due gambe, ed è la condizione più informativa del gruppo. Il Brent ha aperto fra 88,7 e 88,8 dollari, poi è salito fino a 89,40 con circa più 1% e tratta intorno a 89,20: sempre sotto i 90. Il decennale è andato nella direzione opposta a quella richiesta, a 4,684% con circa meno un punto base, quindi sotto il 4,695% della chiusura di venerdì. La combinazione sorvegliata per quattro giorni non si è formata: il greggio è salito e i rendimenti sono scesi. |
+| Una dichiarazione di ADNOC o del governo emiratino che quantifichi una riduzione di caricamenti o di esportazioni dopo il terzo attacco: farebbe passare l’episodio da fatto contato a perdita accertata di barili, che è la categoria che questa analisi non rivendica. | no | Nessuna dichiarazione di ADNOC o del governo emiratino che quantifichi caricamenti o esportazioni risulta pubblicata nelle sessanta ore successive. L’episodio resta un fatto contato e non una perdita accertata, che è esattamente la classificazione che l’analisi aveva scelto. |
+| Una benzina americana media che rientra sotto i 4,00 dollari per gallone entro venerdì prossimo, o una dichiarazione americana che ritira l’accettazione del costo energetico: toglierebbe il canale dell’inflazione attesa che qui impedisce alla lettura di essere pienamente rialzista. | no | Nessuna rilevazione nuova del prezzo medio alla pompa e nessuna dichiarazione che ritiri l’accettazione del costo energetico risultano al controllo. Il termine dichiarato corre fino a venerdì 21 agosto e la condizione resta aperta per costruzione. |
 
 ## Fonti consultate
 

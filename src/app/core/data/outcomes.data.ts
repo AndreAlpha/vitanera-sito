@@ -2650,4 +2650,135 @@ export const OUTCOMES: readonly Outcome[] = [
     lesson:
       'Cinque analisi chiuse insieme, cinque verdetti «confermata», nessuna condizione scattata su venticinque: è un risultato che va guardato con sospetto invece che con soddisfazione, e la ragione sta nella costruzione delle condizioni e non nella qualità delle letture. Le cinque analisi sono state scritte nello stesso giorno e hanno dichiarato in gran parte le stesse soglie — i 4.351,07 di chiusura di giovedì sull’oro, i 4.400 e i 4.408,59 come rottura al rialzo, gli 89,06 e i 90 dollari sul Brent, il 33,0% e il 29,3% sulla probabilità di settembre — quindi le venticinque condizioni sono in realtà otto numeri contati più volte, e una sola chiusura di seduta le ha risolte tutte nello stesso verso. Un registro che funziona non può moltiplicare per cinque una singola osservazione: quando più analisi dello stesso giorno condividono la soglia, la seconda e la terza dovrebbero dichiararne una diversa — un livello che la prima non stava già misurando — altrimenti il conteggio degli esiti misura quante volte è stato scritto lo stesso numero e non quante volte quel numero ha avuto ragione.',
   },
+  {
+    slug: 'la-terza-nave-e-washington-mette-in-conto-la-benzina',
+    checkedAt: '2026-08-17T09:10:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un conteggio dei transiti di lunedì pari o superiore a otto navi pubblicato da una fonte ricontrollabile: direbbe che le due di venerdì erano un minimo di campionamento, esattamente come quelle del 7 agosto che questo archivio ha dovuto correggere, e cadrebbe il fatto centrale di questa lettura.',
+        triggered: false,
+        evidence:
+          'Il conteggio di lunedì non è ancora pubblicato al controllo, e quello di domenica va nella direzione opposta: nessuna nave commerciale registrata nei dati Kpler, contro cinque sabato e trentuno nel fine settimana precedente. Le due navi di venerdì non erano quindi un minimo di campionamento ma un punto di una discesa. Resta la cautela dichiarata dall’analisi stessa: sono cifre giornaliere di un fornitore privato, e alcune navi possono transitare con il transponder spento, quindi «zero registrate» non è zero passaggi.',
+      },
+      {
+        condition:
+          'Un oro che apre lunedì sopra i 4.396,88 dollari del massimo di venerdì e chiude sopra quel livello: direbbe che l’escalation è entrata nel prezzo e che la forza bassa dichiarata qui era troppo prudente.',
+        triggered: false,
+        evidence:
+          'La prima gamba è mancata in modo netto: l’oro spot ha aperto intorno a 4.373 dollari, cioè sotto la chiusura di venerdì di 4.376,59 e ventiquattro dollari sotto il livello richiesto, con i futures di settembre nell’area 4.379-4.381. Alle 09:20 il metallo è risalito a 4.391,07 con più 0,4%, quindi ancora sotto i 4.396,88. La condizione chiede apertura e chiusura sopra quel livello e cade sulla prima.',
+      },
+      {
+        condition:
+          'Un Brent che apre lunedì sopra i 90 dollari mentre il decennale resta sopra il 4,695% della chiusura di venerdì: è la combinazione sorvegliata da quattro giorni, e per la prima volta arriverebbe come salto del fine settimana invece che dentro una seduta. In quel caso la direzione va portata sotto il neutrale.',
+        triggered: false,
+        evidence:
+          'Nessuna delle due gambe, ed è la condizione più informativa del gruppo. Il Brent ha aperto fra 88,7 e 88,8 dollari, poi è salito fino a 89,40 con circa più 1% e tratta intorno a 89,20: sempre sotto i 90. Il decennale è andato nella direzione opposta a quella richiesta, a 4,684% con circa meno un punto base, quindi sotto il 4,695% della chiusura di venerdì. La combinazione sorvegliata per quattro giorni non si è formata: il greggio è salito e i rendimenti sono scesi.',
+      },
+      {
+        condition:
+          'Una dichiarazione di ADNOC o del governo emiratino che quantifichi una riduzione di caricamenti o di esportazioni dopo il terzo attacco: farebbe passare l’episodio da fatto contato a perdita accertata di barili, che è la categoria che questa analisi non rivendica.',
+        triggered: false,
+        evidence:
+          'Nessuna dichiarazione di ADNOC o del governo emiratino che quantifichi caricamenti o esportazioni risulta pubblicata nelle sessanta ore successive. L’episodio resta un fatto contato e non una perdita accertata, che è esattamente la classificazione che l’analisi aveva scelto.',
+      },
+      {
+        condition:
+          'Una benzina americana media che rientra sotto i 4,00 dollari per gallone entro venerdì prossimo, o una dichiarazione americana che ritira l’accettazione del costo energetico: toglierebbe il canale dell’inflazione attesa che qui impedisce alla lettura di essere pienamente rialzista.',
+        triggered: false,
+        evidence:
+          'Nessuna rilevazione nuova del prezzo medio alla pompa e nessuna dichiarazione che ritiri l’accettazione del costo energetico risultano al controllo. Il termine dichiarato corre fino a venerdì 21 agosto e la condizione resta aperta per costruzione.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e per una volta il verdetto poggia sulla condizione che contava invece che sull’assenza di notizie. L’analisi aveva scritto come terza condizione la combinazione sorvegliata da quattro giorni — Brent sopra i 90 dollari con il decennale sopra il 4,695% — e la prima seduta liquida ha risposto separando le due gambe: il greggio è salito fino a 89,40 e il decennale è scivolato a 4,684%. Anche la condizione sull’oro si chiude in modo pulito: il metallo ha aperto a circa 4.373 dollari, cioè sotto la chiusura di venerdì, quindi l’escalation non è entrata nel prezzo all’apertura come la condizione ipotizzava. Il conteggio dei transiti è invece peggiorato ancora, a zero navi registrate domenica, con la stessa cautela sulla fonte che l’analisi aveva dichiarato per prima.',
+  },
+  {
+    slug: 'l-attacco-piu-grande-della-guerra-e-i-barili-non-si-muovono',
+    checkedAt: '2026-08-17T09:10:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un attacco ucraino a una raffineria o a un terminale di esportazione russo con una conseguenza operativa dichiarata dall’operatore entro venerdì 21 agosto: sposterebbe questo fronte dalla colonna del rifugio a quella dell’offerta, e cadrebbe l’osservazione centrale di questa lettura.',
+        triggered: false,
+        evidence:
+          'Nessun attacco a una raffineria o a un terminale di esportazione russo con conseguenza operativa dichiarata risulta al controllo. L’unico bersaglio industriale rivendicato resta l’impianto di carburante per missili nella regione di Rostov, che non è capacità di esportazione di greggio e per il quale nessun operatore ha dichiarato nulla. Il termine corre fino a venerdì 21 agosto.',
+      },
+      {
+        condition:
+          'Un conteggio dei droni lanciati questa notte pubblicato da una fonte che non sia il ministero della Difesa russo: renderebbe misurata una scala che oggi è soltanto dichiarata, e se risultasse molto inferiore agli 822 la definizione di «una delle più vaste della guerra» andrebbe rivista.',
+        triggered: false,
+        evidence:
+          'Nessun conteggio indipendente dei droni lanciati risulta pubblicato. La scala dell’attacco resta quindi una cifra dichiarata da una parte in guerra, che è la riserva su cui l’analisi aveva abbassato la propria certezza a media.',
+      },
+      {
+        condition:
+          'Un oro che apre lunedì e chiude sotto i 4.376,59 dollari della chiusura di venerdì: direbbe che cinque fatti geopolitici in due giorni non producono domanda di protezione, e la direzione andrebbe portata a neutrale.',
+        triggered: false,
+        evidence:
+          'La prima metà della condizione si è verificata e la seconda no. L’oro ha aperto intorno a 4.373 dollari, cioè sotto i 4.376,59 della chiusura di venerdì: nessun salto, e per qualche ora la lettura più severa sembrava giusta. Alle 09:20 il metallo è però a 4.391,07 con più 0,4%, quindi sopra il livello, e la chiusura di lunedì non è ancora avvenuta. La condizione chiede entrambe le cose e al controllo non è scattata.',
+      },
+      {
+        condition:
+          'Un Brent che apre sopra i 90 dollari sulla sola escalation russo-ucraina, senza alcun fatto nuovo su Hormuz: direbbe che il mercato prezza questo attacco come un evento di offerta, cioè l’opposto della lettura data qui.',
+        triggered: false,
+        evidence:
+          'Il Brent ha aperto fra 88,7 e 88,8 dollari, quindi sotto la soglia, ed è poi salito fino a 89,40 restando sotto i 90. Va aggiunto che la seconda gamba non era comunque soddisfatta: un fatto nuovo su Hormuz c’era, ed è il conteggio dei transiti a zero navi registrate domenica, che Reuters collega esplicitamente al rialzo del greggio insieme allo stallo dei negoziati.',
+      },
+      {
+        condition:
+          'Nessuna nuova ondata di attacchi su obiettivi russi entro mercoledì 19 agosto, accompagnata da un annuncio di tregua o dalla ripresa dei negoziati: direbbe che quella di questa notte era un’operazione isolata e non un’intensificazione, e il premio andrebbe ridotto invece che mantenuto.',
+        triggered: false,
+        evidence:
+          'Nessun annuncio di tregua e nessuna ripresa dei negoziati risultano al controllo, e la condizione richiede entrambe le cose insieme all’assenza di nuove ondate. Il termine dichiarato è mercoledì 19 agosto e resta aperto.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e la parte misurabile dell’osservazione centrale ha retto: il fronte russo-ucraino non ha prodotto barili in meno, e il Brent non ha aperto sopra i 90 dollari come farebbe se il mercato leggesse quell’attacco come un evento di offerta. La terza condizione merita però di essere letta per intero, perché la sua prima metà si è verificata: l’oro ha aperto sotto la chiusura di venerdì, a circa 4.373 dollari, e per alcune ore la lettura che questa analisi indicava come propria smentita — cinque fatti geopolitici che non producono domanda di protezione — è stata la descrizione giusta di quello che si vedeva. Il recupero a 4.391,07 è arrivato dopo, e non dal canale geopolitico: è arrivato con il decennale a 4,684% e il dollaro a 99,52.',
+  },
+  {
+    slug: 'un-drone-abbattuto-sulla-romania-e-il-quarto-del-2026',
+    checkedAt: '2026-08-17T09:10:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Una misura militare dichiarata dall’Alleanza in risposta all’episodio entro venerdì 21 agosto — un rafforzamento della sorveglianza aerea, una richiesta formale di consultazioni fra alleati, o un dispiegamento annunciato: farebbe passare l’incidente da contenuto a reazione, e la forza di questa lettura andrebbe alzata invece che tenuta bassa.',
+        triggered: false,
+        evidence:
+          'Nessuna misura militare dell’Alleanza risulta annunciata nelle sedici ore successive: né rafforzamento della sorveglianza aerea, né richiesta di consultazioni, né dispiegamenti. L’episodio resta nella categoria dell’incidente contenuto in cui l’analisi lo aveva collocato. Il termine corre fino a venerdì 21 agosto.',
+      },
+      {
+        condition:
+          'Un’attribuzione ufficiale del drone alla Russia da parte della Romania o dell’Alleanza: cambierebbe lo stato dell’episodio da non attribuito ad attribuito, che è una delle due gambe su cui questa lettura poggia.',
+        triggered: false,
+        evidence:
+          'Nessuna attribuzione ufficiale risulta pubblicata: resta la formula del portavoce dell’Alleanza secondo cui il drone «sembra essere russo», che è la stessa su cui l’analisi aveva abbassato la certezza. Lo stato dell’episodio non è cambiato.',
+      },
+      {
+        condition:
+          'Un quinto episodio dello stesso tipo in Romania o in un altro Paese dell’Alleanza entro fine agosto: porterebbe la frequenza del 2026 oltre il ritmo di uno ogni due mesi, e allora il tasso di base andrebbe usato per alzare la lettura invece che per ridimensionarla.',
+        triggered: false,
+        evidence:
+          'Nessun nuovo episodio di intrusione nello spazio aereo di un Paese dell’Alleanza risulta segnalato al controllo. Il termine dichiarato è la fine di agosto e la condizione resta aperta per costruzione: il tasso di base di uno ogni due mesi regge per ora.',
+      },
+      {
+        condition:
+          'Una dichiarazione ufficiale russa o ucraina che quantifichi in barili la perdita dell’impianto di carburante per missili nella regione di Rostov: sposterebbe quella rivendicazione dalla categoria degli annunci a quella dell’offerta, dove questa analisi dice esplicitamente che non appartiene.',
+        triggered: false,
+        evidence:
+          'Nessuna quantificazione in barili è stata pubblicata da alcuna delle due parti. La rivendicazione su Rostov resta un annuncio, e la classificazione data dall’analisi regge.',
+      },
+      {
+        condition:
+          'Un oro che apre lunedì in salto di oltre venti dollari sopra i 4.376,59 della chiusura di venerdì e mantiene il guadagno fino alla chiusura: direbbe che sette fatti geopolitici in tre giorni sono stati prezzati per intero, e che la forza bassa dichiarata qui era troppo prudente.',
+        triggered: false,
+        evidence:
+          'Non c’è stato alcun salto, e nemmeno un guadagno all’apertura: l’oro spot ha aperto intorno a 4.373 dollari, cioè circa tre dollari e mezzo sotto la chiusura di venerdì, con i futures di settembre fra 4.379 e 4.381. Il salto di oltre venti dollari richiesto dalla condizione non si è avvicinato, e questa è la condizione del gruppo che la prima seduta liquida ha risolto in modo definitivo.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e la quinta si chiude in modo definitivo: la prima seduta liquida dopo il fine settimana non ha prodotto alcun salto sull’oro. Il metallo ha aperto a circa 4.373 dollari, sotto la chiusura di venerdì, contro un salto di oltre venti dollari che la condizione indicava come prova del fatto che il premio geopolitico fosse stato prezzato per intero. La lettura data qui — un episodio contenuto, non attribuito, quarto della sua serie nel 2026, con una procedura di deterrenza che ha funzionato e che quindi sottrae premio invece di aggiungerlo — è quella che il prezzo di apertura descrive. Le altre quattro condizioni restano non scattate ma con i termini aperti fino a venerdì e a fine agosto.',
+    lesson:
+      'Sette analisi in tre giorni hanno dichiarato tutte un rischio geopolitico in aumento, e la prima risposta liquida è stata un’apertura dell’oro tre dollari e mezzo sotto la chiusura di venerdì: nessun salto, con il Brent sotto i 90 dollari. Il premio che l’archivio ha descritto accumularsi per tre giorni non esisteva all’apertura. Il rialzo è arrivato dopo, a 4.391,07, ed è arrivato con il decennale a 4,684% — sotto la chiusura di venerdì — il biennale a 4,156% e il dollaro a 99,52: cioè dal canale monetario, non da quello geopolitico. La lezione non è che i sette fatti fossero falsi, perché erano tutti documentati; è che contarli non dice niente su quale canale li porterà nel prezzo, e che scrivere «rischio aumentato» sette volte di seguito senza un prezzo con cui misurarsi accumula convinzione nella scrittura e non premio nel mercato. La domanda da porre in cima a ogni lettura geopolitica non è quanto il rischio sia salito, ma attraverso quale canale dovrebbe arrivare e quale numero lo mostrerebbe.',
+  },
 ];

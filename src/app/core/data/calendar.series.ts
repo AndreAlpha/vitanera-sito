@@ -11,7 +11,7 @@
  */
 import { Cadence, Release, Stage } from '../models/calendar.model';
 
-export const CALENDAR_GENERATED_AT = '2026-08-16T15:36Z';
+export const CALENDAR_GENERATED_AT = '2026-08-17T07:30Z';
 
 type Row = readonly [
   at: string,
@@ -2466,7 +2466,13 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2016-10-14T12:30Z', 'settembre 2016', 0.6, 0.6, -0.2],
       ['2016-09-15T12:30Z', 'agosto 2016', -0.1, -0.3, 0.1],
     ]),
-    next: null,
+    next: {
+      at: '2026-09-16T12:30Z',
+      period: 'agosto 2026',
+      forecast: null,
+      actual: null,
+      previous: -0.6,
+    },
   },
   'usa/vendite-dettaglio-essenziali': {
     cadence: 'mensile',
@@ -2592,7 +2598,13 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2016-10-14T12:30Z', 'settembre 2016', 0.4, 0.5, -0.2],
       ['2016-09-15T12:30Z', 'agosto 2016', 0.2, -0.1, -0.4],
     ]),
-    next: null,
+    next: {
+      at: '2026-09-16T12:30Z',
+      period: 'agosto 2026',
+      forecast: null,
+      actual: null,
+      previous: -0.3,
+    },
   },
   'euro/tasso-di-interesse': {
     cadence: 'riunione',
@@ -3356,7 +3368,13 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2016-10-12T09:00Z', 'agosto 2016', 1.5, 1.6, -0.7],
       ['2016-09-14T09:00Z', 'luglio 2016', -0.9, -1.1, 0.8],
     ]),
-    next: null,
+    next: {
+      at: '2026-09-16T09:00Z',
+      period: 'luglio 2026',
+      forecast: null,
+      actual: null,
+      previous: 0,
+    },
   },
   'euro/pil-annuale': {
     cadence: 'trimestrale',

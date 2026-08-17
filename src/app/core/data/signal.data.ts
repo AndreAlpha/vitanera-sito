@@ -179,26 +179,26 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-16T17:20:00+02:00',
+  updatedAt: '2026-08-17T09:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
       direction: 'neutrale-rialzista',
-      strength: 'bassa',
+      strength: 'media',
       regime:
-        'Il fine settimana chiude con il perimetro della guerra allargato a un Paese dell’Alleanza e con ' +
-        'un conteggio che vale più dell’elenco: su sette fatti geopolitici in tre giorni il canale del ' +
-        'greggio si è acceso una volta sola. Alle 05:01 di domenica un caccia spagnolo della sorveglianza ' +
-        'aerea ha abbattuto un drone entrato in Romania dal lato moldavo — prima intercettazione armata ' +
-        'di questa escalation in territorio alleato, e quarto episodio dello stesso tipo in Romania nel ' +
-        '2026. Le due cose insieme lasciano la lettura dov’era: il drone non è attribuito ufficialmente, ' +
-        'nessuna clausola è stata invocata, nessuna misura militare è stata annunciata, e la procedura ha ' +
-        'funzionato in ogni passaggio. Una deterrenza che riesce toglie premio invece di darlo. Quello ' +
-        'che aumenta è il rischio di errore di calcolo, che non è il rischio di escalation e non ha un ' +
-        'prezzo attaccato.',
+        'La prima seduta liquida dopo tre giorni di mercati chiusi ha risposto a due domande, e le due ' +
+        'risposte non concordano. Alla prima — il premio accumulato in sette letture geopolitiche esiste? — ' +
+        'ha risposto no: l’oro ha aperto intorno a 4.373 dollari, cioè sotto i 4.376,59 della chiusura di ' +
+        'venerdì, senza alcun salto. Alla seconda — la combinazione temuta si forma? — ha risposto ancora ' +
+        'no, e questa volta a favore del metallo: il Brent è salito fino a 89,40 dollari e i rendimenti sono ' +
+        'scesi lo stesso, con il decennale a 4,684% sotto la chiusura di venerdì, il biennale a 4,156% e il ' +
+        'dollaro a 99,52. L’oro è a 4.391,07 con più 0,4% perché il rendimento alternativo è scivolato, non ' +
+        'perché una nave non è passata. La forza sale a media per la qualità della prova, non per ' +
+        'l’ampiezza del movimento: per la prima volta in una settimana la catena causale è osservata invece ' +
+        'che dedotta a mercati chiusi.',
       invalidation:
-        'Un oro che apre lunedì e chiude sotto i 4.376,59 dollari della chiusura di venerdì: direbbe che sette fatti geopolitici in tre giorni non producono domanda di protezione, e la direzione va portata a neutrale. Oppure una misura militare dichiarata dall’Alleanza in risposta all’episodio romeno — sorveglianza rafforzata, consultazioni fra alleati, un dispiegamento annunciato — che farebbe passare l’incidente da contenuto a reazione e imporrebbe di alzare la forza. Nell’altro verso, un oro sopra i 4.396,88 del massimo di venerdì con il Brent sotto i 90 e il decennale sotto il 4,701%: è il premio di rifugio che lavora da solo.',
+        'Un oro che chiude oggi sotto i 4.376,59 dollari della chiusura di venerdì: annullerebbe il recupero della mattina e riporterebbe la forza a bassa. Oppure un Brent che chiude sopra i 90 dollari con il decennale che torna sopra il 4,695%: è la combinazione dichiarata da cinque letture consecutive, oggi non formata, e la sua comparsa porterebbe la direzione sotto il neutrale. Nell’altro verso, un oro che tiene sopra i 4.400 con il decennale fermo sotto il 4,695% riaprirebbe la fascia 4.435-4.450 e imporrebbe di alzare la forza ancora.',
     },
     {
       horizon: 'medio',
@@ -285,7 +285,19 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'potrebbe stringere sull’Iran — raffinerie indipendenti cinesi, banche cinesi, spedizionieri, ' +
         'aviazione, dazi secondari sui Paesi terzi — ma nessuna è pubblicata, quindi su questo orizzonte ' +
         'non entra: restano preferenze dichiarate, e lo strumento dei dazi secondari è già in archivio dal ' +
-        '7 agosto nella sua versione russa, approvata dal Senato 86 a 11 e ancora ferma alla Camera.',
+        '7 agosto nella sua versione russa, approvata dal Senato 86 a 11 e ancora ferma alla Camera. Il 17 ' +
+        'agosto arrivano due elementi su questo orizzonte, e vanno tenuti separati per solidità. Il primo è ' +
+        'una diffusione statistica: il PIL giapponese del secondo trimestre cresce dell’1,1% annualizzato ' +
+        'contro il 2,0% atteso, con consumi privati fermi contro un più 0,5% previsto e investimenti delle ' +
+        'imprese a meno 1,2% contro un più 0,4%. Sono le voci che la Banca del Giappone ha dichiarato di ' +
+        'guardare, quindi il dato agisce contro l’attesa di una stretta a settembre e accorcia l’elenco dei ' +
+        'rendimenti globali che un metallo senza cedole deve battere — ma il cambio si è mosso nel verso ' +
+        'opposto, con lo yen più forte dello 0,2% a 159,06 e il dollaro a 99,52, perché il mercato sta ' +
+        'pesando i dati americani deboli più di quello giapponese. Il secondo è un annuncio, e resta tale: ' +
+        'l’Unione europea dichiara di voler proporre in autunno il pacchetto di sanzioni più ampio ' +
+        'dall’inizio della guerra, con circa un terzo di entità russe in più, ma senza calendario né settori ' +
+        'e quindi senza contenuto energetico verificabile. Sull’orizzonte dei giorni conta il primo, non il ' +
+        'secondo.',
       invalidation:
         'Una probabilità di rialzo a settembre che risale sopra il 48% entro venerdì, cioè sopra il livello di ieri mattina invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
     },
@@ -341,9 +353,23 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   headline:
-    'Un caccia dell’Alleanza abbatte un drone sulla Romania — il quarto del 2026 — e su sette fatti in tre giorni il canale del greggio si è acceso una volta',
+    'Nessun salto alla riapertura: l’oro apre sotto la chiusura di venerdì, poi sale a 4.391 con il Brent a 89,40 e i rendimenti in calo',
   stance:
-    'Due giorni di mercati chiusi hanno prodotto sei fatti geopolitici, e il modo utile di ordinarli non è ' +
+    'La prima quotazione liquida dopo tre giorni di mercati chiusi è la cosa più informativa di tutta la ' +
+    'settimana, e va detta senza addolcirla: sette fatti geopolitici su quattro fronti hanno prodotto ' +
+    'un’apertura dell’oro tre dollari e mezzo sotto la chiusura di venerdì. Il premio che questo archivio ' +
+    'ha descritto accumularsi non esisteva all’apertura. Il rialzo è arrivato dopo — 4.391,07 con più 0,4% ' +
+    'e futures di dicembre a 4.448,10 — e non dal canale geopolitico: il biennale è a 4,156% con meno due ' +
+    'punti base, il decennale a 4,684% con meno uno e sotto la chiusura di venerdì, il dollaro a 99,52, e la ' +
+    'probabilità di un rialzo a settembre è attorno al 30% contro circa il 47% di un mese fa. Nello stesso ' +
+    'tempo il Brent è salito fino a 89,40 dollari: petrolio in rialzo e rendimenti in calo insieme, cioè le ' +
+    'due gambe della combinazione sorvegliata da cinque letture si sono separate, e per una volta dal lato ' +
+    'giusto. Sul fondo il vincolo peggiora nella forma affidabile — trentuno transiti a Hormuz nel fine ' +
+    'settimana precedente, cinque sabato, nessuno registrato domenica — e si assottiglia anche il Bab ' +
+    'el-Mandeb, con quarantanove transiti contro cinquantacinque e nessuna spedizione petrolifera saudita ' +
+    'tracciata. La sintesi è che il metallo sta salendo sul canale americano mentre quello geopolitico ' +
+    'peggiora senza essere prezzato. Il quadro dei giorni precedenti resta questo: ' +
+    'due giorni di mercati chiusi hanno prodotto sei fatti geopolitici, e il modo utile di ordinarli non è ' +
     'per gravità ma per canale. Uno solo ha toccato i barili: la sospensione dei carichi a Sheskharis, ' +
     'venerdì, ancora aperta e senza conferma di ripresa — e resta l’unica, perché Reuters ha precisato ' +
     'che a Ust-Luga le esportazioni di petrolio non si sono mai fermate. Tutti gli altri no: la terza ' +
@@ -384,6 +410,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'La combinazione sorvegliata da cinque letture consecutive non si è formata, ed era la condizione dichiarata per essere smentiti: il Brent è salito fino a 89,40 dollari con circa più 1%, e i rendimenti sono scesi lo stesso — decennale a 4,684% sotto il 4,695% della chiusura di venerdì, biennale a 4,156% con meno due punti base, Dollar Index a 99,52. Petrolio in rialzo e curva in calo nella stessa seduta',
+    'Il canale monetario spinge da tre lati e con un numero che si muove da un mese: la probabilità di un rialzo a settembre è attorno al 30% contro circa il 47% di un mese fa, ricavata dai futures sui Fed Fund. L’oro è a 4.391,07 con più 0,4% e i futures di dicembre a 4.448,10',
+    'Il vincolo materiale peggiora nella forma che questo archivio ha detto di considerare affidabile — una discesa su più rilevazioni e non il numero di un giorno: trentuno transiti a Hormuz nel fine settimana precedente, cinque sabato, nessuno registrato domenica, contro oltre 130 al giorno prima del conflitto',
+    'Si assottiglia anche la seconda arteria: quarantanove transiti di navi commodity nel Bab el-Mandeb contro cinquantacinque del fine settimana precedente, e nessuna spedizione petrolifera saudita tracciata attraverso lo stretto. La via che evita Hormuz non sta assorbendo il traffico dirottato',
     'Prima intercettazione armata di questa escalation dentro lo spazio aereo dell’Alleanza: alle 05:01 del 16 agosto un F-18 spagnolo della sorveglianza aerea ha abbattuto un drone entrato in Romania dal lato moldavo, circa 24 km a nord di Galați, con frammenti in zona disabitata e nessuna vittima. Il perimetro della guerra si allarga a un Paese membro, e con esso il rischio di errore di calcolo',
     'La notte porta anche un impianto industriale colpito in Ucraina — ArcelorMittal a Kryvyi Rih, due morti e quattordici feriti — e una rivendicazione ucraina su un impianto di carburante per missili nella regione di Rostov: l’intensità cresce da entrambe le parti nella stessa giornata',
     'Nella notte fra sabato 15 e domenica 16 agosto l’Ucraina ha lanciato una delle più vaste incursioni aeree della guerra sul territorio russo — 822 droni intercettati e circa seicento diretti su Mosca secondo il ministero della Difesa russo, attacchi confermati da Reuters nell’area della capitale compresi Podolsk e Domodedovo, almeno sei morti secondo AP — mentre la Russia colpiva Kyiv con missili e droni. Quarto fronte simultaneo, e nessuno dei quattro sta allentando',
@@ -406,6 +436,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'Il premio geopolitico accumulato in sette letture a mercati chiusi non esisteva all’apertura: l’oro spot ha aperto intorno a 4.373 dollari, cioè sotto i 4.376,59 della chiusura di venerdì, con i futures di settembre fra 4.379 e 4.381. Nessun salto, ed è la misura più diretta della desensibilizzazione che questo archivio ha annotato da Jazan in poi',
+    'Il test dichiarato non è superato: i 4.396,88 del massimo di venerdì e i 4.400 sono ancora sopra il prezzo, e il Brent è a un dollaro dai 90. Se li rompe tirandosi dietro il decennale verso il 4,70%, la separazione osservata stamattina si rivela temporanea',
+    'Il PIL giapponese del secondo trimestre esce all’1,1% annualizzato contro il 2,0% atteso, con consumi fermi e investimenti a meno 1,2%, ma il cambio si muove nel verso opposto: yen più forte dello 0,2% a 159,06 e dollaro a 99,52, perché il mercato pesa i dati americani deboli più di quello giapponese. È un dato senza canale proprio',
+    'L’annuncio dell’Unione europea sul pacchetto di sanzioni più ampio dall’inizio della guerra — circa un terzo di entità russe in più secondo Kaja Kallas — resta senza calendario e senza settori, quindi senza contenuto energetico verificabile: appartiene alla stessa categoria delle cinque opzioni americane del 16 agosto e delle misure annunciate dal Tesoro il 14 e mai pubblicate',
     'L’episodio romeno è il quarto dello stesso tipo nel 2026, cioè circa uno ogni due mesi: la categoria è già stata prezzata tre volte quest’anno senza lasciare un premio duraturo, e la novità autentica è più stretta di come si presenta — questa volta un caccia ha aperto il fuoco. Il drone non è inoltre attribuito ufficialmente: la Romania non indica la Russia, e un portavoce dell’Alleanza dice soltanto che «sembra essere russo»',
     'La procedura ha funzionato per intero e l’Alleanza non ha annunciato nulla — nessuna clausola invocata, nessuna misura militare: su questa scala una deterrenza che riesce toglie premio invece di darlo, perché rende meno probabile l’evento da cui ci si ripara. È la stessa regola scritta qui per il patto della Mecca, applicata al caso rovesciato',
     'Nemmeno i bersagli della notte producono barili: ArcelorMittal a Kryvyi Rih è acciaio, e il propellente per missili di Rostov non è greggio da esportazione ed è una rivendicazione di parte. Terza volta in tre giorni che il conteggio non si muove',
@@ -524,7 +558,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'attribuito a Kpler dà due navi più una metaniera vuota in entrata e nessuna spedizione visibile di ' +
         'greggio: la seconda metà è la misura giusta perché conta barili invece di scafi, ma arriva dalla ' +
         'fonte meno verificabile, e il numero del giorno non regge una condizione. Quello che resta solido è ' +
-        'il confronto con le 130-140 di prima del conflitto.',
+        'il confronto con le 130-140 di prima del conflitto. Il fine settimana del 15-16 agosto dà però al ' +
+        'conteggio la forma che questo archivio considera affidabile, cioè una discesa su più rilevazioni ' +
+        'invece del numero di un giorno: trentuno transiti nel fine settimana precedente, cinque sabato, ' +
+        'nessuno registrato domenica. Il limite della misura resta dichiarato — alcune navi navigano con il ' +
+        'transponder spento, quindi «zero registrate» non è zero passaggi — ma la direzione su tre punti non ' +
+        'è varianza di campionamento. Nella stessa rilevazione si assottiglia la via alternativa: ' +
+        'quarantanove transiti di navi commodity nel Bab el-Mandeb contro cinquantacinque, e nessuna ' +
+        'spedizione petrolifera saudita tracciata.',
       state: 'fermo',
     },
     {
@@ -643,21 +684,27 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 31.6,
-      display: '31,6%',
+      now: 30,
+      display: '≈ 30%',
       marks: [
+        {
+          at: 35,
+          display: '35%',
+          kind: 'logora',
+          note: 'è la soglia dichiarata il 17 agosto: una risalita sopra questo livello dopo i verbali del FOMC di mercoledì direbbe che la riprezzatura su cui l’oro sta salendo era incompleta, e la forza intraday andrebbe riportata a bassa',
+        },
         {
           at: 50,
           display: '50%',
           kind: 'invalida',
-          note: 'attraversata quattro volte in quattro giorni e due volte nei due sensi in quarantotto ore: superata in salita la sera del 10 agosto, ridiscesa il pomeriggio dell’11. Una soglia che oscilla così non misura un cambio di regime, e la lettura sui giorni non la segue più in automatico',
+          note: 'attraversata quattro volte in quattro giorni e due volte nei due sensi in quarantotto ore: superata in salita la sera del 10 agosto, ridiscesa il pomeriggio dell’11. Una soglia che oscilla così non misura un cambio di regime, e la lettura sui giorni non la segue più in automatico. Il numero è ora attorno al 30% contro circa il 47% di un mese fa',
         },
       ],
     },
     {
       label: 'Brent',
-      now: 88.6,
-      display: '88,60 $',
+      now: 89.2,
+      display: '≈ 89,20 $',
       marks: [
         {
           at: 87.07,
@@ -669,7 +716,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 89.06,
           display: '89,06 $',
           kind: 'logora',
-          note: 'massimo di mercoledì, dichiarato come condizione da tre analisi e mancato per ventisette centesimi con la chiusura di venerdì a 88,60: sopra questo livello il canale energetico passa dal sostenere il rifugio ad alimentare i rendimenti',
+          note: 'massimo di mercoledì 12 agosto, dichiarato come condizione da tre analisi e mancato per ventisette centesimi alla chiusura di venerdì: superato lunedì 17 in apertura di settimana, con un massimo a 89,40. Il canale energetico si è quindi riaperto, ma senza portarsi dietro i rendimenti, che nella stessa seduta sono scesi',
         },
         {
           at: 90,
@@ -681,8 +728,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.117,
-      display: '4,117%',
+      now: 4.156,
+      display: '4,156%',
       marks: [
         {
           at: 4.25,
@@ -694,8 +741,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.695,
-      display: '4,695%',
+      now: 4.684,
+      display: '4,684%',
       marks: [
         {
           at: 4.68,
@@ -713,8 +760,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.41,
-      display: '99,410',
+      now: 99.52,
+      display: '99,520',
       marks: [
         {
           at: 99.795,
@@ -732,28 +779,28 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4376.59,
-      display: '4.376,59 $',
+      now: 4391.07,
+      display: '4.391,07 $',
       marks: [
         {
-          at: 4351.07,
-          display: '4.351,07 $',
+          at: 4376.59,
+          display: '4.376,59 $',
           kind: 'invalida',
-          note: 'chiusura di giovedì, ed è il livello che cinque analisi di venerdì hanno dichiarato in comune: una chiusura sotto annullerebbe il recupero della seconda metà di venerdì e porterebbe la direzione almeno a neutrale',
+          note: 'chiusura di venerdì, e il livello sotto cui l’oro ha aperto lunedì mattina a circa 4.373 dollari: una chiusura di lunedì sotto questo livello annullerebbe il recupero della mattina e riporterebbe la forza a bassa. È anche la misura del salto che non c’è stato, dopo sette letture geopolitiche in tre giorni',
         },
         {
-          at: 4396.88,
-          display: '4.396,88 $',
+          at: 4400,
+          display: '4.400 $',
           kind: 'logora',
-          note: 'massimo di venerdì, e la ragione per cui i 4.400 non sono stati toccati per tre dollari e dodici centesimi. Un’apertura e una chiusura sopra questo livello direbbero che l’escalation del fine settimana è entrata nel prezzo, e la forza bassa dichiarata ora risulterebbe troppo prudente. Il livello è quello che il mercato ha stabilito, non la cifra tonda che gli sta accanto',
+          note: 'è il test dichiarato: una tenuta sopra questa soglia riaprirebbe la fascia 4.435-4.450 e imporrebbe di alzare ancora la forza. Il livello è tondo e attira ordini, e per questo va guardato insieme ai 4.396,88 del massimo di venerdì, che è il livello che il mercato ha stabilito da sé e che al momento non è stato ripreso',
         },
       ],
     },
   ],
   sources: [
+    'il-salto-non-c-e-stato-e-l-oro-sale-sui-tassi',
+    'il-pil-giapponese-manca-le-attese-e-lo-yen-si-rafforza',
     'un-drone-abbattuto-sulla-romania-e-il-quarto-del-2026',
-    'cinque-opzioni-sul-tavolo-e-l-unico-atto-e-indiano',
-    'l-attacco-piu-grande-della-guerra-e-i-barili-non-si-muovono',
   ],
 };
 
