@@ -2998,4 +2998,47 @@ export const OUTCOMES: readonly Outcome[] = [
     ],
     what: 'Nessuna delle cinque condizioni è scattata, e la tesi centrale — uno shock che resta sull’offerta russa invece di diventare un prezzo mondiale, perché il compratore sostituisce invece di inseguire il barile — ha retto due giorni senza essere contraddetta da nulla. Il Brent è a 88,95 dollari, tre sotto la soglia dei 92 e sei sotto i 95 della lettura sorella dello stesso giorno. Una precisazione sulla quarta condizione, perché è quella che si è degradata invece di risolversi: chiedeva un Brent sopra i 92 dollari «senza alcun fatto nuovo su Hormuz», e un fatto nuovo su Hormuz è arrivato oggi pomeriggio con la dichiarazione iraniana sulla postura offensiva. La gamba di contesto è quindi caduta mentre la gamba di prezzo era ancora lontana, e la condizione non è più eseguibile nella sua forma piena: è il difetto delle condizioni composte già registrato in questo archivio il 12 agosto, e la regola che se ne era ricavata — scrivere la gamba di contesto come intervallo di validità e non come requisito — non è stata applicata qui.',
   },
+  {
+    slug: 'cinque-opzioni-sul-tavolo-e-l-unico-atto-e-indiano',
+    checkedAt: '2026-08-17T17:40:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Una designazione pubblicata da OFAC o dal Tesoro che colpisca una raffineria indipendente cinese o una banca cinese entro venerdì 21 agosto: farebbe passare la questione dalle opzioni agli atti, e questa lettura andrebbe alzata di grado invece che tenuta ferma.',
+        triggered: false,
+        evidence:
+          'Nessuna designazione di OFAC o del Tesoro contro raffinerie indipendenti cinesi o banche cinesi risulta pubblicata a trenta ore dall’analisi. Le cinque opzioni ricostruite da Reuters il 16 agosto restano opzioni. Il termine corre fino a venerdì 21 agosto.',
+      },
+      {
+        condition:
+          'Un voto della Camera sul provvedimento approvato dal Senato il 7 agosto, in un verso o nell’altro: direbbe se lo strumento dei dazi secondari ha una gamba legislativa, ed è lo stesso attrezzo su un bersaglio diverso.',
+        triggered: false,
+        evidence:
+          'Nessun voto della Camera risulta calendarizzato o tenuto. Il provvedimento sui dazi secondari fino al 100% sui maggiori acquirenti di energia russa, approvato dal Senato 86 a 11, resta fermo dove era il 7 agosto: undici giorni senza movimento.',
+      },
+      {
+        condition:
+          'Un annuncio ufficiale cinese di ritorsione, oppure una sospensione degli acquisti di greggio iraniano dichiarata da una raffineria indipendente cinese, entro venerdì 21 agosto: sposterebbe la questione dalle opzioni americane alle reazioni, che è il piano su cui si forma davvero la componente di avversione al rischio.',
+        triggered: false,
+        evidence:
+          'Nessun annuncio cinese di ritorsione e nessuna sospensione dichiarata da raffinerie indipendenti risultano al controllo. Il piano delle reazioni resta vuoto quanto quello dei provvedimenti, che è la simmetria su cui l’analisi aveva tenuto ferma la lettura.',
+      },
+      {
+        condition:
+          'Nuovi obiettivi di sicurezza energetica dichiarati da un altro grande importatore — Cina, Giappone o Corea del Sud — entro fine agosto: confermerebbe che la misura indiana è l’inizio di una serie e non un caso isolato, e la gamba lenta di questa lettura si irrobustirebbe.',
+        triggered: false,
+        evidence:
+          'Nessuno fra Cina, Giappone e Corea del Sud ha dichiarato nuovi obiettivi di sicurezza energetica. Va però annotato un movimento adiacente che la condizione non cattura, perché guarda dal lato sbagliato del mercato: oggi Reuters riferisce che Saudi Aramco sta trattando consegne nave-nave al largo di Fujairah e che ADNOC ha collocato almeno quattordici milioni di barili spot a raffinerie asiatiche. Non sono importatori che si assicurano, sono venditori che aggirano; la condizione resta non scattata, ma il fenomeno che voleva misurare — la crisi che produce misure logistiche durature — si sta manifestando dall’altra parte del contratto.',
+      },
+      {
+        condition:
+          'L’assenza di qualunque provvedimento pubblicato entro venerdì 21 agosto: riporterebbe l’intera ricostruzione nella categoria degli annunci senza contenuto, dove questo archivio ha già collocato le misure di isolamento economico annunciate dal segretario al Tesoro il 14 agosto e mai pubblicate.',
+        triggered: false,
+        evidence:
+          'Il termine è venerdì 21 agosto e non è ancora arrivato, quindi la condizione non può essere scattata al controllo del 17. Va detto però che è l’unica del gruppo costruita per verificarsi da sola: se entro venerdì non viene pubblicato nulla, scatterà senza che accada niente, e allo stato attuale nulla è stato pubblicato.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata a trenta ore dalla pubblicazione, e l’osservazione centrale ha retto in modo netto: le cinque opzioni americane contro l’Iran restano opzioni, il provvedimento del Senato resta fermo alla Camera da undici giorni, e la Cina non ha reagito perché non c’è nulla a cui reagire. Due cose meritano di essere segnalate oltre al verdetto. La prima è che la quinta condizione è costruita per scattare per assenza: se entro venerdì 21 agosto non viene pubblicato alcun provvedimento, si verificherà senza che sia successo niente, ed è oggi la condizione più vicina a farlo — un modo utile di scrivere una condizione, perché mette un termine anche all’attesa. La seconda riguarda la quarta: chiedeva un altro grande importatore che dichiarasse obiettivi di sicurezza energetica, e oggi il movimento è arrivato dal lato opposto del contratto, con Aramco che tratta consegne fuori dallo Stretto e ADNOC che colloca quattordici milioni di barili spot. La condizione guardava i compratori e a muoversi sono stati i venditori: non scatta, ma indica che il fenomeno era stato inquadrato più stretto di quanto fosse.',
+  },
 ];

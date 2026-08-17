@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-17T16:45:00+02:00',
+  updatedAt: '2026-08-17T17:50:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -331,7 +331,26 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'professionale ha finito di riprezzare la sequenza di dati deboli seguita qui una diffusione alla ' +
         'volta. Il punto operativo sta nella distanza: il prezzo di mercato assegna ancora il 30-33% a un ' +
         'rialzo a settembre, il sondaggio quasi zero, e finché quella distanza esiste la riprezzatura può ' +
-        'proseguire a favore del metallo senza bisogno di un dato nuovo.',
+        'proseguire a favore del metallo senza bisogno di un dato nuovo. In serata arrivano le due ' +
+        'diffusioni che avrebbero potuto chiudere quella distanza dal lato sbagliato, e non lo fanno: ' +
+        'l’Empire State di agosto esce a 20,6 contro 10,6 attesi e 15,6 di luglio, massimo da oltre ' +
+        'quattro anni, con nuovi ordini a 17,3, occupazione a 9,3 e soprattutto prezzi pagati in salita a ' +
+        '58,6 da 52,3; il NAHB sale a 35 contro 33 attesi, con le condizioni di vendita correnti a 39 da ' +
+        '37. Sono due sorprese al rialzo, la seconda delle quali su un livello che resta comunque molto ' +
+        'depresso — sotto 40 da sedici mesi, la striscia più lunga dal 2012, con il 30% dei costruttori ' +
+        'che taglia i prezzi. Il punto non è la loro forza ma la loro conseguenza mancata: il biennale ' +
+        'resta attorno al 4,155% e la probabilità di rialzo attorno al 33%, cioè dove stavano prima. ' +
+        'Vale la cautela che questo archivio applica alle indagini parziali: l’Empire State misura un ' +
+        'solo distretto ed è la prima indagine manifatturiera del mese, quindi anticipa e non conclude, e ' +
+        'la stessa parzialità che le impedisce di riprezzare la Fed le impedisce anche di essere ' +
+        'archiviata. La componente da seguire è quella dei prezzi pagati, perché è l’unica che tocca il ' +
+        'canale su cui questa lettura poggia. Nella stessa serata la gamba energetica riceve una ' +
+        'spiegazione materiale invece di una dichiarata: Reuters riferisce che Saudi Aramco sta trattando ' +
+        'carichi di settembre con consegne nave-nave al largo di Fujairah, fuori dallo Stretto, e che ' +
+        'ADNOC ha collocato almeno quattordici milioni di barili spot a raffinerie asiatiche. È il primo ' +
+        'meccanismo che spiega perché il Brent resti sotto i 90 dollari con i transiti quasi azzerati, e ' +
+        'va contato in due sensi: toglie il rischio di coda di un greggio che spinge i rendimenti contro ' +
+        'il metallo, e toglie insieme una parte del premio che oggi lo sostiene.',
       invalidation:
         'Una probabilità di rialzo a settembre che risale sopra il 33% entro venerdì 21 agosto, cioè sopra il limite superiore dell’intervallo rilevato il 17 agosto: direbbe che la distanza fra il consenso degli economisti e il prezzo di mercato si sta chiudendo dal lato sbagliato, ed è la gamba misurabile su cui questa lettura poggia adesso. Oppure una probabilità che risale sopra il 48% entro venerdì, cioè sopra il livello di lunedì 11 agosto invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
     },
@@ -387,8 +406,23 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   headline:
-    'Teheran si dichiara pronta a una postura offensiva e mette un termine di alcune settimane, e il Brent resta a 88,95 dollari',
+    'Empire State al massimo da quattro anni e NAHB sopra le attese, e la curva non li prezza: biennale a 4,155%, rialzo a settembre fermo al 33%',
   stance:
+    'La sera del 17 agosto arrivano due diffusioni americane sopra le attese e la curva non le prezza, ed è ' +
+    'quello il fatto da registrare. L’Empire State di agosto esce a 20,6 contro 10,6 attesi e 15,6 di ' +
+    'luglio, massimo da oltre quattro anni, con i prezzi pagati in salita a 58,6 da 52,3; il NAHB sale a ' +
+    '35 contro 33 attesi. Il biennale resta però attorno al 4,155% e il decennale al 4,681%, entrambi ' +
+    'leggermente più bassi in giornata, e la probabilità di un rialzo a settembre è ferma attorno al 33% ' +
+    'contro il 51,2% di un mese fa. Quando un prezzo rifiuta di seguire la notizia che dovrebbe muoverlo, ' +
+    'l’informazione sta nel rifiuto. Accanto arriva la spiegazione materiale della gamba energetica: ' +
+    'Reuters riferisce che Saudi Aramco sta trattando carichi di settembre da consegnare con trasferimenti ' +
+    'nave-nave al largo di Fujairah, così che i compratori non mandino le proprie petroliere attraverso lo ' +
+    'Stretto, e che ADNOC ha collocato almeno quattordici milioni di barili spot a raffinerie asiatiche. ' +
+    'Se il barile passa e la petroliera del compratore no, il conteggio dei transiti continua a misurare ' +
+    'il traffico ma smette di misurare la scarsità — ed è la ragione per cui il Brent resta a 88,95 ' +
+    'dollari con Hormuz quasi fermo. Con una cautela che vale quanto la notizia: quello di Aramco è un ' +
+    'negoziato riferito da un’agenzia e non un atto della compagnia, e il percorso del greggio fino a ' +
+    'Fujairah non è documentato. ' +
     'Il fatto nuovo del pomeriggio va classificato prima di essere pesato, perché la classificazione decide ' +
     'quanto vale. Un alto funzionario iraniano non nominato dice a Reuters che Teheran è pronta a una ' +
     'risposta militare «tempestiva e precisa» e a passare da una postura difensiva a una offensiva se ' +
@@ -472,6 +506,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'Due diffusioni americane sopra le attese non hanno riprezzato la Fed, ed è il fatto della serata: Empire State di agosto a 20,6 contro 10,6 attesi, massimo da oltre quattro anni, e NAHB a 35 contro 33. Il biennale resta attorno al 4,155%, il decennale al 4,681%, entrambi leggermente più bassi in giornata, e la probabilità di un rialzo a settembre è ferma attorno al 33% contro il 51,2% di un mese fa',
+    'La gamba energetica ha finalmente un meccanismo invece di una coincidenza: Reuters riferisce che Saudi Aramco tratta carichi di settembre con consegne nave-nave al largo di Fujairah — fuori dallo Stretto — e che ADNOC ha collocato almeno quattordici milioni di barili spot a raffinerie asiatiche. Spiega perché il Brent resti a 88,95 dollari con i transiti quasi azzerati',
+    'Il livello assoluto del NAHB resta molto depresso e ridimensiona la sorpresa: sotto 40 da sedici mesi consecutivi, la striscia più lunga dal 2012, con circa il 30% dei costruttori che taglia i prezzi e quasi due terzi che offrono incentivi. La sorpresa è sul margine, non sul quadro',
     'Il consenso professionale ha finito di riprezzare, ed è la prima misura organizzata invece di una deduzione: il sondaggio Reuters del 12-17 agosto trova la grande maggioranza degli economisti ad attendersi la Federal Reserve ferma al 3,50-3,75% per tutto il resto del 2026, dopo rapporto occupazionale in contrazione, indice dei prezzi e prezzi alla produzione senza accelerazione, vendite al dettaglio a meno 0,6% e fiducia a 51,0',
     'La distanza fra consenso e prezzo è il margine che resta da percorrere: il mercato assegna ancora il 30-33% di probabilità a un rialzo a settembre, cioè circa due terzi alla pausa, mentre il sondaggio la dà quasi per esclusa fino a fine anno. Finché quella distanza esiste la riprezzatura può proseguire senza bisogno di un dato nuovo',
     'La minaccia iraniana alza il pavimento del premio senza passare dal barile, che è la configurazione in cui il metallo lavora meglio: Teheran si dichiara pronta a una postura offensiva e il Brent resta a 88,95 dollari con più 0,5%, sotto gli 89,40 già toccati in giornata, con il WTI a 82,65. Reuters attribuisce il contenimento alle rotte alternative di ADNOC e Saudi Aramco',
@@ -505,6 +542,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'I prezzi pagati dell’Empire State salgono a 58,6 da 52,3, ed è la componente che alimenta le attese di inflazione: oggi non ha mosso i rendimenti, ma una conferma nelle indagini nazionali cambierebbe il canale dei tassi su cui l’intera lettura poggia. I prezzi ricevuti vanno però nel verso opposto, a 22,7 da 27,6',
+    'La valvola logistica taglia in due sensi e il secondo è sfavorevole: se Aramco e ADNOC riescono a consegnare aggirando lo Stretto, il collo di bottiglia perde la capacità di togliere barili al mercato, e con essa una parte del premio di rifugio che oggi sostiene il metallo. Un rischio che non produce scarsità non si paga',
+    'Il meccanismo di Fujairah è un negoziato riferito da un’agenzia e non un atto dichiarato dalla compagnia, e il resoconto non dice come il greggio arrivi fin lì: se ci arriva via mare dal Golfo, qualcuno lo Stretto lo attraversa comunque e a cambiare è chi sopporta il rischio, non quanto passa',
+    'La probabilità di un rialzo a settembre è arrivata al 33%, cioè esattamente sulla soglia di logoramento dichiarata ieri sera: non l’ha superata, ma non c’è più distanza fra il numero e il livello che farebbe decadere la gamba misurabile della lettura sui giorni',
     'Il fatto più rumoroso della giornata è anche quello con la fonte più debole: la minaccia arriva da un alto funzionario iraniano non nominato che parla a Reuters, e non è seguita da alcun atto materiale. Il conteggio dei transiti resta quello del fine settimana — cinque navi sabato, nessuna domenica — e non si è mosso di una nave per effetto della dichiarazione',
     'Il precedente esatto è già in archivio e va nel verso opposto: il 6 agosto una minaccia iraniana più specifica di questa, con i bersagli indicati — le infrastrutture energetiche dei Paesi del Golfo — coincise con un Brent che scendeva a 79,08 dollari. Quella lettura fu registrata con certezza bassa, e il suo esito è confermata',
     'I 4.400 sono stati attraversati due volte in una giornata e non tenuti nessuna delle due: la rilevazione Reuters delle 16:45 è circa 4.388 dollari con più 0,3%, con Investing fra 4.389 e 4.404, dopo i 4.400,15 delle 11:45. Il test dichiarato al mattino resta non superato',
@@ -759,20 +800,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 31.5,
-      display: '30-33%',
+      now: 33,
+      display: '≈ 33%',
       marks: [
-        {
-          at: 33,
-          display: '33%',
-          kind: 'logora',
-          note: 'limite superiore dell’intervallo rilevato il 17 agosto, e la soglia dichiarata dalla lettura sui giorni: sopra questo livello la distanza fra il consenso degli economisti — quasi unanime sulla pausa per tutto il resto del 2026 secondo il sondaggio Reuters del 12-17 agosto — e il prezzo di mercato si chiuderebbe dal lato sbagliato',
-        },
         {
           at: 35,
           display: '35%',
           kind: 'logora',
-          note: 'è la soglia dichiarata il 17 agosto: una risalita sopra questo livello dopo i verbali del FOMC di mercoledì direbbe che la riprezzatura su cui l’oro sta salendo era incompleta, e la forza intraday andrebbe riportata a bassa',
+          note: 'è la soglia dichiarata il 17 agosto: una risalita sopra questo livello dopo i verbali del FOMC di mercoledì direbbe che la riprezzatura su cui l’oro sta salendo era incompleta, e la forza intraday andrebbe riportata a bassa. È diventata la prima tacca utile perché quella precedente, il 33% dichiarato ieri sera come limite superiore dell’intervallo, è stata raggiunta esattamente in serata: il numero ci è arrivato sopra senza superarla, quindi la condizione non è scattata ma quella misura ha smesso di dire qualcosa in avanti',
         },
         {
           at: 50,
@@ -798,6 +833,12 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           display: '89,06 $',
           kind: 'logora',
           note: 'massimo di mercoledì 12 agosto, dichiarato come condizione da tre analisi e mancato per ventisette centesimi alla chiusura di venerdì: superato lunedì 17 in apertura di settimana, con un massimo a 89,40. Il canale energetico si è quindi riaperto, ma senza portarsi dietro i rendimenti, che nella stessa seduta sono scesi',
+        },
+        {
+          at: 89.68,
+          display: '89,68 $',
+          kind: 'logora',
+          note: 'massimo intraday di lunedì 17 agosto, e la soglia dichiarata dalla lettura sulle rotte: una chiusura sopra questo livello direbbe che le consegne fuori dallo Stretto non stanno contenendo il prezzo quanto l’analisi sostiene, e la gamba energetica del ragionamento cadrebbe',
         },
         {
           at: 90,
@@ -879,9 +920,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'aramco-consegna-fuori-dallo-stretto-e-la-curva-non-si-muove',
     'teheran-mette-una-scadenza-e-il-brent-resta-sotto-i-90',
     'il-salto-non-c-e-stato-e-l-oro-sale-sui-tassi',
-    'il-pil-giapponese-manca-le-attese-e-lo-yen-si-rafforza',
   ],
 };
 

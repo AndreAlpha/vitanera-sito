@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { aramcoConsegnaFuoriDalloStretto } from './articles/aramco-consegna-fuori-dallo-stretto-e-la-curva-non-si-muove';
 import { teheranMetteUnaScadenza } from './articles/teheran-mette-una-scadenza-e-il-brent-resta-sotto-i-90';
 import { ilSaltoNonCEStato } from './articles/il-salto-non-c-e-stato-e-l-oro-sale-sui-tassi';
 import { ilPilGiapponeseMancaLeAttese } from './articles/il-pil-giapponese-manca-le-attese-e-lo-yen-si-rafforza';
@@ -116,6 +117,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  aramcoConsegnaFuoriDalloStretto,
   teheranMetteUnaScadenza,
   ilSaltoNonCEStato,
   ilPilGiapponeseMancaLeAttese,

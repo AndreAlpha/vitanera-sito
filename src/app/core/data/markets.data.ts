@@ -17,6 +17,33 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'FUJAIRAH',
+    name: 'Consegne Saudi Aramco con trasferimenti nave-nave al largo di Fujairah, fuori dallo Stretto di Hormuz',
+    value: 'carichi di settembre',
+    change: 'Arab Medium e Arab Heavy; ADNOC colloca ≥ 14 mln barili spot in Asia',
+    tone: 'warn',
+    icon: 'flow',
+    note: 'È la prima spiegazione materiale di una cosa che questo archivio registrava da due settimane senza saperla spiegare: perché il Brent resti sotto i 90 dollari mentre il conteggio dei transiti a Hormuz è quasi azzerato. Reuters riferisce che Saudi Aramco sta negoziando carichi di Arab Medium e Arab Heavy per settembre da consegnare tramite trasferimenti nave-nave al largo di Fujairah, sulla costa orientale degli Emirati, cioè fuori dallo Stretto: il compratore riceve il greggio senza mandare la propria petroliera dentro Hormuz. Aramco usa inoltre Yanbu sul Mar Rosso e Sidi Kerir in Egitto per altre esportazioni, e ADNOC ha collocato almeno quattordici milioni di barili spot a raffinerie asiatiche nella sua ultima gara. La conseguenza sul metro seguito qui è precisa e va detta: se una parte dei barili raggiunge il compratore senza generare un transito del compratore, il conteggio dei passaggi continua a misurare il traffico ma smette di misurare la scarsità. Non è un errore della fonte, è il vincolo che ha trovato una valvola. Due cautele di peso. La prima è che quello di Aramco è un negoziato in corso riferito da un’agenzia e non un atto dichiarato dalla compagnia: l’unico atto compiuto del gruppo è la gara ADNOC. La seconda è che il resoconto non dice come il greggio arrivi a Fujairah — se ci arriva via mare dal Golfo, qualcuno lo Stretto lo attraversa comunque, e a cambiare è chi sopporta il rischio invece della quantità che passa. Per l’oro il segno è ambiguo: toglie il rischio di coda di un greggio sopra i 95 dollari che spingerebbe rendimenti e inflazione contro il metallo, e toglie insieme una parte del premio di rifugio che oggi lo sostiene.',
+  },
+  {
+    symbol: 'EMPIRE STATE',
+    name: 'Empire State Manufacturing Survey della Fed di New York, agosto 2026',
+    value: '20,6',
+    change: 'contro 10,6 attesi e 15,6 di luglio; massimo da oltre quattro anni',
+    tone: 'bear',
+    icon: 'factory',
+    note: 'La sorpresa è di dieci punti sul consenso, e la composizione la conferma invece di ridimensionarla: nuovi ordini a 17,3, spedizioni a 11,7, occupazione a 9,3 e ore lavorate a 6,9, quindi attività e lavoro insieme. La riga che conta per l’oro è però un’altra, ed è quella dei prezzi pagati, saliti a 58,6 da 52,3: è il canale attraverso cui un dato manifatturiero raggiunge le attese di inflazione e da lì i rendimenti che un metallo senza cedole deve battere. Nella direzione opposta vanno i prezzi ricevuti, in calo a 22,7 da 27,6, il che descrive imprese che assorbono margine invece di trasferire i costi — meno inflazionistico di quanto il solo dato sui costi suggerisca. Il fatto da registrare non è comunque la forza del numero ma la sua conseguenza mancata: il biennale resta attorno al 4,155% e la probabilità di un rialzo a settembre attorno al 33%, contro il 51,2% di un mese fa. Vale infine la cautela che questo archivio applica alle rilevazioni parziali: è un’indagine di un solo distretto della Federal Reserve ed è la prima del mese, quindi anticipa e non conclude. La stessa parzialità che le impedisce di riprezzare la banca centrale le impedisce anche di essere archiviata: la prova arriva con le indagini nazionali.',
+  },
+  {
+    symbol: 'NAHB AGOSTO',
+    name: 'NAHB/Wells Fargo Housing Market Index, agosto 2026',
+    value: '35',
+    change: 'contro 33 attesi e 34 di luglio non rivisto; vendite correnti a 39 da 37',
+    tone: 'warn',
+    icon: 'users',
+    note: 'La fiducia dei costruttori sale di un punto invece di scendere come atteso, e la fonte primaria conferma il 35 con le condizioni di vendita correnti a 39 da 37, mentre le aspettative sulle vendite future e il traffico dei potenziali acquirenti restano fermi. Il messaggio per la banca centrale è quindi lievemente restrittivo rispetto al consenso, e per l’oro lievemente sfavorevole. Ma il livello assoluto va letto insieme alla variazione, perché racconta l’opposto: l’indice è sotto 40 da sedici mesi consecutivi, la striscia più lunga dal 2012, e resta molto sotto il 50 che separa le condizioni positive da quelle negative. Circa il 30% dei costruttori continua a tagliare i prezzi e quasi due terzi offrono incentivi, cioè il settore compra domanda con lo sconto. Un punto di recupero dentro sedici mesi di depressione è una sorpresa sul margine e non un cambio di quadro, ed è la ragione per cui questa voce non sposta la lettura sull’oro pur essendo dalla parte sbagliata.',
+  },
+  {
     symbol: 'POSTURA IRAN',
     name: 'Dichiarazione iraniana sulla disponibilità a una postura offensiva, con un termine di alcune settimane, 17 agosto',
     value: 'termine di alcune settimane',

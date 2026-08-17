@@ -30,8 +30,10 @@ fonti:
     quando: "16 agosto 2026"
   - testata: "U.S. Department of the Treasury"
     titolo: "Campagna contro vendite di petrolio iraniano, shadow banking e reti di evasione delle sanzioni"
+esito: "confermata"
+controllata: "2026-08-17T17:40:00+02:00"
 sorgente: "src/app/core/data/articles/cinque-opzioni-sul-tavolo-e-l-unico-atto-e-indiano.ts"
-impronta: "6d66984bde1163dd"
+impronta: "39787f6bcecdfaad"
 ---
 
 # Cinque opzioni sul tavolo, e l’unico atto compiuto è indiano
@@ -105,6 +107,20 @@ Il canale da guardare non è la stampa ma il bollettino: una designazione di OFA
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte medio.
 
 Sull’arco dei giorni la lettura non si muove, perché un elenco di opzioni non è un vincolo. Quello che cambia è la forma del rischio: se le misure diventassero effettive avrebbero due canali opposti, uno che riduce le esportazioni iraniane e spinge il greggio contro il metallo, e uno che trasforma la crisi in uno scontro economico con la Cina e quindi alimenta la domanda di riparo. Finché nulla è pubblicato restano preferenze dichiarate, e su questa scala pesano quanto i sei annunci di distensione su Hormuz che non hanno mosso di una nave il conteggio dei transiti.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-17T17:40:00+02:00.
+
+Nessuna delle cinque condizioni è scattata a trenta ore dalla pubblicazione, e l’osservazione centrale ha retto in modo netto: le cinque opzioni americane contro l’Iran restano opzioni, il provvedimento del Senato resta fermo alla Camera da undici giorni, e la Cina non ha reagito perché non c’è nulla a cui reagire. Due cose meritano di essere segnalate oltre al verdetto. La prima è che la quinta condizione è costruita per scattare per assenza: se entro venerdì 21 agosto non viene pubblicato alcun provvedimento, si verificherà senza che sia successo niente, ed è oggi la condizione più vicina a farlo — un modo utile di scrivere una condizione, perché mette un termine anche all’attesa. La seconda riguarda la quarta: chiedeva un altro grande importatore che dichiarasse obiettivi di sicurezza energetica, e oggi il movimento è arrivato dal lato opposto del contratto, con Aramco che tratta consegne fuori dallo Stretto e ADNOC che colloca quattordici milioni di barili spot. La condizione guardava i compratori e a muoversi sono stati i venditori: non scatta, ma indica che il fenomeno era stato inquadrato più stretto di quanto fosse.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Una designazione pubblicata da OFAC o dal Tesoro che colpisca una raffineria indipendente cinese o una banca cinese entro venerdì 21 agosto: farebbe passare la questione dalle opzioni agli atti, e questa lettura andrebbe alzata di grado invece che tenuta ferma. | no | Nessuna designazione di OFAC o del Tesoro contro raffinerie indipendenti cinesi o banche cinesi risulta pubblicata a trenta ore dall’analisi. Le cinque opzioni ricostruite da Reuters il 16 agosto restano opzioni. Il termine corre fino a venerdì 21 agosto. |
+| Un voto della Camera sul provvedimento approvato dal Senato il 7 agosto, in un verso o nell’altro: direbbe se lo strumento dei dazi secondari ha una gamba legislativa, ed è lo stesso attrezzo su un bersaglio diverso. | no | Nessun voto della Camera risulta calendarizzato o tenuto. Il provvedimento sui dazi secondari fino al 100% sui maggiori acquirenti di energia russa, approvato dal Senato 86 a 11, resta fermo dove era il 7 agosto: undici giorni senza movimento. |
+| Un annuncio ufficiale cinese di ritorsione, oppure una sospensione degli acquisti di greggio iraniano dichiarata da una raffineria indipendente cinese, entro venerdì 21 agosto: sposterebbe la questione dalle opzioni americane alle reazioni, che è il piano su cui si forma davvero la componente di avversione al rischio. | no | Nessun annuncio cinese di ritorsione e nessuna sospensione dichiarata da raffinerie indipendenti risultano al controllo. Il piano delle reazioni resta vuoto quanto quello dei provvedimenti, che è la simmetria su cui l’analisi aveva tenuto ferma la lettura. |
+| Nuovi obiettivi di sicurezza energetica dichiarati da un altro grande importatore — Cina, Giappone o Corea del Sud — entro fine agosto: confermerebbe che la misura indiana è l’inizio di una serie e non un caso isolato, e la gamba lenta di questa lettura si irrobustirebbe. | no | Nessuno fra Cina, Giappone e Corea del Sud ha dichiarato nuovi obiettivi di sicurezza energetica. Va però annotato un movimento adiacente che la condizione non cattura, perché guarda dal lato sbagliato del mercato: oggi Reuters riferisce che Saudi Aramco sta trattando consegne nave-nave al largo di Fujairah e che ADNOC ha collocato almeno quattordici milioni di barili spot a raffinerie asiatiche. Non sono importatori che si assicurano, sono venditori che aggirano; la condizione resta non scattata, ma il fenomeno che voleva misurare — la crisi che produce misure logistiche durature — si sta manifestando dall’altra parte del contratto. |
+| L’assenza di qualunque provvedimento pubblicato entro venerdì 21 agosto: riporterebbe l’intera ricostruzione nella categoria degli annunci senza contenuto, dove questo archivio ha già collocato le misure di isolamento economico annunciate dal segretario al Tesoro il 14 agosto e mai pubblicate. | no | Il termine è venerdì 21 agosto e non è ancora arrivato, quindi la condizione non può essere scattata al controllo del 17. Va detto però che è l’unica del gruppo costruita per verificarsi da sola: se entro venerdì non viene pubblicato nulla, scatterà senza che accada niente, e allo stato attuale nulla è stato pubblicato. |
 
 ## Fonti consultate
 
