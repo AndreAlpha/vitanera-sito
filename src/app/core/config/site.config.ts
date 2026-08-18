@@ -580,6 +580,17 @@ export const CATEGORIES: readonly Category[] = [
     description:
       'Prezzi alla produzione al netto di alimentari ed energia: la componente meno esposta agli scossoni delle materie prime e quindi più indicativa della tendenza.',
   },
+  {
+    slug: 'prezzi-all-importazione',
+    name: 'Prezzi all’importazione e all’esportazione',
+    short: 'Import/export',
+    family: 'prezzi',
+    series: false,
+    icon: 'globe',
+    tagline: 'L’inflazione che arriva da fuori',
+    description:
+      'Indici mensili del Bureau of Labor Statistics sui prezzi dei beni scambiati con l’estero. Non sono nel calendario di questo sito, ma contano per l’oro perché sono il primo punto in cui un rincaro del greggio smette di essere una quotazione e diventa un costo interno: la componente carburanti li muove prima e più di ogni altra, e la loro parte non energetica dice quanto di quel rincaro stia davvero passando.',
+  },
 
   /* ---------------------------------------------------------- Attività -- */
   {

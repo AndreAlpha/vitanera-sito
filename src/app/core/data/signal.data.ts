@@ -179,8 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-18T09:30:00+02:00',
-  checkedAt: '2026-08-18T11:25:00+02:00',
+  updatedAt: '2026-08-18T15:20:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -245,9 +244,20 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'quindi a rialzista, e la forza resta media perché la prova è tecnica e non causale: dice che il ' +
         'metallo assorbe un costo-opportunità ai massimi da quasi vent’anni, non chi lo stia comprando. ' +
         'Il sostegno che rende possibile l’assorbimento è uno solo ed è il cambio, con il Dollar Index a ' +
-        '99,42, minimo da giugno: è quello il numero da guardare, non l’oro.',
+        '99,42, minimo da giugno: è quello il numero da guardare, non l’oro. Il pomeriggio del 18 agosto ' +
+        'aggiunge la seconda mancata trasmissione della giornata, e va contata perché è di segno opposto ' +
+        'alla prima. Alle 14:30 escono quattro dati americani e tre sono favorevoli al metallo — prezzi ' +
+        'all’importazione a meno 0,4% sul mese contro attese di più 0,1% con giugno rivisto da più 0,3% a ' +
+        'meno 0,3%, prezzi all’esportazione a meno 1,3%, avvii di costruzione a 1,239 milioni contro ' +
+        '1,34-1,35 — e nessuno dei quattro anelli della catena si forma: il biennale sale di due o tre ' +
+        'punti base invece di scendere, il decennale passa da 4,740% a circa 4,739%, il Dollar Index resta ' +
+        'a 99,63 e l’oro resta fra 4.393 e 4.395 dollari con meno 0,5%. Stamattina il prezzo non aveva ' +
+        'seguito le cause che lo spingevano giù; adesso non segue nemmeno quelle che lo spingerebbero su. ' +
+        'La direzione resta neutrale e la forza resta media proprio per questo: quando un mercato non ' +
+        'prezza né in un verso né nell’altro, la lettura da tenere è quella che dice che non sta guardando ' +
+        'lì.',
       invalidation:
-        'Un oro che chiude mercoledì 19 agosto sotto i 4.409,94 dollari della prima rilevazione della serata: direbbe che il superamento dei 4.400 è stato una punta come le due di stamattina e non una tenuta, e la direzione andrebbe riportata a neutrale con inclinazione rialzista. Oppure un decennale sopra il 4,75% entro venerdì 21 agosto: è il livello oltre il quale il costo-opportunità smette di essere assorbibile con il solo sostegno del cambio, e la forza andrebbe riportata a bassa. Resta valida anche nell’altro verso la combinazione sorvegliata da cinque letture, cioè un Brent sopra i 90 dollari con il decennale sopra il 4,695%, che porterebbe la direzione sotto il neutrale.',
+        'Un decennale che chiude sopra il 4,75% entro venerdì 21 agosto: è la soglia dichiarata il 17 agosto sera come livello oltre il quale il costo-opportunità smette di essere assorbibile con il solo sostegno del cambio, e con il rendimento a circa 4,739% manca poco più di un punto base. Porterebbe la direzione sotto il neutrale. Oppure un oro che chiude sotto i 4.381 dollari, il primo supporto indicato il 18 agosto, entro giovedì 20: aprirebbe la fascia 4.320-4.351. Nell’altro verso, un oro che recupera i 4.420 dollari entro giovedì 20 con il Brent ancora sopra i 91 e il decennale sopra il 4,70%: direbbe che i dati del pomeriggio hanno agito con ritardo e che l’assenza di reazione era un problema di orario invece che di gerarchia fra i canali, e la direzione andrebbe riportata sopra il neutrale.',
     },
     {
       horizon: 'medio',
@@ -397,9 +407,25 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'di barili al giorno sotto i livelli precedenti alla guerra, con quella russa vicina ai minimi ' +
         'ventennali. Se il collo di bottiglia è nella trasformazione e non nell’estrazione, benzina e ' +
         'gasolio possono restare cari con il Brent fermo, e la soglia dei 90 dollari usata qui come ' +
-        'interruttore fra i due canali misura meno di quanto si credesse.',
+        'interruttore fra i due canali misura meno di quanto si credesse. Il pomeriggio del 18 agosto porta ' +
+        'su questo orizzonte il primo blocco di dati dopo quattro giorni, e conferma la separazione fra i ' +
+        'due mesi invece di scioglierla. I prezzi all’importazione di luglio scendono dello 0,4% sul mese ' +
+        'contro attese di più 0,1%, con giugno rivisto da più 0,3% a meno 0,3% e la variazione annua a più ' +
+        '5,9% da più 7,1%; quelli all’esportazione scendono dell’1,3% contro attese attorno a più 0,2%, con ' +
+        'l’annuo a più 8,2% da più 10,2%. Il calo è quasi tutto energia — carburanti importati a meno 7,2% ' +
+        'sul mese, petrolio e prodotti petroliferi a meno 7,5% — e al netto dei carburanti l’indice sale ' +
+        'invece dello 0,4% sul mese e del 4,5% sull’anno. Nella stessa diffusione l’edilizia si spacca: ' +
+        'avvii di costruzione a 1,239 milioni annualizzati contro 1,34-1,35 attesi, meno 12,4% sul mese e ' +
+        'meno 13,5% sull’anno con le unifamiliari a 808.000, ma permessi a 1,443 milioni contro circa ' +
+        '1,370, più 5,0% sul mese. Alle 15:15 il calendario di questo sito registra anche la produzione ' +
+        'industriale di luglio a più 0,2% contro più 0,3% atteso, con giugno però rivisto al rialzo da più ' +
+        '0,1% a più 0,3%, quindi con un livello sopra e non sotto le attese. Nessuno dei cinque rafforza il ' +
+        'caso per un rialzo e due lo indeboliscono, ma la direzione non sale, e la ragione è la stessa da ' +
+        'una settimana: la voce che fa scendere l’indice è il carburante importato, cioè esattamente quella ' +
+        'che ad agosto sta salendo. Sono dati che misurano il mese in cui il Brent stava sotto gli 85 ' +
+        'dollari, e il mercato lo ha mostrato senza ambiguità non muovendo il decennale di un punto base.',
       invalidation:
-        'Una probabilità di rialzo a settembre che risale sopra il 33% entro venerdì 21 agosto, cioè sopra il limite superiore dell’intervallo rilevato il 17 agosto: direbbe che la distanza fra il consenso degli economisti e il prezzo di mercato si sta chiudendo dal lato sbagliato, ed è la gamba misurabile su cui questa lettura poggia adesso. Oppure una probabilità che risale sopra il 48% entro venerdì, cioè sopra il livello di lunedì 11 agosto invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
+        'Un indice dei prezzi all’importazione di agosto, in uscita a metà settembre, con la componente carburanti di nuovo in aumento sul mese dopo il meno 7,2% di luglio: è il test che la diffusione di oggi non poteva fare, e direbbe che il rientro misurato era il prezzo del greggio di luglio invece di un raffreddamento. Oppure una probabilità di rialzo a settembre che supera il 40% entro venerdì 21 agosto, cioè il livello che corrisponde a una pausa sotto il 60%: aggiungerebbe la gamba monetaria alle due già ostili, ed è la sola configurazione in cui questo archivio non ha mai visto il metallo reggere. Oppure un biennale che si porta sopra il 4,218%, il massimo del 12 agosto, dopo esserci arrivato a otto millesimi nel pomeriggio del 18: direbbe che la tensione ha smesso di essere confinata alla parte lunga ed è diventata una riprezzatura della banca centrale. Nell’altro verso, una probabilità che scende sotto il 30% entro venerdì direbbe che questo blocco è stato prezzato con ritardo, e che leggere la mancata reazione come indifferenza era sbagliato.',
     },
     {
       horizon: 'lungo',
@@ -484,119 +510,21 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   headline:
-    'Le detenzioni cinesi di Treasury al minimo dal 2008, mentre la stessa banca centrale compra oro da ventuno mesi',
+    'Quattro dati americani più morbidi delle attese, e il decennale si muove di un millesimo di punto',
   stance:
-    'Alle 09:30 del 18 agosto il dettaglio per Paese dei capitali internazionali sposta la lettura di ' +
-    'fondo e non quella dei giorni, ed è la distinzione da fare per prima. Le detenzioni estere di ' +
-    'Treasury scendono a 9,299 trilioni da 9,371, con la Cina a 633,4 miliardi — minimo dal settembre ' +
-    '2008, oltre il 13% in meno in un anno — il Giappone a 1,116 trilioni e il Regno Unito a 939,9 ' +
-    'miliardi, e gli acquisti netti su base transazionale a 6,8 miliardi contro 56,6. Accostato ai ' +
-    'ventuno mesi consecutivi di acquisti d’oro della stessa banca centrale cinese, dà le due metà ' +
-    'dello stesso scambio: finora questo archivio sapeva che cosa quella riserva comprava, non che cosa ' +
-    'lasciava. Resta un’inferenza — mesi diversi, taglie incomparabili, nessuna fonte che parli di ' +
-    'sostituzione — e le detenzioni complessive sono ancora più alte del 2,3% su base annua, quindi è un ' +
-    'raffreddamento della domanda e non una fuga. Sul breve non cambia niente rispetto al controllo delle ' +
-    '08:40: oro attorno a 4.397 dollari, decennale al 4,726%, trentennale al 5,321%, Brent sopra i 91. ' +
-    'Il conto si chiude la mattina del 18 agosto, e si chiude contro la lettura. Il Brent estende a 91,49 ' +
-    'dollari, il trentennale tocca il 5,321% — massimo dal giugno 2007 — e il metallo scende da 4.431,09 ' +
-    'della sessione asiatica a 4.391,14 con meno 0,5%, perdendo i 4.400 dopo averli tenuti una giornata. ' +
-    'La combinazione dichiarata da cinque letture aveva quindi ragione, e ha agito con un giorno di ' +
-    'ritardo. La direzione intraday scende a neutrale: non sotto, perché il movimento è di mezzo punto e ' +
-    'perché la gamba monetaria non ha ceduto — pausa a settembre ancora attorno al 65% e dollaro a 99,60, ' +
-    'salito di un decimo. Nella stessa mattina il rischio geopolitico cambia segno invece di intensità: ' +
-    'una nave è stata colpita in uscita dallo Stretto secondo la segnalazione dell’autorità marittima ' +
-    'britannica, senza che il responsabile sia identificato, i transiti di lunedì scendono a sei navi ' +
-    'senza alcuna petroliera grande né metaniera, e Trump minaccia di bombardare l’Oman, cioè ' +
-    'l’intermediario. Con il greggio sopra i 91 ogni nuovo fatto entra nel prezzo dell’oro due volte e ' +
-    'con segni opposti, e stamattina prevale quello dell’inflazione attesa.' +
-    'In serata il quadro si era chiuso su un fatto che questa scheda aveva scritto in anticipo, ed è la ragione ' +
-    'per cui la direzione intraday era salita a rialzista la sera prima. L’11 agosto era stata dichiarata la prova da chiedere ' +
-    'al metallo, in forma composta di proposito: un oro sopra i 4.400 dollari con il decennale ancora sopra ' +
-    'il 4,70%, cioè un rialzo contro il rendimento alternativo invece che grazie al suo calo. Quel giorno ' +
-    'mancò per quattordici dollari; il 12 agosto divenne ineseguibile perché il decennale scivolò sotto la ' +
-    'soglia mentre l’oro era ancora in viaggio; stamattina i 4.400 sono stati attraversati due volte e non ' +
-    'tenuti. Adesso le due gambe ci sono insieme: 4.409,94 e poi 4.426,52 dollari con più 1,2%, futures di ' +
-    'dicembre a 4.484,10, decennale al 4,70% e trentennale al 5,29%. Sul trentennale va però tolta ' +
-    'l’enfasi: il 5,28% era già stato registrato qui il 10 e l’11 agosto, quindi un punto base sopra non è ' +
-    'un livello nuovo ma lo stesso livello che dura. La novità sta nell’altra metà del confronto. Nuova è ' +
-    'invece una gamba della spiegazione riportata sulla parte lunga — accanto alle prospettive fiscali e ' +
-    'all’offerta di debito compare la forte emissione di obbligazioni societarie legata agli investimenti ' +
-    'in intelligenza artificiale — e conta perché è domanda privata di capitale, che non risponde a ' +
-    'decisioni di bilancio. Il sostegno che rende possibile l’assorbimento è uno solo, il cambio: Dollar ' +
-    'Index a 99,42, minimo da giugno. Restano fuori dal conto due elementi dichiarati come tali: il ritorno ' +
-    'della domanda istituzionale è un’inferenza di analisti e non un dato, e i colloqui del segretario ' +
-    'all’Energia con le raffinerie sono un’iniziativa e non un aumento di produzione osservato. ' +
-    'La sera del 17 agosto arrivano due diffusioni americane sopra le attese e la curva non le prezza, ed è ' +
-    'quello il fatto da registrare. L’Empire State di agosto esce a 20,6 contro 10,6 attesi e 15,6 di ' +
-    'luglio, massimo da oltre quattro anni, con i prezzi pagati in salita a 58,6 da 52,3; il NAHB sale a ' +
-    '35 contro 33 attesi. Il biennale resta però attorno al 4,155% e il decennale al 4,681%, entrambi ' +
-    'leggermente più bassi in giornata, e la probabilità di un rialzo a settembre è ferma attorno al 33% ' +
-    'contro il 51,2% di un mese fa. Quando un prezzo rifiuta di seguire la notizia che dovrebbe muoverlo, ' +
-    'l’informazione sta nel rifiuto. Accanto arriva la spiegazione materiale della gamba energetica: ' +
-    'Reuters riferisce che Saudi Aramco sta trattando carichi di settembre da consegnare con trasferimenti ' +
-    'nave-nave al largo di Fujairah, così che i compratori non mandino le proprie petroliere attraverso lo ' +
-    'Stretto, e che ADNOC ha collocato almeno quattordici milioni di barili spot a raffinerie asiatiche. ' +
-    'Se il barile passa e la petroliera del compratore no, il conteggio dei transiti continua a misurare ' +
-    'il traffico ma smette di misurare la scarsità — ed è la ragione per cui il Brent resta a 88,95 ' +
-    'dollari con Hormuz quasi fermo. Con una cautela che vale quanto la notizia: quello di Aramco è un ' +
-    'negoziato riferito da un’agenzia e non un atto della compagnia, e il percorso del greggio fino a ' +
-    'Fujairah non è documentato. ' +
-    'Il fatto nuovo del pomeriggio va classificato prima di essere pesato, perché la classificazione decide ' +
-    'quanto vale. Un alto funzionario iraniano non nominato dice a Reuters che Teheran è pronta a una ' +
-    'risposta militare «tempestiva e precisa» e a passare da una postura difensiva a una offensiva se ' +
-    'Washington continuerà il blocco navale, e fissa un termine di alcune settimane per vedere progressi. ' +
-    'È una posizione dichiarata, cioè la categoria che in questa fase si è mossa decine di volte senza mai ' +
-    'spostare il conteggio dei transiti né il prezzo del barile — e infatti il Brent è a 88,95 dollari con ' +
-    'più 0,5%, sotto gli 89,40 già toccati in giornata, con il WTI a 82,65. Il precedente esatto è in ' +
-    'archivio: il 6 agosto una minaccia iraniana più specifica, con i bersagli indicati, coincise con un ' +
-    'Brent che scendeva a 79,08 dollari. La parte davvero nuova è il termine, perché è l’unico pezzo di ' +
-    'una posizione dichiarata che produce un fatto verificabile a una data. Nello stesso pomeriggio arriva ' +
-    'l’elemento con il fondamento più solido, e non è geopolitico: il sondaggio Reuters del 12-17 agosto ' +
-    'dà la grande maggioranza degli economisti sulla Fed ferma al 3,50-3,75% per tutto il resto del 2026, ' +
-    'contro un prezzo di mercato ancora al 30-33% di probabilità di rialzo a settembre. Sull’oro il ' +
-    'quadro intraday si è intanto sgonfiato: dai 4.400,15 delle 11:45 la rilevazione Reuters è scesa a ' +
-    'circa 4.388 con più 0,3%, con Investing fra 4.389 e 4.404. I 4.400 sono stati attraversati due volte ' +
-    'in una giornata e non tenuti nessuna delle due. ' +
-    'Il controllo delle 11:45 resta valido nella sua parte diagnostica: il quadro reggeva e non c’era un fatto nuovo da mettere in ' +
-    'archivio. L’oro ha raggiunto i 4.400,15 dollari con più 0,6%, con i futures di dicembre a 4.456,50, ' +
-    'quindi la soglia dichiarata stamattina è stata toccata; ma è stata toccata per quindici centesimi, ed ' +
-    'è un livello che questo archivio ha classificato l’11 agosto come punto di attrazione invece che come ' +
-    'muro. Tutto il resto è fermo: biennale a 4,155%, decennale a 4,681%, probabilità di un rialzo a ' +
-    'settembre attorno al 29% contro il 30% di due ore fa, Brent che tocca di nuovo 89,40 e tratta a ' +
-    '89,28, conteggio dei transiti a Hormuz identico a quello del fine settimana. Nessuna diffusione ' +
-    'macroeconomica è uscita: la prossima è l’indice dei prezzi all’import e all’export di luglio, martedì ' +
-    '18 agosto alle 14:30, e i verbali del FOMC del 28-29 luglio arrivano mercoledì. La quotazione si è ' +
-    'quindi mossa nella direzione già descritta senza che sia cambiata la ragione per cui si muove, ed è il ' +
-    'caso in cui questa scheda si aggiornava e l’archivio no — e quel giudizio ha retto fino al pomeriggio, ' +
-    'quando è arrivata una dichiarazione con una data attaccata. ' +
-    'La prima quotazione liquida dopo tre giorni di mercati chiusi è la cosa più informativa di tutta la ' +
-    'settimana, e va detta senza addolcirla: sette fatti geopolitici su quattro fronti hanno prodotto ' +
-    'un’apertura dell’oro tre dollari e mezzo sotto la chiusura di venerdì. Il premio che questo archivio ' +
-    'ha descritto accumularsi non esisteva all’apertura. Il rialzo è arrivato dopo — 4.391,07 con più 0,4% ' +
-    'e futures di dicembre a 4.448,10 — e non dal canale geopolitico: il biennale è a 4,156% con meno due ' +
-    'punti base, il decennale a 4,684% con meno uno e sotto la chiusura di venerdì, il dollaro a 99,52, e la ' +
-    'probabilità di un rialzo a settembre è attorno al 30% contro circa il 47% di un mese fa. Nello stesso ' +
-    'tempo il Brent è salito fino a 89,40 dollari: petrolio in rialzo e rendimenti in calo insieme, cioè le ' +
-    'due gambe della combinazione sorvegliata da cinque letture si sono separate, e per una volta dal lato ' +
-    'giusto. Sul fondo il vincolo peggiora nella forma affidabile — trentuno transiti a Hormuz nel fine ' +
-    'settimana precedente, cinque sabato, nessuno registrato domenica — e si assottiglia anche il Bab ' +
-    'el-Mandeb, con quarantanove transiti contro cinquantacinque e nessuna spedizione petrolifera saudita ' +
-    'tracciata. La sintesi è che il metallo sta salendo sul canale americano mentre quello geopolitico ' +
-    'peggiora senza essere prezzato. Il quadro dei giorni precedenti resta questo: ' +
-    'due giorni di mercati chiusi hanno prodotto sei fatti geopolitici, e il modo utile di ordinarli non è ' +
-    'per gravità ma per canale. Uno solo ha toccato i barili: la sospensione dei carichi a Sheskharis, ' +
-    'venerdì, ancora aperta e senza conferma di ripresa — e resta l’unica, perché Reuters ha precisato ' +
-    'che a Ust-Luga le esportazioni di petrolio non si sono mai fermate. Tutti gli altri no: la terza ' +
-    'nave ADNOC colpita nello Stretto, gli sversamenti nel Golfo, la chiusura del porto di Mocha, undici ' +
-    'morti nel sud del Libano, e nella notte fra sabato e domenica una delle più vaste incursioni aeree ' +
-    'della guerra sul territorio russo, con raid russi su Kyiv nelle stesse ore e nessun bersaglio ' +
-    'energetico fra gli obiettivi. Nella direzione opposta si muovono due compratori: la Turchia che ha ' +
-    'sostituito il greggio russo del Mar Nero con Brasile e Guyana, e l’India che ha imposto alle ' +
-    'raffinerie obiettivi di produzione di GPL per accumulare scorte. Le opzioni americane di pressione ' +
-    'sull’Iran ricostruite oggi restano fuori dal conto perché nessuna è pubblicata. Gli ultimi ' +
-    'riferimenti con liquidità dietro sono le chiusure di venerdì: oro a 4.376,59 dollari con più 0,59%, ' +
-    'Brent a 88,60, decennale a 4,695% con un massimo a 4,701%, trentennale a 5,261%, probabilità di un ' +
-    'rialzo a settembre al 31,6%.',
+    'Alle 14:30 del 18 agosto escono quattro dati americani e tre vanno nello stesso verso: prezzi ' +
+    'all’importazione a meno 0,4% sul mese contro attese di più 0,1%, con giugno rivisto da più 0,3% a ' +
+    'meno 0,3% e l’annuo a più 5,9% da più 7,1%; prezzi all’esportazione a meno 1,3% contro circa più ' +
+    '0,2%; avvii di costruzione a 1,239 milioni annualizzati contro 1,34-1,35, meno 12,4% sul mese. In ' +
+    'senso opposto i permessi edilizi salgono a 1,443 milioni contro circa 1,370, e alle 15:15 la ' +
+    'produzione industriale esce a più 0,2% contro più 0,3% ma con giugno rivisto al rialzo di due ' +
+    'decimi. Il punto della giornata non è però il segno dei dati: è che il mercato non li ha prezzati. ' +
+    'Il biennale sale di due o tre punti base, il decennale passa da 4,740% a circa 4,739%, il ' +
+    'trentennale resta al 5,327% — massimo da diciannove anni — il Dollar Index resta a 99,63 e l’oro ' +
+    'resta fra 4.393 e 4.395 dollari con meno 0,5%. La ragione sta nel mese: il calo dei prezzi ' +
+    'all’importazione è quasi tutto carburante, a meno 7,2%, cioè la voce che ad agosto sta andando nel ' +
+    'verso opposto con il Brent sopra i 91 dollari. Sono dati che misurano una finestra chiusa, e la ' +
+    'finestra aperta la parte lunga della curva la sta prezzando da sola.',
   favours: [
     'Chiedere quanto spesso accade prima di chiedere quanto sia grave: l’abbattimento del drone sulla Romania è il quarto episodio del 2026, e la frequenza ridimensiona un fatto che la sola gravità farebbe sembrare inedito. Il tasso di base va cercato prima della reazione, non dopo',
     'Ricordare che una deterrenza che funziona sottrae premio invece di aggiungerlo: la procedura di sorveglianza aerea ha rilevato, intercettato e abbattuto senza vittime e senza reazioni dell’Alleanza, e questo rende meno probabile l’evento da cui ci si ripara. È il verso contro-intuitivo già annotato sul patto della Mecca, applicato al caso rovesciato',
@@ -624,6 +552,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'Il blocco delle 14:30 non rafforza il caso per un rialzo e in due punti lo indebolisce: prezzi ' +
+      'all’importazione di luglio a meno 0,4% sul mese contro attese di più 0,1%, con giugno rivisto da ' +
+      'più 0,3% a meno 0,3% e la variazione annua a più 5,9% da più 7,1%; prezzi all’esportazione a ' +
+      'meno 1,3% contro circa più 0,2%, con l’annuo a più 8,2% da più 10,2%',
+    'Il canale su cui i tassi alti mordono per primi continua a cedere: avvii di costruzione a 1,239 ' +
+      'milioni annualizzati contro 1,34-1,35 attesi, meno 12,4% sul mese e meno 13,5% sull’anno, con le ' +
+      'unifamiliari a 808.000 e meno 15,7% su base annua, e il mese precedente rivisto da 1,427 a 1,415 ' +
+      'milioni',
     'Alle 11:25 del 18 agosto il metallo non ha seguito il proprio meccanismo, ed è la ragione per cui ' +
       'la direzione non scende: XAU/USD è a 4.397,42 dollari con meno 0,4%, sei dollari sopra la ' +
       'rilevazione delle 08:40, mentre il decennale saliva a circa 4,740% e il trentennale a 5,327%. Il ' +
@@ -680,6 +616,19 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'La trasmissione non è avvenuta in nessuno dei quattro anelli, ed è il fatto della giornata: il ' +
+      'biennale sale di due o tre punti base invece di scendere, il decennale passa da 4,740% a circa ' +
+      '4,739%, il Dollar Index resta a 99,63 e l’oro resta fra 4.393 e 4.395 dollari con meno 0,5%. Un ' +
+      'blocco favorevole che non muove la scadenza su cui la banca centrale si prezza non è stato ' +
+      'prezzato',
+    'Il calo dei prezzi all’importazione è quasi tutto una voce sola e riguarda il mese sbagliato: ' +
+      'carburanti importati a meno 7,2% sul mese e petrolio e prodotti petroliferi a meno 7,5%, mentre ' +
+      'al netto dei carburanti l’indice sale dello 0,4% sul mese e del 4,5% sull’anno. La componente ' +
+      'che scende è quella che ad agosto sta salendo',
+    'Due dati vanno nel verso opposto al blocco: permessi edilizi a 1,443 milioni contro circa 1,370 ' +
+      'attesi, più 5,0% sul mese con le unifamiliari a 894.000, e produzione industriale di luglio a ' +
+      'più 0,2% contro più 0,3% ma con giugno rivisto al rialzo da più 0,1% a più 0,3%, quindi con il ' +
+      'livello sopra e non sotto le attese',
     'Il decennale è a un punto base dal 4,75%, la soglia dichiarata il 17 agosto sera come livello ' +
       'oltre il quale il costo-opportunità smette di essere assorbibile con il solo sostegno del cambio: ' +
       'circa 4,740% alle 11:25, ed è la distanza più corta mai registrata da questa tacca. Il ' +
@@ -1029,21 +978,21 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.16,
-      display: '≈ 4,16%',
+      now: 4.21,
+      display: '≈ 4,21%',
       marks: [
         {
           at: 4.25,
           display: '4,25%',
           kind: 'invalida',
-          note: 'è la seconda metà della regola del 5 agosto: sopra questo livello, con il Brent oltre gli 84, il canale dei tassi torna a lavorare contro il metallo e la lettura decade. È la scadenza che non si muove mentre la parte lunga va ai massimi da vent’anni',
+          note: 'è la seconda metà della regola del 5 agosto: sopra questo livello, con il Brent oltre gli 84, il canale dei tassi torna a lavorare contro il metallo e la lettura decade. Era la scadenza che non si muoveva mentre la parte lunga andava ai massimi da vent’anni, e il pomeriggio del 18 agosto quella descrizione smette di valere: il biennale sale di due o tre punti base a circa 4,21% su un blocco di dati favorevoli al metallo, cioè nel verso opposto, e arriva a otto millesimi dal 4,218% del 12 agosto',
         },
       ],
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.74,
-      display: '4,740%',
+      now: 4.739,
+      display: '≈ 4,739%',
       marks: [
         {
           at: 4.68,
@@ -1061,14 +1010,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 4.75,
           display: '4,75%',
           kind: 'invalida',
-          note: 'è la soglia dichiarata il 17 agosto sera: il livello oltre il quale il costo-opportunità smette di essere assorbibile con il solo sostegno del cambio. Con il decennale a circa 4,740% alle 11:25 del 18 agosto la distanza si riduce a un punto base, la più corta mai registrata da questa tacca. Resta la prima ancora davanti al prezzo, e non è scattata: la lettura non si muove finché il livello non viene superato',
+          note: 'è la soglia dichiarata il 17 agosto sera: il livello oltre il quale il costo-opportunità smette di essere assorbibile con il solo sostegno del cambio. Con il decennale a circa 4,740% alle 11:25 del 18 agosto la distanza si riduce a un punto base, la più corta mai registrata da questa tacca. Resta la prima ancora davanti al prezzo, e non è scattata: la lettura non si muove finché il livello non viene superato. Alle 15:20, dopo quattro diffusioni americane più morbide delle attese, il rendimento è a circa 4,739%: la distanza non si è mossa di un millesimo, ed è la misura più pulita della mancata trasmissione',
         },
       ],
     },
     {
       label: 'Dollar Index',
-      now: 99.6,
-      display: '≈ 99,60',
+      now: 99.63,
+      display: '≈ 99,63',
       marks: [
         {
           at: 99.795,
@@ -1105,8 +1054,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4397.42,
-      display: '4.397,42 $',
+      now: 4394,
+      display: '≈ 4.394 $',
       marks: [
         {
           at: 4376.59,
@@ -1130,9 +1079,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'il-greggio-di-luglio-esce-dai-prezzi-quello-di-agosto-no',
     'pechino-scende-sul-debito-americano-e-sale-sull-oro',
     'una-nave-colpita-a-hormuz-e-l-oro-scende',
-    'la-combinazione-si-forma-e-l-oro-sale-lo-stesso',
   ],
 };
 

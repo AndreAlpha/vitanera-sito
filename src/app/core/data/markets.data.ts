@@ -17,6 +17,42 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'PREZZI IMPORT',
+    name: 'Indice dei prezzi all’importazione statunitense, luglio 2026',
+    value: '−0,4% m/m',
+    change: 'atteso +0,1%; giugno rivisto da +0,3% a −0,3%; annuo a +5,9% da +7,1%',
+    tone: 'bull',
+    icon: 'globe',
+    note: 'È la diffusione più favorevole al metallo del blocco delle 14:30, e insieme quella che spiega perché il metallo non si sia mosso. Il calo è quasi tutto una voce sola: carburanti importati a meno 7,2% sul mese e petrolio e prodotti petroliferi a meno 7,5%. Al netto dei carburanti l’indice sale invece dello 0,4% sul mese e del 4,5% sull’anno, e i beni esclusi alimentari e carburanti dello 0,3%. La componente che fa scendere il dato di luglio è esattamente quella che ad agosto sta salendo, con il Brent sopra i 91 dollari: il numero misura una finestra chiusa. I prezzi all’esportazione confermano il quadro nella stessa direzione, a meno 1,3% sul mese contro attese attorno a più 0,2% e a più 8,2% sull’anno da più 10,2%, con i non agricoli a meno 1,5% e gli agricoli a più 1%.',
+  },
+  {
+    symbol: 'EDILIZIA 18/8',
+    name: 'Nuove costruzioni residenziali statunitensi, luglio 2026',
+    value: 'Avvii 1,239 mln',
+    change: 'contro 1,34-1,35 attesi, −12,4% m/m; permessi 1,443 mln contro ≈ 1,370, +5,0%',
+    tone: 'warn',
+    icon: 'layers',
+    note: 'Il blocco si spacca in due, e le due metà dicono cose diverse sullo stesso mercato. Gli avvii di costruzione crollano a 1,239 milioni annualizzati, meno 12,4% sul mese e meno 13,5% sull’anno, con le unifamiliari a 808.000 e meno 9,9%, ossia meno 15,7% rispetto a dodici mesi prima; il mese precedente è stato rivisto da 1,427 a 1,415 milioni. È il punto in cui il costo del denaro smette di essere un tasso dichiarato e diventa una transazione che non avviene. I permessi vanno però nel verso opposto e in modo netto, a 1,443 milioni contro circa 1,370 attesi e 1,374 rivisti al rialzo da 1,367, più 5,0% sul mese, con le unifamiliari a 894.000 e più 2,5%. L’attività corrente è debolissima e le autorizzazioni per il futuro migliorano: il blocco non si può contare né come una conferma piena della debolezza né come una smentita.',
+  },
+  {
+    symbol: 'PRODUZIONE IND.',
+    name: 'Produzione industriale statunitense, luglio 2026',
+    value: '+0,2% m/m',
+    change: 'atteso +0,3%; giugno rivisto al rialzo da +0,1% a +0,3%; annuo fermo a +1,1%',
+    tone: 'warn',
+    icon: 'factory',
+    note: 'Uscita alle 15:15, quarantacinque minuti dopo il resto del blocco, e registrata dal calendario economico di questo sito rigenerato alle 15:21: il controllo che ha generato l’analisi la dava ancora come attesa. La sorpresa al ribasso è di un decimo, ma la revisione del mese precedente vale due decimi al rialzo, quindi il livello di luglio risulta più alto e non più basso di quello che ci si attendeva prima della diffusione. È l’unico dato della giornata che, letto sul livello invece che sulla variazione, contraddice il blocco, ed è anche l’unico la cui provenienza qui è di seconda mano: va confrontato con il comunicato originale prima di caricarlo di significato.',
+  },
+  {
+    symbol: 'NESSUNA REAZIONE',
+    name: 'Movimento del decennale statunitense fra le 11:25 e le 15:20 del 18 agosto',
+    value: '4,740% → 4,739%',
+    change: 'un millesimo di punto in quattro ore e quattro diffusioni americane',
+    tone: 'bear',
+    icon: 'arrow-flat',
+    note: 'È la misura più pulita disponibile di quello che è successo davvero oggi pomeriggio, e vale più del segno dei singoli dati. La catena che ci si aspetterebbe ha quattro anelli — dati più morbidi delle attese, rendimenti in calo, dollaro in calo, metallo in rialzo — e non se n’è formato nessuno: il biennale, che è la scadenza dove una riprezzatura della banca centrale si vede per prima, è salito di due o tre punti base a circa 4,21% invece di scendere, arrivando a otto millesimi dal massimo del 12 agosto; il decennale si è mosso di un millesimo; il trentennale è rimasto al 5,327%, massimo da diciannove anni; il Dollar Index è rimasto a 99,63 e l’oro fra 4.393 e 4.395 dollari, ancora a meno 0,5% sulla giornata. Quando un prezzo non segue la notizia che dovrebbe muoverlo l’informazione sta nel rifiuto, e il rifiuto di oggi dice che il mercato non sta prezzando i dati americani di luglio.',
+  },
+  {
     symbol: 'DETENZIONI ESTERE',
     name: 'Detenzioni estere di titoli del Tesoro americano, giugno 2026, con il dettaglio per Paese',
     value: 'Cina 633,4 mld $',

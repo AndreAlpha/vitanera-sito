@@ -11,7 +11,7 @@
  */
 import { Cadence, Release, Stage } from '../models/calendar.model';
 
-export const CALENDAR_GENERATED_AT = '2026-08-18T09:25Z';
+export const CALENDAR_GENERATED_AT = '2026-08-18T13:21Z';
 
 type Row = readonly [
   at: string,
@@ -1948,6 +1948,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
   'usa/produzione-industriale': {
     cadence: 'mensile',
     releases: r([
+      ['2026-08-18T13:15Z', 'luglio 2026', null, 1.1, 1.1],
       ['2026-07-17T13:15Z', 'giugno 2026', null, 1.1, 1.6],
       ['2026-06-15T13:15Z', 'maggio 2026', null, 1.7, 1.4],
       ['2026-05-15T13:15Z', 'aprile 2026', null, 1.4, 0.76],
@@ -2067,19 +2068,13 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2016-11-16T14:15Z', 'ottobre 2016', null, -0.9, -1],
       ['2016-10-17T13:15Z', 'settembre 2016', null, -1, -1.3],
       ['2016-09-15T13:15Z', 'agosto 2016', null, -1.1, -0.5],
-      ['2016-08-16T13:15Z', 'luglio 2016', null, -0.5, -0.7],
     ]),
-    next: {
-      at: '2026-08-18T13:15Z',
-      period: 'luglio 2026',
-      forecast: null,
-      actual: null,
-      previous: 1.1,
-    },
+    next: null,
   },
   'usa/variazione-produzione-industriale': {
     cadence: 'mensile',
     releases: r([
+      ['2026-08-18T13:15Z', 'luglio 2026', 0.3, 0.2, 0.3],
       ['2026-07-17T13:15Z', 'giugno 2026', 0.2, 0.1, 0.1],
       ['2026-06-15T13:15Z', 'maggio 2026', 0.3, 0.1, 0.9],
       ['2026-05-15T13:15Z', 'aprile 2026', 0.3, 0.7, -0.3],
@@ -2199,15 +2194,8 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2016-11-16T14:15Z', 'ottobre 2016', 0.2, 0, -0.2],
       ['2016-10-17T13:15Z', 'settembre 2016', 0.2, 0.1, -0.5],
       ['2016-09-15T13:15Z', 'agosto 2016', -0.3, -0.4, 0.6],
-      ['2016-08-16T13:15Z', 'luglio 2016', 0.3, 0.7, 0.4],
     ]),
-    next: {
-      at: '2026-08-18T13:15Z',
-      period: 'luglio 2026',
-      forecast: 0.3,
-      actual: null,
-      previous: 0.1,
-    },
+    next: null,
   },
   'usa/pil': {
     cadence: 'trimestrale',

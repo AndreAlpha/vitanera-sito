@@ -126,6 +126,14 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     related: ['Aspettative di inflazione', 'Brent', 'Rendimento reale'],
   },
   {
+    term: 'Inflazione importata',
+    letter: 'I',
+    definition:
+      'La parte dei prezzi interni che dipende da quanto costa ciò che si compra all’estero, misurata negli Stati Uniti dagli indici mensili dei prezzi all’importazione del Bureau of Labor Statistics. La componente dei carburanti la muove prima e più di ogni altra, tanto che l’indice complessivo e quello al netto dei carburanti possono avere segno opposto nello stesso mese.',
+    why: 'È il primo punto in cui un rincaro del greggio smette di essere una quotazione e diventa un costo interno, quindi è l’anello che collega il petrolio ai rendimenti che l’oro deve battere. Va letta guardando due cose insieme: il segno complessivo dice che cosa è successo al barile, la parte al netto dei carburanti dice quanto di quel movimento sia davvero un fenomeno di prezzi diffuso. E va letta guardando il mese, perché un indice arriva con tre settimane di ritardo e può descrivere una finestra che il mercato ha già chiuso.',
+    related: ['Effetto base', 'Aspettative di inflazione', 'Brent'],
+  },
+  {
     term: 'Premio a termine',
     letter: 'P',
     definition:

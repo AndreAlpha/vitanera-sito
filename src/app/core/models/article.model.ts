@@ -86,6 +86,7 @@ export type EditorialCategorySlug =
   | 'debito-pubblico'
   | 'dazi-e-commercio'
   // Dati americani che il calendario non copre
+  | 'prezzi-all-importazione'
   | 'fiducia-michigan'
   | 'ism'
   | 'jolts'

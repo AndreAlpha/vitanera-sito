@@ -30,8 +30,10 @@ fonti:
     titolo: "Monitor sui tassi Fed su futures CME, e quotazioni"
   - testata: "Federal Reserve"
     titolo: "Comunicato del FOMC del 29 luglio 2026"
+esito: "parziale"
+controllata: "2026-08-18T15:20:00+02:00"
 sorgente: "src/app/core/data/articles/la-fed-esce-dal-prezzo-e-il-petrolio-non-era-nel-dato.ts"
-impronta: "4a4c10ab098bc37d"
+impronta: "55eeecf6b15b4aa0"
 ---
 
 # La Fed esce dal prezzo, e il petrolio non era nel dato
@@ -144,6 +146,22 @@ Alta sui fatti, e questa volta senza riserve: l’indice dei prezzi è una diffu
 Impostazione su XAU/USD: neutrale-rialzista, forza media, orizzonte medio.
 
 La scadenza a due anni si è mossa per la prima volta in sei giorni, e lo ha fatto verso il basso: 4,180% con meno 3,8 punti base, portandosi dietro la probabilità di un rialzo a settembre, scesa al 37,7% dal 52% del 10 agosto. La ragione dichiarata allora per abbassare questa lettura era proprio quel numero sopra la metà, e la condizione scritta per uscirne — un rientro sotto il 50% dopo l’indice dei prezzi — è scattata. La direzione risale quindi per una soglia dichiarata in anticipo e non per una rilettura. La forza sale a media perché anche il motivo dato per tenerla bassa è decaduto: era che il biennale non confermava nulla, e adesso conferma. Non sale oltre perché il canale energetico non è stato messo alla prova da questa diffusione e nel frattempo si è irrigidito: il Brent ha toccato 90,06 dollari stamattina e l’agenzia internazionale ha tagliato ancora l’offerta mondiale attesa nel 2026.
+
+## Come è andata
+
+Verdetto: **parziale**, controllata il 2026-08-18T15:20:00+02:00.
+
+Una condizione su cinque, ed è quella che riguardava la parte lunga della curva invece della banca centrale. Sugli altri quattro fronti la lettura ha retto per intero: la probabilità di un rialzo a settembre non è mai risalita e due giorni dopo era al 29,3%, l’oro ha chiuso la settimana a 4.376,59 dollari sopra la soglia dichiarata, il biennale è rimasto sotto il proprio massimo per quattro sedute, e il test sull’indice di agosto non è ancora arrivato a scadenza. Il conto va però letto guardando quale metà ha ceduto. L’analisi separava esplicitamente due canali — la banca centrale, che stava uscendo dal prezzo, e la parte lunga, dove la tensione non era rientrata — e scriveva che il secondo avrebbe potuto rimettere i rendimenti contro il metallo a prescindere dal primo. È esattamente quello che è successo nei sei giorni seguenti: il trentennale è passato dal 5,213% del 13 agosto al 5,327% del 18, massimo da diciannove anni, e l’oro ha perso i 4.400 dollari con la probabilità di una pausa a settembre ancora attorno al 65%. La sola condizione scattata non era un dettaglio tecnico su un collocamento: era la porta da cui è entrato tutto il resto.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Una probabilità di rialzo a settembre che risale sopra il 48% entro venerdì, cioè sopra il livello di ieri mattina invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. | no | Il termine era venerdì 14 agosto. La probabilità di un rialzo a settembre è scesa al 33,0% nella mattina del 14 e poi al 29,3% dopo le vendite al dettaglio a meno 0,6%, minimo di questa fase, senza mai riavvicinare il 48%. Il crollo del 12 agosto era quindi una riprezzatura e non la reazione di mezz’ora al titolo. |
+| Un biennale che torna sopra il 4,218%, il massimo di questa giornata: annullerebbe l’unico movimento che questa lettura usa come prova, e la misura scelta l’11 agosto tornerebbe a non dire niente. | no | Non scattata, ed è la condizione arrivata più vicina allo scatto in tutto il registro. Dopo il 4,119% del 14 agosto e i 4,155-4,16% del 17 e del 18 mattina, il biennale è risalito a circa 4,21% nel pomeriggio del 18: otto millesimi di punto sotto la soglia. La distanza è passata da dieci punti base a meno di uno senza che la condizione si chiudesse. |
+| Un oro spot che chiude la settimana sotto i 4.362,57 dollari, il minimo di oggi: direbbe che il balzo dopo il dato era una reazione di giornata e non un cambio di configurazione. | no | Chiusura di venerdì 14 agosto a 4.376,59 dollari con più 0,59%, quattordici dollari sopra la soglia, in guadagno sulla giornata e sulla settimana dopo un massimo di 4.396,88. Il balzo seguito al dato non è stato restituito entro la settimana. |
+| Un’asta del decennale stasera alle 19:00 che si aggiudica sopra il quotato pre-asta invece che sotto: la parte lunga della curva è dove la tensione non è rientrata, e un collocamento debole rimetterebbe i rendimenti contro il metallo a prescindere dalla Fed. | sì | Scattata la sera stessa. Il collocamento del decennale si è aggiudicato al 4,683%, sopra il 4,673% a cui il titolo scambiava sul secondario in quel momento, e dieci punti base e mezzo sopra l’asta di luglio. L’analisi aveva dichiarato che il quotato esatto alla chiusura delle offerte non era disponibile e che il secondario ne era il sostituto migliore: con quel metro l’aggiudicazione è arrivata sopra il mercato, ed è il titolo che questo archivio diede alla lettura mezz’ora dopo. |
+| Un indice dei prezzi di agosto, in uscita a settembre, con la componente energetica in aumento su base mensile: è il test che quello di oggi non poteva fare, ed è il solo modo di sapere se le due revisioni delle agenzie energetiche stanno entrando nei prezzi al consumo. | no | L’indice dei prezzi al consumo di agosto esce a metà settembre e non è disponibile. La misura più vicina arrivata da allora sono i prezzi all’importazione di luglio, pubblicati il 18 agosto, che vanno nel verso opposto — carburanti importati a meno 7,2% sul mese, petrolio e prodotti petroliferi a meno 7,5% — ma riguardano di nuovo luglio, cioè lo stesso mese che questa condizione dichiarava insufficiente. Non la scioglie e non la fa scattare. |
+
+**Che cosa cambia.** Il conteggio delle condizioni misura anche come sono state distribuite, non solo come è andata. Qui quattro condizioni su cinque stavano sul canale monetario e una sola sulla parte lunga: un esito di una su cinque si legge come «quasi tutta giusta», mentre il canale con una condizione sola è quello che ha poi deciso la settimana. Quando un’analisi dichiara due meccanismi, le condizioni vanno ripartite fra i due invece che concentrate su quello che si conosce meglio, altrimenti il registro assegna il punteggio all’attenzione dell’autore e non alla sua tesi.
 
 ## Fonti consultate
 
