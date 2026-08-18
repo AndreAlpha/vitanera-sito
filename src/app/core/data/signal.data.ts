@@ -179,12 +179,12 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-17T19:20:00+02:00',
+  updatedAt: '2026-08-18T08:40:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
-      direction: 'rialzista',
+      direction: 'neutrale',
       strength: 'media',
       regime:
         'La prima seduta liquida dopo tre giorni di mercati chiusi ha risposto a due domande, e le due ' +
@@ -207,7 +207,15 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'macroeconomica. Nove dollari sul metallo contro tre millesimi di punto sul decennale: la ' +
         'separazione fra greggio e curva regge — Brent di nuovo a 89,40 e poi 89,28, WTI a 81,74 — ma il ' +
         'canale monetario sta fermo mentre il prezzo sale, e questo è un rialzo che si allontana dalla ' +
-        'propria spiegazione invece di avvicinarvisi. Nel pomeriggio il dubbio si scioglie dal lato ' +
+        'propria spiegazione invece di avvicinarvisi. La mattina del 18 agosto la direzione scende a ' +
+        'neutrale, e il meccanismo che la fa scendere è quello dichiarato da cinque letture: il Brent ha ' +
+        'chiuso a 90,87 e ha esteso a 91,49, il decennale ha superato il 4,695% chiudendo al 4,712% e sta ' +
+        'ora al 4,726%, il trentennale ha toccato il 5,321%, e il metallo è passato da 4.431,09 della ' +
+        'sessione asiatica a 4.391,14. La clausola era scritta bene e ha agito con un giorno di ritardo. ' +
+        'Non scende sotto il neutrale per due ragioni misurabili: il movimento è di mezzo punto ' +
+        'percentuale, e la gamba monetaria non ha ceduto — pausa a settembre attorno al 65%, dollaro a ' +
+        '99,60 dopo un rialzo di un decimo, biennale fermo attorno al 4,16%. Il caso pienamente ' +
+        'sfavorevole richiede che ceda anche quella. Nel pomeriggio il dubbio si scioglie dal lato ' +
         'previsto: la rilevazione Reuters delle 16:45 dà l’oro attorno a 4.388 dollari con più 0,3%, con ' +
         'Investing fra 4.389 e 4.404. I 4.400 sono stati attraversati due volte in una giornata e non ' +
         'tenuti nessuna delle due, che è il comportamento tipico di un livello tondo su cui si accumulano ' +
@@ -360,7 +368,23 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'ADNOC ha collocato almeno quattordici milioni di barili spot a raffinerie asiatiche. È il primo ' +
         'meccanismo che spiega perché il Brent resti sotto i 90 dollari con i transiti quasi azzerati, e ' +
         'va contato in due sensi: toglie il rischio di coda di un greggio che spinge i rendimenti contro ' +
-        'il metallo, e toglie insieme una parte del premio che oggi lo sostiene.',
+        'il metallo, e toglie insieme una parte del premio che oggi lo sostiene. Fra la sera del 17 e la ' +
+        'mattina del 18 agosto quella valvola smette di contenere: il Brent chiude a 90,87 dollari e ' +
+        'estende a 91,49, cioè supera la soglia dichiarata il giorno prima come prova che le consegne ' +
+        'fuori dallo Stretto stessero funzionando. Sull’orizzonte dei giorni il quadro cambia quindi in ' +
+        'un punto solo ma decisivo: la combinazione sorvegliata da cinque letture — Brent sopra i 90 con ' +
+        'il decennale sopra il 4,695% — si è formata su due chiusure e ha prodotto la sua conseguenza, ' +
+        'con il metallo sotto i 4.400. Il premio di rischio non è aumentato di intensità, ha cambiato ' +
+        'canale: con il greggio oltre i 91 ogni fatto geopolitico entra due volte nel prezzo dell’oro, e ' +
+        'quello dell’inflazione attesa sta prevalendo su quello del rifugio. La direzione sui giorni resta ' +
+        'sopra il neutrale soltanto perché la scadenza che prezza la banca centrale non si è mossa — ' +
+        'biennale attorno al 4,16%, pausa a settembre attorno al 65% — ed è l’ultima delle tre gambe a ' +
+        'reggere. Va aggiunto un vincolo che il solo prezzo del greggio non cattura: l’agenzia ' +
+        'internazionale per l’energia stima la capacità di raffinazione mediorientale ancora 2,2 milioni ' +
+        'di barili al giorno sotto i livelli precedenti alla guerra, con quella russa vicina ai minimi ' +
+        'ventennali. Se il collo di bottiglia è nella trasformazione e non nell’estrazione, benzina e ' +
+        'gasolio possono restare cari con il Brent fermo, e la soglia dei 90 dollari usata qui come ' +
+        'interruttore fra i due canali misura meno di quanto si credesse.',
       invalidation:
         'Una probabilità di rialzo a settembre che risale sopra il 33% entro venerdì 21 agosto, cioè sopra il limite superiore dell’intervallo rilevato il 17 agosto: direbbe che la distanza fra il consenso degli economisti e il prezzo di mercato si sta chiudendo dal lato sbagliato, ed è la gamba misurabile su cui questa lettura poggia adesso. Oppure una probabilità che risale sopra il 48% entro venerdì, cioè sopra il livello di lunedì 11 agosto invece che sopra la metà tonda: direbbe che il crollo di oggi era la reazione di mezz’ora al titolo e non una riprezzatura. Oppure un biennale che torna sopra il 4,218%, il massimo di questa giornata, che annullerebbe l’unico movimento su cui la lettura poggia. Nell’altro verso, un indice dei prezzi di agosto in uscita a settembre con la componente energetica in aumento sul mese porterebbe la direzione sotto il neutrale: è il test che quello di luglio non poteva fare.',
     },
@@ -410,16 +434,44 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'attacchi a navi collegate ad ADNOC sono almeno sedici dal 28 febbraio, due nell’ultima ' +
         'settimana, e Washington dichiara di poter mantenere il blocco dei porti iraniani senza una ' +
         'scadenza. È una struttura di rischio che si assesta su un livello più alto, ed è contro ' +
-        'quella che comprano le riserve ufficiali, non contro la seduta di giovedì.',
+        'quella che comprano le riserve ufficiali, non contro la seduta di giovedì. Il 17 agosto alle ' +
+        '22:00 la gamba fiscale riceve la metà che le mancava, e per questo la lettura di fondo si tocca ' +
+        'dopo giorni in cui era stata lasciata dov’era. Finora il premio a termine era stato spiegato qui ' +
+        'solo dal lato dell’offerta — disavanzo cumulato oltre i 1.799 miliardi, collocamenti del Tesoro, ' +
+        'e da lunedì l’emissione societaria legata agli investimenti in intelligenza artificiale. I dati ' +
+        'sui capitali internazionali di giugno guardano invece a chi quei titoli dovrebbe comprarli, e ' +
+        'dicono che la domanda marginale si è raffreddata proprio sulla duration lunga: acquisti esteri ' +
+        'netti di titoli a lungo termine a 207,1 miliardi da 262,8, e dopo gli aggiustamenti a 172,7 da ' +
+        '232,7. Sul solo Treasury il dettaglio è più severo — investitori privati esteri a 16,6 miliardi ' +
+        'da 53,6, istituzioni ufficiali estere venditrici nette per 9,8 dopo acquisti per 3,0. Non è una ' +
+        'fuga: il flusso complessivo resta in entrata a 133,5 miliardi contro 132,2, e va detto perché ' +
+        'separa la questione del debito da quella del dollaro. È però la prima misura di domanda a ' +
+        'sostegno di una pendenza che finora poggiava solo su misure di offerta, e se il raffreddamento ' +
+        'prosegue la parte lunga resta alta a prescindere da che cosa faccia il petrolio. Due limiti da ' +
+        'tenere: la rilevazione misura giugno ed esce a metà agosto, quindi non spiega alcun prezzo ' +
+        'corrente, e per questa serie non esiste un consenso affidabile, quindi il confronto utile è con ' +
+        'il mese precedente e non con un’attesa.',
       invalidation:
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera; sulla gamba fiscale, il prossimo rifinanziamento trimestrale che allarga le aste a lunga scadenza rispetto ai 125 miliardi rimasti invariati, oppure conti federali di agosto con spese sotto i 667 miliardi, che direbbero che il record di luglio era calendario e non traiettoria.',
     },
   ],
   headline:
-    'L’oro a 4.426,52 con il decennale al 4,70%: la prova composta dichiarata l’11 agosto si verifica per la prima volta',
+    'Il Brent estende a 91,49 e l’oro perde i 4.400: la combinazione dichiarata cinque volte agisce con un giorno di ritardo',
   stance:
-    'In serata il quadro si chiude su un fatto che questa scheda aveva scritto in anticipo, ed è la ragione ' +
-    'per cui la direzione intraday sale a rialzista. L’11 agosto era stata dichiarata la prova da chiedere ' +
+    'Il conto si chiude la mattina del 18 agosto, e si chiude contro la lettura. Il Brent estende a 91,49 ' +
+    'dollari, il trentennale tocca il 5,321% — massimo dal giugno 2007 — e il metallo scende da 4.431,09 ' +
+    'della sessione asiatica a 4.391,14 con meno 0,5%, perdendo i 4.400 dopo averli tenuti una giornata. ' +
+    'La combinazione dichiarata da cinque letture aveva quindi ragione, e ha agito con un giorno di ' +
+    'ritardo. La direzione intraday scende a neutrale: non sotto, perché il movimento è di mezzo punto e ' +
+    'perché la gamba monetaria non ha ceduto — pausa a settembre ancora attorno al 65% e dollaro a 99,60, ' +
+    'salito di un decimo. Nella stessa mattina il rischio geopolitico cambia segno invece di intensità: ' +
+    'una nave è stata colpita in uscita dallo Stretto secondo la segnalazione dell’autorità marittima ' +
+    'britannica, senza che il responsabile sia identificato, i transiti di lunedì scendono a sei navi ' +
+    'senza alcuna petroliera grande né metaniera, e Trump minaccia di bombardare l’Oman, cioè ' +
+    'l’intermediario. Con il greggio sopra i 91 ogni nuovo fatto entra nel prezzo dell’oro due volte e ' +
+    'con segni opposti, e stamattina prevale quello dell’inflazione attesa.' +
+    'In serata il quadro si era chiuso su un fatto che questa scheda aveva scritto in anticipo, ed è la ragione ' +
+    'per cui la direzione intraday era salita a rialzista la sera prima. L’11 agosto era stata dichiarata la prova da chiedere ' +
     'al metallo, in forma composta di proposito: un oro sopra i 4.400 dollari con il decennale ancora sopra ' +
     'il 4,70%, cioè un rialzo contro il rendimento alternativo invece che grazie al suo calo. Quel giorno ' +
     'mancò per quattordici dollari; il 12 agosto divenne ineseguibile perché il decennale scivolò sotto la ' +
@@ -533,6 +585,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'La gamba monetaria non ha ceduto ed è la sola rimasta: la probabilità di una pausa a settembre resta attorno al 65% contro il 52,2% di rialzo di una settimana fa, il biennale è fermo attorno al 4,16% e il dollaro è salito di un solo decimo a 99,60, restando vicino ai minimi degli ultimi due mesi. Il problema per il metallo non è il dollaro',
+    'La distinzione fra dichiarato e misurato ha retto anche sotto pressione: la nave colpita in uscita dallo Stretto è segnalata da un’autorità marittima e non da una rivendicazione, ma il responsabile non è identificato — quindi resta un evento di sicurezza della navigazione e non un atto di guerra con una controparte, ed è la ragione per cui la condizione dichiarata il 17 agosto su un atto «attribuito all’Iran» non è scattata',
+    'Il flusso complessivo di capitale estero verso gli Stati Uniti resta in entrata: 133,5 miliardi a giugno contro 132,2 di maggio secondo i dati TIC. La lettura sul debito lungo va tenuta separata da quella sul dollaro, e la seconda non è in discussione',
     'La prova composta dichiarata l’11 agosto si verifica per la prima volta, ed è il fatto della serata: l’oro passa a 4.409,94 e poi a 4.426,52 dollari con più 1,2% mentre il decennale è tornato al 4,70%. La condizione chiedeva le due cose insieme — un rialzo contro il rendimento alternativo, non grazie al suo calo — e in sei giorni non si erano mai presentate nello stesso momento',
     'Il margine è di ventisei dollari sopra i 4.400 invece dei quindici centesimi delle 11:45, e i futures americani di dicembre sono a 4.484,10: la differenza fra una punta e una tenuta è l’unico contenuto informativo che un livello tondo può avere',
     'Il Dollar Index scende a 99,42, minimo da giugno: è il canale che sta pagando al posto dei rendimenti il costo di tenere un metallo senza cedole, e finché resta lì l’assorbimento è possibile',
@@ -572,6 +627,11 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'La combinazione dichiarata da cinque letture consecutive si è formata e ha prodotto il suo effetto: Brent a 90,87 in chiusura e decennale al 4,712% il 17 agosto, poi 91,49 e 4,726% il 18, con l’oro sceso da 4.431,09 a 4.391,14. La clausola di salvezza dell’archivio è stata usata, e ha funzionato contro la lettura',
+    'Il premio di rischio ha cambiato segno invece di intensità: con il greggio sopra i 91 dollari ogni nuovo fatto geopolitico entra nel prezzo dell’oro due volte, come rifugio e come inflazione attesa, e la seconda sta prevalendo. Una nave colpita, i transiti a sei navi senza petroliere grandi né metaniere, e la minaccia americana all’Oman non hanno sostenuto il metallo',
+    'La minaccia all’Oman colpisce l’intermediario: Muscat era il solo canale diplomatico rimasto per riaprire lo Stretto, e trasformarlo in bersaglio riduce lo spazio negoziale mentre i transiti sono al minimo. Un premio che sale mentre si chiude la via per scioglierlo non è una notizia favorevole a chi lo incassa attraverso il petrolio',
+    'La domanda estera per la duration lunga si è raffreddata già a giugno: acquisti esteri netti di titoli americani a lungo termine a 207,1 miliardi da 262,8, Treasury comprati dai privati esteri per 16,6 miliardi da 53,6, e istituzioni ufficiali estere venditrici nette per 9,8 dopo acquisti per 3,0. Se il raffreddamento continua, la parte lunga resta alta a prescindere dal petrolio',
+    'Il vincolo energetico non è più solo il greggio: l’agenzia internazionale per l’energia stima la capacità di raffinazione mediorientale ancora 2,2 milioni di barili al giorno sotto i livelli precedenti alla guerra, con quella russa vicina ai minimi ventennali. Benzina e gasolio possono restare cari con il barile fermo, e sono quelli che entrano negli indici dei prezzi',
     'Il trentennale al 5,29% non è un livello nuovo e va detto contro la presentazione che ne viene fatta: il 5,28% era già stato registrato qui il 10 e l’11 agosto, e la formula «massimi dal 2007» compare in quattro analisi precedenti. Un punto base sopra un massimo già visto è lo stesso massimo che dura, non una novità',
     'Il costo-opportunità non sta scendendo e i sostegni sono due invece di tre: il decennale al 4,70% è a un millesimo dai 4,701% che questa scheda ha dichiarato come invalidazione, quindi la lettura corrente e la propria smentita non sono mai state così vicine',
     'La gamba nuova nella spiegazione della parte lunga è la meno governabile: accanto alle prospettive fiscali e all’offerta di debito compare la forte emissione di obbligazioni societarie legata agli investimenti in intelligenza artificiale, che è domanda privata di capitale e non risponde a decisioni di bilancio',
@@ -834,27 +894,27 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 32,
-      display: '31-33%',
+      now: 35,
+      display: '≈ 35%',
       marks: [
         {
-          at: 35,
-          display: '35%',
+          at: 40,
+          display: '40%',
           kind: 'logora',
-          note: 'è la soglia dichiarata il 17 agosto: una risalita sopra questo livello dopo i verbali del FOMC di mercoledì direbbe che la riprezzatura su cui l’oro sta salendo era incompleta, e la forza intraday andrebbe riportata a bassa. È diventata la prima tacca utile perché quella precedente, il 33% dichiarato ieri sera come limite superiore dell’intervallo, è stata raggiunta esattamente in serata: il numero ci è arrivato sopra senza superarla, quindi la condizione non è scattata ma quella misura ha smesso di dire qualcosa in avanti',
+          note: 'corrisponde a una probabilità di pausa che scende sotto il 60%, cioè la soglia dichiarata il 17 agosto dalla lettura sul PIL giapponese. È diventata la prima tacca utile perché le due precedenti sono state entrambe raggiunte in ventiquattro ore: il 33% dichiarato la sera del 17 è scattato, e il 35% del mattino è stato raggiunto il 18. Sopra il 40% la gamba monetaria si aggiungerebbe alle due già ostili — petrolio e parte lunga — ed è la sola configurazione in cui questo archivio non ha mai visto il metallo reggere',
         },
         {
           at: 50,
           display: '50%',
           kind: 'invalida',
-          note: 'attraversata quattro volte in quattro giorni e due volte nei due sensi in quarantotto ore: superata in salita la sera del 10 agosto, ridiscesa il pomeriggio dell’11. Una soglia che oscilla così non misura un cambio di regime, e la lettura sui giorni non la segue più in automatico. Il numero è ora attorno al 30% contro circa il 47% di un mese fa',
+          note: 'attraversata quattro volte in quattro giorni e due volte nei due sensi in quarantotto ore: superata in salita la sera del 10 agosto, ridiscesa il pomeriggio dell’11. Una soglia che oscilla così non misura un cambio di regime, e la lettura sui giorni non la segue più in automatico. Il numero è ora attorno al 35% contro il 52,2% di una settimana fa',
         },
       ],
     },
     {
       label: 'Brent',
-      now: 88.85,
-      display: '≈ 88,85 $',
+      now: 91.49,
+      display: '91,49 $',
       marks: [
         {
           at: 87.07,
@@ -878,14 +938,26 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 90,
           display: '90 $',
           kind: 'invalida',
-          note: 'è la prima gamba della combinazione sorvegliata da quattro giorni, e l’altra è un decennale sopra il 4,695%. Alla riapertura di lunedì può arrivare come salto del fine settimana invece che dentro una seduta: in quel caso la lettura di breve va portata sotto il neutrale',
+          note: 'era la prima gamba della combinazione dichiarata da cinque letture consecutive, e la seconda era un decennale sopra il 4,695%. Entrambe si sono presentate sulle chiusure del 17 agosto — Brent a 90,87 e decennale al 4,712% — e la conseguenza è arrivata la mattina dopo con l’oro sotto i 4.400. La soglia ha fatto il suo lavoro con un giorno di ritardo, e adesso è alle spalle del prezzo',
+        },
+        {
+          at: 92,
+          display: '92 $',
+          kind: 'logora',
+          note: 'è il livello dichiarato il 15 agosto come quello oltre il quale il mercato prezzerebbe il fronte del Mar Nero come perdita di offerta vera. Con il Brent che consolida sopra i 91 diventa la prima tacca ancora davanti al prezzo, e la distanza è di poco più di mezzo dollaro',
+        },
+        {
+          at: 95,
+          display: '95 $',
+          kind: 'invalida',
+          note: 'soglia dichiarata il 15 agosto: oltre questo livello il canale dell’inflazione prevarrebbe in modo netto su quello del rifugio, e la lettura andrebbe portata sotto il neutrale su tutti gli orizzonti invece che sul solo breve',
         },
       ],
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.155,
-      display: '4,155%',
+      now: 4.16,
+      display: '≈ 4,16%',
       marks: [
         {
           at: 4.25,
@@ -897,8 +969,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.7,
-      display: '≈ 4,70%',
+      now: 4.726,
+      display: '4,726%',
       marks: [
         {
           at: 4.68,
@@ -910,14 +982,20 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 4.701,
           display: '4,701%',
           kind: 'invalida',
-          note: 'massimo di venerdì, e diventa la soglia al posto del 4,70% tondo per la ragione di sempre: è il livello che il mercato ha stabilito. Il rendimento ci è arrivato in seduta senza mantenerlo, chiudendo a 4,695%. Restarci sopra con il Brent oltre i 90 dollari è la combinazione che porta la lettura di breve sotto il neutrale. La sera del 17 agosto il decennale è tornato al 4,70%, cioè a un millesimo da questa tacca: la distanza fra la lettura corrente e la propria invalidazione non è mai stata così sottile, e va guardata insieme al fatto che l’oro sta salendo lo stesso',
+          note: 'massimo di venerdì 14 agosto, scelto al posto del 4,70% tondo per la ragione di sempre: è il livello che il mercato ha stabilito. È stato superato in chiusura il 17 agosto, al 4,712%, insieme al Brent sopra i 90: la combinazione dichiarata da cinque letture si è formata su due chiusure, e la mattina del 18 il metallo ha perso i 4.400. Questa tacca è ora alle spalle del prezzo e ha smesso di dire qualcosa in avanti',
+        },
+        {
+          at: 4.75,
+          display: '4,75%',
+          kind: 'invalida',
+          note: 'è la soglia dichiarata il 17 agosto sera: il livello oltre il quale il costo-opportunità smette di essere assorbibile con il solo sostegno del cambio. Con il decennale a 4,726% è la prima tacca ancora davanti al prezzo, e la distanza è di poco più di due centesimi di punto',
         },
       ],
     },
     {
       label: 'Dollar Index',
-      now: 99.42,
-      display: '99,420',
+      now: 99.6,
+      display: '≈ 99,60',
       marks: [
         {
           at: 99.795,
@@ -935,8 +1013,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 30 anni',
-      now: 5.29,
-      display: '5,29%',
+      now: 5.321,
+      display: '5,321%',
       marks: [
         {
           at: 5.213,
@@ -954,8 +1032,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4426.52,
-      display: '4.426,52 $',
+      now: 4391.14,
+      display: '4.391,14 $',
       marks: [
         {
           at: 4376.59,
@@ -967,15 +1045,21 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 4400,
           display: '4.400 $',
           kind: 'logora',
-          note: 'era il test dichiarato, ed è stato superato in serata con ventisei dollari di margine: 4.426,52 dollari con il decennale al 4,70%, che completa la condizione composta scritta l’11 agosto. Nella stessa giornata era stato toccato due volte senza tenuta — 4.400,15 alle 11:45, poi il rientro a 4.388 — e la differenza fra quelle due punte e questa tenuta è tutto il contenuto informativo del livello. Resta un numero tondo che attira ordini, quindi la conferma da guardare adesso non è più questa soglia ma la fascia 4.435-4.450',
+          note: 'tenuto per una giornata intera e riperso: superato in serata il 17 agosto con ventisei dollari di margine, fino a 4.431,09 nella sessione asiatica, e abbandonato la mattina del 18 con il metallo a 4.391,14. In tre giorni il livello è stato toccato senza tenuta due volte, tenuto una e riperso: è il comportamento di un numero tondo su cui si accumulano ordini, non quello di un supporto. Adesso è la soglia da riprendere, non quella da difendere',
+        },
+        {
+          at: 4381,
+          display: '4.381 $',
+          kind: 'invalida',
+          note: 'primo supporto tecnico indicato da Reuters il 18 agosto, e la prima tacca sotto il prezzo: una chiusura sotto questo livello aprirebbe la fascia 4.320-4.351 e porterebbe la direzione sotto il neutrale, che è il gradino che la lettura del 18 agosto non ha voluto fare',
         },
       ],
     },
   ],
   sources: [
+    'una-nave-colpita-a-hormuz-e-l-oro-scende',
+    'la-combinazione-si-forma-e-l-oro-sale-lo-stesso',
     'i-4400-passano-con-il-decennale-al-4-70-era-la-prova',
-    'aramco-consegna-fuori-dallo-stretto-e-la-curva-non-si-muove',
-    'teheran-mette-una-scadenza-e-il-brent-resta-sotto-i-90',
   ],
 };
 

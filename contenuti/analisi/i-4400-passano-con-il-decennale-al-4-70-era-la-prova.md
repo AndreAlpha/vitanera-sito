@@ -38,8 +38,10 @@ fonti:
     titolo: "Prossima diffusione sull’edilizia: Housing Starts e Building Permits di luglio, 18 agosto"
   - testata: "Federal Reserve"
     titolo: "Riunione chiusa del Board sulla revisione dei tassi di sconto delle Reserve Banks; al momento del controllo nessun comunicato finale pubblicato"
+esito: "confermata"
+controllata: "2026-08-18T08:20:00+02:00"
 sorgente: "src/app/core/data/articles/i-4400-passano-con-il-decennale-al-4-70-era-la-prova.ts"
-impronta: "2f0f5188717ec35a"
+impronta: "977a2a0ab24e9a68"
 ---
 
 # I 4.400 passano con il decennale al 4,70%, ed era la prova richiesta
@@ -136,6 +138,22 @@ Alta sui numeri, che sono tutti rilevazioni di prezzo attribuite alla stessa fon
 Impostazione su XAU/USD: rialzista, forza media, orizzonte breve.
 
 La direzione sale a rialzista per una ragione sola, ed è la disciplina di questo archivio invece della notizia del giorno. L’11 agosto era stata scritta la prova da chiedere al metallo — un oro sopra i 4.400 dollari con il decennale ancora sopra il 4,70%, cioè un rialzo contro il rendimento alternativo e non grazie al suo calo — e quel giorno mancò per quattordici dollari; il 12 agosto la condizione divenne ineseguibile perché il decennale scivolò sotto la soglia mentre l’oro era ancora in viaggio. Oggi le due gambe sono presenti nello stesso momento: 4.426,52 dollari con il decennale tornato al 4,70% e il trentennale al 5,29%. La forza resta media perché la configurazione che la sostiene è la più fragile fra quelle possibili: il dollaro sui minimi da giugno regge da solo un metallo che sta pagando un costo-opportunità ai massimi da quasi vent’anni.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-18T08:20:00+02:00.
+
+Nessuna delle cinque condizioni è scattata, e questo verdetto è tecnicamente corretto e sostanzialmente fuorviante: va letto insieme al prezzo, altrimenti dice il contrario di quello che è successo. L’analisi aveva alzato la direzione a rialzista con l’oro a 4.426,52 dollari; tredici ore dopo il metallo è a 4.391,14, cioè trentacinque dollari più in basso, e ha perso i 4.400 che aveva appena conquistato. Nessuna condizione lo registra perché tutte e cinque hanno termini che scadono da mercoledì in poi. La più vicina è la prima, che chiede una chiusura di mercoledì sotto i 4.409,94: il prezzo è già diciotto dollari sotto quel livello, ma la chiusura non è arrivata. Le altre due di mercato si sono mosse entrambe contro la lettura senza raggiungere le soglie — decennale dal 4,70% al 4,728% contro una soglia al 4,75%, trentennale dal 5,29% al 5,321% mentre la condizione chiedeva un rientro sotto il 5,213%.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un oro che chiude mercoledì 19 agosto sotto i 4.409,94 dollari della prima rilevazione di questo controllo: direbbe che il superamento è stato una punta come le due di stamattina e non una tenuta, e la direzione andrebbe riportata a neutrale con inclinazione rialzista. | no | Non scattata soltanto perché il termine non è arrivato, e va detto così invece di registrarla come una tenuta. Il metallo ha chiuso il 17 agosto a 4.421,94, quindi sopra il livello, ma la mattina del 18 agosto è a 4.391,14 con meno 0,5%: diciotto dollari e ottanta sotto la soglia, con un giorno intero ancora davanti prima della chiusura di mercoledì. La condizione è la più vicina a scattare del gruppo e al momento il prezzo sta dalla parte sbagliata. |
+| Un decennale che si porta sopra il 4,75% entro venerdì 21 agosto: è il livello oltre il quale il costo-opportunità smette di essere assorbibile con il solo sostegno del cambio, e la forza andrebbe riportata a bassa. | no | Il decennale è salito al 4,712% in chiusura il 17 agosto e sta attorno al 4,724-4,728% il 18: si è avvicinato di due punti base alla soglia senza raggiungerla, e mancano poco più di due centesimi di punto. Il termine corre fino a venerdì 21 agosto. |
+| Un trentennale che scende sotto il 5,213% della chiusura del 13 agosto entro venerdì 21 agosto: toglierebbe il fatto stesso su cui la forza relativa è misurata, perché l’oro non starebbe più assorbendo alcun costo-opportunità eccezionale, e questa lettura perderebbe il suo argomento invece di essere smentita. | no | Andata nella direzione opposta e di parecchio: il trentennale ha chiuso fra il 5,295% e il 5,310% il 17 agosto e ha toccato il 5,321% il 18, massimo dal giugno 2007. Il costo-opportunità eccezionale su cui la lettura poggia non solo non è rientrato, è aumentato di oltre un decimo di punto. |
+| Un dato pubblicato sugli acquisti ufficiali di oro di agosto in calo rispetto alle 640.000 once di luglio, in uscita all’inizio di settembre: smentirebbe l’inferenza degli analisti sul ritorno della domanda istituzionale, che è la sola spiegazione candidata oggi disponibile per chi stia comprando a questi livelli. | no | Nessun dato sugli acquisti ufficiali di agosto è disponibile: la diffusione è attesa all’inizio di settembre. L’inferenza degli analisti sul ritorno della domanda istituzionale resta quindi né confermata né smentita, come al momento della scrittura. |
+| Una rilevazione settimanale dell’agenzia statunitense per l’energia che mostri lavorazioni delle raffinerie in calo entro fine agosto: direbbe che i colloqui annunciati dal segretario all’Energia non hanno prodotto offerta, e la gamba che alleggerisce il canale dell’inflazione andrebbe tolta dal conto. | no | Nessuna rilevazione settimanale successiva è disponibile al controllo. Va però annotato un elemento che arriva da un’altra fonte e che pesa sulla stessa gamba: l’agenzia internazionale per l’energia stima la capacità di raffinazione mediorientale ancora 2,2 milioni di barili al giorno sotto i livelli precedenti alla guerra, con quella russa vicina ai minimi ventennali. Il vincolo sulla raffinazione è quindi più stretto di quanto i colloqui annunciati possano allentare in tempi brevi. |
+
+**Che cosa cambia.** Una lettura di orizzonte breve non può avere la propria condizione principale ancorata a una chiusura di due giorni dopo: muore prima che la condizione possa parlare. È l’errore commesso qui, ed è visibile nel confronto fra i due campi dell’analisi stessa — orizzonte dichiarato «breve», cioè prossimi minuti o ore, e prima invalidazione fissata alla chiusura di mercoledì. Il risultato è un «confermata» che accompagna un metallo sceso di trentacinque dollari. Questo archivio aveva già registrato il problema in forma generale — una condizione che matura dopo la lettura che dovrebbe misurare — e non lo ha applicato quando contava. La regola operativa è semplice e va usata: il termine di una condizione non deve superare l’orizzonte della lettura che la dichiara. Per un breve significa la chiusura della stessa seduta o la rilevazione successiva, non due giorni.
 
 ## Fonti consultate
 

@@ -22,6 +22,8 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { unaNaveColpitaAHormuzELOroScende } from './articles/una-nave-colpita-a-hormuz-e-l-oro-scende';
+import { laCombinazioneSiFormaELOroSaleLoStesso } from './articles/la-combinazione-si-forma-e-l-oro-sale-lo-stesso';
 import { i4400PassanoConIlDecennaleAl470 } from './articles/i-4400-passano-con-il-decennale-al-4-70-era-la-prova';
 import { aramcoConsegnaFuoriDalloStretto } from './articles/aramco-consegna-fuori-dallo-stretto-e-la-curva-non-si-muove';
 import { teheranMetteUnaScadenza } from './articles/teheran-mette-una-scadenza-e-il-brent-resta-sotto-i-90';
@@ -118,6 +120,8 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  unaNaveColpitaAHormuzELOroScende,
+  laCombinazioneSiFormaELOroSaleLoStesso,
   i4400PassanoConIlDecennaleAl470,
   aramcoConsegnaFuoriDalloStretto,
   teheranMetteUnaScadenza,

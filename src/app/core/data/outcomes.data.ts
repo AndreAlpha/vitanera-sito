@@ -3041,4 +3041,180 @@ export const OUTCOMES: readonly Outcome[] = [
     ],
     what: 'Nessuna delle cinque condizioni è scattata a trenta ore dalla pubblicazione, e l’osservazione centrale ha retto in modo netto: le cinque opzioni americane contro l’Iran restano opzioni, il provvedimento del Senato resta fermo alla Camera da undici giorni, e la Cina non ha reagito perché non c’è nulla a cui reagire. Due cose meritano di essere segnalate oltre al verdetto. La prima è che la quinta condizione è costruita per scattare per assenza: se entro venerdì 21 agosto non viene pubblicato alcun provvedimento, si verificherà senza che sia successo niente, ed è oggi la condizione più vicina a farlo — un modo utile di scrivere una condizione, perché mette un termine anche all’attesa. La seconda riguarda la quarta: chiedeva un altro grande importatore che dichiarasse obiettivi di sicurezza energetica, e oggi il movimento è arrivato dal lato opposto del contratto, con Aramco che tratta consegne fuori dallo Stretto e ADNOC che colloca quattordici milioni di barili spot. La condizione guardava i compratori e a muoversi sono stati i venditori: non scatta, ma indica che il fenomeno era stato inquadrato più stretto di quanto fosse.',
   },
+  {
+    slug: 'il-pil-giapponese-manca-le-attese-e-lo-yen-si-rafforza',
+    checkedAt: '2026-08-18T08:20:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Una comunicazione della Banca del Giappone — verbale, riassunto delle opinioni o intervento del governatore — che colleghi esplicitamente questo trimestre al percorso dei tassi entro la riunione del 17-18 settembre: farebbe passare il dato da statistica assorbita a input dichiarato di una decisione, e la lettura andrebbe alzata di grado.',
+        triggered: false,
+        evidence:
+          'Nessuna comunicazione dell’istituto risulta pubblicata: né verbali, né riassunto delle opinioni, né interventi del governatore che colleghino il trimestre al percorso dei tassi. Il termine corre fino alla riunione del 17-18 settembre. Va però annotato che il mercato si è mosso al posto dell’istituto: nella notte fra il 17 e il 18 agosto il decennale giapponese è salito al 2,945%, massimo dal settembre 1996, e Reuters attribuisce il movimento anche alla crescente convinzione di una stretta già a settembre. È un’aspettativa di mercato, non una comunicazione, e la condizione chiedeva la seconda.',
+      },
+      {
+        condition:
+          'Uno yen che si indebolisce oltre 161 per dollaro entro venerdì 21 agosto: direbbe che il canale valutario ha finito per prezzare il dato giapponese con qualche giorno di ritardo, e cadrebbe l’osservazione centrale di questa lettura, cioè che il dato non ha trasmesso.',
+        triggered: false,
+        evidence:
+          'Nessuna rilevazione sul cambio oltre quota 161 risulta ai controlli successivi, e gli elementi disponibili puntano nella direzione opposta: un decennale giapponese al massimo da trent’anni sull’attesa di una stretta sostiene lo yen invece di indebolirlo. Il termine corre fino a venerdì 21 agosto.',
+      },
+      {
+        condition:
+          'Un Dollar Index che risale sopra 99,855, la chiusura di giovedì 13 agosto: toglierebbe la gamba americana che oggi spiega il movimento del cambio, e allora il trimestre giapponese tornerebbe a essere la causa candidata di quello che si vede sullo yen.',
+        triggered: false,
+        evidence:
+          'Il Dollar Index si è mosso nella direzione opposta per tutta la giornata del 17 agosto, fino a 99,42 e poi 99,51 in chiusura, cioè al minimo da giugno, ed è risalito soltanto a circa 99,60 il 18 agosto. Resta oltre due decimi sotto la soglia, e la gamba americana che spiega il cambio non è stata tolta.',
+      },
+      {
+        condition:
+          'Una revisione della prima stima del PIL del secondo trimestre sopra il più 2,0% annualizzato atteso: il dato di oggi è preliminare, e una revisione che lo riporti sul consenso cancellerebbe la premessa di tutta questa analisi.',
+        triggered: false,
+        evidence:
+          'Nessuna revisione della prima stima è stata pubblicata: il dato resta il più 1,1% annualizzato del preliminare, contro il più 2,0% atteso. La premessa dell’analisi regge.',
+      },
+      {
+        condition:
+          'Una probabilità di pausa della Federal Reserve a settembre che scende sotto il 60% entro venerdì 21 agosto: sposterebbe il peso dal canale americano a quello giapponese, che è l’opposto di quanto descritto qui, e il cambio tornerebbe a essere leggibile dal lato di Tokyo.',
+        triggered: false,
+        evidence:
+          'La probabilità di una pausa è attorno al 65% il 18 agosto, cioè circa il 35% a un rialzo, e resta quindi cinque punti sopra la soglia. Il margine si è però assottigliato rispetto al 69% circa di lunedì mattina, e il termine corre fino a venerdì 21 agosto: è la condizione più vicina a scattare del gruppo.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata a poco più di ventiquattro ore, e l’osservazione centrale — un dato giapponese che non trasmette al cambio perché il mercato pesa di più il quadro americano — ha retto: il Dollar Index è sceso a 99,42 e ha chiuso a 99,51, minimo da giugno, quindi il movimento sul cambio ha continuato a spiegarsi dal lato di Washington. C’è però un elemento che l’analisi non aveva previsto e che va registrato perché ne allarga il tema invece di smentirlo: nella notte il decennale giapponese è salito al 2,945%, massimo dal settembre 1996, sull’attesa di una stretta della Banca del Giappone già a settembre. Tokyo ha quindi cominciato a contare, ma attraverso i rendimenti invece che attraverso il cambio — cioè per una via che questa lettura non guardava. La prima condizione chiedeva una comunicazione dell’istituto e continua a non essere soddisfatta, perché a muoversi è stata l’aspettativa di mercato e non la banca centrale; la distinzione regge, ma la prossima verifica dovrà guardare anche la curva giapponese e non solo il cambio.',
+  },
+  {
+    slug: 'teheran-mette-una-scadenza-e-il-brent-resta-sotto-i-90',
+    checkedAt: '2026-08-18T08:20:00+02:00',
+    verdict: 'parziale',
+    conditions: [
+      {
+        condition:
+          'Un atto materiale attribuito all’Iran — un attacco a una nave o a un’infrastruttura energetica riportato da Reuters o da un’agenzia ufficiale — entro venerdì 21 agosto: trasformerebbe la posizione dichiarata in un vincolo, e la classificazione data qui, cioè una preferenza che non prezza, risulterebbe sbagliata.',
+        triggered: false,
+        evidence:
+          'Un atto materiale c’è stato, ma manca esattamente la parte che la condizione richiedeva. La mattina del 18 agosto UK Maritime Trade Operations segnala una nave colpita da un proiettile non identificato in uscita dallo Stretto, con danni alla sala macchine e un membro dell’equipaggio coinvolto: il fatto è riportato da un’autorità, quindi soddisfa la prima metà, ma il responsabile non è identificato e nessun governo lo ha attribuito. La rivendicazione houthi di lanci contro una nave militare saudita è di un altro attore, è dichiarata e non verificata. La condizione chiedeva un atto «attribuito all’Iran» e al controllo non lo è: resta non scattata, ed è la distinzione fra un evento di sicurezza della navigazione e un atto di guerra con una controparte.',
+      },
+      {
+        condition:
+          'Un Brent che chiude sopra gli 89,40 dollari del massimo toccato oggi entro venerdì 21 agosto: direbbe che il mercato del greggio ha cominciato a prezzare la minaccia, cioè l’opposto dell’osservazione centrale di questa analisi.',
+        triggered: true,
+        evidence:
+          'Scattata in poche ore e con ampio margine: il Brent ha chiuso lunedì 17 agosto a 90,87 dollari con più 2,35, cioè un dollaro e mezzo sopra la soglia, e il 18 agosto ha esteso a 91,49 con il WTI a 85,25. Reuters collega esplicitamente il rialzo allo stallo della diplomazia, ai transiti ridottissimi e alle minacce iraniane: è precisamente il mercato del greggio che comincia a prezzare la minaccia, cioè quello che l’analisi sosteneva non stesse accadendo.',
+      },
+      {
+        condition:
+          'Un oro che chiude sotto i 4.388 dollari della rilevazione su cui questa lettura è scritta entro mercoledì 19 agosto: direbbe che nemmeno una minaccia esplicita accompagnata da un dollaro sui minimi di due mesi produce domanda di protezione, e la direzione andrebbe portata a neutrale.',
+        triggered: false,
+        evidence:
+          'Non scattata, ma per tre dollari e per un giorno. L’oro ha chiuso il 17 agosto a 4.421,94 con più 1,05% ed è sceso il 18 agosto a 4.391,14 con meno 0,5%, quindi 3,14 dollari sopra la soglia, e la chiusura di mercoledì 19 non è ancora avvenuta. È la condizione da guardare al prossimo controllo.',
+      },
+      {
+        condition:
+          'Una probabilità di rialzo a settembre sopra il 33%, cioè sopra il limite superiore dell’intervallo rilevato oggi, entro venerdì 21 agosto: direbbe che la distanza fra il consenso degli economisti e il prezzo di mercato si sta chiudendo dal lato sbagliato, e cadrebbe la gamba misurabile di questa lettura.',
+        triggered: true,
+        evidence:
+          'Scattata il 18 agosto: la probabilità di un rialzo a settembre è attorno al 35%, cioè circa il 65% di pausa, contro il 52,2% di rialzo di una settimana fa. Il numero ha superato il 33% dichiarato come limite dopo essere rimasto fermo attorno al 31% alla chiusura del 17 agosto. La distanza fra il sondaggio degli economisti, quasi unanime sulla pausa per il resto del 2026, e il prezzo di mercato si sta chiudendo dal lato che toglie sostegno al metallo.',
+      },
+      {
+        condition:
+          'Una smentita o un ridimensionamento del termine da parte del ministero degli Esteri iraniano o dell’agenzia ufficiale entro venerdì 21 agosto: direbbe che la scadenza era retorica, e verrebbe meno l’unico elemento per cui questa dichiarazione è stata trattata diversamente dalle precedenti.',
+        triggered: false,
+        evidence:
+          'Nessuna smentita né ridimensionamento: Teheran si è mossa nella direzione opposta, annunciando il passaggio a una postura militare «pienamente offensiva», mentre l’intesa temporanea è arrivata a scadenza senza progressi e Washington ne ha escluso l’estensione. Il termine dichiarato non è stato ritirato, è stato superato dai fatti.',
+      },
+    ],
+    what: 'Due condizioni su cinque sono scattate, ed è il primo verdetto parziale di questa fase dopo una lunga serie di conferme. Entrambe colpiscono l’osservazione centrale, non un dettaglio: l’analisi sosteneva che la minaccia iraniana fosse una preferenza dichiarata che il mercato non stava prezzando, e in ventiquattro ore il Brent è passato da 88,95 a 90,87 in chiusura e poi a 91,49, mentre la probabilità di un rialzo a settembre è salita dal 31% al 35% circa. Il greggio ha cominciato a prezzare esattamente quello che l’analisi diceva non stesse prezzando. Merita però di essere letta anche la prima condizione, che non è scattata: un atto materiale c’è stato — una nave colpita in uscita dallo Stretto, segnalata da un’autorità marittima — ma senza attribuzione, e la condizione chiedeva un atto «attribuito all’Iran». La cautela sulla fonte, che al momento della scrittura sembrava una prudenza formale, si è rivelata la parte più solida del testo: la minaccia iraniana resta una posizione dichiarata anche adesso che una nave è stata colpita, perché nessuno ha detto chi l’abbia colpita.',
+    lesson:
+      'La classificazione del fatto ha retto e la previsione sul prezzo no, e le due cose vanno tenute separate perché insegnano l’opposto. Trattare la minaccia iraniana come preferenza dichiarata invece che come vincolo era giusto, e lo è ancora: a ventiquattro ore di distanza nessuno ha attribuito l’attacco alla nave, e il conteggio dei transiti si è mosso da otto a sei senza che una sola dichiarazione lo spostasse. Quello che era sbagliato è la deduzione successiva, cioè che una preferenza non prezzata dal mercato continuasse a non essere prezzata. Il greggio non aspetta l’attribuzione per muoversi: prezza la probabilità di un’interruzione, e quella probabilità sale anche con un attore ignoto. La regola da correggere non è «distinguere il dichiarato dal misurato» — quella funziona — ma la scorciatoia che ne era stata tratta, cioè che ciò che è dichiarato non entri nel prezzo. Entra, e passa dal mercato che quota il rischio invece che dal mercato che quota il rifugio.',
+  },
+  {
+    slug: 'aramco-consegna-fuori-dallo-stretto-e-la-curva-non-si-muove',
+    checkedAt: '2026-08-18T08:20:00+02:00',
+    verdict: 'parziale',
+    conditions: [
+      {
+        condition:
+          'Un biennale che si porta sopra il 4,218%, cioè sopra il massimo del 12 agosto, entro venerdì 21 agosto: direbbe che le due sorprese hanno riprezzato la Fed con ritardo e che leggere il rifiuto del prezzo come informazione era sbagliato.',
+        triggered: false,
+        evidence:
+          'Il biennale resta attorno al 4,16% nelle rilevazioni del 17 e del 18 agosto, quindi oltre cinque punti base sotto la soglia. La lettura del rifiuto del prezzo regge sulla scadenza che prezza la banca centrale: le due diffusioni sopra le attese non l’hanno riprezzata nemmeno con un giorno di ritardo, e la tensione è rimasta confinata alla parte lunga.',
+      },
+      {
+        condition:
+          'Una conferma o una smentita ufficiale di Saudi Aramco sui trasferimenti nave-nave al largo di Fujairah entro venerdì 21 agosto: oggi il fatto centrale è un negoziato riferito da un’agenzia, e una presa di posizione della compagnia lo sposterebbe in una delle due categorie in cui adesso non sta.',
+        triggered: false,
+        evidence:
+          'Nessuna presa di posizione della compagnia risulta pubblicata. Il negoziato sulle consegne al largo di Fujairah resta quello che era al momento della scrittura: un fatto riferito da un’agenzia e non dichiarato dalla società. Il termine corre fino a venerdì 21 agosto.',
+      },
+      {
+        condition:
+          'Un Dollar Index che chiude sopra 99,935, cioè sopra il massimo del 13 agosto, entro venerdì 21 agosto: toglierebbe il sostegno valutario che oggi compensa i due dati sopra le attese, e la lettura andrebbe portata a neutrale.',
+        triggered: false,
+        evidence:
+          'Il Dollar Index ha chiuso il 17 agosto a 99,51, minimo da giugno, ed è risalito soltanto a circa 99,60 il 18 agosto: resta oltre tre decimi sotto la soglia. Il sostegno valutario non è stato tolto, ed è la ragione per cui il metallo ha assorbito la parte lunga più a lungo di quanto la lettura si aspettasse.',
+      },
+      {
+        condition:
+          'Un Brent che chiude sopra gli 89,68 dollari del massimo di oggi entro venerdì 21 agosto: direbbe che la valvola descritta qui non sta contenendo il prezzo quanto questa analisi sostiene, e la gamba energetica del ragionamento cadrebbe.',
+        triggered: true,
+        evidence:
+          'Scattata nel giro di poche ore: il Brent ha chiuso lunedì 17 agosto a 90,87 dollari, cioè un dollaro e diciannove centesimi sopra la soglia, e il 18 agosto ha esteso a 91,49 con un WTI a 85,25. La valvola logistica descritta dall’analisi — consegne nave-nave al largo di Fujairah e gara ADNOC — non ha contenuto il prezzo: lo ha contenuto finché la diplomazia non è arrivata a scadenza, e non oltre.',
+      },
+      {
+        condition:
+          'Un dato ufficiale di esportazioni saudite o emiratine di agosto che scenda in proporzione al crollo dei transiti, in uscita entro fine settembre: direbbe che il conteggio dei passaggi stava misurando correttamente anche i barili, e che la distinzione proposta qui fra traffico e scarsità non serviva.',
+        triggered: false,
+        evidence:
+          'Nessun dato ufficiale di esportazioni di agosto è disponibile: il termine corre fino a fine settembre. Il conteggio dei transiti è intanto sceso ancora, a sei navi lunedì 17 agosto contro una media a dieci giorni di undici, e per la prima volta senza alcuna petroliera grande né metaniera — un dettaglio che va nella direzione opposta alla tesi della valvola, perché sono esattamente le navi che portano i barili.',
+      },
+    ],
+    what: 'Una condizione su cinque è scattata, ed è quella che l’analisi indicava come la caduta della propria gamba energetica: il Brent ha chiuso a 90,87 dollari lo stesso giorno della pubblicazione, un dollaro e diciannove centesimi sopra la soglia dichiarata, e il giorno dopo ha esteso a 91,49. La tesi centrale era che le consegne fuori dallo Stretto contenessero il prezzo; il prezzo non è stato contenuto. Va detto però che cosa ha retto, perché è la parte più interessante. La distinzione fra traffico e scarsità non è stata smentita da nulla, e anzi ha ricevuto una conferma indiretta scomoda: lunedì sono transitate sei navi e nessuna era una petroliera grande o una metaniera, il che significa che il conteggio complessivo dei passaggi e quello dei barili si stanno separando ancora di più. E la lettura sul rifiuto del prezzo dopo i due dati sopra le attese ha retto per intero: il biennale è rimasto attorno al 4,16% e il dollaro sotto quota 99,94. L’analisi aveva quindi ragione su come si misura e torto su quanto sarebbe durato.',
+  },
+  {
+    slug: 'i-4400-passano-con-il-decennale-al-4-70-era-la-prova',
+    checkedAt: '2026-08-18T08:20:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un oro che chiude mercoledì 19 agosto sotto i 4.409,94 dollari della prima rilevazione di questo controllo: direbbe che il superamento è stato una punta come le due di stamattina e non una tenuta, e la direzione andrebbe riportata a neutrale con inclinazione rialzista.',
+        triggered: false,
+        evidence:
+          'Non scattata soltanto perché il termine non è arrivato, e va detto così invece di registrarla come una tenuta. Il metallo ha chiuso il 17 agosto a 4.421,94, quindi sopra il livello, ma la mattina del 18 agosto è a 4.391,14 con meno 0,5%: diciotto dollari e ottanta sotto la soglia, con un giorno intero ancora davanti prima della chiusura di mercoledì. La condizione è la più vicina a scattare del gruppo e al momento il prezzo sta dalla parte sbagliata.',
+      },
+      {
+        condition:
+          'Un decennale che si porta sopra il 4,75% entro venerdì 21 agosto: è il livello oltre il quale il costo-opportunità smette di essere assorbibile con il solo sostegno del cambio, e la forza andrebbe riportata a bassa.',
+        triggered: false,
+        evidence:
+          'Il decennale è salito al 4,712% in chiusura il 17 agosto e sta attorno al 4,724-4,728% il 18: si è avvicinato di due punti base alla soglia senza raggiungerla, e mancano poco più di due centesimi di punto. Il termine corre fino a venerdì 21 agosto.',
+      },
+      {
+        condition:
+          'Un trentennale che scende sotto il 5,213% della chiusura del 13 agosto entro venerdì 21 agosto: toglierebbe il fatto stesso su cui la forza relativa è misurata, perché l’oro non starebbe più assorbendo alcun costo-opportunità eccezionale, e questa lettura perderebbe il suo argomento invece di essere smentita.',
+        triggered: false,
+        evidence:
+          'Andata nella direzione opposta e di parecchio: il trentennale ha chiuso fra il 5,295% e il 5,310% il 17 agosto e ha toccato il 5,321% il 18, massimo dal giugno 2007. Il costo-opportunità eccezionale su cui la lettura poggia non solo non è rientrato, è aumentato di oltre un decimo di punto.',
+      },
+      {
+        condition:
+          'Un dato pubblicato sugli acquisti ufficiali di oro di agosto in calo rispetto alle 640.000 once di luglio, in uscita all’inizio di settembre: smentirebbe l’inferenza degli analisti sul ritorno della domanda istituzionale, che è la sola spiegazione candidata oggi disponibile per chi stia comprando a questi livelli.',
+        triggered: false,
+        evidence:
+          'Nessun dato sugli acquisti ufficiali di agosto è disponibile: la diffusione è attesa all’inizio di settembre. L’inferenza degli analisti sul ritorno della domanda istituzionale resta quindi né confermata né smentita, come al momento della scrittura.',
+      },
+      {
+        condition:
+          'Una rilevazione settimanale dell’agenzia statunitense per l’energia che mostri lavorazioni delle raffinerie in calo entro fine agosto: direbbe che i colloqui annunciati dal segretario all’Energia non hanno prodotto offerta, e la gamba che alleggerisce il canale dell’inflazione andrebbe tolta dal conto.',
+        triggered: false,
+        evidence:
+          'Nessuna rilevazione settimanale successiva è disponibile al controllo. Va però annotato un elemento che arriva da un’altra fonte e che pesa sulla stessa gamba: l’agenzia internazionale per l’energia stima la capacità di raffinazione mediorientale ancora 2,2 milioni di barili al giorno sotto i livelli precedenti alla guerra, con quella russa vicina ai minimi ventennali. Il vincolo sulla raffinazione è quindi più stretto di quanto i colloqui annunciati possano allentare in tempi brevi.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e questo verdetto è tecnicamente corretto e sostanzialmente fuorviante: va letto insieme al prezzo, altrimenti dice il contrario di quello che è successo. L’analisi aveva alzato la direzione a rialzista con l’oro a 4.426,52 dollari; tredici ore dopo il metallo è a 4.391,14, cioè trentacinque dollari più in basso, e ha perso i 4.400 che aveva appena conquistato. Nessuna condizione lo registra perché tutte e cinque hanno termini che scadono da mercoledì in poi. La più vicina è la prima, che chiede una chiusura di mercoledì sotto i 4.409,94: il prezzo è già diciotto dollari sotto quel livello, ma la chiusura non è arrivata. Le altre due di mercato si sono mosse entrambe contro la lettura senza raggiungere le soglie — decennale dal 4,70% al 4,728% contro una soglia al 4,75%, trentennale dal 5,29% al 5,321% mentre la condizione chiedeva un rientro sotto il 5,213%.',
+    lesson:
+      'Una lettura di orizzonte breve non può avere la propria condizione principale ancorata a una chiusura di due giorni dopo: muore prima che la condizione possa parlare. È l’errore commesso qui, ed è visibile nel confronto fra i due campi dell’analisi stessa — orizzonte dichiarato «breve», cioè prossimi minuti o ore, e prima invalidazione fissata alla chiusura di mercoledì. Il risultato è un «confermata» che accompagna un metallo sceso di trentacinque dollari. Questo archivio aveva già registrato il problema in forma generale — una condizione che matura dopo la lettura che dovrebbe misurare — e non lo ha applicato quando contava. La regola operativa è semplice e va usata: il termine di una condizione non deve superare l’orizzonte della lettura che la dichiara. Per un breve significa la chiusura della stessa seduta o la rilevazione successiva, non due giorni.',
+  },
 ];

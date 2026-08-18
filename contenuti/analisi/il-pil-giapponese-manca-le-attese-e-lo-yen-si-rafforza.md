@@ -28,8 +28,10 @@ fonti:
   - testata: "Reuters"
     titolo: "Reazione dei cambi al PIL giapponese: il mercato dà più peso ai dati americani deboli. Yen a 159,06, Dollar Index a 99,52"
     quando: "17 agosto 2026"
+esito: "confermata"
+controllata: "2026-08-18T08:20:00+02:00"
 sorgente: "src/app/core/data/articles/il-pil-giapponese-manca-le-attese-e-lo-yen-si-rafforza.ts"
-impronta: "cb304a8bbd510b7d"
+impronta: "411fac41edb4a187"
 ---
 
 # Il PIL giapponese manca le attese, e lo yen si rafforza lo stesso
@@ -108,6 +110,20 @@ Alta sul dato, che è una diffusione statistica con le sue componenti e i suoi s
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte medio.
 
 Sull’arco dei giorni il dato toglie linearità all’ipotesi di una stretta giapponese, e questo sottrae una voce dall’elenco dei rendimenti globali che un metallo senza cedole deve battere: è marginalmente favorevole. Nella stessa direzione non va però il cambio, che è l’unico canale attraverso cui il Giappone raggiunge davvero il prezzo dell’oro, e che stamattina si muove per ragioni americane. Un dato debole che dovrebbe indebolire lo yen e invece lo trova più forte è un dato senza trasmissione: va registrato, non prezzato.
+
+## Come è andata
+
+Verdetto: **confermata**, controllata il 2026-08-18T08:20:00+02:00.
+
+Nessuna delle cinque condizioni è scattata a poco più di ventiquattro ore, e l’osservazione centrale — un dato giapponese che non trasmette al cambio perché il mercato pesa di più il quadro americano — ha retto: il Dollar Index è sceso a 99,42 e ha chiuso a 99,51, minimo da giugno, quindi il movimento sul cambio ha continuato a spiegarsi dal lato di Washington. C’è però un elemento che l’analisi non aveva previsto e che va registrato perché ne allarga il tema invece di smentirlo: nella notte il decennale giapponese è salito al 2,945%, massimo dal settembre 1996, sull’attesa di una stretta della Banca del Giappone già a settembre. Tokyo ha quindi cominciato a contare, ma attraverso i rendimenti invece che attraverso il cambio — cioè per una via che questa lettura non guardava. La prima condizione chiedeva una comunicazione dell’istituto e continua a non essere soddisfatta, perché a muoversi è stata l’aspettativa di mercato e non la banca centrale; la distinzione regge, ma la prossima verifica dovrà guardare anche la curva giapponese e non solo il cambio.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Una comunicazione della Banca del Giappone — verbale, riassunto delle opinioni o intervento del governatore — che colleghi esplicitamente questo trimestre al percorso dei tassi entro la riunione del 17-18 settembre: farebbe passare il dato da statistica assorbita a input dichiarato di una decisione, e la lettura andrebbe alzata di grado. | no | Nessuna comunicazione dell’istituto risulta pubblicata: né verbali, né riassunto delle opinioni, né interventi del governatore che colleghino il trimestre al percorso dei tassi. Il termine corre fino alla riunione del 17-18 settembre. Va però annotato che il mercato si è mosso al posto dell’istituto: nella notte fra il 17 e il 18 agosto il decennale giapponese è salito al 2,945%, massimo dal settembre 1996, e Reuters attribuisce il movimento anche alla crescente convinzione di una stretta già a settembre. È un’aspettativa di mercato, non una comunicazione, e la condizione chiedeva la seconda. |
+| Uno yen che si indebolisce oltre 161 per dollaro entro venerdì 21 agosto: direbbe che il canale valutario ha finito per prezzare il dato giapponese con qualche giorno di ritardo, e cadrebbe l’osservazione centrale di questa lettura, cioè che il dato non ha trasmesso. | no | Nessuna rilevazione sul cambio oltre quota 161 risulta ai controlli successivi, e gli elementi disponibili puntano nella direzione opposta: un decennale giapponese al massimo da trent’anni sull’attesa di una stretta sostiene lo yen invece di indebolirlo. Il termine corre fino a venerdì 21 agosto. |
+| Un Dollar Index che risale sopra 99,855, la chiusura di giovedì 13 agosto: toglierebbe la gamba americana che oggi spiega il movimento del cambio, e allora il trimestre giapponese tornerebbe a essere la causa candidata di quello che si vede sullo yen. | no | Il Dollar Index si è mosso nella direzione opposta per tutta la giornata del 17 agosto, fino a 99,42 e poi 99,51 in chiusura, cioè al minimo da giugno, ed è risalito soltanto a circa 99,60 il 18 agosto. Resta oltre due decimi sotto la soglia, e la gamba americana che spiega il cambio non è stata tolta. |
+| Una revisione della prima stima del PIL del secondo trimestre sopra il più 2,0% annualizzato atteso: il dato di oggi è preliminare, e una revisione che lo riporti sul consenso cancellerebbe la premessa di tutta questa analisi. | no | Nessuna revisione della prima stima è stata pubblicata: il dato resta il più 1,1% annualizzato del preliminare, contro il più 2,0% atteso. La premessa dell’analisi regge. |
+| Una probabilità di pausa della Federal Reserve a settembre che scende sotto il 60% entro venerdì 21 agosto: sposterebbe il peso dal canale americano a quello giapponese, che è l’opposto di quanto descritto qui, e il cambio tornerebbe a essere leggibile dal lato di Tokyo. | no | La probabilità di una pausa è attorno al 65% il 18 agosto, cioè circa il 35% a un rialzo, e resta quindi cinque punti sopra la soglia. Il margine si è però assottigliato rispetto al 69% circa di lunedì mattina, e il termine corre fino a venerdì 21 agosto: è la condizione più vicina a scattare del gruppo. |
 
 ## Fonti consultate
 

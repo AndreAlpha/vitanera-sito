@@ -34,8 +34,10 @@ fonti:
   - testata: "Reuters"
     titolo: "Probabilità di un rialzo a settembre attorno al 33%, contro il 51,2% di un mese fa; rilevazioni su Treasury, Dollar Index, Brent e oro"
     quando: "17 agosto 2026"
+esito: "parziale"
+controllata: "2026-08-18T08:20:00+02:00"
 sorgente: "src/app/core/data/articles/aramco-consegna-fuori-dallo-stretto-e-la-curva-non-si-muove.ts"
-impronta: "18c18b385a04412e"
+impronta: "6dd912bd8f75b36b"
 ---
 
 # Aramco consegna fuori dallo Stretto, e la curva non si muove
@@ -130,6 +132,20 @@ Arrivano due giorni dopo due diffusioni sopra le attese che non hanno spostato l
 Impostazione su XAU/USD: neutrale-rialzista, forza media, orizzonte medio.
 
 Due diffusioni americane sopra le attese e la curva non le prezza: il biennale resta attorno al 4,155% e il decennale al 4,681%, entrambi leggermente più bassi in giornata, con la probabilità di un rialzo a settembre ferma attorno al 33% contro il 51,2% di un mese fa. Il rifiuto del prezzo è l’informazione, non il dato. Nello stesso tempo la gamba energetica riceve la sua spiegazione materiale: se Aramco consegna a est dello Stretto e ADNOC colloca quattordici milioni di barili spot, il Brent sotto i 90 dollari smette di essere un’anomalia e diventa la conseguenza di una valvola che funziona. La direzione non sale perché entrambe le gambe sono fatte di cose che non sono ancora successe fino in fondo — un negoziato riferito e una riprezzatura mancata — e una valvola che allenta il collo di bottiglia toglie premio al metallo tanto quanto gli toglie rischio.
+
+## Come è andata
+
+Verdetto: **parziale**, controllata il 2026-08-18T08:20:00+02:00.
+
+Una condizione su cinque è scattata, ed è quella che l’analisi indicava come la caduta della propria gamba energetica: il Brent ha chiuso a 90,87 dollari lo stesso giorno della pubblicazione, un dollaro e diciannove centesimi sopra la soglia dichiarata, e il giorno dopo ha esteso a 91,49. La tesi centrale era che le consegne fuori dallo Stretto contenessero il prezzo; il prezzo non è stato contenuto. Va detto però che cosa ha retto, perché è la parte più interessante. La distinzione fra traffico e scarsità non è stata smentita da nulla, e anzi ha ricevuto una conferma indiretta scomoda: lunedì sono transitate sei navi e nessuna era una petroliera grande o una metaniera, il che significa che il conteggio complessivo dei passaggi e quello dei barili si stanno separando ancora di più. E la lettura sul rifiuto del prezzo dopo i due dati sopra le attese ha retto per intero: il biennale è rimasto attorno al 4,16% e il dollaro sotto quota 99,94. L’analisi aveva quindi ragione su come si misura e torto su quanto sarebbe durato.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un biennale che si porta sopra il 4,218%, cioè sopra il massimo del 12 agosto, entro venerdì 21 agosto: direbbe che le due sorprese hanno riprezzato la Fed con ritardo e che leggere il rifiuto del prezzo come informazione era sbagliato. | no | Il biennale resta attorno al 4,16% nelle rilevazioni del 17 e del 18 agosto, quindi oltre cinque punti base sotto la soglia. La lettura del rifiuto del prezzo regge sulla scadenza che prezza la banca centrale: le due diffusioni sopra le attese non l’hanno riprezzata nemmeno con un giorno di ritardo, e la tensione è rimasta confinata alla parte lunga. |
+| Una conferma o una smentita ufficiale di Saudi Aramco sui trasferimenti nave-nave al largo di Fujairah entro venerdì 21 agosto: oggi il fatto centrale è un negoziato riferito da un’agenzia, e una presa di posizione della compagnia lo sposterebbe in una delle due categorie in cui adesso non sta. | no | Nessuna presa di posizione della compagnia risulta pubblicata. Il negoziato sulle consegne al largo di Fujairah resta quello che era al momento della scrittura: un fatto riferito da un’agenzia e non dichiarato dalla società. Il termine corre fino a venerdì 21 agosto. |
+| Un Dollar Index che chiude sopra 99,935, cioè sopra il massimo del 13 agosto, entro venerdì 21 agosto: toglierebbe il sostegno valutario che oggi compensa i due dati sopra le attese, e la lettura andrebbe portata a neutrale. | no | Il Dollar Index ha chiuso il 17 agosto a 99,51, minimo da giugno, ed è risalito soltanto a circa 99,60 il 18 agosto: resta oltre tre decimi sotto la soglia. Il sostegno valutario non è stato tolto, ed è la ragione per cui il metallo ha assorbito la parte lunga più a lungo di quanto la lettura si aspettasse. |
+| Un Brent che chiude sopra gli 89,68 dollari del massimo di oggi entro venerdì 21 agosto: direbbe che la valvola descritta qui non sta contenendo il prezzo quanto questa analisi sostiene, e la gamba energetica del ragionamento cadrebbe. | sì | Scattata nel giro di poche ore: il Brent ha chiuso lunedì 17 agosto a 90,87 dollari, cioè un dollaro e diciannove centesimi sopra la soglia, e il 18 agosto ha esteso a 91,49 con un WTI a 85,25. La valvola logistica descritta dall’analisi — consegne nave-nave al largo di Fujairah e gara ADNOC — non ha contenuto il prezzo: lo ha contenuto finché la diplomazia non è arrivata a scadenza, e non oltre. |
+| Un dato ufficiale di esportazioni saudite o emiratine di agosto che scenda in proporzione al crollo dei transiti, in uscita entro fine settembre: direbbe che il conteggio dei passaggi stava misurando correttamente anche i barili, e che la distinzione proposta qui fra traffico e scarsità non serviva. | no | Nessun dato ufficiale di esportazioni di agosto è disponibile: il termine corre fino a fine settembre. Il conteggio dei transiti è intanto sceso ancora, a sei navi lunedì 17 agosto contro una media a dieci giorni di undici, e per la prima volta senza alcuna petroliera grande né metaniera — un dettaglio che va nella direzione opposta alla tesi della valvola, perché sono esattamente le navi che portano i barili. |
 
 ## Fonti consultate
 

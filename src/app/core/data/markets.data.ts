@@ -17,6 +17,33 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'NAVE COLPITA 18/8',
+    name: 'Nave colpita da un proiettile non identificato in uscita dallo Stretto di Hormuz, 18 agosto',
+    value: 'sala macchine danneggiata',
+    change: 'un membro dell’equipaggio coinvolto; responsabile non identificato',
+    tone: 'warn',
+    icon: 'alert',
+    note: 'La segnalazione arriva da UK Maritime Trade Operations, cioè da un’autorità marittima e non da una rivendicazione di parte: è la distinzione che questo archivio mette per prima. Una nave in uscita dallo Stretto è stata colpita, la sala macchine è danneggiata, un membro dell’equipaggio è rimasto coinvolto e gli altri sono assistiti dalla Guardia costiera dell’Oman; non risultano conseguenze ambientali e le autorità stanno indagando. Quello che manca è l’attribuzione, e la sua assenza cambia la categoria del fatto invece di ridurne la gravità: un attacco senza autore è un evento di sicurezza della navigazione, un attacco attribuito è un atto di guerra con una controparte. Ha anche una conseguenza diretta sul registro degli esiti: il 17 agosto era stata dichiarata come invalidazione un atto materiale «attribuito all’Iran», e questo episodio non la soddisfa. L’attacco arriva su un traffico già al minimo — sei navi lunedì, tre in entrata e tre in uscita, contro una media a dieci giorni di undici, e per la prima volta senza alcuna petroliera grande né metaniera. È quest’ultimo dettaglio a contare più del totale, perché misura barili invece di scafi. Nella stessa mattina gli Houthi hanno dichiarato lanci contro una nave militare saudita e quattro unità di scorta: è una rivendicazione riportata come tale, senza verifica indipendente, e resta fra le cose dichiarate.',
+  },
+  {
+    symbol: 'IL PREMIO GIRA',
+    name: 'Il premio di rischio geopolitico cambia canale: da sostegno del rifugio a spinta sull’inflazione attesa',
+    value: 'oro 4.391,14 $ con Brent 91,49',
+    change: 'meno 0,5% sull’oro mentre il greggio sale dello 0,7% e il trentennale tocca 5,321%',
+    tone: 'bear',
+    icon: 'flow',
+    note: 'È l’osservazione che tiene insieme la giornata, e rovescia due settimane di letture. Fino a domenica ogni escalation su Hormuz è stata registrata qui come favorevole al metallo, e lo era, perché arrivava con il Brent sotto i 90 dollari: aggiungeva domanda di protezione senza toccare le attese di inflazione. Dalla chiusura di lunedì quella condizione non esiste più. Con il greggio sopra i 91, ogni nuovo fatto geopolitico entra nel prezzo dell’oro due volte e con segni opposti — una come rifugio, una come inflazione attesa che spinge i rendimenti lunghi — e martedì mattina la seconda prevale sulla prima. La prova è nella giornata stessa: una nave colpita, i transiti a sei senza petroliere grandi, la minaccia americana all’Oman, e il metallo che perde i 4.400 scendendo da 4.431,09 della sessione asiatica a 4.391,14. Il rischio non è cambiato di intensità, è cambiato il canale attraverso cui arriva. La minaccia all’Oman aggrava per una ragione ulteriore: colpisce l’intermediario, cioè il solo canale diplomatico rimasto per riaprire lo Stretto, e un premio che sale mentre si chiude la via per scioglierlo è il caso peggiore per chi quel premio lo incassa attraverso il petrolio.',
+  },
+  {
+    symbol: 'TIC GIUGNO',
+    name: 'Treasury International Capital, giugno 2026: la domanda estera per la duration lunga',
+    value: '207,1 mld $',
+    change: 'acquisti esteri netti di titoli a lungo termine, da 262,8 mld di maggio',
+    tone: 'bear',
+    icon: 'globe',
+    note: 'È la metà che mancava alla spiegazione del premio a termine. Per una settimana questo archivio ha attribuito la tensione sui rendimenti lunghi a tre cose, tutte dal lato dell’offerta: il disavanzo cumulato oltre i 1.799 miliardi in dieci mesi, i collocamenti del Tesoro, e da lunedì la forte emissione societaria legata agli investimenti in intelligenza artificiale. La diffusione mensile del Tesoro americano sui capitali internazionali guarda dall’altra parte, cioè a chi quei titoli dovrebbe comprarli, e il quadro si divide in due. Il totale non segnala alcuna fuga: il flusso resta in entrata per 133,5 miliardi contro i 132,2 di maggio, praticamente stabile, e vale la pena dirlo perché separa la questione del debito da quella del dollaro. È dentro la scadenza lunga che il numero si muove: gli acquisti esteri netti di titoli a lungo termine scendono a 207,1 miliardi da 262,8, e dopo gli aggiustamenti a 172,7 da 232,7. Sul solo Treasury il dettaglio è più severo — gli investitori privati esteri comprano per 16,6 miliardi contro i 53,6 di maggio, e le istituzioni ufficiali estere passano da acquisti per 3,0 miliardi a vendite nette per 9,8. Non è un rifiuto della carta americana, è un raffreddamento della domanda marginale proprio sulla scadenza dove il Tesoro deve collocare di più. Due limiti vanno tenuti entrambi: la serie misura giugno ed esce a metà agosto, quindi non può spiegare alcun prezzo corrente e chi la usasse per farlo racconterebbe una coincidenza; e per questo dato non esiste un consenso di mercato affidabile, quindi il confronto corretto è con il mese precedente e non con un’attesa.',
+  },
+  {
     symbol: 'PROVA 4.400',
     name: 'La condizione composta dichiarata l’11 agosto: oro sopra i 4.400 dollari con il decennale ancora sopra il 4,70%',
     value: '4.426,52 $ con 10Y al 4,70%',
