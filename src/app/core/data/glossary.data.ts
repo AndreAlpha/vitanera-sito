@@ -142,6 +142,22 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     related: ['Curva dei rendimenti', 'Rendimento reale', 'Aspettative di inflazione'],
   },
   {
+    term: 'Inflazione di pareggio',
+    letter: 'I',
+    definition:
+      'La differenza fra il rendimento di un titolo di Stato nominale e quello di un titolo indicizzato all’inflazione di pari scadenza: è il tasso d’inflazione medio al quale comprare l’uno o l’altro sarebbe indifferente, e quindi quanta inflazione il mercato sta effettivamente pagando per coprirsi.',
+    why: 'Serve a separare due cose che a video sembrano identiche. Un rendimento nominale che sale con l’inflazione di pareggio ferma significa che a salire è il rendimento reale, cioè proprio la grandezza che penalizza un’attività senza cedole; se invece salgono insieme, il rialzo è inflazione attesa e per l’oro è un argomento a favore travestito da argomento contro. È inoltre una misura di mercato e non un’indagine: chi la determina lo fa con denaro proprio.',
+    related: ['Rendimento reale', 'Premio a termine', 'Aspettative di inflazione'],
+  },
+  {
+    term: 'Grado di utilizzo della capacità produttiva',
+    letter: 'G',
+    definition:
+      'La quota degli impianti industriali esistenti che sta effettivamente lavorando, pubblicata ogni mese dalla banca centrale statunitense insieme alla produzione industriale. Negli Stati Uniti la media storica della serie è attorno al 79,4%.',
+    why: 'Dice se uno shock di costi può essere assorbito o deve essere girato sul prezzo finale. Con gli impianti vicini alla saturazione un rincaro delle materie prime diventa inflazione in fretta; con diversi punti di margine resta un costo che comprime i margini di chi produce prima di arrivare a chi compra. Per l’oro è il modo di sapere se un’eventuale accelerazione dei prezzi verrà dall’industria interna — dove i tassi mordono — o dall’energia, dove non mordono.',
+    related: ['Inflazione importata', 'Effetto base', 'Regime di mercato'],
+  },
+  {
     term: 'Rifinanziamento trimestrale',
     letter: 'R',
     definition:

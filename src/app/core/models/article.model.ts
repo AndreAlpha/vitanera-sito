@@ -78,6 +78,7 @@ export type EditorialCategorySlug =
   // Temi: il meccanismo che l'analisi descrive
   | 'correlazioni'
   | 'premio-di-rischio'
+  | 'premio-a-termine'
   | 'rotte-e-approvvigionamento'
   | 'assicurazioni-marittime'
   | 'alleanze-e-deterrenza'

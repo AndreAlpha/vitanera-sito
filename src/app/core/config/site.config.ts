@@ -401,6 +401,17 @@ export const CATEGORIES: readonly Category[] = [
       'Gli acquisti delle banche centrali. Sono un sostegno strutturale alla domanda, non un catalizzatore di giornata: si leggono su trimestri, non su sedute.',
   },
   {
+    slug: 'premio-a-termine',
+    name: 'Premio a termine',
+    short: 'Premio a termine',
+    family: 'temi',
+    series: false,
+    icon: 'horizon',
+    tagline: 'Quanto costa il tempo, tolta l’inflazione attesa',
+    description:
+      'La parte di un rendimento lungo che non si spiega né con il percorso atteso dei tassi né con l’inflazione attesa: è il compenso che chi presta chiede per immobilizzare denaro per vent’anni. Si misura per differenza, confrontando il rendimento nominale con l’inflazione di pareggio ricavata dai titoli indicizzati. Conta per l’oro perché separa due diagnosi che a video sembrano identiche: un trentennale che sale perché il mercato teme prezzi più alti è un argomento a favore del metallo, uno che sale perché il mercato chiede di più per finanziare un disavanzo è un costo-opportunità in più da battere, e nessun dato debole lo abbassa.',
+  },
+  {
     slug: 'debito-pubblico',
     name: 'Debito pubblico',
     short: 'Debito',

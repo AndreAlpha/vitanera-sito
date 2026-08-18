@@ -32,8 +32,10 @@ fonti:
   - testata: "CNBC"
   - testata: "Investing.com"
   - testata: "Bureau of Labor Statistics"
+esito: "parziale"
+controllata: "2026-08-18T22:30:00+02:00"
 sorgente: "src/app/core/data/articles/il-greggio-scende-dal-lato-della-domanda-non-dell-offerta.ts"
-impronta: "7873a448dddc61be"
+impronta: "376326a93ac2d90f"
 ---
 
 # Il greggio scende dal lato della domanda, non dell’offerta
@@ -134,6 +136,20 @@ I prezzi alla produzione misurano luglio e quindi non contengono il Brent di ago
 Impostazione su XAU/USD: neutrale-rialzista, forza bassa, orizzonte breve.
 
 La gamba monetaria non solo tiene, si rafforza: la probabilità di un rialzo a settembre scende ancora al 34,7% dal 35,7% di ieri sera, e il decennale arretra a 4,668% dalla chiusura di 4,692%. Il problema è che l’oro ha smesso di rispondere. Stanotte ha stampato un massimo nuovo a 4.449,71 dollari, sopra i 4.441,01 di ieri, e da lì ha lasciato settantadue dollari: adesso è a 4.378,07 con meno 0,69%, sotto i 4.400 e sotto la chiusura di ieri. Due sedute in cui il sostegno dichiarato migliora e il metallo scende sono il segnale che quel sostegno non è quello che lo sta muovendo.
+
+## Come è andata
+
+Verdetto: **parziale**, controllata il 2026-08-18T22:30:00+02:00.
+
+Una condizione su cinque, e la parte che ha ceduto non è quella che l’analisi sosteneva. La tesi era che il greggio stesse scendendo dal lato della domanda e non da quello dell’offerta, e su quel fronte le quattro condizioni pertinenti hanno retto tutte: prezzi alla produzione sotto il consenso, decennale in calo di sei punti base, Brent lontano dagli 89,06 per altre tre sedute, transiti fermi a nove al giorno. La sola condizione scattata riguardava il prezzo dell’oro, che ha chiuso a 4.351,07 dollari mentre tutti i sostegni descritti erano al loro posto. È lo stesso schema visto poi il 18 agosto e va contato come tale: la lettura sulle cause era giusta, quella sulla conseguenza no.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Un oro che chiude oggi sotto i 4.362,57 dollari, il minimo di mercoledì: sarebbe la terza seduta consecutiva di cedimento con il sostegno monetario intatto, e a quel punto la direzione andrebbe portata a neutrale invece di essere tenuta con forza bassa. | sì | Scattata nella stessa giornata. L’oro ha chiuso giovedì 13 agosto a 4.351,07 dollari, undici dollari e mezzo sotto la soglia, dopo aver perso l’1,01% con un minimo intraday a 4.351,45 già segnalato nel pomeriggio; nella notte è sceso fino a 4.311,22. Il sostegno monetario era effettivamente intatto: la probabilità di un rialzo a settembre era al 35,0%, in calo. |
+| Una probabilità di rialzo a settembre che risale sopra il 37,7% delle 15:50 di ieri: toglierebbe la sola gamba rimasta, e la toglierebbe dal lato in cui la lettura è più esposta. | no | La probabilità è rimasta al 35,0% il 13 agosto, in una fascia fra 34,7% e 35,7%, ed è poi scesa al 33,0% il 14 mattina e al 29,3% dopo le vendite al dettaglio. Non ha mai riavvicinato il 37,7%: la gamba monetaria non è stata tolta, si è rafforzata. |
+| Un Brent che torna sopra gli 89,06 del massimo odierno entro la chiusura: direbbe che il taglio delle previsioni sulla domanda è già stato assorbito e che il premio geopolitico continua a comandare il prezzo, cioè che il cambio di lato descritto qui non conta. | no | Il Brent ha chiuso il 13 agosto a 87,07 dollari, quasi due dollari sotto la soglia. Il livello degli 89,06 ha retto per altre tre sedute — massimo a 88,68 il 14 e a 88,79 il 15 — ed è caduto soltanto il 17 agosto, con la chiusura a 90,87. La lettura per cui il calo veniva dal lato della domanda ha quindi retto per l’intera finestra dichiarata. |
+| I prezzi alla produzione di luglio, oggi alle 14:30, sopra il consenso con il decennale che si riporta sopra il 4,692% della chiusura di ieri: sarebbe il canale energia-prezzi che entra dai costi, e renderebbe il calo del greggio irrilevante per la parte che conta. | no | Nessuna delle due metà si è verificata. I prezzi alla produzione di luglio sono usciti piatti sul mese contro attese di più 0,2%, con il dato di fondo a più 0,2% contro più 0,3% atteso: sotto il consenso in entrambe le letture. Il decennale ha chiuso a 4,629% con meno 6,3 punti base, sei punti sotto il livello indicato. |
+| Un conteggio dei transiti a Hormuz sopra i dodici al giorno pubblicato oggi: direbbe che il vincolo materiale si sta allentando davvero, e allora il calo del greggio non sarebbe di domanda ma di offerta che torna. | no | Il conteggio attribuito a giovedì 13 agosto è di nove navi, contro le cinque del giorno prima e le due del venerdì successivo, su una media di circa undici e contro le 130-140 al giorno precedenti al conflitto. Resta sotto la soglia dichiarata, e il vincolo materiale non si è allentato: sei giorni dopo il Brent era sopra i 91 dollari. |
 
 ## Fonti consultate
 

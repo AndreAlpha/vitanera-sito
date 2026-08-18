@@ -3348,4 +3348,92 @@ export const OUTCOMES: readonly Outcome[] = [
     lesson:
       'Il conteggio delle condizioni misura anche come sono state distribuite, non solo come è andata. Qui quattro condizioni su cinque stavano sul canale monetario e una sola sulla parte lunga: un esito di una su cinque si legge come «quasi tutta giusta», mentre il canale con una condizione sola è quello che ha poi deciso la settimana. Quando un’analisi dichiara due meccanismi, le condizioni vanno ripartite fra i due invece che concentrate su quello che si conosce meglio, altrimenti il registro assegna il punteggio all’attenzione dell’autore e non alla sua tesi.',
   },
+  {
+    slug: 'diciassette-milioni-di-barili-e-il-conteggio-era-di-navi',
+    checkedAt: '2026-08-18T22:30:00+02:00',
+    verdict: 'parziale',
+    conditions: [
+      {
+        condition:
+          'Il dettaglio settimanale che attribuisse l’aumento a un rilascio di riserve strategiche invece che a importazioni, lavorazioni o domanda: cambierebbe il significato del numero senza cambiarne la taglia, perché una riserva che si svuota non è offerta che abbonda.',
+        triggered: false,
+        evidence:
+          'Il numero su cui poggiava l’analisi era quello delle scorte commerciali, a 424,4 milioni di barili complessivi: è una serie che esclude per costruzione la riserva strategica, quindi un rilascio non poteva comparirvi. Nelle sei sedute successive nessuna fonte ha attribuito l’aumento a un rilascio. La condizione non è scattata, ma non poteva scattare: era scritta su una grandezza che il dato non contiene.',
+      },
+      {
+        condition:
+          'Un Brent che torna sopra i 90,06 dollari del massimo odierno entro la chiusura di venerdì: direbbe che il mercato ha guardato il numero e ha deciso che i barili nei serbatoi americani non c’entrano con i barili che non passano da Hormuz.',
+        triggered: false,
+        evidence:
+          'Il termine era venerdì 14 agosto. Il Brent ha chiuso a 87,07 dollari il 13 agosto e a 88,60 il 14, con un massimo di 88,79 rimasto ventisette centesimi sotto gli 89,06 che tre analisi seguivano come soglia separata: i 90,06 non sono mai stati riavvicinati entro il termine. Il livello è stato superato soltanto il 17 agosto, tre sedute dopo la scadenza della condizione e per una ragione diversa.',
+      },
+      {
+        condition:
+          'Un oro che chiude sotto i 4.362,57 dollari, il minimo di questa giornata: toglierebbe anche il canale monetario, che è l’unico rimasto in piedi.',
+        triggered: true,
+        evidence:
+          'Scattata il giorno dopo. L’oro ha chiuso giovedì 13 agosto a 4.351,07 dollari, undici dollari e mezzo sotto la soglia, e nella notte è sceso fino a 4.311,22. È la sola delle cinque condizioni che il mercato abbia risolto, ed è quella scritta sul prezzo dell’attività di cui l’analisi parlava.',
+      },
+      {
+        condition:
+          'Una probabilità di rialzo a settembre che risale sopra il 37,7% delle 15:50 entro venerdì, cioè sopra la lettura di un’ora fa invece che sopra un livello tondo: direbbe che la discesa si è fermata e che il canale monetario ha smesso di lavorare.',
+        triggered: false,
+        evidence:
+          'La probabilità è scesa al 35,0% il 13 agosto in serata, al 33,0% la mattina del 14 e al 29,3% dopo le vendite al dettaglio a meno 0,6%, risalendo poi soltanto al 31,6% dopo la fiducia del Michigan. Non ha mai riavvicinato il 37,7% entro il termine: il canale monetario ha continuato a lavorare nel verso dichiarato dall’analisi.',
+      },
+      {
+        condition:
+          'Un’asta del decennale alle 19:00 che si aggiudica sopra il quotato pre-asta, con il rendimento riportato sopra il 4,688% del massimo odierno: riporterebbe la parte lunga della curva contro il metallo a prescindere da tutto il resto.',
+        triggered: false,
+        evidence:
+          'La condizione era doppia e solo una metà si è verificata. Il collocamento del 12 agosto si è aggiudicato al 4,683%, sopra il 4,673% del secondario in quel momento, quindi sopra il quotato pre-asta; ma il rendimento non è tornato sopra il 4,688%, e anzi il decennale ha chiuso il 13 agosto a 4,629% con meno 6,3 punti base. La seconda metà non si è avverata, e la condizione così come scritta non è scattata.',
+      },
+    ],
+    what: 'Una condizione su cinque, ed è quella scritta sul prezzo dell’oro: chiusura a 4.351,07 dollari il 13 agosto, undici dollari e mezzo sotto la soglia. Le altre quattro hanno retto, e nel caso dell’asta ha retto per un soffio la metà che contava: l’aggiudicazione è arrivata sopra il mercato come temuto, ma il rendimento è sceso invece di salire e la condizione richiedeva entrambe le cose. Il quadro complessivo conferma la tesi dell’analisi — l’aumento di 17,4 milioni di barili nei serbatoi commerciali americani non è stato smentito né ridimensionato, il Brent è rimasto lontano dai 90,06 per tre sedute, e la probabilità di un rialzo a settembre ha continuato a scendere fino al 29,3% — mentre il metallo faceva l’opposto di quello che quel quadro suggeriva.',
+    lesson:
+      'Una condizione va scritta su una grandezza che il dato citato contiene. La prima di queste cinque chiedeva se l’aumento delle scorte fosse un rilascio di riserva strategica, ma il numero da cui l’analisi partiva era quello delle scorte commerciali, che la riserva strategica la esclude per definizione: non poteva scattare in nessuno scenario, e ha occupato un posto su cinque nel conteggio. Una condizione che non può essere vera non falsifica niente e gonfia la quota di quelle che reggono.',
+  },
+  {
+    slug: 'il-greggio-scende-dal-lato-della-domanda-non-dell-offerta',
+    checkedAt: '2026-08-18T22:30:00+02:00',
+    verdict: 'parziale',
+    conditions: [
+      {
+        condition:
+          'Un oro che chiude oggi sotto i 4.362,57 dollari, il minimo di mercoledì: sarebbe la terza seduta consecutiva di cedimento con il sostegno monetario intatto, e a quel punto la direzione andrebbe portata a neutrale invece di essere tenuta con forza bassa.',
+        triggered: true,
+        evidence:
+          'Scattata nella stessa giornata. L’oro ha chiuso giovedì 13 agosto a 4.351,07 dollari, undici dollari e mezzo sotto la soglia, dopo aver perso l’1,01% con un minimo intraday a 4.351,45 già segnalato nel pomeriggio; nella notte è sceso fino a 4.311,22. Il sostegno monetario era effettivamente intatto: la probabilità di un rialzo a settembre era al 35,0%, in calo.',
+      },
+      {
+        condition:
+          'Una probabilità di rialzo a settembre che risale sopra il 37,7% delle 15:50 di ieri: toglierebbe la sola gamba rimasta, e la toglierebbe dal lato in cui la lettura è più esposta.',
+        triggered: false,
+        evidence:
+          'La probabilità è rimasta al 35,0% il 13 agosto, in una fascia fra 34,7% e 35,7%, ed è poi scesa al 33,0% il 14 mattina e al 29,3% dopo le vendite al dettaglio. Non ha mai riavvicinato il 37,7%: la gamba monetaria non è stata tolta, si è rafforzata.',
+      },
+      {
+        condition:
+          'Un Brent che torna sopra gli 89,06 del massimo odierno entro la chiusura: direbbe che il taglio delle previsioni sulla domanda è già stato assorbito e che il premio geopolitico continua a comandare il prezzo, cioè che il cambio di lato descritto qui non conta.',
+        triggered: false,
+        evidence:
+          'Il Brent ha chiuso il 13 agosto a 87,07 dollari, quasi due dollari sotto la soglia. Il livello degli 89,06 ha retto per altre tre sedute — massimo a 88,68 il 14 e a 88,79 il 15 — ed è caduto soltanto il 17 agosto, con la chiusura a 90,87. La lettura per cui il calo veniva dal lato della domanda ha quindi retto per l’intera finestra dichiarata.',
+      },
+      {
+        condition:
+          'I prezzi alla produzione di luglio, oggi alle 14:30, sopra il consenso con il decennale che si riporta sopra il 4,692% della chiusura di ieri: sarebbe il canale energia-prezzi che entra dai costi, e renderebbe il calo del greggio irrilevante per la parte che conta.',
+        triggered: false,
+        evidence:
+          'Nessuna delle due metà si è verificata. I prezzi alla produzione di luglio sono usciti piatti sul mese contro attese di più 0,2%, con il dato di fondo a più 0,2% contro più 0,3% atteso: sotto il consenso in entrambe le letture. Il decennale ha chiuso a 4,629% con meno 6,3 punti base, sei punti sotto il livello indicato.',
+      },
+      {
+        condition:
+          'Un conteggio dei transiti a Hormuz sopra i dodici al giorno pubblicato oggi: direbbe che il vincolo materiale si sta allentando davvero, e allora il calo del greggio non sarebbe di domanda ma di offerta che torna.',
+        triggered: false,
+        evidence:
+          'Il conteggio attribuito a giovedì 13 agosto è di nove navi, contro le cinque del giorno prima e le due del venerdì successivo, su una media di circa undici e contro le 130-140 al giorno precedenti al conflitto. Resta sotto la soglia dichiarata, e il vincolo materiale non si è allentato: sei giorni dopo il Brent era sopra i 91 dollari.',
+      },
+    ],
+    what: 'Una condizione su cinque, e la parte che ha ceduto non è quella che l’analisi sosteneva. La tesi era che il greggio stesse scendendo dal lato della domanda e non da quello dell’offerta, e su quel fronte le quattro condizioni pertinenti hanno retto tutte: prezzi alla produzione sotto il consenso, decennale in calo di sei punti base, Brent lontano dagli 89,06 per altre tre sedute, transiti fermi a nove al giorno. La sola condizione scattata riguardava il prezzo dell’oro, che ha chiuso a 4.351,07 dollari mentre tutti i sostegni descritti erano al loro posto. È lo stesso schema visto poi il 18 agosto e va contato come tale: la lettura sulle cause era giusta, quella sulla conseguenza no.',
+  },
 ];

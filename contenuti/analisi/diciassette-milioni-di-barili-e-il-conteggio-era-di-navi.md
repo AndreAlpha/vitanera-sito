@@ -28,8 +28,10 @@ fonti:
   - testata: "Trading Economics"
   - testata: "Reuters"
   - testata: "The Wall Street Journal"
+esito: "parziale"
+controllata: "2026-08-18T22:30:00+02:00"
 sorgente: "src/app/core/data/articles/diciassette-milioni-di-barili-e-il-conteggio-era-di-navi.ts"
-impronta: "6d181f003bf8a156"
+impronta: "f32a2beeff949e68"
 ---
 
 # Diciassette milioni di barili, e il conteggio era di navi
@@ -137,6 +139,22 @@ Alta sul dato, che è una diffusione ufficiale settimanale dell’agenzia statun
 Impostazione su XAU/USD: neutrale-rialzista, forza media, orizzonte medio.
 
 Il canale monetario continua a lavorare per il metallo — la probabilità di un rialzo a settembre scende ancora, al 35,7%, e il biennale resta a 4,184% — ma i due canali che alle 16:05 erano stati contati come favorevoli si sono chiusi entro l’ora. Il dollaro ha restituito per intero il calo del pomeriggio, a 99,709 con variazione di giornata quasi nulla, e l’oro ha lasciato undici dollari dal massimo. Sopra tutto arriva il numero delle 16:30: le scorte americane salgono di 17,4 milioni di barili, quasi il doppio della stima di settore e contro un consenso che ne attendeva 1,7 in meno.
+
+## Come è andata
+
+Verdetto: **parziale**, controllata il 2026-08-18T22:30:00+02:00.
+
+Una condizione su cinque, ed è quella scritta sul prezzo dell’oro: chiusura a 4.351,07 dollari il 13 agosto, undici dollari e mezzo sotto la soglia. Le altre quattro hanno retto, e nel caso dell’asta ha retto per un soffio la metà che contava: l’aggiudicazione è arrivata sopra il mercato come temuto, ma il rendimento è sceso invece di salire e la condizione richiedeva entrambe le cose. Il quadro complessivo conferma la tesi dell’analisi — l’aumento di 17,4 milioni di barili nei serbatoi commerciali americani non è stato smentito né ridimensionato, il Brent è rimasto lontano dai 90,06 per tre sedute, e la probabilità di un rialzo a settembre ha continuato a scendere fino al 29,3% — mentre il metallo faceva l’opposto di quello che quel quadro suggeriva.
+
+| Condizione dichiarata | Scattata | Che cosa si è visto |
+| --- | --- | --- |
+| Il dettaglio settimanale che attribuisse l’aumento a un rilascio di riserve strategiche invece che a importazioni, lavorazioni o domanda: cambierebbe il significato del numero senza cambiarne la taglia, perché una riserva che si svuota non è offerta che abbonda. | no | Il numero su cui poggiava l’analisi era quello delle scorte commerciali, a 424,4 milioni di barili complessivi: è una serie che esclude per costruzione la riserva strategica, quindi un rilascio non poteva comparirvi. Nelle sei sedute successive nessuna fonte ha attribuito l’aumento a un rilascio. La condizione non è scattata, ma non poteva scattare: era scritta su una grandezza che il dato non contiene. |
+| Un Brent che torna sopra i 90,06 dollari del massimo odierno entro la chiusura di venerdì: direbbe che il mercato ha guardato il numero e ha deciso che i barili nei serbatoi americani non c’entrano con i barili che non passano da Hormuz. | no | Il termine era venerdì 14 agosto. Il Brent ha chiuso a 87,07 dollari il 13 agosto e a 88,60 il 14, con un massimo di 88,79 rimasto ventisette centesimi sotto gli 89,06 che tre analisi seguivano come soglia separata: i 90,06 non sono mai stati riavvicinati entro il termine. Il livello è stato superato soltanto il 17 agosto, tre sedute dopo la scadenza della condizione e per una ragione diversa. |
+| Un oro che chiude sotto i 4.362,57 dollari, il minimo di questa giornata: toglierebbe anche il canale monetario, che è l’unico rimasto in piedi. | sì | Scattata il giorno dopo. L’oro ha chiuso giovedì 13 agosto a 4.351,07 dollari, undici dollari e mezzo sotto la soglia, e nella notte è sceso fino a 4.311,22. È la sola delle cinque condizioni che il mercato abbia risolto, ed è quella scritta sul prezzo dell’attività di cui l’analisi parlava. |
+| Una probabilità di rialzo a settembre che risale sopra il 37,7% delle 15:50 entro venerdì, cioè sopra la lettura di un’ora fa invece che sopra un livello tondo: direbbe che la discesa si è fermata e che il canale monetario ha smesso di lavorare. | no | La probabilità è scesa al 35,0% il 13 agosto in serata, al 33,0% la mattina del 14 e al 29,3% dopo le vendite al dettaglio a meno 0,6%, risalendo poi soltanto al 31,6% dopo la fiducia del Michigan. Non ha mai riavvicinato il 37,7% entro il termine: il canale monetario ha continuato a lavorare nel verso dichiarato dall’analisi. |
+| Un’asta del decennale alle 19:00 che si aggiudica sopra il quotato pre-asta, con il rendimento riportato sopra il 4,688% del massimo odierno: riporterebbe la parte lunga della curva contro il metallo a prescindere da tutto il resto. | no | La condizione era doppia e solo una metà si è verificata. Il collocamento del 12 agosto si è aggiudicato al 4,683%, sopra il 4,673% del secondario in quel momento, quindi sopra il quotato pre-asta; ma il rendimento non è tornato sopra il 4,688%, e anzi il decennale ha chiuso il 13 agosto a 4,629% con meno 6,3 punti base. La seconda metà non si è avverata, e la condizione così come scritta non è scattata. |
+
+**Che cosa cambia.** Una condizione va scritta su una grandezza che il dato citato contiene. La prima di queste cinque chiedeva se l’aumento delle scorte fosse un rilascio di riserva strategica, ma il numero da cui l’analisi partiva era quello delle scorte commerciali, che la riserva strategica la esclude per definizione: non poteva scattare in nessuno scenario, e ha occupato un posto su cinque nel conteggio. Una condizione che non può essere vera non falsifica niente e gonfia la quota di quelle che reggono.
 
 ## Fonti consultate
 

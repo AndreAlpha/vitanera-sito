@@ -22,6 +22,10 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { inflazioneDiPareggioResta } from './articles/l-inflazione-di-pareggio-resta-al-2-30-il-trentennale-no';
+import { aramcoRicaricaDentroLoStretto } from './articles/aramco-ricarica-dentro-lo-stretto-e-l-oro-perde-i-4381';
+import { menoDueVirgolaTreDoveSiAttendevaUnPiu } from './articles/meno-2-3-dove-si-attendeva-un-piu-e-il-mese-e-quello-giusto';
+import { trePuntiDiCapacitaInutilizzata } from './articles/tre-punti-di-capacita-inutilizzata-e-l-inflazione-non-viene-da-li';
 import { ilGreggioDiLuglioEsceDaiPrezzi } from './articles/il-greggio-di-luglio-esce-dai-prezzi-quello-di-agosto-no';
 import { pechinoScendeSulDebitoAmericano } from './articles/pechino-scende-sul-debito-americano-e-sale-sull-oro';
 import { unaNaveColpitaAHormuzELOroScende } from './articles/una-nave-colpita-a-hormuz-e-l-oro-scende';
@@ -122,6 +126,10 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  inflazioneDiPareggioResta,
+  aramcoRicaricaDentroLoStretto,
+  menoDueVirgolaTreDoveSiAttendevaUnPiu,
+  trePuntiDiCapacitaInutilizzata,
   ilGreggioDiLuglioEsceDaiPrezzi,
   pechinoScendeSulDebitoAmericano,
   unaNaveColpitaAHormuzELOroScende,
