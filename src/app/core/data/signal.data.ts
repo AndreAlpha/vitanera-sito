@@ -180,6 +180,7 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-18T09:30:00+02:00',
+  checkedAt: '2026-08-18T11:25:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -215,7 +216,19 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'Non scende sotto il neutrale per due ragioni misurabili: il movimento è di mezzo punto ' +
         'percentuale, e la gamba monetaria non ha ceduto — pausa a settembre attorno al 65%, dollaro a ' +
         '99,60 dopo un rialzo di un decimo, biennale fermo attorno al 4,16%. Il caso pienamente ' +
-        'sfavorevole richiede che ceda anche quella. Nel pomeriggio il dubbio si scioglie dal lato ' +
+        'sfavorevole richiede che ceda anche quella. Riverificato alle 11:25 senza pubblicare, perché non ' +
+        'c’è un fatto nuovo da pubblicare: la direzione resta neutrale e la forza resta media, ma il quadro ' +
+        'va registrato lo stesso, perché per tre ore il prezzo non ha confermato il proprio meccanismo. Le ' +
+        'due cause indicate alle 08:40 si sono mosse in versi opposti fra loro — decennale a circa 4,740% e ' +
+        'trentennale a 5,327%, massimo dal 2007, contro un Brent sceso da 91,49 a 91,22 — e il metallo, ' +
+        'invece di seguire l’una o l’altra, è risalito a 4.397,42 con meno 0,4%, sei dollari sopra la ' +
+        'rilevazione del mattino. Reuters continua ad attribuire la pressione a rendimenti alti e petrolio ' +
+        'caro, e la spiegazione regge sulla giornata; sulle ultime tre ore no. Quello che è cambiato davvero ' +
+        'sta in un numero solo, e non è il prezzo dell’oro: il decennale è a un punto base dal 4,75% ' +
+        'dichiarato ieri sera come livello oltre il quale il costo-opportunità smette di essere assorbibile ' +
+        'con il solo sostegno del cambio. Non è scattato, e un quasi non vale un sì: questo archivio si era ' +
+        'già astenuto per quattordici dollari l’11 agosto e per quindici centesimi ieri mattina. ' +
+        'Nel pomeriggio il dubbio si scioglie dal lato ' +
         'previsto: la rilevazione Reuters delle 16:45 dà l’oro attorno a 4.388 dollari con più 0,3%, con ' +
         'Investing fra 4.389 e 4.404. I 4.400 sono stati attraversati due volte in una giornata e non ' +
         'tenuti nessuna delle due, che è il comportamento tipico di un livello tondo su cui si accumulano ' +
@@ -611,6 +624,11 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'Alle 11:25 del 18 agosto il metallo non ha seguito il proprio meccanismo, ed è la ragione per cui ' +
+      'la direzione non scende: XAU/USD è a 4.397,42 dollari con meno 0,4%, sei dollari sopra la ' +
+      'rilevazione delle 08:40, mentre il decennale saliva a circa 4,740% e il trentennale a 5,327%. Il ' +
+      'primo supporto dichiarato stamattina, 4.381 dollari, non è stato avvicinato, e i futures di ' +
+      'dicembre sono a 4.452,90',
     'La domanda strutturale per il metallo ha adesso le due metà invece di una: la banca centrale cinese ' +
       'compra oro da ventuno mesi consecutivi — 640.000 once nel solo luglio — e nello stesso trimestre ha ' +
       'portato le proprie detenzioni di Treasury a 633,4 miliardi, minimo dal settembre 2008 e oltre il 13% ' +
@@ -662,6 +680,16 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'Il decennale è a un punto base dal 4,75%, la soglia dichiarata il 17 agosto sera come livello ' +
+      'oltre il quale il costo-opportunità smette di essere assorbibile con il solo sostegno del cambio: ' +
+      'circa 4,740% alle 11:25, ed è la distanza più corta mai registrata da questa tacca. Il ' +
+      'trentennale segna 5,327%, massimo dal 2007, e il Brent resta a 91,22 con la terza seduta ' +
+      'consecutiva di rialzo e i massimi dal 30 luglio',
+    'La gamba monetaria comincia a muoversi nel verso ostile, ed era la sola rimasta a reggere: la ' +
+      'probabilità di un rialzo a settembre sale in una fascia fra il 35% e il 37%, quindi la pausa ' +
+      'scende fra il 63% e il 65%, contro il limite del 60% dichiarato il 17 agosto. Non è però il ' +
+      'cambio a spingerla, perché il Dollar Index resta attorno a 99,6, vicino ai minimi delle ultime ' +
+      'settimane',
     'Lo stesso dato che sui trimestri sostiene il metallo, sui giorni lo schiaccia: una domanda estera più ' +
       'fredda per la duration lunga è una ragione non monetaria perché il decennale resti al 4,726% e il ' +
       'trentennale al 5,321%, ed è quello che sta tenendo l’oro sotto i 4.400',
@@ -939,14 +967,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 35,
-      display: '≈ 35%',
+      now: 36,
+      display: '≈ 36%',
       marks: [
         {
           at: 40,
           display: '40%',
           kind: 'logora',
-          note: 'corrisponde a una probabilità di pausa che scende sotto il 60%, cioè la soglia dichiarata il 17 agosto dalla lettura sul PIL giapponese. È diventata la prima tacca utile perché le due precedenti sono state entrambe raggiunte in ventiquattro ore: il 33% dichiarato la sera del 17 è scattato, e il 35% del mattino è stato raggiunto il 18. Sopra il 40% la gamba monetaria si aggiungerebbe alle due già ostili — petrolio e parte lunga — ed è la sola configurazione in cui questo archivio non ha mai visto il metallo reggere',
+          note: 'corrisponde a una probabilità di pausa che scende sotto il 60%, cioè la soglia dichiarata il 17 agosto dalla lettura sul PIL giapponese. È diventata la prima tacca utile perché le due precedenti sono state entrambe raggiunte in ventiquattro ore: il 33% dichiarato la sera del 17 è scattato, e il 35% del mattino è stato raggiunto il 18. Alle 11:25 del 18 la fascia rilevata è 35-37% e restano fra tre e cinque punti. Sopra il 40% la gamba monetaria si aggiungerebbe alle due già ostili — petrolio e parte lunga — ed è la sola configurazione in cui questo archivio non ha mai visto il metallo reggere',
         },
         {
           at: 50,
@@ -958,8 +986,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 91.49,
-      display: '91,49 $',
+      now: 91.22,
+      display: '91,22 $',
       marks: [
         {
           at: 87.07,
@@ -989,7 +1017,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 92,
           display: '92 $',
           kind: 'logora',
-          note: 'è il livello dichiarato il 15 agosto come quello oltre il quale il mercato prezzerebbe il fronte del Mar Nero come perdita di offerta vera. Con il Brent che consolida sopra i 91 diventa la prima tacca ancora davanti al prezzo, e la distanza è di poco più di mezzo dollaro',
+          note: 'è il livello dichiarato il 15 agosto come quello oltre il quale il mercato prezzerebbe il fronte del Mar Nero come perdita di offerta vera. Con il Brent che consolida sopra i 91 diventa la prima tacca ancora davanti al prezzo, e alle 11:25 del 18 agosto la distanza è di settantotto centesimi',
         },
         {
           at: 95,
@@ -1014,8 +1042,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.726,
-      display: '4,726%',
+      now: 4.74,
+      display: '4,740%',
       marks: [
         {
           at: 4.68,
@@ -1033,7 +1061,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 4.75,
           display: '4,75%',
           kind: 'invalida',
-          note: 'è la soglia dichiarata il 17 agosto sera: il livello oltre il quale il costo-opportunità smette di essere assorbibile con il solo sostegno del cambio. Con il decennale a 4,726% è la prima tacca ancora davanti al prezzo, e la distanza è di poco più di due centesimi di punto',
+          note: 'è la soglia dichiarata il 17 agosto sera: il livello oltre il quale il costo-opportunità smette di essere assorbibile con il solo sostegno del cambio. Con il decennale a circa 4,740% alle 11:25 del 18 agosto la distanza si riduce a un punto base, la più corta mai registrata da questa tacca. Resta la prima ancora davanti al prezzo, e non è scattata: la lettura non si muove finché il livello non viene superato',
         },
       ],
     },
@@ -1058,8 +1086,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 30 anni',
-      now: 5.321,
-      display: '5,321%',
+      now: 5.327,
+      display: '5,327%',
       marks: [
         {
           at: 5.213,
@@ -1071,14 +1099,14 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 5.4,
           display: '5,40%',
           kind: 'logora',
-          note: 'è la soglia dichiarata il 10 agosto insieme a un biennale fermo sotto il 4,25%: sopra quel livello il premio a termine smetterebbe di essere una pendenza e diventerebbe un evento. Il 5,29% di lunedì 17 agosto è un punto base sopra il 5,28% già registrato il 10 e l’11, quindi è lo stesso massimo che dura invece di un massimo nuovo',
+          note: 'è la soglia dichiarata il 10 agosto insieme a un biennale fermo sotto il 4,25%: sopra quel livello il premio a termine smetterebbe di essere una pendenza e diventerebbe un evento. Il 5,29% di lunedì 17 agosto è un punto base sopra il 5,28% già registrato il 10 e l’11, quindi è lo stesso massimo che dura invece di un massimo nuovo. Il 5,327% delle 11:25 del 18 aggiunge sei millesimi al massimo del mattino e lascia poco più di sette centesimi alla tacca',
         },
       ],
     },
     {
       label: 'XAU/USD',
-      now: 4397,
-      display: '≈ 4.397 $',
+      now: 4397.42,
+      display: '4.397,42 $',
       marks: [
         {
           at: 4376.59,
@@ -1087,16 +1115,16 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           note: 'chiusura di venerdì, e il livello sotto cui l’oro ha aperto lunedì mattina a circa 4.373 dollari: una chiusura di lunedì sotto questo livello annullerebbe il recupero della mattina e riporterebbe la forza a bassa. È anche la misura del salto che non c’è stato, dopo sette letture geopolitiche in tre giorni',
         },
         {
-          at: 4400,
-          display: '4.400 $',
-          kind: 'logora',
-          note: 'tenuto per una giornata intera e riperso: superato in serata il 17 agosto con ventisei dollari di margine, fino a 4.431,09 nella sessione asiatica, e abbandonato la mattina del 18 con il metallo a 4.391,14. In tre giorni il livello è stato toccato senza tenuta due volte, tenuto una e riperso: è il comportamento di un numero tondo su cui si accumulano ordini, non quello di un supporto. Adesso è la soglia da riprendere, non quella da difendere',
-        },
-        {
           at: 4381,
           display: '4.381 $',
           kind: 'invalida',
           note: 'primo supporto tecnico indicato da Reuters il 18 agosto, e la prima tacca sotto il prezzo: una chiusura sotto questo livello aprirebbe la fascia 4.320-4.351 e porterebbe la direzione sotto il neutrale, che è il gradino che la lettura del 18 agosto non ha voluto fare',
+        },
+        {
+          at: 4400,
+          display: '4.400 $',
+          kind: 'logora',
+          note: 'tenuto per una giornata intera e riperso: superato in serata il 17 agosto con ventisei dollari di margine, fino a 4.431,09 nella sessione asiatica, e abbandonato la mattina del 18 con il metallo a 4.391,14. In tre giorni il livello è stato toccato senza tenuta due volte, tenuto una e riperso: è il comportamento di un numero tondo su cui si accumulano ordini, non quello di un supporto. Adesso è la soglia da riprendere, non quella da difendere',
         },
       ],
     },

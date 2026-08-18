@@ -11,7 +11,7 @@
  */
 import { Cadence, Release, Stage } from '../models/calendar.model';
 
-export const CALENDAR_GENERATED_AT = '2026-08-18T07:34Z';
+export const CALENDAR_GENERATED_AT = '2026-08-18T09:25Z';
 
 type Row = readonly [
   at: string,

@@ -3260,4 +3260,47 @@ export const OUTCOMES: readonly Outcome[] = [
     ],
     what: 'Nessuna delle cinque condizioni è scattata, e il verdetto va letto insieme a una cosa che l’analisi aveva scritto e che si è avverata in poche ore. Il testo lasciava aperte due ipotesi — o la clausola sulla combinazione era scritta male, o il metallo la stava smentendo — e indicava come distinguerle: se il canale funzionava con ritardo, nelle sedute successive si sarebbe visto il metallo cedere mentre il greggio restava sopra i 90 e la parte lunga non rientrava. È esattamente quello che è successo: il Brent ha esteso a 91,49, il trentennale ha toccato il 5,321% e l’oro è sceso sotto i 4.400 fino a 4.391,14. La clausola era scritta bene e ha agito con un giorno di ritardo. La prima condizione non registra nulla di tutto questo solo perché chiede una chiusura di mercoledì che non è ancora arrivata, ed è il difetto di costruzione già annotato ieri. Le altre due condizioni di mercato hanno invece confermato la lettura per la parte che riguarda dove sta la tensione: il biennale è rimasto attorno al 4,16% e il dollaro sotto 99,94, quindi la pressione è venuta dalla parte lunga e non da una riprezzatura della banca centrale, come l’analisi sosteneva.',
   },
+  {
+    slug: 'una-nave-colpita-a-hormuz-e-l-oro-scende',
+    checkedAt: '2026-08-18T11:25:00+02:00',
+    verdict: 'confermata',
+    conditions: [
+      {
+        condition:
+          'Un oro che recupera i 4.420 dollari entro giovedì 20 agosto con il Brent ancora sopra i 91: direbbe che il cedimento di stamattina era una presa di profitto dentro una struttura ancora rialzista, e la direzione andrebbe riportata sopra il neutrale.',
+        triggered: false,
+        evidence:
+          'Alle 11:25 del 18 agosto XAU/USD è a 4.397,42 dollari con meno 0,4%, e i futures di dicembre a 4.452,90. Rispetto ai 4.391,14 delle 08:40 il metallo ha recuperato sei dollari, quindi resta ventidue sotto la soglia, mentre il Brent è a 91,22 e la prima metà della condizione continua a valere. Il rimbalzo c’è, ma è un quarto di quello che servirebbe.',
+      },
+      {
+        condition:
+          'Un oro che rompe i 4.381 dollari indicati come primo supporto e chiude sotto quel livello entro giovedì 20 agosto: aprirebbe la fascia 4.320-4.351 e porterebbe la direzione sotto il neutrale, che è il gradino che questa lettura non ha voluto fare oggi.',
+        triggered: false,
+        evidence:
+          'Il livello non è stato avvicinato: alle 11:25 il prezzo è sedici dollari sopra, e nelle rilevazioni disponibili fra le 08:40 e le 11:25 non risulta mai riportato sotto i 4.391,14, cioè dieci dollari sopra il supporto. Nessuna seduta si è chiusa da allora e il termine corre fino a giovedì 20.',
+      },
+      {
+        condition:
+          'Un’attribuzione ufficiale dell’attacco di stamattina a un attore identificato — Iran, Houthi o altri — da parte di un governo o di un’autorità marittima entro venerdì 21 agosto: sposterebbe l’episodio dalla categoria della sicurezza della navigazione a quella dell’atto di guerra, e cambierebbe il peso del premio di rischio invece della sua direzione.',
+        triggered: false,
+        evidence:
+          'Nessuna attribuzione risulta nelle rilevazioni disponibili alle 11:25: il proiettile resta non identificato come nella segnalazione originale della UKMTO, e l’episodio resta un fatto senza autore. È la condizione con il termine più lungo, e finora nessuna fonte è intervenuta sul punto.',
+      },
+      {
+        condition:
+          'Un Brent che rientra sotto i 90 dollari in chiusura entro venerdì 21 agosto: riaprirebbe la configurazione in cui il rischio geopolitico sostiene il metallo senza passare per l’inflazione, e l’osservazione centrale di questa lettura — il premio che ha cambiato segno — sarebbe stata scritta su una fase di tre giorni.',
+        triggered: false,
+        evidence:
+          'Andata nel verso opposto: il Brent è a 91,22 dollari, terza seduta consecutiva di rialzo e massimo dal 30 luglio, con il WTI a 85,31. I ventisette centesimi persi rispetto ai 91,49 delle 08:40 non avvicinano la soglia più di un dollaro su una distanza che ne supera uno e venti.',
+      },
+      {
+        condition:
+          'Una probabilità di pausa a settembre che scende sotto il 60% entro venerdì 21 agosto: aggiungerebbe la gamba monetaria alle due già ostili, ed è la sola configurazione in cui questo archivio non ha mai visto il metallo reggere.',
+        triggered: false,
+        evidence:
+          'È la sola condizione che si sia mossa, e si è mossa nel proprio verso: la probabilità di un rialzo a settembre sale in una fascia fra il 35% e il 37% da circa il 35% delle 08:40, quindi la pausa scende fra il 63% e il 65%. Restano fra tre e cinque punti al limite dichiarato, e la gamba monetaria non ha ancora ceduto.',
+      },
+    ],
+    what: 'Nessuna delle cinque condizioni è scattata, e il modo in cui non sono scattate dice più del conteggio. L’analisi delle 08:40 attribuiva il cedimento del metallo a due cause misurabili, rendimenti lunghi e barile. Nelle tre ore successive quelle due cause si sono mosse in versi opposti fra loro — il decennale è salito a circa 4,740% e il trentennale a 5,327%, mentre il Brent è sceso da 91,49 a 91,22 — e l’oro, invece di seguire l’una o l’altra, è salito di sei dollari a 4.397,42, riducendo la perdita di giornata da meno 0,5% a meno 0,4%. Sono tutti movimenti dentro il rumore e nessuno tocca una soglia dichiarata: i 4.381 non sono stati avvicinati, i 4.420 restano ventidue dollari sopra, il Brent non ha riavvicinato i 90, e l’attacco resta senza autore. L’unica cosa che si è mossa nella direzione della lettura è la probabilità di un rialzo a settembre, salita in una fascia fra il 35% e il 37%: la gamba monetaria si avvicina al limite del 60% di pausa senza raggiungerlo. La lettura regge quindi per conteggio, ma per tre ore il prezzo non ha confermato il proprio meccanismo, ed è questo che va registrato nell’indicatore invece che in una nuova analisi.',
+  },
 ];
