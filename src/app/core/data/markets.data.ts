@@ -17,6 +17,16 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'DETENZIONI ESTERE',
+    name: 'Detenzioni estere di titoli del Tesoro americano, giugno 2026, con il dettaglio per Paese',
+    value: 'Cina 633,4 mld $',
+    change:
+      'minimo dal settembre 2008, oltre meno 13% su base annua; totale estero a 9,299 trln da 9,371',
+    tone: 'warn',
+    icon: 'globe',
+    note: 'È la seconda metà di uno scambio di cui questo archivio aveva registrato solo la prima. L’11 agosto era stato annotato che la banca centrale cinese aveva comprato 640.000 once d’oro a luglio — quasi venti tonnellate, ventunesimo mese consecutivo e maggior acquisto dall’ottobre 2023 — e quella nota diceva che cosa la riserva stesse comprando, non che cosa stesse lasciando. Il dettaglio per Paese pubblicato il 18 agosto dà l’altra metà: le detenzioni cinesi di Treasury scendono a 633,4 miliardi da 659,3, il livello più basso dal settembre 2008, con una riduzione superiore al 13% in dodici mesi. Il calo non riguarda però solo Pechino: il Giappone passa da 1,143 a 1,116 trilioni e il Regno Unito da 948,6 a 939,9 miliardi, quindi i tre maggiori detentori si muovono nello stesso verso nello stesso mese, e il totale estero scende a 9,299 trilioni da 9,371. Il numero più severo è quello della domanda marginale: acquisti netti su base transazionale per 6,8 miliardi contro i 56,6 di maggio, circa un ottavo. Due cautele reggono la lettura e vanno tenute entrambe. La prima impedisce di chiamarla fuga: le detenzioni complessive restano più alte del 2,3% rispetto a dodici mesi prima, quindi è un raffreddamento della domanda e non un deflusso. La seconda impedisce di chiamarla sostituzione dimostrata: le due serie cinesi misurano mesi diversi — giugno per il debito, luglio per il metallo — nessuna delle due fonti dichiara un travaso, e le taglie non sono confrontabili, perché venti tonnellate d’oro valgono una frazione minima dei venticinque miliardi usciti dalla posizione in Treasury. Quello che regge senza forzature è più stretto e basta a spostare la lettura di fondo: nello stesso trimestre lo stesso detentore ufficiale ha ridotto la carta americana e aumentato il metallo. Per l’oro il segno è opposto sui due orizzonti — sui trimestri è domanda che non guarda al prezzo, sui giorni è una ragione non monetaria perché la parte lunga resti alta, ed è quella che oggi lo tiene sotto i 4.400.',
+  },
+  {
     symbol: 'NAVE COLPITA 18/8',
     name: 'Nave colpita da un proiettile non identificato in uscita dallo Stretto di Hormuz, 18 agosto',
     value: 'sala macchine danneggiata',

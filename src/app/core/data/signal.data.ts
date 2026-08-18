@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-18T08:40:00+02:00',
+  updatedAt: '2026-08-18T09:30:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -450,14 +450,40 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'prosegue la parte lunga resta alta a prescindere da che cosa faccia il petrolio. Due limiti da ' +
         'tenere: la rilevazione misura giugno ed esce a metà agosto, quindi non spiega alcun prezzo ' +
         'corrente, e per questa serie non esiste un consenso affidabile, quindi il confronto utile è con ' +
-        'il mese precedente e non con un’attesa.',
+        'il mese precedente e non con un’attesa. Il 18 agosto il dettaglio per Paese di quella stessa ' +
+        'diffusione aggiunge la cosa che mancava, cioè i nomi: le detenzioni estere complessive scendono a ' +
+        '9,299 trilioni da 9,371, e il calo è concentrato nei tre maggiori detentori — Giappone da 1,143 a ' +
+        '1,116 trilioni, Regno Unito da 948,6 a 939,9 miliardi, Cina da 659,3 a 633,4 miliardi. Il dato ' +
+        'cinese è quello che porta la storia più lunga: è il livello più basso dal settembre 2008, e su base ' +
+        'annua la riduzione supera il 13%. Accostato all’altra serie che questa scheda segue da settimane ' +
+        '— ventuno mesi consecutivi di acquisti d’oro della stessa banca centrale, con 640.000 once nel ' +
+        'solo luglio — dà per la prima volta le due metà dello stesso scambio: che cosa quella riserva compra ' +
+        'e che cosa lascia. L’accostamento resta però un’inferenza e va tenuto come tale: le due misure ' +
+        'riguardano mesi diversi, giugno per il debito e luglio per il metallo, nessuna delle due fonti ' +
+        'dichiara una sostituzione, e le taglie non sono confrontabili — venti tonnellate valgono una ' +
+        'frazione dei venticinque miliardi usciti dalla posizione in Treasury. Quello che regge senza ' +
+        'forzature è più stretto e basta a spostare la gamba: nello stesso trimestre lo stesso detentore ' +
+        'ufficiale ha ridotto la carta americana e aumentato il metallo. Va tenuto anche il limite in senso ' +
+        'opposto, perché è ciò che impedisce di chiamarla fuga: le detenzioni estere complessive restano più ' +
+        'alte del 2,3% rispetto a dodici mesi prima.',
       invalidation:
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera; sulla gamba fiscale, il prossimo rifinanziamento trimestrale che allarga le aste a lunga scadenza rispetto ai 125 miliardi rimasti invariati, oppure conti federali di agosto con spese sotto i 667 miliardi, che direbbero che il record di luglio era calendario e non traiettoria.',
     },
   ],
   headline:
-    'Il Brent estende a 91,49 e l’oro perde i 4.400: la combinazione dichiarata cinque volte agisce con un giorno di ritardo',
+    'Le detenzioni cinesi di Treasury al minimo dal 2008, mentre la stessa banca centrale compra oro da ventuno mesi',
   stance:
+    'Alle 09:30 del 18 agosto il dettaglio per Paese dei capitali internazionali sposta la lettura di ' +
+    'fondo e non quella dei giorni, ed è la distinzione da fare per prima. Le detenzioni estere di ' +
+    'Treasury scendono a 9,299 trilioni da 9,371, con la Cina a 633,4 miliardi — minimo dal settembre ' +
+    '2008, oltre il 13% in meno in un anno — il Giappone a 1,116 trilioni e il Regno Unito a 939,9 ' +
+    'miliardi, e gli acquisti netti su base transazionale a 6,8 miliardi contro 56,6. Accostato ai ' +
+    'ventuno mesi consecutivi di acquisti d’oro della stessa banca centrale cinese, dà le due metà ' +
+    'dello stesso scambio: finora questo archivio sapeva che cosa quella riserva comprava, non che cosa ' +
+    'lasciava. Resta un’inferenza — mesi diversi, taglie incomparabili, nessuna fonte che parli di ' +
+    'sostituzione — e le detenzioni complessive sono ancora più alte del 2,3% su base annua, quindi è un ' +
+    'raffreddamento della domanda e non una fuga. Sul breve non cambia niente rispetto al controllo delle ' +
+    '08:40: oro attorno a 4.397 dollari, decennale al 4,726%, trentennale al 5,321%, Brent sopra i 91. ' +
     'Il conto si chiude la mattina del 18 agosto, e si chiude contro la lettura. Il Brent estende a 91,49 ' +
     'dollari, il trentennale tocca il 5,321% — massimo dal giugno 2007 — e il metallo scende da 4.431,09 ' +
     'della sessione asiatica a 4.391,14 con meno 0,5%, perdendo i 4.400 dopo averli tenuti una giornata. ' +
@@ -585,6 +611,15 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'La domanda strutturale per il metallo ha adesso le due metà invece di una: la banca centrale cinese ' +
+      'compra oro da ventuno mesi consecutivi — 640.000 once nel solo luglio — e nello stesso trimestre ha ' +
+      'portato le proprie detenzioni di Treasury a 633,4 miliardi, minimo dal settembre 2008 e oltre il 13% ' +
+      'in meno su base annua. È la domanda meno sensibile al prezzo che esista, e continua con il ' +
+      'costo-opportunità ai massimi da quasi vent’anni',
+    'Il raffreddamento non è un caso isolato ma riguarda i tre maggiori detentori nello stesso mese: ' +
+      'Giappone da 1,143 a 1,116 trilioni, Regno Unito da 948,6 a 939,9 miliardi, Cina da 659,3 a 633,4. La ' +
+      'domanda marginale si è raffreddata più dello stock, con acquisti netti su base transazionale a 6,8 ' +
+      'miliardi contro i 56,6 di maggio',
     'La gamba monetaria non ha ceduto ed è la sola rimasta: la probabilità di una pausa a settembre resta attorno al 65% contro il 52,2% di rialzo di una settimana fa, il biennale è fermo attorno al 4,16% e il dollaro è salito di un solo decimo a 99,60, restando vicino ai minimi degli ultimi due mesi. Il problema per il metallo non è il dollaro',
     'La distinzione fra dichiarato e misurato ha retto anche sotto pressione: la nave colpita in uscita dallo Stretto è segnalata da un’autorità marittima e non da una rivendicazione, ma il responsabile non è identificato — quindi resta un evento di sicurezza della navigazione e non un atto di guerra con una controparte, ed è la ragione per cui la condizione dichiarata il 17 agosto su un atto «attribuito all’Iran» non è scattata',
     'Il flusso complessivo di capitale estero verso gli Stati Uniti resta in entrata: 133,5 miliardi a giugno contro 132,2 di maggio secondo i dati TIC. La lettura sul debito lungo va tenuta separata da quella sul dollaro, e la seconda non è in discussione',
@@ -627,6 +662,16 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'Lo stesso dato che sui trimestri sostiene il metallo, sui giorni lo schiaccia: una domanda estera più ' +
+      'fredda per la duration lunga è una ragione non monetaria perché il decennale resti al 4,726% e il ' +
+      'trentennale al 5,321%, ed è quello che sta tenendo l’oro sotto i 4.400',
+    'Il nesso fra le due serie cinesi è un’inferenza e non un fatto dichiarato: le detenzioni di ' +
+      'Treasury sono di giugno e gli acquisti d’oro di luglio, nessuna delle due fonti parla di ' +
+      'sostituzione, e venti tonnellate valgono una frazione dei venticinque miliardi usciti dalla posizione ' +
+      'in Treasury',
+    'Non c’è alcuna fuga dai titoli americani e leggerla così sarebbe una forzatura: le detenzioni ' +
+      'estere complessive restano più alte del 2,3% rispetto a dodici mesi prima, e tutta la lettura poggia ' +
+      'sulla distinzione fra raffreddamento della domanda e deflusso',
     'La combinazione dichiarata da cinque letture consecutive si è formata e ha prodotto il suo effetto: Brent a 90,87 in chiusura e decennale al 4,712% il 17 agosto, poi 91,49 e 4,726% il 18, con l’oro sceso da 4.431,09 a 4.391,14. La clausola di salvezza dell’archivio è stata usata, e ha funzionato contro la lettura',
     'Il premio di rischio ha cambiato segno invece di intensità: con il greggio sopra i 91 dollari ogni nuovo fatto geopolitico entra nel prezzo dell’oro due volte, come rifugio e come inflazione attesa, e la seconda sta prevalendo. Una nave colpita, i transiti a sei navi senza petroliere grandi né metaniere, e la minaccia americana all’Oman non hanno sostenuto il metallo',
     'La minaccia all’Oman colpisce l’intermediario: Muscat era il solo canale diplomatico rimasto per riaprire lo Stretto, e trasformarlo in bersaglio riduce lo spazio negoziale mentre i transiti sono al minimo. Un premio che sale mentre si chiude la via per scioglierlo non è una notizia favorevole a chi lo incassa attraverso il petrolio',
@@ -1032,8 +1077,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4391.14,
-      display: '4.391,14 $',
+      now: 4397,
+      display: '≈ 4.397 $',
       marks: [
         {
           at: 4376.59,
@@ -1057,9 +1102,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'pechino-scende-sul-debito-americano-e-sale-sull-oro',
     'una-nave-colpita-a-hormuz-e-l-oro-scende',
     'la-combinazione-si-forma-e-l-oro-sale-lo-stesso',
-    'i-4400-passano-con-il-decennale-al-4-70-era-la-prova',
   ],
 };
 
