@@ -11,7 +11,7 @@
  */
 import { CalendarArea, CentralBankKind } from '../models/calendar.model';
 
-export const EVENTS_GENERATED_AT = '2026-08-18T20:35Z';
+export const EVENTS_GENERATED_AT = '2026-08-19T07:14Z';
 
 export type EventRow = readonly [
   at: string,
@@ -72,7 +72,6 @@ export const EVENT_ROWS: readonly EventRow[] = [
   ['2026-07-14T14:00Z', 'usa', 'audizione', 'Warsh', true, 'Fed Chair Warsh Testimony'],
   ['2026-07-13T16:30Z', 'usa', 'discorso', 'Waller', false, 'Fed Waller Speech'],
   ['2026-07-13T09:25Z', 'usa', 'discorso', 'Bowman', false, 'Fed Bowman Speech'],
-  ['2026-08-19T07:10Z', 'euro', 'discorso', 'Lagarde', true, 'ECB President Lagarde Speech'],
   ['2026-08-20T11:30Z', 'euro', 'verbali', null, false, 'ECB Monetary Policy Meeting Accounts'],
   ['2026-09-10T12:15Z', 'euro', 'decisione', null, false, 'ECB Interest Rate Decision'],
   ['2026-09-10T12:45Z', 'euro', 'conferenza', null, false, 'ECB Press Conference'],
@@ -96,6 +95,7 @@ export const EVENT_ROWS: readonly EventRow[] = [
   ['2027-10-28T12:45Z', 'euro', 'conferenza', null, true, 'ECB Press Conference'],
   ['2027-12-16T13:15Z', 'euro', 'decisione', null, false, 'ECB Interest Rate Decision'],
   ['2027-12-16T13:45Z', 'euro', 'conferenza', null, true, 'ECB Press Conference'],
+  ['2026-08-19T07:10Z', 'euro', 'discorso', 'Lagarde', true, 'ECB President Lagarde Speech'],
   ['2026-08-18T11:45Z', 'euro', 'discorso', 'Lane', false, 'ECB Lane Speech'],
   ['2026-08-17T09:30Z', 'euro', 'discorso', 'Lane', false, 'ECB Lane Speech'],
   ['2026-07-24T15:30Z', 'euro', 'discorso', 'Lane', false, 'ECB Lane Speech'],
@@ -119,5 +119,4 @@ export const EVENT_ROWS: readonly EventRow[] = [
   ['2026-07-01T07:45Z', 'euro', 'discorso', 'Vujčić', false, 'ECB Vujčić Speech'],
   ['2026-06-30T13:30Z', 'euro', 'discorso', 'Lane', false, 'ECB Lane Speech'],
   ['2026-06-30T12:00Z', 'euro', 'discorso', 'Cipollone', false, 'ECB Cipollone Speech'],
-  ['2026-06-30T09:40Z', 'euro', 'discorso', 'Schnabel', false, 'ECB Schnabel Speech'],
 ];

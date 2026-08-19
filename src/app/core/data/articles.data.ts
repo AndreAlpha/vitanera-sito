@@ -22,6 +22,11 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { dueAsteSuDueSopraIlMercato } from './articles/due-aste-su-due-sopra-il-mercato-e-stasera-il-ventennale';
+import { seiNaviELIraqSiApreUnaVia } from './articles/sei-navi-e-l-iraq-si-apre-una-via-che-salta-lo-stretto';
+import { iDaziAlCanadaSlittano } from './articles/i-dazi-al-canada-slittano-e-manca-l-elenco-delle-merci';
+import { dueMissiliBalisticiZeroBarili } from './articles/due-missili-balistici-zero-barili-e-l-oro-perde-i-4350';
+import { centoDollariDiPremioSulGasolio } from './articles/cento-dollari-di-premio-sul-gasolio-e-l-ipotesi-ha-un-numero';
 import { inflazioneDiPareggioResta } from './articles/l-inflazione-di-pareggio-resta-al-2-30-il-trentennale-no';
 import { aramcoRicaricaDentroLoStretto } from './articles/aramco-ricarica-dentro-lo-stretto-e-l-oro-perde-i-4381';
 import { menoDueVirgolaTreDoveSiAttendevaUnPiu } from './articles/meno-2-3-dove-si-attendeva-un-piu-e-il-mese-e-quello-giusto';
@@ -126,6 +131,11 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  dueAsteSuDueSopraIlMercato,
+  seiNaviELIraqSiApreUnaVia,
+  iDaziAlCanadaSlittano,
+  dueMissiliBalisticiZeroBarili,
+  centoDollariDiPremioSulGasolio,
   inflazioneDiPareggioResta,
   aramcoRicaricaDentroLoStretto,
   menoDueVirgolaTreDoveSiAttendevaUnPiu,

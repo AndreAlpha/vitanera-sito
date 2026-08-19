@@ -179,7 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-18T22:25:00+02:00',
+  updatedAt: '2026-08-19T09:10:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -268,13 +268,13 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'quella la grandezza da battere. La forza resta media e non sale ad alta per due ragioni ' +
         'misurabili che vanno contate con la stessa serietà: i rendimenti hanno mollato i massimi, e la ' +
         'ripresa dei carichi sauditi dentro lo Stretto può togliere una parte del premio di scarsità sul ' +
-        'barile. Il caso pienamente ribassista richiede che nessuna delle due cose si confermi.',
+        'barile. Il caso pienamente ribassista richiede che nessuna delle due cose si confermi. La notte fra il 18 e il 19 agosto non cambia la direzione e aggiunge una ripetizione che vale più di un livello. Il metallo ha chiuso la fase americana a 4.344,82 dollari con meno 1,61%, perdendo i 4.350 dopo i 4.381, ed è risalito soltanto a 4.342,33 con più 0,2% nella sessione asiatica per poi tornare a circa 4.337,6 alle 09:06. Nel frattempo i sostegni si sono rafforzati invece di cedere: decennale a 4,702%, trentennale a 5,282%, biennale attorno al 4,17%, Dollar Index a 99,65 vicino ai minimi di più mesi, e in Asia un risk-off vero con il Nikkei a circa meno 2,6%, l’indice MSCI Asia-Pacifico esclusa Giappone a meno 1,7% e il Kospi oltre il meno 5% in alcune rilevazioni. È la terza seduta consecutiva in cui il metallo non usa un rientro dei rendimenti e la quarta occasione in cui non usa un risk-off: una volta è rumore, tre volte sono una descrizione. Nella stessa notte due missili balistici lanciati verso il traffico marittimo nello Stretto sono stati intercettati e sono caduti in mare, e il greggio li ha registrati con un più 0,5% sul WTI: un attacco che non toglie capacità non muove il prezzo, e la chiusura americana era comunque precedente al lancio.',
       invalidation:
-        'Un oro spot che chiude sopra i 4.426 dollari, il massimo del 18 agosto, entro giovedì 20: annullerebbe per intero la rottura di 4.381 e riporterebbe la direzione almeno a neutrale. Oppure un Brent che chiude sotto gli 88 dollari entro venerdì 21 agosto: sarebbe il segno che i carichi ripresi a Juaymah e Ras Tanura stanno togliendo premio davvero, e la gamba energetica di questa lettura cadrebbe. Nell’altro verso, un oro che chiude sotto i 4.320 dollari entro venerdì 21, cioè sotto il limite inferiore della fascia indicata come rischio, direbbe che il rendimento reale agisce più in fretta di quanto una forza media ammetta e la lettura andrebbe portata ad alta invece che rivista.',
+        'Un oro che recupera i 4.365 dollari in chiusura entro giovedì 20 agosto: è il limite superiore della fascia persa nella notte, ed è un livello stabilito dal mercato invece che tondo. Sopra quel prezzo la direzione andrebbe riportata a neutrale, perché il metallo avrebbe restituito la rottura invece di consolidarla. Oppure un Brent che chiude sotto gli 88 dollari entro venerdì 21 agosto: sarebbe il segno che gli adattamenti al blocco stanno togliendo premio davvero, e la gamba energetica di questa lettura cadrebbe. Nell’altro verso, un oro che chiude sotto i 4.320 dollari entro venerdì 21 direbbe che il rendimento reale agisce più in fretta di quanto una forza media ammetta, e la lettura andrebbe portata ad alta invece che rivista.',
     },
     {
       horizon: 'medio',
-      direction: 'neutrale',
+      direction: 'neutrale-ribassista',
       strength: 'media',
       regime:
         'La condizione dichiarata il 10 agosto è scattata, ed è la ragione per cui questa lettura si ' +
@@ -456,9 +456,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'un dato debole non agisce, perché abbassa insieme il rendimento nominale e l’inflazione attesa e ' +
         'lascia la differenza dov’era. La direzione non scende sotto il neutrale perché la gamba monetaria ' +
         'non ha ceduto e perché i rendimenti hanno cominciato a rientrare dai massimi; ma la ragione per ' +
-        'tenerla sopra è decaduta, e va detto invece di essere lasciata dov’era.',
+        'tenerla sopra è decaduta, e va detto invece di essere lasciata dov’era. Nella notte fra il 18 e il 19 agosto la direzione scende sotto il neutrale, e la ragione è un fatto nuovo più una serie. Il fatto: il margine del gasolio americano sul greggio ha superato per la prima volta i cento dollari al barile, a circa 102,20, con scorte di distillati ai livelli di agosto più bassi dal 1996 e una lavorazione mondiale di luglio circa cinque milioni di barili al giorno sotto quella di un anno prima. È la misura dell’ipotesi scritta qui il 18 agosto alle 08:40 — se il collo di bottiglia si sposta dall’estrazione alla trasformazione, i carburanti restano cari con il barile fermo — e sposta la pressione energetica su un canale che una soglia sul Brent non intercetta. Con l’inflazione di pareggio ferma al 2,27% su cinque anni e al 2,30% su dieci, quella pressione entra come rendimento reale e non come inflazione attesa, cioè nella forma peggiore per il metallo. La serie: negli ultimi due collocamenti sulle scadenze lunghe il Tesoro si è aggiudicato sopra il quotato di mercato in entrambi i casi, con domanda pari o sotto la propria media, e stasera alle 19:00 arriva il terzo — sedici miliardi a vent’anni — un’ora prima dei verbali del FOMC. Due casi non sono una serie statistica e va detto, ma sono gli unici due della fase in cui la parte lunga è tesa, e concordano. La forza resta media perché la stessa serata può smentire entrambe le gambe.',
       invalidation:
-        'Un’inflazione di pareggio a dieci anni sopra il 2,60% entro venerdì 21 agosto: direbbe che il mercato ha cominciato a prezzare il barile sopra i 90 dollari nell’inflazione attesa, e il rialzo dei rendimenti lunghi tornerebbe a essere un argomento a favore del metallo invece che contro. È la condizione che rovescerebbe questa lettura, e la sola che possa riportarla sopra il neutrale senza bisogno di un dato nuovo. Oppure, nel verso opposto, un pareggio a dieci anni sotto il 2,10% con il nominale ancora sopra il 4,70%: porterebbe il rendimento reale sopra il 2,60% e la direzione andrebbe portata sotto il neutrale anche sui giorni. Oppure una probabilità di rialzo a settembre che supera il 40% entro venerdì 21 agosto, cioè il livello che corrisponde a una pausa sotto il 60%: aggiungerebbe la gamba monetaria alle due già ostili, ed è la sola configurazione in cui questo archivio non ha mai visto il metallo reggere. Oppure un biennale che si porta sopra il 4,218%, il massimo del 12 agosto, dopo esserci arrivato a otto millesimi nel pomeriggio del 18: direbbe che la tensione ha smesso di essere confinata alla parte lunga ed è diventata una riprezzatura della banca centrale. Resta infine l’indice dei prezzi all’importazione di agosto, a metà settembre, con la componente carburanti di nuovo in aumento sul mese dopo il meno 7,2% di luglio: è il test che le diffusioni di questa finestra non possono fare.',
+        'Un’inflazione di pareggio a cinque anni sopra il 2,50% entro venerdì 21 agosto, contro il 2,27% del 18 sera: direbbe che il rincaro dei prodotti raffinati è entrato nelle attese e non nel rendimento reale, e il segno di questa lettura si rovescerebbe senza che il margine sul gasolio si muova di un dollaro. Oppure un collocamento a vent’anni che si aggiudica sotto il quotato di mercato con domanda sopra la media delle ultime dieci aste sulla stessa scadenza: interromperebbe la serie di due su due, che è la seconda gamba della direzione. Oppure un’inflazione di pareggio a dieci anni sopra il 2,60% entro venerdì 21 agosto: direbbe che il mercato ha cominciato a prezzare il barile sopra i 90 dollari nell’inflazione attesa, e il rialzo dei rendimenti lunghi tornerebbe a essere un argomento a favore del metallo invece che contro. È la condizione che rovescerebbe questa lettura, e la sola che possa riportarla sopra il neutrale senza bisogno di un dato nuovo. Oppure, nel verso opposto, un pareggio a dieci anni sotto il 2,10% con il nominale ancora sopra il 4,70%: porterebbe il rendimento reale sopra il 2,60% e la direzione andrebbe portata sotto il neutrale anche sui giorni. Oppure una probabilità di rialzo a settembre che supera il 40% entro venerdì 21 agosto, cioè il livello che corrisponde a una pausa sotto il 60%: aggiungerebbe la gamba monetaria alle due già ostili, ed è la sola configurazione in cui questo archivio non ha mai visto il metallo reggere. Oppure un biennale che si porta sopra il 4,218%, il massimo del 12 agosto, dopo esserci arrivato a otto millesimi nel pomeriggio del 18: direbbe che la tensione ha smesso di essere confinata alla parte lunga ed è diventata una riprezzatura della banca centrale. Resta infine l’indice dei prezzi all’importazione di agosto, a metà settembre, con la componente carburanti di nuovo in aumento sul mese dopo il meno 7,2% di luglio: è il test che le diffusioni di questa finestra non possono fare.',
     },
     {
       horizon: 'lungo',
@@ -537,30 +537,39 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'forzature è più stretto e basta a spostare la gamba: nello stesso trimestre lo stesso detentore ' +
         'ufficiale ha ridotto la carta americana e aumentato il metallo. Va tenuto anche il limite in senso ' +
         'opposto, perché è ciò che impedisce di chiamarla fuga: le detenzioni estere complessive restano più ' +
-        'alte del 2,3% rispetto a dodici mesi prima.',
+        'alte del 2,3% rispetto a dodici mesi prima. Il 19 agosto si aggiunge una gamba nuova, che non cambia il segno ma cambia ciò che lo sostiene. In cinque giorni il mercato dell’energia ha prodotto sei adattamenti distinti al blocco dello Stretto: la sostituzione turca del greggio russo con Brasile e Guyana, gli obiettivi indiani di produzione domestica di GPL, le consegne saudite nave-nave al largo di Fujairah, i carichi Aramco ripresi dentro Hormuz fra il 12 e il 16 agosto, la deviazione delle compagnie di shipping cinesi lontano da Hormuz e dal Bab el-Mandeb, e infine l’approvazione irakena di meccanismi di esportazione che saltano del tutto il passaggio, con i primi contratti attesi dal 1° settembre. Nessuno dei sei ha un volume dichiarato, ed è per questo che la forza non sale; ma insieme riducono l’insostituibilità del collo di bottiglia, e per il metallo questo taglia la gamba energetica del premio lasciando intatta quella del rifugio. Nella configurazione di queste settimane, in cui è proprio il canale energetico a lavorare contro l’oro attraverso il rendimento reale, il taglio arriva dal lato giusto. Va tenuto il limite in senso opposto: nello stesso giorno i transiti sono scesi a sei navi da nove, con una petroliera vuota in entrata e nessun grande carico di greggio, quindi il vincolo materiale stringe adesso e si allenterà dopo.',
       invalidation:
         'Una lettura di agosto delle riserve cinesi con acquisti sotto le 160.000 once di marzo, o un mese senza acquisti, in uscita all’inizio di settembre; la bocciatura alla Camera del provvedimento sulle sanzioni, o una versione senza dazi secondari sull’energia; aspettative a tre e cinque anni che scendono nell’indagine di agosto; il ritorno stabile del decennale sopra il 5%; la revoca dei dazi sul polisilicio prima del 4 dicembre; sulla gamba istituzionale, un atto formale di rimozione della governatrice Cook prima del 16 settembre, oppure una probabilità di rialzo a settembre che si muove di più di cinque punti su una notizia riguardante la composizione del Board; oppure, sulla gamba geopolitica, un conteggio dei transiti a Hormuz sopra le otto navi al giorno con il Brent sotto gli 80 dollari, che sarebbe la de-escalation vera; sulla gamba fiscale, il prossimo rifinanziamento trimestrale che allarga le aste a lunga scadenza rispetto ai 125 miliardi rimasti invariati, oppure conti federali di agosto con spese sotto i 667 miliardi, che direbbero che il record di luglio era calendario e non traiettoria.',
     },
   ],
   headline:
-    'L’inflazione di pareggio resta al 2,30% mentre il trentennale tocca il massimo dal 2007: il rendimento reale è il costo che l’oro deve battere',
+    'Il premio sul gasolio supera i cento dollari per la prima volta, e stasera il Tesoro colloca a vent’anni un’ora prima dei verbali',
   stance:
-    'Cinque diffusioni americane morbide in una giornata, probabilità di un rialzo a settembre scesa ' +
-    'attorno al 31% con pausa al 70%, dollaro fermo a 99,58, un risk-off azionario con gli indici vicini ' +
-    'ai minimi di due settimane e un rientro dei rendimenti dai massimi: sono sei ragioni per salire, e ' +
-    'l’oro ha chiuso a 4.364,90 dollari con meno 1,1%, vicino ai minimi, dopo aver perso i 4.381 ' +
-    'dichiarati stamattina come primo supporto. Il numero che spiega il rifiuto è arrivato in serata ed è ' +
-    'il primo di questo tipo in archivio: l’inflazione di pareggio ricavata dai titoli indicizzati resta ' +
-    'al 2,27% su cinque anni e al 2,30% su dieci, appena sopra l’obiettivo dichiarato. Il rialzo dei ' +
-    'rendimenti lunghi non è quindi inflazione attesa, e per differenza con il nominale a circa 4,708% il ' +
-    'rendimento reale a dieci anni sta attorno al 2,41%. È la grandezza che un’attività senza cedole deve ' +
-    'battere, ed è quella su cui un dato debole non agisce: abbassa insieme il rendimento nominale e ' +
-    'l’inflazione attesa, e lascia la differenza dov’era. Sul greggio i regolamenti danno Brent a 91,02 ' +
-    'dollari e WTI a 84,94, massimi di chiusura dal 24 luglio, con la scarsità parzialmente mitigata da ' +
-    'tre carichi sauditi ripresi dentro lo Stretto fra il 12 e il 16 agosto — circa sei milioni di barili, ' +
-    'cioè 1,2 milioni al giorno — avvenuti però mentre il barile saliva, e quindi inutili come ' +
-    'spiegazione. Il prossimo appuntamento è mercoledì 19 agosto con i verbali del FOMC del 28-29 luglio.',
+    'La notte porta un primato che questo archivio aspettava senza saperlo: il margine del gasolio ' +
+    'americano sul greggio ha superato i cento dollari al barile, a circa 102,20, con scorte di ' +
+    'distillati ai livelli di agosto più bassi dal 1996 e una lavorazione mondiale di luglio circa ' +
+    'cinque milioni di barili al giorno sotto quella di un anno prima. È la misura dell’ipotesi ' +
+    'scritta qui il 18 agosto alle 08:40 — se il collo di bottiglia si sposta dall’estrazione alla ' +
+    'trasformazione, i carburanti restano cari con il barile fermo — e sposta la pressione ' +
+    'energetica su un canale che nessuna soglia sul Brent intercetta. Conta contro il metallo per ' +
+    'una ragione precisa e reversibile: con l’inflazione di pareggio ferma al 2,27% su cinque anni e ' +
+    'al 2,30% su dieci, quella pressione entra come rendimento reale invece che come inflazione ' +
+    'attesa. Il prezzo lo conferma: l’oro ha chiuso a 4.344,82 dollari con meno 1,61%, ha perso i ' +
+    '4.350 dopo i 4.381, e stamattina sta a circa 4.337,6 nonostante rendimenti in calo — decennale ' +
+    '4,702%, trentennale 5,282% — dollaro a 99,65 vicino ai minimi di più mesi e un risk-off ' +
+    'asiatico con il Nikkei a meno 2,6%. È la terza seduta in cui i sostegni non diventano prezzo. ' +
+    'Sul fronte materiale i transiti a Hormuz scendono a sei navi da nove, con una petroliera vuota ' +
+    'in entrata e nessun grande carico di greggio, mentre l’Iraq approva meccanismi di esportazione ' +
+    'che saltano lo Stretto dal 1° settembre: il vincolo stringe adesso e si allenterà dopo. Due ' +
+    'missili balistici verso il traffico marittimo sono stati intercettati e non hanno tolto un ' +
+    'barile. Stasera due prove a un’ora di distanza: il collocamento da sedici miliardi a vent’anni ' +
+    'alle 19:00 e i verbali del FOMC alle 20:00, con gli ultimi due collocamenti lunghi aggiudicati ' +
+    'entrambi sopra il mercato.',
   favours: [
+    'Contare che cosa è già successo prima di stimare che cosa succederà: gli ultimi due collocamenti su scadenze lunghe si sono aggiudicati entrambi sopra il quotato di mercato con domanda pari o sotto la propria media, ed è il solo tasso di base disponibile per giudicare l’asta di stasera. Due casi non sono una serie, e dirlo fa parte della misura',
+    'Chiedere a un attacco quanta capacità toglie invece di quanto è grande: due missili balistici intercettati e caduti in mare tolgono zero barili, e il greggio li ha registrati con mezzo punto percentuale. L’arma cambia il livello dichiarato del conflitto, non l’offerta',
+    'Guardare la composizione e non il conteggio: sei transiti a Hormuz contro nove sono un calo di un terzo, ma la nave più grande in entrata era una petroliera vuota e in uscita passavano soltanto prodotti raffinati. Contati in barili invece che in scafi, quei sei valgono meno di quanto il numero suggerisca',
+    'Ricordare che il primato di un prezzo non è ancora una conseguenza: fra il margine del gasolio a 102,20 dollari e il prezzo dell’oro ci sono tre anelli — trasmissione ai prezzi al consumo, reazione delle attese, reazione dei rendimenti reali — e nessuno dei tre è stato osservato',
     'Separare le due componenti di un rendimento invece di guardarne il livello: il trentennale ai massimi dal 2007 ammetteva due spiegazioni opposte per il metallo, e l’inflazione di pareggio ferma al 2,27% su cinque anni e al 2,30% su dieci ne chiude una. Un numero che si ricava per differenza fra due serie pubblicate vale più di una settimana di attribuzioni riportate',
     'Scomporre una notizia sull’offerta invece di giudicarla a occhio: tre navi da circa due milioni di barili in cinque giorni fanno 1,2 milioni al giorno, e accanto ai 670.000 attesi ad agosto da Sidi Kerir danno meno di due milioni di flusso saudita misurabile. La taglia si stima prima di decidere se la notizia conta',
     'Leggere il livello e non solo la variazione quando la revisione è più grande della sorpresa: produzione industriale a più 0,2% contro più 0,3% atteso ma con giugno rivisto da più 0,1% a più 0,3%, e grado di utilizzo al 76,3% con il mese prima rivisto da 76,1% a 76,2%. Due dati usciti sotto il consenso lasciano il livello sopra il punto in cui lo si attendeva',
@@ -576,6 +585,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Correggere per iscritto e subito: l’asta di stasera era da 42 miliardi e non da 39, e la correzione è stata pubblicata a parte invece di essere infilata nel testo sbagliato',
   ],
   avoid: [
+    'Scrivere una condizione senza numero: il primo verdetto di invalidazione del registro è arrivato da un’analisi le cui tre condizioni dicevano «un forte calo dei rendimenti», «un dollaro in discesa» e «un XAU/USD capace di superare con decisione i massimi della mattinata». Sono scattate tutte e tre, e con gli stessi dati sarebbero potute non scattare nessuna: a decidere non è il mercato ma chi rilegge',
+    'Attribuire un movimento a un evento che non si è ancora tenuto: un controllo intermedio ha collocato l’asta a vent’anni al 20 agosto, il calendario del Tesoro la dà al 19, e con la parte lunga sotto tensione una data sbagliata produce una causa sbagliata che poi nessuno torna a controllare',
+    'Trattare come univoca una notizia che spinge in due versi: la sospensione dei dazi al Canada toglie domanda di rifugio e toglie insieme una spinta ai prezzi importati, e senza l’elenco delle merci colpite non si può nemmeno dire su quale metà dell’indice agisca',
     'Usare per spiegare un movimento una notizia che è arrivata dopo il movimento: i carichi sauditi sono stati caricati fra il 12 e il 16 agosto e riferiti il 18, e in quella stessa finestra il Brent è salito da 87,07 a 90,87 dollari. Quando l’ora del fatto precede l’ora del prezzo, la causa va cercata altrove, e la notizia serve al massimo a togliere un rischio di coda',
     'Scrivere una condizione su una grandezza che il dato citato non contiene: chiedere se un aumento di 17,4 milioni di barili fosse un rilascio di riserva strategica era impossibile da verificare, perché il numero era quello delle scorte commerciali, che la riserva strategica la escludono per costruzione. Una condizione che non può essere vera occupa un posto su cinque e gonfia la quota di quelle che reggono',
     'Chiamare morbido un rapporto perché due sue voci mancano il consenso di un decimo, quando le stesse due voci portano revisioni al rialzo di uno e due decimi sul mese precedente: la variazione misura il rumore di un mese, il livello misura dove si trova la produzione',
@@ -593,6 +605,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'I sostegni si sono rafforzati invece di cedere, ed è la ragione per cui la debolezza resta relativa: decennale a 4,702% e trentennale a 5,282% dai picchi vicini al 4,75% e al 5,3371%, biennale attorno al 4,17%, Dollar Index a 99,65 vicino ai minimi di più mesi e probabilità di una pausa a settembre attorno al 64%',
+    'Il mercato dell’energia ha prodotto sei adattamenti distinti al blocco in cinque giorni, e il sesto è il primo che salta del tutto il passaggio: l’Iraq ha approvato meccanismi di esportazione che aggirano lo Stretto, con i primi contratti attesi dal 1° settembre, mentre le compagnie di shipping cinesi deviano lontano da Hormuz e dal Bab el-Mandeb',
+    'Due missili balistici lanciati verso il traffico marittimo nello Stretto sono stati intercettati dalle difese emiratine e sono caduti in mare: nessuna nave colpita, nessun barile perso, e una deterrenza che funziona toglie premio invece di darlo',
+    'La sospensione per tre giorni dei dazi al 50% su circa venti miliardi di dollari di merci canadesi toglie, se confermata da un accordo, una spinta futura ai prezzi importati — cioè alla sola parte dell’inflazione americana ancora in crescita, a più 4,5% sull’anno al netto dei carburanti',
     'Il rialzo dei rendimenti lunghi non è inflazione attesa, ed è la prima misura diretta di una ' +
       'domanda aperta da una settimana: l’inflazione di pareggio ricavata dai titoli indicizzati resta al ' +
       '2,27% su cinque anni e al 2,30% su dieci, appena sopra l’obiettivo dichiarato del 2%. Per il ' +
@@ -677,6 +693,10 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'Il margine del gasolio americano sul greggio ha superato per la prima volta i cento dollari al barile, a circa 102,20, con scorte di distillati ai livelli di agosto più bassi dal 1996 e una lavorazione mondiale di luglio circa cinque milioni di barili al giorno sotto quella di un anno prima: la pressione energetica ha trovato un canale che nessuna soglia sul Brent intercetta',
+    'Il metallo non usa i propri sostegni per la terza seduta consecutiva: chiusura a 4.344,82 dollari con meno 1,61%, rimbalzo a 4.342,33 con più 0,2% e ritorno a circa 4.337,6, mentre in Asia il Nikkei perde il 2,6%, l’indice MSCI Asia-Pacifico esclusa Giappone l’1,7% e il Kospi oltre il 5%',
+    'Il vincolo materiale stringe invece di allentarsi: sei transiti commodity a Hormuz martedì contro nove il giorno prima e una media recente di undici, con una petroliera molto grande vuota in entrata e in uscita soltanto prodotti raffinati. Nel Bab el-Mandeb i transiti salgono a trenta da diciannove ma non risulta tracciata alcuna spedizione petrolifera saudita',
+    'Il greggio sale per la quarta seduta consecutiva senza bisogno di un fatto nuovo: Brent a 91,44 dollari con più 0,5% e WTI a 85,45 con più 0,6%, sostenuti dall’incertezza sui flussi e dallo stallo diplomatico invece che da una perdita di capacità misurabile',
     'Il rendimento reale a dieci anni sta attorno al 2,41%, per differenza fra il nominale a circa ' +
       '4,708% e il pareggio al 2,30%: è la grandezza che un’attività senza cedole deve battere, ed è la ' +
       'sola su cui un dato debole non agisce, perché abbassa insieme il nominale e l’inflazione attesa ' +
@@ -888,7 +908,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'sono avvenuti mentre il Brent saliva da 87,07 a 90,87 dollari, quindi non hanno prodotto ' +
         'l’effetto che ci si aspetterebbe da un allentamento vero. Va aggiunto il limite di sempre sulla ' +
         'fonte: è una ricostruzione di agenzia basata su dati di tracciamento, non un comunicato della ' +
-        'compagnia.',
+        'compagnia. ' +
+        'Il 19 agosto il conteggio peggiora e l’adattamento accelera nello stesso giorno. I transiti commodity scendono a sei navi martedì contro nove il giorno prima e una media recente di circa undici, e la composizione dice più del numero: fra le navi entrate c’era una petroliera molto grande vuota con due tanker minori, in uscita due navi di prodotti raffinati e una post-Panamax, quindi nessun grande carico di greggio e nessun gas liquefatto. Le principali compagnie di shipping cinesi tengono le proprie petroliere lontane sia da Hormuz sia dal Bab el-Mandeb, dove i transiti del fine settimana salgono a trenta da diciannove senza però alcuna spedizione petrolifera saudita tracciata. Nella stessa giornata l’Iraq approva meccanismi di esportazione che aggirano del tutto lo Stretto, con i primi contratti attesi dal 1° settembre: è il sesto adattamento registrato in cinque giorni e il primo che riguarda un esportatore finora quasi interamente dipendente da quel passaggio. Il vincolo resta quindi fermo e non passa a «si allenta», perché la data è futura e i volumi non sono dichiarati; ma è la prima volta che l’allentamento ha un calendario invece di una possibilità.',
       state: 'fermo',
     },
     {
@@ -1007,8 +1028,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 31,
-      display: '≈ 31%',
+      now: 36,
+      display: '≈ 36%',
       marks: [
         {
           at: 40,
@@ -1026,8 +1047,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 91.02,
-      display: '91,02 $',
+      now: 91.44,
+      display: '91,44 $',
       marks: [
         {
           at: 87.07,
@@ -1075,8 +1096,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 2 anni',
-      now: 4.2,
-      display: '≈ 4,20%',
+      now: 4.17,
+      display: '≈ 4,17%',
       marks: [
         {
           at: 4.25,
@@ -1088,8 +1109,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.708,
-      display: '≈ 4,708%',
+      now: 4.702,
+      display: '≈ 4,702%',
       marks: [
         {
           at: 4.68,
@@ -1113,8 +1134,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.58,
-      display: '≈ 99,58',
+      now: 99.65,
+      display: '≈ 99,65',
       marks: [
         {
           at: 99.795,
@@ -1132,8 +1153,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 30 anni',
-      now: 5.2868,
-      display: '≈ 5,287%',
+      now: 5.27,
+      display: '≈ 5,27%',
       marks: [
         {
           at: 5.213,
@@ -1151,8 +1172,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4364.9,
-      display: '4.364,90 $',
+      now: 4337.6,
+      display: '≈ 4.337,6 $',
       marks: [
         {
           at: 4376.59,
@@ -1173,10 +1194,48 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           note: 'limite inferiore della fascia aperta dalla rottura di 4.381, e la prima tacca ancora davanti al prezzo: una chiusura sotto questo livello entro venerdì 21 agosto direbbe che il rendimento reale attorno al 2,4% agisce più in fretta di quanto una forza media ammetta, e la lettura di breve andrebbe portata ad alta invece che rivista. Dalla chiusura di 4.364,90 la distanza è di poco meno di quarantacinque dollari',
         },
         {
+          at: 4350,
+          display: '4.350 $',
+          kind: 'invalida',
+          note: 'perso nella notte fra il 18 e il 19 agosto insieme alla chiusura a 4.344,82 dollari con meno 1,61%, dopo che nel pomeriggio del 18 era stato perso il livello di 4.381. È la seconda soglia attraversata in meno di dodici ore, e adesso sta alle spalle del prezzo',
+        },
+        {
+          at: 4365,
+          display: '4.365 $',
+          kind: 'logora',
+          note: 'limite superiore della fascia che il metallo deve riprendere per smettere di essere in correzione, dichiarato la notte del 19 agosto e scelto perché è un livello stabilito dal mercato invece che tondo. Dai 4.337,6 delle 09:06 la distanza è di poco meno di ventotto dollari, ed è la prima tacca ancora davanti al prezzo verso l’alto',
+        },
+        {
           at: 4400,
           display: '4.400 $',
           kind: 'logora',
           note: 'tenuto per una giornata intera e riperso: superato in serata il 17 agosto con ventisei dollari di margine, fino a 4.431,09 nella sessione asiatica, e abbandonato la mattina del 18 con il metallo a 4.391,14. In tre giorni il livello è stato toccato senza tenuta due volte, tenuto una e riperso: è il comportamento di un numero tondo su cui si accumulano ordini, non quello di un supporto. Adesso è la soglia da riprendere, non quella da difendere',
+        },
+      ],
+    },
+    {
+      label: 'Inflazione di pareggio a 5 anni',
+      now: 2.27,
+      display: '≈ 2,27%',
+      marks: [
+        {
+          at: 2.5,
+          display: '2,50%',
+          kind: 'invalida',
+          note: 'è la scadenza che reagirebbe per prima a uno shock energetico, e per questo conta più di quella a dieci anni in questa fase. Sopra il 2,50% il rincaro dei prodotti raffinati sarebbe entrato nelle attese invece che nel rendimento reale, e il margine del gasolio a 102,20 dollari passerebbe da argomento contro il metallo ad argomento a favore senza muoversi di un dollaro',
+        },
+      ],
+    },
+    {
+      label: 'WTI',
+      now: 85.45,
+      display: '85,45 $',
+      marks: [
+        {
+          at: 88,
+          display: '88 $',
+          kind: 'invalida',
+          note: 'soglia dichiarata la notte del 19 agosto: oltre tre dollari sopra gli 85,34 rilevati nella sessione asiatica dopo il lancio dei due missili. Una chiusura sopra questo livello direbbe che il mercato del greggio ha prezzato l’escalation con ritardo, e che leggerne la reazione a meno di due ore era prematuro',
         },
       ],
     },
@@ -1201,9 +1260,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
-    'l-inflazione-di-pareggio-resta-al-2-30-il-trentennale-no',
-    'aramco-ricarica-dentro-lo-stretto-e-l-oro-perde-i-4381',
-    'meno-2-3-dove-si-attendeva-un-piu-e-il-mese-e-quello-giusto',
+    'due-aste-su-due-sopra-il-mercato-e-stasera-il-ventennale',
+    'cento-dollari-di-premio-sul-gasolio-e-l-ipotesi-ha-un-numero',
+    'sei-navi-e-l-iraq-si-apre-una-via-che-salta-lo-stretto',
   ],
 };
 

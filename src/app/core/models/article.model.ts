@@ -80,6 +80,7 @@ export type EditorialCategorySlug =
   | 'premio-di-rischio'
   | 'premio-a-termine'
   | 'rotte-e-approvvigionamento'
+  | 'margini-di-raffinazione'
   | 'assicurazioni-marittime'
   | 'alleanze-e-deterrenza'
   | 'interventi-valutari'

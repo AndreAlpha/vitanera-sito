@@ -335,6 +335,17 @@ export const CATEGORIES: readonly Category[] = [
       'La quota di prezzo che riflette una minaccia e non un fatto compiuto. Si forma in fretta su notizie non confermate e si sgonfia con la stessa rapidità.',
   },
   {
+    slug: 'margini-di-raffinazione',
+    name: 'Margini di raffinazione',
+    short: 'Raffinazione',
+    family: 'temi',
+    series: false,
+    icon: 'factory',
+    tagline: 'Il collo di bottiglia fra il barile e la pompa',
+    description:
+      'La differenza fra il prezzo di un prodotto raffinato — gasolio, benzina — e quello del greggio da cui si ricava. Misura quanto costa trasformare, non quanto costa estrarre. Conta per l’oro perché il prezzo che entra negli indici al consumo è quello dei prodotti, non quello del barile: se la strozzatura è negli impianti invece che nei giacimenti, i carburanti possono restare cari con il greggio fermo, e ogni soglia posta sul Brent misura meno di quanto sembri.',
+  },
+  {
     slug: 'rotte-e-approvvigionamento',
     name: 'Rotte e approvvigionamento',
     short: 'Rotte',

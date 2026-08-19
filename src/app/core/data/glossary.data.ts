@@ -158,6 +158,27 @@ export const GLOSSARY: readonly GlossaryEntry[] = [
     related: ['Inflazione importata', 'Effetto base', 'Regime di mercato'],
   },
   {
+    term: 'Margine di raffinazione',
+    letter: 'M',
+    definition:
+      'La differenza fra il prezzo di un prodotto raffinato — gasolio, benzina — e quello del greggio da cui si ricava, misurata per barile. Quanto il mercato è disposto a pagare per la trasformazione, non per l’estrazione.',
+    why: 'Perché negli indici dei prezzi al consumo non entra il barile: entrano il gasolio e la benzina. Un margine che sale dice che a scarseggiare non è il greggio ma la capacità di lavorarlo o il prodotto già nei serbatoi, e in quel caso i carburanti possono rincarare anche con il greggio fermo. Per l’oro cambia il posto dove guardare: ogni soglia posta sul prezzo del petrolio smette di intercettare la pressione energetica che arriva ai rendimenti.',
+    related: ['Brent', 'WTI', 'Inflazione importata', 'Inflazione di pareggio'],
+  },
+  {
+    term: 'Rapporto fra domanda e offerta',
+    letter: 'R',
+    definition:
+      'In un’asta di titoli di Stato, quante volte l’importo offerto è stato richiesto dagli operatori. Il Tesoro lo pubblica insieme al rendimento di aggiudicazione, ed è la misura standard dell’interesse per quel collocamento.',
+    why: 'Perché il solo rendimento non dice se un’asta è andata bene. Un titolo aggiudicato sopra il prezzo di mercato con domanda abbondante racconta una cosa — chi comprava ha pagato caro perché voleva la carta — e sopra il mercato con domanda sotto la media ne racconta un’altra, cioè debito assorbito a fatica. Per l’oro conta la seconda: quando il Tesoro deve pagare di più per collocare, il rendimento che il metallo deve battere resta alto per ragioni che nessun dato debole sull’economia può abbassare.',
+    related: [
+      'Treasury',
+      'Premio per il rischio fiscale',
+      'Rifinanziamento trimestrale',
+      'Premio a termine',
+    ],
+  },
+  {
     term: 'Rifinanziamento trimestrale',
     letter: 'R',
     definition:
