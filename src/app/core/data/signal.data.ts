@@ -180,12 +180,13 @@ export interface OperationalSignal {
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
   updatedAt: '2026-08-19T09:10:00+02:00',
+  checkedAt: '2026-08-19T10:47:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
       horizon: 'breve',
       direction: 'ribassista',
-      strength: 'media',
+      strength: 'bassa',
       regime:
         'La prima seduta liquida dopo tre giorni di mercati chiusi ha risposto a due domande, e le due ' +
         'risposte non concordano. Alla prima — il premio accumulato in sette letture geopolitiche esiste? — ' +
@@ -268,7 +269,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'quella la grandezza da battere. La forza resta media e non sale ad alta per due ragioni ' +
         'misurabili che vanno contate con la stessa serietà: i rendimenti hanno mollato i massimi, e la ' +
         'ripresa dei carichi sauditi dentro lo Stretto può togliere una parte del premio di scarsità sul ' +
-        'barile. Il caso pienamente ribassista richiede che nessuna delle due cose si confermi. La notte fra il 18 e il 19 agosto non cambia la direzione e aggiunge una ripetizione che vale più di un livello. Il metallo ha chiuso la fase americana a 4.344,82 dollari con meno 1,61%, perdendo i 4.350 dopo i 4.381, ed è risalito soltanto a 4.342,33 con più 0,2% nella sessione asiatica per poi tornare a circa 4.337,6 alle 09:06. Nel frattempo i sostegni si sono rafforzati invece di cedere: decennale a 4,702%, trentennale a 5,282%, biennale attorno al 4,17%, Dollar Index a 99,65 vicino ai minimi di più mesi, e in Asia un risk-off vero con il Nikkei a circa meno 2,6%, l’indice MSCI Asia-Pacifico esclusa Giappone a meno 1,7% e il Kospi oltre il meno 5% in alcune rilevazioni. È la terza seduta consecutiva in cui il metallo non usa un rientro dei rendimenti e la quarta occasione in cui non usa un risk-off: una volta è rumore, tre volte sono una descrizione. Nella stessa notte due missili balistici lanciati verso il traffico marittimo nello Stretto sono stati intercettati e sono caduti in mare, e il greggio li ha registrati con un più 0,5% sul WTI: un attacco che non toglie capacità non muove il prezzo, e la chiusura americana era comunque precedente al lancio.',
+        'barile. Il caso pienamente ribassista richiede che nessuna delle due cose si confermi. La notte fra il 18 e il 19 agosto non cambia la direzione e aggiunge una ripetizione che vale più di un livello. Il metallo ha chiuso la fase americana a 4.344,82 dollari con meno 1,61%, perdendo i 4.350 dopo i 4.381, ed è risalito soltanto a 4.342,33 con più 0,2% nella sessione asiatica per poi tornare a circa 4.337,6 alle 09:06. Nel frattempo i sostegni si sono rafforzati invece di cedere: decennale a 4,702%, trentennale a 5,282%, biennale attorno al 4,17%, Dollar Index a 99,65 vicino ai minimi di più mesi, e in Asia un risk-off vero con il Nikkei a circa meno 2,6%, l’indice MSCI Asia-Pacifico esclusa Giappone a meno 1,7% e il Kospi oltre il meno 5% in alcune rilevazioni. È la terza seduta consecutiva in cui il metallo non usa un rientro dei rendimenti e la quarta occasione in cui non usa un risk-off: una volta è rumore, tre volte sono una descrizione. Nella stessa notte due missili balistici lanciati verso il traffico marittimo nello Stretto sono stati intercettati e sono caduti in mare, e il greggio li ha registrati con un più 0,5% sul WTI: un attacco che non toglie capacità non muove il prezzo, e la chiusura americana era comunque precedente al lancio. Riverificato alle 10:47 senza pubblicare, perché non c’è un fatto nuovo da pubblicare: la direzione resta ribassista e la forza scende da media a bassa. Quello che è cambiato è proprio la ragione che teneva alta la forza. Per tre sedute questo archivio ha registrato un metallo che non usava i propri sostegni; stamattina li usa, e per la prima volta i tre si muovono insieme nel verso giusto — oro a 4.359,58 dollari con più 0,6%, Dollar Index a 99,55, decennale a 4,686% e trentennale a 5,268%. La direzione non si muove perché la misura per muoverla era stata scritta in anticipo e chiede una chiusura: i 4.365 dollari dichiarati alle 04:25, e alle 10:47 ne mancano 5,42 con la seduta aperta. Vale quello che questo archivio ha già fatto per quattordici dollari l’11 agosto, per quindici centesimi il 17 e per due millesimi di punto sul decennale il 18: un quasi non vale un sì, e una soglia che si onora quando conviene smette di misurare. Il resto del controllo non aggiunge fatti: Brent a 91,44 e WTI a 85,45 sono gli stessi numeri delle 09:10, il collocamento ventennale e i verbali erano già in archivio, e la probabilità di pausa si sposta di tre punti al 67% senza che sia uscita alcuna diffusione.',
       invalidation:
         'Un oro che recupera i 4.365 dollari in chiusura entro giovedì 20 agosto: è il limite superiore della fascia persa nella notte, ed è un livello stabilito dal mercato invece che tondo. Sopra quel prezzo la direzione andrebbe riportata a neutrale, perché il metallo avrebbe restituito la rottura invece di consolidarla. Oppure un Brent che chiude sotto gli 88 dollari entro venerdì 21 agosto: sarebbe il segno che gli adattamenti al blocco stanno togliendo premio davvero, e la gamba energetica di questa lettura cadrebbe. Nell’altro verso, un oro che chiude sotto i 4.320 dollari entro venerdì 21 direbbe che il rendimento reale agisce più in fretta di quanto una forza media ammetta, e la lettura andrebbe portata ad alta invece che rivista.',
     },
@@ -605,6 +606,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'Per la prima volta in quattro sedute il metallo usa i propri sostegni, ed è la sola cosa cambiata rispetto alle 09:10: alle 10:47 l’oro è a 4.359,58 dollari con più 0,6% mentre il Dollar Index scende a 99,55, il decennale a 4,686% e il trentennale a 5,268%. I 4.350 persi nella notte sono stati ripresi con quasi dieci dollari di margine',
+    'La probabilità di una pausa a settembre sale al 67% dal 64% delle 09:10, quindi il canale monetario continua a muoversi nel verso favorevole al metallo e si allontana dalla tacca del 40% di rialzo dichiarata come soglia. Va però contato per quello che è: non è uscita alcuna diffusione, quindi sono tre punti di prezzo e non di dato',
     'I sostegni si sono rafforzati invece di cedere, ed è la ragione per cui la debolezza resta relativa: decennale a 4,702% e trentennale a 5,282% dai picchi vicini al 4,75% e al 5,3371%, biennale attorno al 4,17%, Dollar Index a 99,65 vicino ai minimi di più mesi e probabilità di una pausa a settembre attorno al 64%',
     'Il mercato dell’energia ha prodotto sei adattamenti distinti al blocco in cinque giorni, e il sesto è il primo che salta del tutto il passaggio: l’Iraq ha approvato meccanismi di esportazione che aggirano lo Stretto, con i primi contratti attesi dal 1° settembre, mentre le compagnie di shipping cinesi deviano lontano da Hormuz e dal Bab el-Mandeb',
     'Due missili balistici lanciati verso il traffico marittimo nello Stretto sono stati intercettati dalle difese emiratine e sono caduti in mare: nessuna nave colpita, nessun barile perso, e una deterrenza che funziona toglie premio invece di darlo',
@@ -693,6 +696,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'La soglia dichiarata alle 04:25 non è stata raggiunta e non è nemmeno arrivata a scadenza: i 4.365 dollari erano chiesti in chiusura, alle 10:47 ne mancano 5,42 e la seduta è aperta. La stessa analisi aveva scritto che la fascia 4.350-4.365 va guardata sulla chiusura e non sull’intraday, e che finché non la riprende ogni rimbalzo è restituzione di un movimento e non inversione',
+    'Il rientro dei rendimenti non ha ancora attraversato nulla: a 4,686% il decennale resta sei millesimi di punto sopra la tacca del 4,68% superata il 10 agosto, quindi la descrizione per cui il rendimento ci è rimasto sopra da allora regge ancora, e il trentennale a 5,268% è a cinque punti base e mezzo dal 5,213% della chiusura del 13 agosto',
+    'Il canale energetico non si è mosso di una virgola dal controllo precedente: Brent a 91,44 dollari e WTI a 85,45 sono gli stessi numeri delle 09:10, quarta seduta consecutiva di rialzo, con i colloqui fra Washington e Teheran fermi e versioni opposte sull’apertura dello Stretto',
     'Il margine del gasolio americano sul greggio ha superato per la prima volta i cento dollari al barile, a circa 102,20, con scorte di distillati ai livelli di agosto più bassi dal 1996 e una lavorazione mondiale di luglio circa cinque milioni di barili al giorno sotto quella di un anno prima: la pressione energetica ha trovato un canale che nessuna soglia sul Brent intercetta',
     'Il metallo non usa i propri sostegni per la terza seduta consecutiva: chiusura a 4.344,82 dollari con meno 1,61%, rimbalzo a 4.342,33 con più 0,2% e ritorno a circa 4.337,6, mentre in Asia il Nikkei perde il 2,6%, l’indice MSCI Asia-Pacifico esclusa Giappone l’1,7% e il Kospi oltre il 5%',
     'Il vincolo materiale stringe invece di allentarsi: sei transiti commodity a Hormuz martedì contro nove il giorno prima e una media recente di undici, con una petroliera molto grande vuota in entrata e in uscita soltanto prodotti raffinati. Nel Bab el-Mandeb i transiti salgono a trenta da diciannove ma non risulta tracciata alcuna spedizione petrolifera saudita',
@@ -1028,8 +1034,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
   thresholds: [
     {
       label: 'Rialzo Fed a settembre',
-      now: 36,
-      display: '≈ 36%',
+      now: 33,
+      display: '≈ 33%',
       marks: [
         {
           at: 40,
@@ -1109,8 +1115,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 10 anni',
-      now: 4.702,
-      display: '≈ 4,702%',
+      now: 4.686,
+      display: '≈ 4,686%',
       marks: [
         {
           at: 4.68,
@@ -1134,8 +1140,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.65,
-      display: '≈ 99,65',
+      now: 99.55,
+      display: '≈ 99,55',
       marks: [
         {
           at: 99.795,
@@ -1153,8 +1159,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 30 anni',
-      now: 5.27,
-      display: '≈ 5,27%',
+      now: 5.268,
+      display: '≈ 5,268%',
       marks: [
         {
           at: 5.213,
@@ -1172,8 +1178,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4337.6,
-      display: '≈ 4.337,6 $',
+      now: 4359.58,
+      display: '4.359,58 $',
       marks: [
         {
           at: 4376.59,
@@ -1197,13 +1203,13 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
           at: 4350,
           display: '4.350 $',
           kind: 'invalida',
-          note: 'perso nella notte fra il 18 e il 19 agosto insieme alla chiusura a 4.344,82 dollari con meno 1,61%, dopo che nel pomeriggio del 18 era stato perso il livello di 4.381. È la seconda soglia attraversata in meno di dodici ore, e adesso sta alle spalle del prezzo',
+          note: 'perso nella notte fra il 18 e il 19 agosto insieme alla chiusura a 4.344,82 dollari con meno 1,61%, dopo che nel pomeriggio del 18 era stato perso il livello di 4.381. È la seconda soglia attraversata in meno di dodici ore. Riattraversata verso l’alto nella mattina del 19: alle 10:47 lo spot è a 4.359,58 dollari, quasi dieci sopra. È il solo livello d’archivio che il prezzo abbia ripreso, ed è il bordo basso di una fascia che l’analisi delle 04:25 aveva già dichiarato di voler guardare sulla chiusura e non sull’intraday',
         },
         {
           at: 4365,
           display: '4.365 $',
           kind: 'logora',
-          note: 'limite superiore della fascia che il metallo deve riprendere per smettere di essere in correzione, dichiarato la notte del 19 agosto e scelto perché è un livello stabilito dal mercato invece che tondo. Dai 4.337,6 delle 09:06 la distanza è di poco meno di ventotto dollari, ed è la prima tacca ancora davanti al prezzo verso l’alto',
+          note: 'limite superiore della fascia che il metallo deve riprendere per smettere di essere in correzione, dichiarato la notte del 19 agosto e scelto perché è un livello stabilito dal mercato invece che tondo. Alle 10:47 la distanza si è ridotta a 5,42 dollari, da poco meno di ventotto delle 09:06, e resta la prima tacca davanti al prezzo verso l’alto. La condizione chiede però una chiusura sopra questo livello, e con la seduta aperta non è ancora arrivata a scadenza: fra qui e la chiusura ci sono il collocamento delle 19:00 e i verbali delle 20:00',
         },
         {
           at: 4400,
