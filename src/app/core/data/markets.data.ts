@@ -17,6 +17,24 @@ import { MarketReference } from '../models/article.model';
  */
 export const MARKET_REFERENCES: readonly MarketReference[] = [
   {
+    symbol: 'STOP UAE-IRAN',
+    name: 'Sospensione emiratina degli scambi commerciali e delle transazioni finanziarie con l’Iran',
+    value: 'fino a nuovo ordine',
+    change: 'annunciata dal ministero degli Esteri dopo l’attribuzione dei due missili balistici',
+    tone: 'warn',
+    icon: 'lock',
+    note: 'È il primo gradino in cui Abu Dhabi agisce invece di dichiarare: dopo almeno sedici attacchi a navi collegate ad ADNOC dal 28 febbraio e due attribuzioni per nome l’8 e il 14 agosto, la risposta era sempre stata una dichiarazione. Per il metallo conta soprattutto per quello che non fa: non toglie un barile al mercato, quindi alza il premio di rischio senza passare dal canale energetico — la forma in cui la geopolitica sostiene l’oro invece di penalizzarlo. Va tenuta una riserva sulla causa e non sulla misura: il lancio dei missili è attribuito all’Iran da una parte in causa, Teheran lo nega, e la sospensione è in vigore prima che esista un accertamento terzo.',
+  },
+  {
+    symbol: 'BORSE DEL GOLFO',
+    name: 'Reazione dei mercati regionali alla sospensione, 19 agosto',
+    value: 'Abu Dhabi ≈ −0,9%',
+    change: 'Dubai ≈ −0,2%; vendite concentrate sui finanziari',
+    tone: 'bull',
+    icon: 'bank',
+    note: 'È la sola reazione di prezzo attribuibile alla notizia, ed è confinata al mercato che la subisce: i finanziari sono il settore che una sospensione delle transazioni colpisce per primo. Fuori dal Golfo non emerge nulla — Brent e WTI restano ai valori delle 09:10, decennale e trentennale non si muovono, e il più 0,6% dell’oro era in corso da prima che la notizia uscisse. Attribuirgli quel movimento sarebbe scambiare una coincidenza di orario per una causa.',
+  },
+  {
     symbol: 'MARGINE GASOLIO',
     name: 'Premio del contratto sul gasolio americano rispetto al greggio',
     value: '≈ 102,20 $',

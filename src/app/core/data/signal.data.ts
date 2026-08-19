@@ -179,8 +179,7 @@ export interface OperationalSignal {
  * quel caso il riquadro «in attesa di notizie» al posto dell'indicatore.
  */
 export const MARKET_SIGNAL: OperationalSignal | null = {
-  updatedAt: '2026-08-19T09:10:00+02:00',
-  checkedAt: '2026-08-19T10:47:00+02:00',
+  updatedAt: '2026-08-19T11:10:00+02:00',
   asset: 'XAU/USD',
   readings: [
     {
@@ -269,13 +268,13 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'quella la grandezza da battere. La forza resta media e non sale ad alta per due ragioni ' +
         'misurabili che vanno contate con la stessa serietà: i rendimenti hanno mollato i massimi, e la ' +
         'ripresa dei carichi sauditi dentro lo Stretto può togliere una parte del premio di scarsità sul ' +
-        'barile. Il caso pienamente ribassista richiede che nessuna delle due cose si confermi. La notte fra il 18 e il 19 agosto non cambia la direzione e aggiunge una ripetizione che vale più di un livello. Il metallo ha chiuso la fase americana a 4.344,82 dollari con meno 1,61%, perdendo i 4.350 dopo i 4.381, ed è risalito soltanto a 4.342,33 con più 0,2% nella sessione asiatica per poi tornare a circa 4.337,6 alle 09:06. Nel frattempo i sostegni si sono rafforzati invece di cedere: decennale a 4,702%, trentennale a 5,282%, biennale attorno al 4,17%, Dollar Index a 99,65 vicino ai minimi di più mesi, e in Asia un risk-off vero con il Nikkei a circa meno 2,6%, l’indice MSCI Asia-Pacifico esclusa Giappone a meno 1,7% e il Kospi oltre il meno 5% in alcune rilevazioni. È la terza seduta consecutiva in cui il metallo non usa un rientro dei rendimenti e la quarta occasione in cui non usa un risk-off: una volta è rumore, tre volte sono una descrizione. Nella stessa notte due missili balistici lanciati verso il traffico marittimo nello Stretto sono stati intercettati e sono caduti in mare, e il greggio li ha registrati con un più 0,5% sul WTI: un attacco che non toglie capacità non muove il prezzo, e la chiusura americana era comunque precedente al lancio. Riverificato alle 10:47 senza pubblicare, perché non c’è un fatto nuovo da pubblicare: la direzione resta ribassista e la forza scende da media a bassa. Quello che è cambiato è proprio la ragione che teneva alta la forza. Per tre sedute questo archivio ha registrato un metallo che non usava i propri sostegni; stamattina li usa, e per la prima volta i tre si muovono insieme nel verso giusto — oro a 4.359,58 dollari con più 0,6%, Dollar Index a 99,55, decennale a 4,686% e trentennale a 5,268%. La direzione non si muove perché la misura per muoverla era stata scritta in anticipo e chiede una chiusura: i 4.365 dollari dichiarati alle 04:25, e alle 10:47 ne mancano 5,42 con la seduta aperta. Vale quello che questo archivio ha già fatto per quattordici dollari l’11 agosto, per quindici centesimi il 17 e per due millesimi di punto sul decennale il 18: un quasi non vale un sì, e una soglia che si onora quando conviene smette di misurare. Il resto del controllo non aggiunge fatti: Brent a 91,44 e WTI a 85,45 sono gli stessi numeri delle 09:10, il collocamento ventennale e i verbali erano già in archivio, e la probabilità di pausa si sposta di tre punti al 67% senza che sia uscita alcuna diffusione.',
+        'barile. Il caso pienamente ribassista richiede che nessuna delle due cose si confermi. La notte fra il 18 e il 19 agosto non cambia la direzione e aggiunge una ripetizione che vale più di un livello. Il metallo ha chiuso la fase americana a 4.344,82 dollari con meno 1,61%, perdendo i 4.350 dopo i 4.381, ed è risalito soltanto a 4.342,33 con più 0,2% nella sessione asiatica per poi tornare a circa 4.337,6 alle 09:06. Nel frattempo i sostegni si sono rafforzati invece di cedere: decennale a 4,702%, trentennale a 5,282%, biennale attorno al 4,17%, Dollar Index a 99,65 vicino ai minimi di più mesi, e in Asia un risk-off vero con il Nikkei a circa meno 2,6%, l’indice MSCI Asia-Pacifico esclusa Giappone a meno 1,7% e il Kospi oltre il meno 5% in alcune rilevazioni. È la terza seduta consecutiva in cui il metallo non usa un rientro dei rendimenti e la quarta occasione in cui non usa un risk-off: una volta è rumore, tre volte sono una descrizione. Nella stessa notte due missili balistici lanciati verso il traffico marittimo nello Stretto sono stati intercettati e sono caduti in mare, e il greggio li ha registrati con un più 0,5% sul WTI: un attacco che non toglie capacità non muove il prezzo, e la chiusura americana era comunque precedente al lancio. Riverificato alle 10:47 senza pubblicare, perché non c’è un fatto nuovo da pubblicare: la direzione resta ribassista e la forza scende da media a bassa. Quello che è cambiato è proprio la ragione che teneva alta la forza. Per tre sedute questo archivio ha registrato un metallo che non usava i propri sostegni; stamattina li usa, e per la prima volta i tre si muovono insieme nel verso giusto — oro a 4.359,58 dollari con più 0,6%, Dollar Index a 99,55, decennale a 4,686% e trentennale a 5,268%. La direzione non si muove perché la misura per muoverla era stata scritta in anticipo e chiede una chiusura: i 4.365 dollari dichiarati alle 04:25, e alle 10:47 ne mancano 5,42 con la seduta aperta. Vale quello che questo archivio ha già fatto per quattordici dollari l’11 agosto, per quindici centesimi il 17 e per due millesimi di punto sul decennale il 18: un quasi non vale un sì, e una soglia che si onora quando conviene smette di misurare. Il resto del controllo non aggiunge fatti: Brent a 91,44 e WTI a 85,45 sono gli stessi numeri delle 09:10, il collocamento ventennale e i verbali erano già in archivio, e la probabilità di pausa si sposta di tre punti al 67% senza che sia uscita alcuna diffusione. Alle 11:10 la fotografia non cambia e la soglia resta dov’era: oro a 4.359,6 dollari, cioè ancora sotto i 4.365 chiesti in chiusura, con Dollar Index sceso a 99,43 e le due scadenze lunghe ferme al 4,686% e al 5,27%. La sospensione emiratina degli scambi con l’Iran, annunciata nel frattempo, non si vede su questo orizzonte: la sola reazione di prezzo sta nel Golfo, con Abu Dhabi a meno 0,9% e Dubai a meno 0,2%.',
       invalidation:
         'Un oro che recupera i 4.365 dollari in chiusura entro giovedì 20 agosto: è il limite superiore della fascia persa nella notte, ed è un livello stabilito dal mercato invece che tondo. Sopra quel prezzo la direzione andrebbe riportata a neutrale, perché il metallo avrebbe restituito la rottura invece di consolidarla. Oppure un Brent che chiude sotto gli 88 dollari entro venerdì 21 agosto: sarebbe il segno che gli adattamenti al blocco stanno togliendo premio davvero, e la gamba energetica di questa lettura cadrebbe. Nell’altro verso, un oro che chiude sotto i 4.320 dollari entro venerdì 21 direbbe che il rendimento reale agisce più in fretta di quanto una forza media ammetta, e la lettura andrebbe portata ad alta invece che rivista.',
     },
     {
       horizon: 'medio',
-      direction: 'neutrale-ribassista',
+      direction: 'neutrale',
       strength: 'media',
       regime:
         'La condizione dichiarata il 10 agosto è scattata, ed è la ragione per cui questa lettura si ' +
@@ -457,7 +456,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
         'un dato debole non agisce, perché abbassa insieme il rendimento nominale e l’inflazione attesa e ' +
         'lascia la differenza dov’era. La direzione non scende sotto il neutrale perché la gamba monetaria ' +
         'non ha ceduto e perché i rendimenti hanno cominciato a rientrare dai massimi; ma la ragione per ' +
-        'tenerla sopra è decaduta, e va detto invece di essere lasciata dov’era. Nella notte fra il 18 e il 19 agosto la direzione scende sotto il neutrale, e la ragione è un fatto nuovo più una serie. Il fatto: il margine del gasolio americano sul greggio ha superato per la prima volta i cento dollari al barile, a circa 102,20, con scorte di distillati ai livelli di agosto più bassi dal 1996 e una lavorazione mondiale di luglio circa cinque milioni di barili al giorno sotto quella di un anno prima. È la misura dell’ipotesi scritta qui il 18 agosto alle 08:40 — se il collo di bottiglia si sposta dall’estrazione alla trasformazione, i carburanti restano cari con il barile fermo — e sposta la pressione energetica su un canale che una soglia sul Brent non intercetta. Con l’inflazione di pareggio ferma al 2,27% su cinque anni e al 2,30% su dieci, quella pressione entra come rendimento reale e non come inflazione attesa, cioè nella forma peggiore per il metallo. La serie: negli ultimi due collocamenti sulle scadenze lunghe il Tesoro si è aggiudicato sopra il quotato di mercato in entrambi i casi, con domanda pari o sotto la propria media, e stasera alle 19:00 arriva il terzo — sedici miliardi a vent’anni — un’ora prima dei verbali del FOMC. Due casi non sono una serie statistica e va detto, ma sono gli unici due della fase in cui la parte lunga è tesa, e concordano. La forza resta media perché la stessa serata può smentire entrambe le gambe.',
+        'tenerla sopra è decaduta, e va detto invece di essere lasciata dov’era. Nella notte fra il 18 e il 19 agosto la direzione scende sotto il neutrale, e la ragione è un fatto nuovo più una serie. Il fatto: il margine del gasolio americano sul greggio ha superato per la prima volta i cento dollari al barile, a circa 102,20, con scorte di distillati ai livelli di agosto più bassi dal 1996 e una lavorazione mondiale di luglio circa cinque milioni di barili al giorno sotto quella di un anno prima. È la misura dell’ipotesi scritta qui il 18 agosto alle 08:40 — se il collo di bottiglia si sposta dall’estrazione alla trasformazione, i carburanti restano cari con il barile fermo — e sposta la pressione energetica su un canale che una soglia sul Brent non intercetta. Con l’inflazione di pareggio ferma al 2,27% su cinque anni e al 2,30% su dieci, quella pressione entra come rendimento reale e non come inflazione attesa, cioè nella forma peggiore per il metallo. La serie: negli ultimi due collocamenti sulle scadenze lunghe il Tesoro si è aggiudicato sopra il quotato di mercato in entrambi i casi, con domanda pari o sotto la propria media, e stasera alle 19:00 arriva il terzo — sedici miliardi a vent’anni — un’ora prima dei verbali del FOMC. Due casi non sono una serie statistica e va detto, ma sono gli unici due della fase in cui la parte lunga è tesa, e concordano. La forza resta media perché la stessa serata può smentire entrambe le gambe. Alle 11:10 la direzione risale a neutrale, e non perché una delle due gambe negative sia caduta: il margine sul gasolio resta al primato e il collocamento a vent’anni deve ancora tenersi. Sono cambiate due cose dall’altro lato, entrambe piccole e nessuna decisiva. La prima è che il metallo ha ricominciato a usare i propri sostegni dopo tre sedute in cui li ignorava. La seconda è un atto: gli Emirati hanno sospeso fino a nuovo ordine scambi commerciali e transazioni finanziarie con l’Iran, dopo aver attribuito a Teheran il lancio dei due missili balistici della notte, che Teheran nega. È un’escalation che alza il livello dichiarato del conflitto senza togliere capacità al mercato del greggio, cioè un premio di rischio che cresce senza passare dal barile: la forma in cui il rischio geopolitico sostiene il metallo invece di penalizzarlo. Vale poco e per due ragioni misurabili — fuori dal Golfo non ha prodotto alcun movimento attribuibile, e una contromisura iraniana sul traffico marittimo la riporterebbe sul canale energetico, dove con il Brent a 91,47 dollari lavorerebbe nel verso opposto. Un debole positivo che arriva su un debole negativo lascia la lettura al centro, ed è lì che sta fino alle prove di stasera.',
       invalidation:
         'Un’inflazione di pareggio a cinque anni sopra il 2,50% entro venerdì 21 agosto, contro il 2,27% del 18 sera: direbbe che il rincaro dei prodotti raffinati è entrato nelle attese e non nel rendimento reale, e il segno di questa lettura si rovescerebbe senza che il margine sul gasolio si muova di un dollaro. Oppure un collocamento a vent’anni che si aggiudica sotto il quotato di mercato con domanda sopra la media delle ultime dieci aste sulla stessa scadenza: interromperebbe la serie di due su due, che è la seconda gamba della direzione. Oppure un’inflazione di pareggio a dieci anni sopra il 2,60% entro venerdì 21 agosto: direbbe che il mercato ha cominciato a prezzare il barile sopra i 90 dollari nell’inflazione attesa, e il rialzo dei rendimenti lunghi tornerebbe a essere un argomento a favore del metallo invece che contro. È la condizione che rovescerebbe questa lettura, e la sola che possa riportarla sopra il neutrale senza bisogno di un dato nuovo. Oppure, nel verso opposto, un pareggio a dieci anni sotto il 2,10% con il nominale ancora sopra il 4,70%: porterebbe il rendimento reale sopra il 2,60% e la direzione andrebbe portata sotto il neutrale anche sui giorni. Oppure una probabilità di rialzo a settembre che supera il 40% entro venerdì 21 agosto, cioè il livello che corrisponde a una pausa sotto il 60%: aggiungerebbe la gamba monetaria alle due già ostili, ed è la sola configurazione in cui questo archivio non ha mai visto il metallo reggere. Oppure un biennale che si porta sopra il 4,218%, il massimo del 12 agosto, dopo esserci arrivato a otto millesimi nel pomeriggio del 18: direbbe che la tensione ha smesso di essere confinata alla parte lunga ed è diventata una riprezzatura della banca centrale. Resta infine l’indice dei prezzi all’importazione di agosto, a metà settembre, con la componente carburanti di nuovo in aumento sul mese dopo il meno 7,2% di luglio: è il test che le diffusioni di questa finestra non possono fare.',
     },
@@ -544,28 +543,25 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   headline:
-    'Il premio sul gasolio supera i cento dollari per la prima volta, e stasera il Tesoro colloca a vent’anni un’ora prima dei verbali',
+    'Gli Emirati sospendono scambi e pagamenti con l’Iran: l’escalation cambia canale e non toglie barili',
   stance:
-    'La notte porta un primato che questo archivio aspettava senza saperlo: il margine del gasolio ' +
-    'americano sul greggio ha superato i cento dollari al barile, a circa 102,20, con scorte di ' +
-    'distillati ai livelli di agosto più bassi dal 1996 e una lavorazione mondiale di luglio circa ' +
-    'cinque milioni di barili al giorno sotto quella di un anno prima. È la misura dell’ipotesi ' +
-    'scritta qui il 18 agosto alle 08:40 — se il collo di bottiglia si sposta dall’estrazione alla ' +
-    'trasformazione, i carburanti restano cari con il barile fermo — e sposta la pressione ' +
-    'energetica su un canale che nessuna soglia sul Brent intercetta. Conta contro il metallo per ' +
-    'una ragione precisa e reversibile: con l’inflazione di pareggio ferma al 2,27% su cinque anni e ' +
-    'al 2,30% su dieci, quella pressione entra come rendimento reale invece che come inflazione ' +
-    'attesa. Il prezzo lo conferma: l’oro ha chiuso a 4.344,82 dollari con meno 1,61%, ha perso i ' +
-    '4.350 dopo i 4.381, e stamattina sta a circa 4.337,6 nonostante rendimenti in calo — decennale ' +
-    '4,702%, trentennale 5,282% — dollaro a 99,65 vicino ai minimi di più mesi e un risk-off ' +
-    'asiatico con il Nikkei a meno 2,6%. È la terza seduta in cui i sostegni non diventano prezzo. ' +
-    'Sul fronte materiale i transiti a Hormuz scendono a sei navi da nove, con una petroliera vuota ' +
-    'in entrata e nessun grande carico di greggio, mentre l’Iraq approva meccanismi di esportazione ' +
-    'che saltano lo Stretto dal 1° settembre: il vincolo stringe adesso e si allenterà dopo. Due ' +
-    'missili balistici verso il traffico marittimo sono stati intercettati e non hanno tolto un ' +
-    'barile. Stasera due prove a un’ora di distanza: il collocamento da sedici miliardi a vent’anni ' +
-    'alle 19:00 e i verbali del FOMC alle 20:00, con gli ultimi due collocamenti lunghi aggiudicati ' +
-    'entrambi sopra il mercato.',
+    'Il fatto della mattina è un atto e non un annuncio: il ministero degli Esteri emiratino ha ' +
+    'sospeso fino a nuovo ordine ogni scambio commerciale e ogni transazione finanziaria con l’Iran, ' +
+    'dopo aver attribuito a Teheran il lancio dei due missili balistici della notte — che Teheran ' +
+    'nega, e su cui non esiste un accertamento terzo. È il primo gradino in cui Abu Dhabi agisce ' +
+    'invece di dichiarare, dopo almeno sedici attacchi a navi collegate ad ADNOC dal 28 febbraio e ' +
+    'due attribuzioni per nome a inizio mese. Per il metallo conta per quello che non fa: non toglie ' +
+    'un barile, quindi alza il premio di rischio senza passare dal canale energetico, che è la forma ' +
+    'in cui la geopolitica lo sostiene invece di penalizzarlo. Vale però poco, e si vede: la sola ' +
+    'reazione di prezzo sta nel Golfo, con Abu Dhabi a meno 0,9% e Dubai a meno 0,2% e le vendite sui ' +
+    'finanziari, mentre fuori da lì non emerge nulla di attribuibile. Il resto del quadro è quello ' +
+    'del mattino, e sta migliorando per conto proprio: oro a 4.359,6 dollari con più 0,6%, Dollar ' +
+    'Index a 99,43 in calo, decennale al 4,686% e trentennale al 5,27%, con il metallo che per la ' +
+    'prima volta in quattro sedute usa i propri sostegni. Restano intatte le due gambe contrarie: il ' +
+    'margine sul gasolio a 102,20 dollari e un Brent a 91,47 sui massimi da tre settimane. Le prove ' +
+    'sono tutte stasera — scorte alle 16:30, collocamento a vent’anni alle 19:00, verbali del FOMC ' +
+    'alle 20:00 — e la soglia dichiarata sull’oro chiede una chiusura sopra i 4.365 dollari, che alle ' +
+    '11:10 restano 5,4 dollari sopra il prezzo.',
   favours: [
     'Contare che cosa è già successo prima di stimare che cosa succederà: gli ultimi due collocamenti su scadenze lunghe si sono aggiudicati entrambi sopra il quotato di mercato con domanda pari o sotto la propria media, ed è il solo tasso di base disponibile per giudicare l’asta di stasera. Due casi non sono una serie, e dirlo fa parte della misura',
     'Chiedere a un attacco quanta capacità toglie invece di quanto è grande: due missili balistici intercettati e caduti in mare tolgono zero barili, e il greggio li ha registrati con mezzo punto percentuale. L’arma cambia il livello dichiarato del conflitto, non l’offerta',
@@ -606,6 +602,7 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Dichiarare un’incertezza e poi appoggiarsi lo stesso all’indizio debole: alle 19:40 il rapporto domanda-offerta mancava, era stato detto, e il titolo era comunque costruito sul confronto col mercato secondario',
   ],
   confirming: [
+    'Gli Emirati hanno sospeso fino a nuovo ordine scambi commerciali e transazioni finanziarie con l’Iran: è un atto con effetto immediato, il primo dopo almeno sedici attacchi a navi collegate ad ADNOC dal 28 febbraio e due attribuzioni per nome. Alza il livello dichiarato del conflitto senza togliere un barile al mercato, cioè nella forma in cui il premio di rischio sostiene il metallo',
     'Per la prima volta in quattro sedute il metallo usa i propri sostegni, ed è la sola cosa cambiata rispetto alle 09:10: alle 10:47 l’oro è a 4.359,58 dollari con più 0,6% mentre il Dollar Index scende a 99,55, il decennale a 4,686% e il trentennale a 5,268%. I 4.350 persi nella notte sono stati ripresi con quasi dieci dollari di margine',
     'La probabilità di una pausa a settembre sale al 67% dal 64% delle 09:10, quindi il canale monetario continua a muoversi nel verso favorevole al metallo e si allontana dalla tacca del 40% di rialzo dichiarata come soglia. Va però contato per quello che è: non è uscita alcuna diffusione, quindi sono tre punti di prezzo e non di dato',
     'I sostegni si sono rafforzati invece di cedere, ed è la ragione per cui la debolezza resta relativa: decennale a 4,702% e trentennale a 5,282% dai picchi vicini al 4,75% e al 5,3371%, biennale attorno al 4,17%, Dollar Index a 99,65 vicino ai minimi di più mesi e probabilità di una pausa a settembre attorno al 64%',
@@ -696,6 +693,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     'Gli acquisti netti delle banche centrali sono stati 289 tonnellate nel secondo trimestre, oltre cinque volte le 57 del primo e il record della serie per un secondo trimestre, realizzati mentre il prezzo scendeva del 16%',
   ],
   contradicting: [
+    'La sospensione emiratina non è stata prezzata da nessuno fuori dal Golfo: Brent a 91,47 dollari e WTI a 85,39 restano dove erano alle 09:10, il decennale e il trentennale non si muovono, e la sola reazione misurabile è Abu Dhabi a meno 0,9% con Dubai a meno 0,2%. Una lettura che poggia su due indici regionali ha una base di prova stretta',
+    'Il fatto che motiva la sospensione resta una versione contestata: il lancio dei due missili è attribuito all’Iran da Abu Dhabi, cioè da una parte in causa, e Teheran lo nega definendo l’accusa infondata. La misura è in vigore prima che esista un accertamento terzo',
     'La soglia dichiarata alle 04:25 non è stata raggiunta e non è nemmeno arrivata a scadenza: i 4.365 dollari erano chiesti in chiusura, alle 10:47 ne mancano 5,42 e la seduta è aperta. La stessa analisi aveva scritto che la fascia 4.350-4.365 va guardata sulla chiusura e non sull’intraday, e che finché non la riprende ogni rimbalzo è restituzione di un movimento e non inversione',
     'Il rientro dei rendimenti non ha ancora attraversato nulla: a 4,686% il decennale resta sei millesimi di punto sopra la tacca del 4,68% superata il 10 agosto, quindi la descrizione per cui il rendimento ci è rimasto sopra da allora regge ancora, e il trentennale a 5,268% è a cinque punti base e mezzo dal 5,213% della chiusura del 13 agosto',
     'Il canale energetico non si è mosso di una virgola dal controllo precedente: Brent a 91,44 dollari e WTI a 85,45 sono gli stessi numeri delle 09:10, quarta seduta consecutiva di rialzo, con i colloqui fra Washington e Teheran fermi e versioni opposte sull’apertura dello Stretto',
@@ -1053,8 +1052,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Brent',
-      now: 91.44,
-      display: '91,44 $',
+      now: 91.47,
+      display: '91,47 $',
       marks: [
         {
           at: 87.07,
@@ -1140,8 +1139,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Dollar Index',
-      now: 99.55,
-      display: '≈ 99,55',
+      now: 99.43,
+      display: '99,43',
       marks: [
         {
           at: 99.795,
@@ -1159,8 +1158,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'Treasury a 30 anni',
-      now: 5.268,
-      display: '≈ 5,268%',
+      now: 5.27,
+      display: '≈ 5,27%',
       marks: [
         {
           at: 5.213,
@@ -1178,8 +1177,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'XAU/USD',
-      now: 4359.58,
-      display: '4.359,58 $',
+      now: 4359.6,
+      display: '≈ 4.359,6 $',
       marks: [
         {
           at: 4376.59,
@@ -1234,8 +1233,8 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
     {
       label: 'WTI',
-      now: 85.45,
-      display: '85,45 $',
+      now: 85.39,
+      display: '85,39 $',
       marks: [
         {
           at: 88,
@@ -1266,9 +1265,9 @@ export const MARKET_SIGNAL: OperationalSignal | null = {
     },
   ],
   sources: [
+    'i-missili-non-toglievano-barili-la-risposta-e-sui-pagamenti',
     'due-aste-su-due-sopra-il-mercato-e-stasera-il-ventennale',
     'cento-dollari-di-premio-sul-gasolio-e-l-ipotesi-ha-un-numero',
-    'sei-navi-e-l-iraq-si-apre-una-via-che-salta-lo-stretto',
   ],
 };
 

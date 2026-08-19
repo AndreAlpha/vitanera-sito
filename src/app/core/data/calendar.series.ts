@@ -11,7 +11,7 @@
  */
 import { Cadence, Release, Stage } from '../models/calendar.model';
 
-export const CALENDAR_GENERATED_AT = '2026-08-19T08:47Z';
+export const CALENDAR_GENERATED_AT = '2026-08-19T09:15Z';
 
 type Row = readonly [
   at: string,
@@ -2848,6 +2848,7 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
   'euro/ipc': {
     cadence: 'mensile',
     releases: r([
+      ['2026-08-19T09:00Z', 'luglio 2026', 2.9, 2.9, 2.8, 'finale'],
       ['2026-07-31T09:00Z', 'luglio 2026', 2.9, 2.9, 2.8, 'flash'],
       ['2026-07-17T09:00Z', 'giugno 2026', 2.8, 2.8, 3.2, 'finale'],
       ['2026-07-01T09:00Z', 'giugno 2026', 3, 2.8, 3.2, 'flash'],
@@ -2967,20 +2968,20 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2021-10-01T09:00Z', 'settembre 2021', 3.3, 3.4, 3, 'flash'],
       ['2021-09-17T09:00Z', 'agosto 2021', 3, 3, 2.2, 'finale'],
       ['2021-08-31T09:00Z', 'agosto 2021', 2.7, 3, 2.2, 'flash'],
-      ['2021-08-18T09:00Z', 'luglio 2021', 2.2, 2.2, 1.9, 'finale'],
     ]),
     next: {
-      at: '2026-08-19T09:00Z',
-      period: 'luglio 2026',
-      forecast: 2.9,
+      at: '2026-09-01T09:00Z',
+      period: 'agosto 2026',
+      forecast: null,
       actual: null,
-      previous: 2.8,
-      stage: 'finale',
+      previous: null,
+      stage: 'flash',
     },
   },
   'euro/variazione-ipc': {
     cadence: 'mensile',
     releases: r([
+      ['2026-08-19T09:00Z', 'luglio 2026', 2.8, 0.2, -0.1, 'finale'],
       ['2026-07-31T09:00Z', 'luglio 2026', null, 0.2, -0.1, 'flash'],
       ['2026-07-17T09:00Z', 'giugno 2026', -0.1, -0.1, 0.1, 'finale'],
       ['2026-07-01T09:00Z', 'giugno 2026', null, -0.1, 0.1, 'flash'],
@@ -3100,20 +3101,20 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2021-10-01T09:00Z', 'settembre 2021', null, 0.5, 0.4, 'flash'],
       ['2021-09-17T09:00Z', 'agosto 2021', 0.4, 0.4, -0.1, 'finale'],
       ['2021-08-31T09:00Z', 'agosto 2021', null, 0.4, -0.1, 'flash'],
-      ['2021-08-18T09:00Z', 'luglio 2021', -0.1, -0.1, 0.3, 'finale'],
     ]),
     next: {
-      at: '2026-08-19T09:00Z',
-      period: 'luglio 2026',
-      forecast: 2.8,
+      at: '2026-09-01T09:00Z',
+      period: 'agosto 2026',
+      forecast: null,
       actual: null,
-      previous: -0.1,
-      stage: 'finale',
+      previous: null,
+      stage: 'flash',
     },
   },
   'euro/ipc-core': {
     cadence: 'mensile',
     releases: r([
+      ['2026-08-19T09:00Z', 'luglio 2026', 2.5, 2.5, 2.4, 'finale'],
       ['2026-07-31T09:00Z', 'luglio 2026', 2.4, 2.5, 2.4, 'flash'],
       ['2026-07-17T09:00Z', 'giugno 2026', 2.4, 2.4, 2.6, 'finale'],
       ['2026-07-01T09:00Z', 'giugno 2026', 2.6, 2.4, 2.6, 'flash'],
@@ -3233,15 +3234,14 @@ export const SERIES: Readonly<Record<string, SeriesData>> = {
       ['2021-10-01T09:00Z', 'settembre 2021', 1.9, 1.9, 1.6, 'flash'],
       ['2021-09-17T09:00Z', 'agosto 2021', 1.6, 1.6, 0.7, 'finale'],
       ['2021-08-31T09:00Z', 'agosto 2021', 1.5, 1.6, 0.7, 'flash'],
-      ['2021-08-18T09:00Z', 'luglio 2021', 0.7, 0.7, 0.9, 'finale'],
     ]),
     next: {
-      at: '2026-08-19T09:00Z',
-      period: 'luglio 2026',
-      forecast: 2.5,
+      at: '2026-09-01T09:00Z',
+      period: 'agosto 2026',
+      forecast: null,
       actual: null,
-      previous: 2.4,
-      stage: 'finale',
+      previous: null,
+      stage: 'flash',
     },
   },
   'euro/variazione-produzione-industriale': {

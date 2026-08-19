@@ -22,6 +22,7 @@
  * vanno usati come base per decisioni di investimento (vedi /avvertenze).
  */
 import type { Article } from '../models/article.model';
+import { iMissiliNonToglievanoBarili } from './articles/i-missili-non-toglievano-barili-la-risposta-e-sui-pagamenti';
 import { dueAsteSuDueSopraIlMercato } from './articles/due-aste-su-due-sopra-il-mercato-e-stasera-il-ventennale';
 import { seiNaviELIraqSiApreUnaVia } from './articles/sei-navi-e-l-iraq-si-apre-una-via-che-salta-lo-stretto';
 import { iDaziAlCanadaSlittano } from './articles/i-dazi-al-canada-slittano-e-manca-l-elenco-delle-merci';
@@ -131,6 +132,7 @@ import { attacchiEnergiaIraniana } from './articles/attacchi-energia-iraniana-pi
 export { AUTHOR } from './author';
 
 export const ARTICLES: readonly Article[] = [
+  iMissiliNonToglievanoBarili,
   dueAsteSuDueSopraIlMercato,
   seiNaviELIraqSiApreUnaVia,
   iDaziAlCanadaSlittano,
